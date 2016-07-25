@@ -1,0 +1,47 @@
+﻿@{
+}
+
+<script type="text/javascript">
+    (function ($) {
+        window.getTreeViewTemplate = function (treeviewname) {
+            try {
+                var mpcTreeviewWidget = "";
+                mpcTreeviewWidget += "<ul class=\"tree layoutrow\"  id=\"" + treeviewname + "\" data-bind=\"onload: onload, template: { name: 'treeTmpl" + treeviewname + "', foreach: $data.dataSource }\">";
+                mpcTreeviewWidget += "<\/ul>";
+                mpcTreeviewWidget += "<script id=\"treeTmpl" + treeviewname + "\" type=\"text\/html\">";
+                mpcTreeviewWidget += "  <li class=\"treenormal\" data-bind=\"attr:{'data-assigned':IsDataAssigned}\">";
+                mpcTreeviewWidget += "    <div class=\"expand\" data-bind=\"attr: { 'id': divId, 'data-filterkey' : filterkey}, clicked:isselected, intermedstate:$data.IsIntermediate\">";
+                mpcTreeviewWidget += "        <i name=\"nodeicon\" data-bind=\"attr: { 'class': icon, 'title':Title}\"></i>";
+                mpcTreeviewWidget += "      <div class=\"treecheckboxStyle\" data-bind=\"visible: !(!$root.IsEditMode() || !$data.showcheckbox()), click:function(){return true;}, clickBubble:false\">";
+                mpcTreeviewWidget += "          <label class=\"treecustomcheckbox\">";
+                mpcTreeviewWidget += "              <input type=\"checkbox\" class=\"treecheckbox\" data-bind=\"checked: $data.IsChecked, click: SetCheckState \">";
+                mpcTreeviewWidget += "              <span></span>";
+                mpcTreeviewWidget += "          </label>";
+                mpcTreeviewWidget += "      </div>";
+                mpcTreeviewWidget += "        <span class=\"tree-label\" data-bind=\"text: name, attr: { 'class': filterstyle()}\"></span>";
+                @if (Html.HasPermissions(MPCRoles.Operator))
+                {
+                  @:  mpcTreeviewWidget += "        <span class=\"tree-label\" data-bind=\" clickBubble: false, attr: { 'class': filterstyle()}\"></span>";
+                }
+                else
+                {
+                  @:  mpcTreeviewWidget += "        <span class=\"tree-label\" data-bind=\"html: linkTitle, click : giveAccess, clickBubble: false, attr: { 'class': filterstyle()}\"></span>";
+                }
+                mpcTreeviewWidget += "        <span class=\"tree-loadingicon\" id=\"loadingicon\"><\/span>";
+                mpcTreeviewWidget += "<i data-refreshstatus=\"refreshId\" data-bind=\"visible:$data.IsRefreshVisible \" title=\"Click to refresh device status.\" class=\"tree-icon-refresh\"/>";
+                mpcTreeviewWidget += "    </div>";
+                mpcTreeviewWidget += "    <div class=\"expandul\" data-bind=\"if: isexpanded\">";
+                mpcTreeviewWidget += "        <ul class=\"tree\" data-bind=\"template: { name: 'treeTmpl" + treeviewname + "',foreach:$data.children }\">";
+                mpcTreeviewWidget += "        <\/ul>";
+                mpcTreeviewWidget += "    </div>";
+                mpcTreeviewWidget += "  </li>";
+                mpcTreeviewWidget += "<\/script>";
+                mpcTreeviewWidget += "<span style=\"color:black;\" id=\"loadingtext\">Loading...</span>"
+                return mpcTreeviewWidget;
+            } catch (e) {
+                console.log(e.message);
+                return "Error loading templte";
+            }
+        }
+    })($);
+</script>

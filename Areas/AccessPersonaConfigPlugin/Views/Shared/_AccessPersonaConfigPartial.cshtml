@@ -1,0 +1,135 @@
+﻿
+    <form id="manage_access_persona_form" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+      
+        <div class="access_persona_config_active" id="access_persona_config" >
+           
+                    <div class="accessPerCol first">
+                        <!--ko if:$data.selectedCredentialHolders().length > 0-->
+                        <header>
+                            @Resources.Duration
+                        </header>
+                        <!--/ko-->
+                        <section class="accesspersona_section">
+                            <!--ko if:$data.selectedCredentialHolders().length > 0-->
+                            <div class="accessPerLarge" id="access_persona_date">
+                                <section>
+                                    <div class="input-append date field right-inner-addon event-date" data-bind="datepicker: $data.ActivationDateTime, datepickerOptions: {startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 0">
+
+                                        <a class="reset_cal_icon">x</a>
+
+                                        <span class="input-append add-on input-group-addon">
+                                            <b class="icon-calendar"></b>
+                                        </span>
+                                        <label class="floatLblDn">@Resources.Credential_Activation_Date</label>
+                                        <input class="floatTxt myStyle" type="text" name="activationDate" id="accessPersona_ActivationDate" data-format="@Resources.date_picker_format" readonly="readonly">
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="input-append date field right-inner-addon event-date" data-bind="datepicker: $data.ExpiryDateTime, datepickerOptions: {startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 1">
+
+                                        <a class="reset_cal_icon">x</a>
+
+                                        <span class="input-append add-on input-group-addon">
+                                            <b class="icon-calendar"></b>
+                                        </span>
+                                        <label class="floatLblDn">@Resources.Credential_Expiry_Date</label>
+                                        <input class="floatTxt myStyle" type="text" name="expiryDate" id="accessPersona_ExpiryDate" data-format="@Resources.date_picker_format" readonly="readonly">
+                                    </div>
+                                </section>                               
+                            </div>
+                            <!--/ko-->
+                             <div class="accessPerCol accessPersonaSubheading">
+                            <header>
+                                 @Resources.AccessPersona_Header
+                            </header>
+                        </div>
+                           <span class="accessPersonaText"> @Resources.AccessPersona_Description </span>
+                            <div class="createNew_div">
+                                <span data-bind="click : $data.createNew"><em><a href="">@Resources.AccessPersona_CreateNew</a></em></span>
+
+                                <div class="formcontrol">
+                                    <div class="field spaceBottomStyle" data-bind="visible: $data.FlowMode() == 1">
+                                        <label for="AccessPersona_NewPersona">@Resources.AccessPersona_NewPersona</label>                                
+                                        <input type="text" class="floatTxt myStyle" name="accesspersona_Name" id="accessperona_Name" data-bind="value: $data.accessPersonaModel.Name, disable: $data.accessPersonaModel.IsSystemEntity()">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field select-field spaceBottomStyle notRequiredStyle">
+                                <label for="OperatorCando1">@Resources.AccessPersona_Select</label>                                
+                                <select id="OperatorCando1" data-bind="options: $data.accessPersonas, optionsText: 'Name', optionsValue: 'Id',optionsCaption: '@Resources.None',value: $data.selectedAccessPersonaId, event:{change: $data.loadAccessPersona}"></select>                                
+                            </div>
+                            @if (@Html.HasPermissions(MPCPermissions.DELETE_ACCESSPERSONA))
+                        {
+                        <button class="ternary-button" data-bind="click: $data.deleteAccessPersona, visible: !!$data.accessPersonaModel.Id() && !$data.accessPersonaModel.IsSystemEntity()">@Resources.Delete</button>}
+                            @if (@Html.HasPermissions(MPCPermissions.DISSOCIATE_ACCESSPERSONA_FROM_CREDENTIALHOLDER))
+                        {
+                        <button class="ternary-button" data-bind="click: $data.dissociateAccessPersona, visible: !!($data.selectedCredentialHolders().length > 0 && $data.selectedAccessPersonas.indexOf($data.selectedAccessPersonaId()) > -1)">@Resources.Credential_Dissociate</button>}
+
+                            
+                        </section>                    
+                    </div>           
+                <div class="pull-left" data-bind="visible: !$data.accessPersonaModel.IsSystemEntity()">
+                    <!-- ko if: !!$data.treeview -->
+                    <div class="leftTree treecontrol treeProp" data-bind="template: { name: 'accesspersonaTreeViewTemplate', data: $data.treeview }, busyIndicator: {show: $data.treeview.IsLoading, blockAll: true}"></div>
+                    <!-- /ko-->
+                    <script id="accesspersonaTreeViewTemplate" type="text/html">
+                        <div class="accessPerCol doors">
+                            <header>
+                                @Resources.AccessPersona_Doors_Header
+                            </header>
+                        </div>
+                        <div class="tree tree-cont" data-bind="visible: $parent.selectedCredentialHolders().length > 0 || !!$parent.selectedAccessPersonaId() || $parent.FlowMode() == 1">
+                            <ul data-bind="template: { name: 'accesspersonaTreeNodeTemplate' , foreach: $data.rootNode.Children }"></ul>
+                        </div>
+                    </script>
+                    <script id="accesspersonaTreeNodeTemplate" type="text/html">
+                        <li class="treenormal">
+                            <div class="expand" data-bind="event: { mouseover: $root.treeview.handleHover, mouseout: $root.treeview.handleHoverOut }, click: $root.treeview.handleSelection, css: { 'Item-State-hover': $data.IsHover, 'Item-State-selected': $data.IsSelected }">
+                                <i class="tree-open-icon" data-bind="attr: { 'class': $data.Icon}, click: $root.treeview.toggleExpand, clickBubble: false"></i>
+                                <span class="tree-label" data-bind=" text: $data.Entity.EntityInfo.Name"></span>
+                                <span class="schedule-name" data-bind="text:$data.Entity.ScheduleInfo.Name"></span>
+                            </div>
+                            <div class="expandul" data-bind="if: $data.IsExpanded">
+                                <ul class="tree" data-bind="template: { name: 'accesspersonaTreeNodeTemplate', foreach: $data.Children }"></ul>
+                            </div>
+                        </li>
+                    </script>
+                </div>
+                <div id="accesspersona_schedules_list_form" data-bind="visible: !$data.accessPersonaModel.IsSystemEntity()">
+                    <div class="accessPerCol accessPerSche">
+                        <header>@Resources.AccessPersona_Schedules_Header</header>
+                        <div class="radio vertical-radio-list" data-bind="visible: $data.selectedCredentialHolders().length > 0 || !!$data.selectedAccessPersonaId() || $data.FlowMode() == 1">
+                            <label class="formControl-radio">
+                                <input id="yes" type="radio" checked name="radiotest" data-bind="checked: $data.selectedSchedule, click:$data.scheduleChanged.bind($data,null)" />
+                                <span>@Resources.AccessPersona_Schedules_None</span>
+                            </label>
+                            <!-- ko foreach: $data.schedules -->
+                            <label class="formControl-radio">
+                                <input id="no" type="radio" name="radiotest" data-bind="value: $data.Id, checked: $parent.selectedSchedule, click:$parent.scheduleChanged" />
+                                <span data-bind="text: $data.Name"></span>
+                            </label>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>            
+            </div>
+    <div id="access_persona_save">
+        
+        <div class="accessPerLarge-noMar access-footerCtrl" data-bind="visible: $data.FlowMode() == 1">
+            <div class="formcontrol">                
+                @if (@Html.HasPermissions(MPCPermissions.ADD_ACCESSPERSONA) || @Html.HasPermissions(MPCPermissions.UPDATE_ACCESSPERSONA))
+                {
+                    <button class="primary-button" data-bind="click: $data.save">@Resources.Save</button>
+                }
+                <div class="clearboth">
+                    @Resources.AccessPersona_Save_Description
+                </div>
+                <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="z-index:500" />
+            </div>
+        </div>
+    </div>
+
+
+
+    </form>

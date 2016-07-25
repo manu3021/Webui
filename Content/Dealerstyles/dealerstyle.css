@@ -1,0 +1,985 @@
+﻿
+.imageloader {
+    height: 40px;
+    width: 40px;
+    background: url(images/ajax-loader.gif) no-repeat center center;
+    z-index: 99;
+    position: absolute;
+}
+
+#operatorModal {
+    width: 885px !important;
+    left: 40%;
+}
+
+#approval .userconfigcontainer.layoutcol {
+    left: 0px;
+    right: 0px;
+}
+
+#approval .userlistcontainer.layoutcol {
+    width: 300px;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #bababb;
+}
+
+/* same class is getting used in operator page */
+/*.userdetailcontainer.layoutcol {
+    left: 300px;
+    position: fixed;
+    width: 90%;
+    top: 154px;
+}*/
+
+
+#approval .usetitemcontainer {
+    margin-left: 23px;
+    padding-bottom: 2px;
+    padding-top: 10px;
+    height: 28px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+    #approval .usetitemcontainer ul li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+        height: 20px;
+        overflow: hidden;
+    }
+
+#approval .userlistheader.layoutrow {
+    top: 0;
+    -webkit-box-shadow: 0px 10px 10px -13px #bababa;
+    -moz-box-shadow: 0px 10px 10px -13px #bababa;
+    box-shadow: 0px 10px 10px -13px #bababa;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=10px, Color='#bababa', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    border-bottom: 1px solid #bababa;
+    z-index: 100;
+    height: 60px;
+}
+
+#approval .icon_usr_add {
+    margin: 24px 24px 24px 24px;
+    cursor: pointer;
+}
+
+
+#approval .operatorContent ul {
+    border-bottom: 1px solid #bababb;
+    padding: 0px !important;
+    margin: 0px !important;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+}
+
+    #approval .operatorContent ul li {
+        float: left;
+        line-height: 40px;
+        list-style-type: none;
+    }
+
+#approval .userlistinnercontainer.layoutrow {
+    top: 99px;
+    bottom: 0;
+}
+
+#approval .userlist.layoutrow {
+    top: 34px;
+    bottom: 0;
+}
+
+#approval .margintop {
+    margin-top: 0;
+}
+
+
+#approval .operatorContent form {
+    margin: 0px;
+}
+
+#approval .usercreatebuttonstyle {
+    color: #0088cc !important;
+    cursor: pointer;
+    background-image: url(images/icon_add.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10PX 10px 10px 10px !important;
+    background-color: white;
+    margin-top: 14px;
+    margin-left: 0px;
+    float: left;
+}
+
+    #approval .usercreatebuttonstyle:hover {
+        -webkit-box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        -moz-box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=33px, OffY=34px, Color='rgba(59,59,59,1)', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+    }
+
+#approval .userdetailform.layoutrow {
+    top: 0;
+    bottom: 44px;
+}
+
+#approval .userliststyle {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    #approval .userliststyle #userItem {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+        cursor: pointer;
+        /*border-bottom: 1px solid #bababb;*/
+        -webkit-transition: all .15s ease-in-out;
+        -moz-transition: all .15s ease-in-out;
+        -o-transition: all .15s ease-in-out;
+        transition: all .15s ease-in-out;
+        color: #6a6a6c;
+    }
+
+        #approval .userliststyle #userItem:hover, #approval .userliststyle #userItem:active {
+            border-right: 1px solid transparent;
+            background-color: #e6f3fb;
+            -webkit-box-shadow: 0px 1px 8px 0px #e6f3fb;
+            -moz-box-shadow: 0px 1px 8px 0px #e6f3fb;
+            box-shadow: 0px 1px 8px 0px #e6f3fb;
+            filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=1px, Color='#e6f3fb', Positive='false' ); /* IE 5.5 */
+            border-collapse: separate; /* Required by IE 9 */
+        }
+
+        #approval .userliststyle #userItem.userItemSelected {
+            border-right: 1px solid transparent;
+            background-color: #e6f3fb;
+            color: #4d4d4d;
+            font-size: 1.2em;
+        }
+
+#approval .UserClassCreate {
+    padding-left: 0px;
+    padding-right: 30px;
+    margin-left: 0px;
+}
+
+#approval .user-button-padding {
+    width: 184px;
+    position: absolute;
+    line-height: 41px;
+}
+
+    #approval .user-button-padding > span {
+        padding-left: 0px !important;
+    }
+
+#approval .rightUserColumn {
+    padding-left: 24px;
+}
+
+#Eulaprofile .rightUserColumn {
+  padding-left: 24px;
+}
+
+#approval .dealer-partial-button {
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 16px;
+}
+
+#approval .grid-text1 {
+    font-size: 15px;
+    color: #525357;
+    border: none !important;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: left;
+}
+
+#approval .grid-text2 {
+    font-size: 14px;
+    color: #978c72;
+    border: none !important;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: left;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    margin-top: 4px !important;
+}
+
+#approval .usertotal {
+    padding: 8px 0px 5px 20px;
+    color: #5e5f63;
+    border-bottom: 1px solid #efefef;
+    /*background: #f7f7f7;*/
+    /*font-weight: bold;*/
+}
+
+#approval .online {
+    width: 10px;
+    height: 10px;
+    background-color: #18a350;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#approval .bottomSpace {
+    padding-bottom: 5px;
+}
+
+#approval .userlistcontainer .userProfile {
+    padding-left: 0 !important;
+    background-image: url("images/img_profileSmall.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+    #approval .userlistcontainer .userProfile #photo {
+        width: 40px !important;
+        height: 40px !important;
+        background-image: url("images/img_profileSmall.png");
+    }
+
+#approval .imgHolder {
+}
+
+.exceptionbutton {
+    /*padding: 10px 16px !important;*/
+}
+
+.candobutton {
+    /*padding: 10px 16px !important;*/
+}
+
+
+#usercandoModal .table > tbody > tr > td {
+    border-top: 1px solid #D3D3D3;
+}
+
+#usercandoModal .table > thead > tr > th {
+    /*border-bottom: 1px solid #A7A7A8;*/
+    border-right: 1px solid #D3D3D3;
+    /*border-top: 1px solid #BABABB !important;*/
+    font-size: 14px;
+    color: #3B3B3D;
+    vertical-align: middle;
+    font-weight: normal;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#usercandoModal .candoSection {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+#usermodalform {
+    /*padding: 24px;*/
+}
+
+#usercandoModal section {
+    padding-top: 0px !important;
+}
+
+    #usercandoModal section ul li {
+        float: none;
+        padding-bottom: 0px;
+        border-bottom: 1px solid #A7A7A8;
+    }
+
+.category {
+    margin: 0 !important;
+    list-style: none;
+    color: #484848;
+    border: 1px solid #d3d3d3;
+}
+
+    .category .catitem {
+        list-style: none;
+        padding: 8px;
+        cursor: pointer;
+        border-top: 0px;
+        border-left: 0px;
+        border-bottom: 1px;
+        border-right: 0px;
+        border-color: #d3d3d3;
+        border-style: solid;
+    }
+
+.catitem:hover {
+    background-color: #e6f3fb;
+    opacity: 0.8;
+}
+
+#usercandoModal {
+    width: 885px !important;
+    height: 545px !important;
+    left: 40%;
+}
+
+    #usercandoModal + section {
+        padding-top: 0px !important;
+    }
+
+    #usercandoModal section .category li div {
+        text-align: left;
+        vertical-align: middle;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+    }
+
+.catitem.itemselected {
+    border-right: 1px solid transparent;
+    background-color: #e6f3fb;
+    color: #4d4d4d;
+    font-size: 1.2em;
+}
+
+#usercandoModal tbody > tr > td {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #6F7074;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#usercandoModal .formControl-checkbox {
+    top: 2px !important;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+}
+
+    #usercandoModal .formControl-checkbox span {
+        padding: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    #usercandoModal .formControl-checkbox input:checked + span {
+        /* background: url("../images/icons/checkBox_press.png"); */
+        background: url("../images/sprite_icons.png");
+        background-position: -250px -68px;
+        background-repeat: no-repeat;
+    }
+
+    #usercandoModal .formControl-checkbox span {
+        background: url("../images/sprite_icons.png");
+        background-position: -610px -99px;
+    }
+
+.popup-checkbox span {
+    width: 130px;
+}
+/*Sticky styles */
+#sticky-list {
+    height: 73%;
+    overflow: hidden;
+    position: absolute;
+    border-bottom: 1px solid #BABABB;
+    /* padding: 24px 24px 24px 24px; */
+    width: 96%;
+}
+
+    #sticky-list > ul {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+#usercandoModal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sticky thead {
+    position: absolute;
+    top: 0;
+    display: inherit;
+    background-color: white;
+    z-index: 2;
+}
+
+.ctablehead {
+    cursor: pointer;
+}
+
+    .ctablehead tr {
+    }
+
+.catename {
+    color: #08a2aa;
+}
+
+.catenamecount {
+    color: #0088cc;
+}
+
+.ctablehead:hover {
+    background: #e6f3fb;
+}
+
+.operatorButton {
+    margin-top: 191px;
+    position: absolute;
+    width: 181px;
+    line-height: 52px;
+}
+
+.rightTextFields {
+    margin-left: 204px;
+    top: 24px !important;
+    position: absolute;
+}
+
+    .rightTextFields .spaceBottomfix {
+        margin-bottom: 45px;
+    }
+
+.userlistheader ul {
+    margin: 0px;
+    height: 12px;
+}
+
+    .userlistheader ul li {
+        list-style-type: none;
+        padding: 0px 18px 0px 0px;
+        display: block;
+    }
+
+#approval .operatorSearch {
+    left: 48px;
+    position: absolute;
+    margin: 12px;
+    display: none;
+}
+
+.operatorName {
+    list-style-type: none;
+    padding-top: 40px;
+}
+
+    .operatorName ul li {
+        float: none !important;
+    }
+
+.operatorDetails {
+}
+
+    .operatorDetails li {
+        float: none !important;
+    }
+
+.remove-image {
+    background: url('../images/sprite_icons.png');
+    background-position: -458px -338px;
+    /* background: red; */
+    /* display: block; */
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+#Utilities .tabcontainer {
+    left: 0;
+    width: 100%;
+    position: absolute;
+    float: left;
+    height: 46px;
+    border-left: 1px solid #bababb;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #bababb;
+}
+
+    #Utilities .tabcontainer li a {
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 14px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        border-radius: 0px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        font-family: "Open Sans Regular" !important;
+        outline: none;
+        font-size: 14px;
+    }
+
+        #Utilities .tabcontainer li a:hover {
+            background-color: #f5f5f5;
+            border: 1px solid transparent;
+            color: #0889C4;
+        }
+
+    #Utilities .tabcontainer li.active a {
+        color: #0889C4;
+        background-color: #fff;
+        border-top-color: #bababb;
+        border-right-color: #bababb;
+        border-left-color: #bababb;
+        height: 25px;
+        padding-bottom: 10px;
+        font-family: "Open Sans Regular" !important;
+        font-size: 16px;
+        outline: none;
+    }
+
+        #Utilities .tabcontainer li.active a:hover {
+            border-right-color: #bababb;
+            border-left-color: #bababb;
+        }
+
+    #Utilities .tabcontainer li:first-child.active a {
+        border-left: 0px;
+    }
+
+    #Utilities .tabcontainer li.active a {
+        color: #0889C4;
+        background-color: #fff !important;
+        border-top-color: #bababb;
+        border-right-color: #bababb;
+        border-left-color: #bababb;
+        height: 25px;
+        padding-bottom: 10px;
+        font-family: "Open Sans Regular" !important;
+        outline: none;
+    }
+
+    #Utilities .tabcontainer li a {
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 14px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        border-radius: 0px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    }
+
+        #Utilities .tabcontainer li a:hover {
+            background-color: #f5f5f5;
+            border: 1px solid transparent;
+        }
+
+    #Utilities .tabcontainer li.active a {
+        color: #0889C4 !important;
+        background-color: #fff;
+        border-top-color: #bababb;
+        border-right-color: #bababb;
+        border-left-color: #bababb;
+        height: 25px;
+        padding-bottom: 10px;
+        font-family: "Open Sans Regular" !important;
+        outline: none;
+        font-size: 14px;
+    }
+
+    #Utilities .tabcontainer li:first-child.active a {
+        border-left: 0px;
+    }
+
+    #Utilities .tabcontainer li a:hover {
+        background-color: #f5f5f5;
+        border: 1px solid transparent;
+    }
+
+    #Utilities .tabcontainer #Utils {
+        border-bottom: none;
+    }
+
+#Utilities .navbar {
+    margin-bottom: 0px;
+}
+
+#Utilities .authorizedDealerPgm {
+    float: left;
+    clear: left;
+}
+
+    #Utilities .authorizedDealerPgm .formControl-checkbox {
+        height: 12px;
+        width: 25px;
+    }
+
+    #Utilities .authorizedDealerPgm legand {
+        padding-left: 28px;
+        font-weight: normal;
+        font-size: 15px;
+        padding-left: 39px;
+    }
+
+    #Utilities .authorizedDealerPgm li {
+        width: 70px !important;
+    }
+
+    #Utilities .authorizedDealerPgm .form-registration-heading {
+        padding-left: 14px;
+        margin-top: 0px;
+    }
+
+    #Utilities .authorizedDealerPgm ul {
+        padding-top: 0px;
+    }
+
+/*EULA Styles*/
+/*Eula Tab*/
+#Eulatab {
+    margin-top: 67px;
+}
+
+    #Eulatab .eulaHeading {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-family: "Open Sans Semibold" !important;
+        padding-bottom: 17px;
+    }
+
+    #Eulatab .eulaTxtArea {
+        height: 315px;
+        width: 600px;
+        resize: none;
+    }
+
+    #Eulatab .eulaSecondColumn {
+        padding-left: 24px;
+        margin-top: 2px;
+    }
+
+    #Eulatab #btneulasave {
+        margin-left: 24px;
+        float: left;
+    }
+
+    #Eulatab .eulaSecondColumn .add-on {
+        width: 39px !important;
+        height: 39px !important;
+        z-index: 100;
+        right: 0;
+        border-right: none;
+        border-top: none;
+    }
+
+        #Eulatab .eulaSecondColumn .add-on .icon-calendar {
+            left: 15px;
+            top: 14px;
+            background-position: 0px 0px;
+        }
+
+    #Eulatab .icon-calendar:hover {
+        left: 15px;
+        top: 14px;
+        background-position: 0px 0px;
+    }
+
+#EulaSubContainer .hideerrorSummary {
+    padding-left: 5px;
+    float: left;
+}
+/*Eula Tab*/
+
+/*Eula List*/
+
+.eulaListTable {
+    display: table;
+        -ms-overflow-y: scroll;
+        overflow-y: scroll;
+
+    width: 94%;
+    height: 100%;
+    position: absolute;
+    color: #707070;
+    top: 0;
+    margin: 22px;
+    border-top: 1px solid #bababa;
+    margin-top: 128px;
+}
+
+    .eulaListTable .inputNameField {
+        border: none;
+        cursor: default;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        color: #0889c4;
+    }
+
+    .eulaListTable > thead tr {
+        /*-webkit-box-shadow: -2px 0 2px 2px #000;
+-moz-box-shadow: -2px 0 2px 2px #000;
+box-shadow: -2px 0 2px 0 #000;*/
+        border-bottom: 1px solid #bababa;
+        float: left;
+        width: 100%;
+    }
+
+    .eulaListTable > thead th {
+        border-right: 1px solid #d3d3d3;
+        font-size: 14px;
+        border-bottom: none;
+        background-color: #fff;
+        vertical-align: middle;
+        font-weight: 400;
+    }
+
+        .eulaListTable > thead th:first-child {
+            border-left: none;
+        }
+
+        .eulaListTable > thead th:last-child {
+            border-right: none;
+        }
+
+    .eulaListTable > tbody {
+        width: 100%;
+        position: absolute;
+        overflow: auto;
+        bottom: 156px;
+        top: 44px;
+        height: auto;
+    }
+
+@-moz-document url-prefix() {
+    .eulaListTable > tbody {
+        top: 44px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .eulaListTable > tbody {
+        top: 44px;
+    }
+}
+
+.eulaListTable tbody tr {
+    width: 100%;
+    padding: 8px 0 12px 0;
+    display: inline-block;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.eulaListTable > tbody tr td {
+    font-size: 14px;
+    border: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-word-wrap: break-word;
+   -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+     -o-word-wrap: break-word;
+        word-wrap: break-word;
+
+    padding-bottom: 0;
+    padding-top: 1px;
+    vertical-align: middle;
+    vertical-align: middle\9;
+}
+
+.eulaListTable td:nth-child(1), .eulaListTable th:nth-child(1) {
+    width: 20%;
+}
+
+.eulaListTable td:nth-child(2), .eulaListTable th:nth-child(2) {
+    width: 15%;
+}
+
+.eulaListTable td:nth-child(3), .eulaListTable th:nth-child(3) {
+    width: 15%;
+}
+
+.eulaListTable td:nth-child(4), .eulaListTable th:nth-child(4) {
+    width: 15%;
+}
+
+.eulaListTable th, .eulaListTable td {
+    padding: 11px 10px;
+}
+
+.eulaListTable tbody td, .eulaListTable thead th /*, .left*/ {
+    /*float: left;*/
+    display: inline-block;
+}
+
+.eulaListRefreshIcon {
+    background: url('../images/sprite_icons.png') no-repeat -40px -430px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 102px;
+    right: 59px;
+    cursor: pointer;
+}
+
+#EulaSubContainer {
+    margin-top: 47px;
+}
+
+#EulaSubContainer.contentWrap{
+    border-bottom:none !important;
+    }
+
+/*Eula List*/
+
+/*Eula Tabs*/
+.EULAcontainer #myTab {
+    background-color: #FFFFFF;
+    padding-left: 17px;
+    padding-top: 5px;
+}
+
+    .EULAcontainer #myTab li {
+        margin-right: 29px;
+        background-color: #FFFFFF !important;
+    }
+
+    .EULAcontainer #myTab .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .EULAcontainer #myTab .active {
+        border-bottom: 2px solid #0889C4;
+    }
+
+    .EULAcontainer #myTab.nav-tabs > li a:hover {
+        background: none;
+        border: none;
+        color: #0889C4;
+    }
+
+
+    .EULAcontainer #myTab li a {
+        border: none !important;
+        color: #bababa;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+        .EULAcontainer #myTab li a:hover {
+            background-color: #ffffff !important;
+            border-top: none;
+        }
+/*Eula Tabs*/
+/*EULA Styles*/
+
+/*Billing Styles*/
+.billingcontainer .billingText {
+    margin-top: 67px;
+    padding-left: 24px;
+    color: #707070;
+}
+/*Billing Styles*/
+
+/*Profile Option style for Utlity*/
+.nav > li#profileoptionsUtil > a:hover, .nav > li#profileoptionsUtil > a:focus {
+    background-color: transparent;
+}
+
+#profileoptionsUtil {
+    padding-right: 24px;
+}
+
+    #profileoptionsUtil ul#dash-profile {
+        right: 12px;
+    }
+
+/*Profile Option style for Utlity*/
+/*Dealer Approval Subtabs*/
+#dealerSubContainer {
+    margin-top: 47px;
+}
+
+#dealerSubContainer #myTab {
+    background-color: #FFFFFF;
+    padding-left: 17px;
+    padding-top: 5px;
+}
+
+    #dealerSubContainer #myTab li {
+        margin-right: 29px;
+        background-color: #FFFFFF !important;
+    }
+
+    #dealerSubContainer #myTab .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #dealerSubContainer #myTab .active {
+        border-bottom: 2px solid #0889C4;
+    }
+
+    #dealerSubContainer #myTab.nav-tabs > li a:hover {
+        background: none;
+        border: none;
+        color: #0889C4;
+    }
+
+
+    #dealerSubContainer #myTab li a {
+        border: none !important;
+        color: #bababa;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+        #dealerSubContainer #myTab li a:hover {
+            background-color: #ffffff !important;
+            border-top: none;
+        }
+
+        #dealerSubContainer .activeuserlistinnercontainer {
+            top:0;
+            bottom:0;
+        }
+
+        .activeuserlistinnercontainer  #btnapprove, .activeuserlistinnercontainer  #btndelete {
+            display:none;
+        }
+
+
+/*Dealer Approval Subtabs*/
+

@@ -1,0 +1,423 @@
+﻿.icon-menuCreate-customer {
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 0; 
+}
+.icon-menuCreate-customer:hover{
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -70px;
+}
+
+.icon-menuCreate-group {
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -280px;
+}
+.icon-menuCreate-group:hover{
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -350px;
+}
+
+.icon-menuCreate-site {
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -420px;
+}
+.icon-menuCreate-site:hover{
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -490px;
+}
+
+.icon-menuCreate-device {
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -140px;
+}
+.icon-menuCreate-device:hover{
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -210px;
+}
+
+.icon-menuCreate-operator {
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -560px;
+}
+.icon-menuCreate-operator:hover{
+	background-image: url('../Images/create-menu-icon.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	top: 4px;
+	background-position: 0 -630px;
+}
+/*.icon-plus{
+	background: url("../Images/imgs/icon_add.png");
+    background-repeat:no-repeat;
+    width: 20px;
+	height: 20px;
+	display: block;
+}*/
+
+.icon-itemclose{
+	background: url("../Images/sprite_icons.png");
+    background-repeat:no-repeat;
+    width: 22px;
+	height: 31px;
+	display: inline-block;
+	float: right;
+	background-position: -248px -100px;
+	margin-right: -6px !important;
+}
+
+/*.icon-view-password {
+	background-image: url('../Images/icon_edit.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-view-password:hover{
+	background-image: url('../Images/icon_editHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-calendar{
+	background-image: url('../Images/icon_calendar.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-calendar:hover{
+	background-image: url('../Images/icon_calendarHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-sort-ascending{
+	background-image: url('../Images/icon_ascendingNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+	background-position:0px 0px;
+}	
+
+.icon-sort-ascending:hover{
+	background-image: url('../Images/icon_ascendingHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-sort-descending{
+	background-image: url('../Images/icon_descendingNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 14px;
+	top: 16px;
+	background-position:0px 0px;
+}
+
+.icon-sort-descending:hover{
+	background-image: url('../Images/icon_descendingHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 14px;
+	top: 16px;
+}
+
+.icon-list{
+	background-image: url('../Images/icon_listNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 14px;
+	top: 16px;
+	background-position:0px 0px;
+}	
+
+.icon-list:hover{
+	background-image: url('../Images/icon_listHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 14px;
+	top: 16px;
+}*/
+
+.icon-view-password {
+	background-image: url('../Images/icon_edit.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-view-password:hover{
+	background-image: url('../Images/icon_editHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+	left: 21px;
+	top: 16px;
+}
+
+.icon-calendar{
+	background-image: url('../Images/icon_calendar.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-calendar:hover{
+	background-image: url('../Images/icon_calendarHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-sort-ascending{
+	background: url('../images/sprite_icons.png') no-repeat -190px -71px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+	
+}	
+
+.icon-sort-ascending:hover{
+	background: url('../images/sprite_icons.png') no-repeat -220px -71px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-sort-descending{
+	background: url('../images/sprite_icons.png') no-repeat -190px -101px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-sort-descending:hover{
+	background: url('../images/sprite_icons.png') no-repeat -220px -101px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+
+.icon-list{
+	background: url('../images/sprite_icons.png') no-repeat -191px -42px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}	
+
+.icon-list:hover{
+	background: url('../images/sprite_icons.png') no-repeat -221px -42px;
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;													
+	left: 21px;
+	top: 16px;
+}
+	
+
+.icon-removeRule{																	
+	background-image: url('../Images/icon_delete.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	
+	margin-left: 16px;
+	background-position: 0;									
+}
+
+.icon-removeRule:hover{																	
+	background-image: url('../Images/icon_deleteHover.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	
+	margin-left: 16px;									
+}
+
+.icon-added{																	
+	background-image: url('../Images/icon_added.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	margin-left: 16px;									
+}
+.icon-dragger{																	
+	background-image: url('../Images/icon_dragger.png');
+	display: inline-block;
+	width: 20px;
+	position: relative;
+	height: 20px;
+	z-index: 100;
+	margin-left: 16px;									
+}
+
+.icon-listRules {
+	background-image: url('../Images/icon_listNormal.png');
+	display: inline-block;
+	width: 20px;
+	
+	height: 20px;
+	left: 21px;
+	top: 16px;
+	background-position: 0px 0px;
+}
+.icon-listRules:hover {
+	background-image: url('../Images/icon_listHover.png');
+	display: inline-block;
+	width: 20px;
+	
+	height: 20px;
+	left: 21px;
+	top: 16px;
+	background-position: 0px 0px;
+}
+.icon-hide{
+	background: url("../Images/icon_hide.png");
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px !important;
+	position: relative;
+	display: inline-block;
+}
+.icon-hide:hover {
+	background: url("../Images/icon_hideHover.png");
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px !important;
+}
+
+.sortableIcon {
+	background: url("../Images/icon_dragger.png");
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.icon-added {
+	background-image: url('../Images/icon_added.png');
+	display: inline-block;
+	width: 45px;
+	position: relative;
+	height: 45px;
+	z-index: 1;
+	margin-left: 0px !important;
+	margin-top: -24px;
+	padding-top: 0px !important;
+}

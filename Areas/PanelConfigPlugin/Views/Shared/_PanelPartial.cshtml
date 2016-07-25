@@ -1,0 +1,74 @@
+﻿<div>  
+    @*<link href="~/Content/PanelConfigPlugin/PanelConfiguration.css" rel="stylesheet" />*@
+    <script src="~/Scripts/PanelConfigPlugin/panel-view.js"></script>
+    <div class="field-group">
+        <ul>
+            <li>
+                <div class="field">
+                <label for="SelectedTemplate" class="floatLblDn">@Resources.Panel_PanelTemplate</label>
+                <select>
+                    <option>@Resources.Panel_DefaultText</option>
+                </select>
+                </div>
+            </li>
+            <li>
+                <div class="field">
+                <label for="PanelName" class="floatLblDn">@Resources.Panel_PanelName</label>
+                <input type="text" name="Name" />
+                </div>
+            </li>
+
+            <li>
+                <div class="field">
+                <label for="description" class="floatLblDn">@Resources.Panel_DescriptionText</label>
+                <input type="text" name="Description" />
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="field-group">
+        <ul>
+            <li>
+                <div class="field">
+                <label for="firmware" class="floatLblDn">@Resources.Panel_FirmwareText</label>
+                <select>
+                    <option>@Resources.Panel_3dot4Later</option>
+                </select>
+                </div>
+            </li>
+
+            <li>
+                <div class="field">
+                    <label for="status" class="floatLblDn">@Resources.Panel_StatusText</label>
+                <select>
+                    <option>@Resources.Panel_ActiveText</option>
+                    <option>@Resources.Panel_InActiveText</option>
+                    <option>@Resources.Panel_NotPresentText</option>
+                </select>
+                </div>
+            </li>
+            <li>
+                <div class="field">
+                <label for="panelAddress" class="floatLblDn">@Resources.Panel_AddressText</label>
+                <input id="panelAddress" type="number" name="panelAddress" value="1" min="0" max="31" step="1" class="numeric-type" />
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="field-group button-group">
+        <ul>
+            <li>
+                <input type="button" name="justSave" value="Save" />
+            </li>
+            <li>
+                <label>Or</label>
+            </li>
+            <li>
+                <input type="text" name="TemplateName" />
+            </li>
+            <li>
+                <input type="button" name="saveTemplate" value="Save and Add a Template" />
+            </li>
+        </ul>
+    </div>
+</div>

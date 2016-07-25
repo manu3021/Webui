@@ -1,0 +1,109 @@
+﻿<span class="reportsHeading">@Resources.Report_Filters</span>
+
+<ul>
+    <li data-bind="if: $data.get_value_by_filterId('[Account]').IsLoaded">
+        <div class="field select-field">
+            <label for="selectAccount">@Resources.Report_Filter_Account</label>
+            <select id="selectEventAccount" tabindex="2" data-bind="options:$data.get_value_by_filterId('[Account]').PossibleValues ,optionsText: function(item) {return item.Value();},optionsValue:function(item) {return item.Id();},optionsCaption: 'All',value:$data.get_value_by_filterId('[Account]').SearchValue,event:{change:$data.onAccountChange}"></select>
+        </div>
+
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Date_heading</span>
+    <li>
+        <div class="input-append date field right-inner-addon event-date notRequiredStyle" id="auditActivationDate" data-date="" data-date-format="" data-bind="datepicker:$data.get_value_by_filterId('[AuditLogEventTime]').StartDate, datepickerOptions: {format: '@Resources.datetime_picker_format' }">
+            <a class="reset_cal_icon"></a>
+            <span class="add-on" tabindex="3"><b class="icon-calendar"></b></span>
+            <label class="floatLblDn">@Resources.Select_Start_Date</label><input type="text" id="startDate" required="" placeholder="@Resources.Select_Date" readonly="readonly" class="floatTxt myStyle">
+        </div>
+
+    </li>
+    <li>
+        <div class="input-append date field right-inner-addon event-date notRequiredStyle" id="auditExpireDate" data-date="" data-date-format="" data-bind="datepicker:$data.get_value_by_filterId('[AuditLogEventTime]').EndDate, datepickerOptions: {format: '@Resources.datetime_picker_format'}">
+            <a class="reset_cal_icon"></a>
+            <span class=" add-on" tabindex="4">
+                <b class="icon-calendar"></b>
+            </span>
+            <label class="floatLblDn">@Resources.Select_End_Date</label><input type="text" required="" placeholder="@Resources.Select_Date" readonly="readonly" class="floatTxt myStyle">
+        </div>
+    </li>
+    <li data-bind="if: $data.get_value_by_filterId('[Timezone]').IsLoaded">
+        <div class="field select-field">
+            <label for="selectTimezone">@Resources.Report_Filter_Timezone</label>
+            <select id="selectTimezone" tabindex="5" data-bind="options:$data.get_value_by_filterId('[Timezone]').PossibleValues ,optionsText:'Value',optionsValue:'Value', optionsCaption: 'None', value:$data.timezone"></select>
+        </div>
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Filter_Users</span>
+   
+        <div data-bind="visible: $data.auditReportUserList().length>0">
+            <label class="formControl-checkbox">
+                <input class="checkbox" type="checkbox" data-bind="checked:$data.IsAllAuditUser, click: $data.onSelectAllUserFilter">
+                <span></span>
+            </label>
+            <legand>Select-All</legand>       
+         </div>
+    
+    
+    <li class="event-wrap">
+        <!--ko foreach: $data.auditReportUserList-->
+        <div>
+             <label class="formControl-checkbox">
+                 <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click:$root.onSelectUserFilter" />
+            <span></span>
+            </label>
+	        <legand data-bind="text: $data.UserName"></legand>
+        </div>
+        <!--/ko-->
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Filter_User_Actions</span>
+    <li>
+        <div>
+            <ul id="eventConfigContainer" class="" data-bind="template: { name: 'useractions-events-template', foreach: $data.dashboardEvents }"></ul>
+        </div>
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Filter_Entities</span>
+    <div>
+        <label class="formControl-checkbox">
+
+            <input class="checkbox" type="checkbox" data-bind="checked:$data.get_value_by_filterId('[SystemEntityTypeName]').IsAll, click: $data.get_value_by_filterId('[SystemEntityTypeName]').CheckAllValues">
+            <span></span>
+        </label>
+        <legand>Select-All</legand>
+    </div>
+    <li class="event-wrap">
+        <!--ko foreach: $data.get_value_by_filterId('[SystemEntityTypeName]').PossibleValues-->
+        <div>
+             <label class="formControl-checkbox">
+                 <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected , click:$root.get_value_by_filterId('[SystemEntityTypeName]').CheckEntitiyValue">
+            <span></span>
+            </label>
+	        <legand data-bind="text: $data.Value"></legand>
+        </div>
+        <!--/ko-->
+    </li>
+</ul>
+<script src="~/Scripts/ReportMgmtPlugin/reportmgmt-validationcontext.js"></script>
+
+<script id="useractions-events-template" type="text/html">
+    <li class="dashbdSearch" data-bind="visible: $data.IsVisible">
+        <label class="formControl-checkbox">
+            <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+            <span></span>
+        </label>
+        <legand data-bind="text: $data.Name" />
+        <span class="collapseIcon" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+        <!-- ko if: $data.Categories().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="template: { name: 'useractions-events-template', foreach: $data.Categories }"></ul>
+        <!-- /ko -->
+        <!-- ko if: $data.Events().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="foreach: $data.Events">
+            <li class="dashbdSearch">
+                <label class="formControl-checkbox">
+                    <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventSelection">
+                    <span></span>
+                </label>
+                <legand data-bind="text: $data.Description" />
+            </li>
+        </ul>
+        <!-- /ko -->
+    </li>
+</script>

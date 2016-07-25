@@ -1,0 +1,42 @@
+﻿<div id="reportManagementBaseId">
+    <div id="reportBaseContentId" class="report-base-content"></div>
+</div>
+
+@{
+    Html.RenderAction("ReportPreviewPartial");
+}
+<input id="getreportsummaryurl" type="hidden" data-url='@Url.Action("GetReportSummary", "ReportMgmt")' />
+<input id="getreportgroupsbyaccounturl" type="hidden" data-url='@Url.Action("GetReportGroups", "ReportMgmt")' />
+<input id="getreportbyidurl" type="hidden" data-url='@Url.Action("GetReport", "ReportMgmt")' />
+<input id="getreporthtmlurl" type="hidden" data-url='@Url.Action("GetReportPage", "ReportMgmt")' />
+<input id="getreportindexhtmlurl" type="hidden" data-url='@Url.Action("GetReportIndexPage", "ReportMgmt")' />
+
+<input id="getreportlisthtmlurl" type="hidden" data-url='@Url.Action("ReportManagementListPartial", "ReportMgmt")' />
+<input id="getreportfiltervaluesurl" type="hidden" data-url='@Url.Action("GetPossibleFilterValues", "ReportMgmt")' />
+<input id="getreportfilterconditionsurl" type="hidden" data-url='@Url.Action("GetPossibleFilterConditions", "ReportMgmt")' />
+<input id="savereporturl" type="hidden" data-url='@Url.Action("SaveReport", "ReportMgmt")' />
+<input id="deletereporturl" type="hidden" data-url='@Url.Action("DeleteReport", "ReportMgmt")' />
+<input id="generatereporturl" type="hidden" data-url='@Url.Action("GetReportResult", "ReportMgmt")' />
+<input id="generatestatusreporturl" type="hidden" data-url='@Url.Action("GetReportStatusResult", "ReportMgmt")' />
+<input id="exportreporturl" type="hidden" data-url='@Url.Action("ExportReport", "ReportMgmt")' />
+<input id="getreporttemplateurl" type="hidden" data-url='@Url.Action("GetReportTemplate", "ReportMgmt")' />
+<input id="GetAllEventCategoriesurl" type="hidden" data-url='@Url.Action("GetAllEventCategories", "ReportMgmt")' />
+<input id="GetAllUserActionCategoriesurl" type="hidden" data-url='@Url.Action("GetAllUserActionCategories", "ReportMgmt")' />
+<input id="GetAuditReportUserListFilterurl" type="hidden" data-url='@Url.Action("GetAuditReportUserListFilter", "ReportMgmt")' />
+<input id="getaccountsbyidurl" type="hidden" data-url='@Url.Action("GetAccountsById", "ReportMgmt")'>
+<input id="getsitesbyaccountidsurl" type="hidden" data-url='@Url.Action("GetSitesByAccountIds", "ReportMgmt")'>
+<input type="hidden" id="getreportdetailhtmlurl" data-url='@Url.Action("GetReportDetailPage", "ReportMgmt")' />
+<input type="hidden" id="getreportusersurl" value="@Url.Action("GetReportUsers", "ReportMgmt")" />
+<input type="hidden" id="getreportmgmtaccountsurl" value="@Url.Action("GetReportmgmtAccounts", "ReportMgmt")" />
+
+@*<link href="~/Content/ReportMgmtPlugin/reports.css" rel="stylesheet" media="screen">*@
+<!--<link href="~/Content/ReportMgmtPlugin/custom-bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
+
+@Scripts.Render("~/bundles/ReportMgmtPluginscript2")
+
+@*<script src="~/Scripts/ReportMgmtPlugin/reportmgmt-common.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/reportmgmt-datacontext.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/reportmgmt-validationcontext.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/reportmgmt-uicontext.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/reportmgmt-event-manager.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/reportmgmt-models.js"></script>*@

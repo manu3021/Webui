@@ -1,0 +1,43 @@
+﻿.radio{
+	padding:0;
+	margin:0;
+}
+.formControl-radio input:checked + span {
+	background: url("../images/icons/radioBtn_press.png");
+	background-repeat: no-repeat;
+}
+
+.formControl-radio span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background: url("../images/icons/radioBtn_normal.png");
+	background-repeat: no-repeat;
+	/*position:absolute;*/
+}
+
+.radiodisabled span {
+	background: url("../images/icons/radioBtn_disable.png");
+}
+
+.formControl-radio input {
+	display: none;
+}
+
+.formControl-radio{
+	border-style: none;
+	color: #6F7074;
+	font-size: 13px;
+	margin: 0;
+	position: relative;
+	top: 4px;
+	padding-left: 0 !important;
+	/*display:inline-block;*/
+}
+
+.radio .radiotext{
+	padding-right:15px;
+	padding-left: 39px;
+	font-size: 15px;
+	color: #6F7074;
+}

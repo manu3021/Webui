@@ -1,0 +1,42 @@
+﻿@*@Styles.Render("~/Content/userconfigstyles/userconfigstyle.css")*@
+<div class="userconfigcontainer layoutcol" data-url="@Url.Action("", "UserConfig")">
+    @if (Html.HasPermissions(MPCPermissions.Add_User))
+    {
+        <div id="operatorCreate" class="userlistheader layoutrow">
+        <ul>
+            <li>
+            <div class="icon_plus icon_usr_add" title='@Resources.Create_Operator' data-bind="click: $data.createNewUser"></div>
+            </li>
+            <li>
+                <div class="operatorSearch">
+                    <div class="searchHolder">
+                        <span id="demo-b">
+                            <input placeholder="Search" class="searchbox" type="search" data-bind="autoFilter:{wrapperClassName : 'userliststyle'}">
+                        </span>
+        </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    }
+    <div class="userlistinnercontainer layoutrow">
+        <div id="userlistform" class="userlistcontainer layoutcol">
+            @Html.Partial("_UserListPartial")
+        </div>
+        <div id="usercontainerform" class="userdetailcontainer layoutcol">
+            @Html.Partial("_UserPartial")
+            @Html.Partial("_UserConfigModal")
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/UserMgmtPluginscript2")
+
+@*@Scripts.Render("~/Scripts/userconfig/user.common.js",
+            "~/Scripts/userconfig/user.datacontext.js",
+            "~/Scripts/userconfig/user.validationcontext.js",
+            "~/Scripts/userconfig/user.uicontext.js",
+            "~/Scripts/userconfig/user.eventreciever.js",
+            "~/Scripts/userconfig/user.model.js")*@
+
+

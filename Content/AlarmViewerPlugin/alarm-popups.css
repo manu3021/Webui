@@ -1,0 +1,1000 @@
+#alarviewWrapper .popover {
+    background-color: #272727;
+    border: 1px solid #272727;
+    height: auto;
+}
+
+#alarviewWrapper .popover-title {
+    background-color: #272727;
+    border-bottom: 1px solid #1d1d1d;
+    color: #d3d3d3;
+    font-size: 15px;
+    padding: 13px 22px 16px 21px;
+}
+
+#alarviewWrapper .action-popup .popover-title {
+    padding-bottom: 15px;
+    display: none;
+}
+
+#alarviewWrapper .action-popup .popover {
+    width: 345px;
+    min-width: 204px;
+    /*width:410px;
+max-width:410px!important;*/
+    height: auto;
+}
+
+#alarviewWrapper .action-popup .popover-content {
+    background-color: #323232;
+    padding: 3px 13px 2px 23px !important;
+    width: auto;
+}
+
+#alarviewWrapper .content h5 {
+    padding-top: 16px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    color: #d3d3d3;
+    margin: 0;
+    width: 100%;
+}
+
+#alarviewWrapper .popover-content p {
+    color: #d3d3d3;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+#alarviewWrapper .popover-content ol {
+    color: #d3d3d3;
+    margin: 0 0 10px 23px !important;
+}
+
+#alarviewWrapper .for-popup .popover {
+    max-width: 313px;
+    width: 352px;
+    min-width: 352px;
+    border: 2px solid #272727;
+    top: 35px !important;
+    right: 0;
+    left: auto !important;
+    border-top: none;
+}
+
+#alarviewWrapper .map-small-img img {
+    width: 294px;
+}
+
+#alarviewWrapper .for-popup .popover-content {
+    background-color: #f5f5f5;
+    -webkit-border-bottom-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    -webkit-border-bottom-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    padding: 0;
+    clear: both;
+}
+
+#alarviewWrapper .for-popup #displayname {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    width: 150px;
+}
+
+#alarviewWrapper .reader-header {
+    border-bottom: 1px solid #DCDCDC;
+    padding: 11px 23px;
+}
+
+#alarviewWrapper #alerm-menu-user {
+    background: #fff;
+}
+
+#alarviewWrapper .alerm-menu-userBody ul {
+    height: 213px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    #alarviewWrapper .alerm-menu-userBody ul:hover {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+#alarviewWrapper .for-popup .popover-content ul li {
+    list-style: none;
+    border-bottom: 1px solid #DCDCDC;
+    width: 87%;
+    display: inline-block;
+    color: #454545;
+    padding: 10px 23px;
+}
+
+    #alarviewWrapper .for-popup .popover-content ul li:hover {
+        background-color: #e6f3fb;
+    }
+
+    #alarviewWrapper .for-popup .popover-content ul li:last-child {
+        border-bottom: none;
+    }
+
+#alarviewWrapper p.status {
+    width: 286px;
+    float: left;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#alarviewWrapper b.icon_locked {
+    margin-top: -16px;
+    right: 20px;
+}
+
+/*#alarviewWrapper #filterwithTime {
+    margin-bottom: 20px;
+    display: inline-block;
+}*/
+
+#alarviewWrapper span.userProfile {
+    /* float: left; */
+    display: block;
+    margin-bottom: 10px !important;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none;
+    left: 14px;
+    position: relative;
+}
+
+#alarviewWrapper span.imageHolder {
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+}
+
+#alarviewWrapper .imageHolder img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 0;
+    padding: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#alarviewWrapper .alarm-door-userProfile {
+    display: inline-block;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none !important;
+}
+
+#alarviewWrapper span.eventerror {
+    display: block;
+    text-align: center;
+    padding-top: 16px;
+    color: #E33E38;
+    padding-bottom: 16px;
+}
+/*span.eventerror + div.alerm-menu-userBody {
+display: none;
+}*/
+#alarviewWrapper .alarm-door-lock-unlock-pos {
+    right: 20px;
+}
+
+#alarviewWrapper #cameraName {
+    float: left;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    color: #bababb;
+    display: block;
+}
+
+#alarviewWrapper #videocontainer, #alarviewWrapper #mapcontainer {
+    height: auto;
+    background-color: #272727;
+    text-align: center;
+    padding: 21px;
+}
+
+#alarviewWrapper #mapcontainer {
+    padding: 0;
+}
+
+#alarviewWrapper .footerFullScreen {
+    /*margin-top: 10px;*/
+    text-align: left;
+    padding: 11px 22px 44px;
+    background-color: #272727;
+}
+
+#alarviewWrapper #mapcontainer .content {
+    text-align: center;
+}
+
+#alarviewWrapper .map-info-para, #alarviewWrapper .video-box {
+    background-color: #272727;
+    padding: 11px 22px 44px 22px !important;
+    text-align: left;
+}
+
+#alarviewWrapper .map-small-img {
+    float: none !important;
+    clear: both;
+    margin: 0 !important;
+    padding: 0 20px;
+    display: block;
+}
+
+#alarviewWrapper.mapmodel {
+    background-color: #FFF;
+    border: 1px solid #BEBEBE;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: auto;
+    top: 10% !important;
+    left: 40%;
+}
+
+#alarviewWrapper .full-map, #alarviewWrapper .full-video, #alarviewWrapper .split-full-map {
+    width: 960px;
+    height: 500px;
+    opacity: 1;
+}
+
+.alarm-multivideo-viewer {
+    position: absolute;
+    right: 32px;
+    top: 65px;
+    z-index: 5;
+}
+
+#myMap, #multiple-videos, #mySplitMap {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0;
+}
+
+#alarviewWrapper .actionBtn {
+    color: #0889c4;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+    #alarviewWrapper .actionBtn:hover {
+        color: #0199C8;
+        text-decoration: none;
+    }
+
+#alarviewWrapper .legendtext {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+    #alarviewWrapper .legendtext:hover {
+        color: #0889c4 !important;
+    }
+
+#motionPop {
+    width: 800px;
+    display: none;
+    opacity: 1;
+}
+
+    #motionPop .table > tbody > tr > td {
+        border: none;
+    }
+
+#alarviewWrapper .select-field .multiselect-container a {
+    background: #fff !important;
+    color: #6f7074 !important;
+    padding: 13px 20px !important;
+}
+
+#alarviewWrapper .select-field .multiselect {
+    background: none;
+    border: none;
+    width: 250px !important;
+    border-right: 1px solid #d3d3d3;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #d3d3d3;
+    text-align: left;
+    height: 48px;
+    line-height: 45px;
+}
+
+#alarviewWrapper .select-field .btn {
+    outline: none;
+}
+
+#alarviewWrapper .mpcmodel input {
+    width: 230px;
+    padding-top: 6px;
+}
+
+#motionPop .table > thead > tr > th, #sticky-list-reportHistory h5 {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    font-size: 14px;
+    color: #3B3B3D;
+    vertical-align: middle;
+    font-weight: 400;
+    padding-left: 14px;
+    padding-right: 14px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+#sticky-list-reportHistory h5 {
+    border-right: none;
+    padding-left: 0;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+#motionPop.mpcmodel section {
+    padding: 12px 32px 14px;
+}
+
+#motionPop .table > thead:first-child > tr:first-child > th:last-child {
+    border-right: none;
+}
+
+#motionPop tbody > tr > td {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #6F7074;
+    padding-left: 14px;
+    padding-right: 14px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+#motionPop #sticky-list-reportHistory {
+    height: 370px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #BABABB;
+}
+
+    #motionPop #sticky-list-reportHistory > ul {
+        height: 90%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+#motionPop ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#motionPop .sticky thead {
+    position: absolute;
+    top: 0;
+    display: inherit;
+    background-color: #FFF;
+    z-index: 2;
+}
+
+#alarviewWrapper .popover.bottom .arrow, #alarviewWrapper .popover.bottom .arrow:after {
+    border-bottom-color: #272727;
+}
+
+#alarviewWrapper .box-col9 .arrow /*, #alarviewWrapper #box-col9 .arrow:after*/ {
+    /* left: 53%; */
+    top: -12px;
+    right: 6px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 16px solid #272727;
+    border-width: 6px;
+}
+/*Alarm clip search results*/
+.alarm-full-video-Container {
+    width: 222px;
+    /*float: left;*/
+    overflow-y: auto;
+    height: 369px;
+}
+
+.alarm-full-video-body {
+    /*position: absolute;*/
+    /*top: 51px;*/
+    /*background:black;*/
+    /*bottom: 79px;*/
+    /*border-right: 1px solid #ddd;*/
+    /*float:left;*/
+    overflow-y: auto;
+}
+
+.full-video section {
+    padding: 0 !important;
+}
+
+/*.alarm-full-video-body ul {
+    margin: 0 !important;
+}*/
+
+.full-video .videobuttonGroup {
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;*/
+    border-top: 1px solid #BABABB;
+    /*margin: 0 !important;*/
+}
+
+.full-video .videoclosebutton {
+    margin: 16px 24px 32px;
+}
+
+.alarm-full-video-body li {
+    padding: 16px 24px !important;
+    border-bottom: 1px solid #D3D3D3;
+    float: none !important;
+    margin: 0;
+    width: auto !important;
+    list-style-type: none;
+}
+
+    .alarm-full-video-body li:last-child {
+        border-bottom: none;
+    }
+
+.video-clip-play-section {
+    /*width: 70%;*/
+    /*background: black;*/
+    /* float: right; */
+    padding: 24px;
+    height: 321px;
+    overflow: hidden;
+    right: 0;
+    position: absolute;
+    top: 52px;
+    left: 25.1%;
+    border-left: 1px solid #ddd;
+}
+
+.alarm-full-video-body .alarm-event-clip-name {
+    font-size: 15px;
+    color: #454545;
+    padding-bottom: 3px;
+}
+/*.alarm-full-video-body .onsite_oncloudStatus {
+float: right;
+font-size: 13px;
+color: #707070;
+}*/
+.alarm-full-video-body .alarm-event-clip-details {
+    display: block;
+    font-size: 13px;
+    color: #707070;
+    line-height: 1.4;
+}
+
+.alarm-full-video-body ul li:hover, .highlightMultiClip {
+    background-color: #E6F3FB;
+    cursor: pointer;
+}
+/*Alarm clip search results end here*/
+
+/*Alarm multi video model style start here*/
+.alarmmpcmodel {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 880px;
+    color: #707070;
+    font-size: 13px;
+    left: 0;
+    margin-top: 45px;
+}
+
+    .alarmmpcmodel header {
+        padding: 14px 30px 14px 24px;
+        border-bottom: 2px solid #0889C4;
+    }
+
+        .alarmmpcmodel header span {
+            color: #3B3B3D;
+            text-align: left;
+            vertical-align: middle;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-family: Gotham-Medium !important;
+        }
+
+
+    .alarmmpcmodel section {
+        padding: 20px 32px 14px 32px;
+    }
+
+        .alarmmpcmodel section ul {
+            list-style-type: none;
+            margin: 0;
+        }
+
+            .alarmmpcmodel section ul li {
+                float: left;
+                padding-bottom: 22px;
+            }
+
+    .alarmmpcmodel footer {
+        position: relative !important;
+        padding: 0 !important;
+    }
+
+    .alarmmpcmodel .modal-footer {
+        background-color: #FFFFFF;
+        text-align: left;
+        padding: 0 0 32px 32px;
+        border-radius: 4px;
+        border: none;
+    }
+
+        .alarmmpcmodel .modal-footer button {
+            margin-right: 3px;
+        }
+
+    .alarmmpcmodel .spaceBottomStyle {
+        padding-bottom: 16px;
+    }
+
+    .alarmmpcmodel legend {
+        border-style: none;
+        color: #6F7074;
+        font-size: 13px;
+        margin: 0;
+        padding-left: 13px;
+        position: absolute;
+        width: auto;
+    }
+
+    .alarmmpcmodel input {
+        font-size: 15px;
+        /*height: 32px;*/
+        padding-bottom: 8px;
+        padding-left: 10px !important;
+        padding-top: 20px;
+        padding-right: 14px;
+        color: #6F7074;
+        border-bottom: 1px solid #D3D3D3;
+        border-right: 1px solid #D3D3D3;
+        border-style: none solid solid none;
+        width: 200px;
+        -webkit-appearance: none;
+        box-shadow: none !important;
+        border-radius: 0;
+    }
+
+    .alarmmpcmodel .motion-popup-text {
+        width: 13%;
+        padding-top: 25px !important;
+    }
+
+    .alarmmpcmodel .modal .modelLeftSection {
+        float: left;
+        width: 40%;
+        height: 400px;
+    }
+
+    .alarmmpcmodel .modal .modelRightSection {
+        float: right;
+        width: 40%;
+        height: 400px;
+    }
+
+    .alarmmpcmodel input[type="text"]:focus, .alarmmpcmodel input:focus {
+        /*border-style: none solid solid none;*/
+        border-color: #D3D3D3;
+    }
+
+    .alarmmpcmodel .modal-backdrop, .alarmmpcmodel .modal-backdrop.fade.in {
+        background-color: #000000;
+        opacity: 0.4;
+    }
+
+    .alarmmpcmodel #sticky-list-reportHistory ul li {
+        float: none;
+        clear: both;
+    }
+
+/*Alarm multi video model style end here*/
+
+/*Alarm Save Filter model style start here*/
+.saveFiltersModel {
+    border: 1px solid #D3D3D3;
+    width: 305px;
+    margin-top: 10%;
+    padding: 28px 23px;
+    display: none;
+    left: 55%;
+    height: 100px;
+}
+
+    .saveFiltersModel section {
+        padding: 0;
+    }
+
+    .saveFiltersModel footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 14px 24px 32px 24px;
+    }
+
+    .saveFiltersModel .sflabel {
+        font-size: 15px;
+    }
+
+    .saveFiltersModel .sfbuttonGroup {
+        clear: both;
+    }
+
+    .saveFiltersModel input {
+        margin-top: 19px;
+        margin-bottom: 0 !important;
+    }
+
+    .saveFiltersModel form {
+        margin: 0;
+    }
+/*Alarm Save Filter model style end here*/
+/*Alarm Tooltip style start here*/
+.door-popup .tooltip {
+    right: 0px;
+    left: auto !important;
+    width: auto;
+    top: 25px !important;
+    opacity: 1;
+    font-size: 12px !important;
+    min-width: 100px;
+}
+
+.video-popup .tooltip {
+    right: 0px;
+    left: auto !important;
+    width: auto;
+    top: 25px !important;
+    opacity: 1;
+    font-size: 12px !important;
+    min-width: 150px;
+}
+
+.multi-video-popup .tooltip {
+    right: 0px;
+    left: auto !important;
+    width: auto;
+    top: 25px !important;
+    opacity: 1;
+    font-size: 12px !important;
+    min-width: 175px;
+}
+
+    .door-popup .tooltip.top .tooltip-arrow, .video-popup .tooltip.top .tooltip-arrow, .multi-video-popup .tooltip.top .tooltip-arrow {
+        bottom: 0;
+        left: 50%;
+        margin-left: -5px;
+        border-top-color: #000000;
+        border-width: 0;
+    }
+/*Alarm Tooltip style end here*/
+
+#multiple-videos .alarmsVideoError {
+    padding-top: 24%;
+    text-align: center;
+}
+
+.alarmdoorpopover .icon_unlocked {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.alarmdoorpopover .webui-popover-content {
+    padding-bottom: 0px !important;
+    overflow: hidden;
+}
+
+    .alarmdoorpopover .webui-popover-content footer {
+        margin-top: 0px !important;
+    }
+
+    .alarmdoorpopover .webui-popover-content .contentWrap {
+        margin-bottom: 14px;
+    }
+
+
+    .alarmdoorpopover .webui-popover-content footer {
+        /*margin-top: 0px !important;*/
+    }
+
+/* jquery webui popover */
+.alarmdoorpopover p.status {
+    width: 250px;
+    text-transform: capitalize;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin-bottom: 0px !important;
+    /*white-space: pre;*/
+}
+
+.alarmdoorpopover b.icon_locked {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+#alerm-menu-user span.userProfile {
+    /* float: left; */
+    display: block;
+    margin-bottom: 10px !important;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none;
+    left: 14px;
+    position: relative;
+}
+
+#alerm-menu-user span.imageHolder {
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+}
+
+#alerm-menu-user .imageHolder img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 0;
+    padding: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#alerm-menu-user #displayname {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    width: 150px;
+}
+
+/*.reader-header {
+    border-bottom: 1px solid #DCDCDC;
+    padding: 11px 23px;
+}*/
+
+#alerm-menu-user {
+    background: #fff;
+}
+
+    #alerm-menu-user .alerm-menu-userBody ul {
+        max-height: 213px;
+        min-height: 202px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-left: 2px solid #323232;
+        border-right: 2px solid #323232;
+    }
+
+        #alerm-menu-user .alerm-menu-userBody ul:hover {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+
+        #alerm-menu-user .alerm-menu-userBody ul li {
+            list-style: none;
+            border-bottom: 1px solid #DCDCDC;
+            width: 87%;
+            display: inline-block;
+            color: #454545;
+            padding: 10px 23px;
+        }
+
+            #alerm-menu-user .alerm-menu-userBody ul li:hover {
+                background-color: #e6f3fb;
+            }
+
+            #alerm-menu-user .alerm-menu-userBody ul li:last-child {
+                border-bottom: none;
+            }
+
+    #alerm-menu-user span.eventerror {
+        display: block;
+        text-align: center;
+        padding-top: 16px;
+        color: #E33E38;
+        padding-bottom: 16px;
+        border-left: 2px solid #323232;
+        border-right: 2px solid #323232;
+    }
+
+.contentWrap .content {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+    .contentWrap .content h5 {
+        padding-top: 16px;
+        font-weight: 400;
+        padding-bottom: 10px;
+        color: #d3d3d3;
+        margin: 0;
+        width: 100%;
+    }
+
+
+
+.alarmcamerapopover {
+    width: 300px !important;
+    /* overflow: hidden; */
+    height: 250px !important;
+}
+
+    .alarmcamerapopover .webui-popover-content {
+        overflow: hidden;
+        padding-bottom: 0px !important;
+    }
+
+    .alarmcamerapopover #cameraName {
+        float: left;
+        padding-left: 20px;
+        padding-top: 7px;
+        padding-bottom: 5px;
+        color: #bababb;
+        display: block;
+    }
+
+    .alarmcamerapopover #videocontainer {
+        /*height: auto;*/
+        background-color: #272727;
+        text-align: center;
+        padding: 0px 0px 0px 0px;
+        /*padding: 21px;*/
+    }
+
+        .alarmcamerapopover #videocontainer + div {
+            padding: 21px;
+        }
+
+    .alarmcamerapopover .contentWrap {
+        border-bottom: 0px solid #455445 !important;
+        /* min-height:250px !important; */
+        overflow: hidden;
+        width: 300px;
+        margin-bottom: 0px;
+        float: left;
+    }
+
+.alarmactionspopover {
+    margin-top: 0px !important;
+    padding:0px;
+}
+
+
+
+    .alarmactionspopover .contentWrap {
+        border-bottom: 0px solid #455445;
+        margin-bottom: 0px !important;
+        height: 215px;
+    }
+
+        .alarmactionspopover .contentWrap .hideControls {
+            display: none;
+        }
+
+
+        .alarmactionspopover .contentWrap .showControls {
+            display: inline-block;
+            padding-top: 15px;
+            padding-bottom: 0px;
+            /*left:30%;
+            top:30%;
+            position:absolute;*/
+        }
+
+            .alarmactionspopover .contentWrap .showControls.center-align {
+                left: 30%;
+                /*top: 30%;*/
+                position: absolute;
+                width: 200px;
+            }
+
+        .alarmactionspopover .contentWrap .content {
+            padding-bottom: 0px !important;
+        }
+        .alarmactionspopover .withoutContentWrap{
+            min-height:50px !important;
+            height:50px !important;
+        }
+
+        .alarmactionspopover #ActionSiteInfo .hideControls {
+            display: none;
+        }
+
+
+        .alarmactionspopover #ActionSiteInfo .showControls {
+            display: inline-block;
+            padding-bottom: 5px;
+            padding-top: 0px;
+        }
+    .alarmactionspopover #ActionSiteInfo ul {
+        padding-left: 0px;
+        margin: 0px;
+    }
+    .alarmactionspopover .alarm-action-btn {
+        margin-bottom: 15px;
+        margin-right: 6px !important;
+        cursor: pointer;
+        float: left;
+    }
+
+.alarmdoorpopover {
+    margin-top: 0px !important;
+}
+
+    .alarmdoorpopover .webui-popover-content ::-webkit-scrollbar-thumb {
+        background-color: #bababa;
+    }
+
+    .alarmdoorpopover .webui-popover-content .contentWrap {
+        margin-bottom: 0px !important;
+    }
+
+@-moz-document url-prefix() {
+    .alarmcamerapopover .webui-popover-content .contentWrap #videocontainer div {
+        position: absolute !important;
+        left: 0px;
+        top: 35px;
+    }
+}
+
+#ActionSiteInfo.content h5{
+    font-weight: 400;
+    color: #d3d3d3;
+    margin: 0;
+    /*width: 100%;
+    padding: 20px 0 0 20px;*/
+    padding-top: 20px !important;
+}
+#ActionSiteInfo.content span{
+    color: #FFFFFF;
+}
+
+h5.threeActionLoading {
+    left: 40%;
+    top: 45%;
+    position: absolute;
+    width: 200px;
+    color: #d6d6d6;
+}

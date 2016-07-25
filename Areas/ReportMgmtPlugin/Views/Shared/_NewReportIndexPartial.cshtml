@@ -1,0 +1,37 @@
+﻿<!-- Report Body-->
+
+    <h3>@Resources.Index_Reports_List</h3>
+    <p>
+        @Resources.Index_New_Report_Content
+        <button class="primary-button" type="button" data-bind="click: $data.viewreports">@Resources.View_reports</button>
+    </p>
+
+
+    @*<p data-bind="text: ReportscheduleValue"></p>
+    <p data-bind="text: ReportDeliveryPending"></p>
+    <p data-bind="text: ReportDeliveryFailed"></p>
+    <p data-bind="text: ReportDelivered"></p>*@
+
+
+
+    @*<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto" data-bind="highcharts: $data.events"></div>*@
+
+    <div id="container" data-bind="highcharts:  $data.chartData ,visible : $data.Ischartavaliable"></div>
+   <div class="chart-notes" data-bind="visible: $data.Ischartavaliable"><p style="text-align: center" data-bind="text: ComputedReportSummaryText"></p></div>
+    @*<script src="https://code.highcharts.com/highcharts.js"></script>*@
+
+
+@*<script src="~/Scripts/ReportMgmtPlugin/jquery-1.11.0.js"></script>
+        <script src="~/Scripts/ReportMgmtPlugin/highcharts.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/highcharts-3d.js"></script>
+    <script src="~/Scripts/ReportMgmtPlugin/exporting.js"></script>*@
+        <script src="~/Scripts/ReportMgmtPlugin/ko.highcharts.js"></script>
+        <!-- Report Body-->
+
+
+
+
+
+
+
+

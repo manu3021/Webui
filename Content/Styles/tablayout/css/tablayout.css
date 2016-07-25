@@ -1,0 +1,71 @@
+﻿
+.ui-tab-container.row {
+    top: 0;
+    bottom: 0;
+    color: #4d4d4d;
+}
+
+.ui-tab-menu.row {
+    height: 36px;
+    padding-bottom: 1px;
+}
+
+.ui-tab-content.row {
+    top: 35px;
+    bottom: 0;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.ui-tab-menu ul li {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: inline-block !important;
+    min-width: 118px;
+    min-height: 30px;
+    padding:10px;
+    cursor: pointer;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.ui-tab-page.row {
+    -moz-transition: all ease-in 0.2s;
+    -o-transition: all ease-in 0.2s;
+    -webkit-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
+    display: none;
+    top: 0;
+    bottom: 0;
+    padding: 5px;
+    padding-top:8px;
+    color: #4d4d4d;
+}
+
+.ui-tab-pageactive.row {
+    -moz-transition: all ease-in 0.2s;
+    -o-transition: all ease-in 0.2s;
+    -webkit-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
+    display: block;
+    padding: 5px;
+    top: 0;
+    bottom: 0;
+}
+
+.ui-active-tab {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: white;
+    border-top: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+    border-bottom: 3px solid white !important;
+}

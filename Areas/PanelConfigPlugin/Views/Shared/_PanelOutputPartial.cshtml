@@ -1,0 +1,123 @@
+﻿<form id="netaxs_ouput_config_form">
+    <div class="row formcontrol">
+        <div class="content-panel scroll-y">
+            <div class="pull-left">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Output_Name</label>
+                    <input type="text" name="output_Name" id="output_Name" maxlength="25" data-bind="value: $data.model.Name" class="floatTxt myStyle">
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Output_ActiveTimeZone</label>
+                    <select name="output_ActiveTimeZone" id="output_ActiveTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.ActiveTimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle radio vertical-radio-list" id="rdoActiveTimeZone" data-bind="visible:$data.model.CanHideTimeZone()">
+                    <div>
+                        <label class="formControl-radio">
+                            <input type="radio" class="radio" name="output_EnergizeMode" value="0" data-bind="checked: $data.model.ActiveTimeZoneBehavior" />
+                            <span></span>
+                        </label>
+                        <span>@Resources.Output_EnergizeMode_Default</span>
+                    </div>
+                    <div>
+                        <label class="formControl-radio">
+                            <input type="radio" class="radio" name="output_EnergizeMode" value="1" data-bind="checked: $data.model.ActiveTimeZoneBehavior" />
+                            <span></span>
+                        </label>
+                        <span>@Resources.Output_EnergizeMode_FirstCardRule</span>
+                    </div>
+                    <div>
+                        <label class="formControl-radio">
+                            <input type="radio" class="radio" name="output_EnergizeMode" value="2" data-bind="checked: $data.model.ActiveTimeZoneBehavior" />
+                            <span></span>
+                        </label>
+                        <span>@Resources.Output_EnergizeMode_Toggle</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field">
+                    <label class="formControl-checkbox">
+                        <input type="checkbox" class="checkbox" name="output_DisablePulseOnLatching" id="output_DisablePulseOnLatching" data-bind="checked: $data.model.IsLatchingPulseTime" />
+                        <span>@Resources.Output_IsLatching</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Output_Block_Interlock_Timezone</label>
+                    <select name="output_BlockInterlockZone" id="output_BlockInterlockZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.BlockInterLockTimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="bootstrap-timepicker field">
+                    <label class="floatLblDn">@Resources.Output_PulseTime</label>
+                    <input type="text" name="output_PulseTime" id="output_PulseTime" data-bind="value: $data.model.PulseTime" class="floatTxt myStyle">
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="spaceBottomStyle">
+                    <label class="formControl-checkbox control-box">
+                        <input type="checkbox" class="checkbox" name="output_InterlockingEnabled" id="output_InterlockingEnabled" data-bind="checked: $data.model.InterlockEnabled" />
+                        <span>@Resources.Interlocking</span>
+                    </label>
+                </div>
+            </div>
+            <div data-bind="visible: $data.model.InterlockEnabled() == true">
+                <div class="pull-left field clear-left">
+                    <div class="spaceBottomStyle">
+                        <div class="radio horizontal-radio-list control-box">
+                            <div class="pull-left outputRadioFix"><label class="formControl-radio">
+                                    <input type="radio" class="radio" name="output_ReactingEntityType" value="0" data-bind="checked: $data.model.Interlock.ReactingEntityType, click: $data.handleInterlockModeSwitch" />
+                                    <span>@Resources.Interlock_Input</span>
+                            </label></div>
+                            <div><label class="formControl-radio">
+                                    <input type="radio" class="radio" name="output_ReactingEntityType" value="1" data-bind="checked: $data.model.Interlock.ReactingEntityType, click: $data.handleInterlockModeSwitch" />
+                                    <span>@Resources.Interlock_Output</span>
+                            </label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_Point</label>
+                        <select name="output_InterlockPoint" id="output_InterlockPoint" data-bind="options: $data.interlockPoints, optionsText: 'Name', optionsValue: 'Id', value: $data.model.Interlock.ReactingEntityId"></select>
+                    </div>
+                </div>
+                <div class="pull-left clear-left outputScrollFix">
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_OnAction</label>
+                        <select name="output_InterlockOnAction" id="output_InterlockOnAction" data-bind="options: $data.interlockaction, optionsValue: 'Value', optionsText: 'Name', value: $data.model.Interlock.AlarmAction">
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_OffAction</label>
+                        <select name="output_InterlockOffAction" id="output_InterlockOffAction" data-bind="options: $data.interlockaction, optionsValue: 'Value', optionsText: 'Name', value: $data.model.Interlock.NormalAction">
+                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left buttonGroup">
+                <button class="primary-button" data-bind="click: $data.saveOutput">@Resources.Save</button>@*enable: $data.model.hasChanges,*@ 
+                <span class="class2 errorDetail" data-bind="visible: $data.model.IsError, text: $data.model.ErrorMessage" />
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="panelConfigUrl" value="@Url.Action("", "PanelConfig")" />
+</form>
+
+<link href="~/Content/PanelConfigPlugin/bootstrap-timepicker.min.css" rel="stylesheet" />
+@Scripts.Render("~/bundles/PanelConfigPluginOutputscript")
+@*<script src="~/Scripts/PanelConfigPlugin/bootstrap-timepicker.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-output-model.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-output-validation-context.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-output-datacontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-output-uicontext.js"></script>*@

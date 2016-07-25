@@ -1,0 +1,46 @@
+﻿<span class="pkgSelectionHeading">@Resources.Current_Package</span>
+
+<div data-accounttype="SITE" class="settingsform">
+    <span class="pkgSelectionSubHeading">@Resources.Config_ForText <span class="boldFontStyle" data-bind="text: $data.DoorCount"></span> @Resources.Doors, <span class="boldFontStyle" data-bind="text: $data.CameraCount"></span> @Resources.Cameras</span>
+    <form id="packageSelection"  data-bind="submit:postpackageselection">
+        <ul class="planSelection">
+            <li class="basicPlan" data-bind="with: $data.Packages()[0]">
+                <ul>
+                    <li class="PlanHeading">
+                        <span class="PlanTopHeading" data-bind="text:Name"></span>
+                        <span class="PlanSecondHeading"><span class="dollarStyle">$</span><span class="dollarStyle" data-bind="text:Cost"></span>/@Resources.lnl_month</span>
+                        <span class="doorCameraCost">@Resources.Config_perDoorCamera</span>
+                    </li>
+
+                    <li class="planContent">
+                        <b class="tickIcon"></b>
+                        <span class="planTxt StdFeatureLink" data-bind="click: function() { $('#standardfeatures').modal(); }"<span class="boldFontStyle">21<span> @Resources.Standard_Features</span></span></span>
+                        <span class="planDivider"></span>
+                    </li>
+
+                    <li id="plancontentTemplate" data-bind=" template: {name:  'PLANCONTENT_TEMPLATE' , foreach:  $data.perpackagefeatures} "> </li>
+                   
+                </ul>
+                <button class="primary-button" data-packageid="8E43E825-E83E-4E8C-A825-2DC983D49ED9" data-bind="click: $parent.selectbasic, text: ($data.IsSelected()==true && $data.IsActive()==true)?'@Resources.Activated':'@Resources.Activate', css: {'secondary-button disabledStyle': $data.IsSelected()==true }"></button>
+                <span data-bind="if:($data.IsActive()==true)">
+                    <span class="activatedDateStyle"> @Resources.Config_OnTxt <span data-bind="text: $data.StartDate"> </span></span>
+                </span>
+            </li>
+        </ul>
+        <input type="hidden" id="accountId" name="accountId" value="0" />
+        <input type="hidden" id="packageid" name="packageid" value="0" />
+    </form>
+</div>
+
+<script type="text/html" id="PLANCONTENT_TEMPLATE">
+    <li class="planContent">
+        <b class="tickIcon" data-bind="css: {crossIcon: $data.IsAvailable==false}"></b>
+        <span class="planTxt">
+            <span data-bind="if: FeatureValue !='0'">
+                <span class="boldFontStyle" data-bind="text: FeatureValue"></span>
+            </span>
+            <span data-bind="text: Name"></span>
+        </span>
+        <span class="planDivider"></span>
+    </li>
+</script>

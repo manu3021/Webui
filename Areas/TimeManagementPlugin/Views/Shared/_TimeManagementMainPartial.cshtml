@@ -1,0 +1,47 @@
+<div class="timemanagement-root">
+    <div id="timeManagement" class="row formcontrol" data-bind="busyIndicator: {show: IsChildLoading, blockAll: true}">
+        <ul class="nav nav-tabs">
+            <li data-bind="css: { active: $data.currentTab() == 0 }">
+                <a href="#" data-toggle="tab" data-bind="click: $data.switchTab.bind($data, 0)">@Resources.ScheduleList</a>
+            </li>
+            <li data-bind="css: { active: $data.currentTab() == 1 }">
+                <a href="#" data-toggle="tab" data-bind="click: $data.switchTab.bind($data, 1)">@Resources.HolidayList</a>
+            </li>
+        </ul>
+        <div class="link-tab-content">
+            <!-- ko if: $data.currentTab() == 0 -->
+            <!-- ko with: $data.schedule -->
+            @{
+                Html.RenderAction("SchedulesList");
+            }
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: $data.currentTab() == 1 -->
+            <!-- ko with: $data.holiday -->
+            @{
+                Html.RenderAction("HolidayList");
+            }
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+    @{
+        Html.RenderAction("ManageTimeSchedule");
+    }
+    @{
+        Html.RenderAction("ManageHoliday");
+    }
+    <input type="hidden" id="timeManagementUrl" value="@Url.Action("", "TimeManagement")" />
+
+    @*@Styles.Render("~/Content/TimeManagementPlugin/TimeManagement.css")*@
+
+    @Scripts.Render("~/bundles/TimeManagementPluginscript1")
+
+    @*<script src="~/Scripts/TimeManagementPlugin/time-input.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/time-zone.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/timemanagement-common.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/timemanagement-model.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/timemanagement-datacontext.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/timemanagement-uicontext.js"></script>
+        <script src="~/Scripts/TimeManagementPlugin/timemanagement-validationcontext.js"></script>*@
+</div>

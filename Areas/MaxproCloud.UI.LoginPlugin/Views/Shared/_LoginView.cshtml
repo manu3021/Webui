@@ -1,0 +1,129 @@
+﻿@using System.Configuration;
+@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+@helper selected(string c, string culture)
+{
+    if (c.Equals(culture, StringComparison.InvariantCultureIgnoreCase))
+    {
+        @:selected="selected"
+    }
+}
+@*<link href="~/Content/Styles/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Styles/controlstyles.css" rel="stylesheet" />
+    <link href="~/Content/LoginPlugin/loginstyle.css" rel="stylesheet" />*@
+@*@Styles.Render("~/Content/LoginPlugincss1")*@
+
+@*<link href="~/Content/LoginPlugin/style.css" rel="stylesheet" />*@
+<div class="container">
+    <input class="antiForgeryTokenLogin" type="hidden" value="@GetAntiForgeryToken()" />
+
+    @if (string.IsNullOrEmpty(ViewBag.mode))
+    {
+        <div id="login" class="formcontrol loginbase-container">
+            @using (Html.BeginForm("JsonLogin", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", id = "loginform", autocomplete = "off" }))
+            {
+
+                <h2 class="form-signin-heading">
+                    <img src="~/content/images/maxproLogo.png" width="324" height="67">
+                </h2>
+                <ul>
+                    <li>
+                        <div class="field">
+                            <label class="floatLblUp">@Resources.Email</label>
+                            <input type="text" class="floatTxt myStyle" data-bind="value: UserName, valueUpdate: 'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off" required>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field">
+                            <label class="floatLblUp">@Resources.Login_Password</label>
+                            <input type="password" class="floatTxt myStyle" data-bind="value: Password, valueUpdate: 'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off" required>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="captchaContainer" data-bind="visible:bVlidateCaptcha">
+                            <div id="loginCaptcha" class="g-recaptcha" data-sitekey="@ConfigurationManager.AppSettings["recaptchaPublicKey"]"></div>
+                        </div>
+                    </li>
+
+                </ul>
+                <span class="ui-button-container" id="wrapperLoginBtn">
+                    <span class="controls">
+                        <button class="primary-button" type="submit" id="btnlogin" data-bind="attr: { 'disabled': signinbutton }, click: DoLogin">@Resources.Login_Sign_in</button>
+                    </span>
+                </span>
+                <span class="error-msg">
+                    <span id="errormsg">@Resources.LoginIncorrect_Error_Message</span>
+                </span>
+            }
+
+            <div class="links">
+                <a id="signupButton" href='#' data-bind="click: showRegister">@Resources.Create_new_Account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="forgotPassword" href='#' data-bind="    click: showReset">@Resources.GetHelp</a>
+            </div>
+        </div>
+        <div id="register" class="formcontrol loginbase-container" style="display: none">
+            @Html.Partial("_SigninView")
+        </div>
+        <div id="forgotpassword" style="display: none">
+            @Html.Partial("_forgotpassword")
+        </div>
+    }
+    else if (ViewBag.mode == "InvalidLink")
+    {
+        <div id="recoveryForm">
+            <div class="form-signin-heading" translate="yes">
+                <img src="~/content/images/maxproLogo.png" width="324" height="67">
+            </div>
+            <p>Found invalid link</p>
+            <button type="button" onclick="return window.showLogin()">Go to Login</button>
+        </div>
+    }
+    else
+    {
+        <div class="formcontrol loginbase-container" id="recovery">
+            @Html.Partial("_Recovery")
+        </div>
+    }
+
+</div>
+<footer class="row loginFooter">
+    <span class="copyRight">
+        <span>&copy; @Resources.copy_Branding_Text</span>
+        @*<div class="browserWarning">
+                @Resources.Browser_Warning_Msg
+            </div>*@
+        <div id="languagebar" style="display:none;">
+            <select id="language" class="languageoption" data-bind="event: { change: LangChanged }" data-url="@Url.Action("ChangeLang", "Login")">
+                <option value="en" @selected("en", culture)>Default (English)</option>
+                <option value="en-us" @selected("en-us", culture)>English</option>
+                <option value="fr-fr" @selected("fr-fr", culture)>Français</option>               
+                <option value="nl-nl" @selected("nl-nl", culture)>Nederlands</option>
+                <option value="de-de" @selected("de-de", culture)>Deutsch</option>
+                <option value="es-es" @selected("es-es", culture)>Españal</option>
+                <option value="pt-pt" @selected("pt-pt", culture)>Português</option>
+                <option value="it-it" @selected("it-it", culture)>Italianoa</option>
+                @*<option value="fr-ca" @selected("fr-ca", culture)>French (Canada)</option>
+                <option value="zh-tw" @selected("zh-tw", culture)>中国</option>*@
+            </select>
+        </div>
+    </span>
+    <span class="powered">
+        <img src="~/content/images/honeywellLogo.png" width="142" height="62">
+    </span>
+</footer>
+<script type="text/javascript">
+    (function ($) {
+        window.rootUrl = '@string.Format("{0}://{1}{2}", HttpContext.Current.Request.Url.Scheme, HttpContext.Current.Request.Url.Authority, HttpRuntime.AppDomainAppVirtualPath)';
+    })(jQuery);
+</script>
+
+@Scripts.Render("~/bundles/LoginPluginscript2")
+@Scripts.Render("~/bundles/LoginPluginscript3")

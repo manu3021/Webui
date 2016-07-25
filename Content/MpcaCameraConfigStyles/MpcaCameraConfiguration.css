@@ -1,0 +1,1733 @@
+﻿.cameraroot #mpcacameraparent {
+    min-height: 400px;
+    margin-top: 11px;
+}
+
+.cameraroot .dispModel {
+    top: 10% !important;
+    right: 20%;
+    width: auto;
+    bottom: 100px;
+    background-color: #fff;
+    left: 30% !important;
+    overflow: hidden;
+}
+
+.cameraroot .ultree .leftTree {
+    position: relative;
+    height: 400px;
+    width: auto;
+    padding-left: 0;
+}
+
+.cameraroot #mpcacameratreeview {
+    width: 45%;
+    margin-left: 13px;
+    top: 110px;
+    bottom: 78px;
+    border-right: 1px solid #bababb;
+}
+
+#mpcacameraassociate section {
+    padding-bottom: 0px;
+    padding-top: 17px;
+}
+
+#mpcacameraassociate footer {
+    position: relative;
+}
+
+#mpcacameraassociate .ultree {
+    float: left;
+    width: 40%;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+#mpcacameraassociate .associations {
+    float: right;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    width: 40%;
+}
+
+#mpcacameraassociate .modal-footer {
+    /*padding: 24px;*/
+}
+
+#mpcacameraassociate .modelLeftSection {
+    border-top: 1px solid #bababa;
+    border-bottom: 1px solid #bababa;
+    height: 384px;
+    float: left;
+    width: 50%;
+}
+
+#mpcacameraassociate .modelRightSection {
+    border-top: 1px solid #bababa;
+    border-bottom: 1px solid #bababa;
+    height: 384px;
+    float: right;
+    width: 50%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+
+    #mpcacameraassociate .modelRightSection:hover {
+        overflow: auto;
+    }
+
+    #mpcacameraassociate .modelRightSection ul li {
+        float: none !important;
+        border-bottom: 1px solid #D3D3D3;
+        padding: 16px !important;
+        background-color: #FFFFFF;
+    }
+
+#mpcacameraassociate .associationTxtMsg {
+    padding: 20px 0px 20px 0px;
+    display: block;
+    text-align: center;
+}
+
+.cameraroot .icon-itemclose {
+    background: url("../../content/images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 31px;
+    float: right;
+    background-position: -248px -100px;
+    margin-right: -6px !important;
+    display: none;
+}
+
+.cameraroot .icon-itemclose-show {
+    background: url("../../content/images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 31px;
+    float: right;
+    background-position: -248px -100px;
+    margin-right: -6px !important;
+    display: inline-block;
+}
+
+.cameraroot .associations ul li {
+    float: none !important;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 16px !important;
+}
+
+.cameraroot .ulheading {
+    float: left;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    font-weight: bold;
+}
+
+.cameraroot .associationsheading {
+    float: right;
+    padding-bottom: 12px;
+    padding-right: 26%;
+    font-weight: bold;
+}
+
+.cameraroot .cameraconfigformwrapper {
+    top: 55px;
+    right: 0;
+    left: 0;
+    padding-bottom: 60px;
+    /*overflow: auto;*/
+}
+
+    .cameraroot .cameraconfigformwrapper input[type=number]::-webkit-inner-spin-button,
+    .cameraroot .cameraconfigformwrapper input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: default-button;
+        margin: 0;
+    }
+
+.cameraroot .camerampcform-grid {
+    width: 33%;
+    float: left;
+    padding: 16px;
+    list-style: none;
+    margin: 0;
+}
+
+    .cameraroot .camerampcform-grid ul li {
+        list-style-type: none;
+        float: left;
+    }
+
+.cameraroot .firstgrid {
+    position: absolute;
+    bottom: 34px !important;
+    padding: 24px 0px 0px 0px;
+}
+
+    .cameraroot .firstgrid.secondSectionConfig {
+        top: 91px !important;
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+/*.cameraroot .firstgrid.secondSection:last-child{
+        margin-bottom:80px;
+    }*/
+
+.cameraroot .secondgrid {
+    padding: 0 !important;
+    margin: 0;
+    list-style: none;
+}
+
+.cameraroot .thirdgrid {
+    padding: 18px 0 0 0 !important;
+    position: absolute;
+    left: 263px;
+}
+
+.cameraroot .Camera_setting ul {
+    list-style: none;
+}
+
+.cameraroot .Camera_setting .rightcontainer {
+    position: absolute;
+    left: 35.5%;
+    width: 63%;
+    top: 0;
+    margin: 0;
+    bottom: 34px !important;
+    padding-top: 24px;
+    padding-left: 12px;
+}
+
+.cameraroot #mpcTabsContent {
+    width: 100%;
+    height: 100%;
+}
+
+    .cameraroot #mpcTabsContent .scroll-y {
+        overflow: hidden;
+    }
+
+        .cameraroot #mpcTabsContent .scroll-y:hover {
+            -ms-overflow-y: scroll;
+            overflow-y: scroll;
+        }
+
+.cameraroot #mpcTabs {
+    height: 43px;
+    border-bottom: 1px solid #d6d6d6;
+    font-family: "Open Sans Regular";
+    margin-left: 23px;
+    padding-top: 11px;
+    margin-bottom: 0px;
+}
+
+    .cameraroot #mpcTabs .active {
+        border-bottom: 2px solid #0889C4;
+        padding-bottom: 5px;
+    }
+
+    .cameraroot #mpcTabs.nav-tabs > li {
+        margin-right: 26px;
+    }
+
+        .cameraroot #mpcTabs.nav-tabs > li a {
+            padding-left: 0;
+            padding-right: 0;
+            color: #707070;
+            background-color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: medium none;
+        }
+
+            .cameraroot #mpcTabs.nav-tabs > li a:hover {
+                background: none;
+                border: none;
+                padding-top: 9px;
+                padding-left: 1px;
+                padding-right: 1px;
+                color: #0889C4;
+            }
+
+    .cameraroot #mpcTabs .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        /* padding-top: 7px; */
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+        .cameraroot #mpcTabs .active a:hover {
+            padding-bottom: 9px;
+        }
+
+.cameraroot .border {
+    border-right: 1px solid #d6d6d6;
+}
+
+.cameraroot .downButton {
+    clear: both;
+    float: left;
+    display: block;
+    width: 303px;
+    padding-bottom: 14px;
+    padding-top: 22px;
+}
+
+.cameraroot .stitched {
+    color: #fff;
+    width: 250px;
+    height: 187.5px;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    border: 2px dashed #d6d6d6;
+    font-weight: normal;
+    background-color: rgb(247,247,247);
+    margin-left: 24px;
+    position: absolute;
+}
+
+.cameraroot .icon-stitched {
+    width: 80px;
+    height: 72px;
+    display: block;
+    background: url('../images/sprite_80.png') no-repeat -10px -14px;
+    margin-left: 34%;
+    margin-top: 22%;
+}
+
+.cameraroot .playHolder {
+    /* margin-left: 45%; */
+    /* margin-top: 29%; */
+    cursor: pointer;
+    /*width: 187.5px;*/
+    height: 100%;
+}
+
+.cameraroot .icon_player {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -340px -460px;
+    display: block;
+    position: absolute;
+    top: 41%;
+    left: 46%;
+}
+
+.cameraroot .playText {
+    color: #707070;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 44%;
+}
+
+.cameraroot .downlist-item {
+    position: relative;
+    /*top: 200px;*/
+}
+
+.cameraroot .assobtn {
+    margin-top: 24px;
+}
+
+.cameraroot .colHeading {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+    padding-bottom: 17px;
+}
+
+.cameraroot .formcontrol .field {
+    position: relative;
+    /*font-family: Arial;
+                    font-weight:bold; */
+    display: inline-block;
+}
+
+.cameraroot .formcontrol .select-field {
+    /*border-right:1px solid #bababb;
+                    border-bottom:1px solid #bababb;*/
+    width: 303px;
+    line-height: 0px;
+    position: relative;
+    padding-bottom: 0;
+}
+/*Live Video preview Error Styles*/
+.livepreview .videoError {
+    position: relative;
+    font-size: 14px;
+    width: 218px;
+    display: block;
+    padding-left: 32px;
+    padding-top: 15px;
+}
+
+.livepreview .loading-icon {
+    background: url('../images/Honeywell_Blank_220.png') 50% no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    display: block;
+    top: 0px;
+    bottom: 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.livepreview #panelRequestLive {
+    height: 100%;
+    position: absolute;
+}
+
+.livepreview .playercontainer {
+    width: 250px;
+    height: 188px;
+    position: absolute;
+    top: 0;
+}
+
+.livepreview .close-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url("../images/sprite_icons.png");
+    background-position: -428px -338px;
+    top: 0px;
+    right: 0;
+    background-color: #000000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.livepreview .videoErrorTextStyle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000;
+    padding-top: 22%;
+    border: 1px solid transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    display: block;
+    padding-left: 24%;
+}
+
+    .livepreview .videoErrorTextStyle .videoErrorImage {
+        background: url("../images/sprite_40.png");
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-position: -10px -60px;
+        display: inline-block;
+        margin-left: 48px;
+    }
+
+    .livepreview .videoErrorTextStyle .videoErrorText {
+        display: block;
+        font-size: 12px;
+        color: #D3D3D3;
+    }
+
+.livepreview .tryAgainStyle {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 1px;
+    display: inline-flex;
+    color: #d3d3d3;
+    padding-left: 18px;
+}
+
+.livepreview .icon_tryagain {
+    background: url("../images/sprite_icons.png");
+    background-position: -40px -430px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+
+
+.livepreview #PlayerId .textOnVideoLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 7px;
+    display: none;
+    z-index: 1;
+    font-size: 14px;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+.livepreview #PlayerId:hover .textOnVideoLeft {
+    display: block;
+}
+/*Video Error Styles*/
+
+
+/*.formcontrol .select-field label {
+        display: none;
+    }*/
+
+.cameraroot .formcontrol select {
+    /*padding: 19px 0px 16px 9px;
+    color: #6F7074;*/
+    width: 303px;
+}
+
+.cameraroot .formcontrol label.on {
+    color: #4481C4;
+}
+
+.cameraroot .formcontrol label.show {
+    opacity: 1 !important;
+    position: relative !important;
+    -webkit-animation: expand 5s;
+    -moz-animation: expand 5s;
+    -ms-animation: expand 5s;
+    animation: expand 5s;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+    color: #6f7074;
+    -khtml-opacity: 1 !important;
+    -moz-opacity: 1 !important;
+    opacity: 1 !important;
+    filter: alpha(opacity=NaN);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    -webkit-transition: opacity;
+    -moz-transition: opacity;
+    -ms-transition: opacity;
+    -o-transition: opacity;
+    transition: opacity;
+    left: 3px;
+    z-index: 2;
+}
+
+.cameraroot .formcontrol .show {
+    display: block !important;
+}
+
+/*.cameraroot .formcontrol option {
+    color: black;
+}*/
+
+.cameraroot .formcontrol .watermark {
+    color: #aaa;
+}
+
+.cameraroot .formcontrol .selectize-input > * {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.cameraroot .formcontrol .selectize-control.single .selectize-input {
+    height: 50px;
+    border-color: #D3D3D3 !important;
+    border-bottom: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+}
+
+.cameraroot #mpcTabsContent .buttonGroup {
+    border-top: 1px solid #CCCCCC;
+    clear: both;
+    padding-top: 14px;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 14px;
+    padding-left: 24px;
+}
+
+/*event settings*/
+.cameraroot #mpcacameraevntrecsetting .colHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+}
+
+.cameraroot #mpcacameraevntrecsetting progress {
+    right: 30%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    height: 30px;
+    width: 25%;
+    position: absolute;
+}
+
+.cameraroot .recordDetails {
+    float: left;
+    width: 35%;
+    overflow-y: hidden;
+    bottom: 0;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #d3d3d3;
+}
+
+.cameraroot .scheduleDetails {
+    float: left;
+    width: 30%;
+    position: absolute;
+    left: 30%;
+    top: 0px;
+    bottom: 65px;
+}
+
+.cameraroot .recordDetails ul li, .scheduleDetails ul li {
+    float: none;
+    /*border-bottom: 1px solid #D3D3D3;*/
+    margin: 0;
+    /*padding: 14px 0 14px 0;*/
+    border-right: none;
+    list-style-type: none;
+}
+
+.cameraroot .clipDurationDetails {
+    float: left;
+    width: 30%;
+    position: absolute;
+    left: 60%;
+    top: 0px;
+    bottom: 65px;
+    overflow-x: hidden;
+}
+
+    .cameraroot .clipDurationDetails ul li {
+        list-style-type: none;
+    }
+
+    .cameraroot .clipDurationDetails .colHeading {
+        border-bottom: 1px solid #D3D3D3;
+        padding-left: 14px;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+        margin-top: 15px;
+    }
+
+    .cameraroot .clipDurationDetails select {
+        width: 227px !important;
+    }
+
+.cameraroot .recordDetails:hover, .scheduleDetails:hover, .clipDurationDetails:hover {
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+}
+
+
+.cameraroot .continusRecDetails {
+    float: left;
+    width: 35%;
+    -ms-overflow-y: hidden;
+    overflow-y: hidden;
+    bottom: 0;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #d3d3d3;
+}
+
+    .cameraroot .continusRecDetails ul li {
+        float: none;
+        /*border-bottom: 1px solid #D3D3D3;*/
+        margin: 0;
+        /*padding: 14px 0 14px 0;*/
+        padding: 0;
+        border-right: none;
+        list-style-type: none;
+    }
+
+    .cameraroot .continusRecDetails:hover {
+        -ms-overflow-y: hidden;
+        overflow-y: hidden;
+    }
+
+.cameraroot #mpcacameracontinusrecsetting progress, .cameraroot #mpcacameramotionrecsetting progress {
+    right: 30%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    height: 30px;
+    width: 25%;
+    position: absolute;
+}
+
+.cameraroot .cameraroot #eventrecordingul input[type="checkbox"] {
+    vertical-align: middle !important;
+    padding-bottom: 5% !important;
+    margin: -1% 2% 0% 0%;
+}
+
+.cameraroot .clear {
+    clear: both;
+}
+
+.cameraroot .settingshead {
+    font-size: 15px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    margin-left: 24px;
+}
+
+.cameraroot .motionsettingshead {
+    margin: 4% 0% 3% 3%;
+}
+
+.cameraroot .margin_top {
+    margin-top: 36px;
+}
+
+.cameraroot #eventrecordingul .checkboxStyle, .cameraroot #continuousrecordingul .checkboxStyle, .cameraroot #motionrecordingul .checkboxStyle, .cameraroot #enablemotionrec .checkboxStyle {
+    margin: 0 !important;
+}
+
+    .cameraroot #eventrecordingul .checkboxStyle .customcheckbox, .cameraroot #continuousrecordingul .checkboxStyle .customcheckbox, .cameraroot #motionrecordingul .checkboxStyle .customcheckbox, .cameraroot #enablemotionrec .checkboxStyle .customcheckbox {
+        border-style: none;
+        color: #6F7074;
+        font-size: 13px;
+        margin: 0 !important;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+    }
+
+        .cameraroot #eventrecordingul .checkboxStyle .customcheckbox span, .cameraroot #continuousrecordingul .checkboxStyle .customcheckbox span, .cameraroot #motionrecordingul .checkboxStyle .customcheckbox span, .cameraroot #enablemotionrec .checkboxStyle .customcheckbox span {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background: url("../MpcaDeviceConfigStyles/images/checkBox_normal.png");
+            background-repeat: no-repeat;
+        }
+
+        .cameraroot #eventrecordingul .checkboxStyle .customcheckbox input, .cameraroot #continuousrecordingul .checkboxStyle .customcheckbox input, .cameraroot #motionrecordingul .checkboxStyle .customcheckbox input, .cameraroot #enablemotionrec .checkboxStyle .customcheckbox input {
+            display: none;
+        }
+
+            .cameraroot #eventrecordingul .checkboxStyle .customcheckbox input:checked + span, .cameraroot #continuousrecordingul .checkboxStyle .customcheckbox input:checked + span, .cameraroot #motionrecordingul .checkboxStyle .customcheckbox input:checked + span, .cameraroot #enablemotionrec .checkboxStyle .customcheckbox input:checked + span {
+                background: url("../MpcaDeviceConfigStyles/images/checkBox_press.png");
+                background-repeat: no-repeat;
+            }
+
+    .cameraroot #eventrecordingul .checkboxStyle .title, .cameraroot #continuousrecordingul .checkboxStyle .title, .cameraroot #motionrecordingul .checkboxStyle .title, .cameraroot #enablemotionrec .checkboxStyle .title {
+        display: block;
+        margin: 0 0 0 30px !important;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        color: #707070;
+        font-size: 15px;
+    }
+
+.cameraroot .motionleftalign {
+    float: left;
+    width: 29%;
+    padding: 1% 0% 0% 2.5%;
+}
+
+.cameraroot .motionrightalign {
+    float: left;
+    margin-right: 2%;
+    width: 30%;
+    padding-left: 2%;
+}
+
+.cameraroot .motioncenteralign {
+    float: left;
+    margin-right: 2%;
+    width: 30%;
+    border: 0px solid #FFF;
+}
+
+.cameraroot .selectBoxStyle select {
+    width: 220px !important;
+}
+
+.cameraroot .ulwidth {
+    width: 27% !important;
+}
+
+.cameraroot .buttonIcon {
+    background: url("../../content/images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -130px -430px;
+}
+
+.cameraroot .buttonStyle {
+    width: 168px;
+    height: 25px;
+    border: 0px;
+    border-left: 10px solid #EE3124;
+    background: #E6E4E4;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.cameraroot .regionAlign {
+    margin: 0% 0% 3% 0%;
+}
+
+    .cameraroot .regionAlign div:first-child {
+        display: inline-block;
+        width: 80px;
+    }
+
+.cameraroot .buttonStyle div:first-child {
+    float: right;
+    padding-right: 5%;
+}
+
+.cameraroot .buttonText {
+    width: 120px;
+    display: inline-block;
+}
+
+.cameraroot .regionContainerAlign {
+    margin: 0% 0% 5% 8%;
+}
+
+
+
+/* Schedule Popup */
+
+.cursor {
+    cursor: pointer;
+}
+
+#schedulePopup .formControl-radio {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    top: 4px !important;
+}
+
+#schedulePopup.mpcmodel {
+    /*width: 985px;*/
+    width: 975px;
+}
+
+#schedulePopup .multipleDay {
+    clear: both;
+}
+
+#schedulePopup .multipleDaySubheading {
+    display: block;
+    clear: both;
+    padding-top: 4px;
+    padding-bottom: 12px;
+    font-size: 15px;
+    color: #3b3b3b;
+}
+
+/*.bootstrap-datetimepicker-widget {
+    margin-left: -215px;
+    position: absolute !important;
+    margin-top: 3px;
+}*/
+
+#schedulePopup .icon-time {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-position: -190px -160px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+}
+
+    #schedulePopup .icon-time:hover {
+        background-position: -220px -160px;
+    }
+
+#schedulePopup .right-inner-addon > span {
+    width: 23px;
+    padding: 25px 12px 22px 12px;
+}
+
+#schedulePopup input[type="text"] {
+    width: 211px;
+}
+
+#schedulePopup .singleDay .radiotext, #schedulePopup .multipleDay .radiotext {
+    padding-right: 15px;
+    padding-left: 0px;
+    font-size: 15px;
+    color: #3b3b3b;
+    font-family: 'Open Sans Semibold' !important;
+}
+
+#schedulePopup .singleDayFilter {
+    padding-top: 16px;
+    list-style-type: none;
+    margin: 0;
+}
+
+#schedulePopup label {
+    border-style: none;
+    position: absolute;
+    color: #707070 !important;
+    font-size: 12px !important;
+    /*font-weight: bold;
+    margin-left: 12px;*/
+    /* margin-top: 24px; */
+    margin-top: 0;
+    /*opacity: 1;
+    letter-spacing: 1px;*/
+}
+
+#schedulePopup ul.multipleDayFilter, #schedulePopup ul.multipleDayFilterSecondRow {
+    margin: 0;
+}
+
+#schedulePopup select {
+    width: 97%;
+}
+
+#schedulePopup.mpcmodel .singleDayFilter li {
+    padding-bottom: 0;
+    float: left;
+}
+
+#schedulePopup .select-field {
+    padding-bottom: 1px;
+    margin-top: -1px;
+}
+
+#schedulePopup .multipleDay {
+    padding-top: 9px;
+}
+
+#schedulePopup.mpcmodel .multipleDayFilter li {
+    padding-bottom: 0px;
+    list-style-type: none;
+    margin: 0;
+    float: left;
+}
+
+#schedulePopup.mpcmodel .multipleDayFilterSecondRow li {
+    padding-bottom: 0px;
+    list-style-type: none;
+    margin: 0;
+    float: left;
+}
+
+#schedulePopup .spaceTopStyle {
+    padding-top: 14px;
+}
+
+#schedulePopup .customErrorSummary {
+    width: 220px;
+    background: #fff;
+}
+
+.cameraroot .enableRecording {
+    margin: 3px 0px 0px 27px;
+}
+/* Schedule Popup */
+
+/*Motion Recording Styles*/
+.cameraroot #motionRecording .camerampcform-grid {
+    width: 25%;
+    float: left;
+    padding: 9px 21px;
+}
+
+.cameraroot #motionRecording li {
+    list-style-type: none;
+    clear: both;
+}
+
+#motionRecording li:last-child {
+    margin-bottom: 34px;
+}
+
+#motionRecording label.formControl-checkbox {
+    height: 10px;
+}
+
+.cameraroot #motionRecording .formControl-checkbox span {
+    position: relative;
+    z-index: 20;
+}
+
+.cameraroot #motionRecording legand {
+    padding-left: 30px;
+    position: relative;
+    top: 3px;
+}
+
+.cameraroot #motionRecording .enableMotionRecording .enableMotionRecordingCheckbox {
+    padding-bottom: 24px;
+}
+
+.cameraroot #motionRecording .enableMotionRecording .field select {
+    width: 200px;
+}
+
+.cameraroot #motionRecording .motionRegion {
+    /*position: absolute;
+top: 339px;
+width: 320px;
+height: 240px;*/
+    padding-left: 22px;
+    padding-left: 0px;
+    margin-left: 0px;
+    height: 164px;
+}
+
+    .cameraroot #motionRecording .motionRegion li {
+        list-style-type: none;
+        clear: both;
+        margin-bottom: 18px;
+    }
+
+    .cameraroot #motionRecording .motionRegion .MotionRecordingColHeading {
+        font-size: 15px;
+        color: #3B3B3D;
+        padding-bottom: 12px;
+        display: block;
+        font-family: 'Open Sans Semibold' !important;
+        padding-top: 11px;
+    }
+
+    .cameraroot #motionRecording .motionRegion .stitched_motionRegion {
+        border: 2px dashed #BABABB;
+        width: 320px;
+        height: 240px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        margin-bottom: 24px;
+    }
+
+
+    .cameraroot #motionRecording .motionRegion .icon_player {
+        background: url("../images/sprite_icons.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        background-position: -340px -460px;
+        display: block;
+        position: absolute;
+        top: 26%;
+        left: 49%;
+    }
+
+    .cameraroot #motionRecording .motionRegion .playText {
+        color: #707070;
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 31%;
+        left: 48%;
+    }
+
+#motionRecording .enableMotionRecording .field {
+    width: 93%;
+}
+
+.cameraroot #motionRecording .motionRegion .motionRegionSelection {
+    width: 206px;
+    float: left;
+}
+
+#motionRecording .enableMotionRecording #motionrectime {
+    width: 210px;
+}
+
+
+#motionRecording .enableMotionRecording #motionrectime.error {
+    max-width: 200px !important;
+}
+
+.cameraroot #motionRecording .motionRegion .right-inner-addon > span {
+    width: 37px;
+    padding: 47px 0px 0px 13px;
+}
+
+#motionRecording .motionRegion .stitched_motionRegion {
+    border: 2px dashed #BABABB;
+    width: 180px;
+    height: 180px;
+    background-color: #f9f9f9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-bottom: 24px;
+}
+
+#motionRecording .motionRegion .motionRegionSelection {
+    width: 206px;
+    float: left;
+}
+
+#motionRecording .motionRegion .right-inner-addon > span {
+    width: 37px;
+    padding: 47px 0px 0px 13px;
+}
+
+.cameraroot #motionRecording .motionRegion .motionRegionTxtBox {
+    width: 141px;
+    padding-right: 0;
+}
+
+.cameraroot #motionRecording .motionRegion .motionRecordingIndication {
+    float: left;
+    margin-top: 22px;
+    display: inline-block;
+    margin-bottom: 27px;
+}
+
+    .cameraroot #motionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconRed {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #E33E38;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+    .cameraroot #motionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconGreen {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #3BAD49;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+    .cameraroot #motionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconBlue {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #0067A6;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+.cameraroot #motionRecording .motionRegion .motionRegionCheckbox {
+    float: left;
+    margin-top: 6px;
+    display: inline-block;
+    margin-top: 19px;
+}
+
+.cameraroot #motionRecording .motionRegion .motionRegionEditContainer {
+    display: inline-block;
+    margin-top: 20px;
+    float: left;
+}
+
+.cameraroot #motionRecording .motionRegion .icon_edit {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 29px;
+    background-position: -70px -160px;
+    display: inline-block;
+    /* margin-top: 19px; */
+    cursor: pointer;
+}
+
+    .cameraroot #motionRecording .motionRegion .icon_edit:hover {
+        background-position: -100px -160px;
+    }
+
+    .cameraroot #motionRecording .motionRegion .icon_edit.disable {
+        cursor: default !important;
+        background-position: -70px -160px !important;
+    }
+
+        .cameraroot #motionRecording .motionRegion .icon_edit.disable:hover {
+            background-position: -70px -160px !important;
+        }
+
+.cameraroot #motionRecording .motionRegion .icon_edit_selected {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 29px;
+    background-position: -100px -160px;
+    display: inline-block;
+}
+
+.cameraroot #motionRecording .motionRegion .motionRegionsensitivity {
+    width: 30%;
+    margin-bottom: 0px;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+}
+
+    .cameraroot #motionRecording .motionRegion .motionRegionsensitivity input {
+        width: 73%;
+    }
+
+.cameraroot #motionRecording .motionRegion .motionRecordingFieldIcon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+#motionRecording .motionRegion .motionRegionTxtBox {
+    width: 141px;
+    padding-right: 0;
+}
+
+
+#motionRecording .motionRegion .motionRecordingIndication {
+    float: left;
+    /* padding-top: 22px; */
+}
+
+#motionRecording .motionRegion .motionRecordingFieldIcon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+#motionRecording .motionRecordingSchedule li {
+    border-bottom: 1px solid #D3D3D3;
+    padding: 14px 0 14px 0;
+}
+
+
+/*.cameraroot #motionRecording .motionRecordingSchedule li:first-child {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 14px 0 14px 0;
+    }*/
+
+.cameraroot #motionRecording .motionRecordingSchedule .motionRecordingScheduleColHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+    margin-top: 11px;
+    margin-left: 28px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BABABA;
+    /*margin-bottom: 13px;*/
+}
+
+.cameraroot .motionRecordingScheduleColHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+    /*margin-top: 1.8%;
+    padding-left: 69%;*/
+}
+
+.cameraroot #motionRecording .mpcform {
+    position: fixed;
+    width: 72%;
+    height: 66%;
+    overflow: scroll;
+}
+
+.cameraroot #motionRecording .motionRecordingSchedule {
+    position: absolute;
+    right: 0px;
+    top: 55px;
+    bottom: 47px;
+}
+
+    .cameraroot #motionRecording .motionRecordingSchedule:hover {
+    }
+
+.cameraroot .checkbox-padding {
+    padding-bottom: 16px;
+}
+
+#motionRecording .motioRecordingFirstCol {
+    float: left;
+    width: 28%;
+    /*border-right: 1px solid #D3D3D3;*/
+    /* position: absolute; */
+    /* top: 0; */
+    padding-bottom: 40px;
+    /* bottom: 0; */
+    overflow: hidden;
+}
+
+#motionRecording .motioRecordingSecondCol {
+    width: 39%;
+    float: left;
+    /* position: absolute; */
+    /* top: 0; */
+    padding-bottom: 40px;
+    /* left: 28.1%; */
+    /* bottom: 0; */
+    overflow: hidden;
+}
+
+#motionRecording .motioRecordingThirdCol {
+    float: left;
+    width: 31% !important;
+    /* position: absolute !important; */
+    /* top: 0; */
+    padding-bottom: 58px;
+    /* left: 66.1%; */
+    /* bottom: 0; */
+    /*  overflow: hidden;*/
+    overflow: auto;
+    border-left: 1px solid #bababa;
+}
+
+/* #motionRecording .motioRecordingFirstCol:hover, #motionRecording .motioRecordingSecondCol:hover, #motionRecording .motioRecordingThirdCol:hover {
+        overflow: auto;
+    }*/
+
+#motionRecording .motioRecordingFirstCol .enableMotionRecording {
+    position: absolute;
+    top: 55px !important;
+    bottom: 0;
+    border-right: 1px solid #bababa;
+    width: 28%;
+}
+
+/*Motion Recording Styles*/
+
+/*#mpcacameraparent .buttonGroup .progressContainer {
+    width: 55%;
+    position: absolute;
+    right: 24px;
+    height: 30px;
+    top: 14px;
+}
+
+    #mpcacameraparent .buttonGroup .progressContainer progress {
+        right: 24px;
+        border-radius: 2px;
+        height: 30px;
+        width: 25%;
+        position: fixed;
+    }
+
+        #mpcacameraparent .buttonGroup .progressContainer progress::-webkit-progress-bar {
+            background-color: #707070;
+            border-radius: 4px;
+        }
+
+        #mpcacameraparent .buttonGroup .progressContainer progress::-webkit-progress-value {
+            background-color: #3BAD49;
+            border-radius: 4px;
+            background-size: 35px 29px, 100% 100%, 100% 100%;
+        }
+
+    #mpcacameraparent .buttonGroup .progressContainer .progressText {
+        position: relative;
+        top: 5px;
+        display: block;
+        width: 54%;
+        text-align: center;
+        color: #FFFFFF;
+    }*/
+
+/*Toggle Switch Style For Enable Disable*/
+.mpcaToggleSwitch label {
+    font-weight: normal;
+    padding-left: 14px;
+    margin-top: -5px;
+    color: #707070;
+    font-size: 12px;
+}
+
+#mpcTabsContent .mpcaToggleSwitch .switch_options span {
+        padding: 0px 8px;
+}
+
+#mpcTabsContent .mpcaToggleSwitch .switch_options {
+    margin-bottom: 22px;
+    width: auto;
+    min-width: auto;
+    display: inline-block;
+}
+/*Toggle Switch Style For Enable Disable*/
+
+
+
+.modelLeftSection #create-tree {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid #bababa;
+}
+/*canvas draw*/
+
+.motioRecordingSecondCol #motionregioncanvas {
+    border: 1px solid #000;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+}
+
+.motioRecordingSecondCol .vmdregioncanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    display: none;
+}
+
+.motioRecordingSecondCol #vmdregioncanvas_draw {
+    position: absolute;
+    border: 1px solid #bababa;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 2;
+}
+
+.motioRecordingSecondCol #container {
+    position: relative;
+    margin-left: 47px;
+    margin-top: 22px;
+    height: 240px;
+    width: 320px;
+}
+
+.motioRecordingSecondCol #imageView {
+    border: 1px solid #000;
+}
+
+.motioRecordingSecondCol #imageTemp {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+
+/*.motioRecordingSecondCol .motionRecordingIndication {
+    float: left;
+    padding-top: 22px;
+}
+
+.motioRecordingSecondCol .motionRecordingFieldIconRed {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.motioRecordingSecondCol .motionRecordingFieldIconGreen {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #3BAD49;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.motioRecordingSecondCol .motionRecordingFieldIconBlue {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #0067A6;
+    border-radius: 4px;
+    margin-right: 10px;
+}*/
+
+
+.motioRecordingSecondCol #vmdPlayerId {
+    border: 2px dashed #d3d3d3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    background-color: #F7F7F7;
+}
+
+.motioRecordingSecondCol .motionRegionCheckbox {
+    float: left;
+    margin-top: 6px;
+}
+
+/*.motioRecordingSecondCol .icon_edit {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -70px -160px;
+    display: inline-block;
+    margin-top: 20px;
+}*/
+
+/*.motioRecordingSecondCol .icon_edit_selected {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -100px -160px;
+    display: inline-block;
+    margin-top: 20px;
+}*/
+
+
+form#mpcacameramotionrecsetting {
+    margin: 0px;
+}
+
+.motioRecordingSecondCol .doneControl {
+    padding-left: 48px;
+    color: #08c;
+    cursor: pointer;
+    display: none;
+}
+
+/*Player styles for Motion Region*/
+.motioRecordingSecondCol #container .playercontainer {
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    top: 0;
+}
+
+.motioRecordingSecondCol #container #panelRequestLive {
+    height: 241px;
+    position: absolute;
+    width: 321px;
+}
+
+.motioRecordingSecondCol #container .loading-icon {
+    background: url('../images/Honeywell_Blank_220.png') 50% no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    display: none;
+    top: 0px;
+    bottom: 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.motioRecordingSecondCol #container .videoError {
+    position: relative;
+    font-size: 14px;
+    width: 218px;
+    display: block;
+    padding-left: 32px;
+    padding-top: 15px;
+}
+
+.motioRecordingSecondCol #container .videoErrorTextStyle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -4px;
+    background-color: #000000;
+    padding-top: 25%;
+    border: 1px solid transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    display: block;
+    padding-left: 27%;
+}
+
+.cameraroot #motionRecording .motionRegion .formControl-checkbox {
+    height: 10px;
+    top: 0px !important;
+}
+
+    .cameraroot #motionRecording .motionRegion .formControl-checkbox span {
+        width: 0px;
+        height: 20px;
+        padding-top: 0px !important;
+    }
+
+.motioRecordingSecondCol #container .videoErrorTextStyle .videoErrorImage {
+    background: url("../images/sprite_40.png");
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-position: -10px -60px;
+    display: inline-block;
+    margin-left: 48px;
+}
+
+
+.motioRecordingSecondCol #container .videoErrorTextStyle .videoErrorText {
+    display: block;
+    font-size: 12px;
+    color: #D3D3D3;
+}
+
+.motioRecordingSecondCol #container .tryAgainStyle {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 1px;
+    display: inline-flex;
+    color: #d3d3d3;
+    padding-left: 18px;
+}
+
+.motioRecordingSecondCol #container .icon_tryagain {
+    background: url("../images/sprite_icons.png");
+    background-position: -40px -430px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 8px;
+}
+/*Player styles for Motion Region*/
+
+.cameraroot .cameraconfigformwrapper .secLabel {
+    color: #707070;
+    font-size: 12px;
+    left: 59px;
+    top: 16px;
+    position: absolute;
+}
+
+/*Progress Bar styles for MPCA*/
+#mpcTabsContent progress::-moz-progress-bar {
+    background-color: #3BAD49;
+}
+
+
+#mpcTabsContent progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    border: 1px solid #707070;
+    background-color: #707070;
+}
+
+#mpcTabsContent progress {
+    color: #3BAD49;
+}
+/*Progress Bar styles for MPCA*/
+
+/*Event recording trigger label style*/
+#eventrecordingul .checkboxStyle .title {
+    cursor: default;
+}
+/*Event recording trigger label style*/
+
+#schedulePopup select[disabled] {
+    background-color: transparent !important;
+}
+
+.field #mpcacameraRCDPreEvnt + .tooltip.bottom .tooltip-arrow,.field #mpcacameraRCDOnsPstEvnt + .tooltip.bottom .tooltip-arrow,.field #mpcacameraRCDOffPstEvnt + .tooltip.bottom .tooltip-arrow {
+    left: 251px !important;
+}
+
+@-moz-document url-prefix() {
+.cameraroot #mpcTabsContent .scroll-y {
+    overflow: auto;
+}
+.cameraroot #mpcTabsContent .scroll-y:hover {
+    overflow-y: auto;
+}
+.cameraroot #mpcTabsContent .scroll-y {
+    overflow: auto;
+}
+.cameraroot #mpcTabsContent .scroll-y:hover {
+    overflow-y: auto;
+}
+}

@@ -1,0 +1,75 @@
+﻿<script type="text/html" id="doorresultlisttmpl">
+    <li>
+
+        <div class="userImageHolder">
+            <span class="userIcon"><img data-bind="attr: { src: $data.ImagePath },visible:$data.ImagePath.length>0" /></span>
+        </div>
+        <div class="userTxtFields">
+            <span id="displayname" class="userName" data-bind="text:$data.DisplayName"></span>        
+            <span data-bind="text:$data.EventCodeType"></span>
+            <span data-bind="text:$data.CredentialNumber"></span>
+            <span class="dateTime" data-bind="text:$data.OrigintimeDisplay"></span>
+        </div>
+    </li>
+</script>
+
+
+
+<script type="text/html" id="doorassociationlisttmpl">
+    <li>
+        <b class='doorResults_icon'></b>
+        <span class='doorResultsText' data-bind="text: $data.doorname"></span>
+    </li>
+</script>
+<script type="text/html" id="doorassociationpaneltmpl">
+    <div id="camdoorasc" class='doorAssociationList'>
+        <ul data-bind="template: {name: 'doorassociationlisttmpl', foreach: $data.associateddoors}"></ul>
+    </div>
+</script>
+<script type="text/html" id="PlayerTemplate">
+    <li class="ui-state-default emptyVideoStyle" data-bind="style:{'width':$data.panelwidth, 'margin':$data.panelmargin}">
+        <div class="videoContainer" data-bind="attr: { 'id' : panelid},click:getPanelClickdetails,css:$data.SelectionState">
+            <div data-bind="attr:{'class': $data.Liveplaybackicon()},visible:$data.isshow()"></div>
+            <div class="playercontainer" data-bind="visible:$data.issuccess() && $data.iscamera()"></div>
+            <div class="doorAssociationDetails" data-bind="attr: {'data-doorid': $data.doorsessionmodel.doorid}, visible:$data.issuccess() && $data.isdoor() && $data.isshow(),with: $data.doorsessionmodel">
+                <i data-bind="click:Performaction , css:$data.Doorstatusicon"></i>
+                <h3 class="doorAssociation-title"><span class="doorNameTitle" data-bind="text:$data.doorname"></span><span class="doorStatusTitle" data-bind="text:$data.doorstatus"></span></h3>
+                <span class="eventerror" data-bind="visible:$data.DooreventResult().length == 0">@Resources.Viewer_DoorError</span>
+                <ul class="doorAssociation-results" data-bind="visible:$data.DooreventResult().length != 0, template: {name: 'doorresultlisttmpl', foreach:DooreventResult}"></ul>
+            </div>
+            <i class="doorAssociation-icon" data-bind="click:showdoorassociation, visible:isshowdoorvisible() && $data.isshow()"></i>
+            <div class="emptyVideoTextStyle" data-bind="visible:!$data.isdropped() && $data.isshow()">
+                <span class="emptyVideoImage" data-bind="click:$data.doaddpanelitem"></span><span>@Resources.lbl_drag_an_item_to_view</span>
+            </div>
+            <div id="panelRequestLivepb" data-bind="visible:isrequesting() && $data.isshow()">
+                <i class="loading-icon"></i>
+                <i class="close-icon" data-bind="click:closepanel, visible:isclosevisible() && $data.isshow()"></i>
+                <span class="videoError" data-bind="text:erromessage"> </span>
+            </div>
+            <div class="videoErrorTextStyle" data-bind="visible:isError() && $data.isshow()">
+                <i class="close-icon" data-bind="click:closepanel, visible:isclosevisible() && $data.isshow()"></i>
+                <span class="textOnVideoLeft" data-bind="visible:$data.iscamera() && $data.isshow(), text:$data.EntityName"> </span>
+                <span class="videoErrorImage"></span>
+                <span class="videoErrorText" data-bind="text:DropfailedText"></span>
+                <span class="tryAgainStyle" data-bind="visible:$data.showreload(), click:Retryvideostream"><i class="icon_tryagain"></i>@Resources.Try_Again</span>
+            </div>
+            <div data-bind="visible:$data.issuccess() && $data.isshow()">
+                <i class="close-icon" data-bind="click:closepanel, visible:isclosevisible() && $data.isshow()"></i>
+                <span class="textOnVideoLeft" data-bind="visible:$data.iscamera() && $data.isshow(), text:$data.sessionmodel.cameraname"> </span>               
+            </div>
+            @*<div data-bind="visible:$data.issuccess() && $data.isshow()">
+                <span class="videoTime" data-bind="visible:$data.iscamera(), text:$data.sessionmodel.playingDateTime"> </span>
+            </div>*@
+        </div>
+    </li>
+
+</script>
+<div class="row" id="viewerpagebody" data-playerimage='@Url.Content("~/Content/images/Honeywell_Blank_220.png")'>
+    <div id="viewersalvowrapper" class="grids">
+        <span class="salvoName" data-bind="text:$data.Salvoname,visible:$data.isSalvoname()"></span>
+        <ul id="sortable" class="aspectRatio ui-sortable" data-bind=" style:{'width':salvowidth,'margin-left':salvomargin,'margin-top':salvotopmargin},template:{name: 'PlayerTemplate', foreach: Panels}"></ul>
+    </div>
+</div>
+<i id="fullExitId" title="@Resources.Viewer_FullScreen" class="icon-fullscreenexit"></i>
+
+

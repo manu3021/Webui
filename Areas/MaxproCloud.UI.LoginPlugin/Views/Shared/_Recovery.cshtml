@@ -1,0 +1,57 @@
+﻿@using System.Configuration ;
+<form method="post" action='@Url.Action("ChangePassword")' id="recoveryForm" data-validationkey="passwordChange" data-bind="submit:DoRecovery">
+    <div class="form-signin-heading"><img src="~/content/images/maxproLogo.png" width="324" height="67"></div>
+    <div id="changepassword">
+        @if (!ViewBag.isExpired)
+        {
+
+            <input type="hidden" id="emailid" value="@ViewBag.email" />
+
+            <div class="control-group">
+                <div class="controls">
+                    <div class="control-group">
+                        <div class="field controls" >
+                            <span class="controls passfield" for="showpass"><b class="icon_eye"></b></span>
+                            @*<input type="checkbox" value="Show password" class="passcheckbox" id="showpass" tabindex="-1" data-bind="click:onShowPass">*@
+                            <label for="inputEmail" class="floatLblDn">@Resources.Profile_newpassword</label>
+                            <input id="password" name="password" type="password" class="floatTxt myStyle" placeholder="@Resources.Login_Password" data-bind="value: password, valueUpdate: 'afterkeydown'" required />
+                        </div>
+                    </div>
+                    <div id="recoverycaptcha" class="g-recaptcha" data-sitekey="@ConfigurationManager.AppSettings["recaptchaPublicKey"]"></div>
+                </div>
+            </div>
+    
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="primary-button" id="btnchangepass" data-bind="click:DoRecovery,disable:disablesubmit">@Resources.Change_Password</button>
+                    <button type="button" class="secondary-button" data-bind="click:showLogin">@Resources.Cancel</button>
+                </div>
+
+            </div>
+            <span class="error-msg">
+                <span id="errormsg">@Resources.RecovaryIncorrect_Error_Message</span>
+            </span>
+        }
+        else
+        {
+            <p>@Resources.PasswordLink_Expired</p>
+            <br />
+            <a href='@Url.Content("~/")'>@Resources.Click_Here</a>
+            <p> @Resources.To_Login_page</p>
+        }
+    </div>
+    <div id="passwordchanged" style=" display:none ">
+        <p>@Resources.password_changed</p>
+        <div class="control-group">
+            <div class="controls">
+                <button class="login-button" onclick="return window.showLogin();return false">@Resources.Go_to_Login</button>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <p>
+            @Resources.Call <a href="tel:@ViewBag.HelpLine">@ViewBag.HelpLine</a> @Resources.for_more_guidance
+        </p>
+    </div>
+</form>

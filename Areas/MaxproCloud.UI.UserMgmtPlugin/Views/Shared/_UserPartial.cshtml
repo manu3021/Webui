@@ -1,0 +1,107 @@
+﻿<div class="userdetailform layoutrow scroll-y">
+    <div id="userpanel" data-url="@Url.Action("", "UserConfig")" class="effect8">
+        <form data-validationkey="user_form" id="userdetailform" data-bind="submit: $data.saveuserdata" autocomplete="off">
+            <div id="editUser" class="row formcontrol" style="display: block;">
+                <div class="col pull-left">
+                    <div class="spaceBottomStyle pull-left">
+                        <div class="ImagePlaceHolder row">
+                            @if (!Html.HasPermissions(MPCRoles.Operator))
+                            {
+                                <b class="remove-image" data-bind="visible:  $data.userPhoto().length > 0,click: $data.deletephoto"></b>
+                            }
+                            <img id="photo" data-bind="attr: { src: userPhoto }, valueUpdate: 'afterkeydown' ">
+                            @if (!Html.HasPermissions(MPCRoles.Operator))
+{
+    <input type="file" id="photofile" name="photofile" data-uploadurl="@Url.Action("FileUpload", "File")" data-bind="file: imageFile, fileObjectURL: imageObjectURL, imageBase64: image, imageType: imageType">
+}
+                        </div>
+                        <div class="spaceBottomStyle">
+                            <span class="ui-button-container userTypeButton">
+                                <button class="secondary-button exceptionbutton" data-bind="click: $data.showexceptions">@Resources.Exceptions</button>
+                                <button class="secondary-button candobutton" style="display:none" disabled="disabled" data-bind="click: $data.showcando">@Resources.Can_do</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col pull-left rightTextFields">
+                    <div class="field">
+                            <label for="user_FirstName" class="floatLblDn">@Resources.First_Name</label>
+                        <input type="text" id="user_FirstName" name="user_FirstName" class="floatTxt myStyle" data-bind="value: $data.FirstName, valueUpdate: 'afterkeydown' " />
+                        </div>
+                    <div class="field">
+                            <label for="user_LastName" class="floatLblDn">@Resources.Last_Name</label>
+                        <input type="text" id="user_LastName" name="user_LastName" class="floatTxt myStyle" data-bind="value: $data.LastName, valueUpdate: 'afterkeydown' " />
+                        </div>
+                    <div class="field select-field" >
+                            <label for="user_LastName">@Resources.Role_Template</label>
+                            @if (Html.HasPermissions(MPCPermissions.Update_User))
+                            {
+                            <select name="" class="OperatorCanbo" data-bind='options: ApplicationRoles, optionsText: "RoleName", optionValue: "RoleId", value: SelectedRole'></select>
+                           
+                            }
+                            else
+                            {
+                            <select name="" class="OperatorCanbo" disabled style="cursor: default" data-bind='options: ApplicationRoles, optionsText: "RoleName", optionValue: "RoleId", value: SelectedRole'></select>
+                            }
+                        </div>
+                    <div class="field">
+                            <label for="user_UserName" class="floatLblDn">@Resources.Primary_Email_or_Login_ID</label>
+                        <input type="email" readonly="readonly" id="user_UserName" name="user_UserName" class="floatTxt myStyle" data-bind="value: $data.UserName" autocomplete="off" autocorrect="off" autocapitalize="off" />
+                        </div>
+                  
+                    <div class="field notRequiredStyle">
+                            <label for="user_EmailAddress" class="floatLblDn">@Resources.Alternate_Email</label>
+                        <input type="email" id="user_EmailAddress" name="user_EmailAddress" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AlternateEmail, valueUpdate: 'afterkeydown' " autocomplete="off" autocorrect="off" autocapitalize="off" />
+                        </div>
+                    <div class="field">
+                            <label for="user_Phone" class="floatLblDn">@Resources.Phone</label>
+                        <input type="tel" id="user_Phone" name="user_Phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' " />
+                        </div>
+                       <div class="field notRequiredStyle">
+                            <label for="user_WorkPhone" class="floatLblDn">@Resources.Alternate_Phone_Numbers</label>
+                           <input type="tel" id="user_WorkPhone" name="user_WorkPhone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.WorkPhone, valueUpdate: 'afterkeydown' " />
+                        </div>
+                        <div class="field">
+                            <label for="user_Address" class="floatLblDn">@Resources.Address</label>
+                            <input type="text" id="user_Address" name="user_Address" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' " />
+                        </div>
+                        <div class="field">
+                            <label for="user_City" class="floatLblDn">@Resources.City</label>
+                            <input type="text" id="user_City" name="user_City" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' " />
+                        </div>
+                        <div class="field">
+                            <label for="user_State" class="floatLblDn">@Resources.Region</label>
+                            <input type="text" id="user_State" name="user_State" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' " />
+                        </div>
+                        <div class="field">
+                            <label for="user_Country" class="floatLblDn">@Resources.Country</label>
+                            <input type="text" id="user_Country" name="user_Country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' " />
+                        </div>
+
+                        <div class="row borderTop">
+                        </div>
+                    <div class="row col" style="margin-left: -204px !important;">
+                            <span class="ui-button-container user-partial-button">
+                                @if (Html.HasPermissions(MPCPermissions.Update_User))
+                                {
+                                    <button class="primary-button" id="btnsave" data-bind="enable: hasChanges, click: $data.saveuserdata">@Resources.Save</button>
+                                    <button class="secondary-button" id="btncancel" data-bind="enable: hasChanges, click: $data.cancelEdit">@Resources.Cancel</button>
+                                }
+                                @if (Html.HasPermissions(MPCPermissions.Delete_User))
+                                {
+                                    <button class="secondary-button" id="btnDelete" data-bind="click: $data.deleteSelectedUser">@Resources.Delete</button>
+                                }
+                                 @if (Html.HasPermissions(MPCRoles.Dealer) || Html.HasPermissions(MPCRoles.SystemAdmin))
+                                {
+                                    <button class="secondary-button" data-bind="click: $data.unlockSelectedUser,visible:$data.IsLocked">@Resources.UnLockUser</button>
+                                }
+                                <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            
+        </form>
+    </div>
+</div>

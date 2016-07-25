@@ -1,0 +1,131 @@
+
+/* Timeout Dialog Styles */
+.timeout-dialog {
+padding: 24px;
+  position: absolute;
+  background: #d3d3d3 url("../images/icon_errorLightbox.png") no-repeat 28px 42px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 0px 2px #d3d3d3;
+  /* -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5); */
+  /*-moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);*/
+  /* box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5); */
+  /* -webkit-border-radius: 5px; */
+  -moz-border-radius: 4px;
+   border-radius: 4px; 
+   width: 390px !important;
+    margin-top: 0px !important;
+}
+/* Some default button styles */
+.timeout-dialog button {font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle;}
+.timeout-dialog button {line-height: normal; *overflow: visible;}
+.timeout-dialog button {cursor: pointer; -webkit-appearance: button;}
+
+.timeout-dialog button {
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px;
+  
+ border-radius: 4px;
+  
+ /* border: 1px solid #cccccc; */
+  
+ border-width: 1px;
+  
+ /* border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); */
+  
+ /* -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1); */
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  
+ /* box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
+  color: #333333;
+  display: inline-block;
+  font-size: 14px;
+  line-height: normal;
+  
+ padding: 5px 10px;
+  
+ /* text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); */
+}
+
+.timeout-dialog .button:hover, button:hover {
+  text-decoration: none;
+  background-position: 0 -15px;
+}
+
+.timeout-dialog .button:focus, button:focus {
+  -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+.timeout-dialog .ui-dialog-title {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  padding: 0 0 15px 0;
+  margin-left: 80px;
+  color:#3B3B3B;
+}
+.timeout-dialog .ui-dialog-titlebar-close {
+  display: none;
+}
+.timeout-dialog .ui-dialog-buttonpane {
+  margin-top: 15px;
+}
+.timeout-dialog  ~ .ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+.timeout-dialog p {
+  margin: 0 0 5px 80px;
+}
+.timeout-dialog #timeout-keep-signin-btn {
+  color:#fff !important;
+        /*background: linear-gradient(to top, #0889c4,#0780be) repeat scroll 0 0 hsla(0, 0%, 0%, 0);*/
+        /* IE10 Consumer Preview */
+        /* Mozilla Firefox */
+        /* Opera */
+        /* Webkit (Safari/Chrome 10) */
+    
+        /* Webkit (Chrome 11+) */
+        /* W3C Markup, IE10 Release Preview */
+        margin-right: 8px;
+	padding: 5px 14px;
+	background-image: linear-gradient(to bottom right, #0889c4 0%, #0780BE 100%) !important;
+}
+#timeout-sign-out-button {
+  /* IE10 Consumer Preview */
+        /* Mozilla Firefox */
+        /* Opera */
+        /* Webkit (Safari/Chrome 10) */
+        /* Webkit (Chrome 11+) */
+        /* W3C Markup, IE10 Release Preview */
+        color: #ffffff !important;
+	padding: 5px 14px;
+	background-image: linear-gradient(to bottom right, #959595 0%, #9D9D9D 100%)!important;
+}
+#timeout-countdown {
+  font-weight: bold;
+}
+.timeout-dialog .ui-dialog-titlebar #ui-id-1{
+  background: none;
+  border: none;
+  height: auto;
+  width: 248px !important;
+}
+
+.timeout-dialog .ui-widget-header {
+    border: none;
+    background: none;
+}
+
+#timeout-dialog {
+    margin-top: 0px;
+}

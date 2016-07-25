@@ -1,0 +1,95 @@
+﻿<div id="manageTimeSchedule" class="mpcmodel modal hide fade manageTimeScheduleholder" role="dialog">
+    <form id="manageTimeScheduleForm" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+        <header class="row">
+            <span>@Resources.Time_Schedule</span>
+        </header>
+        <section class="row">
+            <div class="col pull-left">
+                <div class="field spaceBottomStyle">
+                    <label class="floatLblDn">@Resources.Schedule_Name</label>
+                    <input type="text" class="floatTxt myStyle" id="schedule_Name" name="schedule_Name" maxlength="25" data-bind="value: $data.model.Name" />
+                </div>
+            </div>
+            <div class="col pull-left">
+                <div class="field spaceBottomStyle notRequiredStyle">
+                    <label class="floatLblDn">@Resources.Description</label>
+                    <input type="text" class="floatTxt myStyle" id="schedule_Description" name="schedule_Description" maxlength="100" data-bind="value: $data.model.Description" />
+                </div>
+
+            </div>
+
+            <div>
+                <svg class="time-chart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 850 370"
+                     data-bind="timeSlotChart: $data.model.TimeSlots, slotDays: $data.Days, snapTime: $data.SnapTime"></svg>
+                <div class="callout" id="copySlotPopup">
+                    @if (Html.HasPermissions(MPCPermissions.ADD_SCHEDULE) || Html.HasPermissions(MPCPermissions.UPDATE_SCHEDULE))
+                    {
+                    <label>@Resources.Schedule_Copy_Time</label>
+                 <ul>
+                    <li data-index="0"> 
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_M</label> 
+                     </li>
+                    <li data-index="1">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_T</label> 
+                    </li>
+                    <li data-index="2">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_W</label> </li>
+                    <li data-index="3">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_Th</label> </li>
+                    <li data-index="4">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_F</label> </li>
+                    <li data-index="5">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_S</label> </li>
+                    <li data-index="6">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox">
+                            <span></span>
+                        </label>
+                        <label>@Resources.Time_Su</label> </li>
+                 </ul>
+                    <div class="callout-arrow"></div>
+                    }
+                </div>
+                <div class="time-input"></div>
+            </div>
+        </section>
+        <div class="modal-screenlock">
+            <span class="modal-loadingicon"></span>
+        </div>
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                @if (Html.HasPermissions(MPCPermissions.ADD_SCHEDULE) || Html.HasPermissions(MPCPermissions.UPDATE_SCHEDULE))
+                {
+                    <button class="primary-button" data-bind="click: $data.saveSchedule">@Resources.Save</button>
+                }
+                <button class="secondary-button" data-bind="click: $data.cancelSchedule">@Resources.Cancel</button>
+                <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+            </div>
+        </footer>
+    </form>
+</div>

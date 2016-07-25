@@ -1,0 +1,613 @@
+﻿.profile {
+}
+
+    .profile .headerSecondMenu {
+        color: #6f7074;
+        padding-left: 22px;
+        padding-top: 1%;
+        margin: 0px;
+        top: 62px;
+        height: 43px;
+        width: 100%;
+        position: fixed;
+        border-bottom: 1px solid #bababb;
+        -webkit-box-shadow: -2px 0px 6px 0px #bababb;
+        -moz-box-shadow: -2px 0px 6px 0px #bababb;
+        box-shadow: -2px 0px 6px 0px #bababb;
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=0px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+        font-size: 16px;
+        background-color: #fff;
+        z-index: 100;
+    }
+
+        .profile .headerSecondMenu span {
+            font-size: 22px;
+            font-family: "Open Sans Regular" !important;
+            color: #6f7074;
+        }
+
+    .profile .tabcontainer {
+        top: 46px;
+        width: 100%;
+        min-width: 100%;
+        min-height: 46px;
+        height: 44px;
+        position: absolute;
+        border-bottom: 1px solid #bababb;
+        font-size: 16px;
+        /* background-color: #fff; */
+        background-color: #f5f5f5;
+        z-index: 100;
+        line-height: 40px;
+        display: table-cell;
+        /*padding-left: 24px;*/
+        border-top: 1px solid #bababb;
+        left: 0;
+    }
+
+        .profile .tabcontainer ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .profile .tabcontainer #myTab li:first-child {
+            margin-left: 24px;
+        }
+
+        .profile .tabcontainer #myTab li a {
+            color: #28282A;
+            margin-right: 0px;
+            padding-top: 11px;
+            vertical-align: top;
+            padding-bottom: 14px;
+        }
+
+            .profile .tabcontainer #myTab li a:hover {
+                background-color: #fff !important;
+            }
+
+        .profile .tabcontainer #myTab li.active {
+            background: #f5f5f5;
+        }
+
+            .profile .tabcontainer #myTab li.active a {
+                -webkit-border-radius: 0px !important;
+                -moz-border-radius: 0px !important;
+                -ms-border-radius: 0px !important;
+                -o-border-radius: 0px !important;
+                border-radius: 0px !important;
+                /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+                color: #0067A6;
+                outline: none;
+            }
+
+    .profile .tab-content {
+        position: absolute;
+        top: 94px;
+        width: 100%;
+        bottom: 64px;
+        overflow: hidden;
+    }
+
+        .profile .tab-content #dealer {
+            top: 0px;
+        }
+
+            .profile .tab-content #dealer ul {
+                padding: 0;
+                margin: 0px;
+            }
+
+        .profile .tab-content .secondUL {
+            width: 318px;
+            margin: 0px;
+            left: 847px;
+            position: absolute;
+            top: 24px;
+            margin-left: 14px !important;
+        }
+
+        .profile .tab-content #dealer ul li {
+            list-style-type: none;
+            float: left;
+            padding-bottom: 22px;
+            width: 200px;
+        }
+
+        .profile .tab-content .imageHolder, .myprofileLeftPane .imageHolder {
+            width: 180px;
+            height: 180px;
+            font-size: 21px;
+            font-weight: bold;
+            font-weight: normal;
+            background-image: url('../images/img_profile.png');
+            float: left;
+            margin: 24px;
+        }
+
+            .profile .imageHolder input, .myprofileLeftPane .imageHolder input {
+                height: 180px;
+                margin: 0;
+                opacity: 0;
+                padding: 0;
+                width: 180px;
+                top: 24px;
+                position: absolute;
+            }
+
+        .profile .tab-content .imageHolder, .mydealerleftpane .imageHolder {
+            width: 180px;
+            height: 180px;
+            font-size: 21px;
+            font-weight: bold;
+            font-weight: normal;
+            /*border: 1px dashed #d6d6d6;*/
+            background-color: #f5f5f5;
+            /*background-image :url('../images/img_profile.png') !important;*/
+            float: left;
+            margin: 24px;
+            position: fixed;
+        }
+
+.imageHolder.pro-no-img {
+    background-image: none !important;
+    border: 2px dashed #d6d6d6;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+.profile .imageHolder .profile-upload-text {
+    font-size: 14px;
+    width: 180px;
+    display: block;
+    position: absolute;
+    top: 104px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.profile .imageHolder input, .mydealerleftpane .imageHolder input {
+    height: 180px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 180px;
+    top: 24px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.profile .imageHolder .profile-upload-lbl {
+    font-size: 14px;
+    text-align: center;
+    width: auto;
+    display: block;
+    margin-top: 10px;
+    background-color: #f5f5f5;
+    padding: 5px 0;
+}
+
+.profile .tab-content .imageHolder > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    /*visibility: hidden;*/
+}
+
+.profile #dealer .dealerForm {
+    left: 203px;
+    position: absolute;
+    width: 658px;
+}
+
+.profile #dealer .textarea {
+    display: inline-table;
+    width: 270px;
+}
+
+    .profile #dealer .textarea textarea {
+        margin: 12px 5px 10px;
+        height: 102px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0, OffY=0, Color='black', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+        width: 276px;
+        border: none;
+    }
+
+.profile #dealer form {
+    margin: 0px;
+    padding: 0px;
+}
+
+.profile #myprofile .myprofileLeftPane {
+    position: absolute;
+    width: 50%;
+    left: 0px;
+    overflow: scroll;
+    bottom: 0px;
+    top: 0px;
+}
+
+
+.profile #myprofile .mydealerleftpane {
+    position: absolute;
+    width: 50%;
+    left: 0px;
+    overflow: scroll;
+    bottom: 0px;
+    top: 0px;
+}
+
+.profile .dealerleftpane {
+    padding-top: 24px;
+    left: 228px;
+    height: 90%;
+    position: absolute;
+    width: 627px;
+}
+
+.profile #dealerEdit .contact-text {
+    left: 238px;
+    top: 369px;
+    position: relative;
+    font-family: 'Open Sans Regular' !important;
+}
+
+.profile #myprofile .myprofileLeftPane .myprofileName, .profile #profileEdit {
+    top: 0px;
+    position: absolute;
+    bottom: 24px;
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+    .profile #myprofile .myprofileLeftPane .myprofileName, .profile #profileEdit #saveprofile .myprofileName {
+        position: relative;
+        left: 227px;
+        margin-left: 0px;
+        overflow: auto;
+        width: 76%;
+        height: 100%;
+        min-height: 446px;
+    }
+
+        .profile #myprofile .myprofileLeftPane .myprofileName name, .profile #profileEdit .myprofileLeftPane .myprofileName name {
+            font-size: 22px;
+            color: #454545;
+            font-family: "Open Sans Semibold";
+            display: block;
+            padding-bottom: 8px;
+        }
+
+        .profile #myprofile .myprofileLeftPane .myprofileName role, .profile #profileEdit .myprofileLeftPane .myprofileName role {
+            font-size: 15px;
+            color: #707070;
+            font-family: "Open Sans Regular";
+            padding-bottom: 8px;
+            display: block;
+        }
+
+#myprofile .passcheckbox {
+    width: 50px !important;
+    height: 50px !important;
+    float: right !important;
+    position: relative !important;
+    -khtml-opacity: 0 !important;
+    -moz-opacity: 0 !important;
+    opacity: 0 !important;
+    filter: alpha(opacity=NaN);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+}
+
+#changepwd .passcheckbox {
+    width: 50px !important;
+    height: 50px !important;
+    float: right !important;
+    position: relative !important;
+    -khtml-opacity: 0 !important;
+    -moz-opacity: 0 !important;
+    opacity: 0 !important;
+    filter: alpha(opacity=NaN);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+}
+
+#changepwd .field #newpassword + .tooltip.bottom .tooltip-arrow {
+    left: 219px !important;
+}
+
+
+.profile #myprofile .myprofileLeftPane .myprofileContactInfo {
+    position: absolute;
+    top: 223px;
+    left: 226px;
+    width: 200px;
+}
+
+.profile .dealerForm .myprofileLeftPane .myprofileContactInfo, .profile #profileview .myprofileLeftPane .myprofileContactInfo ul {
+    position: absolute;
+    width: 200px;
+}
+
+    .profile #myprofile .myprofileLeftPane .myprofileContactInfo ul, .profile .dealerForm .myprofileLeftPane .myprofileContactInfo ul {
+        margin: 0px;
+        padding: 0px;
+        width: 303px;
+    }
+
+        .profile #myprofile .myprofileLeftPane .myprofileContactInfo ul li, .profile .dealerForm .myprofileLeftPane .myprofileContactInfo ul li {
+            list-style-type: none;
+            font-size: 12px;
+            color: #9d9d9d;
+            border-bottom: 1px solid #d6d6d6;
+            padding-top: 22px;
+            padding-bottom: 8px;
+        }
+
+            .profile #myprofile .myprofileLeftPane .myprofileContactInfo ul li span, .profile .dealerForm .myprofileLeftPane .myprofileContactInfo ul li span {
+                display: block;
+            }
+
+.profile #myprofile .updateButtons, .profile #dealer .updateButtons {
+    border-top: 1px solid #d3d3d3;
+    clear: both;
+    padding-top: 14px;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.profile #myprofile .myprofileRightPane {
+    position: absolute;
+    left: 50%;
+    padding-left: 24px;
+    border-left: 1px solid #d6d6d6;
+    margin-top: 24px;
+    bottom: 0px;
+    top: 0px;
+    width: 48%;
+    overflow: scroll;
+}
+
+    .profile #myprofile .myprofileRightPane header span {
+        font-size: 18px;
+        font-family: "Open Sans Semibold";
+        color: #454545;
+    }
+
+    .profile #myprofile .myprofileRightPane article {
+        padding-top: 8px;
+    }
+
+        .profile #myprofile .myprofileRightPane article ul {
+            margin: 0px;
+            width: 303px;
+        }
+
+            .profile #myprofile .myprofileRightPane article ul li {
+                list-style-type: none;
+                font-size: 12px;
+                color: #9d9d9d;
+                border-bottom: 1px solid #d6d6d6;
+                padding-top: 22px;
+            }
+
+                .profile #myprofile .myprofileRightPane article ul li .packValue {
+                    font-size: 15px;
+                    color: #707070;
+                    display: block;
+                }
+
+.profile .firstSection {
+    float: left;
+    width: 28%;
+    border-right: 1px solid #BABABB;
+    height: 100%;
+}
+
+.profile .secondSection {
+    float: left;
+    width: 28%;
+    border-right: 1px solid #BABABB;
+    padding-left: 24px !important;
+    height: 100%;
+}
+
+.profile .thirdSection {
+    float: left;
+    width: 28%;
+    padding-left: 24px !important;
+    height: 100%;
+}
+
+.profile .profileHeading {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    padding-top: 24px;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    margin-left: 24px;
+}
+
+.profile .profilebottomSection ul {
+    border-top: 1px solid #D3D3D3;
+    margin-top: 18px;
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+.profile .profilebottomSection .formcontrol label.formControl-checkbox {
+    margin-top: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.profile .formcontrol label {
+    font-weight: normal;
+    padding-left: 0px !important;
+}
+
+.profilebottomSection .formControl-checkbox {
+    top: 11px !important;
+}
+
+.profile .profilebottomSection .formcontrol legand {
+    padding-left: 42px;
+    vertical-align: text-bottom;
+    top: -8px !important;
+    position: relative;
+}
+
+.profile .profilebottomSection .formcontrol ul li {
+    float: none;
+    border-bottom: 1px solid #D3D3D3;
+    padding-bottom: 9px;
+}
+
+#saveprofile {
+    margin: 0px !important;
+}
+
+.myprofileName {
+    padding-top: 24px;
+}
+
+
+#newpassword {
+    width: 212px !important;
+}
+
+    #newpassword input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 25px 7px 9px;
+        width: 250px !important;
+    }
+
+#inputPassword.invalidError {
+    -webkit-background-position-x: 208px !important;
+    -ms-background-position-x: 208px !important;
+    -o-background-position-x: 208px !important;
+    background-position-x: 208px !important;
+}
+
+.profile .absolutefix {
+    position: absolute;
+}
+
+.spacingTop {
+    padding-left: 24px;
+}
+
+.fieldAddressLine > span {
+    display: inline-block;
+    float: left;
+}
+
+.mydealerleftpane .authorizedDealerPgm {
+    margin-top: -5px;
+    height: 52px;
+}
+
+    .mydealerleftpane .authorizedDealerPgm .formControl-checkbox {
+        height: 20px;
+        width: 25px;
+        margin-left: -15px;
+        margin-top: 5px;
+        position: absolute;
+    }
+
+    .mydealerleftpane .authorizedDealerPgm legand {
+        font-weight: normal;
+        font-size: 15px;
+        padding-left: 25px !important;
+        text-transform: lowercase;
+    }
+
+    .mydealerleftpane .authorizedDealerPgm li {
+        width: 82px !important;
+        padding-left: 12px;
+    }
+
+    .mydealerleftpane .authorizedDealerPgm .form-registration-heading {
+        padding-left: 14px;
+        margin-top: -4px;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    .mydealerleftpane .authorizedDealerPgm ul {
+        padding-top: 0px;
+    }
+
+/*#dealer .profiletabcontentdisable {
+    width: 100%;
+height: 100%;
+position: fixed;
+z-index: 1000;
+top: 156px;
+}
+    */
+
+
+.profile #btndealerskip {
+    pointer-events: auto !important;
+}
+
+.profile #btndealerNext {
+    pointer-events: auto !important;
+}
+
+#profilepassword {
+    top: 0px;
+    position: absolute;
+    bottom: 24px;
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+    #profilepassword .changePasswordFields {
+        padding-top: 24px;
+    }        
+
+.profile span.error-msg {
+    color: #e33e38;
+}
+
+.mydealerleftpane .imageHolder .text {
+    top: 79px;
+    left: 51px;
+    font-size: 15px;
+    position: absolute;
+    color: #707070;
+    width: 100px;
+    font-weight: normal;
+}
+
+.customlogo-msg {
+    font-family: 'Open Sans Regular' !important;
+    font-size: 14px;
+    top: 200px;
+    position: absolute;
+    width: 100%;
+    /* z-index: 10000; */
+    height: 200px;
+    width: 180px;
+}

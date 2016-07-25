@@ -1,0 +1,38 @@
+﻿<style type="text/css">
+    #uTreeview {
+        list-style: none;
+    }
+
+    .utreeItem {
+        list-style: none;
+    }
+
+    .uChildItems {
+        list-style: none;
+    }
+
+    .uChildItemsHide {
+        display: block;
+    }
+
+    .uChildItemsShow {
+        display: block;
+    }
+
+    .expandIcon {
+    }
+</style>
+<script type="text/html" id="utreeTemplate">
+    <li class="utreeItem">
+        <i class="expandIcon">
+            <img src="Content/images/icon_folder.png" />
+        </i>
+        <span data-bind="text: $data.Name" />
+        <ul class="uChildItems uChildItemsHide" data-bind="template:{ name: 'utreeTemplate', foreach: $data.Children},attr:{'data-show':$data.HasChild}"></ul>
+    </li>
+</script>
+<ul id="uTreeview" data-bind="template:{ name: 'utreeTemplate', foreach: $data.DataSource }"></ul>
+<script src="~/Scripts/Viewer/Treeview_test.js"></script>
+
+
+<input id="getTreeviewItemurl" type="hidden" data-url='@Url.Action("GetTreeviewItem", "Viewer")' />

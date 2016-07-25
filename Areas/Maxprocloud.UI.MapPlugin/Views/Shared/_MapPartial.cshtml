@@ -1,0 +1,49 @@
+﻿@*@Styles.Render("~/Content/mapstyle/map.core.css")*@
+<script id="flooritemlistTmpl" type="text/html">
+    <div id="floorplanItem" class="floormapitem" data-bind="if:$data.visibleComputed,style:{  top: $data.top, left: $data.left},click: $root.itemselected,drag:{value:itemdragged}">
+        <span class="iconplaceholder">
+            <img id="icon" class="floormapicon" data-bind="css: $data.icon">
+        </span>
+        <span class="floormapiconcaption" data-bind="text: $data.Name"/>
+        <b id="iconremove" class="icon-floormapdeviceremove"  data-bind="attr:{'data-id':$data.Id},click:$root.removeItem">X</b>
+    </div>
+</script>
+
+<div id="mainpanel" class="mapcontainer">
+    <div id="map-canvas" class="mapinnercontainer">
+        
+    </div>
+    <div id="floormap_canvas" data-isinfloormap="false">
+        <div class="row" style="bottom: 0px; position: absolute; padding: 0px 0px 20px 24px; height: 50px; background: #fff; z-index: 100; border-top: 1px solid #d6d6d6;">
+
+            <b class="icon_floor_map floormaphidebutton" id="btnShowMap" data-bind="click: $data.showMap"></b>
+            @if (Html.HasPermissions(MPCPermissions.UPDATE_FLOOR_PLAN))
+            {
+    <button id="btnSave" class="primary-button" data-bind="click:$data.dosavesettings, enable: IsMapModified" style="position: absolute;z-index: 10000; display: inline-block; bottom: 14px; left: 78px; ">@Resources.Save</button>
+            }
+            <span class="FloorPlanDragNote">@Resources.FloorPlanDragNote</span>
+        </div>
+        <div class="floorPlanimagecontainer" id="floorcontainercanvas" data-bind="template: { name: 'flooritemlistTmpl', foreach: $data.Items }">
+            <div class="floormapEmptyMsg" id="editfloormapmsg">@Resources.Map_FloormapEmptyMsg</div>
+
+        </div>
+
+    </div>
+</div>
+<style>
+
+</style>
+<input id="mapImages" value='@Url.Content("~/Content/mapstyle/images")' type="hidden" />
+<input id="getaccountsurl" value='@Url.Action("GetAccounts", "TreeView")' type="hidden" />
+<input id="getfloorplanurl" type="hidden" data-url='@Url.Action("getfloorplan", "Map")' />
+<input id="savefloorplanurl" type="hidden" data-url='@Url.Action("savefloorplan", "Map")' />
+<input id="saveTest" type="hidden" data-url='@Url.Action("saveTest", "Map")' />
+<input id="GetTest" type="hidden" data-url='@Url.Action("GetTest", "Map")' />
+<input id="getfloorplanImageurl" type="hidden" data-url='@Url.Action("getdefaultfloorplanimagebyaccountid", "Config")' />
+<input id="getcontactdetailsurl" type="hidden" data-url='@Url.Action("GetAccountDetail", "Config")' />
+@Scripts.Render("~/bundles/Mappluginscript2")
+
+@*@Scripts.Render(
+"~/Scripts/mapscripts/mapdata.js",
+"~/Scripts/mapscripts/mapfunctions.js",
+"~/Scripts/mapscripts/createeditmap.js")*@

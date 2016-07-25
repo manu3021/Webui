@@ -1,0 +1,47 @@
+﻿<script id="customMessageTemplate" type="text/html">
+    <em class="customMessage" data-bind='validationMessage: field'></em>
+</script>
+<div id="customerdataform" data-bind='validationOptions: { messageTemplate: "customMessageTemplate" }' class="dataform col">
+
+    <div class="dataformcaption row">
+        @Resources.Config_Customerdetailstext <span data-bind='text: errors().length'></span>
+    </div>
+    <div class="dataformfeilds row">
+        @using (Html.BeginForm("SaveCustomer", "Config", FormMethod.Post, new { id = "customerform" }))
+        {
+            <fieldset>
+                <legend></legend>
+                <ol>
+                    <li>
+                        <label>@Resources.Config_Nametext</label>
+                        <span>
+                            <input type="text" id="txtName" data-bind="value: Name" />
+                        </span>
+                    </li>
+                    <li>
+                        <label>@Resources.Config_Addresstext</label>
+                        <span>
+                            <textarea id="txtaddress" data-bind="value: Address"></textarea>
+                        </span>
+                    </li>
+                    <li>
+                        <label>@Resources.Config_EmailAddress</label>
+                        <span>
+                            <input type="email" id="txtcontact" class="validate[email] text-input" data-bind="value: EmailAddress" />
+                        </span>
+                    </li>
+                    <li>
+                        <label id="result"></label>
+                    </li>
+                </ol>
+            </fieldset>
+        }
+    </div>
+    <div class="dataformfooter row">
+        <span class="ui-button-container">
+            <input type="submit" id="btnsave" data-bind="click: savechanges" value="Save" />
+            <input type="button" id="btncancel" value="Cancel" data-bind="click:cancel" />
+        </span>
+    </div>
+    <div class="formoverlay row"></div>
+</div>

@@ -1,0 +1,107 @@
+﻿@functions{
+
+    public static System.Globalization.CultureInfo ResolveCulture()
+    {
+        string[] languages = HttpContext.Current.Request.UserLanguages;
+
+        if (languages == null || languages.Length == 0)
+            return null;
+
+        try
+        {
+            string language = languages[0].ToLowerInvariant().Trim();
+            return System.Globalization.CultureInfo.CreateSpecificCulture(language);
+        }
+        catch (ArgumentException)
+        {
+            return null;
+        }
+    }
+    public System.Globalization.RegionInfo GetRegionInfo()
+    {
+        try
+        {
+            System.Globalization.CultureInfo culture = ResolveCulture();
+            if (culture != null)
+                return new System.Globalization.RegionInfo(culture.LCID);
+            return null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+}
+
+@if (Model.IsAuthenticated)
+{
+    ViewBag.Title = @Resources.MPC4;
+    <input class="cultureandregion" type="hidden" value="@GetRegionInfo()" />
+    <input id="signout" type="hidden" data-url='@Url.Action("JsonSignout", "login")' />
+    <input id="renewsessn" type="hidden" data-url='@Url.Action("CheckTimeout", "page")' />
+    <input id="getpages" type="hidden" data-url='@Url.Action("getpages", "page")' />
+    <input id="getpage" type="hidden" data-url='@Url.Action("getpage", "page")' data-challenge='@Url.Action("GetChallenge", "page")' />
+    <input id="getpartial" type="hidden" data-url='@Url.Action("getpartial", "page")' />
+    <div id="challange" >
+       @Html.Action("GetChallenge", "Page", new  { url="/"})
+    </div>
+    if (Model.NeedAgreement)
+    {
+        @Html.Partial("_AgreementPending")
+    }
+    else
+    {
+        if (Model.UserProfile.IsNewPasswordRequired && !Model.UserProfile.IsCreator)
+        {
+            @Html.Partial("_PwdPending")          
+        }
+        else
+        {
+            if (Html.HasPermissions(MPCRoles.TechSupport)) //&& Model.UserProfile.AccountId.ToLower().equals("")
+            {
+                @Html.Partial("_Utilities")
+            }
+            else
+            {
+                @Html.Partial("_PageHeaderTemplates")
+                <div>
+                    @Html.GetPlugin("Search")
+                </div>
+                @Html.Partial("_TreetemplateView")
+                <input id="getalarm" type="hidden" data-url='@Url.Action("", "page")' />
+                <input type="hidden" id="Cancelclipexporturl" data-url='@Url.Action("Cancelclipexport", "Notification")' />
+                <input type="hidden" id="getexportpercentageurl" data-url='@Url.Action("GetClipexportpercentage", "Notification")' />
+                <input type="hidden" id="getclipexporturl" data-url='@Url.Action("GetClipexportStream", "Notification")' />
+                <input type="hidden" id="Cancelclipexporturl" data-url='@Url.Action("downloadFile", "Notification")' />
+                <input type="hidden" id="getdownloadurl" data-url='@Url.Action("downloadFile", "Notification")' />
+                <div class="wrapper">
+                    <div class="row" id="page-header" data-bind="template: 'header'"></div>
+                    <section class="row" id="page-body">
+                        <section class="view" id="dashboard"></section>
+                        <section class="view" id="configuration"></section>
+                        <section class="view" id="viewer"></section>
+                        <section class="view" id="reports"></section>
+                        <section class="view" id="rules"></section>
+                        <section class="view" id="alarms"></section>
+                        <section class="view" id="Profile"></section>
+                        <section class="view" id="Calendar"></section>
+                        <section class="view" id="fullmap"></section>
+                    </section>
+
+                </div>
+                @Scripts.Render("~/bundles/shelljs")
+
+
+            }
+        }
+    }
+}
+else
+{
+    ViewBag.Title = Resources.lbl_login_title + ": " + Resources.Login_Sign_in;
+    @Html.GetPlugin("Login")
+}
+
+
+
+

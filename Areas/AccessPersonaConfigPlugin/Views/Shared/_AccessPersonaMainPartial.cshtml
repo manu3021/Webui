@@ -1,0 +1,25 @@
+﻿<div class="accesspersona-root">
+    <div data-accounttype="ACCESSPERSONA" class="settingsform">
+        <div class="createBodyContainer">
+            <div class="createPageContent">
+                <div class="tab-content" id="access_persona_content">
+                    @{
+                        Html.RenderAction("AccessPersonaConfig");
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @{
+        Html.RenderAction("DeleteAccessPersonaConfirm");
+    }
+</div>
+
+<input type="hidden" id="accessPersonaMgmturl" value="@Url.Action("", "AccessPersonaConfig")" />
+@*<link rel="stylesheet" href="~/Content/AccessPersonaConfigPlugin/AccessPersonaConfig.css" />*@
+@Scripts.Render("~/bundles/AccessPersonaConfigscript1")
+@*<script src="~/Scripts/AccessPersonaConfigPlugin/accesspersona-common.js"></script>
+<script src="~/Scripts/AccessPersonaConfigPlugin/accesspersona-model.js"></script>
+<script src="~/Scripts/AccessPersonaConfigPlugin/accesspersona-validation-context.js"></script>
+<script src="~/Scripts/AccessPersonaConfigPlugin/accesspersona-datacontext.js"></script>
+<script src="~/Scripts/AccessPersonaConfigPlugin/accesspersona-uicontext.js"></script>*@

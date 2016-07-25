@@ -1,0 +1,111 @@
+﻿<html>
+<head>
+    <title>Aide</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Configurer les entrées sous NetAXS-123</h3>
+        <h4 class="subtitle">Pour configurer les paramètres d’entrée :</h4>
+        <ol>
+            <li>Sur le tableau de bord de MPC, cliquez sur l’onglet <strong>Créer et modifier</strong>. La page <strong>CRÉER ET MODIFIER</strong> s’affiche.</li>
+            <li>Dans le panneau de gauche, sélectionnez le site, puis cliquez sur le périphérique désiré associé au site.</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">Remarque :</h4>
+                <p>Avant de modifier les paramètres du périphérique, veillez à bien enregistrer le périphérique sur le nuage.</p>
+            </div>
+            <li>Dans le panneau de gauche, cliquez sur l’icône <i class="netaxs-icon"></i>correspondant au périphérique NetAXS-123 pour développer et afficher toutes les portes disponibles.</li>
+            <li>Faites un double-clic sur la porte désirée pour développer et afficher toutes les entrées associées. La page <strong>Paramètres</strong> apparaît.</li>
+            <li>Saisissez les informations nécessaires dans les champs suivants :</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">Champ</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nom de l’entrée
+                        </td>
+                        <td>Entrez un nom unique pour identifier les entrées de la porte.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Intervalle de dérivation</td>
+                        <td>Indique la durée pendant laquelle l’entrée sera ignorée.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bloquer la durée de verrouillage
+                        </td>
+                        <td>Cette fonction vous permet de bloquer la programmation du verrouillage ou l’interaction programmée entre deux points. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Désactiver les alarmes et événements
+                        </td>
+                        <td>Indique la durée pendant laquelle les alarmes et événements ne seront pas signalés.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Durée de dérivation
+                        </td>
+                        <td>Indique la durée pendant laquelle les entrées seront dérivées ou désactivées.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Durée de réponse
+                        </td>
+                        <td>Indique la durée pendant laquelle l’entrée doit maintenir son nouvel état avant de générer une alarme.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normalement
+                        </td>
+                        <td>
+                            <strong>Normalement fermé</strong> - indique que l’état normal de l’entrée est l’état fermé (par défaut).<>
+<strong>Normalement ouvert</strong> -  - indique que l’état normal de l’entrée est l’état ouvert.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Surveillance
+                        </td>
+                        <td>Indique que le circuit électrique de l’entrée est équipé de chemins alternatifs surveillés par des résistances.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reverrouillage automatique
+                        </td>
+                        <td>Provoque le reverrouillage automatique de la porte quand l’état de la porte est refermé après l’entrée. Le relais de sortie contrôlant la gâche de porte est mis hors tension quand l’entrée associée retourne à son état normal, au lieu de rester sous tension pendant la durée d’impulsion.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Verrouillage
+                        </td>
+                        <td>Cette fonction vous permet de désactiver le verrouillage ou l’interaction programmée entre deux points. Quand cette fonction est activée, ce point ignore toutes les actions de verrouillage qui y sont appliquées.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>Précédent</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>Modifier les paramètres du périphérique</a>
+        </p>
+    </div>
+</body>
+</html>
+

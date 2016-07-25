@@ -1,0 +1,42 @@
+﻿@{
+}
+
+
+<script type="text/html" id="topMyProfileTmpl">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src='@Url.Content("~/Content/images/icon_user.png")' />
+            </a>
+           
+    
+    <ul class="dropdown-menu" id="dash-profile" data-bind="foreach: $data.userProfileMenu">
+        <li>
+            <span class="profile-icon">
+                <span data-bind="attr: { 'class': icon }"></span>
+            </span>
+            <span class="profile-item-content">
+                <a href="#" data-bind="click: itemclick, text: title"></a>
+                <span class="menu-divider"></span>
+            </span>
+        </li>
+    </ul>
+</script>
+<script type="text/html" id="topLeftTmpl">
+    <div id="navigation-menu">
+            <ul class="nav navbar-nav">
+                <li id="profileoptionsUtil" class="dropdown" data-bind="template: 'topMyProfileTmpl'">
+                    
+                </li>
+            </ul>
+    </div>
+</script>
+<script type="text/html" id="header">
+    <div class="logo" id="logo" data-bind="click: $root.navigatetohome">
+        <span></span>
+    </div>
+    <div class="pagetitle">
+        <span class="pageheadertitle" data-bind="text: $data.pageTitle"></span>
+       
+    </div>
+    <div class="pull-right" id="notification-menu" data-bind="template: 'topLeftTmpl'">
+    </div>
+</script>

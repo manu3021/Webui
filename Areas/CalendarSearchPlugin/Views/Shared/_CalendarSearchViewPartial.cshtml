@@ -1,0 +1,233 @@
+﻿<div id="calendar-search-view" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+    <div class="calendar-Wrapper">
+        <div class="calendar-header">
+            <nav>
+                <div class="calendar-header-ul pull-right">
+                    <div class="calendar-header-li">
+                        <div class="switch_options calendar-event-options">
+                            <span class="csfoption span1 selected" data-bind="click: $data.filterSelected.bind($data,0)">@Resources.Calendar_All</span>
+                            <span class="csfoption span1" data-bind="click: $data.filterSelected.bind($data,1)">@Resources.Calendar_Alarms</span>
+                            <span class="csfoption span1" data-bind="click: $data.filterSelected.bind($data,2)">@Resources.Calendar_Clips</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-header-ul pull-left">
+                    <div class="dropdown calendar-header-li cal-dropdown-holder">
+                        <div class="unassigned-popover">
+                            <div class="clear cardnumlist" style="position:relative">
+                                <span class="PositionBtn select-field" id="togglecalendarserachField" data-original-title="@Resources.Alarm_UniversalList" data-bind="popOver: { name: 'calendarsearch-template',title:'Universal list',container: 'calendar-search-view', show: $data.isPopupOpen }">
+                                    <span class="cal-search-uni-tree" data-bind="text: $data.selectedDeviceNames"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="calendar-main-block">
+            <div id="calendar" class="fc fc-ltr" data-bind="fullCalendar: $data.events, isMonthView: $data.isMonthView, currentDate: $data.selectedDate, selectedRange: $data.selectedRange, calendarEvents: { viewRender: onCalendarRender, timeChanged: onTimeChange, eventClick: onEventSelect }">
+                <!-- ko if: $data.Type() == 1 -->
+                <div class="event-block event-alarm" data-bind="visible: $parent.viewMode() == 0 || $parent.viewMode() == 1">
+                    <b class="icon_calalarm"></b>
+                    <span class="fc-event-title" data-bind="text: $data.Data"></span>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $data.Type() == 2 -->
+                <div class="event-block event-clip" data-bind="visible: $parent.viewMode() == 0 || $parent.viewMode() == 2">
+                    <b class="icon_calmation"></b>
+                    <span class="fc-event-title" data-bind="text: $data.Data,attr:{dtstart:$data.start}"></span>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="calendar-day-view-wrapper" data-bind="visible: !($data.isMonthView())">
+        <div class="calendar-day-view-table" data-bind="lazyScrollBar: true, callback: $data.loadNextItems">
+            <!--ko if: !!$data.message() && $data.eventClipdetails().length == 0-->
+            <div class="calendar-message-block" data-bind="text: $data.message"></div>
+            <!-- /ko-->
+            <!--ko ifnot: !!$data.message() && $data.eventClipdetails().length == 0-->
+            <table class="table calendar-day-table">
+                <tbody data-bind="foreach: $data.eventClipdetails">
+                    <!-- ko if: $data.Type == "event"-->
+                    <tr class="click-first-tr" data-bind="click: $parent.itemSelected, visible: $parent.viewMode() == 0 || $parent.viewMode() == 1">
+                        <td class=" cal-table-col-first">
+                            <b class="icon_calalarm"></b>
+                        </td>
+                        <td class="cal-table-col-second">
+                            <span class="cal-alarm-title" data-bind="text:$data.DoorName"></span>
+                            <span class="cal-alarm-title" data-bind="text:$data.SourceEntityName"></span>
+                            <span class="cal-alarm-title" data-bind="text:$data.EventTypeText"></span>
+                            <span class="cal-alarm-description" data-bind="text: $data.Location"></span>
+                            <span class="cal-day-date-time" data-bind="text:$data.AlarmDateTimeText"></span>
+                            <span class="cal-day-site-detail" data-bind="text:$data.SeverityName, css: $data.SeverityColor"></span>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+                    <!-- ko if: $data.Type == "clip"-->
+                    <tr class="click-first-tr" data-bind="click: $parent.itemSelected, visible: $parent.viewMode() == 0 || $parent.viewMode() == 2">
+                        <td class=" cal-table-col-first">
+                            <b class="icon_videonor"> </b>
+                        </td>
+                        <td class="cal-table-col-second">
+                            <span class="cal-alarm-title" data-bind="text:$data.CameraName"></span>
+                            <span class="cal-alarm-description" data-bind="text: $data.ClipIdText"></span>
+                            <span class="cal-alarm-title" data-bind="text:$data.EventNameText"></span>
+                            <span class="cal-day-date-time" data-bind="text:$data.DateText"></span>
+                            <span class="cal-day-date-time" data-bind="text:$data.DurationText"></span>
+                            <span class="cal-day-site-detail" data-bind="text:$data.IsCloudText"></span>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+            <!-- /ko-->
+        </div>
+        <div class="calsearch-info" data-bind="visible:!!$data.eventSummaryModel.EventInfo.Id()">
+            <div class="calsearch-sec">
+                <h3>@Resources.Calendar_Event_Site_Information</h3>
+                <p>
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.Name -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.Name"></span>
+                    <span>,</span>
+                    <br />
+                    <!-- /ko -->
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.AddressLine1 -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.AddressLine1"></span>
+                    <span>,</span>
+                    <br />
+                    <!-- /ko -->
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.AddressLine2 -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.AddressLine2"></span>
+                    <span>,</span>
+                    <br />
+                    <!-- /ko -->
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.City -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.City"></span> - <span data-bind="text: $data.eventSummaryModel.AccountInfo.ZipCode"></span>
+                    <span>,</span>
+                    <br />
+                    <!-- /ko -->
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.Region -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.Region"></span>
+                    <span>,</span>
+                    <br />
+                    <!-- /ko -->
+                    <!-- ko if: $data.eventSummaryModel.AccountInfo.Country -->
+                    <span data-bind="text: $data.eventSummaryModel.AccountInfo.Country"></span>
+                    <!-- /ko -->
+                </p>
+                <p>
+                    <span>@Resources.Calendar_Event_Site_Contact </span><span data-bind="text: $data.eventSummaryModel.AccountInfo.MobileNumber"></span><br />
+                    <span>@Resources.Calendar_Event_Site_Email </span><span data-bind="text: $data.eventSummaryModel.AccountInfo.EmailAddress"></span>
+                </p>
+            </div>
+
+            <!-- ko if : $data.eventSummaryModel.EventInfo.PossibleActions().length > 0-->
+            <div class="calsearch-sec" data-bind="visible: $data.eventSummaryModel.EventInfo.PossibleActions().length > 0">
+                <h3>@Resources.Calendar_Event_Default_Actions</h3>
+                <!-- ko foreach : $data.eventSummaryModel.EventInfo.PossibleActions -->
+                <span class="primary-button" data-bind="text: $data.DisplayName, click: $parent.performAction"></span>
+                <!-- /ko -->
+            </div>
+            <!-- /ko -->
+            <!-- ko if : !!$data.eventSummaryModel.EventInfo.DoorName() && $data.eventSummaryModel.EventInfo.AssociatedCameras().length > 0 -->
+            <div class="calsearch-sec">
+                <h3>@Resources.Calendar_Event_AssociatedCameras</h3>
+                <ul>
+                    <!-- ko foreach : $data.eventSummaryModel.EventInfo.AssociatedCameras -->
+                    <li>
+                        <i class="icon_cam_blue"></i>
+                        <span data-bind="text: $data.Name"></span>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+            <!-- /ko -->
+            <!-- ko if : $data.eventSummaryModel.EventInfo.AssociatedClips().length > 0 -->
+            <div class="calsearch-sec">
+                <h3>@Resources.Calendar_Clips_Recorded</h3>
+                <ul>
+                    <!-- ko foreach : $data.eventSummaryModel.EventInfo.AssociatedClips -->
+                    <li>
+                        <i class="icon_cam_grey"></i>
+                        <span data-bind="text: $data.ClipText"></span>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+            <!-- /ko -->
+        </div>
+
+        <div class="calendar-video-main-block" data-bind="visible: !!($data.clipModel && $data.clipModel.CameraId())">
+            <div class="cal-video-block">
+                <div class="calendar-search-content-box">
+                    <span class="textOnVideoLeft" data-bind="text:$data.clipModel.ClipIdAndCameraNameText"></span>
+                    @*<span class="videoTime" data-bind="text:$data.playingDateTime"></span>*@
+                    <i class="close-icon" data-bind="click: $data.stopClip"></i>
+                    <!-- ko if: $data.clipStatus() == 1-->
+                    <div class="calendar-video-palyer">@Resources.Viewer_Requestmsg</div>
+                    <!-- /ko -->
+                    <!-- ko if: $data.clipStatus() == 2-->
+                    <div class="calendar-video-palyer">
+                        <span class="videoErrorImage"></span>
+                        <span class="videoErrorText">@Resources.Viewer_VideoError</span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko if: $data.clipStatus() == 3-->
+                    <div id="calendarVideoPlayerWrapper" class="calendar-video-palyer"></div>
+                    <!-- /ko -->
+                </div>
+                <div class="cal-exp-clip">
+                    <button class="primary-button" data-bind="click:$data.showClipExport">@Resources.Calendar_ExportClip</button>
+                </div>
+            </div>
+        </div>
+        <!-- ko if: $data.eventClipdetails().length > 0 && !($data.eventSummaryModel.EventInfo.Id() || $data.clipModel.CameraId())-->
+        <div data-bind="visible: $data.viewMode() == 0 || $data.viewMode() == 2" class="calendar-select-clip-message">@Resources.Calendar_Select_Item</div>
+        <!-- /ko-->
+    </div>
+    <div class="cal-search-footer-notification">
+        <p>@Resources.Calendar_Data_Fetch_From_Cloud</p>
+    </div>
+    <div id="calendarPlayerImage" data-playerimage='@Url.Content("~/Content/images/Honeywell_Blank_220.png")'></div>
+    <script type="text/html" id="calendarsearch-template">
+        <div>
+            <!-- ko if: !!$data.treeview -->
+            <h3 class="webui-popover-title">@Resources.lbl_Universal_List</h3>
+            <section class="contentWrap">
+                <div class="leftTree treecontrol treeProp" data-bind="template: { name: 'calendarsearchTreeViewTemplate', data: $data.treeview }"></div>
+            </section>
+            <footer>
+                <div id="positionPopoverbtngroup" class="buttonGroupTree">
+                    <button id='positionconfirmbtn' data-toggle='clickover' class='primary-button' data-bind="click: $root.onPopoverConfirmClick">@Resources.Calendar_Confirm</button>
+                    <button id='positioncancelbtn' data-toggle='clickover' class='secondary-button' data-bind="click: $root.onPopoverCancelClick">@Resources.Calendar_Cancel</button>
+                </div>
+            </footer>
+            <!-- /ko-->
+        </div>
+    </script>
+    <script id="calendarsearchTreeViewTemplate" type="text/html">
+        <div class="tree tree-cont layoutrow">
+            <ul data-bind="template: { name: 'calendarsearchTreeNodeTemplate' , foreach: $data.rootNode.Children }"></ul>
+        </div>
+    </script>
+    <script id="calendarsearchTreeNodeTemplate" type="text/html">
+        <li class="treenormal">
+            <div class="expand" data-bind="event: { mouseover: $root.treeview.handleHover, mouseout: $root.treeview.handleHoverOut }, click: $root.treeview.toggleExpand, clickBubble: false, css: { 'Item-State-hover': $data.IsHover, 'Item-State-selected': $data.IsSelected }">
+
+                <i class="tree-open-icon" data-bind="attr: { 'class': $data.Icon}"></i>
+                <div class="treecheckboxStyle" data-bind="click: $root.treeview.handleSelection, clickBubble: false">
+                    <label class="control-box treecustomcheckbox">
+                        <input type="checkbox" class="checkbox" name="credential_IsTemporary" id="calender" data-bind="checked: $data.IsSelected">
+                        <span></span>
+                    </label>
+                </div>
+                <legand class="tree-label" data-bind=" text: $data.Entity.Name"></legand>
+                <span class="tree-label"></span>
+            </div>
+            <div class="expandul" data-bind="if: $data.IsExpanded">
+                <ul class="tree" data-bind="template: { name: 'calendarsearchTreeNodeTemplate', foreach: $data.Children }"></ul>
+            </div>
+        </li>
+    </script>
+</div>

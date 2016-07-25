@@ -1,0 +1,419 @@
+/* ---------------- Layout   ----------------*/
+/*  -----------------Color  ------------------*/
+#dash-profile {
+    background-color: #323232;
+    border: 0px solid #323232;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+         -o-border-radius: 4px;
+            border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    -webkit-box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+
+    filter:progid:DXImageTransform.Microsoft.dropshadow(
+        OffX=6px, OffY=9px, Color='black', Positive='false'
+    ); /* IE 5.5 */ 
+    border-collapse: separate; /* Required by IE 9 */
+    font-size: 100%;
+    left: auto;
+    margin-top: 14px;
+    right: 17px;
+    width: 15em;
+    position: absolute;
+    z-index: 1000;
+    border-bottom: none;
+}
+    /*
+#dash-profile a {
+  color: #bababa;
+  height: 40px;
+  position: absolute;
+  width: 100%;
+  padding-left: 52px;
+  left: 0px;
+}*/
+    #dash-profile li a {
+        color: #bababa;
+        height: 61px;
+        position: absolute;
+        width: 15em;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    #dash-profile li:first-child {
+        margin-top: 10px;
+    }
+
+    #dash-profile li {
+        height: 22px;
+        padding: 12px 24px 10px 22px;
+    }
+
+        #dash-profile li span.profile-icon {
+            padding: 0;
+        }
+
+        #dash-profile li span #p1 {
+            background: red;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            display: block;
+            float: left;
+        }
+
+        #dash-profile li .profile-item-content {
+            padding-left: 27px;
+            position: absolute;
+        }
+
+        #dash-profile li:hover {
+            color: #d3d3d3;
+            text-decoration: none;
+            background-color: #454545;
+        }
+
+        #dash-profile li:last-child {
+            margin-bottom: 10px;
+        }
+
+            #dash-profile li:last-child .menu-divider {
+                border-bottom: 0px solid #3E3E42;
+            }
+
+        #dash-profile li:hover .profile-item-content a {
+            color: #d3d3d3;
+        }
+
+        #dash-profile li:hover .icon_saveNormal {
+            background-image: url(../images/icons/popup_profile/icon_saveHover.png);
+        }
+
+        #dash-profile li:hover .icon_userNormal {
+            background-position: -310px -100px;
+        }
+
+        #dash-profile li:hover .icon_logoutNormal {
+            background-position: -310px -160px;
+        }
+
+        #dash-profile li:hover .icon_helpNormal {
+            background-position: -310px -460px;
+        }
+
+    #dash-profile:before {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #323232;
+        border-image: none;
+        border-style: solid;
+        border-width: 10px;
+        content: "";
+        display: block;
+        left: 90%;
+        margin-left: -10px;
+        position: absolute;
+        top: -19px;
+        width: 0;
+    }
+
+    #dash-profile:after {
+        border-bottom-color: #000000;
+        border-left: 10px solid #000000;
+        border-right: 10px solid #000000;
+    }
+
+.menu-divider {
+    border-bottom: 1px solid #454545;
+    height: 1px;
+    left: 27px;
+    padding-top: 31px;
+    position: absolute;
+    width: 11.5em;
+    z-index: -999;
+}
+
+.msg-header {
+    background: none repeat scroll 0 0 #272727;
+    color: #FFFFFF;
+    font-weight: normal;
+    padding: 12px 24px 15px 21px;
+    text-align: left;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-family: "Open Sans Regular";
+}
+
+#dash-message.dropdown-menu li a:hover {
+    background: none repeat scroll 0 0 #e6f3fb;
+}
+
+#dash-message {
+    right: 24px;
+    left: auto;
+    width: 337px;
+    margin-top: 14px;
+    border: 4px solid #272727;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+         -o-border-radius: 4px;
+            border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    -webkit-box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+
+    filter:progid:DXImageTransform.Microsoft.dropshadow(
+        OffX=6px, OffY=9px, Color='black', Positive='false'
+    ); /* IE 5.5 */ 
+    border-collapse: separate; /* Required by IE 9 */
+    position: absolute;
+    font-size: 100%;
+}
+
+    #dash-message li a {
+        /* border-bottom: 1px solid #d3d3d3; */
+        height: 64px;
+        padding-top: 10px;
+        color: #707070;
+    
+        padding-left: 0px;
+        padding-bottom: 0px;
+}
+/*#dash-message li a:hover {
+  background: #08aobc;
+}*/
+.message-active {
+    background-color: #dcdcdc;
+}
+
+.messagetitle {
+    color: #454545;
+    float: left;
+    font-size: 15px;
+    width: 213px;
+    overflow: hidden;
+    height: 17px;
+    padding-left: 20px;
+}
+
+#dash-message .highalert {
+    background-image: url(../images/icons/icon_high2.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    margin-top: 17px;
+}
+
+#dash-message .normalalert {
+    background-image: url(../images/icons/icon_normal1.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    margin-top: 17px;
+}
+
+#dash-message:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #282820;
+    border-image: none;
+    border-style: solid;
+    border-width: 12px;
+    content: "";
+    display: block;
+    left: 317px;
+    margin-left: -10px;
+    position: absolute;
+    right: 100%;
+    top: -25px;
+    width: 0;
+}
+
+#dash-message li:last-child {
+    height: 40px;
+    background-color: #f5f5f5;
+}
+
+    #dash-message li:last-child a {
+        height: 36px;
+    }
+
+        #dash-message li:last-child a:hover {
+            height: 36px;
+            background-color: transparent;
+        }
+
+#navigation-menu {
+    min-height: 40px;
+    /*
+  padding-right: @menuRightSpace;
+  padding-left: 20px;
+  border: 1px solid #484272;
+  padding-top:@menuTopSpace;*/
+    padding: 18px 6px 0px 24px;
+}
+
+    #navigation-menu sup {
+        background: none repeat scroll 0 0 #e33e38;
+        border-radius: 4px;
+        color: #fafafa;
+        font-size: 13px;
+        left: -9px;
+        padding: 3px 4px 2px 4px;
+        position: relative;
+        top: -9px;
+    }
+    #navigation-menu + ul{
+        margin-top: 21px;
+        margin-right: 24px;
+    }
+#messagebox .msgtime {
+    color: #707070;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    width: 50px;
+    text-align: right;
+}
+
+#messagebox .message {
+    color: #707070;
+    float: left;
+    font-size: 12px;
+    height: 44px;
+    overflow: hidden;
+    width: 264px;
+    padding-top: 0px;
+    line-height: 1.5;
+    border-bottom: 1px solid #d3d3d3; 
+    padding-left: 20px;
+}
+
+#messagebox .icon {
+    /*width: 60px;
+  float: left;*/
+    width: 28px;
+    float: right;
+    display: inline-block;
+}
+
+.dropdown-menu-sub-footer {
+    /*background-color: #6f7074 important;*/
+    height: 72px;
+    text-align: center;
+}
+
+.navigation-menu-lasticon {
+    text-align: center;
+    padding: 10px 5px 5px 5px;
+}
+
+.icon_userNormal {
+    position: absolute;
+    background: url('../images/sprite_icons.png') no-repeat -280px -100px;
+    height: 20px;
+    width: 20px;
+}
+
+    .icon_userNormal:hover {
+        background-position: -310px -100px;
+    }
+
+.icon_saveNormal {
+    position: absolute;
+    background-image: url(../images/icons/popup_profile/icon_saveNormal.png);
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+}
+
+    .icon_saveNormal:hover {
+        background-image: url(../images/icons/popup_profile/icon_saveHover.png);
+    }
+
+.icon_helpNormal {
+    position: absolute;
+    background: url('../images/sprite_icons.png') no-repeat -280px -460px;
+    height: 20px;
+    width: 20px;
+}
+
+.icon_logoutNormal {
+    position: absolute;
+    background: url('../images/sprite_icons.png') no-repeat -280px -160px;
+    height: 20px;
+    width: 20px;
+}
+
+#dash-message .alerticon {
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    /* margin-top: 17px; */
+}
+
+#dash-message li.msg {
+    height: 40px;
+    background-color: #f5f5f5;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+    padding-top: 15px;
+    color: #707070;
+    cursor: pointer;
+    border-top: 1px solid #d3d3d3;
+}
+
+    #dash-message li.msg:last-child {
+        cursor: auto;
+    }
+    .downloadProgressMenusub{
+        top: -14px !important;
+    }
+
+@media print {
+    #navigation-menu sup{
+        background: none repeat scroll 0 0 #e33e38 !important;
+        color: #fafafa !important;
+    }
+    .msg-header{
+        background: none repeat scroll 0 0 #272727 !important;
+        color: #FFFFFF !important;
+    }
+    #header{
+        color: #d3d3d3 !important;
+    }
+    #dash-profile{
+         background-color: #323232 !important;
+    }
+    #dash-profile li a{
+        color: #bababa !important;
+    }
+    .icon_userNormal{
+        background: url('../images/sprite_icons.png') no-repeat -280px -100px !important;
+    }
+    .icon_helpNormal{
+        background: url('../images/sprite_icons.png') no-repeat -280px -460px !important;
+    }
+    .icon_logoutNormal{
+        background: url('../images/sprite_icons.png') no-repeat -280px -160px !important;
+    }
+    #dash-message{
+        background-color:#fff !important;
+    }
+}

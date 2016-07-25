@@ -1,0 +1,14 @@
+﻿@{
+}
+@Html.Partial("_PageHeaderTemplateslight")
+<div class="wrapper">
+    <div class="row" id="page-header" data-bind="template: 'header'"></div>
+    <section class="row" id="page-body">
+        <section class="view-active" id="Agreement">           
+            <div id="profilediv" style="display:block">
+                @Html.GetPlugin("Profile")
+            </div>
+        </section>
+    </section>
+</div>
+@Scripts.Render("~/bundles/LoginPluginscript1")

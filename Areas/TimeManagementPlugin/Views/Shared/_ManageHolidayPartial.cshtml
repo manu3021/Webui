@@ -1,0 +1,60 @@
+﻿<div id="holidaymodal" class="mpcmodel modal hide fade in holiday-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form id="holidaymodal_form" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+        <header class="row">
+            <span>@Resources.Holiday</span>
+        </header>
+        <section class="row">
+            <div>
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Holiday_Name</label>
+                    <input type="text" name="holidayName" id="holidayName" maxlength="25" data-bind="value: $data.model.Name" required="required" class="floatTxt myStyle">
+                </div>
+                <div class="singleHolidayContent" id="singleHolidayContentId" data-bind="datepicker: $data.model.Date, datepickerOptions: {pickTime: false}, setDefaultMode : 0">
+                    <div class="input-append date field right-inner-addon" id="holidayDTPicker">
+                        <span class="input-append add-on input-group-addon">
+                            <b class="icon-calendar"></b>
+                        </span>
+                        <label class="floatLblDn">@Resources.Holiday_When</label>
+                        <input class="floatTxt myStyle" id="singleHolidayDateId" type="text" name="dashboard_FromDate" data-format="@Resources.date_picker_format" readonly="readonly">
+                    </div>
+                </div>
+                <div>
+                    <div class="holidayEveryYear">
+                        <label class="pull-left formControl-checkbox clear">
+                            <input id="holidayDurationEveryYearId" type="checkbox" data-bind="checked: $data.model.IsEveryYear" />
+                            <span></span>
+                        </label>
+                        <span class="spacingEveryDay">@Resources.Holiday_Every_Year</span>
+                    </div>
+                    <div class="holiday-mode">
+                        <label class="formControl-radio">
+                            <input id="holidayTypeOne" name="holidayType" value="0" type="radio" data-bind="checked: $data.model.HolidayType">
+                            <span>@Resources.Holiday 1</span>
+                        </label>
+                        <label class="formControl-radio">
+                            <input id="holidayTypeTwo" name="holidayType" value="1" type="radio" data-bind="checked: $data.model.HolidayType">
+                            <span>@Resources.Holiday 2</span>
+                        </label>
+                        <label class="formControl-radio">
+                            <input id="holidayTypeThree" name="holidayType" value="2" type="radio" data-bind="checked: $data.model.HolidayType">
+                            <span>@Resources.Holiday 3</span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="modal-footer">
+                
+                
+                @if (Html.HasPermissions(MPCPermissions.ADD_HOLIDAY) || Html.HasPermissions(MPCPermissions.UPDATE_HOLIDAY))
+                {
+                    <button class="primary-button pull-left" data-bind="click: $data.saveHoliday">@Resources.Save</button>
+                }
+                <button class="secondary-button" data-bind="click: $data.cancelHoliday">@Resources.Cancel</button>
+                <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+            </div>
+        </footer>
+    </form>
+</div>

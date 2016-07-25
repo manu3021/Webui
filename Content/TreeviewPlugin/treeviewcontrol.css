@@ -1,0 +1,815 @@
+﻿.expand {
+    display: -moz-inline-box;
+    display: -webkit-inline-box;
+    -moz-box-align: end;
+    -webkit-box-align: end;
+    width: 100%;
+    cursor: pointer;
+    padding: 6px;
+    border-bottom:none;
+    /*max-height: 24px;*/
+    white-space: nowrap;
+    /*padding:12px 0 12px 20px;*/
+    padding:14px 30px 0 20px;
+    height:30px;
+    margin:0
+}
+
+.treeviewContainer .tree-icon-refresh{
+    /*background-color:#fff;*/
+}
+
+    .expand i {
+        width: 0px;
+        /*height:19px;*/
+        position: relative;
+        padding:4px 14px 0 11px;
+        display: inline-block;
+        float: left;
+        border-bottom:1px solid #d3d3d3;
+        height:24px;
+    }
+
+    .expand > .tooltip.right .tooltip-inner{
+        margin-top:-30px;
+        margin-left:-20px;
+        z-index:1000;
+        position: fixed;
+        -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+           -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+                box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+
+        filter:progid:DXImageTransform.Microsoft.dropshadow(
+            OffX=2px, OffY=2px, Color='black', Positive='false'
+        ); /* IE 5.5 */ 
+        border-collapse: separate; /* Required by IE 9 */
+    }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .expand i {
+     position: absolute;
+     /*top:15px;*/  
+  }
+    .tree-icon-refresh{
+        right:257px !important;
+    }
+    .expand .tree-label em{
+        right:510px !important;
+    }
+    /*.expand .tree-label:nth-of-type(2){
+      margin-left: -50px !important;
+    }*/
+}
+@-moz-document url-prefix() { 
+  .expand i {
+     position: absolute;
+     top:14px
+     /*border: none !important;*/     
+  }
+  .expand i{
+        height: 25px !important;
+        padding: 4px 14px 0px 14px !important;
+    }
+  .tree-icon-refresh{
+      right:257px !important;
+  }
+  .expand .tree-label:nth-of-type(2){
+      margin-left: -50px !important;
+  }
+}
+.Item-State-hover {
+    background-color: rgba(185, 221, 243, 0.3);
+}
+
+.Item-State-selected {
+    background-color: rgba(185, 221, 243, 0.3);
+
+}
+
+.Item-State-checked {
+    background-color:rgba(185, 221, 243, 0.3);
+}
+
+.treeviewContainer.layoutcol {
+    width: 100%;
+    background-color: white;
+    padding-left:0;
+}
+
+.treecontrol.layoutrow {
+    top: 2px;
+    bottom: 0;
+}
+
+.tree.layoutrow {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+         -o-border-radius: 4px;
+            border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    top: 0;
+    bottom: 0;
+    list-style: none;
+    padding:0;
+    margin:0;
+    /*overflow: auto;*/
+}
+
+    .tree.layoutrow:hover {
+        overflow: auto;
+    }
+
+.tree {
+    top: 0;
+    bottom: 0;
+    list-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #808185;
+    margin-left:0;
+    width:100%
+
+}
+
+.expand:last-child {
+    border-bottom: 0px solid #bababb;
+}
+
+.treenormal {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0px;
+    padding-top: 0px;
+    position: relative;
+    border-bottom: 0px solid #bababb;
+    /*min-width: 100%;*/
+    min-width:600px;
+    width:93% !important
+}
+
+    .treenormal::before {
+        content: '';
+        left: -20px;
+        position: absolute;
+        right: auto;
+    }
+
+    .treenormal::after {
+        content: '';
+        left: -15px;
+        position: absolute;
+        right: auto;
+    }
+
+    .treenormal:before {
+        border-left:1px dotted #d3d3d3;
+        height: 100%;
+        bottom: 57px;
+        top: 0px;
+
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .treenormal::before {       
+        top: 0;        
+    }
+}
+
+    .treenormal:after {
+        width: 33px;
+    }
+
+    /*.treenormal span {
+        white-space: pre-line;
+        cursor: pointer;
+        padding-right: 4px;
+        font-size: 12px;
+        max-width: 250px;
+        white-space: nowrap;
+    }*/
+
+    .treenormal.parent_li > span {
+        cursor: pointer;
+        width: 100%;
+        height: 48px;
+        border-bottom: 1px solid #bababb;
+    }
+
+.tree > ul > li::before, .tree > ul > li::after {
+    border: 0;
+}
+
+/*.tree li:last-child::before {
+    height:100%;
+}*/
+
+.parent_li ul li.parent_li ul li {
+    min-height: 48px;
+    border-bottom: 1px solid #bababb;
+}
+
+.tree-nav-container {
+    padding: 15px 18px 0px 22px;
+    height: 70px;
+    border-bottom: 1px solid #28282a;
+}
+
+    .tree-nav-container ul {
+        padding: 0;
+        margin: 0;
+    }
+
+.tree-icon-refresh {
+    background: url('../images/icon_refresh.png') no-repeat;
+    display: none;
+    right:358px;
+}
+
+    .tree-icon-refresh:hover {
+        background: url('../images/icon_refreshHover.png') no-repeat;
+    }
+
+.nodecontainer:hover {
+    -webkit-transition: all ease-in 0.1s;
+       -moz-transition: all ease-in 0.1s;
+        -ms-transition: all ease-in 0.1s;
+         -o-transition: all ease-in 0.1s;
+            transition: all ease-in 0.1s;
+
+    background-color: #fdfdfd;
+}
+
+    .nodecontainer:hover .tree-open-icon {
+        background: url('images/icon_folder-Hover.png') no-repeat;
+        -webkit-transition: all ease-in 0.1s;
+           -moz-transition: all ease-in 0.1s;
+            -ms-transition: all ease-in 0.1s;
+             -o-transition: all ease-in 0.1s;
+                transition: all ease-in 0.1s;
+
+    }
+
+.nodecontainer_active {
+    background-color: #f2f2f2;
+}
+
+.tree-open-icon {
+    position: absolute;
+    cursor: pointer;
+}
+
+    .tree-open-icon:hover {
+    }
+
+.tree-open-icon-active {
+}
+
+/*.tree-schedule-icon {
+    background: url('images/icon_schedule.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 0px;
+}
+
+.tree-people-icon {
+    background: url('images/icon_people.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 0px;
+}*/
+
+.tree-label,.schedule-name {
+    display: block;
+    padding-left: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom:1px solid #d3d3d3;
+    width:auto;
+    padding-bottom: 13px;
+line-height: 15px;
+color:#707070;
+font-size:14px;
+min-width:43%;
+}
+@-moz-document url-prefix() { 
+  .tree-label,.schedule-name {
+      width:600px;
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .tree-label,.schedule-name{
+       display:inline-block
+   }
+}
+
+@-moz-document url-prefix() { 
+  .tree-label {
+     display: inline-block;
+    padding-left: 28px;  
+    width:100%; 
+  }
+}
+/*.expand .tree-label:nth-of-type(2){
+    width:22%
+}*/
+
+@-moz-document url-prefix() { 
+  .expand .tree-label:nth-of-type(2) {
+margin-left: -5px;
+position: relative;
+width: 200px;
+top: 15px;
+  }
+}
+@-moz-document url-prefix() { 
+.tree-label {
+    line-height:12px
+  }
+}
+/*.tree-loadingicon{
+
+border-bottom: 1px solid #ccc;
+height: 30px;
+float: right;
+}*/
+
+.tree-label-strikken {
+    text-decoration: line-through;
+    margin-left: 30px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.OperatorCanbo {
+    height: 38px;
+    width: 127px;
+    line-height: 30px;
+}
+
+/*.tree-Device-icon {
+    background: url('../images/icon_folder.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}*/
+
+.icon-device-incomplete {
+    background: url('../images/icon_errorTree.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.tree-separator {
+    line-height: 20px;
+    padding-left: 10px;
+}
+
+    .tree-separator::before {
+        content: '';
+        left: -30px;
+        position: absolute;
+        right: auto;
+    }
+
+    .tree-separator::after {
+        content: '';
+        left: -24px;
+        position: absolute;
+        right: auto;
+    }
+
+    .tree-separator:before {
+        border-left: 2px dashed #999;
+        bottom: 50px;
+        height: 100%;
+        top: -9px;
+        width: 1px;
+    }
+
+    .tree-separator:after {
+        border-top: 2px dashed #999;
+        height: 20px;
+        top: 19px;
+        width: 33px;
+    }
+
+.tree-bottomseperator {
+    margin: 0 !important;
+    position: relative;
+    height: 0.04em;
+    top: -1px;
+    background: lightgray;
+    left: -30px;
+    width: 111%;
+}
+
+/**
+ * CSS3 Tips
+ */
+[data-tips] {
+    position: relative;
+    text-decoration: none;
+}
+
+    [data-tips]:after,
+    [data-tips]:before {
+        position: absolute;
+        z-index: 100;
+        opacity: 0;
+    }
+
+    [data-tips]:after {
+        content: attr(data-tips);
+        height: 25px;
+        line-height: 25px;
+        padding: 0 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #08a0bc;
+        background: #fff;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+             -o-border-radius: 5px;
+                border-radius: 5px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        -webkit-text-shadow: 0 0 5px #000;
+        text-shadow: 0 0 5px #000;
+        -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+           -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                box-shadow: 0 0 5px rgba(0,0,0,0.3);
+
+        filter:progid:DXImageTransform.Microsoft.dropshadow(
+            OffX=5px, OffY=0, Color='black', Positive='false'
+        ); /* IE 5.5 */ 
+        border-collapse: separate; /* Required by IE 9 */
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+             -o-box-sizing: border-box;
+                box-sizing: border-box;
+
+    }
+
+    [data-tips]:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-width: 6px;
+        border-style: solid;
+    }
+
+    [data-tips]:hover:after,
+    [data-tips]:hover:before {
+        opacity: 1;
+    }
+    /* Top tips */
+    [data-tips].top-tip:after,
+    [data-tips].top-tip:before {
+        -webkit-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+           -moz-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            -ms-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+             -o-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+        bottom: 90%;
+        left: -9999px;
+        margin-bottom: 12px;
+    }
+
+    [data-tips].top-tip:before {
+        border-color: #fff transparent transparent transparent;
+        margin-bottom: 0;
+    }
+
+    [data-tips].top-tip:hover:after,
+    [data-tips].top-tip:hover:before {
+        bottom: 100%;
+        left: 0;
+    }
+
+    [data-tips].top-tip:hover:before {
+        left: 15px;
+    }
+    /* Bottom tip */
+    [data-tips].bottom-tip:after,
+    [data-tips].bottom-tip:before {
+        -webkit-transition: top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+           -moz-transition: top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            -ms-transition: top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+             -o-transition: top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                transition: top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+        top: 90%;
+        left: -9999px;
+        margin-top: 12px;
+    }
+
+    [data-tips].bottom-tip:before {
+        border-color: transparent transparent #fff transparent;
+        margin-top: 0;
+    }
+
+    [data-tips].bottom-tip:hover:after,
+    [data-tips].bottom-tip:hover:before {
+        top: 100%;
+        left: 0;
+    }
+
+    [data-tips].bottom-tip:hover:before {
+        left: 15px;
+    }
+    /* Right tip */
+    [data-tips].right-tip:after,
+    [data-tips].right-tip:before {
+        -webkit-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
+           -moz-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            -ms-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
+             -o-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+        top: -9999px;
+        left: 96%;
+        margin-left: 12px;
+    }
+
+    [data-tips].right-tip:before {
+        border-color: transparent #fff transparent transparent;
+        margin-left: 0;
+    }
+
+    [data-tips].right-tip:hover:after,
+    [data-tips].right-tip:hover:before {
+        left: 100%;
+        top: 0;
+    }
+
+    [data-tips].right-tip:hover:before {
+        top: 7px;
+    }
+    /* Left tip */
+    [data-tips].left-tip:after,
+    [data-tips].left-tip:before {
+        -webkit-transition: right 0.25s ease-in-out, opacity 0.25s ease-in-out;
+           -moz-transition: right 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            -ms-transition: right 0.25s ease-in-out, opacity 0.25s ease-in-out;
+             -o-transition: right 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                transition: right 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+        top: -9999px;
+        right: 96%;
+        margin-right: 12px;
+    }
+
+    [data-tips].left-tip:before {
+        border-color: transparent transparent transparent #fff;
+        margin-right: 0;
+    }
+
+    [data-tips].left-tip:hover:after,
+    [data-tips].left-tip:hover:before {
+        right: 100%;
+        top: 0;
+    }
+
+    [data-tips].left-tip:hover:before {
+        top: 7px;
+    }
+
+/*.expand .treecheckboxStyle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}*/
+@-moz-document url-prefix() { 
+.expand .treecheckboxStyle {
+    /*position: relative;
+width: 20px;
+height: 15px;*/
+display: inline-block;
+left: 27px;
+height: 15px;
+}
+
+}
+
+    .expand .treecheckboxStyle .treecustomcheckbox {
+        border-style: none;
+        color: #6F7074;
+        font-size: 13px;
+        margin: 0 !important;
+        padding-left: 0px !important;
+
+    }
+
+        .expand .treecheckboxStyle .treecustomcheckbox span {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background: url("../images/icons/checkBox_normal.png");
+            background-repeat: no-repeat;
+        }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .tree-label {    
+        padding-left:28px;
+        display: inline-block;
+    }
+
+    
+}
+
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .exTreeview .tree-label{
+        padding-left: 8px !important;
+    }
+
+    #uTreeview .tree-label{
+        padding-left: 10px !important;
+    }
+
+    .expand .treecheckboxStyle .treecustomcheckbox span {
+        margin-left:26px !important;
+        top:0 !important;
+        padding-bottom:8px !important;
+    }
+    .expand .treecheckboxStyle {
+        float:left !important;        
+    }
+    .tree-label {
+        padding-bottom:11px !important; 
+        width:100%;
+        /*padding-left: 8px;*/       
+    }
+    .popover-content .expand .treecheckboxStyle .treecustomcheckbox span {
+        margin-top:1px !important;
+    }
+    .popover-content .expand i, .popover-content .tree-label{
+        padding-left: 8px;
+    }
+    /*.treecheckboxStyle ~ span.tree-label {
+        padding-left: 8px;
+    }*/
+    .expand i {
+        padding-right:16px;
+        padding-bottom:1px;
+    }
+
+    .popover-content .tree-icon-refresh {
+        right:0;
+    }
+}
+        .expand .treecheckboxStyle .treecustomcheckbox input {
+            display: none;
+        }
+
+            .expand .treecheckboxStyle .treecustomcheckbox input:checked + span {
+                background: url("../images/icons/checkBox_press.png");
+                background-repeat: no-repeat;
+            }
+
+    .expand .treecheckboxStyle .title {
+        display: inline;
+        margin: 0 0 0 24px !important;
+    }
+
+
+    .treecontrol ul .expand{padding-left:24px}
+    .treecontrol ul ul .expand{padding-left:52px}
+    .treecontrol ul ul ul .expand{padding-left:80px}
+    .treecontrol ul ul ul ul .expand{padding-left:105px}
+    .treecontrol ul ul ul ul ul .expand{padding-left:133px}
+    .treecontrol ul ul ul ul ul ul .expand{padding-left:161px}
+    .treecontrol ul ul ul ul ul ul ul .expand{padding-left:189px}
+    .treecontrol ul ul ul ul ul ul ul ul .expand{padding-left:217px}
+    .treecontrol ul ul ul ul ul ul ul ul ul .expand{padding-left:245px}
+    .treecontrol ul ul ul ul ul ul ul ul ul ul .expand{padding-left:273px}
+    .treecontrol ul ul ul ul ul ul ul ul ul ul ul .expand{padding-left:301px}
+    .treenormal li:before{left:34px}
+    .treenormal li li:before{left:61px}
+    .treenormal li li li:before{left:87px}
+    .treenormal li li li li:before{left:113px}
+    .treenormal li li li li li:before{left:140px}
+    .treenormal li li li li li li:before{left:166px}
+    .treenormal li li li li li li li:before{left:194px}
+    .treenormal li li li li li li li li:before{left:222px}
+    .treenormal li li li li li li li li li:before{left:250px}
+    .treenormal li li li li li li li li li li:before{left:278px}
+    .tree li:last-child::before {
+    height:100%; 
+    }
+    /*.expand i.tree-icon-refresh{left:-122px}*/
+    .expand .tree-label em{position:relative; right:190px}
+     @-moz-document url-prefix() { 
+    .expand .tree-label em {
+        position: absolute;
+        right: 277px;
+        top: -12px;
+      }
+    }
+
+    .Item-State-hover .tree-label, .Item-State-selected .tree-label{color:#0889c4}
+    .popover ul.tree li:last-child::after{
+    height: 1px;
+    width:100%;
+    left: 0;
+    margin-top:-1px;
+    background:url("../images/stroke_45.png") no-repeat;
+    }
+    ul.tree li:last-child::after{
+    height: 1px;
+    width:100%;
+    left: 0;
+    margin-top: -1px;
+    background:url("../images/stroke.png") no-repeat;
+    }
+    ul.tree li:last-child::after,.popover ul.tree li:last-child::after{
+    background-position:24px bottom;
+    }
+    ul.tree li li:last-child::after,.popover ul.tree li li:last-child::after{
+    background-position:51px bottom;
+    }
+    ul.tree li li li:last-child::after,.popover ul.tree li li li:last-child::after{
+    background-position:51px bottom;
+    }
+    ul.tree li li li li:last-child::after,.popover ul.tree li li li li:last-child::after{
+    background-position:79px bottom;
+    }
+    ul.tree li li li li li:last-child::after,.popover ul.tree li li li li li:last-child::after{
+    background-position:106px bottom;
+    }
+    ul.tree li li li li li li:last-child::after,.popover ul.tree li li li li li li:last-child::after{
+    background-position:134px bottom;
+    }
+    ul.tree li li li li li li li:last-child::after,.popover ul.tree li li li li li li li:last-child::after{
+    background-position:160px bottom;
+    }
+    ul.tree li li li li li li li li:last-child::after,.popover ul.tree li li li li li li li li:last-child::after{
+    background-position:188px bottom;
+    }    
+    ul.tree li li li li li li li li li:last-child::after,.popover ul.tree li li li li li li li li li:last-child::after{
+    background-position:216px bottom;
+    } 
+    ul.tree li li li li li li li li li li:last-child::after,.popover ul.tree li li li li li li li li li li:last-child::after{
+    background-position:244px bottom;
+    }    
+/*style specific for dark popovers*/
+
+
+.popover-content .icon_general:hover, .popover-content .icon_general_Hover,.popover-content .icon_customer:hover, .popover-content .icon_customer_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -310px -191px !important;
+}
+
+.popover-content .icon_dealer:hover, .popover-content .icon_dealer_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -70px -550px;
+
+}
+
+.popover-content .icon_group:hover, .popover-content .icon_group_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -310px -221px !important;
+}
+.popover-content .icon_site:hover, .popover-content .icon_site_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -312px -250px !important;
+}
+
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .treenormal {
+        background: #000;
+    }
+}*/
+/*exception tree fixes*/ 
+.exTreeview .expand .treecheckboxStyle .treecustomcheckbox span {
+border-bottom: 1px solid #d3d3d3;
+margin: 0;
+padding-bottom: 9px;
+/* top: -10px; */
+position: relative;
+}
+
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none){
+    #uTreeview .tree-label {
+        padding-left: 28px !important;
+        display: inline-block;
+    }
+}
+
+@supports (-ms-accelerator:true) {
+    ul.tree li:last-child::after {
+        margin-top: -4px;
+    }
+
+    .popover ul.tree li:last-child::after {
+        margin-top: -4px;
+    }
+  .expand { margin-top:-4px; } 
+}

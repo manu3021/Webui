@@ -1,0 +1,160 @@
+﻿
+@*@Scripts.Render("~/Scripts/configplugin/countries.js", "~/Scripts/tab.js")*@
+@Scripts.Render("~/bundles/configpluginscript1")
+@*@Styles.Render("~/Content/ConfigPlugin/configstyle.css")*@
+<div class="header-menu-three" id="page-third-header">
+    <div class="navbar">
+        <ul data-navpane="tree" class="nav configtopmenu navpaneform navpaneform_active">
+            <li class="dropdown createbar" id="createbar" data-bind="visible:configOptions().length>0">
+                @if (Html.HasPermissions(MPCPermissionCategory.CreateMenu))
+                {
+                    <a class="dropdown-toggle createdropdown" data-toggle="dropdown" id="iconcreate" href="#"><b title='@Resources.Create' class="icon_plus"></b></a>
+                    <ul class="dropdown-menu menuCreate" id="menuCreate" data-bind="foreach: configOptions">
+                        <li data-bind="click: menuclicked">
+                            <span class="menu-icon">
+                                <b data-bind="attr: { 'class': icon }"></b>
+                            </span>
+                            <a href="#" data-bind="text: title"></a>
+                            <span class="menu-item-divider"></span>
+                        </li>
+                    </ul>
+                }
+            </li>
+            <li>
+                <div class="searchHolder">
+                    <span id="demo-b">
+                        <input type="search" id="txtTreeviewSearch" class="searchbox" data-searchtags="ACCOUNT,DEVICECONTROLLER,CAMERA,INPUTPOINT,OUTPUTPOINT,DEVICEPOINT,DEVICEGROUPTEMPLATE,RECORDER" data-searchurl="@Url.Action("Getresult", "Search")" />
+                    </span>
+                </div>
+            </li>
+
+            <li class="dropdown deletebar" id="deletebar">
+                @if (Html.HasPermissions(MPCPermissions.Delete_Account))
+                {
+                    <i class="delete-icon" id="config_Account_Delete"></i>
+
+                }
+            </li>
+
+        </ul>
+        @Html.Partial("_AccessPersonaNavigationPartial")
+        <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="configtab">
+                <li class="active"><a id="mapslink" href="#maps" data-toggle="tab">@Resources.Maps </a></li>
+                <li><a href="#settings" data-toggle="tab">@Resources.Settings</a></li>
+                @if (Html.HasPermissions(MPCPermissionCategory.UserManagement))
+                {
+                    <li><a id="operatorslink" href="#operators" data-toggle="tab">@Resources.Operators</a></li>
+                }
+                @if (ViewBag.IsDealer == true && (Html.HasPermissions(MPCRoles.SystemAdmin) || Html.HasPermissions(MPCRoles.Operator)))
+                {
+                    <li><a href="#packageSelect" id="packagelink" data-toggle="tab" style="display: none">@Resources.lbl_Services</a></li>
+                }
+                <li><a href="#firmwareUpgrade" data-region="ucpFWUpgrade" id="fuglink" data-toggle="tab" style="display: none">@Resources.FUG_TAB_HEADER</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="createBodyContainer layoutrow">
+    <div data-leftpane="tree" class="leftTree layoutcol leftpaneform leftpaneform_active">
+        @Html.GetPlugin("TreeView")
+    </div>    
+    <div data-leftpane="ACCESSPERSONA" class="layoutcol leftpaneform">
+        @*<div class="lazyplugin" data-pluginname="AccessPersonaCredentialHolders">
+            <img src="~/Content/images/loading.gif" />  @Resources.Config_LoadingText
+        </div>*@
+		@Html.GetPlugin("AccessPersonaCredentialHolders")
+    </div>
+    <div class="contentarea layoutcol">
+        <div class="tab-content scroll-x scroll-y" id="map-content">
+            <div class="tab-pane active" id="maps">
+                @*<div class="lazyplugin" data-pluginname="Maps">
+                    <img src="~/Content/images/loading.gif" />  @Resources.Config_LoadingText
+                </div>*@
+                @Html.GetPlugin("Maps")
+            </div>
+            <div class="tab-pane" id="settings" data-contentarea="baseconfigtabpane">
+               @* <div class="lazypartial" data-partialname="_AccountSettings">
+                    <img src="~/Content/images/loading.gif" />  @Resources.Config_LoadingText
+                </div>*@
+                  @Html.Partial("_AccountSettings")
+                <div data-accounttype="TIME" class="settingsform">
+                    <div class="lazyplugin" data-pluginname="TimeManagement">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+                <div data-accounttype="MPCADEVICECONFIGWRAPPER" class="settingsform">
+                    <div class="lazyplugin" data-pluginname="MpcaDeviceConfig">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+                <div>
+                    <div class="lazyplugin" data-pluginname="CredentialMgmt">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+                <div>
+                    <div class="lazyplugin" data-pluginname="PanelConfig">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+                <div>
+                    <div class="lazyplugin" data-pluginname="AccessPersonaMgmt">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+            </div>
+            @if (Html.HasPermissions(MPCPermissionCategory.UserManagement))
+            {
+                <div class="tab-pane" id="operators">
+                    @*<div class="lazyplugin" data-pluginname="Userconfig">
+                        <img src="~/Content/images/loading.gif" />  @Resources.Config_LoadingText
+                    </div>*@
+                    @Html.GetPlugin("Userconfig")
+                </div>
+            }
+            @if (ViewBag.IsDealer == true && (Html.HasPermissions(MPCRoles.SystemAdmin) || Html.HasPermissions(MPCRoles.Operator)))
+            {
+                <div class="tab-pane" id="packageSelect">
+                    <div class="lazypartial" data-partialname="_PackageSelection">
+                        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                    </div>
+                </div>
+            }
+            <div class="tab-pane" id="firmwareUpgrade">
+                <div class="lazyplugin" data-pluginname="ucpFWUpgrade">
+                    <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@if (Html.HasPermissions(MPCPermissionCategory.Configuration))
+{
+    <div class="lazypartial" data-partialname="_ConfigurationModals">
+        <img src="~/Content/images/loading.gif" /> @Resources.Config_LoadingText
+    </div>
+}
+<input id="configurl" type="hidden" data-url='@Url.Action("", "config")' />
+<input id="getdetailurl" type="hidden" data-url='@Url.Action("getaccountdetail", "config")' />
+<input id="getmenuitemurl" type="hidden" data-url='@Url.Action("getmenuoptions", "config")' />
+<input id="savecustomerurl" type="hidden" data-url='@Url.Action("updateaccount", "config")' />
+<input id="savenewaccounturl" type="hidden" data-url='@Url.Action("addnewaccount", "config")' />
+<input id="addnewaccount" type="hidden" data-url='@Url.Action("addnewaccount", "config")' />
+<input id="devicetypeurl" type="hidden" data-url='@Url.Action("GetDeviceTypes", "config")' />
+<input id="saverecoderurl" type="hidden" data-url='@Url.Action("AddNewDevice", "config")' />
+<input id="deleteaccounturl" type="hidden" data-url='@Url.Action("DeleteAccount", "config")' />
+<input id="deletedeviceurl" type="hidden" data-url='@Url.Action("DeleteDevice", "config")' />
+<input id="getfloorplanimageurl" type="hidden" data-url='@Url.Action("GetDefaultFloorPlanImageByAccountId", "config")' />
+
+@*@Scripts.Render(
+    "~/Scripts/configplugin/common.js",
+    "~/Scripts/configplugin/datacontext.js",
+    "~/Scripts/configplugin/model.js",
+    "~/Scripts/configplugin/validationcontext.js",
+    "~/Scripts/configplugin/uicontext.js",
+    "~/Scripts/configplugin/eventmanager.js"
+)*@
+
+@Scripts.Render("~/bundles/configpluginscript2")

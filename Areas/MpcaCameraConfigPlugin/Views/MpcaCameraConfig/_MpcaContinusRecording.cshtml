@@ -1,0 +1,24 @@
+﻿<script id="mpccontinuousrectemplate" type="text/html">
+    <li class="mpccontinuousrecitem">
+        <div class="checkboxStyle">
+            <label class="customcheckbox">
+                <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                <span></span>
+            </label>
+            <span data-bind="click: ShowSettings" class="cursor">
+                <label class="title" data-bind="text: Name"></label>
+            </span>
+        </div>
+    </li>
+</script>
+
+<div id="cameracontinusrecwrapper" class="layoutcol cameraconfigformwrapper">
+    <form id="mpcacameracontinusrecsetting" data-validationkey="Camera">
+        <div class="row">
+            <div class="continusRecDetails">
+                <div class="settingshead">@Resources.mpcaCam_CntRec_CntRecSch:</div>
+                <ul class="checkbox-list" id="continuousrecordingul" data-bind="template:{name:'mpccontinuousrectemplate',foreach:$data.CameraContinuousRecording}"></ul>
+            </div>
+        </div>
+    </form>
+</div>

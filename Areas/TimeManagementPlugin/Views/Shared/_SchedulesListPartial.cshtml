@@ -1,0 +1,58 @@
+﻿<div class="row">
+    <form id="scheduleListForm">
+        <div class="row scheduleListTableWrapper">
+            @if (Html.HasPermissions(MPCPermissions.DELETE_SCHEDULE))
+{
+    <button class="ternary-button" data-bind="click: $data.deleteSchedule,visible:$data.deleteVisible">@Resources.Delete</button>
+}
+            @if (Html.HasPermissions(MPCPermissions.ADD_SCHEDULE))
+            {
+                <button class="primary-button" data-bind="click: $data.createSchedule">@Resources.Schedule_Create_Schedule</button>
+            }
+        </div>
+        <div class="row scheduleListTableWrapper">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="formControl-checkbox">
+                                <input type="checkbox" class="checkbox" name="schedule_AllSelected" id="schedule_AllSelected" data-bind="checked: $data.selectAll, click : $data.onSelectAllSchedule" />
+                                <span></span>
+                            </label>
+                        </th>
+                        <th>@Resources.Name</th>
+                        <th>@Resources.Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: $data.scheduleList">
+                    <tr>
+                        <td>
+                            <label class="formControl-checkbox" data-bind="disable: IsSystemEntity()">
+                                <input type="checkbox" class="" name="schedule_Selected" id="schedule_Selected" data-bind="checked: $data.IsSelected, click: $parent.onSelectSchedule, enable: !$data.IsSystemEntity()" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.Name" />
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.Description" />
+                        </td>
+                        <td>
+                            @if (Html.HasPermissions(MPCPermissions.UPDATE_SCHEDULE))
+                            {
+                                <button class="btn btn-link" data-bind="style: { display: IsSystemEntity() == 1 ? 'none' : 'block' },click: $parent.editSchedule">@Resources.Edit</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-link" data-bind="style: { display: IsSystemEntity() == 1 ? 'none' : 'block' },click: $parent.editSchedule">@Resources.View</button>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" id="scheduleAccountId" value="@ViewBag.ScheduleAccountId" />
+    </form>
+</div>

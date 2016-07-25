@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <title>Ayuda</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Para configurar el lector en NetAXS-123</h3>
+        <h4 class="subtitle">Para configurar los ajustes del lector:</h4>
+        <ol>
+            <li>En el área de la Consola MPC, haga clic en la pestaña <strong>Crear y editar</strong>. Aparece la página <strong>CREAR Y EDITAR</strong>.</li>
+			<li>Seleccione el sitio en el panel izquierdo y después, haga clic en el dispositivo correspondiente agregado al sitio.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>Asegúrese de registrar los dispositivos en la nube antes de modificar los ajustes del dispositivo.</p>
+			</div>
+			<li>En el panel izquierdo, haga clic en el <i class="netaxs-icon"></i> icono correspondiente al dispositivo NetAXS-123 para ampliar y ver todas las puertas disponibles.</li>
+			<li>Haga doble clic en la puerta requerida para ampliar y ver todos los lectores asociados. Aparece la página <strong>Ajustes</strong>.</li>
+			<li>Introduzca los detalles requeridos en los siguientes campos:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descripción</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nombre del lector
+                    </td>
+                    <td>
+                        Introduzca un nombre único para identificar al lector.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Desactivar Lector/Puerta
+					</td>
+                    <td>
+                        En la lista desplegable seleccione las propiedades para ajustar el lector/puerta a modo desactivado o activado.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Se requiere tarjeta y PIN
+					</td>
+                    <td>
+                        Facilita acceso solo con una pasada de tarjeta correcta y una introducción de PIN en el teclado de la puerta. La pasada de tarjeta y entrada del PIN se pueden realizar en cualquier secuencia.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Se requiere tarjeta o PIN
+					</td>
+                    <td>
+                       Facilita acceso con una pasada de tarjeta correcta o introduciendo un PIN válido en el teclado de la puerta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Solo PIN
+					</td>
+                    <td>
+                       Facilita acceso solo con un PIN válido introducido en el teclado de la puerta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Solo tarjeta
+					</td>
+                    <td>
+                       Facilita acceso solo con una lectura de tarjeta correcta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Bloquear lector/puerta
+
+					</td>
+                    <td>
+                       Ignora todas las lecturas de tarjetas (excepto de una tarjeta VIP), deniega la entrada de puerta pero permite salir.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Emergencia
+   					</td>
+                    <td>
+                       Le permite activar un evento de alarma y, si está configurado, impulsar un dispositivo de salida en momentos de emergencia, como cuando el operador es forzado a facilitar acceso contra su voluntad a una persona no autorizada. Emergencia requiere el reconocimiento de un valor de PIN y un número de tarjeta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Prohibición de paso repetido (Anti-Passback)
+					</td>
+                    <td>
+                         El usuario activa la prestación de prohibición de paso repetido en el lector, lo que requiere una tarjeta válida para entrar y salir. El titular de tarjeta debe utilizarla en la secuencia de ENTRADA/SALIDA correcta, es decir, una tarjeta pasada en un lector de ENTRADA se debe pasar después en un lector de SALIDA, o viceversa, una tarjeta pasada en un lector de SALIDA se debe pasar después en un lector de ENTRADA. Si la secuencia de ENTRADA/SALIDA del usuario no es válida, se genera un evento de violación de prohibición de paso repetido para el tipo de Anti-Passback elegido (Estricto o Flexible) y al titular de tarjeta se le deniega el acceso (Estricto) o se le permite (Flexible).
+						 <>
+&#8232;						
+&#8232;						<strong>Estricto</strong>- Valida el estado de ENTRADA/SALIDA antes de permitir la entrada. Una segunda pasada de la tarjeta en el mismo tipo de lector (ENTRADA/SALIDA) provoca una infracción de Anti-Passback estricto y al usuario se le deniega la entrada.
+						</br><>
+&#8232;
+&#8232;						<strong>Flexible</strong>- Valida el estado de ENTRADA/SALIDA antes de permitir la entrada. Una segunda pasada de una tarjeta en el mismo tipo de lector (ENTRADA/SALIDA) provoca una infracción de Anti-Passback flexible, pero al usuario se le permite la entrada.
+						</br><>
+&#8232;						
+&#8232;						<strong>Salida</strong>- Se aplica a lectores situados dentro del área controlada por el AntiPassback. Los titulares de tarjeta usan estos lectores cuando intentan salir del área controlada por el AntiPassback.
+						</br><>
+&#8232;						
+&#8232;						<strong>Entrada</strong>- Se aplica a lectores situados fuera del área controlada por el AntiPassback. Los titulares de tarjeta usan estos lectores cuando intentan entrar en el área controlada por el AntiPassback.
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Anterior</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Editar ajustes del dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

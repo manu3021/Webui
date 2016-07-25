@@ -1,0 +1,80 @@
+﻿<section class="row rulesContainer ruleformcontrol scroll-x scroll-y" style="top: 0px; height: 100%; bottom: 0px;" data-bind="with: $data.RuleDetailModel" data-url='@Url.Action("GetRuleDetail", "RuleConfig")' id="sec_viewrulecntr">
+    <div class="row col mpcform-grid border-right rulesfirstGrid">
+        <div class="colHeading clear">@Resources.RULE_LABEL_WHEN</div>
+        <div id="ruleViewDetailData">
+            <div>
+                <ul class="rulesettingList" data-bind="foreach: $data.getifthissettings()">
+                    <li data-bind="with: $data" class="rslistItem">
+                        <ul class="rulesettingListitem" data-bind="with: $data">
+                            <li class="rslistsubitem">
+                                <div class="textList">
+                                    <ul>
+                                        <li class="bottomSpace grid-text1 rssublistitem" data-bind="if:$data.OperandEntityType==1">@Resources.RULE_LABEL_DEVICES</li>
+                                        <li class="bottomSpace grid-text1 rssublistitem" data-bind="if:$data.OperandEntityType==2">@Resources.RULE_LABEL_SCHEDULE</li>
+                                        <li class="bottomSpace grid-text1 rssublistitem" data-bind="if:$data.OperandEntityType==3">@Resources.RULE_LABEL_WITHIN</li>
+                                        <li class="bottomSpace grid-text2 clear rssublistitem" data-bind="text: RuleAction().getactionnames()" />
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="rslistsubitem">
+                                <div class="textList">
+                                    <ul>
+                                        <li class="bottomSpace grid-text1 rssublistitem" data-bind="if:$data.OperandEntityType==1">@Resources.RULE_LABEL_EVENTS</li>
+                                        <li class="bottomSpace grid-text2 clear rssublistitem" data-bind="text: RuleAction().getactionListParams()" />
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row col seperator clear" data-bind="if:$data.IsSwitchVisible">
+                            <span class="switch_viewStyle" data-bind="text:$data.GetConditionValue()" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rulesdivider-line">
+
+    </div>
+
+    <div class="row col mpcform-grid rulesecondGrid">
+        <div class="colHeading clear">@Resources.RULE_LABEL_THEN</div>
+        <ul class="rulesettingList" data-bind="foreach: $data.getthenthatsettings()">
+            <li class="rslistItem">
+                <ul class="rulesettingListitem" data-bind="with: $data">
+                    <li class="rslistsubitem">
+                        <div class="textList">
+                            <ul>
+                                <li class="bottomSpace grid-text1">@Resources.RULE_LABEL_ACTIONS</li>
+                                <li class="bottomSpace grid-text2 clear" data-bind="text: RuleAction().getactionnames()" />
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="rslistsubitem">
+                        <div class="textList">
+                            <ul>
+                                <li class="bottomSpace grid-text1">@Resources.RULE_LABEL_OPERATIONS</li>
+                                <li class="bottomSpace grid-text2 clear" data-bind="text: RuleAction().getactionListParams()" />
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="buttonGroup" data-bind="visible: $data.IsRuleSelected">
+        @if (Html.HasPermissions(MPCPermissions.UPDATE_RULE))
+        {
+            <button class="primary-button" data-bind="click: $root.EditRule, attr: { 'data-ruleid': $data.Id }">@Resources.RULE_LABEL_EDIT</button>
+        }
+        @if (Html.HasPermissions(MPCPermissions.DELETE_RULE))
+        {
+            <button class="ternary-button" data-bind="click: $root.DeleteRule, attr: { 'data-ruleid': $data.Id }">@Resources.RULE_LABEL_DELETE</button>
+        }
+        @if (Html.HasPermissions(MPCPermissions.ACTIVATE_DEACTIVATE_RULE))
+        {
+            <button class="primary-button" data-bind="text: $data.ActiveButtonText(), click: $root.ActivateDeActivateRule, attr: { 'data-ruleid': $data.Id }"></button>
+        }
+    </div>
+</section>
+

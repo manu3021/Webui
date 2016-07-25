@@ -1,0 +1,87 @@
+﻿@*<link href="~/Content/firmwareupgrade/firmwareupgrade.css" rel="stylesheet" />*@
+<script id="fugdevtemplate" type="text/html">
+    <tr data-bind="with: $data">
+        <td id="box-col1">
+            <label class="formControl-checkbox">
+                <input type="checkbox" name="test" data-bind="checked: $data.IsSelected, enable: $data.IsEnabled">
+                <span></span>
+            </label>
+        </td>
+        <td data-bind="text: $data.DeviceName"></td>
+        <td data-bind="text: $data.FwVersion"></td>
+        <td>
+            <button class="secondary-button firmware-btn" data-bind="visible: $data.ShowUpgradeButton, click: $data.UpgradeClick">@Resources.lbl_UpGrade</button>
+            @*<span class="firmware-in-progress-txt" data-bind="text: self.WhyMessage"></span>*@
+            <span class="upgradeAvailabilitySpan" data-bind="visible: !$data.IsUpgrading(), text: $data.UpgradeStatus"></span>
+            <div class="firmware-progress-container" data-bind="visible: $data.IsUpgrading">
+                <progress max="100" data-bind="value: $data.UpgradePercent"></progress>
+                <span class="firmware-progress-text" data-bind="text: $data.UpgradePercentText"></span>
+                <span class="upgradeAvailabilitySpan firmware-in-progress-txt">@Resources.In_Progress</span>
+            </div>
+        </td>
+    </tr>
+</script>
+
+<div id="fugviewcontent" class="firmware-upgrade-wrapper layoutrow">
+    <div class="firmware-upgrade-header">
+        <ul class="firware-heading-main-box">
+            <li>
+                <div class="select-field firmware-select-box field">
+                    <select class="firmware-select" data-bind="enable: $root.IsEnabled, options: $root.DeviceModelsource, optionsText: 'DisplayName', value: $root.SelectedDeviceModel, optionsCaption: '@Resources.Select_Device_Model'"></select>
+                </div>
+            </li>
+            <li>
+                <div class="select-field firmware-select-box field">
+                    <select class="firmware-select" data-bind="enable: $root.IsEnabled, options: $root.VersionSource, optionsText: 'Version', value: $root.SelectedVersion, optionsCaption: '@Resources.Upgrade_To'"></select>
+                </div>
+            </li>
+            <li>
+                <div>
+                    @*<span class="heading-span-block">@Resources.lbl_Access_device_pending_upgrade: 24</span>*@
+                    @*<button class="primary-button firmware-btn firmware-heading-btn" data-bind="enable: $root.CanUpgradeAll()">@Resources.lbl_Upgrade_All</button>*@
+                </div>
+            </li>
+            @*<li>
+                    <div class="searchHolder">
+                        <span>
+                            <input type="search" class="searchbox" name="fq" data-bind="value: $root.query, valueUpdate: 'afterkeydown'" autocomplete="off">
+                        </span>
+                    </div>
+                </li>*@
+        </ul>
+    </div>
+
+    <div class="firmware-upgrade-main-section layoutrow">
+        @* <div class="firmware-upgrade-coantinerleft layoutcol">
+                <div class="searchHolder">
+                    <form>
+                        <div class="searchHolder">
+                            <input type="search" class="searchbox" />
+                        </div>
+                    </form>
+                </div>
+            </div>*@
+        <div class="firmware-upgrade-coantinerright layoutcol">
+            <div class="row firmware-page-body" id="firmware-page-body">
+                <div class="firmware-table-container">
+                    <table class="table firmware-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="formControl-checkbox">
+                                        <input type="checkbox" name="test" data-bind="checked: $root.IsAllSelected, enable: $root.CanSelectAll" />
+                                        <span></span>
+                                    </label>
+                                </th>
+                                <th>@Resources.lbl_device_name<b class="icon_sort"></b></th>
+                                <th class="sorted-th-text">@Resources.lbl_version<b class="icon_sort"></b></th>
+                                <th>@Resources.lbl_Upgrade_status<b class="icon_sort"> </b></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="template: { name: 'fugdevtemplate', foreach: $root.UpdatedSource() }"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

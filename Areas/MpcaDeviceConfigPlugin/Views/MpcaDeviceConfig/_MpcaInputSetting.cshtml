@@ -1,0 +1,75 @@
+﻿
+ @*<link href="~/Content/MpcaInputConfigStyles/MpcaInputConfig.css" rel="stylesheet" />*@
+
+@*@{#if DEBUG}
+    <link href="~/Content/MpcaInputConfigStyles/MpcaInputConfig.css" rel="stylesheet" />
+@{#else}
+    @Styles.Render("~/Content/MpcaDeviceConfigPlugincss2");
+@{#endif}*@
+<form id="mpcainputsetting" class="formcontrol" data-validationkey="input">
+    <div class="mpcappliance mpcform" id="inputSettings">
+        <div id="inputevntrecwrapper">
+            <table class="table mpcaInput-table">
+                <thead>
+                    <tr>
+                        <th>@Resources.mpcainp_inp</th>
+                        <th>@Resources.mpcainp_enable</th>
+                        <th>@Resources.mpcainp_status</th>
+                        <th>@Resources.mpcainp_level</th>
+                    </tr>
+                </thead>
+                <tbody data-bind=foreach:$data.Inputsettings>
+                    <tr>
+                        <td>
+                            <span data-bind="text:$data.LabelName"></span>
+                            <span><input type="text" name="input_Name" class="inputNameField" data-bind="value:$data.Name"></span>
+                            <div data-bind="visible:$data.IsError" class="mpcainputError">
+                                <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                                <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.Errormessage"></span></div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="switch_options switch_option_green">
+                                <span class="switch_disable redColor">@Resources.mpcainp_no</span>
+                                <span class="switch_enable">@Resources.mpcainp_yes</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.enabledisableval, fireInputChange: true">
+                            </div>
+                        </td>
+                        <td>
+                            <div data-bind="attr:{'class': $data.statusclass()}"></div>
+                        </td>
+                        <td>
+                            <div class="switch_options switch_option_no_nc">
+                                <span class="switch_enable">@Resources.mpcainp_nrm_opn</span>
+                                <span class="switch_disable">@Resources.mpcainp_nrm_cls</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.NCNOval, fireInputChange: true">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttonGroup">
+                <button class="primary-button" data-bind="click:$data.dosavesettings">@Resources.Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<input id="mpcainputsaveconfigurl" type="hidden" data-url='@Url.Action("UpdateInput", "MpcaDeviceConfig")' />
+<input id="mpcainputconfigurl" type="hidden" data-url='@Url.Action("GetInputDetails", "MpcaDeviceConfig")' />
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript3")
+@*<script src="~/Scripts/MpcaInputSettingConfig/mpcainput.common.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.datacontext.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.model.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.uicontext.js"></script>
+<script src="~/Scripts/MpcaInputSettingConfig/mpcainput.eventreciever.js"></script>*@
+@*@{#if DEBUG}
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.common.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.datacontext.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.model.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.uicontext.js"></script>
+    <script src="~/Scripts/MpcaInputSettingConfig/mpcainput.eventreciever.js"></script>
+@{#else}
+    @Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript3")
+@{#endif}*@

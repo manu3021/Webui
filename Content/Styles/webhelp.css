@@ -1,0 +1,973 @@
+/* #onlineHelpWrap .navbar {
+    max-width: 25%;
+    width: 25%;
+    margin: 0;
+    line-height: 46px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    border-right: 1px solid #bababb;
+    background-color: #f5f5f5;
+    color: #454545;
+    font-size: 16px;
+    text-indent: 24px;
+}
+
+#onlineHelpWrap .leftTree {
+    width: 25%;
+    background-color: #fff;
+    border-right: 1px solid #bababb;
+    height: 100%;
+    top: 47px;
+    overflow: hidden;
+}
+
+    #onlineHelpWrap .leftTree:hover {
+        overflow: scroll;
+    }
+
+    #onlineHelpWrap .leftTree header {
+        margin: 0;
+        font-size: 16px;
+        color: #454545;
+        font-size: 16px;
+        text-indent: 24px;
+        position: fixed;
+        width: 25%;
+        top: 109px;
+    }
+
+    #onlineHelpWrap .leftTree .content {
+        /* margin: 90px 0 0; */
+    }
+	
+	#onlineHelpWrap .leftTree .content .help_operation{
+	    /* margin-left:0px; */
+	}
+	
+	#tools{
+	}
+	
+
+        #onlineHelpWrap .leftTree header input {
+        color: #0889c4;
+        font-size: 14px;
+        border: 1px solid #d3d3d3;
+        border-radius: 5px;
+        padding: 5px 5px;
+        margin: 8px 0;
+        width: 90%;
+        background: #fff url(../images/icon_search.png) no-repeat 10px 7px/16px;
+        text-indent: 30px;
+    }
+
+        #onlineHelpWrap .leftTree header input:focus {
+            outline: none;
+        }
+
+#onlineHelpWrap #page-body {
+    overflow: hidden;
+}
+
+#onlineHelpWrap .contentarea {
+    left: 26%;
+    position: absolute;
+    top: 0px;
+    width: 74%;
+    height: 95%;
+}
+
+#onlineHelpWrap .pagetitle a, #onlineHelpWrap .pagetitle a:hover {
+    color: #fff;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+#onlineHelp .titleheader {
+    font-size: 22px;
+    color: #3B3B3B;
+    margin: 0 0 15px 14px;
+    font-weight: normal;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: "Open Sans Semibold" !important;
+}
+
+#onlineHelp .subtitle {
+    font-size: 18px;
+    color: #454545;
+    padding-bottom: 10px;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    padding-left: 13px;
+}
+
+#onlineHelp p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #3B3B3D;
+    padding: 0 0 15px 13px;
+}
+
+#onlineHelp a {
+    color: #0088cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    #onlineHelp a:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+
+#onlineHelp ol, #onlineHelp ul {
+    padding: 0 0 0 34px;
+    font-size: 14px;
+}
+
+#onlineHelp .bodyCont {
+    min-height: 418px;
+}
+
+#onlineHelp ol ul {
+    padding: 5px 0 0 17px;
+}
+
+#onlineHelp ul li {
+    padding: 0 0 5px;
+    list-style: none;
+    color: #454545;
+}
+
+#onlineHelp ol li {
+    padding: 0 0 5px;
+    color: #454545;
+}
+
+#onlineHelp ul li {
+    list-style-type: disc;
+}
+
+    #onlineHelp ul li li {
+        list-style-type: circle;
+    }
+
+#onlineHelp strong {
+    font-family: "Open Sans Semibold" !important;
+}
+
+#onlineHelp .controlButt {
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+
+    #onlineHelp .controlButt a {
+        padding-left: 24px;
+    }
+
+#onlineHelp .note {
+    padding: 13px 0 13px 20px;
+}
+
+    #onlineHelp .note img {
+        vertical-align: middle;
+        margin: -2px 0 0;
+    }
+
+#onlineHelp .nomargintop {
+    padding: 0 0 13px 20px;
+}
+
+#onlineHelp .note ol {
+    padding: 5px 0 0 34px;
+}
+
+#onlineHelp .note .subtitle {
+    color: #707070;
+    padding: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#onlineHelp .note p, #onlineHelp .note li {
+    color: #707070;
+    padding: 0;
+    font-size: 12px;
+}
+
+#onlineHelp ol .note {
+    padding: 13px 0;
+}
+
+#onlineHelp table {
+    border-collapse: collapse;
+    width: 98%;
+    margin: 5px 0 20px 14px;
+}
+
+#onlineHelp ol table, #onlineHelp ul table {
+    margin: 10px 0 14px;
+}
+
+#onlineHelp table thead tr {
+    font-size: 14px;
+    background-color: #f5f5f5;
+    color: #454545;
+}
+
+#onlineHelp table tbody tr {
+    font-size: 14px;
+    color: #454545;
+}
+
+#onlineHelp table td {
+    padding: 7px 0 7px 8px;
+    vertical-align: top;
+    border: 1px solid #d3d3d3;
+}
+
+    #onlineHelp table td.col-equal {
+        width: 50%;
+    }
+
+    #onlineHelp table td.col-one {
+        width: 10%;
+    }
+
+    #onlineHelp table td.col-two {
+        width: 20%;
+    }
+
+    #onlineHelp table td.col-three {
+        width: 70%;
+    }
+
+#onlineHelp .bottControl {
+    border-top: 1px solid #d3d3d3;
+    padding-top: 12px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+#onlineHelp .helpprev {
+    float: left;
+    padding: 0;
+}
+
+#onlineHelp .helpnext {
+    float: right;
+}
+
+#onlineHelp span {
+    display: block;
+    font-size: 12px;
+}
+
+#onlineHelp .helpnext span {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+    margin: 0 26px 0 0;
+}
+
+#onlineHelp .helpprev span {
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin: 0 0 0 25px;
+}
+
+#onlineHelp a {
+    color: #0889c4;
+    font-size: 14px;
+}
+
+#onlineHelp .prev_icon, #onlineHelp .next_icon, #onlineHelp .create-icon, #onlineHelp .person-icon, #onlineHelp .grid-icon, #onlineHelp .pane-icon, #onlineHelp .calendar-icon, #onlineHelp .sortasc-icon, #onlineHelp .sortdesc-icon, #onlineHelp .clip-icon, #onlineHelp .camred-icon, #onlineHelp .play-icon, #onlineHelp .netaxs-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#onlineHelp .prev_icon {
+    float: left;
+    background: url('../images/sprite_icons.png') no-repeat -308px -400px;
+}
+
+#onlineHelp .next_icon {
+    float: right;
+    background: url('../images/sprite_icons.png') no-repeat -308px -430px;
+}
+
+#onlineHelp .create-icon {
+    background: url('../images/sprite_icons.png') no-repeat -337px -490px;
+    padding: 0 28px 4px 1px;
+}
+
+#onlineHelp .person-icon {
+    background: url('../images/sprite_icons.png') no-repeat -277px -100px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .grid-icon {
+    background: url('../images/sprite_icons.png') no-repeat -430px -520px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .pane-icon {
+    background: url('../images/sprite_icons.png') no-repeat -190px -42px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .calendar-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -130px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .sortasc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -98px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .sortdesc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -69px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .clip-icon {
+    background: url('../images/sprite_icons.png') no-repeat -427px -221px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .camred-icon {
+    background: url('../images/sprite_icons.png') no-repeat -157px -399px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .play-icon {
+    background: url('../images/sprite_icons.png') no-repeat -336px -460px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .netaxs-icon {
+    background: url('../images/sprite_icons.png') no-repeat -517px -250px;
+    padding: 0 28px 1px 1px;
+}
+
+
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 95%;
+}
+
+body#onlineHelp {
+    overflow: auto !important;
+    margin-right: 20px !important;
+}
+/* tree */
+#onlineHelpWrap .leftTree ul li {
+    list-style: none;
+}
+
+#onlineHelpWrap .leftTree ul li.search-item ul{
+    margin-left: 0px;
+}
+
+#onlineHelpWrap .tree-open-icon.icon-plus-sign, #onlineHelpWrap .tree-open-icon, .tree-open-icon.icon-minus-sign {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 14px 0 0;
+    padding: 0 0 10px;
+    /*border-bottom:1px solid #d3d3d3*/
+}
+
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign, #onlineHelpWrap .tree-open-icon {
+        background: url('../images/sprite_icons.png') no-repeat -433px -462px;
+    }
+
+        #onlineHelpWrap .tree-open-icon.icon-minus-sign {
+            background: url('../images/sprite_icons.png') no-repeat -433px -490px;
+        }
+
+#onlineHelpWrap .tree a {
+    color: #707070;
+    text-decoration: none;
+}
+
+#onlineHelpWrap .tree-label {
+    /*padding: 12px 0;*/
+    display: -webkit-box;
+    text-indent: 12px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 14px;
+    color: #454545;
+    line-height: 44px;
+    display: block;
+}
+
+#onlineHelpWrap .tree li .linkwrap {
+    display: block;
+    padding: 0 0 0 24px;
+    cursor: pointer;
+}
+
+#onlineHelpWrap .tree li li .linkwrap {
+    padding: 0 0 0 48px;
+}
+
+#onlineHelpWrap .tree li li li .linkwrap {
+    padding: 0 0 0 81px;
+}
+
+#onlineHelpWrap .tree li li li li .linkwrap {
+    padding: 0 0 0 110px;
+}
+
+#onlineHelpWrap .tree ul ul ul .tree-label, #onlineHelpWrap .tree ul ul ul li.level_three ul .tree-label {
+    text-indent: inherit;
+}
+
+#onlineHelpWrap .tree ul ul ul li.level_three .tree-label {
+    text-indent: 12px;
+}
+
+#onlineHelpWrap .linkwrap:hover, #onlineHelpWrap .treeitemactive {
+    background: rgba(185, 221, 243, 0.3);
+}
+
+    #onlineHelpWrap .linkwrap a:hover, #onlineHelpWrap .treeitemactive a, #onlineHelpWrap .treeitemactive span {
+        color: #0889c4;
+    }
+
+#onlineHelpWrap ol li {
+    list-style: decimal;
+}
+
+#onlineHelp .helplist th {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    border-top: 1px solid #BABABB !important;
+    font-size: 14px;
+    color: #707070;
+    vertical-align: middle;
+    font-weight: normal;
+    padding: 0 14px;
+    word-break: break-all;
+    height: 42px;
+}
+
+#onlineHelp .time_conditions img {
+    vertical-align: middle;
+}
+
+.bodyCont .downloadHolder li {
+    list-style-type: disc !important;    
+}
+.bodyCont .downloadHolder li .down-content {
+    display: inline-block !important;       
+    font-size: 14px !important;
+    color: #454545;
+    text-decoration: underline;
+}
+.downloadHolder span
+{
+    display: block;   
+    color: #454545;
+    font-size: 14px;
+    line-height: 20px;
+}#onlineHelpWrap .navbar {
+    max-width: 25%;
+    width: 25%;
+    margin: 0;
+    line-height: 46px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    border-right: 1px solid #bababb;
+    background-color: #f5f5f5;
+    color: #454545;
+    font-size: 16px;
+    text-indent: 24px;
+}
+
+#onlineHelpWrap .leftTree {
+    width: 25%;
+    background-color: #fff;
+    border-right: 1px solid #bababb;
+    height: 100%;
+    top: 47px;
+    overflow: hidden;
+}
+
+    #onlineHelpWrap .leftTree:hover {
+        overflow: scroll;
+    }
+
+    #onlineHelpWrap .leftTree header {
+        margin: 0;
+        font-size: 16px;
+        color: #454545;
+        font-size: 16px;
+        text-indent: 24px;
+        position: fixed;
+        width: 25%;
+        top: 109px;
+		background-color:#fff;
+    }
+
+    #onlineHelpWrap .leftTree .content {
+         margin: 90px 0 0; 
+    }
+	
+	#onlineHelpWrap .leftTree .content .help_operation{
+	     margin-left:0px; 
+	}
+	
+	#onlineHelpWrap #installation .leftTree .content .help_installation{
+	     margin-left:0px; 
+         margin-top: -43px;
+	}
+	
+	#onlineHelpWrap #tools .leftTree .content {
+	    margin: 47px 0 0;
+	}
+	
+	#onlineHelpWrap #tools .leftTree .content .help_parent{
+		margin-left:0px; 
+	}
+	
+
+        #onlineHelpWrap .leftTree header input {
+        color: #0889c4;
+        font-size: 14px;
+        border: 1px solid #d3d3d3;
+        border-radius: 5px;
+        padding: 5px 5px;
+        margin: 8px 0;
+        width: 90%;
+        background: #fff url(../images/icon_search.png) no-repeat 10px 7px/16px;
+        text-indent: 30px;
+		
+    }
+
+        #onlineHelpWrap .leftTree header input:focus {
+            outline: none;
+        }
+
+#onlineHelpWrap #page-body {
+    overflow: hidden;
+}
+
+#onlineHelpWrap .contentarea {
+    left: 26%;
+    position: absolute;
+    top: 0px;
+    width: 74%;
+    height: 95%;
+}
+
+#onlineHelpWrap .pagetitle a, #onlineHelpWrap .pagetitle a:hover {
+    color: #fff;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+#onlineHelp .titleheader {
+    font-size: 22px;
+    color: #3B3B3B;
+    margin: 0 0 15px 14px;
+    font-weight: normal;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: "Open Sans Semibold" !important;
+}
+
+#onlineHelp .subtitle {
+    font-size: 18px;
+    color: #454545;
+    padding-bottom: 10px;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    padding-left: 13px;
+}
+
+#onlineHelp p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #3B3B3D;
+    padding: 0 0 15px 13px;
+}
+
+#onlineHelp a {
+    color: #0088cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    #onlineHelp a:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+
+#onlineHelp ol, #onlineHelp ul {
+    padding: 0 0 0 34px;
+    font-size: 14px;
+}
+
+#onlineHelp .bodyCont {
+    min-height: 418px;
+}
+
+#onlineHelp ol ul {
+    padding: 5px 0 0 17px;
+}
+
+#onlineHelp ul li {
+    padding: 0 0 5px;
+    list-style: none;
+    color: #454545;
+}
+
+#onlineHelp ol li {
+    padding: 0 0 5px;
+    color: #454545;
+}
+
+#onlineHelp ul li {
+    list-style-type: disc;
+}
+
+    #onlineHelp ul li li {
+        list-style-type: circle;
+    }
+
+#onlineHelp strong {
+    font-family: "Open Sans Semibold" !important;
+}
+
+#onlineHelp .controlButt {
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+
+    #onlineHelp .controlButt a {
+        padding-left: 24px;
+    }
+
+#onlineHelp .note {
+    padding: 13px 0 13px 20px;
+}
+
+    #onlineHelp .note img {
+        vertical-align: middle;
+        margin: -2px 0 0;
+    }
+
+#onlineHelp .nomargintop {
+    padding: 0 0 13px 20px;
+}
+
+#onlineHelp .note ol {
+    padding: 5px 0 0 34px;
+}
+
+#onlineHelp .note .subtitle {
+    color: #707070;
+    padding: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#onlineHelp .note p, #onlineHelp .note li {
+    color: #707070;
+    padding: 0;
+    font-size: 12px;
+}
+
+#onlineHelp ol .note {
+    padding: 13px 0;
+}
+
+#onlineHelp table {
+    border-collapse: collapse;
+    width: 98%;
+    margin: 5px 0 20px 14px;
+}
+
+#onlineHelp ol table, #onlineHelp ul table {
+    margin: 10px 0 14px;
+}
+
+#onlineHelp table thead tr {
+    font-size: 14px;
+    background-color: #f5f5f5;
+    color: #454545;
+}
+
+#onlineHelp table tbody tr {
+    font-size: 14px;
+    color: #454545;
+}
+
+#onlineHelp table td {
+    padding: 7px 0 7px 8px;
+    vertical-align: top;
+    border: 1px solid #d3d3d3;
+}
+
+    #onlineHelp table td.col-equal {
+        width: 50%;
+    }
+
+    #onlineHelp table td.col-one {
+        width: 10%;
+    }
+
+    #onlineHelp table td.col-two {
+        width: 20%;
+    }
+
+    #onlineHelp table td.col-three {
+        width: 70%;
+    }
+
+#onlineHelp .bottControl {
+    border-top: 1px solid #d3d3d3;
+    padding-top: 12px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+#onlineHelp .helpprev {
+    float: left;
+    padding: 0;
+}
+
+#onlineHelp .helpnext {
+    float: right;
+}
+
+#onlineHelp span {
+    display: block;
+    font-size: 12px;
+}
+
+#onlineHelp .helpnext span {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+    margin: 0 26px 0 0;
+}
+
+#onlineHelp .helpprev span {
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin: 0 0 0 25px;
+}
+
+#onlineHelp a {
+    color: #0889c4;
+    font-size: 14px;
+}
+
+#onlineHelp .prev_icon, #onlineHelp .next_icon, #onlineHelp .create-icon, #onlineHelp .person-icon, #onlineHelp .grid-icon, #onlineHelp .pane-icon, #onlineHelp .calendar-icon, #onlineHelp .sortasc-icon, #onlineHelp .sortdesc-icon, #onlineHelp .clip-icon, #onlineHelp .camred-icon, #onlineHelp .play-icon, #onlineHelp .netaxs-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#onlineHelp .prev_icon {
+    float: left;
+    background: url('../images/sprite_icons.png') no-repeat -308px -400px;
+}
+
+#onlineHelp .next_icon {
+    float: right;
+    background: url('../images/sprite_icons.png') no-repeat -308px -430px;
+}
+
+#onlineHelp .create-icon {
+    background: url('../images/sprite_icons.png') no-repeat -337px -490px;
+    padding: 0 28px 4px 1px;
+}
+
+#onlineHelp .person-icon {
+    background: url('../images/sprite_icons.png') no-repeat -277px -100px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .grid-icon {
+    background: url('../images/sprite_icons.png') no-repeat -430px -520px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .pane-icon {
+    background: url('../images/sprite_icons.png') no-repeat -190px -42px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .calendar-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -130px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .sortasc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -98px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .sortdesc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -69px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .clip-icon {
+    background: url('../images/sprite_icons.png') no-repeat -427px -221px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .camred-icon {
+    background: url('../images/sprite_icons.png') no-repeat -157px -399px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .play-icon {
+    background: url('../images/sprite_icons.png') no-repeat -336px -460px;
+    padding: 0 28px 1px 1px;
+}
+
+#onlineHelp .netaxs-icon {
+    background: url('../images/sprite_icons.png') no-repeat -517px -250px;
+    padding: 0 28px 1px 1px;
+}
+
+
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 95%;
+}
+
+body#onlineHelp {
+    overflow: auto !important;
+    margin-right: 20px !important;
+}
+/* tree */
+#onlineHelpWrap .leftTree ul li {
+    list-style: none;
+}
+
+#onlineHelpWrap .tree-open-icon.icon-plus-sign, #onlineHelpWrap .tree-open-icon, .tree-open-icon.icon-minus-sign {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 14px 0 0;
+    padding: 0 0 10px;
+    /*border-bottom:1px solid #d3d3d3*/
+}
+
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign, #onlineHelpWrap .tree-open-icon {
+        background: url('../images/sprite_icons.png') no-repeat -433px -462px;
+    }
+
+        #onlineHelpWrap .tree-open-icon.icon-minus-sign {
+            background: url('../images/sprite_icons.png') no-repeat -433px -490px;
+        }
+
+#onlineHelpWrap .tree a {
+    color: #707070;
+    text-decoration: none;
+}
+
+#onlineHelpWrap .tree-label {
+    /*padding: 12px 0;*/
+    display: -webkit-box;
+    text-indent: 12px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 14px;
+    color: #454545;
+    line-height: 44px;
+    display: block;
+}
+
+#onlineHelpWrap .tree li .linkwrap {
+    display: block;
+    padding: 0 0 0 24px;
+    cursor: pointer;
+}
+
+#onlineHelpWrap .tree li li .linkwrap {
+    padding: 0 0 0 48px;
+}
+
+#onlineHelpWrap .tree li li li .linkwrap {
+    padding: 0 0 0 81px;
+}
+
+#onlineHelpWrap .tree li li li li .linkwrap {
+    padding: 0 0 0 110px;
+}
+
+#onlineHelpWrap .tree ul ul ul .tree-label, #onlineHelpWrap .tree ul ul ul li.level_three ul .tree-label {
+    text-indent: inherit;
+}
+
+#onlineHelpWrap .tree ul ul ul li.level_three .tree-label {
+    text-indent: 12px;
+}
+
+#onlineHelpWrap .linkwrap:hover, #onlineHelpWrap .treeitemactive {
+    background: rgba(185, 221, 243, 0.3);
+}
+
+    #onlineHelpWrap .linkwrap a:hover, #onlineHelpWrap .treeitemactive a, #onlineHelpWrap .treeitemactive span {
+        color: #0889c4;
+    }
+
+#onlineHelpWrap ol li {
+    list-style: decimal;
+}
+
+#onlineHelp .helplist th {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    border-top: 1px solid #BABABB !important;
+    font-size: 14px;
+    color: #707070;
+    vertical-align: middle;
+    font-weight: normal;
+    padding: 0 14px;
+    word-break: break-all;
+    height: 42px;
+}
+
+#onlineHelp .time_conditions img {
+    vertical-align: middle;
+}
+
+.bodyCont .downloadHolder li {
+    list-style-type: disc !important;    
+}
+.bodyCont .downloadHolder li .down-content {
+    display: inline-block !important;       
+    font-size: 14px !important;
+    color: #454545;
+    text-decoration: underline;
+}
+.downloadHolder span
+{
+    display: block;   
+    color: #454545;
+    font-size: 14px;
+    line-height: 20px;
+} */

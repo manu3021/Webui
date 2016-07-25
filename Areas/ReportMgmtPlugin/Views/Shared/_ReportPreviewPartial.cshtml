@@ -1,0 +1,80 @@
+﻿<div id="cardPreview" class="mpcmodel modal hide fade" role="dialog">
+    <div id="cardPreviewContent">
+        <header class="row">
+            <span>@Resources.Report_Output_Preview</span>
+        </header>
+        <section class="row">
+            <div id="sticky-list">
+                <ul>
+                    <li id="reportTable">
+                        <table class="table">
+                            <thead>
+                                <tr data-bind="foreach: $root.Columns">
+                                    <th data-bind="text: $data" />
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: $root.Rows">
+                                <tr data-bind="foreach: $root.Columns">
+                                    <td data-bind="text: $parent[$data], css: {'report-severity-critical': $parent[$data]==='Critical', 'report-severity-major': $parent[$data]==='Major', 'report-severity-moderate': $parent[$data]==='Moderate', 'report-severity-normal': $parent[$data]==='Normal'}" />
+                                </tr>
+                            </tbody>
+                            <tbody data-bind="visible: $root.showNoRecords">
+                                <tr>
+                                    <td data-bind="attr: { colspan: $root.Columns().length }">
+                                        <p data-bind="text: $root.MsgNoRecord">  </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <div class="modal-footer">
+                <button class="secondary-button" data-bind="click: $data.closepopup">@Resources.Close</button>
+                <span class="footer-notes">@Resources.Report_ToViewFullReportUseExportOption</span>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<div id="deliveryMailStatus" class="mpcmodel modal hide fade" role="dialog">
+    <div id="deliveryMailStatusContent">
+        <header class="row">
+            <span class="rep_del_heading">@Resources.Report_ReportDelivery</span>(<span class="report-delivered-field" data-bind="text:$data.successcount"></span>
+            <span class="rep_slash">/</span><span class="report-undelivered-field" data-bind="text:$data.failurecount"></span>)
+        </header>
+        <section class="row">
+            <div id="sticky-list">
+                <div class="table-wrap">
+                    <table class="table">
+                        @*<thead>
+                            <tr>                                
+                                <th><span class="report-delivered-field">Success</span>
+                                    <span class="rep_slash">/</span>
+                                    <span class="report-undelivered-field">Failed</span>
+                                </th>
+                            </tr>
+                        </thead>*@
+                        <tbody data-bind="foreach: $data.DeliveryHistory">
+                            <tr>
+                                <td data-bind="text: $data.DeliveredOn, css: {'report-delivered-field': $data.IsDelivered, 'report-undelivered-field': !$data.IsDelivered}" />
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+        </section>
+        <footer>
+            <div class="modal-footer">
+                <button class="secondary-button" data-bind="click: $data.closepopupstatus">@Resources.Close</button>
+                <ul class="status_legand">
+                    <li class="report-delivered-field succ-legand">@Resources.Report_SuccessText</li>
+                    <li class="report-undelivered-field fail-legand">@Resources.Report_FailedText</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</div>

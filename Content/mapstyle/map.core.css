@@ -1,0 +1,1043 @@
+﻿.mapcontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.floormapitem {
+    position: absolute;
+    font-size: .75em;
+    display: none;
+    /*background: #454545;*/
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+    .floormapitem .iconplaceholder {
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        border-radius: 100px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        background: #454545;
+    }
+
+        .floormapitem .iconplaceholder .floormapicon {
+            width: 0px;
+            height: 20px;
+            padding: 2px 11px 4px 11px;
+            margin-left: 8px;
+            margin-top: 8px;
+        }
+
+    .floormapitem .floormapiconcaption {
+        padding-right: 10px;
+        margin-left: 24px;
+        padding-left: 14px;
+        line-height: 35px;
+        padding-bottom: 6px;
+        padding-top: 5px;
+        background: #454545;
+        color: #d6d6d6;
+    }
+
+    .floormapitem .icon-floormapdeviceremove {
+        font-weight: normal;
+        font-size: 12px;
+        left: 23px;
+        padding: 0px 3px 0px 5px;
+        position: absolute;
+        cursor: pointer;
+        color: #d6d6d6;
+        top: -10px;
+        background: #454545;
+        -webkit-border-radius: 69px;
+        -moz-border-radius: 69px;
+        -ms-border-radius: 69px;
+        -o-border-radius: 69px;
+        border-radius: 69px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        border: 1px solid #fff;
+        width: 8px;
+        height: 16px;
+    }
+
+.mapinnercontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-color: black;
+}
+
+.gmnoprint img {
+    max-width: none;
+}
+
+object, embed, video {
+    max-width: 100%;
+}
+
+#map_canvas img {
+    max-width: none;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+    width: 100%;
+}
+
+.site_Icon {
+    background: url('../images/sprite_icons.png') no-repeat -12px -130px;
+}
+
+    .site_Icon:hover {
+        background: url('../images/sprite_icons.png') no-repeat -42px -130px;
+    }
+
+.general_Icon {
+    background: url('../images/sprite_icons.png') no-repeat -10px -101px;
+}
+
+.dealer_Icon {
+    background: url('../images/sprite_icons.png') no-repeat -10px -11px;
+}
+
+    .dealer_Icon:hover {
+        background: url('../images/sprite_icons.png') no-repeat -40px -11px;
+    }
+
+.contextmenu {
+    visibility: hidden;
+    background: #ffffff;
+    border: 1px solid #8888FF;
+    z-index: 10;
+    position: relative;
+    width: 140px;
+}
+
+    .contextmenu div {
+        padding-left: 5px;
+    }
+
+.floorPlanimagecontainer {
+    height: 600px;
+    width: 800px;
+    visibility: visible;
+}
+
+.markerclass {
+    border-style: solid;
+    border-width: 0px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    background-color: white;
+}
+
+.infobox {
+    background: #707070;
+    color: #FFF;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    /*margin-left: 111px;*/
+    vertical-align: middle;
+    padding: 8px 8px 3px 8px;
+}
+
+    .infobox:after {
+        content: '';
+        position: absolute;
+        top: 41px;
+        left: 5px;
+        width: 0;
+        height: 0;
+        border-top: solid 16px #454545;
+        border-left: solid 14px transparent;
+    }
+
+.infobox-label {
+    background: #707070;
+    color: #FFF;
+    font-size: 14px;
+    /*margin-left: 25px;*/
+    vertical-align: top;
+    padding-left: 2px;
+}
+
+.icon_map_site {
+    background: url('../images/sprite_icons.png') no-repeat -310px -250px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_map_customer {
+    background: url('../images/sprite_icons.png') no-repeat -310px -190px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_map_group {
+    background: url('../images/sprite_icons.png') no-repeat -310px -220px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.map-plugin .mapheader {
+    top: 62px;
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #bababb;
+    -webkit-box-shadow: -2px 0 4px 2px #bababb;
+    -moz-box-shadow: -2px 0 4px 2px #bababb;
+    box-shadow: -2px 0 4px 2px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=4px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    font-size: 16px;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.map-plugin .map-plugin-body {
+    top: 62px;
+    position: absolute;
+}
+
+.map-plugin .nav-list {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px !important;
+}
+
+    .map-plugin .nav-list li {
+        font-size: 15px;
+        color: #707070;
+        cursor: pointer;
+        padding-right: 6px;
+    }
+
+        .map-plugin .nav-list li + span {
+            font-size: 15px;
+            color: #707070;
+        }
+
+.map-plugin .show-option {
+    padding: 0px;
+    margin-left: 0px !important;
+}
+
+    .map-plugin .show-option li:first-child {
+        margin-right: 24px;
+    }
+
+    .map-plugin .show-option li:last-child {
+        margin-right: 24px;
+    }
+
+.map-plugin .device-list {
+    padding: 0px;
+    margin-left: 0px !important;
+}
+
+.map-plugin .mapsearch {
+}
+
+    .map-plugin .mapsearch input[type="search"] {
+        margin: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-position-y: 0px;
+    }
+
+    .map-plugin .mapsearch input[type=search]:hover {
+        margin-top: 5px;
+        margin-left: 5px;
+        background-position-y: 0px;
+        background-position-x: 0px;
+    }
+
+.map-plugin .showmenu {
+    top: 28px;
+    right: -16px !important;
+}
+
+
+.map-plugin .allmenu {
+    top: 52px !important;
+    left: 24px !important;
+    background: #212121 !important;
+    padding: 2px 0px 0px 0px;
+}
+
+    .map-plugin .allmenu:before {
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #ccc;
+        border-left: 7px solid transparent;
+    }
+
+    .map-plugin .allmenu .allmenu-header {
+        background-color: #212121;
+        border-bottom: 1px solid #212121 !important;
+        color: #d3d3d3;
+        text-transform: uppercase;
+        padding-left: 24px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 15px;
+    }
+
+
+        .map-plugin .allmenu .allmenu-header > span {
+            padding-left: 24px;
+        }
+
+.map-plugin .showmenu li:first-child {
+    margin-right: 0px !important;
+}
+
+.map-plugin .showmenu li:last-child {
+    margin-right: 0px !important;
+}
+
+.map-plugin .allmenu li ul.childlist-templ {
+    margin: 0px !important;
+    padding: 0px !important;
+    max-height: 200px;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    background: #272727;
+}
+
+    .map-plugin .allmenu li ul.childlist-templ li:hover {
+        background-color: #454545 !important;
+        color: #d3d3d3 !important;
+    }
+
+.map-plugin .allmenu li {
+    background: #272727;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 15px;
+    cursor: pointer;
+    padding: 12px 24px 3px 24px;
+    margin-bottom: -20px;
+}
+
+    .map-plugin .allmenu li i {
+        position: relative;
+        display: inline-block;
+    }
+
+    .map-plugin .allmenu li:first-child {
+        margin-top: 0px;
+    }
+
+    .map-plugin .allmenu li:last-child {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+.map-plugin .childlist-templ li:last-child {
+    height: 34px;
+}
+
+.map-plugin .allmenu + li:last-child:hover {
+    background: #272727;
+}
+
+.map-plugin .showmenu:before {
+    left: initial !important;
+}
+
+.map-plugin .rightside-top-menu {
+    padding: 0;
+    margin: 0;
+}
+
+.map-plugin .show-option .down-arrow {
+    background-image: url("../images/sprite_icons.png");
+    display: inline-block;
+    height: 8px;
+    margin-left: 3px;
+    /* margin-right: 18px; */
+    vertical-align: middle;
+    width: 8px;
+    background-position: -436px -405px;
+}
+
+.map-plugin .nav-list .dropdown span:hover {
+    color: #0889C4;
+}
+
+    .map-plugin .nav-list .dropdown span:hover .down-arrow {
+        background-position: -466px -405px;
+    }
+
+.map-plugin .hidebreadcrumlist {
+    display: none;
+}
+
+.map-plugin .showbreadcrumlist {
+    display: block;
+}
+
+.map-plugin .allmenu .allmenu-header:hover {
+    background-color: #212121 !important;
+}
+
+    .map-plugin .allmenu .allmenu-header:hover .icon_popup_back {
+        /*background: url(../images/sprite_icons.png) no-repeat -315px -400px;*/
+        background: url(../images/sprite_icons.png) no-repeat -313px -340px;
+    }
+
+    .map-plugin .allmenu .allmenu-header:hover span {
+        color: #d3d3d3;
+    }
+
+.map-plugin .map-menuitem {
+    padding-left: 8px;
+    vertical-align: top;
+    position: relative;
+    top: -27px;
+    left: 20px;
+    display: block;
+    padding-right: 24px;
+}
+
+.map-plugin #content {
+    max-width: 250px;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Gotham-book";
+}
+
+.map-plugin .closeInfoWindow {
+}
+
+.closeInfoWindow .gm-style-iw {
+    top: 0px !important;
+    position: absolute;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    /*background: #454545 !important;
+        color:#707070 !important;*/
+}
+
+.map-icon-status {
+    background: red;
+    left: 0px;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.map-plugin .map-icon-content {
+    padding-left: 24px;
+}
+
+
+.map-plugin .maplist {
+    left: auto;
+}
+
+.my-marker {
+    /*padding-top: 2%;*/
+    background: #707070;
+    color: #FFF;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    /* margin-left: 111px; */
+    height: 38px;
+    position: relative;
+    cursor: pointer;
+    white-space: pre;
+    min-width: 120px;
+}
+
+    /*.my-marker:after {
+	    content: '';
+	    position: absolute;
+	    top: 38px;
+	    left: 0%;
+	    width: 0;
+	    height: 0;
+	    border-top: solid 10px #454545;
+	    border-left: solid 10px transparent;
+    }*/
+
+
+    .my-marker .infoText {
+        float: left;
+        padding: 8px 12px 0 40px;
+        position: relative;
+    }
+
+    /*.my-marker:hover{
+	    min-width:278px !important;
+    }*/
+
+
+    .my-marker .icon_placeholder {
+        padding: 10px 12px 0 12px;
+        float: left;
+        width: 20px;
+        position: absolute;
+    }
+
+    .my-marker .alarmstatusindicator {
+        background: #e33e38;
+    }
+
+
+#popup_canvas1 .popover {
+    left: auto !important;
+    right: 0px !important;
+    height: 346px;
+}
+
+span.tabclass {
+    width: 42%;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 15px;
+}
+
+#popup_canvas1 span.eventerror {
+    display: block;
+    text-align: center;
+    padding-top: 16px;
+    color: #E33E38;
+    padding-bottom: 16px;
+    padding-top: 20%;
+    padding-bottom: 19%;
+    padding-right: 2p;
+}
+
+#popup_canvas1 .alerm-menu-userBody ul {
+    height: 254px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 416px;
+}
+
+    #popup_canvas1 .alerm-menu-userBody ul:hover {
+        -ms-overflow-y: hidden;
+        overflow-y: hidden;
+        -ms-overflow-x: hidden;
+        overflow-x: hidden;
+    }
+
+#popup_canvas1 span.imageHolder {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    float: left;
+    padding-right: 12px;
+}
+
+#popup_canvas1 .imageHolder img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    margin: 0 3px 0 0;
+    padding: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+#popup_canvas1 .alarm-door-userProfile {
+    display: inline-block;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none !important;
+}
+
+#popup_canvas1 p.status {
+    min-width: 394px;
+    float: left;
+    word-break: break-word;
+    -webkit-word-wrap: break-word;
+    -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    -o-word-wrap: break-word;
+    word-wrap: normal;
+    max-width: 335px;
+    position: absolute;
+    height: 56px;
+    text-transform: capitalize;
+    /* background-color: red; */
+}
+
+#popup_canvas1 .alerm-menu-userBody {
+    /* margin-top: 20px; */
+}
+
+#popup_canvas1 #profile {
+    bottom: 0px !important;
+}
+
+#eventsContainer .tabcontainer {
+    position: absolute;
+    width: 100%;
+    /* margin-top: 10px; */
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 42px;
+    display: block;
+    /* position: absolute; */
+}
+
+#eventsContainer .tab-content {
+    position: absolute;
+    top: 134px;
+    color: #bababa;
+    /* border: 1px solid red; */
+    width: 100%;
+    /* bottom: 3px; */
+    /* overflow: scroll; */
+}
+
+#popup_canvas1 #videocontainer {
+    /*margin-left: 59px;*/
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#popup_canvas1 #statusicon {
+    display: none;
+    right: 24px;
+    top: 24px;
+}
+
+/*Tab Styles*/
+#popup_canvas1 .nav > li > a:hover, #floormap_canvas1 .nav > li > a:focus {
+    background-color: #323232;
+}
+
+#popup_canvas1 .nav-tabs > .active > a, #popup_canvas1 .nav-tabs > .active > a:hover, #popup_canvas1 .nav-tabs > .active > a:focus {
+    background-color: #323232;
+    color: #d3d3d3 !important;
+    border-bottom: 2px solid #bababa;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    text-decoration: none;
+}
+
+#popup_canvas1 .nav-tabs {
+    border-bottom: 1px solid #454545;
+    padding-top: 10px;
+}
+
+    #popup_canvas1 .nav-tabs > li {
+        float: left !important;
+        padding: 0 !important;
+        margin: 0;
+        border-bottom: none;
+        margin-right: 22px;
+    }
+
+        #popup_canvas1 .nav-tabs > li > a {
+            border: none;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            color: #777777;
+        }
+
+            #popup_canvas1 .nav-tabs > li > a:hover, #popup_canvas1 .nav-tabs > li > a:focus {
+                background-color: #323232;
+                color: #d3d3d3 !important;
+                border-bottom: 2px solid #bababa;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                cursor: pointer;
+            }
+
+    #popup_canvas1 .nav-tabs li a:hover {
+        color: #9d9d9d !important;
+    }
+/*Tab Styles*/
+
+#popup_canvas1 #alerm-menu-user {
+    /* padding-left: 24px; */
+    /* padding-right: 3px; */
+}
+
+#popup_canvas1 #displayname {
+    display: block;
+}
+
+#popup_canvas1 .alerm-menu-userBody li {
+    border-bottom: 1px solid #454545;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+#popup_canvas1 .deviceAddress {
+}
+
+#popup_canvas1 .alarm-action-btn {
+    margin-bottom: 15px;
+    margin-right: 8px;
+    cursor: pointer;
+    float: left;
+}
+
+#popup_canvas1 .deviceActionsButtons {
+    /*position: relative;*/
+    padding-top: 10px;
+}
+
+#popup_canvas1 #actionstab {
+    padding: 18px 22px 4px 22px;
+}
+
+#popup_canvas1 .deviceAddressHeading {
+    /* color: #bababa; */
+    display: block;
+}
+
+#popup_canvas1 .deviceContactHeading {
+    display: block;
+    padding-top: 12px;
+}
+
+.floormaphidebutton {
+    left: 26px;
+    display: inline-block;
+    bottom: 16px;
+    cursor: pointer;
+}
+
+#configuration #floormap_canvas .floormaphidebutton {
+    left: 24px !important;
+}
+
+/* IE Fixes*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .my-marker .infoText {
+        padding: 10px 12px 0 41px !important;
+    }
+
+    .my-marker {
+        overflow: hidden;
+    }
+}
+
+.gm-style div img {
+    max-width: none !important;
+}
+
+#floormap_canvas1, #floormap_canvas {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: scroll;
+}
+
+    #floormap_canvas1 .floormapitem {
+        margin-top: -59px;
+    }
+
+    #floormap_canvas1 .floorPlanimagecontainer .floormapEmptyMsg, #floormap_canvas .floorPlanimagecontainer .floormapEmptyMsg {
+        margin-top: 27%;
+        text-align: center;
+        cursor: default;
+        position: absolute;
+        width: 100%;
+        visibility: hidden;
+    }
+
+    #floormap_canvas1 .floorPlanimagecontainer, #floormap_canvas .floorPlanimagecontainer {
+        background-size: 100% 100%;
+        display: none;
+        margin: auto;
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+.sitenames {
+    margin: 0px;
+    /*background: #272727;*/
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    max-height: 250px;
+}
+
+    .sitenames li {
+        padding: 12px;
+        cursor: pointer;
+        min-width: 270px;
+        padding-left: 24px;
+    }
+
+        .sitenames li:hover {
+            background-color: #454545;
+        }
+
+        .sitenames li span {
+           padding-left: 15px;
+    color: #bababa;
+    display: inline-block;
+    margin-top: -17px;
+    width: 218px;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-bottom: 4px;
+        }
+
+    .sitenames .icon_site {
+        display: inline-block;
+        position: relative;
+        top: 5px;
+    }
+
+    #clusterexpandmenu li b{
+position: relative;
+    display: inline-block;
+}
+
+#clusterexpandmenu .clusterDivider {
+    border-bottom: 1px solid #454545;
+    height: 1px;
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 13px;
+}
+
+.gm-style-iw {
+    /*top: 0px !important;*/
+    left: 0px !important;
+}
+
+.infowindowstyle {
+    /*border: 2px solid #272727;*/
+    left: -1px !important;
+}
+
+/*.infowindowstyle + div{
+    background-color: #272727;
+}*/
+
+.infowindow-arrows div div {
+    background-color: #272727 !important;
+    /*border-color:#272727 !important;*/
+}
+
+.infowindow-body {
+    background-color: #272727 !important;
+    width: 306px !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -ms-border-radius: 2px !important;
+    -o-border-radius: 2px !important;
+    border-radius: 2px !important;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+.infowindow-popovershadow {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0, OffY=0, Color='black', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    background-color: #272727 !important;
+    width: 309px !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    -ms-border-radius: 4px !important;
+    -o-border-radius: 4px !important;
+    border-radius: 4px !important;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+.alarm-profile {
+    position: relative;
+    left: 10px;
+    display: inline-block;
+}
+
+.floormapitemSelected .iconplaceholder {
+    background: #323232 !important;
+}
+
+
+.floormapitemSelected .floormapiconcaption {
+    background: #323232 !important;
+}
+
+
+.map-plugin .icon_popup_back {
+    background: url(../images/sprite_icons.png) no-repeat -283px -340px;
+}
+
+.map-plugin .mapDivider {
+    border-bottom: 1px solid #454545;
+    height: 1px;
+    position: relative;
+    width: 116%;
+    display: block;
+    top: -16px;
+}
+
+.map-plugin .childlist-templ li:last-child .mapDivider {
+    display: none;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li .icon_customer {
+    background-position: -280px -190px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li:hover .icon_customer {
+    background-position: -310px -190px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li:hover .icon_dealer {
+    background-position: -70px -550px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li .icon_site {
+    background-position: -280px -250px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li:hover .icon_site {
+    background-position: -310px -250px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li .icon_group {
+    background-position: -280px -220px;
+}
+
+.map-plugin .allmenu li ul.childlist-templ li:hover .icon_group {
+    background-position: -310px -220px;
+}
+
+.map-plugin #bchildrenlist .allmenu-header {
+    margin-bottom: 0px;
+}
+
+.mapheader ul.nav.navbar-nav.pull-left.nav-list:hover li span {
+    color: #0889C4 !important;
+}
+
+.bredcrum-divider {
+    background: url(../images/sprite_icons.png) no-repeat -286px -434px;
+    width: 8px;
+    height: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.mapheader ul.nav.navbar-nav.pull-left.nav-list:hover .bredcrum-divider {
+    background: url(../images/sprite_icons.png) no-repeat -316px -434px;
+    width: 8px;
+    height: 12px;
+}
+
+#popup_canvas1 .popover .contentWrap {
+    height: 291px !important;
+    border-bottom: none !important;
+}
+
+/*.mapcamera {
+    width: 350px;
+    max-width: 350px !important;
+    min-width: 350px !important;
+}*/
+
+#popup_canvas1 .mapcamera {
+    height: 316px !important;
+}
+
+    #popup_canvas1 .mapcamera #videocontainer {
+        padding-left: 24px !important;
+    }
+
+    #popup_canvas1 .mapcamera .contentWrap {
+        height: 267px !important;
+    }
+
+#popup_canvas1 .popover #eventsContainer {
+    height: 262px !important;
+}
+
+#popup_canvas1 .mapcamera .popover-title {
+    height: 15px !important;
+}
+
+#popup_canvas1 .popover .popover-title {
+    height: 50px;
+}
+
+#floormap_canvas .FloorPlanDragNote {
+    float: right;
+    padding-right: 24px;
+    padding-top: 25px;
+    font-size: 12px;
+    color: #9d9d9d;
+}
+.map-plugin .mapMoreOption {
+    float: right;
+    padding-right: 205px;
+}
+
+.map-plugin .icon-mapMoreIcon{
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 19px!important;
+    background-position: -190px -42px;
+        margin-top: 23px;
+    float: right;
+
+    cursor: pointer;
+}
+
+.map-plugin .icon-mapMoreIcon:hover{background-position:-220px -42px}
+
+.map-plugin .mapMoreOption .menuCreate::before {
+    left: 208px !important;
+}
+
+.map-plugin .mapMoreOption #bchildrenlist .allmenu-header {
+    display:none;
+}

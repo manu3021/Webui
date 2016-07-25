@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Firware upgrade";
+}
+
+<div id="fugviewContainer" class="fugviewContainer" data-url='@Url.Action("","firmwareug")'>
+    @Html.Partial("_fwutilview")
+</div>
+
+@Scripts.Render("~/bundles/FirmwarePluginscript1")
+
+@*@Scripts.Render(
+    "~/Scripts/firmwareupgrade/firmwareug.common.js",
+    "~/Scripts/firmwareupgrade/firmwareug.datacontext.js",
+    "~/Scripts/firmwareupgrade/firmwareug.uicontext.js",
+    "~/Scripts/firmwareupgrade/firmwareug.eventreciever.js",
+    "~/Scripts/firmwareupgrade/firmwareug.model.js"
+)*@

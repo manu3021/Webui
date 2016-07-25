@@ -1,0 +1,85 @@
+﻿<span class="reportsHeading">@Resources.Report_Filters</span>
+
+<ul>
+    <li>
+        <div class="radio">
+            <div>
+                <label class="formControl-radio">
+                    <input id="all" type="radio" value="All" name="radiotest" data-bind="checked:$data.get_value_by_filterId('[CredentialNumber]').IsAll" />
+                    <span tabindex="2"></span>
+                </label>
+                <span class="radiotext">@Resources.Report_Filter_All</span>
+            </div>
+            <div>
+                <label class="formControl-radio">
+                    <input id="cardRange" value="" type="radio" name="radiotest" data-bind="checked:$data.get_value_by_filterId('[CredentialNumber]').IsAll" />
+                    <span tabindex="3"></span>
+                </label>
+                <span class="radiotext">@Resources.Report_Filter_Credential_Number_Range</span>
+            </div>
+        </div>
+        <div class="CardNumberRange" data-bind="ifnot:$data.get_value_by_filterId('[CredentialNumber]').IsAll">
+            <div class="field notRequiredStyle">
+                <label class="floatLblDn">@Resources.Report_Filter_Credential_Number_Range</label>
+                <input type="text" id="" tabindex="4"  name="" required="" placeholder="@Resources.Report_Filter_Credential_Number_Range" data-bind="value:$data.get_value_by_filterId('[CredentialNumber]').SearchValue" class="floatTxt myStyle">
+            </div>
+        </div>
+    </li>
+
+    <li data-bind="if: $data.get_value_by_filterId('[Account]').IsLoaded">
+        <div class="field select-field">
+            <label for="selectAccount">@Resources.Report_Filter_Account</label>
+            <select id="selectAccount" tabindex="5" data-bind="options:$data.get_value_by_filterId('[Account]').PossibleValues ,optionsText:'Value',optionsValue:'Id',optionsCaption: 'All',value:$data.get_value_by_filterId('[Account]').SearchValue"></select>
+        </div>
+
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Filter_Activation_Date</span>
+    <li>
+        <div class="input-append date field right-inner-addon notRequiredStyle" id="activationDateFrom" data-bind="datepicker:$data.get_value_by_filterId('[ActivationDateTime]').StartDate, datepickerOptions: {pickTime: false, format: '@Resources.date_picker_format'}, setDefaultMode : 0, timezone:$data.timezone">
+            <a class="reset_cal_icon"></a>
+            <span class="add-on" tabindex="6"><b class="icon-calendar"></b></span>
+            <label class="floatLblDn">@Resources.Report_Date_From</label>
+            <input type="text" placeholder="@Resources.Report_Date_From" readonly="readonly" class="floatTxt myStyle">
+        </div>
+
+    </li>
+    <li>
+        <div class="input-append date field right-inner-addon notRequiredStyle" id="activationDateTo" data-bind="datepicker:$data.get_value_by_filterId('[ActivationDateTime]').EndDate, datepickerOptions: {pickTime: false, format: '@Resources.date_picker_format'}, setDefaultMode : 0, timezone:$data.timezone">
+            <a class="reset_cal_icon"></a>
+            <span class="add-on" tabindex="7"><b class="icon-calendar"></b></span>
+            <label class="floatLblDn">@Resources.Report_Date_To</label>
+            <input type="text" placeholder="@Resources.Report_Date_To" readonly="readonly" class="floatTxt myStyle">
+        </div>
+
+    </li>
+    <span class="reportsHeadingMiddle">@Resources.Report_Filter_Expiry_Date</span>
+    <li>
+        <div class="input-append date field right-inner-addon notRequiredStyle" id="expireDateFrom" data-bind="datepicker:$data.get_value_by_filterId('[ExpiryDateTime]').StartDate, datepickerOptions: {pickTime: false, format: '@Resources.date_picker_format'}, setDefaultMode : 1, timezone:$data.timezone">
+            <a class="reset_cal_icon"></a>
+            <span class=" add-on" tabindex="9"><b class="icon-calendar"></b></span>
+            <label class="floatLblDn">@Resources.Report_Date_From</label>
+            <input type="text" placeholder="@Resources.Report_Date_From" readonly="readonly" class="floatTxt myStyle">
+        </div>
+    </li>
+    <li>
+        <div class="input-append date field right-inner-addon notRequiredStyle" id="expireDateTo" data-bind="datepicker:$data.get_value_by_filterId('[ExpiryDateTime]').EndDate, datepickerOptions: {pickTime: false, format: '@Resources.date_picker_format'}, setDefaultMode : 1, timezone:$data.timezone">
+            <a class="reset_cal_icon"></a>
+            <span class="add-on" tabindex="10"><b class="icon-calendar"></b></span>
+            <label class="floatLblDn">@Resources.Report_Date_To</label>
+            <input type="text" placeholder="@Resources.Report_Date_To" readonly="readonly" class="floatTxt myStyle">
+        </div>
+    </li>
+    <li data-bind="if: $data.get_value_by_filterId('[CredentialStatus]').IsLoaded">
+        <div class="field select-field notRequiredStyle">
+            <label for="selectStatus">@Resources.Report_Filter_Credential_Status</label>
+            <select id="selectStatus" tabindex="11" data-bind="options:$data.get_value_by_filterId('[CredentialStatus]').PossibleValues ,optionsText:'Value',optionsValue:'Id',optionsCaption: 'All',value:$data.get_value_by_filterId('[CredentialStatus]').SearchValue"></select>
+        </div>
+    </li>
+    <li>
+        <div class="field notRequiredStyle">
+        	 <label class="floatLblDn">@Resources.Report_Filter_Credential_Holder_Name</label>
+            <input type="text" id="" tabindex="12" name="" required="" data-bind="value:$data.get_value_by_filterId('[CredentialHolderFullName]').SearchValue" class="floatTxt myStyle">
+        </div>
+    </li>
+</ul>
+

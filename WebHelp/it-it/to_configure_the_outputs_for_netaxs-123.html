@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Guida</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Per configurare le uscite per NetAXS-123</h3>
+        <h4 class="subtitle">Per configurare le impostazioni di uscita:</h4>
+        <ol>
+            <li>Nell’area Dashboard MPC, fare clic sulla scheda <strong>Crea & Modifica</strong>. Viene visualizzata la pagina <strong>CREA E MODIFICA</strong>.</li>
+			<li>Nel riquadro di sinistra, selezionare il sito, quindi fare clic sul dispositivo pertinente aggiunto al sito.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>Prima di modificare le impostazioni del dispositivo, verificare di registrare i dispositivi su cloud.</p>
+			</div>
+			<li>Nel riquadro di sinistra, fare clic <i class="netaxs-icon"></i> sull’icona corrispondente al dispositivo NetAXS-123 per espandere e visualizzare tutte le porte disponibili.</li>
+			<li>Fare doppio clic sulla porta richiesta per espandere e visualizzare tutte le uscite associate. Viene visualizzata la pagina <strong>Impostazioni</strong>.</li>
+			<li>Inserire i dettagli registrati nei seguenti campi.</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descrizione</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nome uscita
+                    </td>
+                    <td>
+                        Inserire un nome unico per identificare le uscite porte.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Fuso orario attivo</td>
+                    <td>
+                        Indica due programmi:
+							<ul>
+								<li><strong>Sotto tensione</strong>– imposta il periodo durante il quale l’uscita viene automaticamente messa sotto tensione.</li>
+								<li><strong>Disattiva interblocco</strong>– imposta il periodo di tempo durante il quale l’interblocco, un’interazione programmata fra gli ingressi selezionati, gli output e i gruppi, verrà disattivata. Durante il Fuso Orario selezionato questo punto ignora tutte le azioni di interblocco relative, disattivandolo effettivamente e impedendo una componente di reazione durante il Fuso orario.</li>
+							</ul>
+						
+						Al di fuori del fuso orario il punto reagirà agli interblocchi secondo quanto previsto.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Lo scatto / la commutazione al di fuori del fuso orario disabilita il tempo di impulso
+					</td>
+                    <td>
+                        Disattiva lo stato delle uscite fra lo stato sotto tensione e senza tensione a ogni attivazione (uso codice, interblocco o impulso manuale).
+                </tr>
+				<tr>
+                    <td>
+                        Blocco fuso orario di interblocco
+
+					</td>
+                    <td>
+                        Consente di bloccare il fuso orario di interblocco oppure l’interazione programmata fra due punti.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Tempo di impulso
+					</td>
+                    <td>
+                        Indica la durata per la quale il dispositivo assumerà uno stato anormale. Specifica ad esempio la durata di tempo per la quale suonerà una tromba oppure il tempo durante il quale l’allarme porta resta rilasciato.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Interblocco in corso
+					</td>
+                    <td>
+                        Consente di disattivare l’interblocco oppure l’interazione programmata fra due punti.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>Fare clic su <strong>Salva</strong>.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Precedente</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Modifica Impostazioni Dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

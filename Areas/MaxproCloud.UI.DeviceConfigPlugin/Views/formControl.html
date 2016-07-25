@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<style>
+	.row{
+      left:0 !important;
+      right:0 !important;
+	  margin:0 !important;
+    }
+	
+    .col{
+      top:0 !important;
+      bottom:0 !important;
+    }
+</style>
+
+<div class="row formControl">
+	<div class="row">
+		<div class="col pull-left">
+			<h3>Network Settings</h3>
+			<ul>
+				<li>IP Address
+				<input type="text">
+				</li>
+				<li>Subnet Mask
+				<input type="text">
+				</li>
+				<li>Gateway
+				<input type="text">
+				</li>
+				<li>DNS Server
+				<input type="text">
+				</li>
+				<li>UPnP
+				<input type="checkbox">Enable/Disable
+				</li>
+			</ul>
+		</div>
+		<div class="col pull-right">
+			<h3>Recorder Settings</h3>
+			<ul>
+				<li>Name
+				<input type="text">
+				</li>
+				<li>Password
+				<input type="text">
+				</li>
+				<li>MAC Address
+				<input type="text">
+				</li>
+				<li>Hardware Version
+				<input type="text">
+				</li>
+				<li>Firmware Version
+				<input type="text">
+				</li>
+				<li>Video Format
+				<select>
+					<option>Select Option</option>
+				</select>
+				</li>
+				<li>
+					<input type="button" value="Reboot"/>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col pull-left">
+			<h3>Date & Time Settings</h3>
+			<ul>
+				<li>Time Zone
+				<input type="text">
+				</li>
+				<li>Date/Time
+				<input type="date"><input type="time">
+				</li>			
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<input type="button" value="Save Settings"/>
+	</div>
+</div>

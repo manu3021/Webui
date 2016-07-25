@@ -1,0 +1,110 @@
+﻿<html lang="en">
+<head>
+    <title>Help</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">To Configure the Inputs for NetAXS-123</h3>
+        <h4 class="subtitle">To configure the input settings:</h4>
+        <ol>
+            <li>In the MPC Dashboard area, click the <strong>Create & Edit</strong> tab. The <strong>CREATE AND EDIT</strong> page appears.</li>
+            <li>In the left pane, select the site and then click the relevant device added to the site.</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">Note:</h4>
+                <p>Before you modify the device settings, ensure to register the devices on cloud.</p>
+            </div>
+            <li>In the left pane, click the <i class="netaxs-icon"></i>icon corresponding to the NetAXS-123 device to expand and view all the available doors.</li>
+            <li>Double-click the required door to expand and view all the associated inputs. The <strong>Settings </strong>page appears.</li>
+            <li>Enter the required details in the following fields:</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">Field</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Input Name
+                        </td>
+                        <td>Enter a unique name to identify the door inputs.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shunt Time Zone</td>
+                        <td>Specifies the time period during which the input will be ignored.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Block Interlock Time Zone
+                        </td>
+                        <td>Enables you to block the interlock time zone, or programmed interaction between two points. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disable Alarms and Events
+                        </td>
+                        <td>Specifies the time period during which Alarm and events will not be reported.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shunt Time
+                        </td>
+                        <td>Specifies the amount of time for which the inputs will be shunted, or de-activated.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Debounce Time
+                        </td>
+                        <td>Specifies the period of time the input must remain in a new state before generating an alarm.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normally
+                        </td>
+                        <td>
+                            <strong>Normally Closed</strong> – Specifies that the input’s normal state is closed (default).<>
+						<strong>Normally Open</strong> – Specifies that the input’s normal state is open.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Supervised
+                        </td>
+                        <td>Specifies that the input’s electrical circuit is wired with alternative paths supervised by resistors.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Auto-Relock
+                        </td>
+                        <td>Causes the door to re-lock immediately when the door status switch closes after entry. The output relay that controls the door strike de-energizes when the associated input returns to normal state instead of remaining energized for the duration of the pulse time.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interlocking
+                        </td>
+                        <td>Enables you to disable the interlock, or programmed interaction between two points. When enabled, this point ignores all interlock actions to it.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li>Click <strong>Save</strong>.</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>Previous</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>Edit Device Settings</a>
+        </p>
+    </div>
+</body>
+</html>
+

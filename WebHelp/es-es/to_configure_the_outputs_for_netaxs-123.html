@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Ayuda</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Para configurar las salidas para NetAXS-123</h3>
+        <h4 class="subtitle">Para configurar los ajustes de salida:</h4>
+        <ol>
+            <li>En el área de la Consola MPC, haga clic en la pestaña <strong>Crear y editar</strong>. Aparece la página <strong>CREAR Y EDITAR</strong>.</li>
+			<li>Seleccione el sitio en el panel izquierdo y después, haga clic en el dispositivo correspondiente agregado al sitio.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>Asegúrese de registrar los dispositivos en la nube antes de modificar los ajustes del dispositivo.</p>
+			</div>
+			<li>En el panel izquierdo, haga clic en el <i class="netaxs-icon"></i> icono correspondiente al dispositivo NetAXS-123 para ampliar y ver todas las puertas disponibles.</li>
+			<li>Haga doble clic en la puerta requerida para ampliar y ver todas las salidas asociadas. Aparece la página <strong>Ajustes</strong>.</li>
+			<li>Introduzca los detalles requeridos en los siguientes campos:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descripción</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nombre de salida
+                    </td>
+                    <td>
+                        Introduzca un nombre único para identificar las entradas de la puerta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Activar zona horaria </td>
+                    <td>
+                        Especifica dos programas:
+							<ul>
+								<li><strong>Energizada</strong> - ajusta el periodo durante el que la salida es energizada automáticamente.</li>
+								<li><strong>Desactivar interbloqueo</strong> - ajusta el periodo durante el que el interbloqueo, una interacción programada entre entradas, salidas y grupos seleccionados, estará desactivado. Durante la zona horaria seleccionada, este punto ignora todas las acciones de interbloqueo que se efectúen sobre él, deshabilitándolo efectivamente para que no sea un componente de reacción durante la zona horaria.</li>
+							</ul>
+						
+						Fuera de la zona de tiempo, el punto reaccionará a los interbloqueos como se espera.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Cerrar/Alternar fuera de la zona horaria desactiva el tiempo de impulsos.
+					</td>
+                    <td>
+                        Alterna el estado de las salidas entre estado energizado y des-energizado en cada activación (uso de código, interbloqueo o impulso manual).
+                </tr>
+				<tr>
+                    <td>
+                        Bloquear la zona horaria de interbloqueo
+
+					</td>
+                    <td>
+                        Le permite bloquear la zona horario del interbloqueo o la interacción programada entre dos momentos.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Tiempo de impulso
+					</td>
+                    <td>
+                        Especifica el periodo de tiempo en el que el dispositivo asumirá el estado anormal.  Por ejemplo, especifica durante cuánto tiempo sonará una bocina o permanecerá liberada una cerradura de puerta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Interbloqueo
+					</td>
+                    <td>
+                        Permite deshabilitar el Interbloqueo o la interacción programada entre dos momentos.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>Haga clic en <strong>Guardar</strong>.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Anterior</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Editar ajustes del dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

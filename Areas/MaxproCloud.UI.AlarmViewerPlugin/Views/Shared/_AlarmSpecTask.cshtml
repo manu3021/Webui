@@ -1,0 +1,158 @@
+﻿@functions{
+
+
+    public string EventServiceWebSocketUrl()
+    {
+        return System.Configuration.ConfigurationManager.AppSettings["EventServiceWebSocketUrl"];
+    }
+}
+@*@Styles.Render("~/Content/AlarmViewerPlugin/alarm-layout.css",
+                "~/Content/AlarmViewerPlugin/alarm-popups.css",
+                "~/Content/AlarmViewerPlugin/alarm-settings.css",
+                "~/Content/AlarmViewerPlugin/alarm-spectasks.css")*@
+@*@Styles.Render("~/Content/AlarmViewerPlugin/css1")*@
+
+<form id="alarmForm" data-validationkey="alarm" data-eventservicewebsocketurl='@EventServiceWebSocketUrl()'>
+    <div id="alarviewWrapper">
+        <div class="header-menu-two">
+            <nav id="header-menu-box" class="navbar navbar-default" role="navigation">
+                <ul class="nav navbar-nav pull-left">
+                    <li>
+                        <a href="#" class="dropdown-toggle new" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false">@Resources.Alarm_NewText [<span class="alarmCount"></span>]<b class="down-arrow"> </b> </a>
+                        <ul class="dropdown-menu" id="alerm-menu">
+                            <li><a href="#">@Resources.Alarm_NewAlarms [<span class="alarmCount"></span>]</a><span class="menu-item-divider"></span></li>
+                            <li><a href="#">@Resources.Alarm_Acknowledged</a><span class="menu-item-divider"></span></li>
+                            <li><a href="#">@Resources.Alarm_Events</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right" id="header-two-rightmenu">
+                    <li class="dropdown" id="view-list">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false">@Resources.Alarm_Actions <b class="down-arrow"></b></a>
+                        <ul class="dropdown-menu" id="action-menu">
+                            <li><a href="#" class="eventAck"><i class="icon-ok-sign"></i>@Resources.Alarm_AcknowledgeAll</a><span class="menu-item-divider"></span></li>
+                            <li><a href="#" class="eventClr"><i class="icon-delete"></i>@Resources.Alarm_ClearAll</a><span class="menu-item-divider"></span></li>
+                            <li><a href="#"><i class="icon-pause"></i>@Resources.Alarm_FreezeAlarmstream</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false"><b class="down-view"></b>@Resources.Alarm_ViewText <b class="down-arrow"></b></a>
+                        <ul class="dropdown-menu " id="alerm-menu-view">
+                            <li class="header">@Resources.Alarm_ChooseColumns</li>
+                            <li>
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="test" value="Type">
+                                    <span class="alarmcheckbox">@Resources.Alarm_TypeText</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="test" value="Severity">
+                                    <span class="alarmcheckbox">@Resources.Severity</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="test" value="Time and Date">
+                                    <span class="alarmcheckbox">@Resources.Alarm_TimeandDate</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="test" value="Location">
+                                    <span class="alarmcheckbox">@Resources.Alarm_LocationText</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="test" value="Actions">
+                                    <span class="alarmcheckbox">@Resources.Alarm_ActionsText</span>
+                                </label>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="search"><form><input type="search"></form></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false">
+                            <img src="/Content/images/icon_settings.png" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row" id="page-body" style="opacity: 1;">
+            <div class="table-alarm-container">
+                <div class="innerWrapper">
+                </div>
+                <table class="table" id="table-alarm">
+                    <thead>
+                        <tr>
+                            <th id="box-col1">
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" name="chkAll">
+                                    <span></span>
+                                </label>
+                            </th>
+                            <th id="box-col2">@Resources.Alarm_AlarmTitle </th>
+                            <th id="box-col3">
+                                @Resources.Alarm_TypeText
+                            </th>
+                            <th id="box-col4" class="active">
+                                @Resources.Alarm_SeverityText
+                            </th>
+                            <th id="box-col5">@Resources.Alarm_Timetext</th>
+                            <th id="box-col6">@Resources.Alarm_DateText </th>
+                            <th id="box-col7">@Resources.Alarm_LocationsText </th>
+                            <th id="box-col8">@Resources.Alarm_ActionsandInstructions </th>
+                            <th id="box-col9">@Resources.Alarm_MoreText </th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach:$data.alarmDatasource">
+                        <tr id="1">
+                            <td id="box-col1">
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" class="eventid" name="test" data-bind="value:$data.Id">
+                                    <span></span>
+                                </label>
+
+                            </td>
+                            <td id="box-col2">
+                                <span>
+                                    <div class="grd-title"><span data-bind="text:$data.SourceEntityName"></span><span data-bind="visible:$data.SourceEntityName != null && $data.SourceEntityName != ''">: </span><span data-bind="text:$data.EventCode"></span></div>
+                                    <div><span data-bind="visible:$data.MasterSourceEntityName != null && $data.MasterSourceEntityName != ''">@Resources.Alarm_FromText </span><span data-bind="text:$data.MasterSourceEntityName"></span> </div>
+                                </span>
+                            </td>
+                            <td id="box-col3"><img src="content/images/icons/icon_high1.png"></td>
+                            <td id="box-col4"><span data-bind="text:$data.SeverityName"></span></td>
+                            <td id="box-col5"><span data-bind="text:$data.AlarmTime"></span></td>
+                            <td id="box-col6"><span data-bind="text:$data.AlarmDate"></span></td>
+                            <td id="box-col7">
+                                <div class="grd-details"><span data-bind="text:$data.Location"></span></div>
+                            </td>
+                            <td id="box-col8">
+                                <button class="secondary-button">@Resources.Alarm_Acknowledge</button>
+                                <span class="dropdown">
+                                    <span class="actionBtn" data-original-title="" title=""><a href="#">@Resources.Alarm_3actions</a></span>
+                                </span>
+                            </td>
+                            <td id="box-col9" class=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+<input id="EventServiceWebSocketUrl" type="hidden" value="<%=ConfigurationManager.AppSettings['EventServiceWebSocketUrl'].tostring() %>" />
+<input id="alarmConfigUrl" type="hidden" data-url='@Url.Action("", "AlarmView")' />
+@*@Scripts.Render("~/Scripts/AlarmViewerPlugin/alarm-common.js",
+                  "~/Scripts/AlarmViewerPlugin/alarm-validation-context.js",
+                  "~/Scripts/AlarmViewerPlugin/alarm-datacontext.js",
+                  "~/Scripts/AlarmViewerPlugin/alarm-model.js",
+                  "~/Scripts/AlarmViewerPlugin/alarm-uicontext.js",
+                  "~/Scripts/AlarmViewerPlugin/alarm-eventreciever.js",
+                  "~/Scripts/AlarmViewerPlugin/alram-websocket.js",
+                  "~/Scripts/AlarmViewerPlugin/alarmview.js")*@
+@Scripts.Render("~/bundles/AlarmViewerPluginscript1")

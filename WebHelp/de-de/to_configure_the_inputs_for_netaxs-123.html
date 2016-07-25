@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>Hilfe</title>
+    <link href="../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Zum Konfigurieren der Eingaben für NetAXS-123</h3>
+        <h4 class="subtitle">Zum Konfigurieren der Eingangseinstellungen:</h4>
+        <ol>
+            <li>Im MPC Dashboard-Bereich auf den Reiter <strong>Erstellen & Bearbeiten</strong> klicken. Die Seite <strong>ERSTELLEN UND BEARBEITEN</strong> wird angezeigt.</li>
+            <li>Im linken Fensterbereich den Standort auswählen, anschließend das entsprechende Gerät, das dem Standort zugeordnet ist, klicken.</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">Hinweis:</h4>
+                <p>Bevor Sie die Geräteeinstellungen bearbeiten, stellen Sie sicher, dass Sie die Geräte im Cloud registrieren.</p>
+            </div>
+            <li>Im linken Fensterbereich auf das <i class="netaxs-icon"></i>Symbol, das dem NetAXS-123-Gerät entspricht klicken, um alle verfügbaren Türen anzuzeigen.</li>
+            <li>Auf die gewünschte Tür doppelklicken, um alle zugeordneten Eingaben anzuzeigen. Die Seite <strong>Einstellungen</strong> wird angezeigt.</li>
+            <li>Die erforderlichen Daten in folgenden Feldern eingeben:</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">Feld</td>
+                        <td>Beschreibung</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name der Eingabe
+                        </td>
+                        <td>Einen eindeutigen Namen eingeben, um die Türeingaben zu kennzeichnen.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nebenschlusszeit-Zone</td>
+                        <td>Bestimmt das Zeitfenster, in dem die Türeingaben ignoriert werden.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Sperrzeitzone blockieren
+                        </td>
+                        <td>Ermöglicht die Blockierung der Sperrzeitzone oder der programmierten Interaktion zwischen zwei Punkten. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Warnmeldungen und Ereignisse deaktivieren
+                        </td>
+                        <td>Bestimmt das Zeitfenster, in dem die Warnmeldungen und Ereignisse nicht gemeldet werden.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nebenschlusszeit
+                        </td>
+                        <td>Bestimmt das Zeitfenster, in dem die Eingaben verschoben oder deaktiviert werden.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Entprellzeit
+                        </td>
+                        <td>Bestimmt das Zeitfenster, in dem die Eingabe im neuen Status verharren muss bevor eine Warnmeldung ausgelöst wird.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normalerweise
+                        </td>
+                        <td>
+                            <strong>Normalerweise geschlossen</strong> – Kennzeichnet, dass der normale Status der Eingabe „geschlossen“ ist (Defaultstatus).<>
+						<strong>Normalerweise offen</strong> – Kennzeichnet, dass der normale Status der Eingabe „offen“ ist.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Beaufsichtigt
+                        </td>
+                        <td>Bestimmt, dass der elektrische Stromkreis mit alternative Kreisen verbunden ist, die mittels Widerständen überwacht werden.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Automatische - Erneute Sperrung
+                        </td>
+                        <td>Sorgt dafür, dass die Tür sofort erneut sperrt, wenn der Statusschalter der Tür nach Eintritt schließt. Das Ausgangsrelais, das den Türschlag steuert, entlädt sich, wenn die zugeordnete Eingabe wieder in den normalen Zustand zurückkehrt. Es bleibt nicht die gesamte Pulsdauer über im geladenen Zustand.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sperren
+                        </td>
+                        <td>Ermöglicht die Deaktivierung der Sperre oder der programmierten Interaktion zwischen zwei Punkten. Wenn aktiviert, ignoriert dieser Punkt alle mit ihm verbundenen Sperraktionen.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li><strong>Speichern</strong> klicken.</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>Vorherige</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>Geräteeinstellungen bearbeiten</a>
+        </p>
+    </div>
+</body>
+</html>
+

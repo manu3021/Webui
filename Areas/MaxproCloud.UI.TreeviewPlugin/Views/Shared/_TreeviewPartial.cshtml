@@ -1,0 +1,20 @@
+﻿@{
+}
+@*<link href="~/Content/TreeviewPlugin/treeviewcontrol.css" rel="stylesheet" />
+<link href="~/Content/TreeviewPlugin/treesprite.css" rel="stylesheet" />*@
+@*@Styles.Render("~/Content/treeview/css1")*@
+
+<input type="hidden" id="getchildaccounturl" data-url='@Url.Action("getchildaccounts", "treeview")' />
+<input type="hidden" id="getRecorderStatusurl" data-url='@Url.Action("GetRecorderStatus", "treeview")' />
+<input type="hidden" id="getAllCamerawithStatusurl" data-url='@Url.Action("GetAllCamerawithStatusbyRecorderId", "treeview")' />
+<input type="hidden" id="getpanelstatusurl" data-url='@Url.Action("GetPanelStatus", "treeview")' />
+<div class="treeviewContainer layoutcol">
+    <div class="treecontrol layoutrow">
+        <div id="acttreeview" data-url='@Url.Action("GetAccounts", "Treeview")'></div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/treeviewscript1")
+@*<script src="~/Scripts/mpc.widget.core.js"></script>
+<script src="~/Scripts/mpc.treeview.js"></script>
+<script src="~/Scripts/treeviewloader.js"></script>*@
+

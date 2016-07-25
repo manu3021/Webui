@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <title>Guida</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Per configurare il Lettore sotto la voce NetAXS123</h3>
+        <h4 class="subtitle">Per configurare le impostazioni del lettore:</h4>
+        <ol>
+            <li>Nell’area Dashboard MPC, fare clic sulla scheda <strong>Crea & Modifica</strong>. Viene visualizzata la pagina <strong>CREA E MODIFICA</strong>.</li>
+			<li>Nel riquadro di sinistra, selezionare il sito, quindi fare clic sul dispositivo pertinente aggiunto al sito.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>Prima di modificare le impostazioni del dispositivo, verificare di registrare i dispositivi su cloud.</p>
+			</div>
+			<li>Nel riquadro di sinistra, fare clic <i class="netaxs-icon"></i> sull’icona corrispondente al dispositivo NetAXS-123 per espandere e visualizzare tutte le porte disponibili.</li>
+			<li>Fare doppio clic sulla porta richiesta per espandere e visualizzare tutti i lettori associati. Viene visualizzata la pagina <strong>Impostazioni</strong>.</li>
+			<li>Inserire i dettagli registrati nei seguenti campi.</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descrizione</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nome del lettore
+                    </td>
+                    <td>
+                        Inserire un nome unico per identificare il lettore.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Disabilita Lettore/Porta
+					</td>
+                    <td>
+                        Dall’elenco a discesa, selezionare le proprietà per impostare il lettore/porta per disattivare o attivare la modalità.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Tessera e PIN richiesti
+					</td>
+                    <td>
+                        Offre l’accesso solo con una lettura tessera positiva e un inserimento PIN valido sulla tastiera della porta. Sarà possibile eseguire una lettura tessera a un inserimento PIN in ogni sequenza.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Tessera o PIN richiesto
+					</td>
+                    <td>
+                       Offre l’accesso con una lettura tessera positiva oppure con un inserimento PIN valido sulla tastiera della porta
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Solo PIN
+					</td>
+                    <td>
+                       Offre l’accesso solo con un inserimento PIN valido sulla tastiera della porta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Solo per tessera
+					</td>
+                    <td>
+                       Offre l’accesso solo con una lettura tessera positiva.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Blocca Lettore/Porta
+
+					</td>
+                    <td>
+                       Ignora tutte le letture tessera (eccetto tessera VIP), nega l’inserimento porta ma consente l’operazione “egress”.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Costrizione
+   					</td>
+                    <td>
+                       Consente di attivare un evento allarme e - ove configurato - emette un impulso al dispositivo di uscita in termini di coercizione, ad esempio quando l’operatore è obbligato a concedere l’accesso contro la sua volontà a una persona non autorizzata. La coercizione richiede sia un valore PIN che un numero di tessera per essere riconosciuta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Anti-passback
+					</td>
+                    <td>
+                         L’utente attiva la funzione anti-passback sul lettore, che richiede una tessera valida per l’ingresso e l’uscita. Il titolare tessera deve usare la tessera nella sequenza IN/OUT corretta - ciò equivale a dire che una tessera strisciata in un lettore IN deve poi essere strisciata in un lettore OUT, o viceversa - una tessera strisciata su un lettore OUT deve essere strisciata su un lettore IN. Se la sequenza IN/OUT dell’utente non è valida, allora l’evento di violazione anti-passback viene generato per il tipo di anti-passback scelto (Hard o Soft) e al titolare tessera viene negato l’accesso (Hard) o consentito l’accesso (Soft).
+						 <>
+&#8232;						
+&#8232;						<strong>Hard </strong>- Convalida lo stato IN/OUT prima di consentire l’accesso. Una seconda strisciata della tessera nello stesso tipo di lettore (IN/OUT) causa una violazione anti-passback Hard e all’utente viene negato l’accesso.
+						<>
+&#8232;						
+&#8232;						<strong>Soft</strong>- Convalida lo stato IN/OUT prima di consentire l’accesso. Una seconda strisciata di una tessera nello stesso tipo di lettore (IN/OUT) causa una violazione anti-passback Soft ma all’utente viene consentito l’accesso.
+						</br><>
+&#8232;						
+&#8232;						<strong>Out </strong>- Si applica ai lettori che si trovano all’interno dell’area controllata anti-passback. I titolari tessera usano questi lettori quando cercano di uscire dall’area controllata anti-passback.
+						</br><>
+&#8232;						
+&#8232;						<strong>In</strong>- Si applica ai lettori che si trovano al di fuori dell’area controllata anti-passback. I titolari tessera usano questi lettori quando cercano di entrare nell’area controllata anti-passback.
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Precedente</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Modifica Impostazioni Dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

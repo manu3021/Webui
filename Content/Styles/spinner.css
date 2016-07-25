@@ -1,0 +1,1567 @@
+/*! jQuery UI - v1.11.4 - 2015-06-24
+* http://jqueryui.com
+* Includes: core.css, draggable.css, resizable.css, selectable.css, sortable.css, button.css, spinner.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=gloss_wave&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=highlight_soft&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=glass&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=glass&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=highlight_soft&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=diagonals_thick&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=diagonals_thick&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=flat&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px
+* Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
+
+/* Layout helpers
+----------------------------------*/
+.spinner-control .ui-helper-hidden {
+    display: none;
+}
+.spinner-control .ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.spinner-control .ui-helper-reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 1.3;
+    text-decoration: none;
+    font-size: 100%;
+    list-style: none;
+}
+
+.spinner-control .ui-helper-clearfix:before,
+.spinner-control .ui-helper-clearfix:after {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+}
+
+.spinner-control .ui-helper-clearfix:after {
+    clear: both;
+}
+
+.spinner-control .ui-helper-clearfix {
+    min-height: 0; /* support: IE7 */
+}
+
+.spinner-control .ui-helper-zfix {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    filter: Alpha(Opacity=0); /* support: IE8 */
+}
+
+.spinner-control .ui-front {
+    z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.spinner-control .ui-state-disabled {
+    cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.spinner-control .ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.spinner-control .ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.spinner-control .ui-draggable-handle {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.spinner-control .ui-resizable {
+    position: relative;
+}
+
+.spinner-control .ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.spinner-control .ui-resizable-disabled .ui-resizable-handle,
+.spinner-control .ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+
+.spinner-control .ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0;
+}
+
+.spinner-control .ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+
+.spinner-control .ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.spinner-control .ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.spinner-control .ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+
+.spinner-control .ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px;
+}
+
+.spinner-control .ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px;
+}
+
+.spinner-control .ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px;
+}
+
+.spinner-control .ui-selectable {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.spinner-control .ui-selectable-helper {
+    position: absolute;
+    z-index: 100;
+    border: 1px dotted black;
+}
+
+.spinner-control .ui-sortable-handle {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.spinner-control .ui-button {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    line-height: normal;
+    margin-right: .1em;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    overflow: visible; /* removes extra width in IE */
+}
+
+    .spinner-control .ui-button,
+    .spinner-control .ui-button:link,
+    .spinner-control .ui-button:visited,
+    .spinner-control .ui-button:hover,
+    .spinner-control .ui-button:active {
+        text-decoration: none;
+    }
+/* to make room for the icon, a width needs to be set here */
+.spinner-control .ui-button-icon-only {
+    width: 2.2em;
+}
+/* button elements seem to need a little more width */
+.spinner-control button.ui-button-icon-only {
+    width: 2.4em;
+}
+
+.spinner-control .ui-button-icons-only {
+    width: 3.4em;
+}
+
+.spinner-control button.ui-button-icons-only {
+    width: 3.7em;
+}
+
+/* button text element */
+.spinner-control .ui-button .ui-button-text {
+    display: block;
+    line-height: normal;
+}
+
+.spinner-control .ui-button-text-only .ui-button-text {
+    padding: .4em 1em;
+}
+
+.spinner-control .ui-button-icon-only .ui-button-text,
+.spinner-control .ui-button-icons-only .ui-button-text {
+    padding: .4em;
+    text-indent: -9999999px;
+}
+
+.spinner-control .ui-button-text-icon-primary .ui-button-text,
+.spinner-control .ui-button-text-icons .ui-button-text {
+    padding: .4em 1em .4em 2.1em;
+}
+
+.spinner-control .ui-button-text-icon-secondary .ui-button-text,
+.spinner-control .ui-button-text-icons .ui-button-text {
+    padding: .4em 2.1em .4em 1em;
+}
+
+.spinner-control .ui-button-text-icons .ui-button-text {
+    padding-left: 2.1em;
+    padding-right: 2.1em;
+}
+/* no icon support for input elements, provide padding by default */
+.spinner-control input.ui-button {
+    padding: .4em 1em;
+}
+
+/* button icon element(s) */
+.spinner-control .ui-button-icon-only .ui-icon,
+.spinner-control .ui-button-text-icon-primary .ui-icon,
+.spinner-control .ui-button-text-icon-secondary .ui-icon,
+.spinner-control .ui-button-text-icons .ui-icon,
+.spinner-control .ui-button-icons-only .ui-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.spinner-control .ui-button-icon-only .ui-icon {
+    left: 50%;
+    margin-left: -8px;
+}
+
+.spinner-control .ui-button-text-icon-primary .ui-button-icon-primary,
+.spinner-control .ui-button-text-icons .ui-button-icon-primary,
+.spinner-control .ui-button-icons-only .ui-button-icon-primary {
+    left: .5em;
+}
+
+.spinner-control .ui-button-text-icon-secondary .ui-button-icon-secondary,
+.spinner-control .ui-button-text-icons .ui-button-icon-secondary,
+.spinner-control .ui-button-icons-only .ui-button-icon-secondary {
+    right: .5em;
+}
+
+/* button sets */
+.spinner-control .ui-buttonset {
+    margin-right: 7px;
+}
+
+    .spinner-control .ui-buttonset .ui-button {
+        margin-left: 0;
+        margin-right: -.3em;
+    }
+
+/* workarounds */
+/* reset extra padding in Firefox, see h5bp.com/l */
+.spinner-control input.ui-button::-moz-focus-inner,
+.spinner-control button.ui-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.spinner-control .ui-spinner {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 0px;
+}
+
+.spinner-control .ui-spinner-input {
+    border: none;
+    /*background: none;*/
+    color: #0889C5;
+    padding: 0;
+    margin: .2em 0;
+    vertical-align: middle;
+    margin-left: .4em;
+    margin-right: 22px;
+}
+
+.spinner-control .ui-spinner-button {
+    width: 16px;
+    height: 50%;
+    font-size: .5em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    cursor: default;
+    display: block;
+    overflow: hidden;
+    right: 15px;
+}
+/* more specificity required here to override default borders */
+.spinner-control .ui-spinner a.ui-spinner-button {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    cursor:pointer;
+}
+/* vertically center icon */
+.spinner-control .ui-spinner .ui-icon {
+    position: absolute;
+    margin-top: -8px;
+    top: 50%;
+    left: 0;
+}
+
+.spinner-control .ui-spinner-up {
+    top: 0;
+}
+
+.spinner-control .ui-spinner-down {
+    bottom: 0;
+}
+
+/* TR overrides */
+.spinner-control .ui-spinner .ui-icon-triangle-1-s {
+    /* need to fix icons sprite */
+    /* background-position: -65px -16px; */
+    background-position: -432px -261px;
+}
+
+.field.spinner-control input[type="number"].error {
+    max-width: 250px;
+    padding-left: 8px;
+}
+
+.spinner-control input[type=number]{
+         padding-left:8px !important;
+    }
+
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .spinner-control input[type=number]{
+        padding-left:8px;
+    }
+}
+
+@-moz-document url-prefix() {
+    .spinner-control input[type=number]{
+         padding-left:8px;
+    }
+}*/
+
+.field.spinner-control input[type="number"] > .invalidError {
+    background-position-x: 233px !important;
+    -webkit-background-position-x: 233px !important;
+    -ms-background-position-x: 233px !important;
+    -o-background-position-x: 233px !important;
+}
+
+.field.spinner-control #input_DebounceTime + .tooltip.bottom .tooltip-arrow {
+    left: 251px !important;
+}
+
+/* Component containers
+----------------------------------*/
+.spinner-control .ui-widget {
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+}
+
+    .spinner-control .ui-widget .ui-widget {
+        font-size: 1em;
+    }
+
+.spinner-control input[type=number]::-webkit-inner-spin-button,
+.spinner-control input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.spinner-control .ui-widget input,
+.spinner-control .ui-widget select,
+.spinner-control .ui-widget textarea,
+.spinner-control .ui-widget button {
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 1em;
+    border: none;
+    color: #0889C5;
+    margin-top: 0px !important;
+    padding: 0px;
+    margin-right: 43px;
+}
+
+.spinner-control .ui-widget-content {
+    /* border: 1px solid #dddddd; */
+    /* background: #eeeeee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x; */
+    color: #333333;
+    margin-top: 16px;
+    /* margin-left: 8px; */
+}
+
+    .spinner-control .ui-widget-content a {
+        color: #333333;
+    }
+
+.spinner-control .ui-widget-header {
+    border: 1px solid #e78f08;
+    /*background: #f6a828 url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;*/
+    color: #ffffff;
+    font-weight: bold;
+}
+
+    .spinner-control .ui-widget-header a {
+        color: #ffffff;
+    }
+
+    /* Interaction states
+----------------------------------*/
+    .spinner-control .ui-state-default,
+    .spinner-control .ui-widget-content .ui-state-default,
+    .spinner-control .ui-widget-header .ui-state-default {
+        border: 1px solid #cccccc;
+        /*background: #f6f6f6 url("images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;*/
+        font-weight: bold;
+        color: #1c94c4;
+    }
+
+        .spinner-control .ui-state-default a,
+        .spinner-control .ui-state-default a:link,
+        .spinner-control .ui-state-default a:visited {
+            color: #1c94c4;
+            text-decoration: none;
+        }
+
+    .spinner-control .ui-state-hover,
+    .spinner-control .ui-widget-content .ui-state-hover,
+    .spinner-control .ui-widget-header .ui-state-hover,
+    .spinner-control .ui-state-focus,
+    .spinner-control .ui-widget-content .ui-state-focus,
+    .spinner-control .ui-widget-header .ui-state-focus {
+        border: 1px solid #fbcb09;
+        /*background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;*/
+        font-weight: bold;
+        color: #c77405;
+    }
+
+        .spinner-control .ui-state-hover a,
+        .spinner-control .ui-state-hover a:hover,
+        .spinner-control .ui-state-hover a:link,
+        .spinner-control .ui-state-hover a:visited,
+        .spinner-control .ui-state-focus a,
+        .spinner-control .ui-state-focus a:hover,
+        .spinner-control .ui-state-focus a:link,
+        .spinner-control .ui-state-focus a:visited {
+            color: #c77405;
+            text-decoration: none;
+        }
+
+    .spinner-control .ui-state-active,
+    .spinner-control .ui-widget-content .ui-state-active,
+    .spinner-control .ui-widget-header .ui-state-active {
+        border: 1px solid #fbd850;
+        /*background: #ffffff url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;*/
+        font-weight: bold;
+        color: #eb8f00;
+    }
+
+        .spinner-control .ui-state-active a,
+        .spinner-control .ui-state-active a:link,
+        .spinner-control .ui-state-active a:visited {
+            color: #eb8f00;
+            text-decoration: none;
+        }
+
+    /* Interaction Cues
+----------------------------------*/
+    .spinner-control .ui-state-highlight,
+    .spinner-control .ui-widget-content .ui-state-highlight,
+    .spinner-control .ui-widget-header .ui-state-highlight {
+        border: 1px solid #fed22f;
+        /*background: #ffe45c url("images/ui-bg_highlight-soft_75_ffe45c_1x100.png") 50% top repeat-x;*/
+        color: #363636;
+    }
+
+        .spinner-control .ui-state-highlight a,
+        .spinner-control .ui-widget-content .ui-state-highlight a,
+        .spinner-control .ui-widget-header .ui-state-highlight a {
+            color: #363636;
+        }
+
+    .spinner-control .ui-state-error,
+    .spinner-control .ui-widget-content .ui-state-error,
+    .spinner-control .ui-widget-header .ui-state-error {
+        border: 1px solid #cd0a0a;
+        /*background: #b81900 url("images/ui-bg_diagonals-thick_18_b81900_40x40.png") 50% 50% repeat;*/
+        color: #ffffff;
+    }
+
+        .spinner-control .ui-state-error a,
+        .spinner-control .ui-widget-content .ui-state-error a,
+        .spinner-control .ui-widget-header .ui-state-error a {
+            color: #ffffff;
+        }
+
+    .spinner-control .ui-state-error-text,
+    .spinner-control .ui-widget-content .ui-state-error-text,
+    .spinner-control .ui-widget-header .ui-state-error-text {
+        color: #ffffff;
+    }
+
+    .spinner-control .ui-priority-primary,
+    .spinner-control .ui-widget-content .ui-priority-primary,
+    .spinner-control .ui-widget-header .ui-priority-primary {
+        font-weight: bold;
+    }
+
+    .spinner-control .ui-priority-secondary,
+    .spinner-control .ui-widget-content .ui-priority-secondary,
+    .spinner-control .ui-widget-header .ui-priority-secondary {
+        opacity: .7;
+        filter: Alpha(Opacity=70); /* support: IE8 */
+        font-weight: normal;
+    }
+
+    .spinner-control .ui-state-disabled,
+    .spinner-control .ui-widget-content .ui-state-disabled,
+    .spinner-control .ui-widget-header .ui-state-disabled {
+        opacity: .35;
+        filter: Alpha(Opacity=35); /* support: IE8 */
+        background-image: none;
+    }
+
+        .spinner-control .ui-state-disabled .ui-icon {
+            filter: Alpha(Opacity=35); /* support: IE8 - See #6059 */
+        }
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.spinner-control .ui-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.spinner-control .ui-icon,
+.spinner-control .ui-widget-content .ui-icon {
+    /* background-image: url("images/ui-icons_222222_256x240.png"); */
+    background-image: url("../images/sprite_icons.png") !important;
+    width: 20px;
+    height: 7px;
+    position: absolute;
+    /* background-position-x: -10px; */
+    /* background-position-y: -15px; */
+    background-repeat: no-repeat;
+    /* background-position: -432px -256px; */
+}
+
+.spinner-control .ui-widget-header .ui-icon {
+    background-image: url("../images/sprite_icons.png") no-repeat -432px -256px;
+    width: 20px;
+    height: 7px;
+    position: absolute;
+}
+
+.spinner-control .ui-state-default .ui-icon {
+    /*background-image: url("images/ui-icons_ef8c08_256x240.png");*/
+}
+
+.spinner-control .ui-state-hover .ui-icon,
+.spinner-control .ui-state-focus .ui-icon {
+    /*background-image: url("images/ui-icons_ef8c08_256x240.png");*/
+}
+
+.spinner-control .ui-state-active .ui-icon {
+    /*background-image: url("images/ui-icons_ef8c08_256x240.png");*/
+}
+
+.spinner-control .ui-state-highlight .ui-icon {
+    /*background-image: url("images/ui-icons_228ef1_256x240.png");*/
+}
+
+.spinner-control .ui-state-error .ui-icon,
+.spinner-control .ui-state-error-text .ui-icon {
+    /*background-image: url("images/ui-icons_ffd27a_256x240.png");*/
+}
+
+/* positioning */
+.spinner-control .ui-icon-blank {
+    background-position: 16px 16px;
+}
+
+.spinner-control .ui-icon-carat-1-n {
+    background-position: 0 0;
+}
+
+.spinner-control .ui-icon-carat-1-ne {
+    background-position: -16px 0;
+}
+
+.spinner-control .ui-icon-carat-1-e {
+    background-position: -32px 0;
+}
+
+.spinner-control .ui-icon-carat-1-se {
+    background-position: -48px 0;
+}
+
+.spinner-control .ui-icon-carat-1-s {
+    background-position: -64px 0;
+}
+
+.spinner-control .ui-icon-carat-1-sw {
+    background-position: -80px 0;
+}
+
+.spinner-control .ui-icon-carat-1-w {
+    background-position: -96px 0;
+}
+
+.spinner-control .ui-icon-carat-1-nw {
+    background-position: -112px 0;
+}
+
+.spinner-control .ui-icon-carat-2-n-s {
+    background-position: -128px 0;
+}
+
+.spinner-control .ui-icon-carat-2-e-w {
+    background-position: -144px 0;
+}
+
+.spinner-control .ui-icon-triangle-1-n { /* background-position: 0 -16px; */
+    background-position: -432px -283px;
+}
+
+.spinner-control .ui-icon-triangle-1-ne {
+    background-position: -16px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-e {
+    background-position: -32px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-se {
+    background-position: -48px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-s {
+    background-position: -64px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-sw {
+    background-position: -80px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-w {
+    background-position: -96px -16px;
+}
+
+.spinner-control .ui-icon-triangle-1-nw {
+    background-position: -112px -16px;
+}
+
+.spinner-control .ui-icon-triangle-2-n-s {
+    background-position: -128px -16px;
+}
+
+.spinner-control .ui-icon-triangle-2-e-w {
+    background-position: -144px -16px;
+}
+
+.spinner-control .ui-icon-arrow-1-n {
+    background-position: 0 -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-ne {
+    background-position: -16px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-e {
+    background-position: -32px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-se {
+    background-position: -48px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-s {
+    background-position: -64px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-sw {
+    background-position: -80px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-w {
+    background-position: -96px -32px;
+}
+
+.spinner-control .ui-icon-arrow-1-nw {
+    background-position: -112px -32px;
+}
+
+.spinner-control .ui-icon-arrow-2-n-s {
+    background-position: -128px -32px;
+}
+
+.spinner-control .ui-icon-arrow-2-ne-sw {
+    background-position: -144px -32px;
+}
+
+.spinner-control .ui-icon-arrow-2-e-w {
+    background-position: -160px -32px;
+}
+
+.spinner-control .ui-icon-arrow-2-se-nw {
+    background-position: -176px -32px;
+}
+
+.spinner-control .ui-icon-arrowstop-1-n {
+    background-position: -192px -32px;
+}
+
+.spinner-control .ui-icon-arrowstop-1-e {
+    background-position: -208px -32px;
+}
+
+.spinner-control .ui-icon-arrowstop-1-s {
+    background-position: -224px -32px;
+}
+
+.spinner-control .ui-icon-arrowstop-1-w {
+    background-position: -240px -32px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-n {
+    background-position: 0 -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-ne {
+    background-position: -16px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-e {
+    background-position: -32px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-se {
+    background-position: -48px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-s {
+    background-position: -64px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-sw {
+    background-position: -80px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-w {
+    background-position: -96px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-1-nw {
+    background-position: -112px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-2-n-s {
+    background-position: -128px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-2-ne-sw {
+    background-position: -144px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-2-e-w {
+    background-position: -160px -48px;
+}
+
+.spinner-control .ui-icon-arrowthick-2-se-nw {
+    background-position: -176px -48px;
+}
+
+.spinner-control .ui-icon-arrowthickstop-1-n {
+    background-position: -192px -48px;
+}
+
+.spinner-control .ui-icon-arrowthickstop-1-e {
+    background-position: -208px -48px;
+}
+
+.spinner-control .ui-icon-arrowthickstop-1-s {
+    background-position: -224px -48px;
+}
+
+.spinner-control .ui-icon-arrowthickstop-1-w {
+    background-position: -240px -48px;
+}
+
+.spinner-control .ui-icon-arrowreturnthick-1-w {
+    background-position: 0 -64px;
+}
+
+.spinner-control .ui-icon-arrowreturnthick-1-n {
+    background-position: -16px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturnthick-1-e {
+    background-position: -32px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturnthick-1-s {
+    background-position: -48px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturn-1-w {
+    background-position: -64px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturn-1-n {
+    background-position: -80px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturn-1-e {
+    background-position: -96px -64px;
+}
+
+.spinner-control .ui-icon-arrowreturn-1-s {
+    background-position: -112px -64px;
+}
+
+.spinner-control .ui-icon-arrowrefresh-1-w {
+    background-position: -128px -64px;
+}
+
+.spinner-control .ui-icon-arrowrefresh-1-n {
+    background-position: -144px -64px;
+}
+
+.spinner-control .ui-icon-arrowrefresh-1-e {
+    background-position: -160px -64px;
+}
+
+.spinner-control .ui-icon-arrowrefresh-1-s {
+    background-position: -176px -64px;
+}
+
+.spinner-control .ui-icon-arrow-4 {
+    background-position: 0 -80px;
+}
+
+.spinner-control .ui-icon-arrow-4-diag {
+    background-position: -16px -80px;
+}
+
+.spinner-control .ui-icon-extlink {
+    background-position: -32px -80px;
+}
+
+.spinner-control .ui-icon-newwin {
+    background-position: -48px -80px;
+}
+
+.spinner-control .ui-icon-refresh {
+    background-position: -64px -80px;
+}
+
+.spinner-control .ui-icon-shuffle {
+    background-position: -80px -80px;
+}
+
+.spinner-control .ui-icon-transfer-e-w {
+    background-position: -96px -80px;
+}
+
+.spinner-control .ui-icon-transferthick-e-w {
+    background-position: -112px -80px;
+}
+
+.spinner-control .ui-icon-folder-collapsed {
+    background-position: 0 -96px;
+}
+
+.spinner-control .ui-icon-folder-open {
+    background-position: -16px -96px;
+}
+
+.spinner-control .ui-icon-document {
+    background-position: -32px -96px;
+}
+
+.spinner-control .ui-icon-document-b {
+    background-position: -48px -96px;
+}
+
+.spinner-control .ui-icon-note {
+    background-position: -64px -96px;
+}
+
+.spinner-control .ui-icon-mail-closed {
+    background-position: -80px -96px;
+}
+
+.spinner-control .ui-icon-mail-open {
+    background-position: -96px -96px;
+}
+
+.spinner-control .ui-icon-suitcase {
+    background-position: -112px -96px;
+}
+
+.spinner-control .ui-icon-comment {
+    background-position: -128px -96px;
+}
+
+.spinner-control .ui-icon-person {
+    background-position: -144px -96px;
+}
+
+.spinner-control .ui-icon-print {
+    background-position: -160px -96px;
+}
+
+.spinner-control .ui-icon-trash {
+    background-position: -176px -96px;
+}
+
+.spinner-control .ui-icon-locked {
+    background-position: -192px -96px;
+}
+
+.spinner-control .ui-icon-unlocked {
+    background-position: -208px -96px;
+}
+
+.spinner-control .ui-icon-bookmark {
+    background-position: -224px -96px;
+}
+
+.spinner-control .ui-icon-tag {
+    background-position: -240px -96px;
+}
+
+.spinner-control .ui-icon-home {
+    background-position: 0 -112px;
+}
+
+.spinner-control .ui-icon-flag {
+    background-position: -16px -112px;
+}
+
+.spinner-control .ui-icon-calendar {
+    background-position: -32px -112px;
+}
+
+.spinner-control .ui-icon-cart {
+    background-position: -48px -112px;
+}
+
+.spinner-control .ui-icon-pencil {
+    background-position: -64px -112px;
+}
+
+.spinner-control .ui-icon-clock {
+    background-position: -80px -112px;
+}
+
+.spinner-control .ui-icon-disk {
+    background-position: -96px -112px;
+}
+
+.spinner-control .ui-icon-calculator {
+    background-position: -112px -112px;
+}
+
+.spinner-control .ui-icon-zoomin {
+    background-position: -128px -112px;
+}
+
+.spinner-control .ui-icon-zoomout {
+    background-position: -144px -112px;
+}
+
+.spinner-control .ui-icon-search {
+    background-position: -160px -112px;
+}
+
+.spinner-control .ui-icon-wrench {
+    background-position: -176px -112px;
+}
+
+.spinner-control .ui-icon-gear {
+    background-position: -192px -112px;
+}
+
+.spinner-control .ui-icon-heart {
+    background-position: -208px -112px;
+}
+
+.spinner-control .ui-icon-star {
+    background-position: -224px -112px;
+}
+
+.spinner-control .ui-icon-link {
+    background-position: -240px -112px;
+}
+
+.spinner-control .ui-icon-cancel {
+    background-position: 0 -128px;
+}
+
+.spinner-control .ui-icon-plus {
+    background-position: -16px -128px;
+}
+
+.spinner-control .ui-icon-plusthick {
+    background-position: -32px -128px;
+}
+
+.spinner-control .ui-icon-minus {
+    background-position: -48px -128px;
+}
+
+.spinner-control .ui-icon-minusthick {
+    background-position: -64px -128px;
+}
+
+.spinner-control .ui-icon-close {
+    background-position: -80px -128px;
+}
+
+.spinner-control .ui-icon-closethick {
+    background-position: -96px -128px;
+}
+
+.spinner-control .ui-icon-key {
+    background-position: -112px -128px;
+}
+
+.spinner-control .ui-icon-lightbulb {
+    background-position: -128px -128px;
+}
+
+.spinner-control .ui-icon-scissors {
+    background-position: -144px -128px;
+}
+
+.spinner-control .ui-icon-clipboard {
+    background-position: -160px -128px;
+}
+
+.spinner-control .ui-icon-copy {
+    background-position: -176px -128px;
+}
+
+.spinner-control .ui-icon-contact {
+    background-position: -192px -128px;
+}
+
+.spinner-control .ui-icon-image {
+    background-position: -208px -128px;
+}
+
+.spinner-control .ui-icon-video {
+    background-position: -224px -128px;
+}
+
+.spinner-control .ui-icon-script {
+    background-position: -240px -128px;
+}
+
+.spinner-control .ui-icon-alert {
+    background-position: 0 -144px;
+}
+
+.spinner-control .ui-icon-info {
+    background-position: -16px -144px;
+}
+
+.spinner-control .ui-icon-notice {
+    background-position: -32px -144px;
+}
+
+.spinner-control .ui-icon-help {
+    background-position: -48px -144px;
+}
+
+.spinner-control .ui-icon-check {
+    background-position: -64px -144px;
+}
+
+.spinner-control .ui-icon-bullet {
+    background-position: -80px -144px;
+}
+
+.spinner-control .ui-icon-radio-on {
+    background-position: -96px -144px;
+}
+
+.spinner-control .ui-icon-radio-off {
+    background-position: -112px -144px;
+}
+
+.spinner-control .ui-icon-pin-w {
+    background-position: -128px -144px;
+}
+
+.spinner-control .ui-icon-pin-s {
+    background-position: -144px -144px;
+}
+
+.spinner-control .ui-icon-play {
+    background-position: 0 -160px;
+}
+
+.spinner-control .ui-icon-pause {
+    background-position: -16px -160px;
+}
+
+.spinner-control .ui-icon-seek-next {
+    background-position: -32px -160px;
+}
+
+.spinner-control .ui-icon-seek-prev {
+    background-position: -48px -160px;
+}
+
+.spinner-control .ui-icon-seek-end {
+    background-position: -64px -160px;
+}
+
+.spinner-control .ui-icon-seek-start {
+    background-position: -80px -160px;
+}
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.spinner-control .ui-icon-seek-first {
+    background-position: -80px -160px;
+}
+
+.spinner-control .ui-icon-stop {
+    background-position: -96px -160px;
+}
+
+.spinner-control .ui-icon-eject {
+    background-position: -112px -160px;
+}
+
+.spinner-control .ui-icon-volume-off {
+    background-position: -128px -160px;
+}
+
+.spinner-control .ui-icon-volume-on {
+    background-position: -144px -160px;
+}
+
+.spinner-control .ui-icon-power {
+    background-position: 0 -176px;
+}
+
+.spinner-control .ui-icon-signal-diag {
+    background-position: -16px -176px;
+}
+
+.spinner-control .ui-icon-signal {
+    background-position: -32px -176px;
+}
+
+.spinner-control .ui-icon-battery-0 {
+    background-position: -48px -176px;
+}
+
+.spinner-control .ui-icon-battery-1 {
+    background-position: -64px -176px;
+}
+
+.spinner-control .ui-icon-battery-2 {
+    background-position: -80px -176px;
+}
+
+.spinner-control .ui-icon-battery-3 {
+    background-position: -96px -176px;
+}
+
+.spinner-control .ui-icon-circle-plus {
+    background-position: 0 -192px;
+}
+
+.spinner-control .ui-icon-circle-minus {
+    background-position: -16px -192px;
+}
+
+.spinner-control .ui-icon-circle-close {
+    background-position: -32px -192px;
+}
+
+.spinner-control .ui-icon-circle-triangle-e {
+    background-position: -48px -192px;
+}
+
+.spinner-control .ui-icon-circle-triangle-s {
+    background-position: -64px -192px;
+}
+
+.spinner-control .ui-icon-circle-triangle-w {
+    background-position: -80px -192px;
+}
+
+.spinner-control .ui-icon-circle-triangle-n {
+    background-position: -96px -192px;
+}
+
+.spinner-control .ui-icon-circle-arrow-e {
+    background-position: -112px -192px;
+}
+
+.spinner-control .ui-icon-circle-arrow-s {
+    background-position: -128px -192px;
+}
+
+.spinner-control .ui-icon-circle-arrow-w {
+    background-position: -144px -192px;
+}
+
+.spinner-control .ui-icon-circle-arrow-n {
+    background-position: -160px -192px;
+}
+
+.spinner-control .ui-icon-circle-zoomin {
+    background-position: -176px -192px;
+}
+
+.spinner-control .ui-icon-circle-zoomout {
+    background-position: -192px -192px;
+}
+
+.spinner-control .ui-icon-circle-check {
+    background-position: -208px -192px;
+}
+
+.spinner-control .ui-icon-circlesmall-plus {
+    background-position: 0 -208px;
+}
+
+.spinner-control .ui-icon-circlesmall-minus {
+    background-position: -16px -208px;
+}
+
+.spinner-control .ui-icon-circlesmall-close {
+    background-position: -32px -208px;
+}
+
+.spinner-control .ui-icon-squaresmall-plus {
+    background-position: -48px -208px;
+}
+
+.spinner-control .ui-icon-squaresmall-minus {
+    background-position: -64px -208px;
+}
+
+.spinner-control .ui-icon-squaresmall-close {
+    background-position: -80px -208px;
+}
+
+.spinner-control .ui-icon-grip-dotted-vertical {
+    background-position: 0 -224px;
+}
+
+.spinner-control .ui-icon-grip-dotted-horizontal {
+    background-position: -16px -224px;
+}
+
+.spinner-control .ui-icon-grip-solid-vertical {
+    background-position: -32px -224px;
+}
+
+.spinner-control .ui-icon-grip-solid-horizontal {
+    background-position: -48px -224px;
+}
+
+.spinner-control .ui-icon-gripsmall-diagonal-se {
+    background-position: -64px -224px;
+}
+
+.spinner-control .ui-icon-grip-diagonal-se {
+    background-position: -80px -224px;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-top,
+.spinner-control .ui-corner-left,
+.spinner-control .ui-corner-tl {
+    border-top-left-radius: 4px;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-top,
+.spinner-control .ui-corner-right,
+.spinner-control .ui-corner-tr {
+    border-top-right-radius: 4px;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-bottom,
+.spinner-control .ui-corner-left,
+.spinner-control .ui-corner-bl {
+    border-bottom-left-radius: 4px;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-bottom,
+.spinner-control .ui-corner-right,
+.spinner-control .ui-corner-br {
+    border-bottom-right-radius: 4px;
+}
+
+/* Overlays */
+.spinner-control .ui-widget-overlay {
+    /*background: #666666 url("images/ui-bg_diagonals-thick_20_666666_40x40.png") 50% 50% repeat;*/
+    opacity: .5;
+    filter: Alpha(Opacity=50); /* support: IE8 */
+}
+
+.spinner-control .ui-widget-shadow {
+    margin: -5px 0 0 -5px;
+    padding: 5px;
+    /*background: #000000 url("images/ui-bg_flat_10_000000_40x100.png") 50% 50% repeat-x;*/
+    opacity: .2;
+    filter: Alpha(Opacity=20); /* support: IE8 */
+    border-radius: 5px;
+}
+
+
+.spinner-control {
+}
+
+    .spinner-control .showerror {
+        background-color: #FFFFFF;
+        border: 1px solid #D3D3D3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        padding-top: 21px;
+        padding-bottom: 21px;
+        padding-left: 0px;
+        padding-right: 8px;
+        word-break: break-all;
+        position: relative;
+        width: 295px;
+        margin-top: 8px;
+        left: -1px;
+        color: #707070;
+        display: none;
+        top: -10px;
+    }
+
+        .spinner-control .showerror .tooltip-inner {
+            border: none;
+            padding-left: 0px !important;
+        }
+
+    .spinner-control input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .spinner-control .errorColor {
+        color: #E33E38 !important;
+        padding-right: 4px;
+    }
+
+    .spinner-control .showerror:after {
+        border-bottom: 7px solid #FFFFFF;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        content: "";
+        display: inline-block;
+        right: 43px;
+        position: absolute;
+        top: -7px;
+    }
+
+    .spinner-control .showerror:before {
+        border-bottom: 8px solid #bababa;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        content: "";
+        display: inline-block;
+        right: 41px;
+        position: absolute;
+        top: -8px;
+    }
+
+
+
+    .spinner-control .fieldError {
+        position: absolute;
+    }
+
+    .spinner-control .showerror .tooltip-inner {
+        border: none !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        text-align: left;
+        margin-left: 24px;
+    }
+
+    .spinner-control .ui-spinner .tooltip {
+        top: -25px !important;
+        position: relative;
+        left: 0px !important;
+        width: 257px;
+    }
+
+    .spinner-control .ui-spinner .ui-spinner-up {
+        height: 10px;
+    }
+
+    .spinner-control .ui-spinner .ui-spinner-down {
+        top: 12px;
+        position: absolute;
+        height: 28px;
+    }
+
+
+/*#netaxs_input_config_form .showerror {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-left: 0px;
+    padding-right: 8px;
+    word-break: break-all;
+   
+    position: relative;
+    width: 295px;
+    margin-top: 8px;
+    left: -1px;
+    color: #707070;
+    display: none;
+    top: -10px;
+}
+
+    #netaxs_input_config_form .showerror .tooltip-inner {
+        border: none;
+        padding-left: 0px !important;
+    }
+
+#netaxs_input_config_form input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#netaxs_input_config_form .errorColor {
+    color: #E33E38 !important;
+    padding-right: 4px;
+}
+
+#netaxs_input_config_form .showerror:after {
+    border-bottom: 7px solid #FFFFFF;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 43px;
+    position: absolute;
+    top: -7px;
+}
+
+#netaxs_input_config_form .showerror:before {
+    border-bottom: 8px solid #bababa;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 41px;
+    position: absolute;
+    top: -8px;
+}
+
+
+
+#netaxs_input_config_form .fieldError {
+    position: absolute;
+}
+
+#netaxs_input_config_form .showerror .tooltip-inner {
+    border: none !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    text-align: left;
+    margin-left: 24px;
+}
+
+#netaxs_input_config_form .ui-spinner .tooltip {
+    top: -25px !important;
+    position: relative;
+    left: 0px !important;
+    width: 250px;
+}
+
+#netaxs_input_config_form .ui-spinner .ui-spinner-up {
+    height: 10px;
+}
+
+#netaxs_input_config_form .ui-spinner .ui-spinner-down {
+    top: 12px;
+    position: absolute;
+    height: 28px;
+}*/
+

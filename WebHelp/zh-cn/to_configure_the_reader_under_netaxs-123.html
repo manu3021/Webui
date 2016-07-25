@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>帮助</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">配置 NetAXS-123 阅读器</h3>
+        <h4 class="subtitle">要配置阅读器设置：</h4>
+        <ol>
+            <li>在“MPC 仪表板”区中，单击<strong>创建和编辑</strong>选项卡。随即显示<strong>创建和编辑</strong>页面。</li>
+			<li>在左窗格中选择地点，然后单击添加到此地点的相关设备。</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">注：</h4>
+				<p>修改设备设置之前，务必在云端注册相关设备。</p>
+			</div>
+			<li>在左窗格中，单击 <i class="netaxs-icon"></i> 图标（此图标对应于 NetAXS-123 设备），以展开并查看所有可用门户。</li>
+			<li>双击所要求的门户，以展开并查看所有相关联的阅读器。随即显示<strong>设置</strong>页面。</li>
+			<li>在以下字段中输入所要求的详情：</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">字段</td>
+                    <td>描述</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        阅读器名称
+                    </td>
+                    <td>
+                        输入一个用于标识阅读器的唯一名称。
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        禁用阅读器/门户
+					</td>
+                    <td>
+                        从下拉列表中，选择相关属性，以便将阅读器/门户设为禁用或启用模式。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        须对卡和 PIN 码进行验证
+					</td>
+                    <td>
+                        只有成功刷卡并在门户的键盘上输入了有效 PIN 码，才会授予访问权限。刷卡和 PIN 码输入的顺序可以任意。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        须对卡或 PIN 码进行验证
+					</td>
+                    <td>
+                       只有成功刷卡或在门户的键盘上输入了有效 PIN 码，才会授予访问权限。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        仅验证 PIN 码
+					</td>
+                    <td>
+                       只有在门户的键盘上输入了有效 PIN 码，才授予访问权限。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        仅对卡进行验证
+					</td>
+                    <td>
+                       只有成功刷卡，才授予访问权限。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        锁定阅读器/门户
+
+					</td>
+                    <td>
+                       忽略所有刷卡操作（除非是使用 VIP 卡），不允许进入门户，只允许外出。
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        强制
+   					</td>
+                    <td>
+                       在强制时间内，当操作员违背自己的意愿被迫授予某个未经授权人员访问权限时，将会触发一个警报事件，并且如果经过配置，还可以向一个输出设备发送脉冲。强制功能要求识别 PIN 值和卡号。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       防潜回
+					</td>
+                    <td>
+                         用户可以启用阅读器上的防潜回功能，从而仅在持有有效卡时才能进出。持卡人必须按照正确的进/出刷卡序列来使用卡 - 即，在“进”阅读器上刷卡后，随后必须在“出”阅读器上刷卡，或者反之亦然 - 在“出”阅读器上刷卡后，随后必须在“进”阅读器上刷卡。如果用户的进/出刷卡序列无效，则会根据所选的防潜回类型（“硬”或“软”）生成一个防潜回侵犯事件，而持卡人将被拒绝访问（硬）或允许访问（软）。
+						 <>
+						
+						<strong>硬</strong>- 在允许进入之前，先验证进/出状态。第二次在同一类型的阅读器（进/出）上刷卡时，会导致“硬”防潜回侵犯，用户将被拒绝入内。
+						</br><>
+
+						<strong>软</strong>- 在允许进入之前，先验证进/出状态。第二次在同一类型的阅读器（进/出）上刷卡时，会导致“软”防潜回侵犯，但用户将被允许入内。
+						</br><>
+						
+						<strong>出</strong>- 适用于位于防潜回控制区内侧的阅读器。持卡人在试图离开防潜回控制区时将使用这些阅读器。
+						</br><>
+						
+						<strong>进</strong>- 适用于位于防潜回控制区外侧的阅读器。持卡人在试图进入防潜回控制区时将使用这些阅读器。
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>上一条</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> 编辑设备设置</a>
+	</p>	
+</div>		
+</body>
+</html>

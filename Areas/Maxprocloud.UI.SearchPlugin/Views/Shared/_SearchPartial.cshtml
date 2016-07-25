@@ -1,0 +1,22 @@
+﻿@*<link href="~/Content/Search/Search.css" rel="stylesheet" />*@
+
+<script id="searchresultTmpl" type="text/html">
+    <li>
+        <div class="place" data-bind="click:clicked">
+            <i data-bind="css: $data.icon"></i>
+            <div class="ListBreadcrumb"><span class="searchNavStyle" data-bind="text: $data.name"></span></div>
+            <div class="ListBreadcrumb"><span data-bind="html: $data.navigator, click:navclicked"></span></div>
+        </div>
+    </li>
+
+</script>
+<script id="userResultTmpl" type="text/html">
+    <li>
+        <div class="place" data-bind="click:clicked">
+            <i data-bind="css: $data.icon"></i>
+            <div class="ListBreadcrumb"><span class="searchNavStyle" data-bind="text: $data.name"></span></div>
+            <div class="ListBreadcrumb"><span data-bind="html: $data.navigator, click:navclicked"></span></div>
+        </div>
+    </li>
+
+</script>

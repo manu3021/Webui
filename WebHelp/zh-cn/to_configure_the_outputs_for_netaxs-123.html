@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>帮助</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">配置 NetAXS-123 输出</h3>
+        <h4 class="subtitle">要配置输出设置：</h4>
+        <ol>
+            <li>在“MPC 仪表板”区中，单击<strong>创建和编辑</strong>选项卡。随即显示<strong>创建和编辑</strong>页面。</li>
+			<li>在左窗格中选择地点，然后单击添加到此地点的相关设备。</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">注：</h4>
+				<p>修改设备设置之前，务必在云端注册相关设备。</p>
+			</div>
+			<li>在左窗格中，单击 <i class="netaxs-icon"></i> 图标（此图标对应于 NetAXS-123 设备），以展开并查看所有可用门户。</li>
+			<li>双击所要求的门户，以展开并查看所有相关联的输出。随即显示<strong>设置</strong>页面。</li>
+			<li>在以下字段中输入所要求的详情：</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">字段</td>
+                    <td>描述</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        输出名称
+                    </td>
+                    <td>
+                        输入一个用于标识门户输出的唯一名称。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        活动时段</td>
+                    <td>
+                        指定两个时间表：
+							<ul>
+								<li><strong>通电</strong>- 设置自动为输出通电的时间段。</li>
+								<li><strong>禁用联锁</strong>- 设置在什么时段内将禁用联锁机制（即，以编程方式在所选输入、输出和组之间实现的相互作用）。在选定的时段中，此地点将忽略所有针对它的联锁操作，即，在这个时段中将禁止它成为一个从动组件。</li>
+							</ul>
+						
+						在这个时段之外，此点将随联锁操作而动，就像预期的那样。
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        时段之外的闭锁/切换操作将禁用脉冲时间
+					</td>
+                    <td>
+                        每一次激活时（通过代码、互锁或手动脉冲），切换输出的通电和断电状态。
+                </tr>
+				<tr>
+                    <td>
+                        阻止联锁时段
+
+					</td>
+                    <td>
+                        您可以阻止联锁时段，即，阻止以编程方式在两个地点之间实现的相互作用。
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        脉冲时间
+					</td>
+                    <td>
+                        指定设备认为是异常状态的持续时间。例如，它指定喇叭将响多久或门户锁舌将在多长时间内保持松开状态。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        联锁
+					</td>
+                    <td>
+                        您可以禁用联锁机制，即，阻止以编程方式在两个地点之间实现的相互作用。
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>单击<strong>保存</strong>。</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>上一条</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> 编辑设备设置</a>
+	</p>	
+</div>		
+</body>
+</html>

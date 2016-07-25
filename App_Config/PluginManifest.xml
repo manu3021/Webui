@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PluginRuntime>
+  <PluginCollection>
+    <PluginData RegionName="Login" Version="1.0.0.0" PluginState="Active" EntryController="Login" EntryAction="Login">
+      <Assembly Path="bin" Name="MaxproCloud.UI.LoginPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="dashboard" Version="1.0.0.0" PluginState="Active" EntryController="Dashboard" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.DashboardPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="configuration" Version="1.0.0.0" PluginState="Active" EntryController="Config" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.ConfigPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="alarms" Version="1.0.0.0" PluginState="Active" EntryController="AlarmView" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.AlarmViewerPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="TreeView" Version="1.0.0.0" PluginState="Active" EntryController="Treeview" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.TreeviewPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="Maps" Version="1.0.0.0" PluginState="Active" EntryController="Map" EntryAction="Index">
+      <Assembly Path="bin" Name="Maxprocloud.UI.MapPlugin">
+      </Assembly>
+    </PluginData>
+     <PluginData RegionName="fullmap" Version="1.0.0.0" PluginState="Active" EntryController="Map" EntryAction="FullMapView">
+      <Assembly Path="bin" Name="Maxprocloud.UI.MapPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="Userconfig" Version="1.0.0.0" PluginState="Active" EntryController="UserConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.UserMgmtPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="Profile" Version="1.0.0.0" PluginState="Active" EntryController="Profile" EntryAction="Index">
+      <Assembly Path="bin" Name="Maxprocloud.UI.ProfilePlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="PanelConfig" Version="1.0.0.0" PluginState="Active" EntryController="PanelConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="PanelConfigPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="TimeManagement" Version="1.0.0.0" PluginState="Active" EntryController="TimeManagement" EntryAction="Index">
+      <Assembly Path="bin" Name="TimeManagementPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="viewer" Version="1.0.0.0" PluginState="Active" EntryController="Viewer" EntryAction="DefaultIndex">
+      <Assembly Path="bin" Name="MaxproCloud.UI.ViewerPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="MpcaDeviceConfig" Version="1.0.0.0" PluginState="Active" EntryController="MpcaDeviceConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="MpcaDeviceConfigPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="reports" Version="1.0.0.0" PluginState="Active" EntryController="ReportMgmt" EntryAction="Index">
+      <Assembly Path="bin" Name="ReportMgmtPlugin">
+	  </Assembly>
+    </PluginData>
+    <PluginData RegionName="MpcaCameraConfig" Version="1.0.0.0" PluginState="Active" EntryController="MpcaCameraConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="MpcaCameraConfigPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="CredentialMgmt" Version="1.0.0.0" PluginState="Active" EntryController="CredentialMgmt" EntryAction="Index">
+      <Assembly Path="bin" Name="CredentialMgmtPlugin">
+      </Assembly>
+    </PluginData>
+   <PluginData RegionName="rules" Version="1.0.0.0" PluginState="Active" EntryController="RuleConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="RuleConfigurationPlugin">
+      </Assembly>
+    </PluginData>
+  <PluginData RegionName="AccessPersonaMgmt" Version="1.0.0.0" PluginState="Active" EntryController="AccessPersonaConfig" EntryAction="Index">
+      <Assembly Path="bin" Name="AccessPersonaConfigPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="AccessPersonaCredentialHolders" Version="1.0.0.0" PluginState="Active" EntryController="AccessPersonaConfig" EntryAction="CredentialHolders">
+      <Assembly Path="bin" Name="AccessPersonaConfigPlugin">
+      </Assembly>
+    </PluginData>   
+    <PluginData RegionName="AccessPersonaNavigation" Version="1.0.0.0" PluginState="Active" EntryController="AccessPersonaConfig" EntryAction="AccessPersonaNavigation">
+      <Assembly Path="bin" Name="AccessPersonaConfigPlugin">
+      </Assembly>
+    </PluginData>   
+    <PluginData RegionName="Search" Version="1.0.0.0" PluginState="Active" EntryController="Search" EntryAction="Index">
+      <Assembly Path="bin" Name="Maxprocloud.UI.SearchPlugin">
+      </Assembly>
+    </PluginData>
+    <PluginData RegionName="Calendar" Version="1.0.0.0" PluginState="Active" EntryController="CalendarSearch" EntryAction="Index">
+      <Assembly Path="bin" Name="CalendarSearchPlugin">
+      </Assembly>
+    </PluginData>
+   <PluginData RegionName="ucpFWUpgrade" Version="1.0.0.0" PluginState="Active" EntryController="FirmwareUg" EntryAction="DefaultView">
+      <Assembly Path="bin" Name="FirmwareUpgradePlugin">
+      </Assembly>
+    </PluginData>
+   <PluginData RegionName="AdminUtils" Version="1.0.0.0" PluginState="Active" EntryController="Approval" EntryAction="Index">
+      <Assembly Path="bin" Name="MaxproCloud.UI.DealerMgmnt">
+      </Assembly>
+    </PluginData>
+  </PluginCollection>
+</PluginRuntime>
+
+
+
+

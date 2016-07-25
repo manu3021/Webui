@@ -1,0 +1,37 @@
+﻿<script id="ascatedevrtpane" type="text/html">
+    <li data-bind="event: {mouseover: enableclose, mouseout: disableclose}">
+        <span data-bind="text: $data.Name"></span>
+        <i data-bind="attr: {'class': closeicon}, click:$root.removedeviceitem"></i>
+    </li>
+</script>
+
+<div id="mpcacameraassociate" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <header class="row">
+        <span>@Resources.mpcaCam_Setting_Asocias</span>
+    </header>
+
+    <section class="row">
+        <div class="row">
+            <div class="ulheading">@Resources.UniversalList</div>
+            <div class="associationsheading">@Resources.Associations</div>
+        </div>
+        <div class="modelLeftSection">
+            <div class="leftTree" id="create-tree">
+                <div id="mpcacameratreeview" class="treecontrol layoutrow">
+                </div>
+            </div>
+        </div>
+        <div class="modelRightSection">
+            <ul class="mpcmodel_section_ul" data-bind="template:{name:'ascatedevrtpane', foreach: $data.deviceentities}" />
+            <span class="associationTxtMsg">@Resources.Association_text</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="modal-footer">
+            <span class="footerBorder"></span>
+            <button class="primary-button" data-bind="click:camassociationsave" aria-hidden="true">@Resources.Done</button>
+            <button class="secondary-button" data-bind="click:camassociationcancel" aria-hidden="true">@Resources.Cancel</button>
+        </div>
+    </footer>
+</div>

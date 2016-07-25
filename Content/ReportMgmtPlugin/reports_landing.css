@@ -1,0 +1,605 @@
+﻿
+/*Header Two*/
+.header-menu-two-reports {
+    top: 62px;
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #bababb;
+    -webkit-box-shadow: -2px 0px 4px 2px #bababb;
+    -moz-box-shadow: -2px 0px 4px 2px #bababb;
+    box-shadow: -2px 0px 6px 2px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=0px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    font-size: 16px;
+    background-color: #fff;
+    z-index: 100;
+}
+
+    .header-menu-two-reports #header-menu-box {
+        margin-left: 10px;
+    }
+
+        .header-menu-two-reports #header-menu-box > .pull-left {
+            padding-top: 7px;
+        }
+
+        .header-menu-two-reports #header-menu-box h3 {
+            font-size: 22px;
+            color: #707070;
+            padding-left: 14px;
+            padding-top: 3px;
+            margin: 0px;
+            font-weight: normal;
+        }
+/*Header Two*/
+
+/*Header Three*/
+.header-menu-three-reports {
+    top: 128px;
+    width: 100%;
+    min-width: 100%;
+    min-height: 46px;
+    height: 44px;
+    position: fixed;
+    border-bottom: 1px solid #bababb;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    z-index: 100;
+    line-height: 40px;
+    display: table-cell;
+    padding-left: 10px;
+}
+
+    .header-menu-three-reports .navbar .nav > li > a {
+        /*padding: 10px 13px 10px 15px;*/
+        padding: 10px 10px 0 5px;
+    }
+
+
+        .header-menu-three-reports .navbar .nav > li > a:hover {
+            color: #0067A6;
+        }
+
+    .header-menu-three-reports .navbar {
+        /* max-width: 356px; */
+        /* width: 27%; */
+        min-width: 358px;
+        position: absolute;
+        height: 28px;
+    }
+
+    .header-menu-three-reports .icon-newReport {
+        background: url("../images/icon_NewReport.png");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        margin-top: 2px;
+        margin-right: 3px;
+        cursor: pointer;
+    }
+
+        .header-menu-three-reports .icon-newReport:hover {
+            background: url("../images/icon_NewReportHover.png");
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+        }
+
+    .header-menu-three-reports #search-box input[type=search] {
+        background: url('../imgs/icon_search.png') no-repeat right;
+        border: solid 1px #F5F5F5;
+        margin: 0;
+        padding-top: 14px;
+        padding-left: 1px;
+        margin-left: 12px;
+        width: 10px;
+        cursor: pointer;
+        -webkit-transition: all .5s;
+        -moz-tranition: all .5s;
+        transition: all .5s;
+    }
+
+    .header-menu-three-reports #search-box input[type="search"]:focus, .header-menu-three #search-box input[type="search"]:hover {
+        background: url('../imgs/icon_searchHover.png') no-repeat right;
+    }
+
+    .header-menu-three-reports #search-box input[type="search"]:focus {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(0, 0%, 0%);
+        cursor: auto;
+        width: 303px;
+        border-color: #FFFFFF;
+        padding-left: 12px;
+        padding-right: 30px;
+    }
+/*Header Three*/
+
+/*Report Listing Body*/
+.successText {
+    color: #3BAD49 !important;
+}
+
+.failText {
+    /*color:#E33E38 !important;*/
+    /*padding-left:8px;*/
+}
+
+.reportsLandingPg {
+    padding: 14px 24px 0px 24px !important;
+    width: 100%;
+    position: fixed;
+    top: 110px;
+}
+
+    /*Sticky styles */
+    .reportsLandingPg #sticky-list {
+        /* height: 77%; */
+        overflow: hidden;
+        position: fixed;
+        width: 97%;
+        padding: 0;
+        top: 174px;
+        bottom: 22px;
+    }
+
+    .reportsLandingPg li:last-child .table > tbody > tr:last-child {
+        border-bottom: 1px solid #A7A7A8;
+    }
+
+    .reportsLandingPg #sticky-list > ul {
+        height: 100%;
+        -ms-overflow-y: auto;
+        overflow-y: auto;
+        -ms-overflow-x: hidden;
+        overflow-x: hidden;
+        border-bottom: 1px solid #BABABB;
+    }
+
+    .reportsLandingPg ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .reportsLandingPg .sticky thead {
+        position: absolute;
+        top: 0;
+        display: inherit;
+        background-color: white;
+        z-index: 2;
+    }
+    /*Sticky styles */
+
+    .reportsLandingPg .table > tbody > tr > td {
+        border-top: 1px solid #D3D3D3;
+        word-break: break-all;
+    }
+
+    .reportsLandingPg .table > thead > tr > th {
+        border-bottom: 1px solid #A7A7A8;
+        border-right: 1px solid #D3D3D3;
+        border-top: 1px solid #BABABB !important;
+        font-size: 14px;
+        color: #3B3B3D;
+        vertical-align: middle;
+        font-weight: normal;
+        padding: 10px 14px 10px 14px !important;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+
+    .reportsLandingPg .table {
+        margin-bottom: 0px;
+    }
+
+        .reportsLandingPg .table > thead > tr > th, .reportsLandingPg .table > tbody > tr > th, .reportsLandingPg .table > tfoot > tr > th, .reportsLandingPg .table > thead > tr > td, .reportsLandingPg .table > tbody > tr > td, .reportsLandingPg .table > tfoot > tr > td {
+            padding: 0px;
+        }
+
+    .reportsLandingPg tbody > tr > td {
+        vertical-align: middle;
+        font-size: 15px;
+        color: #6F7074;
+        padding: 10px 14px 10px 14px !important;
+    }
+
+    .reportsLandingPg .table > thead:first-child > tr:first-child > th:first-child {
+        font-family: "Open Sans Semibold" !important;
+        border-right: none;
+        text-transform: uppercase;
+    }
+
+    .reportsLandingPg .table > thead:first-child > tr:first-child > th:last-child {
+        border-right: none;
+    }
+
+    .reportsLandingPg .removeBorderRight {
+        border-right-color: #FFFFFF !important;
+    }
+
+    .reportsLandingPg .table a {
+        text-decoration: none;
+        color: #6f7074;
+        cursor: pointer;
+    }
+
+        .reportsLandingPg .table a:hover {
+            color: #0067A6;
+        }
+
+    .reportsLandingPg .table > tbody > tr > td:first-child {
+        border-right: 1px solid #D3D3D3;
+    }
+
+    .reportsLandingPg .table > tbody > tr > td:last-child {
+        background-image: url('../images/icon_delete.png');
+        background-repeat: no-repeat;
+        background-position: 10px;
+    }
+
+        .reportsLandingPg .table > tbody > tr > td:last-child:hover {
+            background-image: url('../images/icon_deleteHover.png');
+            cursor: pointer;
+        }
+
+    .reportsLandingPg .table > tbody > tr > td:first-child:hover {
+        background-color: #E6F3FB;
+        color: #0067A6;
+        cursor: pointer;
+    }
+/*Report Listing Body*/
+
+/*Report Delivery Popup*/
+#ReportDelivery.mpcmodel section {
+    padding-top: 0px;
+}
+
+#ReportDelivery {
+    width: 650px;
+    position: relative;
+    left: 0;
+    margin-top: 2%;
+    display: none;
+}
+
+    #ReportDelivery .table > tbody > tr > td {
+        border-top: 1px solid #D3D3D3;
+    }
+
+    #ReportDelivery .table > thead > tr > th {
+        border-bottom: 1px solid #A7A7A8;
+        border-right: 1px solid #D3D3D3;
+        font-size: 14px;
+        color: #3B3B3D;
+        vertical-align: middle;
+        font-weight: normal;
+        padding-left: 14px;
+        padding-right: 14px;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+
+    #ReportDelivery .table {
+        margin-bottom: 0px;
+    }
+
+    #ReportDelivery section ul li {
+        float: none;
+        padding-bottom: 0px;
+    }
+
+    #ReportDelivery .table > thead:first-child > tr:first-child > th:last-child {
+        border-right: none;
+    }
+
+    #ReportDelivery tbody > tr > td {
+        vertical-align: middle;
+        font-size: 15px;
+        color: #6F7074;
+        padding-left: 14px;
+        padding-right: 14px;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+
+    /*Sticky styles */
+    #ReportDelivery #sticky-list-reportDelivery {
+        height: 370px;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid #BABABB;
+    }
+
+        #ReportDelivery #sticky-list-reportDelivery > ul {
+            height: 100%;
+            -ms-overflow-y: auto;
+            overflow-y: auto;
+            -ms-overflow-x: hidden;
+            overflow-x: hidden;
+        }
+
+    #ReportDelivery ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #ReportDelivery .sticky thead {
+        position: absolute;
+        top: 0;
+        display: inherit;
+        background-color: white;
+        z-index: 2;
+    }
+
+/*Sticky styles */
+/*Report Delivery Popup*/
+
+/*Report History Popup*/
+#ReportHistory.mpcmodel section {
+    padding-top: 0px;
+}
+
+#ReportHistory {
+    width: 500px;
+    position: relative;
+    left: 0;
+    margin-top: 2%;
+    display: none;
+}
+
+    #ReportHistory .table > tbody > tr > td {
+        border-top: 1px solid #D3D3D3;
+    }
+
+    #ReportHistory .table > thead > tr > th {
+        border-bottom: 1px solid #A7A7A8;
+        border-right: 1px solid #D3D3D3;
+        font-size: 14px;
+        color: #3B3B3D;
+        vertical-align: middle;
+        font-weight: normal;
+        padding-left: 14px;
+        padding-right: 14px;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+
+    #ReportHistory .table {
+        margin-bottom: 0px;
+    }
+
+    #ReportHistory section ul li {
+        float: none;
+        padding-bottom: 0px;
+    }
+
+    #ReportHistory .table > thead:first-child > tr:first-child > th:last-child {
+        border-right: none;
+    }
+
+    #ReportHistory tbody > tr > td {
+        vertical-align: middle;
+        font-size: 15px;
+        color: #6F7074;
+        padding-left: 14px;
+        padding-right: 14px;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+
+    /*Sticky styles */
+    #ReportHistory #sticky-list-reportHistory {
+        height: 370px;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid #BABABB;
+    }
+
+        #ReportHistory #sticky-list-reportHistory > ul {
+            height: 100%;
+                -ms-overflow-y: auto;
+        overflow-y: auto;
+
+                -ms-overflow-x: hidden;
+        overflow-x: hidden;
+
+        }
+
+    #ReportHistory ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #ReportHistory .sticky thead {
+        position: absolute;
+        top: 0;
+        display: inherit;
+        background-color: white;
+        z-index: 2;
+    }
+/*Sticky styles */
+/*Report History Popup*/
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=1px, OffY=1px, Color='black', Positive='true' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-top: 20px;
+}
+/*scrollbar*/
+
+
+
+
+
+.report-base-content .right-inner-addon {
+    position: relative;
+}
+
+    .report-base-content .right-inner-addon input {
+        padding-right: 30px;
+    }
+
+    .report-base-content .right-inner-addon > span {
+        position: absolute;
+        right: 1px;
+        padding: 25px 12px;
+        width: 60px;
+        z-index: 2;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        border-left: 1px solid #d3d3d3;
+        border-top: 0px solid #d3d3d3;
+        border-bottom: 0px;
+        background-color: #F9F9F9 !important;
+    }
+
+    .report-base-content .right-inner-addon span:hover {
+        background-color: #e6f3fb !important;
+    }
+
+.report-base-content .primary-button {
+    background: linear-gradient(to top, #0889c4,#0780be) repeat scroll 0 0 hsla(0, 0%, 0%, 0);
+    border-bottom: 0px solid hsl(190, 92%, 30%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    -webkit-box-shadow: 0 0px 0px 0px hsl(0, 0%, 82%);
+    -moz-box-shadow: 0 0px 0px 0px hsl(0, 0%, 82%);
+    box-shadow: 0 0px 0px 0px hsl(0, 0%, 82%);
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=0px, Color='black', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    padding: 5px 14px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 4px;
+}
+
+.report-base-content .ternary-button {
+    background: linear-gradient(to top, #e13732, #e54b45) repeat scroll 0% 0% transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    border-bottom: 0px solid #b82d29;
+    color: #ffffff;
+    padding: 5px 14px;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    -moz-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    box-shadow: 0px 0px 0px 0px #d2d2d2;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=0px, Color='#d2d2d2', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 4px;
+}
+
+.report-base-content .secondary-button {
+    background: linear-gradient(to top, #9fa2a3, #979a9b) repeat scroll 0% 0% transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    border-bottom: 0px solid #838383;
+    color: #ffffff;
+    padding: 5px 14px;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    -moz-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    box-shadow: 0px 0px 0px 0px #d2d2d2;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=0px, Color='#d2d2d2', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 4px;
+}
+
+.report-base-content .buttonGroup {
+    border-top: 1px solid #d3d3d3;
+    clear: both;
+    padding-top: 14px;
+}
+
+.delivery-report-success {
+    color: #3BAD49 !important;
+}
+
+.delivery-report-fail {
+    color: #E33E38 !important;
+}
+
+.rep_slash {
+    padding: 0 3px 0 1px;
+}
+
+.delivery_cur {
+    float: left;
+    cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+    #reports #reportListBase input[type="search"]:focus {
+        margin-left: 6px !important;
+        margin-top: 6px !important;
+    }
+}

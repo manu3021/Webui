@@ -1,0 +1,62 @@
+﻿@*@Styles.Render("~/Content/Dealerstyles/dealerstyle.css")*@
+<section id="dealerSubContainer" >
+    <div class="tabcontainer">
+        <ul class="nav nav-tabs" id="myTab">
+            <li id="" class="active"><a href="#pendingTab" data-toggle="tab">Pending</a></li>
+            <li id=""><a href="#activeTab" data-toggle="tab" class="pendinglist-tab">Approved</a></li>
+        </ul>
+    </div>
+    <div class="tab-content" id="">
+        <div class="tab-pane active" id="pendingTab">
+            <div class="userconfigcontainer" data-url="@Url.Action("", "approval")">
+                <div class="userlistinnercontainer layoutrow">
+                    <div id="userlistform" class="userlistcontainer layoutcol">
+                        @Html.Partial("_DealerListPartial")
+                    </div>
+                    <div id="usercontainerform" class="userdetailcontainer layoutcol">
+                        @Html.Partial("_DealerPartial")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="activeTab">
+            <div class="activeuserlistinnercontainer ">
+                <div class="userconfigcontainer" data-url="@Url.Action("", "approval")">
+                    <div class="userlistinnercontainer layoutrow">
+                        <div id="userlistform" class="userlistcontainer layoutcol">
+                            <div id="activeuserlistcontainer" class="userlistcontainer layoutcol">
+                                <div class="usertotal layoutrow" data-bind="text: totalActive">
+                                </div>
+                                <div class="userlist layoutrow scroll-y">
+                                    <ul class="userliststyle" data-bind="template: { name: 'userlistTmpl', foreach: $data.userlistdatasource }"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="usercontainerform" class="userdetailcontainer layoutcol">
+                            @Html.Partial("_DealerPartial")
+                        </div>
+                        @*<div id="usercontainerform" class="userdetailcontainer layoutcol">
+                            This section can be used to bring new controls for managing approved dealers
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+@*@Scripts.Render("~/bundles/DealerMgmntscript1")*@
+
+@Scripts.Render( "~/Scripts/dealerconfig/dealer.common.js",
+              "~/Scripts/dealerconfig/dealer.datacontext.js",
+              "~/Scripts/configplugin/validationcontext.js",
+              "~/Scripts/dealerconfig/dealer.uicontext.js",
+              "~/Scripts/dealerconfig/dealer.eventreciever.js",
+              "~/Scripts/dealerconfig/dealer.model.js")
+
+
+

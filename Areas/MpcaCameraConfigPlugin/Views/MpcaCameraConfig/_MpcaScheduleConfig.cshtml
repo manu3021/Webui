@@ -1,0 +1,97 @@
+﻿<div id="schedulePopup" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <header class="row">
+        <span data-bind="text: Type().text"></span>
+    </header>
+
+    <section class="row">
+        <div class="radio singleDay">
+            <label class="formControl-radio">
+                <input type="radio" name="scheduledaytype" value="singleday" data-bind="checked: DayType">
+                <span></span>
+            </label>
+            <span class="radiotext">@Resources.single_day</span>
+            <div data-bind="disable: !IsSingleDay()">
+                <ul class="singleDayFilter">
+                    <li>
+                        <div class="field select-field">
+                            <label for="user_LastName">@Resources.day_of_week</label>
+                            <select data-bind="options: singledays, optionsText: 'text', value: SelectedSingleDay, disable: !IsSingleDay()"></select>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="singlefrmdatetimepicker" class="field right-inner-addon">
+                            <span class="input-group-addon add-on">
+                                <b class="icon-time frmdateclick"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.From</label>
+                            <input data-format="hh:mm:ss" type="text" readonly="" class="floatTxt myStyle">
+                        </div>
+
+                    </li>
+                    <li>
+                        <div id="singletodatetimepicker" class="field right-inner-addon">
+                            <span class="input-group-addon add-on">
+                                <b class="icon-time frmdateclick" data-bind="disable: !IsSingleDay()"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.To</label>
+                            <input data-format="hh:mm:ss" type="text" readonly="" class="floatTxt myStyle">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="radio multipleDay">
+            <label class="formControl-radio">
+                <input type="radio" name="scheduledaytype" value="multiday" data-bind="checked: DayType">
+                <span></span>
+            </label>
+            <span class="radiotext">@Resources.Multiple_Day</span>
+            <div>
+                <span class="multipleDaySubheading spaceTopStyle">@Resources.Days_Of_Week</span>
+                <ul class="multipleDayFilter">
+                    <li>
+                        <div class="field select-field">
+                            <label for="user_LastName">@Resources.From</label>
+                            <select data-bind="options: multifromdays, optionsText: 'text', value: SelectedMultiFromDay, disable: IsSingleDay"></select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field select-field">
+                            <label for="user_LastName">@Resources.To</label>
+                            <select data-bind="options: multitodays, optionsText: 'text', value: SelectedMultiToDay, disable: IsSingleDay"></select>
+                        </div>
+                    </li>
+                </ul>
+                <span class="multipleDaySubheading">@Resources.Duration</span>
+                <ul class="multipleDayFilterSecondRow">
+                    <li>
+                        <div id="multifrmdatetimepicker" class="field right-inner-addon">
+                            <span class="input-group-addon add-on">
+                                <b class="icon-time frmdateclick"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.From</label>
+                            <input data-format="hh:mm:ss" type="text" readonly="" class="floatTxt myStyle">
+                        </div>
+                    </li>
+                    <li>
+                        <div id="multitodatetimepicker" class="field right-inner-addon">
+                            <span class="input-group-addon add-on">
+                                <b class="icon-time frmdateclick"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.To</label>
+                            <input data-format="hh:mm:ss" type="text" readonly="" class="floatTxt myStyle">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            <button class="primary-button" aria-hidden="true" data-bind="click: dosavesettings">@Resources.Save</button>
+            <button class="secondary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: docancelsettings">@Resources.Cancel</button>          
+            <span class="errorDetail customErrorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </div>
+    </footer>
+</div>

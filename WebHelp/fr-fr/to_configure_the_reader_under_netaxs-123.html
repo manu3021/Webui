@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <title>Aidez-Moi</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Configurer le lecteur dans NetAXS-123</h3>
+        <h4 class="subtitle">Pour configurer les paramètres du lecteur :</h4>
+        <ol>
+            <li>dans l'espace tableau de bord MPC, cliquez sur l'onglet <strong>Créer et modifier</strong>. La page <strong>CRÉER ET MODIFIER</strong> apparaît.</li>
+			<li>Dans le volet gauche, sélectionnez le site et cliquez sur le périphérique correspondant ajouté au site.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Remarque :</h4>
+				<p>avant de modifier les paramètres de périphérique, assurez-vous d'enregistrer les périphériques dans le cloud.</p>
+			</div>
+			<li>Dans le volet gauche, cliquez sur <i class="netaxs-icon"></i> l'icône correspondant au périphérique NetAXS-123 pour afficher toutes les portes disponibles.</li>
+			<li>Double-cliquez sur la porte souhaitée pour afficher tous les lecteurs associés. La page <strong>Paramètres</strong> apparaît.</li>
+			<li>Entrez les informations demandées dans les champs suivants :</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Champ</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nom du lecteur
+                    </td>
+                    <td>
+                        Entrez un nom unique pour identifier le lecteur.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Désactiver le lecteur/la porte
+					</td>
+                    <td>
+                        Dans la liste déroulante, sélectionnez les propriétés pour définir le mode désactivation/activation du lecteur/de la porte.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Carte et PIN demandés
+					</td>
+                    <td>
+                        Permet l’accès seulement avec une lecture réussie de la carte et avec une saisie valide du PIN sur le clavier de la porte. Vous pouvez effectuer la lecture de la carte et l’entrée du PIN dans n’importe quel ordre.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Carte ou PIN demandé
+					</td>
+                    <td>
+                       Permet l’accès avec soit une lecture réussie de la carte soit une saisie valide du code PIN sur le clavier de la porte.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        PIN seul
+					</td>
+                    <td>
+                       Permet l’accès seulement avec saisie valide du code PIN sur le clavier de la porte.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Carte seule
+					</td>
+                    <td>
+                       Permet l’accès avec seulement une lecture réussie de la carte.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Verrouiller le lecteur/la porte
+
+					</td>
+                    <td>
+                       Ignore toutes les lectures de cartes (sauf celles des cartes VIP), refuse l’entrée par la porte mais autorise la sortie.&#8232;
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Contrainte
+   					</td>
+                    <td>
+                       Vous permet de déclencher un événement d’alarme, et si cela est configuré, envoie une impulsion à un périphérique de sortie, lorsqu’il est soumis à une contrainte, comme lorsque l’opérateur se voit forcé de donner un droit d’accès, contre son gré, à une personne non autorisée. La contrainte nécessite à la fois qu’un PIN et un numéro de carte soient reconnus.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Anti-Passback
+					</td>
+                    <td>
+                         L'utilisateur active la fonction anti-passback sur le lecteur, lequel nécessite une carte valide pour l’entrée et la sortie. Le détenteur de la carte doit utiliser sa carte dans la séquence Entrée/Sortie correcte, c’est-à-dire qu’une carte glissée dans un lecteur d’Entrée doit ensuite être glissée dans un lecteur de Sortie, et réciproquement, une carte glissée dans un lecteur de Sortie doit ensuite être glissée dans un lecteur d’Entrée. Si la séquence Entrée/Sortie de l’utilisateur est invalide, alors un événement de violation de l’anti-passback est généré pour le type d’anti-passback choisi (Fort or Léger). Le détenteur de la carte se voit alors soit refuser (Fort) soit autoriser (Léger) l’accès.&#8232;
+						 <>
+						
+						<strong>Fort</strong> - Valide l’état Entrée/Sortie avant d’autoriser l’entrée. Un deuxième passage de la carte sur le même type de lecteur (E/S) provoque une violation Forte de l’anti-passback, et l’entrée est refusée à l’utilisateur.
+						</br><>
+
+						<strong>Léger</strong> - Valide l’état Entrée/Sortie avant d’autoriser l’entrée. Un deuxième passage d’une carte sur le même type de lecteur (E/S) provoque une violation Légère de l’anti-passback, mais l’utilisateur a le droit d’entrer.
+						</br><>
+						
+						<strong>Sortie</strong> - S’applique aux lecteurs situés à l’intérieur de la zone sous contrôle de l’anti-passback. Les détenteurs de carte utilisent ces lecteurs quand ils essaient de sortir de la zone sous contrôle de l’anti-passback.
+						</br><>
+						
+						<strong>Entrée</strong> - S’applique aux lecteurs situés en dehors de la zone sous contrôle de l’anti-passback. Les détenteurs de carte utilisent ces lecteurs quand ils essaient de sortir de la zone sous contrôle de l’anti-passback.
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Précédent</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Modifier les paramètres du périphérique</a>
+	</p>	
+</div>		
+</body>
+</html>

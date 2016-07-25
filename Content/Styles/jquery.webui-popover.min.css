@@ -1,0 +1,515 @@
+.webui-popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    width: 300px;
+    min-height: 50px;
+    padding: 1px;
+    text-align: left;
+    white-space: normal;
+    background-color: #323232;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*border: 2px solid #323232;*/
+    border-radius: 4px;
+    box-shadow: 0px 2px 0px 0px #323232;
+}
+
+.webui-popover-inverse {
+    background-color: #333;
+    color: #eee;
+}
+
+.webui-popover.top, .webui-popover.top-left, .webui-popover.top-right {
+    margin-top: -10px;
+}
+
+.webui-popover.right {
+    margin-left: 10px;
+}
+
+.webui-popover.bottom, .webui-popover.bottom-left, .webui-popover.bottom-right {
+    margin-top: 10px;
+}
+
+.webui-popover.left {
+    margin-left: -10px;
+}
+
+.webui-no-padding .webui-popover-content {
+    padding: 0;
+}
+
+.webui-popover-inverse .list-group-item {
+    background: 0 0;
+}
+
+.webui-no-padding .list-group-item {
+    border-right: none;
+    border-left: none;
+}
+
+    .webui-no-padding .list-group-item:first-child {
+        border-top: 0;
+    }
+
+    .webui-no-padding .list-group-item:last-child {
+        border-bottom: 0;
+    }
+
+.webui-popover-inner .close {
+    font-family: arial;
+    margin: 5px 10px 0 0;
+    float: right;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    text-decoration: none;
+}
+
+    .webui-popover-inner .close:hover {
+        opacity: .5;
+        filter: alpha(opacity=5);
+    }
+
+.webui-popover-title {
+    background-color: #272727;
+    border-bottom: 1px solid #212121 !important;
+    color: #d3d3d3;
+    text-transform: uppercase;
+    padding-left: 24px;
+    padding-top: 14px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+
+.webui-popover-inverse .webui-popover-title {
+    background: #3f3f3f;
+    border-bottom: none;
+    color: #eee;
+}
+
+.webui-popover-content {
+    padding: 0px 0px 24px 0px;
+    overflow: auto;
+    background: #323232;
+    color: #9d9d9d;
+}
+
+.webui-popover > .arrow, .webui-popover > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.webui-popover > .arrow {
+    border-width: 11px;
+}
+
+    .webui-popover > .arrow:after {
+        content: "";
+        border-width: 10px;
+    }
+
+.webui-popover.top-left > .arrow, .webui-popover.top-right > .arrow, .webui-popover.top > .arrow {
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-color: #999;
+    border-top-color: rgba(0,0,0,.25);
+    border-bottom-width: 0;
+}
+
+.webui-popover-inverse.top-left > .arrow, .webui-popover-inverse.top-right > .arrow, .webui-popover-inverse.top > .arrow {
+    border-top-color: #333;
+}
+
+.webui-popover.top-left > .arrow:after, .webui-popover.top-right > .arrow:after, .webui-popover.top > .arrow:after {
+    bottom: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-color: #28282a;
+    border-bottom-width: 0;
+}
+
+.webui-popover-inverse.top-left > .arrow:after, .webui-popover-inverse.top-right > .arrow:after, .webui-popover-inverse.top > .arrow:after {
+    border-top-color: #333;
+}
+
+.webui-popover.right > .arrow {
+    top: 50%;
+    left: -11px;
+    margin-top: -11px;
+    border-right-color: #999;
+    border-right-color: #323232;
+    border-left-width: 0;
+}
+
+.webui-popover-inverse.right > .arrow {
+    border-right-color: #333;
+}
+
+.webui-popover.right > .arrow:after {
+    bottom: -10px;
+    left: 1px;
+    content: " ";
+    border-right-color: #323232;
+    border-left-width: 0;
+}
+
+.webui-popover-inverse.right > .arrow:after {
+    border-right-color: #333;
+}
+
+.webui-popover.bottom-left > .arrow, .webui-popover.bottom-right > .arrow, .webui-popover.bottom > .arrow {
+    top: -9px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #999;
+    border-bottom-color: rgba(0,0,0,.25);
+}
+
+.webui-popover-inverse.bottom-left > .arrow, .webui-popover-inverse.bottom-right > .arrow, .webui-popover-inverse.bottom > .arrow {
+    border-bottom-color: #333;
+}
+
+.webui-popover.bottom-left > .arrow:after, .webui-popover.bottom-right > .arrow:after, .webui-popover.bottom > .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-width: 0;
+    border-bottom-color: #28282a;
+}
+
+.webui-popover-inverse.bottom-left > .arrow:after, .webui-popover-inverse.bottom-right > .arrow:after, .webui-popover-inverse.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+.webui-popover.left > .arrow {
+    top: 50%;
+    right: -11px;
+    margin-top: -11px;
+    border-right-width: 0;
+    border-left-color: #999;
+    border-left-color: #323232;
+}
+
+.webui-popover-inverse.left > .arrow {
+    border-left-color: #333;
+}
+
+.webui-popover.left > .arrow:after {
+    right: 1px;
+    bottom: -10px;
+    content: " ";
+    border-right-width: 0;
+    border-left-color: #323232;
+}
+
+.webui-popover-inverse.left > .arrow:after {
+    border-left-color: #333;
+}
+
+
+.contentWrap {
+    /*overflow: scroll;*/
+    min-height: 200px;
+    height: 200px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #455445;
+    max-height: 300px;
+}
+
+    .contentWrap .leftTree {
+    }
+
+
+    .contentWrap .tree {
+        background-color: #323232 !important;
+        position: relative !important;
+        /*min-height: 350px !important;*/
+        padding-left: 0px;
+        min-width: 100%;
+        border: 0px solid;
+        margin: 0px !important;
+        /*min-height: 192px !important;*/
+    }
+
+    .contentWrap .leftTree .tree ul {
+        padding-left: 0px;
+        margin: 0px;
+    }
+
+        .contentWrap .leftTree .tree ul li {
+            margin: 0;
+            float: none;
+            padding: 0;
+        }
+
+            .contentWrap .leftTree .tree ul li .tree-label {
+                left: 48px !important;
+                color:#d6d6d6 !important;
+            }
+
+    .contentWrap .leftTree .tree span:hover {
+        background-color: transparent !important;
+    }
+
+    .contentWrap .buttonGroupTree {
+        position: absolute;
+        bottom: 0;
+        padding: 0px 0 24px 24px;
+        background: #272727;
+        width: 327px;
+        text-align: left;
+        border-top: 1px solid #454545;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .contentWrap.right .arrow {
+        border-right-color: #28282a;
+        /*top: 24px !important;*/
+    }
+
+        .contentWrap.right .arrow:after {
+            border-right-color: #28282a;
+        }
+
+.webui-popover-content header form {
+    margin: 0px !important;
+    padding-left: 17px;
+    border-bottom: 1px solid #454545;
+}
+
+.webui-popover-content footer {
+    margin-top: 14px;
+}
+
+.contentWrap .treecheckboxStyle {
+    margin-top: -4px;
+    height: 29px;
+    border-bottom: 1px solid #454545;
+}
+
+.contentWrap .tree-label, .schedule-name {
+    color: #bababa;
+    font-size: 14px;
+}
+
+.contentWrap .treenormal {
+    /*border-bottom:1px solid #454545;*/
+}
+
+    .contentWrap .treenormal:before {
+        border-left: 1px dotted #626262 !important;
+        z-index: 2;
+    }
+
+.contentWrap .expand i {
+    border-bottom: 1px solid #454545;
+}
+
+.contentWrap .tree-label, .schedule-name {
+    border-bottom: 1px solid #454545;
+}
+
+
+.contentWrap .treenormal:before {
+    border-left: 1px dotted #626262;
+    z-index: 2;
+}
+
+.contentWrap ul.tree li li:last-child::after, .popover ul.tree li li:last-child::after {
+    background: url("../images/stroke_45.png") no-repeat 24px bottom;
+}
+
+.contentWrap ul.tree li:last-child::after {
+    background: url("../images/stroke_45.png") no-repeat 24px bottom;
+}
+
+.contentWrap .leftTree .tree ul li .Item-State-selected {
+    color: #d3d3d3;
+    background: rgba(94, 94, 94, 0.5);
+}
+
+.contentWrap .leftTree .tree ul li .Item-State-hover {
+    color: #d3d3d3;
+    background: rgba(94, 94, 94, 0.5);
+}
+
+    .contentWrap .leftTree .tree ul li .Item-State-hover .tree-label, .Item-State-selected .tree-label {
+        color: #d3d3d3;
+    }
+
+
+
+
+.webui-popover-content .buttonGroupTree {
+    padding-left: 24px;
+}
+
+.webui-popover-content #searchBtn1 input:focus, .webui-popover-content #searchBtn2 input:focus {
+    margin-left: 0;
+    width: 220px;
+    color: #bababa;
+    padding: 8px 30px 8px 12px;
+    border: 1px solid #454545 !important;
+    background: #3b3b3b url(../images/icon_search.png) no-repeat right !important;
+    background-size: 15px !important;
+}
+
+
+.webui-popover-content .icon_general:hover, .webui-popover-content .icon_general_Hover, .webui-popover-content .icon_customer:hover, .webui-popover-content .icon_customer_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -310px -191px !important;
+}
+
+.webui-popover-content .icon_dealer:hover, .webui-popover-content .icon_dealer_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -70px -550px;
+}
+
+.webui-popover-content .icon_group:hover, .webui-popover-content .icon_group_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -310px -221px !important;
+}
+
+.webui-popover-content .icon_site:hover, .webui-popover-content .icon_site_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -312px -250px !important;
+}
+
+.webui-popover-content .tree.layoutrow {
+    height: 200px;
+}
+
+.contentWrap .treecheckboxStyle .treecustomcheckbox span {
+    background: url('../images/sprite_icons.png') no-repeat -612px -132px !important;
+}
+
+.contentWrap .treecheckboxStyle .treecustomcheckbox input:checked + span {
+    background: url('../images/sprite_icons.png') no-repeat -612px -192px !important;
+}
+
+.contentWrap .Item-State-hover .treecheckboxStyle .treecustomcheckbox span {
+    background: url('../images/sprite_icons.png') no-repeat -612px -162px !important;
+}
+
+.contentWrap .Item-State-checked {
+    background: rgba(94, 94, 94, 0.5) !important;
+}
+
+
+/* ALARM STYLE CHANGES FOR POPOVER START*/
+.alarmdoorpopover .contentWrap .content {
+    font-size: 14px;
+    font-weight: normal;
+    color: #d3d3d3;
+    padding: 24px;
+    /*width: 100%;*/
+}
+
+    .alarmdoorpopover .contentWrap .content h5 {
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+        max-width: 247px;
+    }
+
+alarmdoorpopover .popover-title {
+    background-color: #272727;
+    border-bottom: 1px solid #1d1d1d;
+    color: #d3d3d3;
+    font-size: 15px;
+    padding: 13px 22px 16px 21px;
+}
+
+/* ALARM STYLE CHANGES FOR POPOVER ENDS*/
+
+/*.contentWrap .tree::-webkit-scrollbar-thumb{
+  background-color: #454545;
+}*/
+
+.webui-popover-content ::-webkit-scrollbar-thumb {
+    background-color: #454545;
+}
+
+@-moz-document url-prefix() {
+
+    .contentWrap .treecheckboxStyle {
+        margin-left: 28px !important;
+        height: 33px;
+    }
+
+    .contentWrap .expand i {
+        margin-top: 0px !important;
+    }
+
+    .contentWrap .expand .treecheckboxStyle .treecustomcheckbox {
+        /*padding-top: 10px;*/
+        padding-left: 0px !important;
+    }
+
+        .contentWrap .expand .treecheckboxStyle .treecustomcheckbox span {
+            position: absolute;
+            height: 29px;
+            margin-top: -12px;
+        }
+
+    .contentWrap .leftTree .tree ul li .tree-label {
+        min-width: 200px;
+        color: #d6d6d6 !important;
+        padding-bottom: 15px;
+        vertical-align: top;
+        padding-left: 26px !important;
+    }
+
+    .treeProp .contentWrap .expand .treecheckboxStyle .treecustomcheckbox span{
+      margin-top: -15px !important;
+    }
+
+    .treeProp .expand .treecheckboxStyle{
+        height: 18px !important;
+    }
+
+    .contentWrap .leftTree ul.tree li ul li  ul li .tree-label{
+        padding-left: 28px !important;
+    }
+}
+
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {
+    .contentWrap .expand i {
+        height: 24px;
+        /*padding-bottom:0px !important;*/
+    }
+
+    .contentWrap .treecheckboxStyle {
+        height: 33px;
+    }
+
+    .contentWrap .expand .treecheckboxStyle .treecustomcheckbox {
+        margin-top: 2px !important;
+    }
+
+    .contentWrap .tree-label, .schedule-name {
+        padding-left: 4px;
+        padding-bottom: 11px !important;
+    }
+
+    .webui-popover-content .contentWrap .leftTree .tree ul li .Item-State-hover .tree-label {
+        color: #d3d3d3 !important;
+    }
+
+    .contentWrap .expand .treecheckboxStyle .treecustomcheckbox span{
+        margin-top:5px;
+    }
+}

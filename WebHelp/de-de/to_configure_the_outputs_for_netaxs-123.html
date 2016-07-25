@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>Hilfe</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Zum Konfigurieren der Ausgaben für NetAXS-123</h3>
+        <h4 class="subtitle">Zum Konfigurieren der Ausgangseinstellungen:</h4>
+        <ol>
+            <li>Im MPC Dashboard-Bereich auf den Reiter <strong>Erstellen & Bearbeiten</strong> klicken. Die Seite <strong>ERSTELLEN UND BEARBEITEN</strong> wird angezeigt.</li>
+			<li>Im linken Fensterbereich den Standort auswählen, anschließend das entsprechende Gerät, das dem Standort zugeordnet ist, klicken.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Hinweis:</h4>
+				<p>Bevor Sie die Geräteeinstellungen bearbeiten, stellen Sie sicher, dass Sie die Geräte im Cloud registrieren.</p>
+			</div>
+			<li>Im linken Fensterbereich auf das <i class="netaxs-icon"></i> Symbol, das dem NetAXS-123-Gerät entspricht klicken, um alle verfügbaren Türen anzuzeigen.</li>
+			<li>Auf die gewünschte Tür doppelklicken, um alle zugeordneten Ausgänge anzuzeigen. Die Seite <strong>Einstellungen</strong> wird angezeigt.</li>
+			<li>Die erforderlichen Daten in folgenden Feldern eingeben:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Feld</td>
+                    <td>Beschreibung</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Ausgabename
+                    </td>
+                    <td>
+                        Einen eindeutigen Namen eingeben, um die Türausgänge zu kennzeichnen.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Aktive Zeitzone</td>
+                    <td>
+                        Zwei Zeitpläne bestimmen:
+							<ul>
+								<li><strong>Unter Strom </strong>– stellt des Zeitfenster ein, in dem der Ausgang automatisch mit Strom versorgt wird.</li>
+								<li><strong>Sperre deaktivieren </strong>– stellt das Zeitfenster ein, in dem die Sperre, eine programmierte Interaktion zwischen ausgewählten Eingängen, Ausgängen und Gruppen deaktiviert ist. Während der ausgewählten Zeitzone ignoriert dieser Punkt alle Sperraktionen. Deaktiviert sie effektiv, damit sie keine reaktive Komponente während dieser Zeitzone darstellen.</li>
+							</ul>
+						
+						Außerhalb dieser Zeitzone reagiert dieser Punkt auf Sperren wie erwartet.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Verschließen / Ein- und Ausblenden außerhalb der Zeitzone deaktiviert die Impulszeit.
+					</td>
+                    <td>
+                        Blendet den Status der Ausgänge bei jeder Aktivierung zwischen „unter Strom“ und „nicht unter Strom“ ein und aus (Codeverwendung, Sperre oder manueller Impuls).
+                </tr>
+				<tr>
+                    <td>
+                        Sperrzeitzone blockieren
+
+					</td>
+                    <td>
+                        Ermöglicht die Blockierung der Sperrzeitzone oder der programmierten Interaktion zwischen zwei Punkten.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Impulszeit
+					</td>
+                    <td>
+                        Bestimmt die Dauer, in dem sich das Gerät im anormalen Status befindet. Zum Beispiel: Sie bestimmt, wie lange ein Signal ertönt oder ein Türschlag freigegeben bleibt.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Sperren
+					</td>
+                    <td>
+                        Ermöglicht die Deaktivierung der Sperre oder der programmierten Interaktion zwischen zwei Punkten.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li><strong>Speichern</strong> klicken.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Vorherige</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Geräteeinstellungen bearbeiten</a>
+	</p>	
+</div>		
+</body>
+</html>

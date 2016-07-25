@@ -1,0 +1,906 @@
+﻿.rulesContainer {
+    position: absolute;
+    top: 0;
+    bottom: 59px;
+}
+
+.ruleconfigContainer .secondHeader {
+    top: 62px;
+    height: 49px;
+    border-bottom: 1px solid #bababa;
+    -webkit-box-shadow: 0 3px 3px -3px #bababb;
+    -moz-box-shadow: 0 3px 3px -3px #bababb;
+    box-shadow: 0 3px 3px -3px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=3px, OffY=3px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    font-size: 16px;
+    background-color: #fff;
+    z-index: 100;
+    padding: 14px 24px 0 12px !important;
+}
+
+.ruleconfigContainer .ruleformcontrol ul {
+    padding: 0px;
+    margin: 0px !important;
+}
+
+    .ruleconfigContainer .ruleformcontrol ul li {
+        list-style-type: none;
+        padding-bottom: 14px;
+        float: left;
+    }
+
+.ruleconfigContainer .ruleformcontrol .colHeading {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #28282a;
+    padding-top: 18px;
+    display: block;
+    border-bottom: 1px solid #bababb;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    font-family: "Open Sans Semibold" !important;
+}
+
+.ruleconfigContainer .tested span {
+    padding-left: 10px;
+    color: #3bad49;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Open Sans Semibold" !important;
+    margin-right: 10px;
+}
+
+.rulesecondGrid {
+    padding-left: 24px;
+    padding-right: 24px !important;
+    left: 48.2% !important;
+    position: absolute;
+}
+
+.ruleconfigContainer .rulebody.layoutrow {
+    top: 62px;
+    bottom: 0;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.ruleconfigContainer .show-rules-list {
+    position: absolute;
+    right: 0px;
+    top: 27px;
+    height: 24px;
+    width: 24px;
+    padding: 0px;
+}
+
+.universal-rules-listContainer {
+    width: 365px;
+    padding: 0;
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    -webkit-box-shadow: 10px 10px 10px 15px #d7d7d7;
+    -moz-box-shadow: 10px 10px 10px 15px #d7d7d7;
+    box-shadow: 10px 10px 10px 15px #d7d7d7;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=10px, OffY=10px, Color='#d7d7d7', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    min-width: 365px;
+    /*padding: 2%;*/
+    top: 1px;
+    bottom: 0px;
+    z-index: 100;
+}
+
+    .universal-rules-listContainer .header {
+        color: #777777;
+        height: 39px;
+        width: 100%;
+        font-size: 24px;
+        padding-left: 14px;
+        padding-top: 16px;
+        text-align: left;
+        background-color: #ffffff;
+        top: 0;
+        height: 39px;
+    }
+
+.ruleconfigContainer .secondGrid {
+    left: 50%;
+    position: absolute;
+}
+
+/*label.on {
+    color: #4481C4;
+}
+
+label.show {
+    top: 20px !important;
+    opacity: 1 !important;
+    position: relative !important;
+    -webkit-animation: expand 5s;
+    transition: all 1s linear;
+    color: #6f7074;
+    opacity: 1 !important;
+    transition-property: opacity;
+    left: 3px;
+    margin: 0px 0px 0px 12px !important;
+    z-index: 2;
+}
+
+.show {
+    display: block !important;
+}
+
+option {
+    color: black;
+}
+
+.watermark {
+    color: #aaa;
+}
+
+.selectize-control.single .selectize-input {
+    height: 50px;
+    border-color: #D3D3D3 !important;
+    border-bottom: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-control.single .selectize-input.dropdown-active {
+        border-color: #D3D3D3 !important;
+        border-right: 1px solid #d3d3d3;
+    }
+
+.selectize-control {
+    width: 303px !important;
+}*/
+
+.ruleconfigContainer :-webkit-autofill {
+    color: #fff !important;
+}
+
+.ruleconfigContainer :focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+
+
+/*css text fields*/
+.customizedReportSelect {
+    width: 118px !important;
+}
+
+    .customizedReportSelect:hover, .customizedReportSelect:active, .customizedReportSelect:focus {
+        outline: 0;
+        outline: none;
+    }
+
+.timerPlug {
+    width: 236px;
+    padding-right: 27px;
+}
+
+.dividerline {
+    border-bottom: 1px solid #BABABB;
+    clear: both;
+    -webkit-box-shadow: -2px 0px 4px 2px #bababb;
+    -moz-box-shadow: -2px 0px 4px 2px #bababb;
+    box-shadow: -2px 0px 4px 2px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=0px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+}
+
+/* timepicker  fixes */
+.bootstrap-timepicker-widget {
+    padding: 24px;
+}
+
+    .bootstrap-timepicker-widget table {
+        border-spacing: 14px;
+        border-collapse: separate;
+    }
+
+/* addon fixes */
+.ruleconfigContainer .right-inner-addon > span {
+    width: 24px !important;
+    padding: 24px 12px 23px 12px !important;
+    cursor: pointer;
+}
+
+.ruleconfigContainer .right-inner-addon > span:hover{
+    background-color:#E6F3FB !important;
+}
+
+.ruleconfigContainer .right-inner-addon > span:hover .icon_list1 {
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    top: 15px;
+    left: 15px;
+}
+
+.ruleconfigContainer .icon-list {
+    left: 14px !important;
+    cursor: pointer;
+}
+
+.ruleconfigContainer .seperator {
+    padding-bottom: 20px;
+    margin-bottom: 16px;
+    padding-right: 0 !important;
+}
+
+.no-records{
+    padding:24px;
+}
+
+    .ruleconfigContainer .seperator .row {
+        position: relative;
+        margin-top: 16px;
+        height: 26px;
+    }
+
+    .ruleconfigContainer .seperator::before {
+        border-top: 1px dotted #d3d3d3;
+        /* height: 20px; */
+        top: 88px;
+        width: 100%;
+        content: '';
+        left: 0;
+        /* position: absolute; */
+        right: auto;
+        float: left;
+        /* margin-top: 9px; */
+        margin-right: 11px;
+    }
+
+.ruleconfigContainer .switch_options {
+    display: block;
+    margin-bottom: 10px;
+    /* background-color: #0889c4; */
+    /* width: 92px; */
+    /* border-radius: 4px; */
+    margin-bottom: 10px;
+    margin-left: 220px;
+    top: -17px;
+    /*position: relative;*/
+    position: absolute;
+}
+
+
+.ruleconfigContainer .totContainer {
+    background: #ccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    padding: 5px 10px 5px 2px;
+}
+
+.totContainer .and {
+    background: #fff;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.ruleconfigContainer .mpcform-grid {
+    width: 48%;
+    float: left;
+    min-height: 433px;
+    /*height: 92%;*/
+    padding-right: 0 !important;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .ruleconfigContainer .mpcform-grid {
+        min-height: inherit;
+    }
+}
+
+.ruleconfigContainer .border-left {
+    border-left: 1px solid #bababb;
+    margin-left: 24px;
+}
+
+.ruleconfigContainer .border-right {
+    /*border-right: 1px solid #bababb;*/
+    /*margin-right: 7px;*/
+    top: 0px !important;
+    bottom: 0px !important;
+    position: absolute;
+}
+
+.note {
+    bottom: 12px;
+    position: relative;
+}
+
+.note2 {
+    display: inline-block;
+    width: 60%;
+}
+
+.universal-rules-listContainer .rule_align {
+    padding-left: 30px;
+}
+
+.ruleconfigContainer .floatLeft {
+    padding-left: 24px;
+    text-align: left;
+}
+
+/*select {
+    width: 275px;
+    height: 50px !important;
+    border: 1px solid #cccccc !important;
+    border-left: 0 !important;
+    border-top: 0 !important;
+    color: #6F7074;
+    font-size: 16px;
+    padding: 16px 0 0 12px !important;
+}
+*/
+.ruleconfigContainer .oddContainer {
+    border-right: 1px solid #d3d3d3;
+    /* width: 10%; */
+    display: inline-block;
+    /* margin-right: 20px; */
+    position: relative;
+    height: 48px;
+    /*max-width: 18px;*/
+    min-width: 24px;
+}
+
+    .ruleconfigContainer .oddContainer:after {
+        position: absolute !important;
+        left: 0;
+        top: 50%;
+        height: 1px;
+        /* background: #c00; */
+        content: "";
+        width: 100%;
+        display: block;
+        border-top: 1px dotted #d3d3d3;
+    }
+
+.ruleconfigContainer .editButton {
+    top: 18px;
+    right: 24px;
+    position: absolute;
+}
+
+.ruleconfigContainer .grid-text1 {
+    font-size: 15px;
+    color: #454545;
+}
+
+.universal-rules-listContainer .rulelistItem .grid-text1 {
+    font-size: 15px;
+    color: #454545;
+    font-weight: normal;
+}
+
+.universal-rules-listContainer .rulelistItem .grid-text2 {
+    font-size: 12px;
+    color: #707070;
+    width: 93%;
+    word-break: break-all;
+}
+
+.ruleconfigContainer .grid-text2 b {
+    font-size: 12px;
+    color: #707070;
+    font-weight: normal;
+}
+
+.universal-rules-listContainer .RulesList {
+    position: relative;
+}
+
+    .universal-rules-listContainer .RulesList:hover {
+        -ms-overflow-y: scroll;
+        overflow-y: scroll;
+    }
+
+    .universal-rules-listContainer .RulesList ul {
+        padding-left: 0;
+        margin: 0;
+        border-color: transparent;
+        /*min-width: 365px;*/
+    }
+
+        .universal-rules-listContainer .RulesList ul li {
+            list-style-type: none;
+            padding-right: 0px;
+            cursor: pointer;
+        }
+
+        .universal-rules-listContainer .RulesList ul li {
+            font-weight: normal;
+            color: #454545;
+        }
+
+            .universal-rules-listContainer .RulesList ul li:hover {
+                background-color: #e6f3fb !important;
+            }
+
+.universal-rules-listContainer .itemSelected {
+    background-color: #e6f3fb !important;
+}
+
+.universal-rules-listContainer .itemNormal {
+    background-color: #fff !important;
+}
+
+.universal-rules-listContainer .rulelistItem {
+    border-bottom: 1px solid #d5d5d5;
+    padding-left: 24px;
+}
+
+.RulesList .leftPaneheading {
+    border-bottom: 1px solid #bababb;
+    padding-right: 0;
+    /*padding-bottom: 12px;	*/
+}
+
+    .RulesList .leftPaneheading span {
+        /*padding-left: 24px;*/
+    }
+
+        .RulesList .leftPaneheading span .pull-right {
+            font-size: 12px;
+            color: #9d9d9d;
+        }
+
+.online {
+    width: 10px;
+    height: 10px;
+    background-color: #18a350;
+    margin-right: 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.txtFields {
+    padding: 10px 9px 9px 0px;
+}
+
+.RulesList a {
+    text-decoration: none;
+}
+
+.bottomSpace {
+    padding-bottom: 3px;
+}
+
+.rule-status {
+    float: right !important;
+}
+
+.ruleStatusfailed {
+    color: #e33e38;
+}
+
+.ruleStatusactive {
+    color: #3dad49;
+}
+
+.rule-date {
+    float: right !important;
+}
+
+.rules-checkbox {
+    position: relative;
+    /* width: auto; */
+    top: 22px !important;
+    /* top: 0px !important; */
+    padding-left: 20px;
+    display: none;
+    float: left;
+}
+
+#tt {
+    display: none;
+}
+
+    #tt li {
+        list-style: none;
+        height: 20px !important;
+        width: 50px;
+        padding: 5px;
+    }
+
+.remove-button {
+    width: 47px;
+    height: 24px;
+    position: relative;
+    left: 22px;
+    display: inline-block;
+}
+
+    .remove-button:hover {
+        background: transparent !important;
+        cursor:pointer;
+    }
+
+.rulesControls {
+    display: none;
+    bottom: 44px;
+    position: absolute;
+    background-color: #f5f5f5;
+    width: 26%;
+    border: 1px Solid #bababb;
+    position: fixed;
+    right: 0;
+    -webkit-animation: movefromtopbottom 200ms linear;
+    -moz-animation: movefromtopbottom 200ms linear;
+    -ms-animation: movefromtopbottom 200ms linear;
+    animation: movefromtopbottom 200ms linear;
+    z-index: 100;
+}
+
+    .rulesControls li {
+        float: left;
+        min-width: 80px;
+        list-style-type: none;
+        line-height: 30px;
+        padding: 5%;
+    }
+
+@-webkit-keyframes moveFromTop {
+    from {
+        -webkit-transform: translateY(-20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform: translateY(-20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -moz-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+
+@-ms-keyframes moveFromTop {
+    from {
+        -ms-transform: translateY(-20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -ms-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+/* from bottom to top */
+@-webkit-keyframes moveFromTopBottom {
+    from {
+        -webkit-transform: translateY(20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+
+@-moz-keyframes moveFromTopBottom {
+    from {
+        -moz-transform: translateY(20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -moz-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+
+@-ms-keyframes moveFromTopBottom {
+    from {
+        -ms-transform: translateY(20%);
+        background: transparent !important;
+        opacity: 0;
+    }
+
+    to {
+        -ms-transform: translateY(0%);
+        opacity: 0.7;
+    }
+}
+
+.ruleSearchContainer {
+    padding: 0;
+    margin: 0px;
+}
+
+    .ruleSearchContainer input[type=search] {
+    }
+
+        .ruleSearchContainer input[type=search]:hover {
+            min-width: 25%;
+            width: 90%;
+            background-color: #f5f5f5;
+        }
+
+        .ruleSearchContainer input[type=search]:focus {
+            min-width: 25%;
+            width: 90%;
+            background-color: #fff !important;
+        }
+
+.ruleStatusContainer {
+    position: relative;
+    float: right;
+    right: 0px;
+    top: -25px;
+    width: 120px;
+}
+
+.ruleconfigContainer.layoutrow {
+    bottom: 0;
+    top: 0;
+}
+
+.rulesheader.layoutrow {
+    /*height: 52px;*/
+    height: 47px;
+    /*height: 57px;*/
+    top: 0;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.rulelistfirstheader.layoutrow {
+    height: 59px;
+    top: 0;
+    border-bottom: 1px solid #BABABB;
+    -webkit-box-shadow: -2px 0 6px 0 #bababb;
+    -moz-box-shadow: -2px 0 6px 0 #bababb;
+    box-shadow: -2px 0 6px 0 #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=6px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+}
+
+.rulelistsecondheader.layoutrow {
+    /*  height: 30px; */
+    top: 61px;
+    background: #f5f5f5;
+    padding: 9px 10px;
+    border-bottom: 1px solid #BABABB;
+    -webkit-box-shadow: -2px 0 6px 0 #bababb;
+    -moz-box-shadow: -2px 0 6px 0 #bababb;
+    box-shadow: -2px 0 6px 0 #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=6px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+}
+
+    .rulelistsecondheader.layoutrow:hover {
+        height: 49px;
+    }
+
+.rulelistbody.layoutrow {
+    top: 129px;
+    bottom: 0px;
+}
+
+.rulesettingsLastListyle {
+    position: relative;
+    width: 100%;
+    top: 20px;
+}
+
+.rulecreatebutton {
+    position: relative !important;
+    left: -11px;
+    top: -15px;
+}
+
+.cursor_Pointer {
+    cursor: pointer;
+}
+
+#rulesettingListAction .right-inner-addon input[type="text"] {
+    width: 187px !important;
+}
+
+.ruleconfigContainer .right-inner-addon input[type="text"] {
+    width: 187px !important;
+}
+
+#ruleeditbody .field {
+    width: 250px !important;
+}
+
+#ruleeditbody .right-inner-addon input[type="text"] {
+    width: 50% !important;
+}
+
+#ruleeditbody .field select {
+    width: 95% !important;
+    -webkit-appearance: carat;
+}
+
+.ruleheader {
+    font-size: 22px;
+    color: #6f7074;
+    margin-left: 40%;
+}
+
+.rulesettingList {
+}
+
+    .rulesettingList .rslistItem {
+        width: 100%;
+    }
+
+.rulesettingListitem .rslistsubitem {
+    width: 50%;
+}
+
+.switch_viewStyle {
+    background: #0889c4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    font-size: 12px;
+    padding: 3px;
+    color: #fff;
+    position: relative;
+    left: 42%;
+    top: -12px;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.show-rules-list + .tooltip {
+    right: 0px;
+    left: auto !important;
+    width: auto;
+    top: -2px !important;
+    opacity: 1;
+    font-size: 12px !important;
+    min-width: 78px;
+    min-width: 100px;
+    z-index: 9999;
+}
+
+.formControl-checkbox input:checked + span.rule-alarm-span {
+    background: url("../images/icons/checkBox_press.png");
+    background-repeat: no-repeat;
+}
+
+.rule-alarm-span {
+    width: 215px !important;
+    display: block !important;
+    padding-top: 0 !important;
+}
+
+.rule-alarm-div {
+    right: 0px;
+    position: absolute;
+    bottom: 37px;
+    width: 270px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .rule-alarm-div {
+        right: -95px;
+    }
+}
+
+/*Rule Limit Dialog*/
+#ruleLimitDialog {
+    width: 359px;
+    left: 57%;
+}
+
+    #ruleLimitDialog .ruleLimitText {
+        font-size: 15px;
+        padding-bottom: 32px;
+    }
+
+    #ruleLimitDialog .modal-footer {
+        border-top: 1px solid #bababa;
+    }
+
+        #ruleLimitDialog .modal-footer button {
+            margin-top: 14px;
+        }
+
+/*Rule Limit Dialog*/
+
+/*Time Condition*/
+.timeConditionWithin {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+}
+
+#ruleeditbody .field.timeConditionField {
+    width: 100px !important;
+}
+
+#timeInSec {
+    width: 70%;
+}
+
+#timeInMin {
+    width: 70%;
+}
+/*Time Condition*/
+
+@media print {
+    .universal-rules-listContainer {
+        box-shadow: none !important;
+        border-left: 1px solid #d5d5d5;
+    }
+
+    .rulelistfirstheader.layoutrow {
+        box-shadow: none !important;
+        border-left: 1px solid #d5d5d5;
+    }
+
+    .rulelistsecondheader.layoutrow {
+        box-shadow: none !important;
+        border-left: 1px solid #d5d5d5;
+    }
+}
+
+
+.ruleconfigContainer input[readonly], .ruleconfigContainer select[readonly] {
+    color: #0889C5 !important;
+}
+
+.rulesdivider-line {
+    border-right: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-width : 1824px) {
+    .universal-rules-listContainer .leftPaneheading {
+        min-width: 100%;
+    }
+
+    .universal-rules-listContainer .RulesList ul {
+        min-width: 100%;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    #ruleeditbody .field {
+        width: 190px !important;
+    }
+}
+
+#TIMECONDITIONSETTINGS_FOR_IFTHIS .ui-spinner {
+    width: 104px;
+}
+
+#ruleeditbody .field .floatLblDn {
+    max-width: 174px;
+    overflow: hidden;
+    height: 19px;
+    white-space: nowrap;
+}

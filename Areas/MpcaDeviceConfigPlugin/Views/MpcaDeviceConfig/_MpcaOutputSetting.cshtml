@@ -1,0 +1,134 @@
+﻿
+ @*<link href="~/Content/MpcaOutputConfigStyles/MpcaOutputConfig.css" rel="stylesheet" />*@
+@*@{#if DEBUG}
+    <link href="~/Content/MpcaOutputConfigStyles/MpcaOutputConfig.css" rel="stylesheet" />
+@{#else}
+    @Styles.Render("~/Content/MpcaDeviceConfigPlugincss3");
+@{#endif}*@
+<script id="vmdscript1" type="text/html">
+    <div id="VMDtemplate1" class="selectVMDContainer" data-bind="with:$data.VMDmodel">
+        <ul class="scroll-y" data-bind="foreach: $data.Cameras">
+            <li data-bind="with:$data">
+                <label class="formControl-checkbox">
+                    <input class="checkbox" type="checkbox" data-bind="checked: $data.IsEnabled">
+                    <b></b>
+                </label>
+                <legand data-bind="text: $data.Name">
+                </legand>
+                <span class="VMDDivider"></span>
+            </li>
+        </ul>
+        <div class="VMDDoneBtn">
+            <button class="primary-button" data-bind="click:$data.doVMDSettingDone">@Resources.mpcaCam_mtn_done</button>
+        </div>
+    </div>
+</script>
+
+
+<script id="triggerscript1" type="text/html">
+    <div id="triggertemplate1" class="selectTriggerContainer" data-bind="with:$data.TriggerModel">
+        <ul class="scroll-y" data-bind="foreach: $data.Triggers">
+            <li data-bind="with:$data">
+                <label class="formControl-checkbox">
+                    <input class="checkbox" type="checkbox" data-bind="checked: $data.IsEnabled">
+                    <b></b>
+                </label>
+                <legand data-bind="text: $data.Name">
+                </legand>
+                <span class="triggerDivider"></span>
+            </li>
+        </ul>
+        <div class="triggerDoneBtn">
+            <button class="primary-button" data-bind="click:$data.doTriggerSettingDone">@Resources.mpcaCam_mtn_done</button>
+        </div>
+    </div>
+</script>
+<form id="mpcaoutputsetting" class="formcontrol" data-validationkey="output">
+    <div class="mpcappliance mpcform" id="outputSettings">
+        <div id="outputevntrecwrapper">
+            <table class="table mpcaOutput-table">
+                <thead>
+                    <tr>
+                        <th>@Resources.mpcaoupt_outputs</th>
+                        <th>@Resources.mpcainp_enable</th>
+                        <th>@Resources.mpcainp_level</th>
+                        <th>@Resources.mpcaoupt_duration</th>
+                        <th>@Resources.mpcaoupt_trigger</th>
+                        <th>@Resources.mpcaoupt_vmd</th>
+                        <th>@Resources.mpcaoupt_test_oupt</th>
+                    </tr>
+                </thead>
+                <tbody data-bind=foreach:$data.Outputsettings>
+                    <tr>
+                        <td>
+                            <span data-bind="text:$data.LabelName"></span>
+                            <span><input type="text" name="output_Name" class="outputNameField" data-bind="value:$data.Name"></span>
+                            <div data-bind="visible:$data.IsError" class="mpcainputError">
+                                <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                                <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.Errormessage"></span></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="switch_options switch_option_green">
+                                <span class="switch_disable redColor">@Resources.mpcainp_no</span>
+                                <span class="switch_enable">@Resources.mpcainp_yes</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.enabledisableval, fireInputChange: true" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="switch_options switch_option_no_nc">
+                                <span class="switch_disable">@Resources.mpcainp_nrm_opn</span>
+                                <span class="switch_enable">@Resources.mpcainp_nrm_cls</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.NCNOval, fireInputChange: true" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="field select-field">
+                                <select id="mpcadurationmodel" name="mpcadurationmodel" tabindex="-1" data-bind="options: $data.Durations, optionsText: 'Value', value: $data.SelectedDuration"></select>
+                            </div>
+                        </td>
+                        <td class="triggerPopoverStyle">
+                            <span class="mpcaTableButton" data-bind="text:TriggerNum,click:$data.showTriggerpopover"></span>
+                        </td>
+                        <td class="VMDPopoverStyle">
+                            <span class="mpcaTableButton" data-bind="text:VMDnum,click:$data.showVMDpopover"></span>
+                        </td>
+                        <td>
+                            <div id="ActivateDeactivebtn" class="switch_options switch_option_green">
+                                <span class="switch_disable redColor">@Resources.mpcainp_no</span>
+                                <span class="switch_enable">@Resources.mpcainp_yes</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.Activatedeactivateval, fireInputChange: true" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttonGroup">
+                <button class="primary-button" data-bind="click:$data.dosavesettings">@Resources.Save</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<input id="mpcaoutputsaveconfigurl" type="hidden" data-url='@Url.Action("UpdateOutput", "MpcaDeviceConfig")' />
+<input id="mpcaOutputconfigurl" type="hidden" data-url='@Url.Action("GetoutputDetails", "MpcaDeviceConfig")' />
+<input id="mpcaCameraconfigurl" type="hidden" data-url='@Url.Action("GetVMDCameras", "MpcaDeviceConfig")' />
+<input id="mpcaInputconfigurl" type="hidden" data-url='@Url.Action("GetInputsInfo", "MpcaDeviceConfig")' />
+<input id="activateOutputurl" type="hidden" data-url='@Url.Action("ActivateOutput", "MpcaDeviceConfig")' />
+<input id="mpcagetInputstatusurlurl" type="hidden" data-url='@Url.Action("GetInputstatus", "MpcaDeviceConfig")' />
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript4")
+@*<script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.common.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.datacontext.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.outputsettingmodel.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.uicontext.js"></script>
+<script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.eventreciever.js"></script>*@
+@*@{#if DEBUG}
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.common.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.datacontext.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.outputsettingmodel.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.uicontext.js"></script>
+    <script src="~/Scripts/MpcaOutputSettingConfig/mpcaoutput.eventreciever.js"></script>
+@{#else}
+    @Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript4")
+@{#endif}*@

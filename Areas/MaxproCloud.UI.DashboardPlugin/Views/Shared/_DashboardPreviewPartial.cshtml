@@ -1,0 +1,20 @@
+﻿<div id="previewDashboard" class="mpcmodel modal hide fade chart-modal" role="dialog">
+    <form id="previewDashboardForm" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+        <header class="row">
+            <span>@Resources.Report_Output_Preview</span>
+        </header>
+        <section class="row chart-preview">
+            <!-- ko if: !!$data.message() -->
+            <div class="no-preview-data" data-bind="text: $data.message"></div>
+            <!-- /ko -->
+            <!-- ko ifnot: !!$data.message() -->
+            <div data-bind="highChart: $data.model.Chart, highChartEvents: { legendClick: onLegendClick }"></div>
+            <!-- /ko -->
+        </section>
+        <footer>
+            <div class="modal-footer">
+                <button class="secondary-button" id="btnCloseDashboardPreview" data-bind="click: $data.closePreview">@Resources.Close</button>
+            </div>
+        </footer>
+    </form>
+</div>

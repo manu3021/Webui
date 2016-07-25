@@ -1,0 +1,125 @@
+﻿
+ .deviceconfigcontainer.col {
+    left: 0;
+    right: 0;
+}
+
+ .devicelistcontainer.col {
+    width: 300px;
+    left: 0;
+    top: 10px;
+}
+
+ .devicedetailcontainer.col {
+    left: 300px;
+    right: 0;
+}
+
+ .devicecreatebutton.row {
+    height: 40px;
+}
+
+ .devicecreatebuttonstyle {
+    -moz-transition: all ease-in 0.2s;
+    -o-transition: all ease-in 0.2s;
+    -webkit-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
+    max-width: 300px !important;
+    width: 280px !important;
+    background-color: #f2f2f2 !important;
+    color: #4d4d4d !important;
+    text-align: center !important;
+    height: 40px !important;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+ .devicecreatebuttonstyle:hover {
+        background-color: rgba(128, 128, 128,0.3);
+        color: white !important;
+    }
+
+    .devicecreatebuttonstyle:active {
+        background-color: #f2f2f2 !important;
+        color: #4d4d4d !important;
+    }
+
+.devicelist.row {
+    top: 40px;
+    bottom: 0;
+}
+
+.deviceconfigerror {
+    color: red;
+    white-space: normal;
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+    font-size: large;
+}
+
+.deviceliststyle {
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+    .deviceliststyle li {
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        color: #4d4d4d;
+        text-align: left;
+        padding: 4px;
+        border: 1px solid #f2f2f2;
+        cursor: pointer;
+        width: 100%;
+        height: 50px;
+        font-size: 0.8em;
+    }
+
+        .deviceliststyle li > .deviceicon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-position: center;
+            background-image: url(images/usericon.png);
+            background-color: #4d4d4d;
+            background-repeat: no-repeat;
+        }
+
+        .deviceliststyle li:hover {
+            border-right: 1px solid transparent;
+            background-color: #F2F2F2;
+        }
+
+        .deviceliststyle li:active {
+            border-right: 1px solid transparent;
+            background-color: #F2F2F2;
+        }
+
+.devicelistitemselected {
+    border-right: 1px solid transparent;
+    background-color: #F2F2F2;
+    color: #4d4d4d;
+    font-size: 1.2em;
+}
+
+.deviceliststyle li > .headerdetail {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+}
+
+ .devicedetailform.row {
+    top: 0;
+    bottom: 60px;
+}

@@ -1,0 +1,123 @@
+﻿<div id="maincontainer" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+    <div class="dashbdBody">
+        <div id="dashboardcontainer">
+            <aside id="asidebar-dashboard">
+                <ul>
+                    <li>
+                        <header><b class="icon_dashboard_Caution"></b></header>
+                        <span>@Resources.lbl_Cautions</span>
+                        <footer>64</footer>
+                    </li>
+                    <li>
+                        <header><b class="icon_dashboard_Clips"></b></header>
+                        <span>@Resources.lbl_No_of_Clips</span>
+                        <footer>28</footer>
+                    </li>
+                    <li>
+                        <header><b class="icon_dashboard_Storage"></b></header>
+                        <span>@Resources.lbl_storage</span>
+                        <footer>48<sup>%</sup></footer>
+                    </li>
+                    <li>
+                        <header><b class="icon_dashboard_Database"></b></header>
+                        <span>@Resources.lbl_database</span>
+                        <footer>64<sup>%</sup></footer>
+                    </li>
+                </ul>
+            </aside>            
+            <div id="ca-container" class="ca-container" data-bind="contentcarousel: $data.dashboards, carouselTemplate: 'chart-template', carouselEvents:{onRenderComplete: renderCompleted}">
+
+                <div class="ca-nav">
+                    @*<span class="ca-nav-prev" data-bind="click: $data.loadPreviousDashboard">
+                        <span class="icon_leftarrow"></span>
+                    </span>
+                    <span class="ca-nav-next" data-bind="click: $data.loadNextDashboard">
+                        <span class="icon_rightarrow"></span>
+                    </span>*@  
+                    <!-- ko if: !!$data.dashboards() -->  
+                    <ol class="carousel-indicators" data-bind="template: { name: 'carousel-indicator', foreach: $data.pages }"></ol>
+                    
+                        <script type="text/html" id="carousel-indicator"> 
+                            <li data-bind="text: $index, attr: { title: name }, click: $parent.loadByPageDashboard, css: 'item' + ($index() == $parent.currentPage() ? ' active' : '')"></li>   
+                                                                                                                     
+                        </script>
+                    <!-- /ko -->  
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row" id="dsbdfooter">
+        <div class="footercontent">
+            <ul id="footermenu" data-bind="foreach: $data.footer.menulist">
+                <li class="card-item" data-bind="click: $parent.footer.onMenuSelected">
+                    <div>
+                        <header class="count">
+                            <span data-bind="attr: { 'class': $data.icon }" />
+                        </header>
+                        <p data-bind="text: $data.title"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="logoInsight"></div>
+    </div>
+    <script id="chart-template" type="text/html">
+        <!-- ko if: $data.ItemMode() == 0 -->
+        <div class="ca-item-main">
+            <div class="ca-header">
+                <header class="ca-headertext">
+                    <span class="pull-left ca-name" data-bind="text: $data.model.Name"></span>
+                    <span class="last-updated-text" data-bind="text:$data.model.LastUpdatedTimeText"></span>
+                    <a class="dashboard-refresh" data-bind="click:$data.refreshDashboard" href="#">@Resources.Refresh</a>
+                    <span class="dropdown dashbdMoreOptions dropdown-toggle pull-right" title="@Resources.lbl_more_options" data-toggle="dropdown">
+                        <b class="icon_dashboard_EditHeader"></b>
+                    </span>
+                    <ul class="dropdown-menu dashbdMoreMenu pull-right">
+                        <li data-bind="click: $data.editDashboard,visible:$data.model.IsDefault() == 0">
+                            <b class="icon_dashboard_Edit"></b>
+                            <span class="dashbdtxt">@Resources.Edit</span>
+                            <span class="dashbdDivider"></span>
+                        </li>
+                        <li data-bind="click:$data.createDashboard">
+                            <b class="icon_dashboard_CreateNew"></b>
+                            <span class="dashbdtxt">@Resources.lbl_dashboard_create_new</span>
+                            <span class="dashbdDivider"></span>
+                        </li>
+                        <li data-bind="click:$parent.deleteDashboard,visible:$data.model.IsDefault() == 0">
+                            <b class="icon_dashboard_Delete"></b>
+                            <span class="dashbdtxt">@Resources.Delete</span>
+                            <span class="dashbdDivider"></span>
+                        </li>
+                    </ul>
+                    <div class="dashboard-breadcrumb" data-bind="breadCrumb: $data.drillHistory, breadCrumbOptions: {itemText: 'Name', itemVisible: 'IsEntityDrill', homeText: '@Resources.Dashboard_Home'}, breadCrumbEvents: {click: $data.drillUpTo}"></div>
+                </header>
+            </div>
+            <!-- ko if: !!$data.message() -->
+            <div class="ca-message" data-bind="text: $data.message"></div>
+            <!-- /ko -->
+            <!-- ko ifnot: !!$data.message() -->
+            <div class="ca-body" data-bind="highChart: $data.model.Chart, highChartEvents: { legendClick: onLegendClick, pointClick: onPointClick, drillUp: onDrillUp }"></div>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+        <!-- ko if: $data.ItemMode() == 1 -->
+        <div class="ca-item-main">
+            <div class="ca-body ca-item-subBody">
+                <div class="dashright-content lastPane">
+                    <section class="add-more">
+                        <div>
+                            <a data-bind="click: $data.createDashboard">
+                                <span class="icon_addDashbd"></span>
+                                <span class="txt_addDashbd"> @Resources.lbl_dashboard_create_new</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+
+    </script>
+</div>

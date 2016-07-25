@@ -1,0 +1,147 @@
+﻿<!--<link href="~/Content/Viewerstyles/jquery-ui.css" rel="stylesheet" />-->
+<!--<link href="~/Content/Styles/custom-bootstrap-datetimepicker.css" rel="stylesheet" />-->
+@*<link href="~/Content/TreeviewPlugin/treesprite.css" rel="stylesheet" />
+    <link href="~/Content/TreeviewPlugin/treeviewcontrol.css" rel="stylesheet" />*@
+@*<link rel="stylesheet" type="text/css" href="~/Content/Viewerstyles/viewerlayout.css">*@
+@*@Styles.Render("~/Content/treeview/css1")*@
+
+<script type="text/html" id="savesalvo">
+    <form id="salvoSaveContent1" data-validationkey="salvoSaveContent1">
+    <div  class="salvoSaveContent" >
+        <div class="field">
+            <label for="salvoname" class="floatLblDn">@Resources.Viewer_SalvoNameText</label>
+            <input name="salvoname" id="salvoname"  type="text" class="floatTxt myStyle" data-bind="value:$data.Name">
+          @*  <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror},visible:$data.IsError"></b></span>
+            <div class="showerror dropdown-menu" ><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.Errormessage"></span></div>*@
+        </div>
+        <div>
+            <button class="primary-button" data-bind="click:$data.SaveSalvoInfo">@Resources.Viewer_SaveText</button>
+            <button class="secondary-button" data-bind="click:$data.Cancelsalvo">@Resources.Viewer_CancelText</button>
+        </div>
+    </div>
+      </form>
+</script>
+
+
+
+<script type="text/html" id="clipsearchdatatemplate">
+    <li class="singleclipresultitem">
+        <div id="clipSearchtemplate1">
+            <span class="clipResultsStyle" data-bind="text:ClipNameDisplay"></span>
+            <span class="onsite_oncloudStatus" data-bind="text:cloudStatusDisplay"></span>
+            <span class="clipExportIcon" data-toggle="modal" role="button" data-bind="click:$data.getclipExport"></span>
+            <span class="clipResultsDurationStyle" data-bind="text:EventNameDisplay"></span>
+            <span class="clipResultsDurationStyle" data-bind="text:DurationDisplay"></span>
+            <span class="clipResultsDurationStyle" data-bind="text:StartTimeDisplay"></span>
+        </div>
+    </li>
+</script>
+
+
+
+<script id="clipSearchtemplate" type="text/html">
+    <div id="clpsrch" class='clipSearch'>
+        <header>
+            <div id="title">
+                <h3 class="popover-title" data-bind="text:$data.CameraName" />
+            </div>
+            <div id="cliplist" class="clipBodyHeader">
+                <span class="clipBodyHeaderContent">@Resources.lbl_Clip @Resources.Search @Resources.Filter<i class="icon-filter"></i></span>
+            </div>
+        </header>
+        <div id="cSearchbody" class="csearchresultbody">
+            <ul id="Clipresultsection" class='clipResults' data-bind="template:{name:'clipsearchdatatemplate', foreach:$data.clipResults}">
+                <li data-bind="attr:{'id':id}">
+                    <span id="loadingtxt" class="loadingStyle">@Resources.Calendar_Loading</span>
+                </li>
+            </ul>
+        </div>
+        @Html.Partial("_ClipSearchFilterPartial")
+    </div>
+</script>
+
+
+
+<div id="viewermainpage" class="row viewerWrapper">
+    <div id="main" class="viewer-header-menu-two">
+        <nav id="header-menu-box" class="navbar navbar-default row" role="navigation">
+            <ul class="nav navbar-nav pull-right" id="viewerheader-two-rightmenu">
+                <li class="dropdown">
+                    <span class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false">@Resources.View <b class="down-arrow"></b></span>
+                    <ul class="dropdown-menu" id="viewer-menu-view">
+                        <li class="header">@Resources.Choose_grid</li>
+                        <li>
+                            <div class="gridselector">
+                                <div id="grid1" class="grid1 salvoOption"></div>
+                                <div id="grid4" class="grid4 salvoOption"></div>
+                                <div id="grid6" class="grid6 salvoOption"></div>
+                                <div id="grid8" class="grid8 salvoOption"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span id="blob-show-universal-list" data-position="left" title data-original-title="@Resources.Viewer_ShowList"><b class="icon-showUniveralList"></b></span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    @Html.Partial("_SalvoPanelPartial")
+    <div class="viewerFooter row" id="viewerfooter">
+        <ul data-bind="foreach: Footermenu">
+            <li id="footerlist" class="viewerfooterstrip" data-bind="attr: {'id':id}, click:footermenuclick,visible:shouldShowfooter">
+                <span class="viewerClipMenu"></span>
+                <span data-bind="attr: { 'class' : iconclass}"></span>
+                <div class="viewerfootertext" data-bind="text:title"></div>
+            </li>
+        </ul>
+    </div>
+
+    @Html.Partial("_UniversalListPartial")
+    @Html.Partial("_Clipexportpartial")
+
+    <input id="Updatesalvourl" type="hidden" data-url='@Url.Action("Updatesalvo", "Viewer")' />
+    <input id="Createsalvourl" type="hidden" data-url='@Url.Action("Createsalvo", "Viewer")' />
+    <input id="Deletesalvourl" type="hidden" data-url='@Url.Action("Deletesalvo", "Viewer")' />
+    <input id="getsalvoTreeviewItemurl" type="hidden" data-url='@Url.Action("GetSalvoTreeviewItem", "Viewer")' />
+    <input id="getLiveUrl" type="hidden" data-url='@Url.Action("GetLiveStreamUrl", "Viewer")' />
+    <input id="getTreeviewItemurl" type="hidden" data-url='@Url.Action("GetTreeviewItem", "Viewer")' />
+    <input id="getsalvoTreeviewItemurl" type="hidden" data-url='@Url.Action("GetSalvoTreeviewItem", "Viewer")' />
+    <input id="getTreeviewLiveUrl" type="hidden" data-url='@Url.Action("GetLiveStreamUrl", "Viewer")' />
+    <input id="SendstopRequestUrl" type="hidden" data-url='@Url.Action("SendStopRequest", "Viewer")' />
+    <input type="hidden" id="getAllCamerawithStatusurl" data-url='@Url.Action("GetAllCamerawithStatusbyRecorderId", "treeview")' />
+    <input type="hidden" id="getCameraClipSearch" data-url='@Url.Action("GetClipSearchResultbyCameraId", "Viewer")' />
+    <input type="hidden" id="getplayBackStream" data-url='@Url.Action("GetplayBackStream", "Viewer")' />
+    <input type="hidden" id="playbackStopRequest" data-url='@Url.Action("PlaybackStopRequest", "Viewer")' />
+    <input id="getViewerurl" type="hidden" data-url='@Url.Action("", "Viewer")' />
+    <input id="getdoordetailurl" type="hidden" data-url='@Url.Action("GetDoorDetails", "Viewer")' />
+    <input type="hidden" id="getclipexporturl" data-url='@Url.Action("GetClipexportStream", "Viewer")' />
+    <input type="hidden" id="getexportpercentageurl" data-url='@Url.Action("GetClipexportpercentage", "Viewer")' />
+    <input type="hidden" id="Performaction" data-url='@Url.Action("Performaction", "Viewer")' />
+    <input type="hidden" id="Cancelclipexporturl" data-url='@Url.Action("Cancelclipexport", "Viewer")' />
+    <input type="hidden" id="SendRecordingStreamurl" data-url='@Url.Action("SendAllOROneRecordingStream", "Viewer")' />
+    <input type="hidden" id="getdeletesalvourl" data-url='@Url.Action("DeleteSalvo", "Viewer")' />
+    <input type="hidden" id="PostPlaybackSeekDataurl" data-url='@Url.Action("PostPlaybackSeekData", "Viewer")' />
+
+</div>
+
+
+@*@Scripts.Render(
+"~/Scripts/mpc.widget.core.js",
+"~/Scripts/mpc.treeview.js",
+"~/Scripts/Viewer/bootstrap-timepicker.min.js",
+"~/Scripts/Viewer/viewer.common.js",
+"~/Scripts/Viewer/viewer.datacontext.js",
+    "~/Scripts/Viewer/viewer.universial.js",
+    "~/Scripts/Viewer/jQAllRangeSliders-min",
+    "~/Scripts/Viewer/viewer.salvo.js",
+"~/Scripts/Viewer/viewer.clipsearch.js",
+"~/Scripts/Viewer/viewer.uicontext.js",
+"~/Scripts/Viewer/TreeviewUniversial.js",
+"~/Scripts/Viewer/viewer.eventreciever.js",
+    "~/Scripts/Viewer/viewerBody.js","~/Scripts/Viewer/SalvoTree.js",
+    "~/Scripts/Viewer/viewer.salvomanagement.js"
+    )*@
+@Scripts.Render("~/bundles/Viewerpluginscript0")
+@Scripts.Render("~/bundles/Viewerpluginscript1")
+

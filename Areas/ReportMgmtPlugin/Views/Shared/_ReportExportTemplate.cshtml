@@ -1,0 +1,215 @@
+﻿@using ReportMgmtPlugin.Common
+
+<html>
+<head>
+    <title></title>
+    <style>
+        .title {
+            width: 100%;
+            font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .last-row {
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: #BBBBBB;
+        }
+
+        .title-header {
+            font-size: 32px;
+            color: #333333;
+        }
+
+        .sub-title {
+            padding: 5px;
+            display: block;
+        }
+
+        .sub-title-header {
+            font-weight: bold;
+        }
+
+        .sub-group {
+            color: #555555;
+            width: 100%;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: #BBBBBB;
+            font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        th.table-header {
+            color: #333333;
+            font-weight: normal;
+        }
+
+        .table-header {
+            mso-number-format: "\@@";
+        }
+
+        .sub-group-heading {
+            font-size: 22px;
+        }
+
+        .data-grid {
+            width: 100%;
+            font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+            mso-default-height: 24pt;
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 50px;
+        }
+
+        .data-grid-row-header {
+            color: #333333;
+            border-style: solid;
+            border-color: #BBBBBB;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-right-width: 1px;
+            border-left-width: 0;
+            mso-default-height: 24pt;
+        }
+
+        .data-grid-row-last-header {
+            color: #333333;
+            border-style: solid;
+            border-color: #BBBBBB;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-right-width: 1px;
+            border-left-width: 0;
+            border-right-width: 0;
+            mso-default-height: 24pt;
+        }
+
+        .data-grid-row {
+            color: #555555;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #BBBBBB;
+            mso-number-format: "\@@";
+            mso-default-height: 24pt;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    @{
+        var colCount = ViewBag.Columns.Count > 4 ? ViewBag.Columns.Count : 4;
+    }
+    <table cellspacing="0" cellpadding="15" class="title">
+        <tbody>
+            <tr>
+                <td class="title-header" colspan="@colCount">
+                    @ViewBag.ReportName
+                </td>
+            </tr>
+            @{
+                if (ViewBag.FilterFields.Count > 0) {
+                    <tr>
+                        <td class="last-row" colspan="@colCount">
+                            @{
+                                foreach (var filterField in ViewBag.FilterFields)
+                                {
+                                    <div class="sub-title">
+                                        <span class="sub-title-header">@filterField.Key : </span>
+                                        <span>@filterField.Value</span>
+                                    </div>
+                                }
+                            }
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td colspan="@colCount"></td>
+            </tr>
+        </tbody>
+    </table>
+    @{
+        if (ViewData["AccountInfo"] != null)
+        {
+            <table cellspacing="0" cellpadding="15" class="sub-group">
+                <thead>
+                    <tr>
+                        <th class="table-header" colspan="@Math.Ceiling(colCount / 2f)" align="left">
+                            <span class="sub-group-heading">@ViewBag.AccountInfo.Name</span>
+                        </th>
+                        <th class="table-header" colspan="@Math.Floor(colCount / 2f)" align="left">
+                            Contact
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-header" rowspan="2" colspan="@Math.Ceiling(colCount / 2f)"></td>
+                        <td class="table-header" rowspan="2" colspan="@Math.Floor(colCount / 2f)">
+                            <div>@ViewBag.AccountInfo.ContactInfo.Phone</div>
+                            <div>@ViewBag.AccountInfo.ContactInfo.EmailAddress</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td colspan="@colCount"></td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    }
+    <table cellspacing="0" cellpadding="10" class="data-grid">
+        <thead>
+            <tr>
+                @{
+                    var index = 0;
+                    foreach (var column in ViewBag.Columns)
+                    {
+                        if (index == ViewBag.Columns.Count - 1)
+                        {
+                            <th align="left" class="data-grid-row-last-header">@column.ColumnName</th>
+                        }
+                        else
+                        {
+                            <th align="left" class="data-grid-row-header">@column.ColumnName</th>
+                        }
+                        index += 1;
+                    }
+                }
+            </tr>
+
+
+        </thead>
+        <tbody>
+            @{
+                foreach (var row in ViewBag.Rows)
+                {
+                    <tr>
+                        @{
+                    foreach (var column in ViewBag.Columns)
+                    {
+                        <td class="data-grid-row">
+                            @Html.CastReportValue((Type)column.DataType, row[column.ColumnName] as object)
+                        </td>
+                    }
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>

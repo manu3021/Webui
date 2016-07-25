@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Hilfe</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Zum Konfigurieren des Lesers für NetAXS-123</h3>
+        <h4 class="subtitle">Zum Konfigurieren der Lesereinstellungen:</h4>
+        <ol>
+            <li>Im MPC Dashboard-Bereich auf den Reiter <strong>Erstellen & Bearbeiten</strong> klicken. Die Seite <strong>ERSTELLEN UND BEARBEITEN</strong> wird angezeigt.</li>
+			<li>Im linken Fensterbereich den Standort auswählen, anschließend das entsprechende Gerät, das dem Standort zugeordnet ist, klicken.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Hinweis:</h4>
+				<p>Bevor Sie die Geräteeinstellungen bearbeiten, stellen Sie sicher, dass Sie die Geräte im Cloud registrieren.</p>
+			</div>
+			<li>Im linken Fensterbereich auf das <i class="netaxs-icon"></i> Symbol, das dem NetAXS-123-Gerät entspricht klicken, um alle verfügbaren Türen anzuzeigen.</li>
+			<li>Auf die gewünschte Tür doppelklicken, um alle zugeordneten Leser anzuzeigen. Die Seite <strong>Einstellungen</strong> wird angezeigt.</li>
+			<li>Die erforderlichen Daten in folgenden Feldern eingeben:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Feld</td>
+                    <td>Beschreibung</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Name des Lesers
+                    </td>
+                    <td>
+                        Einen eindeutigen Namen eingeben, um den Leser zu kennzeichnen.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Leser/Tür deaktivieren
+					</td>
+                    <td>
+                        Aus der Dropdown-Liste die Eigenschaften auswählen, um die Leser/Tür-Einstellungen für den aktivierten oder deaktivierten Modus vorzunehmen.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Eine Karte und eine PIN sind erforderlich
+					</td>
+                    <td>
+                        Gewährt nur Zutritt, wenn die Karte erfolgreich gelesen wurde und eine gültige PIN über die Tastatur an der Tür eingegeben wurde. Das Auslesen der Karte und der PIN-Eingabe kann in beliebiger Reihenfolge erfolgen.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Eine Karte oder eine PIN ist erforderlich
+					</td>
+                    <td>
+                       Gewährt nur Zutritt, wenn die Karte erfolgreich gelesen wurde oder eine gültige PIN über die Tastatur an der Tür eingegeben wurde.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Nur PIN
+					</td>
+                    <td>
+                       Gewährt nur Zutritt, wenn eine gültige PIN über die Tastatur an der Tür eingegeben wurde.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Nur Karte
+					</td>
+                    <td>
+                       Gewährt nur Zutritt, wenn die Karte erfolgreich gelesen wurde.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Leser/Tür sperren
+
+					</td>
+                    <td>
+                       Ignoriert alle Kartenerfassungen (außer VIP-Karte). Verhindert den Zutritt, gewährt jedoch den Austritt.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Zwang
+   					</td>
+                    <td>
+                       Er ermöglicht die Auslösung einer Warnmeldung und falls konfiguriert, wird während des Zwangs ein Impuls an ein am Ausgang angeschlossenes Gerät gesendet. Beispielsweise wenn der Operator gegen seinen Willen gezwungen wird, einer nicht autorisierten Person Zutritt zu gewähren. Der Zwang erfordert die PIN- und die Kartennummer, um erkannt zu werden.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Anti-Passback
+					</td>
+                    <td>
+                         Der Benutzer kann am Leser die Funktion Anti-Passback aktiveren, die eine gültige Karte für den Zu- und Austritt erfordert. Der Kartenhalter muss die Karte in der richtigen EIN/AUS-Abfolge verwenden, d. h. die Karte, die am EIN-Leser durchgezogen wurde, muss anschließend am AUS-Leser durchgezogen werden oder in umgekehrter Abfolge. Ist die EIN/AUS-Abfolge des Benutzers ungültig, wird ein Ereignis Anti-Passback-Verletzung für den gewählten Anti-Passbacktyp (Hart oder Soft) erstellt und dem Kartenhalter wird der Zutritt entweder verwehrt (Hart) oder gestattet (Soft).
+						 <>
+						
+						<strong>Hart </strong>- Prüft den EIN/AUS-Status, bevor Zutritt gewährt wird. Ein zweites Durchziehen der Karte am gleichen Lesertyp (EIN/AUS) verursacht eine harte Anti-Passback Verletzung und dem Benutzer wird der Zutritt verwehrt.
+						</br><>
+
+						<strong>Soft </strong>- Prüft den EIN/AUS-Status, bevor Zutritt gewährt wird. Ein zweites Durchziehen der Karte am gleichen Lesertyp (EIN/AUS) verursacht eine softe Anti-Passback Verletzung und dem Benutzer wird der Zutritt gewährt.
+						</br><>
+						
+						<strong>Aus </strong>- Trifft auf Leser zu, die sich innerhalb eines Anti-Passback kontrollierten Bereichs befinden. Kartenhalter verwenden diese Leser beim Verlassen des Anti-Passback kontrollierten Bereichs.
+						</br><>
+						
+						<strong>Ein </strong>- Trifft auf Leser zu, die sich außerhalb eines Anti-Passback kontrollierten Bereichs befinden. Kartenhalter verwenden diese Leser beim Eintreten in den Anti-Passback kontrollierte Bereich.
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Vorherige</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Geräteeinstellungen bearbeiten</a>
+	</p>	
+</div>		
+</body>
+</html>

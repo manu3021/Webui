@@ -1,0 +1,242 @@
+﻿
+<form id="gatewayForm" data-validationkey="panel">
+    <div id="editGateway" class="row formcontrol layoutcol scroll-y" @*data-bind="if: $data.IsRegistered" data-bind="css: {mpcsettingshow: $data.IsRegistered}"*@>
+        <div class="row">
+            <div class="pull-left">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Panel_Name</label>
+                    <input type="text" class="floatTxt myStyle" name="panel_Name" id="panel_Name" maxlength="20" data-bind="value: $data.Name">
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Description</label>
+                    <input type="text" class="floatTxt myStyle" name="panel_Description" id="panel_Description" data-bind="value: $data.Description">
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field select-field ">
+                    <label class="floatLblDn">@Resources.Channel_Type</label>
+                    <select name="panel_Communication" id="panel_Communication" data-bind="value: $data.CommChannelType">
+                        <option value="0">@Resources.Channel_Type_NoPortDevice</option>
+                        <option value="5">@Resources.Channel_Type_Http</option>
+                        <option value="6">@Resources.Channel_Type_Http_Rev</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pull-left" data-bind="visible: $data.CommChannelType() == '5'">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Panel_IPAddress</label>
+                    <input type="text" name="panel_IPAddress" id="panel_IPAddress" data-bind="value: $data.IPAddress" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div class="pull-left" data-bind="visible: $data.CommChannelType() == '6'">
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Panel_Address</label>
+                    <input type="number" name="panel_Address" id="panel_Address" value="1" min="1" max="32" step="1" data-bind="spinnerValue: $data.Address" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field ">
+                    <label class="floatLblDn">@Resources.Panel_Firmware</label>
+                    <input name="panel_Firmware" id="panel_Firmware" data-bind="value: $data.FirmwareVersion" class="floatTxt myStyle" disabled />
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Panel_IOPollInterval</label>
+                    <input type="number" name="panel_IOPollInterval" id="panel_IOPollInterval" min="10" max="600" step="1" data-bind="spinnerValue: $data.IOPollInterval" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Panel_Loop_Verify_Interval</label>
+                    <input type="number" name="panel_LoopVerifyInterval" id="panel_LoopVerifyInterval" min="10" max="255" step="5" data-bind="spinnerValue: $data.LoopVerificationOffset" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Panel_Cmd_Retry_Count</label>
+                    <input type="number" name="panel_CmdRetryCount" id="panel_CmdRetryCount" value="3" min="0" max="5" step="1" data-bind="spinnerValue: $data.CommandRetryCount" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Panel_Cmd_Timeout</label>
+                    <input type="number" name="panel_CmdTimeout" id="panel_CmdTimeout" value="20" min="1" max="30" step="1" data-bind="spinnerValue: $data.CommandTimeout" class="floatTxt myStyle" />
+                </div>
+            </div>
+            <div>
+                <div class="field ">
+                    <div class="field select-field">
+                        <label class="floatLblDn">@Resources.Panel_Regional_Timezone</label>
+                        @Html.DropDownList("panel_RegionalTimeZone", (SelectList)ViewData["TimeZone"], new { id = "panel_RegionalTimeZone", data_bind = "value: $data.RegionalTimeZone" })
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <label class="formControl-checkbox">
+                        <input type="checkbox" class="checkbox" name="panel_chkselected" id="panel_chkselected" data-bind="checked: $data.IsSetDateTimeEnabled" />
+                        <span>@Resources.Panel_SetDateTime</span>
+                    </label>
+                </div>
+                <div class="pull-left">
+                    <div>
+                        <div class="radio horizontal-radio-list control-box" name="panel_chkenabled" id="panel_chkenabled">
+                            <div class="input-append field right-inner-addon notRequiredStyle" id="gatewaydeviceDateTime">
+                                <label class="floatLblDn">@Resources.Panel_DeviceDateTime </label>
+                                <span class="input-group-addon add-on"><b class="icon-calendar"></b></span>
+                                <input type="text" readonly="readonly" class="floatTxt myStyle" data-bind="enable:$data.IsSetDateTimeEnabled">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <div>
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" name="panel_IsAntiPassbackEnabled" id="panel_IsAntiPassbackEnabled" data-bind="checked: $data.AntiPassbackEnabled">
+                            <span>@Resources.AntiPassback</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="spaceBottomStyle">
+                        <div class="radio horizontal-radio-list control-box" id="panel_antipassback">
+                            <div>
+                                <label class="formControl-radio panelAntipassbackStyle">
+                                    <input type="radio" class="radio" name="panel_Global" value="0" data-bind="checked: $data.GlobalAntiPassback">
+                                    <span>@Resources.Local</span>
+                                </label>
+                                <label class="formControl-radio">
+                                    <input type="radio" class="radio" name="panel_Global" value="1" data-bind="checked: $data.GlobalAntiPassback">
+                                    <span>@Resources.Global</span>
+                                </label>
+                            </div>
+                            <div class="spaceBottomStyle anitpassbkForgiveSpace">
+                                <label class="formControl-checkbox">
+                                    <input type="checkbox" class="checkbox" name="panel_Forgive" id="panel_Forgive" data-bind="checked: $data.Forgive" />
+                                    <span>@Resources.Forgive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <div class="spaceBottomStyle">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" name="panel_Duress" id="panel_Duress" data-bind="checked: $data.Duress" />
+                            <span>@Resources.Duress</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <div class="spaceBottomStyle">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" name="panel_ReverseLEDs" id="panel_ReverseLEDs" data-bind="checked: $data.ReverseLEDs" />
+                            <span>@Resources.ReverseLEDs</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <div class="spaceBottomStyle">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" name="panel_ContinuousRead" id="panel_ContinuousRead" data-bind="checked: $data.ContinuousRead" />
+                            <span>@Resources.ContinuousRead</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pull-left clear-left">
+                    <div class="spaceBottomStyle scrollBottomFix">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" name="panel_FreeEgressInputs" id="panel_FreeEgressInputs" data-bind="checked: $data.FreeEgressInputs" />
+                            <span>@Resources.FreeEgressInputs</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row panelSectionHeader clear">
+                    <h6>@Resources.AdvanceSettings</h6>
+                </div>
+                <ul class="panelSettingsPasswordOption">
+                    <li><button class="primary-button" data-bind="click: doreset, enable: !$data.IsDeviceOnline()">@Resources.Restore_New_Authentication</button></li>
+                    <li><button class="primary-button" data-bind="click: doupdate, enable: $data.IsDeviceOnline()">@Resources.Update_New_Authentication</button></li>
+                </ul>
+            </div>
+            <div class="pull-left clear-left buttonGroup">
+                <button class="primary-button" data-bind="click: saveGateway">@Resources.Save</button>
+                <button class="primary-button" data-bind="click: syncGateway">@Resources.Sync</button>
+
+
+                <span class="class2 errorDetail" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+            </div>
+        </div>
+    </div>
+    <div id="gatewayNotReg" class="row formcontrol" @*data-bind="ifnot: $data.IsRegistered"*@>
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field">
+                        <label class="floatLblDn" for="gateway_notreg_uniqueid">@Resources.UniqueID</label>
+                        <input type="password" class="floatTxt myStyle" id="gateway_notreg_uniqueid" name="gateway_notreg_uniqueid" data-bind="value: $data.UniqueIdField, enable: $data.IsEditUniqueId" />
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="row col">
+                        <button class="primary-button" data-bind="click: doedituniqueid, text: uniqueidbuttontext">@Resources.Edit</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        @*<div class="row sectionHeader" data-bind="visible: !$data.IsRegistered()">
+            <p style="color: red">@Resources.DvNtRgPlsPlgAppToNw</p>
+        </div>
+        <div class="row sectionHeader" data-bind="visible: $data.IsRegistered()">
+            <h6 style="color: #009245">@Resources.DvRegSucc</h6>
+            <h6 style="color: #fbb03b">@Resources.DvCfgNtUpld</h6>
+        </div>*@
+        <div class="note3">@Resources.plsplgndevtonw</div>
+        <div class="row field-loader-container" data-bind="css : $data.RegLoaderContainerStyle">
+            <div class="field-loader" data-bind="css : $data.RegLoaderStyle">
+                <div class="loader"></div>
+            </div>
+            <span class="complete-image" data-bind="visible: $data.IsRegistered">
+            </span>
+            <span class="field-loader-text clear">
+                <span data-bind="text: $data.RegLoaderText"></span>
+                <span class="refresh-btn" data-bind="click: dorefresh, visible: $data.IsRegDoRefresh">@Resources.Refresh</span>
+            </span>
+        </div>
+        <div class="row field-loader-devider">
+            <span></span>
+        </div>
+        <div class="row field-loader-container last-item" data-bind="css : $data.ConfLoaderContainerStyle">
+            <div class="field-loader" data-bind="css : $data.ConfLoaderStyle">
+                <div class="loader"></div>
+            </div>
+            <span class="complete-image" data-bind="visible: $data.IsConfigurationUploaded">
+            </span>
+            <span class="field-loader-text clear">
+                <span data-bind="text: $data.ConfLoaderText"></span>
+                <span class="refresh-btn" data-bind="click: dorefresh, visible: $data.IsConfDoRefresh">@Resources.Refresh</span>
+            </span>
+        </div>
+        <div class="row sectionHeader">
+            @*<button class="primary-button" data-bind="click: dorefresh">@Resources.Refresh</button>*@
+            <button class="primary-button" data-bind="click: doreset, enable: !$data.IsDeviceOnline()">@Resources.Restore_New_Authentication</button>
+            <button class="primary-button" data-bind="click: doupdate, enable: $data.IsDeviceOnline()">@Resources.Update_New_Authentication</button>
+        </div>
+    </div>
+</form>
+<input type="hidden" id="gatewayConfigUrl" data-url="@Url.Action("", "PanelConfig")" />
+<input type="hidden" id="hdnAntiPassbackEnabled" />
+<input type="hidden" id="hdnDuress" />
+
+@Scripts.Render("~/bundles/PanelConfigPluginGatewayscript")
+@*<script src="~/Scripts/PanelConfigPlugin/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-common.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-validation-context.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-datacontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-uicontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-eventreciever.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/gateway-model.js"></script>*@

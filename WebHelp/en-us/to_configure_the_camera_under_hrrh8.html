@@ -1,0 +1,279 @@
+﻿<html>
+<head>
+    <title>Help</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">To Configure the Camera under HRRH8</h3>
+        <h4 class="subtitle">To configure the camera settings:</h4>
+        <ol>
+            <li>In the MPC Dashboard area, click the <strong>Create & Edit</strong> tab. The <strong>CREATE AND EDIT</strong> page appears.</li>
+			<li>In the left pane, select the site and then click the relevant device added to the site.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Note:</h4>
+				<p>Before you modify the device settings, ensure to register the devices on cloud.</p>
+			</div>
+			<li>In the left pane, click the <i class="camred-icon"></i> icon corresponding to the HRRH8 device to expand and view all the available cameras.</li>
+			<li>Double-click the required camera. The <strong>Settings </strong>page appears.</li>
+			<li>Enter the required details in the following fields:</li>
+				<ul>
+					<li>Under <strong>Configure </strong></li>
+                 </ul>
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Field</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Camera State
+                    </td>
+                    <td>
+                        Click <strong>Enable</strong> to enable the camera state.<>
+						Or<>
+						Click <strong>Disable</strong> to disable the camera state.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Camera Name
+					</td>
+                    <td>
+                        Enter a name for the camera.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                       Camera Type 
+					</td>
+                    <td>
+                       From the drop-down list, select the type of camera.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Select Discovered IP Camera
+  					</td>
+                    <td>
+                        From the drop-down list, select the required IP camera.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                       Camera Model
+					</td>
+                    <td>
+                        From the drop-down list, select the model of the camera.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        RTSP URL
+					</td>
+                    <td>
+                        Enter the URL of the Real Time Streaming Protocol (RTSP) network.
+					</td>
+                </tr>
+				 <tr>
+                    <td>
+                        User Name
+					</td>
+                    <td>
+                        Enter the user name to access the MPC appliance URL.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Password
+					</td>
+                    <td>
+                        Enter the password to access the MPC appliance URL.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Play
+					</td>
+                    <td>
+                        Click the <i class="play-icon"></i> icon to play the clip available in the selected camera.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Associations
+					</td>
+                    <td>
+                       Click to associate the camera to any door. For example, when any event occurs at the door, such as, card found, the camera begins recording the video.
+					</td>
+                </tr>	
+				
+				<tr>
+                    <td colspan="2">
+                        <strong>RECORDING CLIP DURATION</strong>
+   					</td>
+                </tr>		
+
+				<tr>
+                    <td>
+                        Pre Event
+   					</td>
+                    <td>
+                       Click the time to set how long the clip is recorded before the motion is detected by the camera.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Onsite Post Event
+					</td>
+                    <td>
+                       Click the time to set how long the clip is recorded after the motion is detected by the camera, located onsite
+ 
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                        Offsite Post Event
+					</td>
+                    <td>
+                       Click the time to set how long the clip is recorded after the motion is detected by the camera, located offsite.
+
+					</td>
+                </tr>	
+				<tr>
+                    <td colspan="2">
+                        <strong>LIVE/RECORD SETTING</strong>
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Frame Rate
+					</td>
+                    <td>
+                       From the drop-down list, select the frequency (rate) at which the camera produces unique consecutive images called frames.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Camera Resolution
+					</td>
+                    <td>
+                       From the drop-down list, select the camera resolution. It refers to the total number of pixels in a digital camera image.
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                       Camera Quality
+					</td>
+                    <td>
+                       From the drop-down list, select the quality of the camera.
+					</td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <img src="../../Content/images/progress_bar.jpg">
+					</td>
+                </tr>				
+            </tbody>
+        </table>
+            <ul>
+                <li>Under <strong>Event Recording </strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Field</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Record on
+                            </td>
+                            <td>
+                                From the list of available triggers, select the required trigger point at when the recording should begin.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Under <strong>Continuous Recording</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Field</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Continuous Recording Schedule
+                            </td>
+                            <td>
+                                From the list of available schedules, select the required period during which the continuous recording is enabled.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Under <strong>Motion Recording</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Field</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Enable Motion Recording
+                            </td>
+                            <td>
+                                Select to enable motion recording.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Hold Time
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Motion Recording Schedule
+                            </td>
+                            <td>
+                                From the list of available schedules, select the required period during which the motion recording is enabled.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            <ul>
+                <li>Click <strong>Save</strong>.</li>
+                </ul>
+</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Previous</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Edit Device Settings</a>
+	</p>	
+</div>		
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿    <ul id="singleClipSearchFilter" class='clipSearchFilter'>
+        <li class='clipFilterHeader'>@Resources.Viewer_HideFilterText <i class="icon-close-filter"></i></li>        
+        <li>
+            <div class="tabbable">
+                <ul class="nav nav-tabs clipSearchNav">
+                    <li data-bind="click: $root.FilterType" class="active"><a data-target="today" data-toggle="tab">@Resources.Today</a></li>
+                    <li data-bind="click: $root.FilterType"><a data-target="yesterday" data-toggle="tab">@Resources.Yesterday</a></li>
+                    <li data-bind="click: $root.FilterType"><a data-target="custom" data-toggle="tab">@Resources.Custom</a></li>
+                </ul>
+                <div class="tab-content">
+                    <ul>
+                        <li>
+                            <div id="frmsingledatetimepicker" class="field bootstrap-timepicker right-inner-addon">
+                                <span class="input-group-addon add-on">
+                                    <b class="icon-time-popover"></b>
+                                </span>
+                                <label class="floatLblDn clipSearchdateLabel">@Resources.From</label>
+
+                              
+                                <input data-format="@Resources.date_picker_format" id="frmdatetime" type="text" class="input-small add-on" readonly="" placeholder="@Resources.From" data-bind="value: $data.ClipFiltermodel.FromDatetime">
+                            </div>
+
+                        </li>
+                        <li>
+                            <div id="tosingledatetimepicker" class="field bootstrap-timepicker right-inner-addon">
+                                <span class="input-group-addon add-on">
+                                    <b class="icon-time-popover"></b>
+                                </span>
+                                <label for="todatetime" class="clipSearchdateLabel floatLblDn">@Resources.To</label>
+
+                                <input data-format="@Resources.date_picker_format" id="todatetime" type="text" class="input-small add-on" readonly="" placeholder="@Resources.To" data-bind="value: $data.ClipFiltermodel.ToDatetime">
+                                <div data-bind="visible:$data.ClipFiltermodel.IsError">
+                                    <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                                    <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor" >@Resources.Warning!</span><span data-bind="text:$data.ClipFiltermodel.Errormessage"></span></div>
+                                </div>
+                            </div>
+                        
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="RecordingType_filter" data-bind="checked: $data.ClipFiltermodel.IsMotionEvent">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.Motion_Event</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="RecordingType_filter" data-bind="checked: $data.ClipFiltermodel.IsSchedule">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.Schedule</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="RecordingType_filter" data-bind="checked: $data.ClipFiltermodel.IsTriggerEvent">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.Trigger_Event</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="RecordingType_filter" data-bind="checked: $data.ClipFiltermodel.IsUserdriven">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.User_Trigger</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" name="RecordingType_filter" type="checkbox" data-bind="checked: $data.ClipFiltermodel.IsRuledriven">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.Rule_Driven</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="storagefilter" data-bind="checked: $data.ClipFiltermodel.IsOnsite">
+                                <b></b>
+                            </label>
+                            <legand>@Resources.Onsite</legand>
+                        </li>
+                        <li>
+                            <label class="formControl-checkbox">
+                                <input class="checkbox" type="checkbox" name="storagefilter" data-bind="checked: $data.ClipFiltermodel.IsCloud">
+                                <b></b>
+                             
+                            </label>
+                            <legand>@Resources.Oncloud</legand>
+                            
+                        </li>
+                        <div data-bind="visible:$data.ClipFiltermodel.IsFilterError" class="fieldErrorStorage">
+                            <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                            <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.ClipFiltermodel.Filtermessage"></span></div>
+                        </div>
+                        <li class="clipSearchButton">
+                            <button class="primary-button" data-bind="click:$root.Searchfilterclick" id="singleSearchButton">@Resources.Search</button>
+                            <button class="secondary-button" data-bind="click:$root.Cancelclick" id="singleSearchButton">@Resources.Cancel</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+

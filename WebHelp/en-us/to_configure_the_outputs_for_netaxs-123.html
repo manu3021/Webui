@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Help</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">To Configure the Outputs for NetAXS-123</h3>
+        <h4 class="subtitle">To configure the output settings:</h4>
+        <ol>
+            <li>In the MPC Dashboard area, click the <strong>Create & Edit</strong> tab. The <strong>CREATE AND EDIT</strong> page appears.</li>
+			<li>In the left pane, select the site and then click the relevant device added to the site.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Note:</h4>
+				<p>Before you modify the device settings, ensure to register the devices on cloud.</p>
+			</div>
+			<li>In the left pane, click the <i class="netaxs-icon"></i> icon corresponding to the NetAXS-123 device to expand and view all the available doors.</li>
+			<li>Double-click the required door to expand and view all the associated outputs. The <strong>Settings </strong>page appears.</li>
+			<li>Enter the required details in the following fields:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Field</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Output Name
+                    </td>
+                    <td>
+                        Enter a unique name to identify the door outputs.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Active Time Zone</td>
+                    <td>
+                        Specifies two schedules:
+							<ul>
+								<li><strong>Energized </strong>– sets the period during which the output is automatically energized.</li>
+								<li><strong>Disable Interlock </strong>– sets the period during which the interlock, a programmed interaction between selected inputs, outputs and groups will be disabled. During the selected Time Zone this point ignores all interlock actions to it, effectively disabling it from being a Reacting Component during the Time Zone.</li>
+							</ul>
+						
+						Outside of the Time Zone the point will react to interlocks as expected.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Latching/Toggling outside the Time Zone disables the Pulse time
+					</td>
+                    <td>
+                        Toggles the state of the outputs between energized and de-energized status upon every activation (code use, interlock, or manual pulse).
+                </tr>
+				<tr>
+                    <td>
+                        Block Interlock Time Zone
+
+					</td>
+                    <td>
+                        Enables you to block the interlock time zone, or programmed interaction between two points.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Pulse Time
+					</td>
+                    <td>
+                        Specifies the duration for which the device will assume abnormal status. For example, it specifies how long a horn will sound or a door strike will remain released.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Interlocking
+					</td>
+                    <td>
+                        Enables you to disable the interlock, or programmed interaction between two points.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>Click <strong>Save</strong>.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Previous</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Edit Device Settings</a>
+	</p>	
+</div>		
+</body>
+</html>

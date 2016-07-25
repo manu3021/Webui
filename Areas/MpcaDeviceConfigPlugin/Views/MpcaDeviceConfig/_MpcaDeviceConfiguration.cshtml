@@ -1,0 +1,237 @@
+﻿
+@*<link href="~/Content/MpcaDeviceConfigStyles/MpcsDeviceConfiguration.css" rel="stylesheet" />*@
+
+@*@{#if DEBUG}
+    <link href="~/Content/MpcaDeviceConfigStyles/MpcsDeviceConfiguration.css" rel="stylesheet" />
+    @{#else}
+    @Styles.Render("~/Content/MpcaDeviceConfigPlugincss1");
+    @{#endif}*@
+
+<form id="mpcarecordersetting" class="recorder_setting formcontrol" data-validationkey="recorder">
+    <div id="editmpcaRecorder" class="row formcontrol layoutcol scroll-y" style="display:none;" data-bind="visible: $data.IsConfigUploaded">
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_uniqueid" class="floatLblDn">@Resources.UniqueID</label>
+                        <input type="password" class="floatTxt myStyle" id="mpcarec_uniqueid" name="mpcarec_uniqueid" data-bind="value: $data.UniqueIdField, enable: $data.IsEditUniqueId" />
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="row col">
+                        <button class="primary-button" data-bind="click: doedituniqueid">@Resources.Edit</button>
+                        @*<button class="primary-button">@Resources.mpcarec_rpl_appl</button>*@
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row sectionHeader">
+            <h6 class="ntwConfigHeadingStyleFix">@Resources.NETWORK_CONFIGURATION</h6>
+        </div>
+        <div class="row clear">
+            <ul>
+                <li class="recorder-padding">
+                    <div class="checkboxStyle">
+                        <label class="customcheckbox">
+                            <input type="checkbox" class="checkbox" id="mpcarec_obtainautoip" name="mpcarec_obtainautoip" data-bind="checked: $data.NetworkSetting.ObtainAutoIp">
+                            <span></span>
+                        </label>
+                        <label class="title">@Resources.ObtainAutoIP</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_ipaddress" class="floatLblDn">@Resources.IPAddress</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_ipaddress" name="mpcarec_ipaddress" data-bind="value: $data.NetworkSetting.IpAddress, disable: $data.NetworkSetting.ObtainAutoIp" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_httpport" class="floatLblDn">@Resources.HTTP_Port</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_httpport" name="mpcarec_httpport" data-bind="value: $data.NetworkSetting.HttpPort" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_subnet_mask" class="floatLblDn">@Resources.Subnet_Mask</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_subnet_mask" name="mpcarec_subnet_mask" data-bind="value: $data.NetworkSetting.SubnetMask, disable: $data.NetworkSetting.ObtainAutoIp" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_gateway" class="floatLblDn">@Resources.Gateway</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_gateway" name="mpcarec_gateway" data-bind="value: $data.NetworkSetting.Gateway, disable: $data.NetworkSetting.ObtainAutoIp" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_dnsip" class="floatLblDn">@Resources.DNS_Server</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_dnsip" name="mpcarec_dnsip" data-bind="value: $data.NetworkSetting.DNSServer, disable: $data.NetworkSetting.ObtainAutoIp" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row sectionHeader">
+            <h6 class="recorderSettingHeadingFix">@Resources.RECORDER_SETTINGS</h6>
+        </div>
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_name" class="floatLblDn">@Resources.Recorder_Name</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_name" name="mpcarec_name" data-bind="value: $data.Name" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_mac" class="floatLblDn">@Resources.Mac_Address</label>
+                        <input disabled="disabled" class="floatTxt myStyle" type="text" id="mpcarec_mac" name="mpcarec_mac" data-bind="value: $data.RecorderSetting.MacAddress" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_hardware_version" class="floatLblDn">@Resources.Hardware_Version</label>
+                        <input disabled="disabled" class="floatTxt myStyle" type="text" id="mpcarec_hardware_version" name="mpcarec_hardware_version" data-bind="value: $data.RecorderSetting.HardwareVersion" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_firware_version" class="floatLblDn">@Resources.Firware_Version</label>
+                        <input disabled="disabled" class="floatTxt myStyle" type="text" id="mpcarec_firware_version" name="mpcarec_firware_version" data-bind="value: $data.RecorderSetting.FirmwareVersion" />
+                    </div>
+                </li>
+                <li>
+                    <div class="field select-field">
+                        <label class="floatLblDn">@Resources.mpcarec_vide_frmt</label>
+                        <select id="mpcarec_videoFormat" name="mpcarec_videoFormat" data-bind="value: $data.RecorderSetting.VideoFormat">
+                            <option value="NTSC">@Resources.NTSC</option>
+                            <option value="PAL">@Resources.PAL</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="row col rebootBtnStyleFix">
+                        <button class="primary-button" data-bind="enable: $data.IsDeviceOnline, click: doreboot">@Resources.Reboot</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row sectionHeader">
+            <h6 class="mpcConnectSettingsHeadingFix">@Resources.mpcarec_mxpro_cnt_stngs</h6>
+        </div>
+        <div class="row clear">
+            <div class="recorder-padding checkboxStyle">
+                <label class="customcheckbox">
+                    <input type="checkbox" class="checkbox" id="mpcarec_enablempcsettings" name="mpcarec_enablempcsettings" data-bind="checked: $data.MaxproConnectSetting.IsEnabled">
+                    <span></span>
+                </label>
+                <label class="title">@Resources.Enable</label>
+            </div>
+        </div>
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field notRequiredStyle">
+                        <label for="mpcarec_serverurl" class="floatLblDn">@Resources.Server_URL</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcarec_serverurl" name="mpcarec_serverurl" data-bind="value: $data.MaxproConnectSetting.ServerUrl, enable: $data.MaxproConnectSetting.IsEnabled" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row sectionHeader">
+            <h6 class="advancedSettingHeaderFix">@Resources.mpcarec_adv_stngs</h6>
+        </div>
+        <ul class="recorderSettingBottomFix">
+            <li><button class="primary-button" data-bind="click: doresetdefaultauthen">@Resources.Restore_New_Authentication</button></li>
+            <li><button class="primary-button" data-bind="click: doupdatenewauthen, enable: IsDeviceOnline">@Resources.Update_New_Authentication</button></li>
+        </ul>
+        <div class="row borderTop">
+        </div>
+        <div class="buttonGroup">
+            <button class="primary-button" data-bind="click: dosavesettings">@Resources.Save</button>
+            <span class="infonote">@Resources.mpcarec_infonote</span>
+            <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </div>
+    </div>
+    <div id="mpcaRecorderNotReg" class="row" data-bind="visible: !$data.IsConfigUploaded()">
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="mpcarec_notreg_uniqueid" class="floatLblDn">@Resources.UniqueID</label>
+                        <input type="password" class="floatTxt myStyle" id="mpcarec_notreg_uniqueid" name="mpcarec_notreg_uniqueid" data-bind="value: $data.UniqueIdField, enable: $data.IsEditUniqueId" />
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="row col">
+                        <button class="primary-button" data-bind="click: doedituniqueid, text: uniqueidbuttontext">@Resources.Edit</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--
+        <div class="row sectionHeader" data-bind="visible: !$data.IsRegistered()">
+            <p style="color: red">@Resources.DvNtRgPlsPlgAppToNw</p>@*Device not registered. Please plug in the appliance to network and click refresh.*@
+        </div>
+        <div class="row sectionHeader" style="display:none;" data-bind="visible: $data.IsRegistered">
+            <p style="color: #009245">@Resources.DvRegSucc</p>@*Device registered.*@
+            <p style="color: #fbb03b">@Resources.DvCfgNtUpld</p>@*Device configuration not uploaded. Please click refresh after sometime.*@
+        </div>
+            -->
+        <div class="note3">@Resources.plsplgndevtonw</div>
+        <div class="row field-loader-container" data-bind="css : $data.RegLoaderContainerStyle">
+            <div class="field-loader" data-bind="css : $data.RegLoaderStyle">
+                <div class="loader"></div>
+            </div>
+            <span class="complete-image" data-bind="visible: $data.IsRegistered">
+            </span>
+            <span class="field-loader-text clear">
+                <span data-bind="text: $data.RegLoaderText"></span>
+                <span class="refresh-btn" data-bind="click: dorefresh, visible: $data.IsRegDoRefresh">@Resources.Refresh</span>
+            </span>
+        </div>
+        <div class="row field-loader-devider">
+            <span></span>
+        </div>
+        <div class="row field-loader-container last-item" data-bind="css : $data.ConfLoaderContainerStyle">
+            <div class="field-loader" data-bind="css : $data.ConfLoaderStyle">
+                <div class="loader"></div>
+            </div>
+            <span class="complete-image" data-bind="visible: $data.IsConfigUploaded">
+            </span>
+            <span class="field-loader-text clear">
+                <span data-bind="text: $data.ConfLoaderText"></span>
+                <span class="refresh-btn" data-bind="click: dorefresh, visible: $data.IsConfDoRefresh">@Resources.Refresh</span>
+            </span>
+        </div>
+        <div class="row sectionHeader">
+            @*<button class="primary-button" data-bind="click: dorefresh">@Resources.Refresh</button>*@
+            <button class="primary-button" data-bind="click: doresetdefaultauthen">@Resources.mpcarec_rst_def_auth</button>
+            <button class="primary-button" data-bind="click: doupdatenewauthen, enable: IsDeviceOnline">@Resources.mpcarec_upd_new_auth</button>
+        </div>
+    </div>
+</form>
+
+<input id="mpcadeviceconfigurl" type="hidden" data-url='@Url.Action("", "MpcaDeviceConfig")' />
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript2")
+@*@Scripts.Render("~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.common.js",
+     "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.datacontext.js",
+     "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.model.js",
+    "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.validationcontext.js",
+    "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.uicontext.js",
+    "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.eventreciever.js")*@
+
+@*@{#if DEBUG}
+    @Scripts.Render("~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.common.js",
+                 "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.datacontext.js",
+                 "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.model.js",
+                "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.validationcontext.js",
+                "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.uicontext.js",
+                "~/Scripts/MpcaDeviceConfigPlugin/mpcarecorder.eventreciever.js")
+    @{#else}
+    @Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript2")
+    @{#endif}*@

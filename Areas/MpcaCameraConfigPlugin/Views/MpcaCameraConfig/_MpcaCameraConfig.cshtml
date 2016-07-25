@@ -1,0 +1,71 @@
+﻿
+@*<link href="~/Content/MpcaCameraConfigStyles/MpcaCameraConfiguration.css" rel="stylesheet" />*@
+@*<link href="~/Content/MpcaCameraConfigStyles/toggle.css" rel="stylesheet" />*@
+
+<div id="mpcacameraparent" class="cameraroot">
+    <ul class="nav nav-tabs" id="mpcTabs" data-bind="with: $root">
+        <li class="active">
+            <a href="#configure" data-toggle="tab" data-bind="click: ontabselected">@Resources.Configure</a>
+        </li>
+        <li data-bind="visible: !$root.IsDisabled()">
+            <a href="#event" data-toggle="tab" data-bind="click: ontabselected" id="eventrecording">@Resources.Event_Recording</a>
+        </li>
+        <li data-bind="visible: !$root.IsDisabled()">
+            <a href="#continue" data-toggle="tab" data-bind="click: ontabselected" id="continuousrecording">@Resources.Continuous_Recording</a>
+        </li>
+        <li data-bind="visible: !$root.IsDisabled()">
+            <a href="#motion" data-toggle="tab" data-bind="click: ontabselected" id="motionrecording">@Resources.Motion_Recording</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="mpcTabsContent" data-bind="with: $root">
+        <div class="tab-pane active" id="configure" data-bind="with: $data.SettingsModel">
+            @Html.Partial("_MpcaCameraSettings")
+        </div>
+        <div class="tab-pane" id="event" data-bind="with: $data.EventRecordingModel">
+            @Html.Partial("_MpcaCameraEventRecording")
+        </div>
+        <div class="tab-pane" id="continue" data-bind="with: $data.ContinuousRecordingModel">
+            @Html.Partial("_MpcaContinusRecording")
+        </div>
+        <div class="tab-pane" id="motion" data-bind="with: $data.MotionRecordingModel">
+            @Html.Partial("_MpcaMotionRecording")
+        </div>
+        <div class="buttonGroup">
+            <button class="primary-button" type="button" value="Save" data-bind="click: $data.dosaveall, disable: $data.IsDisableSave">@Resources.Save</button>
+            <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                <b class="icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+            </span>
+            <div class="progressContainer" data-bind="visible: !$root.IsDisabled()">
+                <progress max="100" data-bind="value: $data.CapabilityModel.ProgressValue"></progress>
+                @*<span class="progressText" data-bind="text:$data.CapabilityModel.ProgressText"></span>*@
+                <span class="progressText">
+                    <span>@Resources.device_capability</span>
+                    <span data-bind="text:$data.CapabilityModel.ProgressText"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("_MpcaCameraDoorAssociation")
+
+@Html.Partial("_MpcaScheduleConfig")
+
+<input id="mpcacameraconfigurl" type="hidden" data-url='@Url.Action("", "MpcaCameraConfig")' />
+<input id="getLiveUrl" type="hidden" data-url='@Url.Action("GetLiveStreamUrl", "MpcaCameraConfig")' />
+<input id="SendstopRequestUrl" type="hidden" data-url='@Url.Action("SendStopRequest", "MpcaCameraConfig")' />
+
+@Scripts.Render("~/Scripts/MpcaCameraConfigPlugin/mpcacamera.common.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.datacontext.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.model.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.settings.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.eventrecording.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcaschedule.settings.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.motionrecording.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.continusrecording.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.validationcontext.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.uicontext.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.eventreceiver.js",
+    "~/Scripts/mpc.widget.core.js",
+    "~/Scripts/mpc.treeview.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcacamera.treeviewloader.js",
+    "~/Scripts/MpcaCameraConfigPlugin/mpcadevicecapability.js")

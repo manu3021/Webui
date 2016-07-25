@@ -1,0 +1,32 @@
+﻿.right-inner-addon {
+													    position: relative;
+													}
+													.right-inner-addon input {
+													    padding-right: 30px;    
+													}
+													.right-inner-addon > span {
+													    position: absolute;
+														right: 1px;
+														padding: 25px 12px;
+														width: 60px;
+														z-index: 2;
+														border-radius: 0;
+														border-left: 1px solid #d3d3d3;
+														border-top: 0px solid #d3d3d3;
+														border-bottom: 0px;
+														background-color:#F9F9F9 !important;
+														/*pointer-events: none;*/
+														/*-webkit-appearance:button;*/
+														/*top:0px;*/
+													}
+													.right-inner-addon span:hover{
+													    background-color:#e6f3fb !important;
+													}
+													
+
+													/*<div class="field right-inner-addon">
+																<span class="input-group-addon" id="togglePasswordField">@</span>
+														    	<input type="password" required="" placeholder="Password" id="passwordField1"name="passwordField1" autocomplete="off">
+														    	<label>Password</label>
+														 	</div>*/
+

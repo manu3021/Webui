@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="~/Scripts/ReportMgmtPlugin/reportmgmt-export.js"></script>
+</head>
+<body>
+    <form method="post" id="frmReqData">
+        <input type="hidden" name="data" id="hdnReqData" />
+        @AntiForgery.GetHtml()
+        <input type="hidden" name="exportType" id="hdnExportType" />
+        @{
+            if (ViewData["ErrorMessage"] != null)
+            {
+                <script type="text/javascript">
+                    window.showError('@ViewData["ErrorMessage"]');
+                </script>
+            }
+        }
+    </form>
+</body>
+</html>

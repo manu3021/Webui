@@ -1,0 +1,33 @@
+﻿<div class="panel-config-root">
+    @*<link href="~/Content/PanelConfigPlugin/PanelConfiguration.css" rel="stylesheet" />
+    <link href="~/Content/PanelConfigPlugin/button.css" rel="stylesheet" />*@
+    @*@Styles.Render("~/Content/PanelConfigPlugin/css2")*@
+    <script src="~/Scripts/PanelConfigPlugin/panel-config-common.js"></script>
+ 
+
+    <div data-accounttype="GATEWAY" class="settingsform">
+        @{
+            Html.RenderAction("Gateway");
+        }
+    </div>
+    <div data-accounttype="OUTPUTPOINT" class="settingsform">
+        @{
+            Html.RenderAction("PanelOutput");
+        }
+    </div>
+    <div data-accounttype="INPUTPOINT" class="settingsform">
+        @{
+            Html.RenderAction("PanelInput");
+        }
+    </div>
+    <div data-accounttype="DEVICEPOINT" class="settingsform">
+        @{
+            Html.RenderAction("PanelReader");
+        }
+    </div>
+    <div data-accounttype="DOOR" class="settingsform">
+        @{
+            Html.RenderAction("Door");
+        }
+    </div>
+</div>

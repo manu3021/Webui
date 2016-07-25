@@ -1,0 +1,154 @@
+﻿
+/*this entire style is repeated and already present in shell - and this style is affecting entrie application
+     Please Contact Mahesh - whoever needs this style*/
+ /*@font-face
+			{
+				font-family: Gotham-Book;
+				src: url("fonts/Gotham-Book.ttf");
+			}
+
+			html *
+			{   
+			   font-family: "Open Sans Regular" !important;
+			}
+
+
+.mpcmodel {
+    width: 880px;
+}
+
+
+.mpcmodel header {
+
+    padding: 15px 30px 14px 30px;
+    border-bottom: 2px solid #0889C4;
+}
+
+.mpcmodel header span{
+    color: #3B3B3D;
+    text-align: left;
+    vertical-align: middle;
+    font-size:18px;
+
+    text-transform: uppercase;
+    font-family:Open Sans Semibold !important;
+}
+
+
+.mpcmodel section {
+    padding: 32px 32px 14px 32px;
+ }
+
+ .mpcmodel section ul{
+	list-style-type:none;
+	margin:0;
+}
+
+ .mpcmodel section ul li{
+	float:left;
+	padding-bottom: 22px;
+}
+
+.row {
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.col {
+    bottom: 0 !important;
+    top: 0 !important;
+}
+
+.mpcmodel footer{
+	position:relative !important;
+	padding:0 !important;
+}
+
+.mpcmodel .modal-footer {
+    background-color: #FFFFFF;
+  	border: medium none;
+    text-align: left;
+   padding: 0px 0px 32px 32px;
+  }
+
+.mpcmodel .modal-footer button{
+	margin-right:3px;
+}
+
+.mpcmodel .spaceBottomStyle {
+    padding-bottom: 16px;
+}
+
+.mpcmodel legend {
+	border-style: none;
+	color: #6F7074;
+	font-size: 13px;
+	margin: 0;
+	padding-left: 13px;
+	position: absolute;
+	width: auto;
+}
+						    
+:-webkit-autofill { 
+	color: #fff !important;
+}
+                           
+:focus {
+   outline-color: transparent;
+   outline-style: none;
+}
+
+.mpcmodel input {
+	font-size: 15px;
+	height: auto;
+	padding-bottom: 8px;
+	padding-left: 13px;
+	padding-top: 20px;
+	padding-right: 14px;
+	color: #6F7074;
+	border-bottom: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    border-style: none solid solid none;
+	width: 303px;
+	-webkit-appearance: none; 
+	box-shadow: none !important;
+	border-radius:0;
+}
+
+.modal .modelLeftSection {
+	float:left;
+	width:40%;
+	height:400px;
+}
+													
+.modal .modelRightSection{
+	float:right;
+	width:40%;
+	height:400px;
+}
+
+.mpcmodel input[type="text"]:focus, input:focus {
+	border-style: none solid solid none;
+	border-color: #D3D3D3;
+}
+							
+
+.modal-backdrop, .modal-backdrop.fade.in {
+    background-color: #000000;
+    opacity: 0.4;
+}
+.ImagePlaceHolder {
+    background: url("images/icons/createedit/img_browse.png") no-repeat scroll 0 0 hsla(0, 0%, 0%, 0);
+    height: 132px;
+    width: 132px;
+}
+
+.ImagePlaceHolder input {
+    height: 132px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 132px;
+}*/
+
+

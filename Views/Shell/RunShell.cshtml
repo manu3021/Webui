@@ -1,0 +1,102 @@
+﻿@{
+    
+    ViewBag.Title = "Home";
+}
+
+@if (Model.IsAuthenticated)
+{   
+    <div class="body row">
+        <div class="header row">
+            <div class="homebutton col"></div>
+            <div class="appheader col">
+                <div class="ui-layout-appheader">
+                    <span class="ui-pagetitle">@Resources.MPC4
+                    </span>
+                </div>
+            </div>
+            <div class="applogout col">
+                <div data-dropdown="#dropdown-1" class="logoutbutton row">
+                </div>
+            </div>
+
+        </div>
+        <div class="bodywrapper row">
+            <div class="navleft col" data-slide="13">
+                <div class="navleftbutton row">
+                </div>
+            </div>
+            <div class="mainbody col">
+                <div id="pt-main" class="pt-perspective">
+                  @*  @if (Model.AppPermissions.HasDashboardPermission)
+                    {
+                        <div class="pt-page pt-page-1" data-pagename="Dashboard">
+                            <h1><span>Dashboard</span><strong>Page</strong> Under construction</h1>
+                        </div>
+                    }
+                    @if (Model.AppPermissions.HasCreatePermission)
+                    {
+                        <div class="pt-page pt-page-2" data-pagename="Create & Edit">
+                            @Html.Partial("_CreateadnconfigPartial")
+                        </div>
+                    }
+                    @if (Model.AppPermissions.HasViewerPermission)
+                    {
+                        <div class="pt-page pt-page-3" data-pagename="Viewer">
+                        </div>
+                    }*@
+
+                </div>
+            </div>
+            <div class="navright col" data-slide="14">
+                <div class="navrightbutton row">
+                </div>
+            </div>
+            <div class="md-modal md-effect-1" data-form="configmodel">
+                <div class="md-content">
+                    <h3>New Customer form</h3>
+                    <div class="modelcontent row">
+                    </div>
+                </div>
+            </div>
+            <div class="md-overlay"></div>
+        </div>
+        <div id="dropdown-1" class="dropdown dropdown-anchor-right">
+            <ul class="dropdown-menu dropdownstyle">
+                <li>
+                    <div class="listitem"><span>@Resources.ProfileDetails</span></div>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                    <div class="listitem"><span>@Resources.Fullscreen</span></div>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                    <div class="listitem"><span>@Resources.Help</span></div>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                    <div class="listitem" data-action="signout" data-url="@Url.Action("JsonSignout", "Login")"><span>@Resources.Logout</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer row">
+            <h2>My footer</h2>
+        </div>
+    </div>
+
+    @section layoutingscriptsection
+    {
+        <script src="~/Content/Styles/tablayout/js/tablayout.js"></script>
+        <script src="~/Content/Styles/pagetransitions/js/modernizr.custom.js"></script>
+        <script src="~/Content/Styles/pagetransitions/js/pagetransitions.js"></script>
+        <script src="~/Scripts/app/application.header.js"></script>
+
+    }
+}
+else
+{
+    <div class="loginregion">
+        @Html.GetPlugin("Login")
+    </div>
+}

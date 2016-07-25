@@ -1,0 +1,197 @@
+﻿@if (Html.HasPermissions(MPCPermissions.Add_Customer))
+{
+    <div id="customerModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span>@Resources.NewCustomer</span>
+        </header>
+        <section class="row">
+            <form id="customermodal_form" data-validationkey="customer" class="customer_form" data-bind="submit: dosavesettings">
+                <div class="col pull-left customermodal_formWidth">
+                    <div class="field">
+                        <label for="customer_Name" class="floatLblDn">@Resources.customer_Name</label>
+                        <input type="text" name="customer_Name" id="customer_Name" class="floatTxt myStyle" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Email" class="floatLblDn">@Resources.Email</label>
+                        <input type="email" name="customer_Email" id="customer_Email" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.EmailAddress, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Address" class="floatLblDn">@Resources.Address</label>
+                        <input type="text" name="customer_Address" id="customer_Address" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="customer_City" class="floatLblDn">@Resources.City</label>
+                        <input type="text" name="customer_City" id="customer_City" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' ">
+                         </div>
+                    <div class="field">
+                        <label for="customer_Region" class="floatLblDn">@Resources.Region</label>
+                        <input type="text" name="customer_Region" id="customer_Region" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Country" class="floatLblDn">@Resources.Country</label>
+                        <input type="text" name="customer_Country" id="customer_Country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' ">
+                        
+                    </div>
+                    <div class="field">
+                        <label for="customer_ZipCode" class="floatLblDn">@Resources.Zipcode</label>
+                        <input type="text" name="customer_ZipCode" id="customer_ZipCode" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.ZipCode, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Phone" class="floatLblDn">@Resources.Phone</label>
+                        <input type="tel" name="customer_Phone" id="customer_Phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' ">
+                    </div>
+                </div>
+                <div class="modal-screenlock">
+                    <span class="modal-loadingicon"></span>
+                </div>
+                <footer>
+                    <div class="modal-footer">
+                        <span class="footerBorder"></span>
+                        <button class="primary-button" id="btnsavecust" data-bind="click: $data.dosavesettings">@Resources.Save</button>
+                        <button class="secondary-button" data-dismiss="modal" aria-hidden="true">@Resources.Cancel</button>
+                        <button class="account-done primary-button" data-bind="click: $data.done">Done</button>
+                        <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                            <b class=" icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+                        </span>
+                    </div>
+                </footer>
+            </form>
+        </section>
+    </div>
+}
+@if (@Html.HasPermissions(MPCPermissions.Add_Site))
+{
+    <div id="siteModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span>@Resources.NewSite</span>
+        </header>
+        <section class="row">
+            <form data-validationkey="site" id="sitemodal_form" data-bind="submit: dosavesettings">
+
+                <div class="col pull-left sitemodal_formWidth">
+                    <div class="field">
+                        <label for="site_Name">@Resources.Site_name</label>
+                        <input type="text" id="site_Name" class="floatTxt myStyle" name="site_Name" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' " />
+                    </div>
+                    <div class="field">
+                        <label for="site_Email">@Resources.Email</label>
+                        <input type="email" id="site_Email" class="floatTxt myStyle" name="site_Email" data-bind="value: $data.ContactInfo.EmailAddress, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="site_Address">@Resources.Address</label>
+                        <input type="text" id="site_Address" class="floatTxt myStyle" name="site_Address" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' " />
+                    </div>
+                    <div class="field">
+                        <label for="site_City">@Resources.City</label>
+                        <input type="text" id="site_City" class="floatTxt myStyle" name="site_City" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' ">                       
+                    </div>
+                    <div class="field">
+                        <label for="site_Region">@Resources.Region</label>
+                        <input type="text" id="site_Region" class="floatTxt myStyle" name="site_Region" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' ">
+                      
+                    </div>
+                    <div class="field">
+                        <label for="site_Country">@Resources.Country</label>
+                        <input type="text" id="site_Country" class="floatTxt myStyle" name="site_Country" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' ">
+                        
+                    </div>
+                    <div class="field">
+                        <label for="site_ZipCode">@Resources.Zipcode</label>
+                        <input type="text" id="site_ZipCode" class="floatTxt myStyle" name="site_ZipCode" data-bind="value: $data.ContactInfo.ZipCode, valueUpdate: 'afterkeydown' ">
+                    </div>
+                    <div class="field">
+                        <label for="site_Phone">@Resources.Phone</label>
+                        <input type="text" id="site_Phone" class="floatTxt myStyle" name="site_Phone" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' " />
+                    </div>
+
+                </div>
+                <div class="modal-screenlock">
+                    <span class="modal-loadingicon"></span>
+                </div>
+                <footer>
+                    <div class="modal-footer">
+                        <span class="footerBorder"></span>
+                        <button class="primary-button" id="btnsavesite" data-bind="click: $data.dosavesettings">@Resources.Save</button>
+                        <button class="secondary-button" data-dismiss="modal" aria-hidden="true">@Resources.Cancel</button>
+                        <button class="account-done primary-button" data-bind="click: $data.done">Done</button>
+                        <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                            <b class=" icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+                        </span>
+                    </div>
+                </footer>
+            </form>
+        </section>
+    </div>
+}
+@if (@Html.HasPermissions(MPCPermissions.Add_Group))
+{
+    <div id="groupModal" class="mpcmodel modal hide fade groupModalwidthfix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span>@Resources.Config_NewGroup</span>
+        </header>
+        <section class="row">
+            <form data-validationkey="group" id="groupmodal_form" data-bind="submit: dosavesettings">
+                <div class="col pull-left">
+                    <div class="field spaceBottomStyle">
+                        <label for="group_Name">@Resources.Group_name</label>
+                        <input type="text" id="group_Name" class="floatTxt myStyle" name="group_Name" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' ">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <div class="modal-screenlock">
+            <span class="modal-loadingicon"></span>
+        </div>
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                <button class="primary-button" id="btnsavegroup" data-bind="click: dosavesettings">@Resources.Save</button>
+                <button class="secondary-button" data-dismiss="modal" aria-hidden="true">@Resources.Cancel</button>
+                <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                    <b class=" icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+                </span>
+            </div>
+        </footer>
+    </div>
+}
+@if (@Html.HasPermissions(MPCPermissions.ADD_DEVICE_CONTROLLER))
+{
+    <div id="deviceModal" class="mpcmodel modal hide fade deviceModalwidthfix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span>@Resources.Config_NewDevice</span>
+        </header>
+        <section class="row">
+            <form id="DeviceModal_form" data-validationkey="device" data-bind="submit: adddevice">
+                <div class="col pull-left">
+                    <div class="field select-field spaceBottomStyle" >
+                        <label>@Resources.Device_Types</label>
+                        <select id="device_type" name="device_type" title="@Resources.Config_SelectModelDeviceTypes" data-bind="options: $data.devicetypes, optionsText: 'DisplayName', value: DeviceType"></select>
+                      
+                    </div>
+                    <br />
+                    <div class="field spaceBottomStyle">
+                        <label>@Resources.Unique_Key</label>
+                        <input type="text" id="unique_key" class="floatTxt myStyle" name="unique_key" data-bind="value: $data.UniqueId" />
+                    </div>
+                </div>
+
+                <div class="modal-screenlock">
+                    <span class="modal-loadingicon"></span>
+                </div>
+                <footer>
+                    <div class="modal-footer">
+                        <span class="footerBorder"></span>
+                        <button class="primary-button" id="btnsavedevice" data-bind="click: adddevice">@Resources.Config_SaveText</button>
+                        <button class="secondary-button" data-dismiss="modal" aria-hidden="true">@Resources.Cancel</button>
+                        <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                            <b class=" icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+                        </span>
+                    </div>
+                </footer>
+            </form>
+        </section>
+    </div>
+}
+
+
+

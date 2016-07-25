@@ -1,0 +1,57 @@
+﻿<div class="row">
+    <form id="holidayListForm">
+        <div class="row holidayListTableWrapper">
+            @if (Html.HasPermissions(MPCPermissions.DELETE_HOLIDAY))
+            {
+                <button class="ternary-button" data-bind="click: $data.deleteHoliday,visible:$data.deleteVisible">@Resources.Delete</button>
+            }
+            @if (Html.HasPermissions(MPCPermissions.ADD_HOLIDAY))
+            {
+                <button class="primary-button" data-bind="click: $data.createHoliday">@Resources.Holiday_Create_Holiday</button>
+            }
+        </div>
+        <div class="row holidayListTableWrapper">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="formControl-checkbox">
+                                <input type="checkbox" class="checkbox" name="holiday_AllSelected" id="holiday_AllSelected" data-bind="checked: $data.selectAll, click : $data.onSelectAllHoliday" />
+                                <span></span>
+                            </label>
+                        </th>
+                        <th>@Resources.Name</th>
+                        <th>@Resources.Holiday_Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: $data.holidays">
+                    <tr>
+                        <td>
+                            <label class="formControl-checkbox">
+                                <input type="checkbox" class="checkbox" name="holiday_Selected" id="holiday_Selected" data-bind="checked: $data.IsSelected, click: $parent.onSelectHoliday" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.Name" />
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.DateText" />
+                        </td>
+                        <td>
+                            @if (Html.HasPermissions(MPCPermissions.UPDATE_HOLIDAY))
+                            {
+                                <button class="btn btn-link" data-bind="click: $parent.editHoliday">@Resources.Edit</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-link" data-bind="click: $parent.editHoliday">@Resources.View</button>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

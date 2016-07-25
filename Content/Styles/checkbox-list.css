@@ -1,0 +1,51 @@
+﻿.checkbox-list {
+    margin-bottom: 0px;
+}
+
+    .checkbox-list li {
+        float: none;
+        /*border-bottom: 1px solid #D3D3D3;*/
+        margin: 0;
+        /*padding: 14px 14px 14px 14px;*/
+        border-right: 1px solid #D3D3D3;
+        list-style-type: none;
+    }
+
+        .checkbox-list li .colHeading {
+            font-size: 15px;
+            color: #3B3B3D;
+            display: block;
+            font-family: 'Open Sans Semibold' !important;
+        }
+
+        .checkbox-list li div {
+            padding: 12px 0 12px 0 !important;
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+            .checkbox-list li div label {
+                border-style: none;
+                margin: 0 !important;
+            }
+
+                .checkbox-list li div label input {
+                    display: none;
+                }
+
+                    .checkbox-list li div label input:checked + span {
+                        background: url("images/icons/checkBox_press.png");
+                        background-repeat: no-repeat;
+                    }
+
+                .checkbox-list li div label span {
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    background: url("images/icons/checkBox_normal.png");
+                    background-repeat: no-repeat;
+                }
+
+                .checkbox-list li div label.title {
+                    display: inline;
+                    margin: 0 0 0 -2px !important;
+                }

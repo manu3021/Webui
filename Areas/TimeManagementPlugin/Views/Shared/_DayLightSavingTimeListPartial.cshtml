@@ -1,0 +1,325 @@
+﻿<div class="row" style="display:none;">
+    <div class="recordList">
+        <div class="recordListHead">
+            <a class="primary-button" href="#holidayModal" data-toggle="modal" data-bind="click: $data.createholiday">Create New DST</a>
+            <button class="ternary-button" type="button" value="Delete" data-bind="click: $data.dosaveall">Delete</button>
+        </div>
+        <ul class="checkbox-list" data-bind="template:{name:'mpceventrectemplate',foreach: $data.CameraEventRecordings}">
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+        <div class="col pull-left rightFields">
+            <div class=" field">
+                <label for="customer_Name" class="floatLblDn">DTS Name</label>
+                <input type="text" name="DTS_Name" id="DTS Name" class="floatTxt myStyle" data-bind="value: $data.Name" data-original-title="" title="">
+            </div>
+            <div class="field">
+                <label for="user_FirstName" class="floatLblDn">Start Date</label>
+                <input type="text" id="user_FirstName" name="user_FirstName" class="floatTxt myStyle" data-bind="value: $data.FirstName">
+            </div>
+            <div class="field">
+                <label for="user_LastName" class="floatLblDn">End Date</label>
+                <input type="text" id="user_LastName" name="user_LastName" class="floatTxt myStyle" data-bind="value: $data.LastName">
+            </div>
+            <div class="field select-field">
+                <label for="user_LastName">Role Template</label>
+                <select name="" class="OperatorCanbo" data-bind="options: ApplicationRoles, optionsText: &quot;RoleName&quot;, optionValue: &quot;RoleId&quot;, value: SelectedRole"><option value="">SystemAdmin</option><option value="">Operator</option><option value="">Tech support</option></select>
+              
+            </div>
+
+            <div class="row borderTop">
+            </div>
+            <div class="row col" style="margin-left: -204px !important;">
+                <span class="ui-button-container user-partial-button">
+                    <input class="primary-button" type="button" id="btnsave" data-bind="click: $data.saveuserdata" value="Save">
+                    <input class="secondary-button" type="button" id="btncancel" data-bind="click: $data.cancelEdit" value="Cancel">
+                    <button class="secondary-button" data-bind="click: $data.deleteSelectedUser">Delete</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row daylightsaving">
+    <div class="row layoutcol recordListHead">
+        <button class="primary-button" type="button" value="Save" data-bind="click: $data.dosaveall">Create DST</button>
+        <button class="ternary-button" type="button" value="Delete" data-bind="click: $data.dosaveall">Delete</button>
+    </div>
+    <div class="recordList">
+        <ul class="checkbox-list" data-bind="template:{name:'mpceventrectemplate',foreach: $data.CameraEventRecordings}">
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+
+            <li class="mpceventrecitem">
+                <div class="checkboxStyle">
+                    <label class="customcheckbox">
+                        <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                        <span></span>
+                    </label>
+                    <label class="title" data-bind="text: Name">
+                        DTS Name From: 15th Jan, 2014
+                        12:00:00
+                        To: 15 Feb, 2014
+                        12:00:00
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="col pull-left rightFields">
+        <div class=" field">
+            <label for="customer_Name" class="floatLblDn">DTS Name</label>
+            <input type="text" name="DTS_Name" id="DTS Name" class="floatTxt myStyle" data-bind="value: $data.Name" data-original-title="" title="">
+        </div>       
+        <div class="input-append field right-inner-addon" id="gatewaydeviceDateTime">
+            <label class="floatLblDn">Start Date & Time</label>
+            <span class="input-group-addon add-on"><b class="icon-calendar"></b></span>
+            <input type="date" readonly="readonly" class="floatTxt myStyle" data-bind="enable:$data.IsSetDateTimeEnabled">
+        </div>
+
+        <div class="pull-left">
+            <div>
+                <div class="radio horizontal-radio-list control-box" name="panel_chkenabled" id="panel_chkenabled">
+                    <div class="input-append field right-inner-addon" id="gatewaydeviceDateTime">
+                        <label class="floatLblDn">End Date & Time</label>
+                        <span class="input-group-addon add-on"><b class="icon-calendar"></b></span>
+                        <input type="date" readonly="readonly" class="floatTxt myStyle" data-bind="enable:$data.IsSetDateTimeEnabled">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row borderTop">
+        </div>
+        <div class="row col">
+            <span class="ui-button-container user-partial-button">
+                <input class="primary-button" type="button" id="btnsave" data-bind="click: $data.saveuserdata" value="Save">
+            </span>
+        </div>
+    </div>
+</div>
+
+@*<script src="~/Scripts/TimeManagementPlugin/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Scripts/TimeManagementPlugin/bootstrap-timepicker.js"></script>*@
+@Scripts.Render("~/bundles/TimeManagementPluginscript1")

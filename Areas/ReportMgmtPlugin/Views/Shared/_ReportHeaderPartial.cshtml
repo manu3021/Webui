@@ -1,0 +1,21 @@
+﻿<form>
+    <!-- ko if: !$data.reportId() -->
+    <ul>
+        <li>
+                <div class="cardTopFirstSection">
+                    <div class="select-field field">
+                        <label for="selectReport">@Resources.Report</label>
+                        <select tabindex="1" data-bind="options: $data.templates, value: $data.template, optionsText: 'DisplayName', event: {change: $data.onTemplateSelected }"></select>
+                    </div>
+                </div>
+            </li>
+    </ul>
+    <!-- /ko -->
+</form>
+<div class="dividerline"></div>
+
+<script>
+    $(function () {
+        $('#selectReport').selectize({ create: true });
+    });
+</script>

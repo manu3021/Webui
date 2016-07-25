@@ -1,0 +1,142 @@
+﻿<form id="dashboardEditLayout" class="dashboardEditLayout layoutcol" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+    <div class="header-menu-two-dashboard">
+        <ul>
+            <li>
+                <div class="field dashbdName">
+                    <label>@Resources.lbl_name_ur_Dashboard_entity</label>
+                    <input type="text" class="floatTxt myStyle" id="dashboard_Name" name="dashboard_Name" data-bind="value: $data.model.Name">
+                </div>          
+            </li>
+        </ul>
+    </div>
+    <div class="dashboardEditorBody layoutrow">
+        <div class="firstColumn formcontrol dropdown layoutcol">
+            <ul class="dashalarm_events layoutrow">
+                <li class="dropdown dashbdHeading">
+                    @Resources.lbl_choose<span class="dropdown-toggle" data-toggle="dropdown"> @Resources.lbl_alarm_or_events<b class="down-arrow"></b></span>
+                </li>
+            </ul>
+            <ul id="eventConfigContainer" class="dashalarm_eventlist layoutrow scroll-y" data-bind="template: { name: 'dashboard-events-template', foreach: $data.dashboardEvents }"></ul>
+        </div>
+        <div class="secondColumn layoutcol">
+            <ul class="dashCustEvents">
+                <li class=" dashbdHeading">@Resources.lbl_choose_customer </li>
+            </ul>
+            <div class="buttongroup">
+                <button class="primary-button" type="button" data-original-title="@Resources.Viewer_UniversalListText" data-bind="popOver: { name: 'dashboard-popover-template',show: $data.isPopupOpen , popovername:$data.popovername}">@Resources.lbl_add_customer_or_site</button>
+            </div>
+            <ul data-bind="foreach: $data.model.Entities" class="layoutrow scroll-y">
+                <li>
+                    <span data-bind="text: $data.Name"></span>
+                    <span class="dissociate-entity" data-bind="click: $parent.removeEntity"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="thirdColumn layoutcol">
+            <ul class="dashCustEvents">
+                <li class=" dashbdHeading">@Resources.lblDuration</li>
+            </ul>
+            <div class="dashbdTrend">
+                <div class="dashboard-duration">
+                    <span class="switch-toggle switch-ios switch-3">
+                        <input id="Modeone" name="TimeInterval" value="90" type="radio" data-bind="checked: $data.model.DashboardPeriod">
+                        <label for="Modeone">90 @Resources.days</label>
+                        <input id="Modetwo" name="TimeInterval" value="60" type="radio" data-bind="checked: $data.model.DashboardPeriod">
+                        <label for="Modetwo">60 @Resources.days</label>
+                        <input id="Modethree" name="TimeInterval" value="30" type="radio" data-bind="checked: $data.model.DashboardPeriod">
+                        <label for="Modethree">30 @Resources.days</label>
+                        <a></a>
+                    </span>
+                </div>
+                <div class="dashhboard-orline">@Resources.Dashboard_OR <span></span></div>
+                <div class="dashboard-duration">
+                    <section>
+                        <div class="input-append date field right-inner-addon event-date" data-bind="datepicker: $data.model.FromDateTime, datepickerOptions: {format:'@Resources.datetime_picker_format1', pickSeconds: false}">
+                            <a class="reset_cal_icon"></a>
+                            <span class="input-append add-on input-group-addon">
+                                <b class="icon-calendar"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.From</label>
+                            <input class="floatTxt myStyle" type="text" name="dashboard_FromDate" id="dashboard_FromDate" data-format="@Resources.date_picker_format" readonly="readonly">
+                        </div>
+                    </section>
+                    <section>
+                        <div class="input-append date field right-inner-addon event-date" data-bind="datepicker: $data.model.ToDateTime, datepickerOptions: {format:'@Resources.datetime_picker_format1', pickSeconds: false}">
+                            <a class="reset_cal_icon"></a>
+                            <span class="input-append add-on input-group-addon">
+                                <b class="icon-calendar"></b>
+                            </span>
+                            <label class="floatLblDn">@Resources.To</label>
+                            <input class="floatTxt myStyle" type="text" name="dashboard_ToDate" id="dashboard_ToDate" data-format="@Resources.date_picker_format" readonly="readonly">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboardbuttongroup layoutrow">
+        <button class="primary-button" data-bind="click: $data.saveDashboard">@Resources.Add_to_Insight</button>
+        <button class="secondary-button" data-bind="click: $data.previewDashboard">@Resources.Dashboard_Preview</button>
+        <button class="secondary-button" data-bind="click: $data.cancelDashboard" id="btncancel">@Resources.Cancel</button>
+        <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="z-index:500" />
+    </div>
+    <script type="text/html" id="dashboard-popover-template">
+        <section class="contentWrap">
+            <div class="leftTree treecontrol treeProp" data-bind="template: { name: 'dashboard-treeview-template', data: $data.treeview }"></div>
+        </section>
+        <footer>
+            <div id="positionPopoverbtngroup" class="buttonGroupTree">
+                <button id='positionconfirmbtn' data-toggle='clickover' class='primary-button' data-bind="click: $root.onPopoverConfirmClick">@Resources.RULE_LABEL_CONFIRM</button>
+                <button id='positioncancelbtn' data-toggle='clickover' class='secondary-button' data-bind="click: $root.onPopoverCancelClick">@Resources.RULE_LABEL_CANCEL</button>
+            </div>
+        </footer>
+    </script>
+    <script id="dashboard-treeview-template" type="text/html">
+        <div class="tree tree-cont layoutrow">
+            <ul data-bind="template: { name: 'dashboard-treenode-template' , foreach: $data.rootNode.Children }"></ul>
+        </div>
+    </script>
+    <script id="dashboard-treenode-template" type="text/html">
+        <li class="treenormal">
+            <div class="expand" data-bind="event: { mouseover: $root.treeview.handleHover, mouseout: $root.treeview.handleHoverOut }, click: $root.treeview.toggleExpand, clickBubble: false, css: { 'Item-State-hover': $data.IsHover, 'Item-State-selected': $data.IsSelected }">
+
+                <i class="tree-open-icon" data-bind="attr: { 'class': $data.Icon}"></i>
+                <div class="treecheckboxStyle" data-bind="click: $root.treeview.handleSelection, clickBubble: false">
+                    <label class="control-box treecustomcheckbox">
+                        <input type="checkbox" class="checkbox" name="credential_IsTemporary" id="calender" data-bind="checked: $data.IsSelected">
+                        <span></span>
+                    </label>
+                </div>
+                <legand class="tree-label" data-bind=" text: $data.Entity.Name"></legand>
+                <span class="tree-label"></span>
+            </div>
+            <div class="expandul" data-bind="if: $data.IsExpanded">
+                <ul class="tree" data-bind="template: { name: 'dashboard-treenode-template', foreach: $data.Children }"></ul>
+            </div>
+        </li>
+    </script>
+    <script id="dashboard-events-template" type="text/html">
+        <li class="dashbdSearch" data-bind="visible: $data.IsVisible">
+            <label class="formControl-checkbox">
+                <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                <span></span>
+            </label>
+            <legand data-bind="text: $data.Name" />
+            <span class="collapseIcon" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+            <!-- ko if: $data.Categories().length > 0 && $data.IsExpanded() -->
+            <ul class="dashbdEventList" data-bind="template: { name: 'dashboard-events-template', foreach: $data.Categories }"></ul>
+            <!-- /ko -->
+            <!-- ko if: $data.Events().length > 0 && $data.IsExpanded() -->
+            <ul class="dashbdEventList" data-bind="foreach: $data.Events">
+                <li class="dashbdSearch">
+                    <label class="formControl-checkbox">
+                        <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventSelection">
+                        <span></span>
+                    </label>
+                    <legand data-bind="text: $data.Description" />
+                </li>
+            </ul>
+            <!-- /ko -->
+        </li>
+    </script>
+</form>

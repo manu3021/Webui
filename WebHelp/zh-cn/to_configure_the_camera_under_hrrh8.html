@@ -1,0 +1,279 @@
+<html>
+<head>
+    <title>帮助</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">配置 HRRH8 摄像头</h3>
+        <h4 class="subtitle">要配置摄像头设置：</h4>
+        <ol>
+            <li>在“MPC 仪表板”区中，单击<strong>创建和编辑</strong>选项卡。随即显示<strong>创建和编辑</strong>页面。</li>
+			<li>在左窗格中选择地点，然后单击添加到此地点的相关设备。</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">注：</h4>
+				<p>修改设备设置之前，务必在云端注册相关设备。</p>
+			</div>
+			<li>在左窗格中，单击 <i class="camred-icon"></i> 图标（此图标对应于 HRRH8 设备），以展开并查看所有可用摄像头。</li>
+			<li>双击所要求的摄像头。随即显示<strong>设置</strong>页面。</li>
+			<li>在以下字段中输入所要求的详情：</li>
+				<ul>
+					<li>在<strong>配置</strong>下：</li>
+                 </ul>
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">字段</td>
+                    <td>描述</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        摄像头状态
+                    </td>
+                    <td>
+                        单击<strong>启用</strong>，以启用摄像头状态。<>
+						或<>
+						单击<strong>禁用</strong>，以禁用摄像头状态。
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        摄像头名称
+					</td>
+                    <td>
+                        为摄像头输入一个名称。
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                       摄像头类型 
+					</td>
+                    <td>
+                       从下拉列表中选择摄像头的类型。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        选择已发现的 IP 摄像头
+  					</td>
+                    <td>
+                        从下拉列表中选择所要求的 IP 摄像头。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                       摄像头型号
+					</td>
+                    <td>
+                        从下拉列表中选择摄像头的型号。
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        RTSP URL
+					</td>
+                    <td>
+                        输入“实时流协议 (RTSP)”网络的 URL。
+					</td>
+                </tr>
+				 <tr>
+                    <td>
+                        用户名
+					</td>
+                    <td>
+                        输入用于访问 MPC 装置的 URL 的用户名。
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        密码
+					</td>
+                    <td>
+                        输入用于访问 MPC 装置的 URL 的密码。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        播放
+					</td>
+                    <td>
+                        单击 <i class="play-icon"></i> 图标可播放所选摄像头中的可用剪辑。
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        关联
+					</td>
+                    <td>
+                       单击可将摄像头与任何门户关联起来。例如，可以设置当在门户处发生任何事件（比如发现卡）时，摄像头开始录制视频。
+					</td>
+                </tr>	
+				
+				<tr>
+                    <td colspan="2">
+                        <strong>录制剪辑持续时间</strong>
+   					</td>
+                </tr>		
+
+				<tr>
+                    <td>
+                        前期事件
+   					</td>
+                    <td>
+                       单击此时间可设置摄像头在检测到运动之前的剪辑录制时间。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        场内后期事件
+					</td>
+                    <td>
+                       单击此时间可设置场内摄像头在检测到运动之后的剪辑录制时间。
+ 
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                        场外后期事件
+					</td>
+                    <td>
+                       单击此时间可设置场外摄像头在检测到运动之后的剪辑录制时间。
+
+					</td>
+                </tr>	
+				<tr>
+                    <td colspan="2">
+                        <strong>实时/录制设置</strong>
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        帧速率
+					</td>
+                    <td>
+                       从下拉列表中，选择摄像头将以多快的频率（速率）创建唯一连续图像（这样的图像称为“帧”）。
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       摄像头分辨率
+					</td>
+                    <td>
+                       从下拉列表中，选择摄像头分辨率。这是指数字摄像头图像的总像素数。
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                       摄像头品质
+					</td>
+                    <td>
+                       从下拉列表中，选择摄像头的品质。
+					</td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <img src="../../Content/images/progress_bar.jpg">
+					</td>
+                </tr>				
+            </tbody>
+        </table>
+            <ul>
+                <li>在<strong>事件录制</strong>下：</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">字段</td>
+                            <td>描述</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                录制
+                            </td>
+                            <td>
+                                从可用触发器列表中，选择所需的触发点，即开始录制的时间。
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>在<strong>连续录制</strong>下：</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">字段</td>
+                            <td>描述</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                连续录制时间表
+                            </td>
+                            <td>
+                                从可用时间表列表中，选择所要求的期限。在这个期限中将启用连续录制。
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>在<strong>运动录制</strong>下：</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">字段</td>
+                            <td>描述</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                启用运动录制
+                            </td>
+                            <td>
+                                选择此项可启用运动录制。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                保持时间
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                运动录制时间表移动
+                            </td>
+                            <td>
+                                从可用时间表列表中，选择所要求的期限。在这个期限中将启用运动录制。
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            <ul>
+                <li>单击<strong>保存</strong>。</li>
+                </ul>
+</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>上一条</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> 编辑设备设置</a>
+	</p>	
+</div>		
+</body>
+</html>

@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Socorro</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Para configurar as saídas para NetAXS-123</h3>
+        <h4 class="subtitle">Para configurar as definições de saída:</h4>
+        <ol>
+            <li>Na área do Painel MPC, clique no separador <strong>Criar e editar</strong>. É apresentada a página <strong>CRIAR E EDITAR</strong>.</li>
+			<li>No painel esquerdo, selecione o local e, em seguida, clique no dispositivo relevante adicionado ao local.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>antes de modificar as definições do dispositivo, certifique-se de que regista os dispositivos na nuvem.</p>
+			</div>
+			<li>No painel esquerdo, clique no ícone <i class="netaxs-icon"></i> correspondente ao dispositivo NetAXS-123 para expandir e ver todas as portas disponíveis.</li>
+			<li>Clique duas vezes na porta pretendida para expandir e ver todas as saídas associadas. É apresentada a página <strong>Definições</strong>.</li>
+			<li>Introduza os detalhes necessários nos seguintes campos:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descrição</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nome da saída
+                    </td>
+                    <td>
+                        Introduza um nome exclusivo para identificar as saídas da porta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Fuso horário ativo</td>
+                    <td>
+                        Especifica dois programas:
+							<ul>
+								<li><strong>Energizado </strong>– Define o período durante o qual a saída está normalmente energizada.</li>
+								<li><strong>Desativar interbloqueio </strong>– Define o período durante o qual o interbloqueio, uma interação programada entre duas entradas, saídas e grupos selecionados será desativado. Durante o Fuso Horário selecionado, este ponto ignora todas as ações de interbloqueio, desativando efetivamente a sua função de Componente de reação durante o Fuso Horário.</li>
+							</ul>
+						
+						Fora do Fuso Horário, o ponto reage aos interbloqueios tal como previsto.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Travar/acionar fora do Fuso Horário desativa o Tempo do impulso
+					</td>
+                    <td>
+                        Alterna o estado das saídas entre energizadas e desenergizadas a cada ativação (utilização de código, interbloqueio ou impulso manual).
+                </tr>
+				<tr>
+                    <td>
+                        Bloquear fuso horário do interbloqueio
+
+					</td>
+                    <td>
+                        Permite bloquear o fuso horário do interbloqueio ou a interação programada entre dois pontos.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Tempo do impulso
+					</td>
+                    <td>
+                        Especifica a duração para a qual o dispositivo assume um estado anormal. Por exemplo, especifica a duração de ativação de uma sirene ou a duração da libertação de uma porta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Interbloqueio
+					</td>
+                    <td>
+                        Permite desativar o interbloqueio ou a interação programada entre dois pontos.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>Clique em <strong>Guardar</strong>.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Anterior</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Editar definições do dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

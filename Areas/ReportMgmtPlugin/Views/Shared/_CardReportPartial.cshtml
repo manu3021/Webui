@@ -1,0 +1,339 @@
+﻿<link href="~/Content/ReportMgmtPlugin/button.css" rel="stylesheet" />
+<link href="~/Content/ReportMgmtPlugin/addon.css" rel="stylesheet" />
+<link href="~/Content/ReportMgmtPlugin/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+<link href="~/Content/ReportMgmtPlugin/datepickerCustom.css" rel="stylesheet">
+<link href="~/Content/ReportMgmtPlugin/createEditModel.css" rel="stylesheet" />
+<link href="~/Content/ReportMgmtPlugin/reports.css" rel="stylesheet" />
+<link href="~/Content/ReportMgmtPlugin/reports_card_settings.css" rel="stylesheet" media="screen" />
+
+<div class="wrapper">      
+    <div id="page-body" class="reports">
+        <div class="topSection formcontrol">
+            <form>
+                <ul>
+                    <li>
+                        <div class="cardTopFirstSection">
+                            <div class="select-field field">
+                                <label for="selectReport">Report</label>
+                                <select id="selectReport">
+                                    <option value=""><span>Report</span></option>
+                                    <option value="1">Cards</option>
+                                    <option value="2">Card1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+            <div class="dividerline"></div>
+        </div>
+
+        <div class="cardSettings bottomSection">
+            <div class="firstSection formcontrol">
+                <span class="reportsHeading">Filters</span>
+
+                <ul>
+                    <li>
+                        <div class="radio">
+                            <div>
+                                <label class="formControl-radio">
+                                    <input id="all" type="radio" name="radiotest" checked="checked" onclick="hideCardNumberRange()" />
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">All</span>
+                            </div>
+                            <div>
+                                <label class="formControl-radio">
+                                    <input id="cardRange" type="radio" name="radiotest" onclick="showCardNumberRange()" />
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">Card Number Range</span>
+                            </div>
+                        </div>
+                        <div class="cardTopThirdSection">
+                            <div class="field">
+                                <input type="text" id="" name="" required="" placeholder="Card Number Range"><label>Card Number Range</label>
+                            </div>
+                        </div>
+
+
+                    </li>
+
+
+                    <li>
+                        <div class="select-field field">
+                            <label for="selectAccount">Account</label>
+                            <select id="selectAccount">
+                                <option value=""><span>Account</span></option>
+                                <option value="1">Subway</option>
+                                <option value="2">Account1</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="select-field field">
+                            <label for="selectStatus">Card Status</label>
+                            <select id="selectStatus">
+                                <option value=""><span>Card Status</span></option>
+                                <option value="1">Active</option>
+                                <option value="2">Deactive</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field">
+                            <input type="text" id="" name="" required="" placeholder="Card Holder Name"><label>Card Holder Name</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-list"></b></span>
+                            <input type="text" required="" placeholder="Access Personas (4)"><label>Access Personas (4)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-list"></b></span>
+                            <input type="text" required="" placeholder="Door/readers (10)"><label>Door/readers (10)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-append date field right-inner-addon" id="activationDate" data-date="" data-date-format="">
+                            <span class="add-on"><b class="icon-calendar"></b></span>
+                            <input type="text" required="" placeholder="Select Date" readonly="readonly"><label>Activation Dates</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-append date field right-inner-addon" id="expireDate" data-date="" data-date-format="">
+                            <span class="add-on"><b class="icon-calendar"></b></span>
+                            <input type="text" required="" placeholder="Select Date" readonly="readonly"><label>Expire Dates</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="secondSection formcontrol">
+                <span class="reportsHeading">Show Columns</span>
+                <ul>
+                    <li>
+                        <div class="select-field field">
+                            <label for="selectColumns">Select Columns</label>
+                            <select id="selectColumns" @*data-bind="options:$data.OutputFields,optionsText:'Name',optionsValue:'Id'"*@>
+                                <option value="1">Card Number</option>
+                                <option value="2">CardHolder First Name</option>
+                                <option value="3">CardHolder Last Name</option>
+                                <option value="4">Activation Date</option>
+                                <option value="5">Expiration Date</option>
+                                <option value="6">Card Status</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+
+                <span class="reportsHeadingMiddle">& Sort</span>
+                    
+                <ul>
+                    <li>
+                        <div class="select-field field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-sort"></b></span>
+                            <label for="sortOrder1">Sort Order1</label>
+                            <select id="sortOrder1" @*data-bind="options:$data.OutputFields,optionsText:'Name',optionsValue:'Id'"*@>
+                                <option value="1">Card Number</option>
+                                <option value="2">CardHolder First Name</option>
+                                <option value="3">CardHolder Last Name</option>
+                                <option value="4">Activation Date</option>
+                                <option value="5">Expiration Date</option>
+                                <option value="6">Card Status</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="select-field field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-sort"></b></span>
+                            <label for="sortOrder2">Sort Order2</label>
+                            <select id="sortOrder2" @*data-bind="options:$data.OutputFields,optionsText:'Name',optionsValue:'Id'"*@>
+                                <option value="1">Card Number</option>
+                                <option value="2">CardHolder First Name</option>
+                                <option value="3">CardHolder Last Name</option>
+                                <option value="4">Activation Date</option>
+                                <option value="5">Expiration Date</option>
+                                <option value="6">Card Status</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="select-field field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-sort"></b></span>
+                            <label for="sortOrder3">Sort Order3</label>
+                            <select id="sortOrder3" @*data-bind="options:$data.OutputFields,optionsText:'Name',optionsValue:'Id'"*@>
+                                <option value="1">Card Number</option>
+                                <option value="2">CardHolder First Name</option>
+                                <option value="1">CardHolder Last Name</option>
+                                <option value="2">Activation Date</option>
+                                <option value="1">Expiration Date</option>
+                                <option value="2">Card Status</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+
+                @*<button class="secondary-button" type="button" value="Save" data-toggle="modal" role="button" href="#cardPreview" data-bind="click:$data.showpreview">Preview</button>*@
+                <div id="report">
+                    <button class="secondary-button" type="button" value="Save" data-toggle="modal" role="button" href="#cardPreview" data-bind="click:$data.showpreview">Preview</button>
+                    <button class="secondary-button" type="button" value="close" data-bind="click:$data.close">Close</button>
+                </div>
+            </div>
+            <div class="thirdSection formcontrol">
+                <span class="reportsHeading">Schedule This Report</span>
+                <ul>
+                    <li>
+                        <div class="select-field field">
+                            <label for="scheduleFormat">Schedule Format</label>
+                            <select id="scheduleFormat">
+                                <option value=""><span>Schedule Format</span></option>
+                                <option value="1"><span>Every Month</span></option>
+                                <option value="2"><span>Every Week</span></option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="select-field field">
+                            <label for="scheduleDate">On</label>
+                            <select id="scheduleDate">
+                                <option value=""><span>On</span></option>
+                                <option value="1"><span>1st</span></option>
+                                <option value="2"><span>2nd</span></option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+
+                <span class="reportsHeadingMiddle">& Send To</span>
+                <ul>
+                    <li>
+                        <div class="field right-inner-addon">
+                            <span class="input-group-addon"><b class="icon-list"></b></span>
+                            <input type="text" required="" placeholder="Users Selected (42)"><label>Users Selected (42)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field">
+                            <input type="text" id="" name="" required="" placeholder="Name Your Report" data-bind="value:$data.Name"><label>Name Your Report</label>
+                        </div>
+                    </li>
+                </ul>
+                <button class="primary-button" type="button" value="Save">Save Report Schedule</button>
+
+                <ul>
+                    <li>
+                        <div class="select-field field">
+                            <label for="formatType">Format Type</label>
+                            <select id="formatType">
+                                <option value=""><span>Format Type</span></option>
+                                <option value="1">Excel</option>
+                                <option value="2">PDF</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <button class="secondary-button" type="button" value="Save">Export</button>
+                <button class="secondary-button" type="button" value="Save">Email Attachment</button>
+                <button class="secondary-button" type="button" value="Save">Print</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@{
+    Html.RenderAction("ReportPreviewPartial");
+}
+
+@*<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Scripts/dropdown.js"></script>
+<script src="~/Scripts/bootstrap-hover-dropdown.js"></script>
+<script src="~/Scripts/custom.js"></script>*@
+
+<script type="text/javascript">
+    $('#selectReport, #selectAccount, #selectStatus, #sortOrder1, #sortOrder2, #sortOrder3, #selectColumns').selectize({ create: true });
+    $('#scheduleFormat, #scheduleDate, #selectUsers, #reportNames, #formatType').selectize({ create: true });
+</script>
+<script>
+    $('input').on('keyup', function () {
+        $(this).css("color", "#0067A6");
+    });
+
+    function showCardNumberRange() {
+        $(".cardTopThirdSection").css("display", "block");
+    }
+
+    function hideCardNumberRange() {
+        $(".cardTopThirdSection").css("display", "none");
+    }
+
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+        $("#ui-state-default").draggable({ containment: "#sortable", scroll: false });
+    });
+</script>
+<script>
+    $(function () {
+        var onClass = "on";
+        var showClass = "show";
+
+        $("input, select")
+            .bind("checkval", function () {
+                var label = $(this).prev("label");
+
+                if (this.value !== "")
+                    label.addClass(showClass);
+
+                else
+                    label.removeClass(showClass);
+            })
+            .on("keyup", function () {
+                $(this).trigger("checkval");
+            })
+            .on("focus", function () {
+                $(this).prev("label").addClass(onClass);
+            })
+            .on("blur", function () {
+                $(this).prev("label").removeClass(onClass);
+            })
+            .trigger("checkval");
+
+        $("select")
+            .on("change", function () {
+                var $this = $(this);
+
+                if ($this.val() == "")
+                    $this.addClass("watermark");
+
+                else
+                    $this.removeClass("watermark");
+
+                $this.trigger("checkval");
+            })
+            .change();
+    });
+
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#activationDate, #expireDate').datetimepicker({
+            pickTime: false
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+    

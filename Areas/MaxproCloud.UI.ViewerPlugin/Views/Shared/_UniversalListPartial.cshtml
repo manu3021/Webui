@@ -1,0 +1,58 @@
+﻿<script id="cliprslttemplate" type="text/html">
+    <li class="clipresultitem">
+        <span class="clipResultsStyle" data-bind="text:CameraName"></span>
+        <span class="onsite_oncloudStatus" data-bind="text:cloudStatusDisplay"></span>
+        <span class="clipExportIcon" data-toggle="modal" role="button" data-bind="click:$data.getclipExport"></span>
+        <span class="clipResultsDurationStyle" data-bind="text:ClipNameDisplay"></span>
+        <span class="clipResultsDurationStyle" data-bind="text:EventNameDisplay"></span>
+        <span class="clipResultsDurationStyle" data-bind="text:StartTimeDisplay"></span>
+        <span class="clipResultsDurationStyle" data-bind="text:DurationDisplay"></span>
+        <span class="ulsearchResultDivider"></span>
+    </li>
+</script>
+<div class="viewerUniversalList">
+    <!-- Universal List-->
+    <div id="viewer-universal-list" class="universalListOpen">
+        <span class="dropdown" id="hide-universal-list" data-position="left" title data-original-title="@Resources.Viewer_Hidelist"><b class="icon-showUniveralList-active"></b></span>
+        <div id="universalListHeading" class="universalListHeading universalListTitleOpen"><span id="ulheader">@Resources.Viewer_UniversalListText </span>
+            <b class="icon-down"></b>
+            <b class="icon-up"></b>
+        </div>
+        <div class="navbar">
+            <ul class="nav">
+                <li>
+                    <span class="icon-back"></span>
+                </li>
+                <li>
+                    <div class="searchHolder">
+                        <input type="search" class="searchbox" placeholder="">
+                    </div>
+                </li>
+                @Html.Partial("_Universialclipfilterparttial")
+                <li class="UlclipSearch">
+                    <span id="UlclipSearchButton">@Resources.lbl_Clip_search</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul id="Ulistitem" class="universalListItems" data-bind="foreach: Ulistitem">
+                <li data-bind="attr: {'id':id},click:ulistitemclick,visible:shouldShowlist">
+                    <span data-bind="text:title"></span>
+                    <span class="uldivider"></span>
+                </li>
+            </ul>
+        </div>
+        <div id="treeitem" class="ulistContainer treecontrol">
+            <div id="uTreeview" data-url='@Url.Action("GetTreeviewItem", "Viewer")'></div>
+            <div id="liveview" data-url="@Url.Action("GetLiveStreamUrl", "Viewer")"></div>
+            <div id="sendstopRequest" data-url="@Url.Action("SendStopRequestU", "Viewer")"></div>
+            <div id="ulsearchresults" class="ulsearchResultsBody">
+                <label id="searchresultmsg" class="searchMsgStyle"></label>
+                <ul data-bind="template:{name:'cliprslttemplate',foreach:$data.clipResults}"></ul>
+            </div>
+        </div>
+        <div id="salvotreeitem" class="ulistContainer treecontrol">
+            <div id="salvotree" data-url='@Url.Action("GetSalvoTreeviewItem", "Viewer")'></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,769 @@
+﻿.accesspersona-root .back-access {
+    padding: 0;
+}
+
+    .accesspersona-root .back-access li {
+        list-style: none;
+        padding: 1px 0 0 33px;
+    }
+
+.accesspersona-root .icon-leftarrow {
+    background-image: url("imgs/sprite_icons.png");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    background-position: -188px -188px;
+}
+
+.accesspersona-root .tree-label {
+    padding-right: 15px;
+    min-width: 10%;
+    /*width:300px;*/
+}
+
+.accesspersona-root .createBodyContainer .txtFields {
+    border-bottom: 1px solid #d3d3d3;
+    border-top: none;
+}
+
+.accesspersona-root .createBodyContainer .userItemhighlight {
+    background: #e6f3fb;
+}
+
+.accesspersona-root .createBodyContainer .height-set {
+    overflow: hidden !important;
+    height: auto;
+}
+
+.accesspersona-root .createBodyContainer .user-height {
+    height: 100%;
+}
+
+.accesspersona-root .createBodyContainer .treeProp {
+    height: auto;
+    border-left: 1px solid #bababb;
+    top: 108px !important;
+    margin: 0px;
+    /*-ms-overflow-y: auto;
+    overflow-y: auto;*/
+    width: 25%;
+    bottom:69px;
+    margin-left: 26%;
+}
+
+.accesspersona-root .createBodyContainer .tree {
+    clear: both;
+    top: 43px;
+    /*width: 320px;*/
+    z-index: 2;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+}
+
+.accesspersona-root .accessPerCol {
+    width: 34%;
+    float: left;
+}
+
+.accesspersona-root .accessPerCol.first {
+height: auto;
+  top: 108px !important;
+  margin: 0px;
+  width: 26%;
+  bottom: 69px;
+  position: fixed;
+  overflow: hidden;
+}
+
+.accesspersona-root .accessPerCol.first:hover {
+  overflow: auto;
+}
+
+
+.accesspersona-root .accessPerSche {
+    margin-left: 69%;
+    width: 30%;
+    /*margin-top:	-19px;*/
+}
+
+.accesspersona-root .accessPerCol header {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Open Sans Semibold" !important;
+    margin: 18px 0 0 24px;
+    padding: 0 0 4px;
+}
+
+.accesspersona-root .accessPerCol .radio {
+    margin: 5px 0 0 20px;
+    overflow: auto;
+    /*height: 47%;*/
+    position: fixed;
+    width: 282px;
+    top: 162px;
+    bottom: 61px;
+}
+
+.accesspersona-root .accessPerCol .formControl-radio span, .accesspersona-root .accessPerCol .formControl-radio input:checked + span {
+    background-position-y: 0;
+    position: relative;
+    padding: 0 0 5px 28px;
+    width: auto;
+}
+
+.accesspersona-root .accessPerCol .radio .radiotext {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.accesspersona-root .leftTree {
+    width: 320px;
+    border-right: 1px solid #bababb;
+    cursor: hand;
+    height: 82%;
+    bottom: 126px;
+    top: 240px;
+    margin-left: -17px;
+    position: fixed;
+}
+
+.accesspersona-root .tree-schedule-icon {
+    background: no-repeat url(././imgs/icon_schedule.png);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 13px;
+}
+
+.accesspersona-root .tree-people-icon {
+    background: no-repeat url(././imgs/icon_people.png);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 13px;
+}
+
+
+.accesspersona-root .tree-open-icon {
+    background: no-repeat url(././imgs/icon_folder.png);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.accesspersona-root .multiselect-list-view {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    .accesspersona-root .multiselect-list-view > li {
+        border-bottom: 1px solid #bababb;
+        padding: 8px;
+        color: #6a6a6c;
+        cursor: pointer;
+    }
+
+        .accesspersona-root .multiselect-list-view > li:hover {
+            background-color: #e6f3fb;
+            color: #4d4d4d;
+        }
+
+
+        .accesspersona-root .multiselect-list-view > li ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .accesspersona-root .multiselect-list-view > li ul li {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+    .accesspersona-root .multiselect-list-view li span {
+        display: block;
+        padding-top: 2px;
+    }
+
+.accesspersona-root .selecteditem {
+    background-color: #e6f3fb;
+    color: #4d4d4d;
+}
+
+.accesspersona-root .photo-list-item {
+    background-image: url(../images/img_profileSmall.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+.accesspersona-root .spaceBottomStyle select {
+    height: 51px;
+    border-width: 0 1px 1px 0;
+    /*width: 257px;*/
+}
+
+.accesspersona-root .access_persona_config_active {
+    display: block;
+}
+
+.accesspersona-root .access_persona_config_hide {
+    display: none;
+}
+
+.accesspersona-root .access_persona_save_active {
+    display: block;
+}
+
+.accesspersona-root .access_persona_save_hide {
+    display: none;
+}
+
+.accesspersona-root .accessPerLarge {
+    /*border-bottom: 1px solid #d3d3d3;*/
+    float: left;
+    /*width: 80%;*/
+    margin: 12px 0px 0 -24px;
+    /*padding-top: 20px;*/
+}
+
+.accesspersona-root .accessPerLarge .date{
+    margin-top: 0;
+}
+
+/*.accesspersona-root .accessPerLarge-noMar {
+    float: right;
+    margin: 45px 30px 0px 23px;        
+}*/
+
+    .accesspersona-root .accessPerLarge section, .accesspersona-root .accessPerLarge-noMar section {
+        width: 300px;
+        float: left;
+        margin: 0;
+    }
+
+.accesspersona-root .accessPerLarge strong {
+    font-size: 19px;
+}
+
+.accesspersona-root .accessPerLarge section + span {
+    display: block;
+    color: #0088cc;
+    font-size: 20px;
+}
+
+.accesspersona-root .accessPerLarge-noMar + span.or {
+    margin: 10px 0 0;
+    display: block;
+}
+
+.accesspersona-root .accessPerLarge-noMar .formcontrol {
+    padding: 0px;
+    /*height: auto;
+    position: relative;*/
+}
+
+.accesspersona-root .accessPerLarge-noMar .formcontrol .field{
+    margin:0;
+}
+
+/*.accesspersona-root .leftTree .schedule-name {
+    position: absolute;
+    color: #0088cc;   
+    height:16px;
+    border-bottom: 1px solid #d3d3d3;
+}*/
+
+.accesspersona-root .right-inner-addon {
+    position: relative;
+}
+
+    .accesspersona-root .right-inner-addon input {
+        padding-right: 24px;
+    }
+
+        .accesspersona-root .right-inner-addon input.error {
+            width: 266px !important;
+            -webkit-background-position-x: 195px;
+            -ms-background-position-x: 195px;
+            -o-background-position-x: 195px;
+            background-position-x: 195px;
+        }
+
+        .accesspersona-root .right-inner-addon .tooltip.bottom .tooltip-arrow{
+    left: 209px;
+}
+
+    .accesspersona-root .right-inner-addon + span {
+        position: absolute;
+        right: 26px;
+        padding: 27px 12px;
+        width: 37px;
+        z-index: 2;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        border-left: 1px solid #d3d3d3;
+        border-top: 0px solid #d3d3d3;
+        border-bottom: 0px;
+        background-color: #F9F9F9 !important;
+    }
+
+        .accesspersona-root .right-inner-addon + span:hover {
+            background-color: #e6f3fb !important;
+        }
+
+.accesspersona-root .icon-calendar, .accesspersona-root .icon-calendar:hover {
+    background-position: 0 0;
+    left: 16px;
+    top: 14px;
+}
+
+.accesspersona-root .navigation-buttons {
+    border-top: 1px solid #d3d3d3;
+    clear: both;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #fff;
+    margin-left: 21px;
+}
+
+/*.accesspersona-root .ternary-button {
+    width: 250px;
+    margin: 5px;
+    margin-left: 0;
+}*/
+
+.accesspersona-root a {
+    cursor: pointer;
+}
+
+    .accesspersona-root a:hover {
+        background: transparent !important;
+        border: none;
+        border-bottom: 1px;
+    }
+
+
+/*.accesspersona-root .primary-button {
+    margin-left: 0px;
+    position: relative;
+}*/
+
+.accesspersona-root .multiselect-list-view {
+    position: absolute;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.accesspersona-root .accesspersona-delete-combo {
+    height: 50px;
+    width: 275px;
+}
+
+.accesspersona-root .edit-finish {
+    padding: 12px 0 0;
+}
+
+.accesspersona-root .doors {
+    background: #fff;
+    width: 100%;
+    z-index: 3;
+}
+
+.accessPerCol .accessPersonaSubheading{
+    background: #fff;
+    width: 100%;
+    z-index: 3;
+}
+
+.accessPerCol .accessPersonaSubheading header{
+    margin: 9px 0px 15px 0px;
+}
+
+.accesspersona-root .tree-cont {
+    position: absolute;
+    top: 105px;
+    /*z-index:-9;*/
+}
+
+    .accesspersona-root .tree-cont ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+
+.accesspersona-root .first section {
+    margin: 0px 12px 0 24px;
+}
+
+/*.accesspersona-root .first header {
+    margin-top:	-2px;
+}*/
+
+.accesspersona-root .createBodyContainer .tree li:before {
+    border-left: 1px dotted #d3d3d3;
+    height: 100%;
+    top: 0;
+    width: 1px;
+    /*left: -10px;*/
+    position: absolute;
+    content: '';
+}
+
+.accesspersona-root .createBodyContainer .tree li {
+    position: relative;
+}
+
+.accesspersona-root .height-set {
+    overflow: hidden !important;
+    height: auto;
+}
+
+.accesspersona-root .UserClassCreate:hover {
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+}
+
+.accesspersona-root .UserClassCreate {
+    width: 26%;
+    padding: 0 !important;
+}
+
+.accesspersona-root .user-height ul {
+    margin-left: 0;
+    margin-top: -3px;
+}
+
+.accesspersona-root .UserClassCreate ul li {
+    list-style-type: none;
+}
+
+.accesspersona-root .UserListitem {
+    padding-left: 24px;
+}
+
+.accesspersona-root .imgHolder {
+    margin-right: 14px;
+    margin-top: 16px;
+}
+
+.accesspersona-root img {
+    border: 0;
+    height: 95%;
+    width: 95%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+.accesspersona-root .txtFields {
+    border-bottom: 1px solid #d3d3d3;
+    border-top: none;
+    padding-bottom: 11px;
+    padding-top: 16px;
+}
+
+.accesspersona-root .bottomSpace {
+    padding-bottom: 5px;
+}
+
+.accesspersona-root .grid-text1 {
+    font-size: 15px;
+    color: #525357;
+}
+
+.accesspersona-root .UserClassCreate a:hover {
+    text-decoration: none;
+}
+
+.accesspersona-root .UserListitem:hover {
+    background-color: #e6f3fb !important;
+}
+
+.accesspersona-root .user-height {
+    overflow: auto;
+    height: 100%;
+    position: absolute;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+/*#accessPersonaCHListBtn {
+    line-height:normal;
+    min-width:269px;
+}
+#accessPersonaCHListBtn input {
+    padding-left:3px; 
+    width:10px; 
+    cursor:pointer; 
+    box-shadow:none; 
+    background:url(../images/icon_search.png) no-repeat right !important; 
+    background-size:20px!important; 
+    margin:8px 0 0px 24px;
+    border: none !important;
+}
+#accessPersonaCHListBtn input[type=search]:focus { 
+    color:#bababa; 
+    cursor:auto; 
+    width:200px; 
+    padding:4px 30px 4px 12px; 
+    background:url(../images/icon_search.png) no-repeat right !important; 
+    background-size:15px!important; 
+    border:1px solid lightgray !important; 
+}*/
+.accessPerCol .field {
+    width: 303px;
+    margin-top: 20px;
+}
+
+.accesspersona-root .right-inner-addon > span.add-on {
+    width: 39px !important;
+    height: 39px !important;
+    z-index: 100;
+    right: 0;
+    border-right: none;
+    border-top: none;
+    padding: 4px 6px;
+}
+
+.accesspersona-root .clearboth {
+    float: right;
+    font-size: 12px;
+    color: #9d9d9d;
+    padding-right: 24px;
+}
+
+/*.accesspersona-root .formcontrol button {
+    margin: 12px 0 0 10px;
+}*/
+
+#deleteAccessPersonaConfirmContent .field {
+    margin-top: 15px;
+}
+
+.modal-confirm #deleteAccessPersonaConfirmContent .modal-footer {
+    width: 89%;
+}
+
+.accesspersona-root .reset_cal_icon {
+    font-size: 22px;
+    float: right;
+    position: relative;
+    right: 60px;
+    z-index: 999;
+    top: 13px;
+    color: #707070;
+    background: none;
+}
+
+    .accesspersona-root .reset_cal_icon:hover {
+        text-decoration: none;
+        color: #0889C5;
+    }
+
+#accesspersona_nav_pane .icon_accessarrow {
+    background: url('../images/sprite_icons.png') no-repeat -280px -340px;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    padding-left: 30px;
+    float: none;
+}
+
+/*Tab Styles For Access Persona*/
+#access_persona_content #mpcTabs {
+    height: 43px;
+    border-bottom: 1px solid #d6d6d6;
+    font-family: "Open Sans Regular";
+    margin-left: 23px;
+    /* padding-top: 11px; */
+    margin-bottom: 0px;
+}
+
+    #access_persona_content #mpcTabs .active {
+        border-bottom: 2px solid #0889C4;
+        padding-bottom: 5px;
+    }
+
+    #access_persona_content #mpcTabs.nav-tabs > li {
+        margin-right: 26px;
+    }
+
+        #access_persona_content #mpcTabs.nav-tabs > li a {
+            padding-left: 0;
+            padding-right: 0;
+            color: #707070;
+            background-color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: medium none;
+        }
+
+            #access_persona_content #mpcTabs.nav-tabs > li a:hover {
+                background: none;
+                border: none;
+                padding-top: 9px;
+                padding-left: 1px;
+                padding-right: 1px;
+                color: #0889C4;
+            }
+
+    #access_persona_content #mpcTabs .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        /* padding-top: 7px; */
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+        #access_persona_content #mpcTabs .active a:hover {
+            padding-bottom: 9px;
+        }
+/*Tab Styles For Access Persona*/
+
+/*Search style for Access Persona List*/
+#accessPersonaCHListBtn {
+    line-height: normal;
+    min-width: 269px;
+    height: 47px;
+    margin-left: 18px;
+    margin-top: 12px;
+}
+
+    #accessPersonaCHListBtn input {
+        padding-left: 3px;
+        width: 10px;
+        cursor: pointer;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0, OffY=0, Color='black', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+        background: url(../images/icon_search.png) no-repeat right;
+        -webkit-background-size: 20px !important;
+        -moz-background-size: 20px !important;
+        -ms-background-size: 20px !important;
+        -o-background-size: 20px !important;
+        background-size: 20px !important;
+        margin: 5px 0 0px 24px;
+        border: none !important;
+    }
+
+        #accessPersonaCHListBtn input:hover {
+            background: url(../images/icon_searchHover.png) no-repeat right !important;
+        }
+
+    #accessPersonaCHListBtn input {
+        margin: 0;
+    }
+
+        #accessPersonaCHListBtn input[type=search]:focus {
+            color: #bababa;
+            cursor: auto;
+            width: 200px;
+            padding: 0px 30px 4px 12px;
+            background: #3b3b3b url(../images/icon_searchHover.png) no-repeat right !important;
+            -webkit-background-size: 15px !important;
+            -moz-background-size: 15px !important;
+            -ms-background-size: 15px !important;
+            -o-background-size: 15px !important;
+            background-size: 15px !important;
+            border: 1px solid #454545 !important;
+            margin: 0px 0 0;
+            padding: 0px;
+            height: 22px;
+        }
+
+        #accessPersonaCHListBtn input[type=search]:focus {
+            color: #bababa;
+            cursor: auto;
+            width: 200px;
+            padding: 4px 30px 4px 12px;
+            background: url(../images/icon_searchHover.png) no-repeat right !important;
+            -webkit-background-size: 15px !important;
+            -moz-background-size: 15px !important;
+            -ms-background-size: 15px !important;
+            -o-background-size: 15px !important;
+            background-size: 15px !important;
+            border: 1px solid lightgray !important;
+        }
+/*Search style for Access Persona List*/
+
+.access_persona_config_active .createNew_div {
+    padding-top: 15px;
+}
+
+#access_persona_save{
+  border-top: 1px solid #d6d6d6;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 24px;
+  padding-top: 14px;
+  margin-left: 22px;
+  background-color:#ffffff;
+  height:30px;
+}
+
+.accesspersona-root section.accesspersona_section{
+  margin: 10px 0 0 22px;
+}
+
+.accesspersona_section .accessPersonaText {
+    font-size: 12px;
+    color: #9d9d9d;
+    padding-right: 16px;
+    display: block;
+}
+
+.accesspersona-root .createBodyContainer ul.tree{
+    overflow:hidden
+}
+.access_persona_config_active input::-webkit-input-placeholder { 
+        color: #bababa !important; 
+    }
+.createNew_div .formcontrol {
+    padding: 0 !important; 
+}
+/*.accesspersona-root .accessPerLarge-noMar.access-footerCtrl .formcontrol{
+    text-align:right
+}*/
+/*.access-footerCtrl .field {
+    width: 303px;
+  right: -80px;
+}*/
+
+.accesspersona_section .ternary-button {
+    margin-bottom: 22px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .access_persona_config_active .tree-label, .schedule-name {
+        margin-bottom: -15px;
+        margin-left: -4px;
+        width: auto !important;
+    }
+}
+
+@-moz-document url-prefix() {
+.accesspersona-root .accessPerCol.first {
+    overflow: auto;
+}
+}

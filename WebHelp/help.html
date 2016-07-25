@@ -1,0 +1,331 @@
+﻿<html lang="en">
+<head>
+    <title>Online Help</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="../Content/Styles/configstyle.css" rel="stylesheet" />
+    <link href="../Content/Styles/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../Content/Styles/Site.css" rel="stylesheet" />
+    <link href="../Content/Styles/header.css" rel="stylesheet" />
+    <script src="../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/lib/knockout-2.2.1.js"></script>
+    <script src="../Scripts/lib/bootstrap.min.js"></script>
+    <script src="../Scripts/lib/webhelp.js"></script>
+    <script src="Scripts/help.pubsubimpl.js"></script>
+</head>
+<body>
+    <div id="onlineHelpWrap">
+        <div class="row" id="page-header">
+            <div class="logo" id="logo">
+                <span></span>
+            </div>
+            <div class="dropdown pagetitle">
+                <a class="dropdown-toggle overlayBgOpacity pagetitleHandleBarHide" data-toggle="dropdown">Help</a>
+            </div>
+        </div>
+        <section id="page-body">
+            <div class="header-menu-three">
+                <div class="tabcontainer">
+                    <ul class="nav nav-tabs" id="configtab">
+                        <li data-bind="css: { 'active': selected() == 'tab1' }"><a data-bind="click: select('tab1')" href="#operation" data-toggle="tab" data-tabindex="1" style="display: block;">Operation</a></li>
+                        <li data-bind="css: { 'active': selected() == 'tab2' }"><a data-bind="click: select('tab2')" href="#installation" data-toggle="tab" data-tabindex="-1" style="display: block;">Installation</a></li>
+                        <li data-bind="css: { 'active': selected() == 'tab3' }"><a data-bind="click: select('tab3')" href="#tools" data-toggle="tab" data-tabindex="-1" style="display: block;">Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layoutcol" style="width:100%">
+                <div class="tab-content">
+                    <div class="tab-pane" data-bind="css: { 'active': selected() == 'tab1' }" id="operation">                        
+                        <div class="leftTree">
+                            <header>
+                                <input placeholder="Search" class="helpsearch" name="q" data-bind="autoFilter:{wrapperClassName : 'help_operation'}" autocomplete="off">
+                                <!--<form action="#">
+                                    <input placeholder="Search" class="helpsearch" name="q" data-bind="autoFilter:{wrapperClassName : 'help_operation'}" autocomplete="off">
+                                </form>-->
+                            </header>
+                            <div class="tree">                                
+                                <div class="content">
+                                    <ul class="help_operation">
+                                        <li class="search-item">
+                                            <span class="linkwrap treeitemactive">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/overview.html' }"  target="helpIframe">Overview of MPC</a></span>
+                                            </span>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <i class="tree-open-icon"></i>
+                                                <span class="tree-label search-item-text">Access Account Management</span>
+                                            </span>
+                                            <ul class="list-level1">
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/logon.html' }" id="logon" target="helpIframe">Log On</a></span>
+                                                    </span>
+                                                </li>
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <i class="tree-open-icon"></i>
+                                                        <span class="tree-label search-item-text">Creating and Editing</span>
+                                                    </span>
+                                                    <ul class="list-level3">
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_customer_account.html' }" target="helpIframe">Create a Customer/Account</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_site.html' }" target="helpIframe">Create a Site</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_group.html' }" target="helpIframe">Create a Group</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_device.html' }" target="helpIframe">Create a Device</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li class="level_three">
+                                                            <span class="linkwrap">
+                                                                <i class="tree-open-icon"></i>
+                                                                <span class="tree-label search-item-text">People</span>
+                                                            </span>
+                                                            <ul class="list-level3">
+                                                                <li>
+                                                                    <span class="linkwrap">
+                                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/card_holders.html' }" target="helpIframe">Card Holders</a></span>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="linkwrap">
+                                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/provide_access.html' }" target="helpIframe">Provide Access</a></span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="level_three">
+                                                            <span class="linkwrap">
+                                                                <i class="tree-open-icon"></i>
+                                                                <span class="tree-label search-item-text">Schedule and Holidays</span>
+                                                            </span>
+                                                            <ul class="list-level3">
+                                                                <li>
+                                                                    <span class="linkwrap">
+                                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_schedule.html' }" target="helpIframe">Create a Schedule</a></span>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="linkwrap">
+                                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_a_holiday.html' }" target="helpIframe">Create a Holiday</a></span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/delete.html' }" target="helpIframe">Delete</a></span>
+                                                    </span>
+                                                </li>
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <i class="tree-open-icon"></i>
+                                                        <span class="tree-label search-item-text">Create and Editing the Settings</span>
+                                                    </span>
+                                                    <ul class="list-level3">
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/locate_the_location_on_the_map.html' }" target="helpIframe">Locate the Location on the Map</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/edit_the_settings.html' }" target="helpIframe">Edit the Settings</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/add_and_edit_operators.html' }" target="helpIframe">Add and Edit Operators</a></span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/logoff.html' }" target="helpIframe">Log Off</a></span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <i class="tree-open-icon"></i>
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/manage_viewer.html' }" target="helpIframe">Manage Viewer</a></span>
+                                            </span>
+                                            <ul class="list-level1">
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <i class="tree-open-icon"></i>
+                                                        <span class="tree-label search-item-text">Managing Cameras</span>
+                                                    </span>
+                                                    <ul class="list-level2">
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/search_and_playback.html' }" target="helpIframe">Search and Playback</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/view_in_full_screen.html' }" target="helpIframe">View in Full Screen</a></span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <i class="tree-open-icon"></i>
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/monitor_alarms.html' }" target="helpIframe">Managing Alarms</a></span>
+                                                    </span>
+                                                    <ul class="list-level2">
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/monitor_and_view_alarms.html' }" target="helpIframe">Monitor and View Alarms</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/acknowledge_alarms.html' }" target="helpIframe">Acknowledge Alarms</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/clear_acknowledged_alarms.html' }" target="helpIframe">Clear Acknowledged Alarms</a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="linkwrap">
+                                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/freeze_alarm_stream.html' }" target="helpIframe">Freeze Alarm Stream</a></span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <i class="tree-open-icon"></i>
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/reports.html' }" target="helpIframe">Generate Reports</a></span>
+                                            </span>
+                                            <ul class="list-level1">
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_reports.html' }" target="helpIframe">Create Reports</a></span>
+                                                    </span>
+                                                </li>
+                                                <li class="main-par">
+                                                    <span class="linkwrap">
+                                                        <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/view_reports.html' }" target="helpIframe">View Reports</a></span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/create_and_activate_rules.html' }" target="helpIframe">Creating Rules</a></span>
+                                            </span>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/profile_details.html' }" target="helpIframe">Managing Profile</a></span>
+                                            </span>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/searching_the_calendar.html' }" target="helpIframe">Searching the Calendar</a></span>
+                                            </span>
+                                        </li>
+
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/managing_maps.html' }" target="helpIframe">Managing Maps</a></span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="contentarea">
+                                    <iframe name="helpIframe" id="helpIframe" src="overview.html' }"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" data-bind="css: { 'active': selected() == 'tab2' }" id="installation">
+                        <div class="leftTree">
+                            <div class="tree">                                
+                                <div class="content">
+                                    <ul class="help_installation">
+                                        <li class="search-item">
+                                            <span class="linkwrap treeitemactive">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/installation.html' }" target="helpInstallationIframe">Quick References</a></span>
+                                            </span>
+                                        </li>
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/installation-netaxes.html' }" id="netaxes" target="helpInstallationIframe">NetAXS123</a></span>
+                                            </span>
+                                        </li>
+                                        <li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/installation-hrrh8.html' }" id="hrrh8" target="helpInstallationIframe">HRRH8</a></span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="contentarea">
+                                    <iframe name="helpInstallationIframe" id="helpInstallationIframe" src="installation.html' }" data-bind="bindIframe: selected()"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" data-bind="css: { 'active': selected() == 'tab3' }" id="tools">
+                        <div class="leftTree">
+                            <div class="tree">                               
+                                <div class="content">
+                                    <ul class="help_parent">
+                                        <li class="search-item">
+                                            <span class="linkwrap treeitemactive">
+                                                <span class="tree-label search-item-text"><a data-bind="attr: { href: culture() + '/tools.html' }" target="helpIframe">HRRH8 Related</a></span>
+                                            </span>
+                                        </li>
+                                        <!--<li class="search-item">
+                                            <span class="linkwrap">
+                                                <span class="tree-label search-item-text">NETAXES Related</span>
+                                            </span>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                                <div class="contentarea">
+                                    <iframe name="helpToolsIframe" id="helpToolsIframe" src="tools.html' }"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

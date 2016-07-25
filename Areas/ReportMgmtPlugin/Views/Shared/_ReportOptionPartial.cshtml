@@ -1,0 +1,103 @@
+﻿@*<span class="reportsHeading">@Resources.Report_Option_Schedule</span>
+    <ul>
+        <li>
+            <div class="spaceBottomStyle field">
+                <label for="selectStatus">@Resources.Report_Schedule_Format</label>
+                <select>
+                    <option value="0">@Resources.Report_Schedule_Format</option>
+                </select>
+            </div>
+        </li>
+        <li>
+            <div class="spaceBottomStyle field">
+                <label for="scheduleDate">@Resources.Report_On</label>
+                <select>
+                    <option value="0">@Resources.Report_On</option>
+                </select>
+            </div>
+        </li>
+    </ul>*@
+<form data-validationkey="report_form" id="reportmodalform">
+    <span class="reportsHeading" data-bind="visible: !$data.IsDefault()">@Resources.Report_Schedule</span>
+    <ul class="sch_options">
+        <li>
+            <div class="field select-field notRequiredStyle" data-bind="visible: !$data.IsDefault()">
+                <label for="selectAccount">@Resources.Report_Schedule_Options</label>
+                <select tabindex="19" id="formatType" data-bind="value: $data.RecurrenceOption">
+                    <option value="0">@Resources.Report_Schedule_Never</option>
+                    <option value="1">@Resources.Report_Schedule_Every_Day</option>
+                    <option value="3">@Resources.Report_Schedule_Every_Week</option>
+                    <option value="4" selected="selected">@Resources.Report_Schedule_Every_Month</option>
+                    @*<option value="?">@Resources.Report_Schedule_By_Weekly</option>*@
+                    @*<option value="?">@Resources.Report_Schedule_Every_Hour</option>*@
+                    @*<option value="?">@Resources.Report_Schedule_Only_Once</option>*@
+                </select>
+            </div>
+        </li>
+        <li>
+            <div class="input-append date field right-inner-addon event-date notRequiredStyle" id="reportScheduleDate" data-date="" data-date-format="" data-bind="visible: !$data.IsDefault(), datepicker:$data.ScheduleOn, datepickerOptions: {format:'@Resources.datetime_picker_format', startDate: new Date()}">
+                <span class=" add-on" tabindex="20">
+                    <b class="icon-calendar"></b>
+                </span>
+                <label class="floatLblDn" data-bind="visible: !$data.IsDefault()">On:</label><input type="text" required="" placeholder="@Resources.Select_Date" readonly="readonly" class="floatTxt myStyle">
+            </div>
+        </li>
+        <li>
+            <div class="field right-inner-addon notRequiredStyle" data-bind="visible: !$data.IsDefault()">
+                <span class="input-group-addon selectUsersButton" tabindex="21" data-toggle="popover" title="@Resources.Report_Schedule_Select_Users" data-bind="popOver: { name: 'select-report-users-template', placement: 'bottom', show: $data.isUserPopupOpen , popovername:'User List'}"><b class="icon-list" data-bind="title: 'Select Users'"></b></span>
+                <label class="floatLblDn">@Resources.Report_Schedule_Send_To</label><input type="text" required="" placeholder="@Resources.Report_Schedule_Send_To" data-bind="value: $data.selectedReportUsers" class="floatTxt myStyle">
+            </div>
+        </li>
+        <li>
+            <div class="field">
+                <label class="floatLblDn">@Resources.Report_Name</label><input type="text" tabindex="22" id="Report_Name" name="Report_Name" placeholder="@Resources.Report_Name" data-bind="value: $data.Name" class="floatTxt myStyle">
+            </div>
+        </li>
+    </ul>
+    <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+    <button class="primary-button" tabindex="23" type="button" value="Save" data-bind="visible: !$data.IsDefault(), click: $data.savereport">@Resources.Report_Save</button>
+
+    <ul>
+        <li>
+            <div class="field select-field">
+                <label for="exportType_Lbl">@Resources.Report_Format_Type</label>
+                <select id="exportType" tabindex="24" data-bind="value: $data.ExportType">
+                    <option value="xls" selected="selected">@Resources.Report_Format_Type_Excel</option>
+                    <option value="pdf">@Resources.Report_Format_Type_PDF</option>
+                </select>
+            </div>
+        </li>
+    </ul>
+    <button class="secondary-button" tabindex="25" type="button" data-bind="click:$data.exportReport">@Resources.Report_Export</button>
+    @*<button class="secondary-button" type="button" value="Save">@Resources.Report_Email</button>
+        <button class="secondary-button" type="button" value="Save">@Resources.Report_Print</button>*@
+    <iframe id="ifrmExport" class="hide"></iframe>
+
+    <script type="text/html" id="select-report-users-template">
+        <div class='selectColumnContainer'>
+            <ul>
+                <li>
+                    <label class='formControl-checkbox'>
+                        <input class='checkbox' type='checkbox' data-bind="checked: $data.IsAllUsersSelected, click: $data.onSelectAllUsers">
+                        <b></b>
+                    </label>
+                    <legand>Select All</legand>
+                    <span class="selectColumnDivider"></span>
+                </li>
+                <!-- ko foreach: $data.ReportsUsersList -->
+                <li>
+                    <label class='formControl-checkbox'>
+                        <input class='checkbox' type='checkbox' data-bind="checked: $data.IsSelected, click: $parent.onSelectUser">
+                        <b></b>
+                    </label>
+                    <legand data-bind="text:$data.DisplayName"></legand>
+                    <span class="selectColumnDivider"></span>
+                </li>
+                <!-- /ko -->
+            </ul>
+            <div class='doneBtn'>
+                <button class='primary-button' id='confirmButton' data-bind="click: $data.closeReportsUsersSelector">@Resources.Done</button>
+            </div>
+        </div>
+    </script>
+    </form>

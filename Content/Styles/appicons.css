@@ -1,0 +1,1285 @@
+﻿icon_door_lock/*Alarm icons*/
+
+/*Dashboard icons*/
+.icon_warning, .icon_0, .icon_1, .icon_2, .icon_3, .icon_4, .icon_5, .icon_6, .icon_plus, .icon_search, .icon_2001, .icon_2002, .icon_2003, .icon_2004,
+.icon_leftarrow, .icon_rightarrow, .icon_Alarmsettings, .icon_close, .icon_popup_back, .icon_dealer_map, .icon_customer_map, .icon_group_map, .icon_site_map{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url('../images/sprite_icons.png') no-repeat;
+}
+
+.icon_Alarmsettings {
+    background: url('../images/sprite_icons.png') no-repeat -130px -310px;
+}
+
+    .icon_Alarmsettings:hover {
+        background: url('../images/sprite_icons.png') no-repeat -160px -310px;
+    }
+
+.icon_close {
+    background: url("../images/sprite_icons.png");
+    background-position: -428px -338px;
+}
+
+.icon_eye {
+    background: url('../images/sprite_icons.png') no-repeat -430px -160px;
+    margin-left: 15px;
+    margin-top: 16px;
+}
+
+    .icon_eye:hover {
+        background: url('../images/sprite_icons.png') no-repeat -460px -160px;
+        margin-left: 15px;
+        margin-top: 16px;
+    }
+
+.icon_warning {
+    background: url('../images/sprite_icons.png') no-repeat -250px -11px;
+}
+
+.icon_leftarrow {
+    background: url('../images/sprite_icons.png') no-repeat -285px -404px;
+}
+
+    .icon_leftarrow:hover {
+        background: url('../images/sprite_icons.png') no-repeat -315px -404px;
+    }
+
+.icon_rightarrow {
+    background: url('../images/sprite_icons.png') no-repeat -286px -434px;
+}
+
+    .icon_rightarrow:hover {
+        background: url('../images/sprite_icons.png') no-repeat -316px -434px;
+    }
+
+.icon_videonew {
+    background: url(../images/sprite_icons.png) no-repeat -130px -157px;
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 14px;
+}
+
+    .icon_videonew:hover {
+        background: url(../images/sprite_icons.png) no-repeat -100px -7px;
+    }
+
+.icon_mapnew {
+    background: url(../images/sprite_icons.png) no-repeat -70px -125px;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+    .icon_mapnew:hover {
+        background: url(../images/sprite_icons.png) no-repeat -100px -125px;
+    }
+
+.icon_firehigh {
+    background: url(../images/sprite_icons.png) no-repeat -128px -7px;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.icon_firemod {
+    background: url(../images/sprite_icons.png) no-repeat -128px -37px;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.icon_firenor {
+    background: url(../images/sprite_icons.png) no-repeat -128px -67px;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.icon_2001 {
+    background: url('../images/sprite_icons.png') no-repeat -10px -10px;
+}
+
+
+
+.icon_2002 {
+    background: url('../images/sprite_icons.png') no-repeat -10px -130px;
+}
+
+.icon_2003 {
+    background: url('../images/sprite_icons.png') no-repeat -10px -100px;
+}
+
+.icon_2004 {
+    background: url('../images/sprite_icons.png') no-repeat -10px -280px;
+}
+
+.icon_0 {
+    background: url('../images/sprite24.png') no-repeat -10px -350px;
+}
+
+    .icon_0:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -350px;
+    }
+
+
+
+
+.icon_1 {
+    background: url('../images/sprite24.png') no-repeat -10px -78px;
+}
+
+    .icon_1:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -78px;
+    }
+
+.active .icon_1 {
+    background: url('../images/sprite24.png') no-repeat -78px -78px;
+}
+
+
+
+.icon_2 {
+    background: url('../images/sprite24.png') no-repeat -10px -13px;
+}
+
+    .icon_2:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -13px;
+    }
+
+.active .icon_2 {
+    background: url('../images/sprite24.png') no-repeat -78px -13px;
+}
+
+
+
+.icon_3 {
+    background: url('../images/sprite24.png') no-repeat -10px -44px;
+}
+
+    .icon_3:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -44px;
+    }
+
+.active .icon_3 {
+    background: url('../images/sprite24.png') no-repeat -80px -44px;
+}
+
+
+.icon_4 {
+    background: url('../images/sprite24.png') no-repeat -10px -112px;
+}
+
+    .icon_4:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -112px;
+    }
+
+.active .icon_4 {
+    background: url('../images/sprite24.png') no-repeat -78px -112px;
+}
+
+
+
+.icon_5 {
+    background: url('../images/sprite24.png') no-repeat -10px -180px;
+}
+
+    .icon_5:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -180px;
+    }
+
+.active .icon_5 {
+    background: url('../images/sprite24.png') no-repeat -78px -180px;
+}
+
+.icon_6 {
+    background: url('../images/sprite24.png') no-repeat -10px -418px;
+}
+
+    .icon_6:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -418px;
+    }
+
+.active .icon_6 {
+    background: url('../images/sprite24.png') no-repeat -78px -418px;
+}
+
+.icon_7 {
+    background: url('../images/sprite24.png') no-repeat -10px -145px;
+}
+
+    .icon_7:hover {
+        background: url('../images/sprite24.png') no-repeat -44px -145px;
+    }
+
+.active .icon_7 {
+    background: url('../images/sprite24.png') no-repeat -44px -145px;
+}
+
+.topmenucontent ul .card-item:hover .count .icon_0 {
+    background-position: -44px -350px;
+}
+
+.topmenucontent .active .icon_0 {
+    background: url('../images/sprite24.png') no-repeat -78px -350px;
+}
+
+.topmenucontent .active div:hover .icon_0 {
+    background-position: -78px -350px !important;
+}
+
+
+.topmenucontent .active .icon_1 {
+    background: url('../images/sprite24.png') no-repeat -78px -78px;
+}
+
+.topmenucontent .active div:hover .icon_1 {
+    background-position: -78px -78px !important;
+}
+
+.topmenucontent .active .icon_2 {
+    background: url('../images/sprite24.png') no-repeat -78px -13px;
+}
+
+.topmenucontent .active div:hover .icon_2 {
+    background-position: -78px -13px !important;
+}
+
+.topmenucontent .active .icon_3 {
+    background: url('../images/sprite24.png') no-repeat -80px -44px;
+}
+
+.topmenucontent .active div:hover .icon_3 {
+    background-position: -80px -44px !important;
+}
+
+.topmenucontent .active .icon_4 {
+    background: url('../images/sprite24.png') no-repeat -78px -112px;
+}
+
+.topmenucontent .active div:hover .icon_4 {
+    background-position: -78px -112px !important;
+}
+
+.topmenucontent .active .icon_5 {
+    background: url('../images/sprite24.png') no-repeat -78px -180px;
+}
+
+.topmenucontent .active div:hover .icon_5 {
+    background-position: -78px -180px !important;
+}
+
+.topmenucontent .active .icon_6 {
+    background: url('../images/sprite24.png') no-repeat -78px -418px;
+}
+
+.topmenucontent .active div:hover .icon_6 {
+    background-position: -78px -418px !important;
+}
+
+.topmenucontent .active .icon_7 {
+    background: url('../images/sprite24.png') no-repeat -78px -145px;
+}
+
+.topmenucontent .active div:hover .icon_7 {
+    background-position: -78px -145px !important;
+}
+
+
+.topmenucontent ul .card-item div:hover .count .icon_1 {
+    background-position: -44px -78px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_2 {
+    background-position: -44px -13px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_3 {
+    background-position: -44px -44px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_4 {
+    background-position: -44px -112px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_5 {
+    background-position: -44px -180px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_6 {
+    background-position: -44px -418px;
+}
+
+.topmenucontent ul .card-item div:hover .count .icon_7 {
+    background-position: -44px -145px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_0 {
+    background-position: -44px -350px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_1 {
+    background-position: -44px -78px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_2 {
+    background-position: -44px -13px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_3 {
+    background-position: -44px -44px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_4 {
+    background-position: -44px -112px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_5 {
+    background-position: -44px -180px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_6 {
+    background-position: -44px -418px;
+}
+
+#dsbdfooter .footercontent ul li:hover div .count .icon_7 {
+    background-position: -44px -145px;
+}
+
+.dashbdBody .icon_addDashbd {
+    background: url('../images/sprite_icons.png') no-repeat -10px -190px;
+    width: 20px;
+    height: 24px;
+    display: inline-block;
+}
+
+.dashbdBody .add-more > div:hover .icon_addDashbd {
+    background-position: -40px -190px;
+}
+
+#dsbdfooter .logoInsight {
+    background: url('../images/logo_insight.png');
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 144px;
+    height: 51px;
+    display: inline-block;
+}
+
+.icon_plus {
+    background: url('../images/sprite_icons.png') no-repeat -10px -190px !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+    .icon_plus:hover {
+        background: url('../images/sprite_icons.png') no-repeat -40px -190px !important;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_search {
+    background: url('../images/sprite_icons.png') no-repeat -10px -160px !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+    .icon_search:hover {
+        background: url('../images/sprite_icons.png') no-repeat -10px -160px;
+        width: 20px;
+        height: 20px;
+    }
+
+
+/*treeview icon*/
+.tree-schedule-icon, .tree-people-icon, .icon_group, .icon_group_Hover, .icon_people, .icon_people_Hover, Salvos .icon_profileNav, .icon_profileNav_Hover, .icon_schedule, .icon_schedule_Hover, .icon_site, .icon_site_Hover, .icon_customer, .icon_dealer,
+.icon_customer_Hover, .icon_general, .icon_general_Hover,
+.icon_recorder_deactive, .icon_recorder_online, .icon_recorder_notregistered, .icon_recorder_offline, .icon_recorder_disable,
+.icon_camera_videook, .icon_camera_videonotok, .icon_camera_videookmismatch, .icon_camera_videonotokmismatch, .icon_camera_disable, .icon_camera_recordedon,
+.icon_devicestorage, .icon_devicestorage_Hover,
+.icon_panel_notregistered, .icon_panel_registered, .icon_panel_online, .icon_panel_offline,
+.icon_door, .icon_door_Hover,
+.icon_panel_input_node, .icon_panel_input_node_Hover, .icon_panel_output_node, .icon_panel_output_node_Hover, .icon_mpcainput, .icon_mpcainput_Hover, .icon_mpcaoutput, .icon_mpcaoutput_Hover,
+.icon_input_node, .icon_input_node_Hover, .icon_output_node, .icon_output_node_Hover,
+.icon_reader, .icon_reader_Hover,
+.icon_inputpoint, .icon_inputpoint_Hover, .icon_outputpoint, .icon_outputpoint_Hover, .rules_icon_hide,
+.icon_devicepoint, .icon_devicepoint_Hover,
+.icon_devicegrouptemplate, .icon_devicecontroller, .icon_recorder, .icon_camera,
+.tree-Device-icon, .tree-Device-icon_Hover, .icon_camera_normal, .icon_reader_normal, .icon_panel_normal, .icon_door_normal, .icon_salvo, .icon_salvo_Hover, .delete-icon-salvo, .icon_door_status_alarm, .icon_door_status_normal {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.tree-Device-icon {
+    background: url('../images/sprite_icons.png') no-repeat -10px -281px;
+}
+
+    .tree-Device-icon_Hover, .tree-Device-icon:hover {
+        background: url('../images/sprite_icons.png') no-repeat -10px -281px;
+    }
+
+.icon_device-incomplete {
+    background: url('../images/sprite_icons.png') -12px -433px;
+}
+
+    .icon_device-incomplete:hover, .icon_device-incomplete_Hover {
+        background: url('../images/sprite_icons.png') -12px -433px;
+    }
+
+
+.icon_credentialholders {
+    background: url('../images/sprite_icons.png') no-repeat -10px -70px;
+}
+
+.icon_credentialholders_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -70px;
+}
+
+.icon_schedules {
+    background: url('../images/sprite_icons.png') no-repeat -190px -160px;
+}
+
+    .icon_schedules:hover, .icon_schedules_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -220px -160px;
+    }
+
+.icon_general {
+    background: url('../images/sprite_icons.png') no-repeat -10px -11px;
+}
+
+    .icon_general:hover, .icon_general_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -40px -11px;
+    }
+
+.icon_salvo {
+    background: url('../images/sprite_icons.png') no-repeat -340px -520px;
+}
+
+    .icon_salvo:hover, .icon_salvo_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -370px -520px;
+    }
+
+.treecontrol ul .expand:hover .delete-icon-salvo {
+    background: url("../Images/sprite_icons.png") no-repeat -190px -4px;
+    right: 250px;
+    top: -8px;
+    border: none;
+}
+
+    .treecontrol ul .expand:hover .delete-icon-salvo:hover {
+        background: url("../Images/sprite_icons.png") no-repeat -220px -4px;
+    }
+
+
+.icon_dealer {
+    background: url('../images/sprite_icons.png') no-repeat -70px -550px;
+}
+
+    .icon_dealer:hover, .icon_dealer_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -100px -550px;
+    }
+
+.icon_customer {
+    background: url('../images/sprite_icons.png') no-repeat -10px -11px;
+}
+
+    .icon_customer:hover, .icon_customer_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -40px -11px;
+    }
+
+.icon_group {
+    background: url('../images/sprite_icons.png') no-repeat -10px -101px;
+}
+
+    .icon_group:hover, .icon_group_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -40px -101px;
+    }
+
+.icon_site {
+    background: url('../images/sprite_icons.png') no-repeat -12px -130px;
+}
+
+    .icon_site:hover, .icon_site_Hover {
+        background: url('../images/sprite_icons.png') no-repeat -42px -130px;
+    }
+
+/*icons for video devices*/
+.icon_recorder_deactive {
+    background: url('../images/sprite_icons.png') no-repeat -10px -281px;
+}
+
+.icon_recorder_notregistered {
+    background: url('../images/sprite_icons.png') no-repeat -730px -65px;
+}
+
+.icon_recorder_offline {
+    background: url('../images/sprite_icons.png') no-repeat -160px -401px;
+}
+
+.icon_recorder_online {
+    background: url('../images/sprite_icons.png') no-repeat -130px -401px;
+}
+
+.icon_camera_videook {
+    background: url('../images/sprite_icons.png') no-repeat -490px -12px;
+}
+
+.icon_camera_videonotok {
+    background: url('../images/sprite_icons.png') no-repeat -490px -42px;
+}
+
+.icon_camera_videookmismatch {
+    background: url('../images/sprite_icons.png') no-repeat -490px -100px;
+}
+
+.icon_camera_normal {
+    background: url('../images/sprite_icons.png') no-repeat -460px -42px;
+}
+
+.icon_reader_normal {
+    background: url('../images/sprite_icons.png') no-repeat -43px -400px;
+}
+
+.icon_panel_normal {
+    background: url('../images/sprite_icons.png') no-repeat -40px -281px;
+}
+
+.icon_camera_videonotokmismatch {
+    background: url('../images/sprite_icons.png') no-repeat -490px -130px;
+}
+
+.icon_camera_disable {
+    background: url('../images/sprite_icons.png') no-repeat -490px -72px;
+}
+
+.icon_camera_recordedon {
+    background: url('../images/sprite_icons.png') no-repeat -490px -162px;
+}
+
+.icon_devicestorage {
+    background: url('../images/sprite_icons.png') no-repeat -10px -370px;
+}
+
+.icon_devicestorage_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -370px;
+}
+/*icons for video devices*/
+
+/*icons for access devices*/
+.icon_panel_notregistered {
+    background: url('../images/sprite_icons.png') no-repeat -760px -65px;
+}
+
+.icon_panel_registered {
+    background: url('../images/sprite_icons.png') no-repeat -520px -281px;
+}
+
+.icon_panel_online {
+    background: url('../images/sprite_icons.png') no-repeat -520px -221px;
+}
+
+.icon_panel_offline {
+    background: url('../images/sprite_icons.png') no-repeat -520px -251px;
+}
+
+.icon_door {
+    background: url('../images/sprite_icons.png') no-repeat -13px -400px;
+}
+
+.icon_door_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -43px -400px;
+}
+
+.icon_panel_input_node, .icon_mpcainput {
+    background: url('../images/sprite_icons.png') no-repeat -10px -311px;
+}
+
+.icon_panel_input_node_Hover, .icon_mpcainput_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -311px;
+}
+
+.icon_panel_output_node, .icon_mpcaoutput {
+    background: url('../images/sprite_icons.png') no-repeat -10px -341px;
+}
+
+.icon_panel_output_node_Hover, .icon_mpcaoutput_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -341px;
+}
+
+/*.icon_input_node {
+    background: url('../images/sprite_icons.png') no-repeat -10px -11px;
+}
+
+.icon_input_node_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -11px;
+}*/
+
+.icon_input_node {
+    background: url('../images/sprite_icons.png') no-repeat -10px -311px;
+}
+
+.icon_input_node_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -311px;
+}
+
+.icon_output_node {
+    background: url('../images/sprite_icons.png') no-repeat -10px -340px;
+}
+
+.icon_output_node_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -340px;
+}
+
+.icon_reader {
+    background: url('../images/sprite_icons.png') no-repeat -10px -220px;
+}
+
+.icon_reader_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -220px;
+}
+
+.icon_inputpoint {
+    background: url('../images/sprite_icons.png') no-repeat -10px -311px;
+}
+
+.icon_inputpoint_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -311px;
+}
+
+.icon_outputpoint {
+    background: url('../images/sprite_icons.png') no-repeat -10px -341px;
+}
+
+.icon_outputpoint_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -341px;
+}
+
+.icon_devicepoint {
+    background: url('../images/sprite_icons.png') no-repeat -10px -220px;
+}
+
+.icon_devicepoint_Hover {
+    background: url('../images/sprite_icons.png') no-repeat -40px -220px;
+}
+
+.icon_door_status_normal {
+    background: url('../images/sprite_icons.png') no-repeat -163px -220px;
+}
+
+.icon_door_status_alarm {
+    background: url('../images/sprite_icons.png') no-repeat -132px -190px;
+}
+
+/*Rules icons*/
+.icon_list1, .icon_remove, .icon_hide, .icon_added, .icon_user, .icon_listRules, .icon_removeRule, .icon_eye {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.icon_listRules {
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+}
+
+.icon_list1 {
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    top: 15px;
+    left: 15px;
+}
+
+.icon_listRules:hover {
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+}
+
+.icon_list1:hover {
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    top: 15px;
+    left: 15px;
+}
+
+.icon_remove {
+    background: url('../Images/sprite_icons.png') no-repeat -191px -10px;
+}
+
+    .icon_remove:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -221px -10px;
+    }
+
+.icon_hide {
+    background: url('../Images/sprite_icons.png') no-repeat -195px -189px;
+}
+
+    .icon_hide:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -225px -189px;
+    }
+
+.icon_added {
+    background: url('../Images/sprite_icons.png') no-repeat -250px -70px;
+}
+
+    .icon_added:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -250px -70px;
+    }
+
+.icon_user {
+    background: url('../Images/sprite_icons.png') no-repeat -280px -100px;
+}
+
+    .icon_user:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -310px -100px;
+    }
+
+.icon_removeRule {
+    background: url('../Images/sprite_icons.png') no-repeat -191px -6px;
+     margin-top: 10px;
+}
+
+    .icon_removeRule:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -221px -6px;
+         margin-top: 10px;
+    }
+
+.sortableIcon {
+}
+
+.icon_sort {
+    background: url('../Images/sprite_icons.png') no-repeat -335px -339px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.icon_back {
+    background: url("../Images/sprite_icons.png") no-repeat -195px -190px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.delete-icon {
+    background: url("../Images/sprite_icons.png") no-repeat -190px -4px;
+    width: 20px;
+    height: 26px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+    .delete-icon:hover {
+        background: url("../Images/sprite_icons.png") no-repeat -220px -4px;
+    }
+
+.icon_door_normal {
+    background: url('../images/sprite_icons.png') no-repeat -38px -395px;
+}
+
+
+/*Dashboard icons START*/
+.icon_dashboard_EditHeader, .icon_dashboard_Caution, .icon_dashboard_Storage, .icon_dashboard_Clips, .icon_dashboard_Database, .icon_dashboard_CreateNew,
+.icon_dashboard_Export, .icon_dashboard_Edit, .icon_dashboard_Delete {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.icon_dashboard_Edit {
+    background: url('../images/sprite_icons.png') no-repeat -70px -160px;
+}
+
+.dashbdMoreMenu li:hover .icon_dashboard_Edit {
+    background: url('../images/sprite_icons.png') no-repeat -160px -430px;
+}
+
+.icon_dashboard_EditHeader {
+    background: url('../images/sprite_icons.png') no-repeat -192px -287px;
+}
+
+    .icon_dashboard_EditHeader:hover {
+        background: url('../images/sprite_icons.png') no-repeat -222px -287px;
+    }
+
+.icon_dashboard_Caution {
+    background: url('../images/sprite24.png') no-repeat -10px -215px;
+}
+
+/* .icon_dashboard_Caution:hover {
+        background: url('../images/sprite24.png') no-repeat -10px -215px;
+    }*/
+
+.icon_dashboard_Storage {
+    background: url('../images/sprite24.png') no-repeat -10px -285px;
+}
+
+.icon_dashboard_Clips {
+    background: url('../images/sprite24.png') no-repeat -10px -249px;
+}
+
+.icon_dashboard_Export {
+    background: url('../images/sprite_icons.png') no-repeat -340px -310px;
+}
+
+    .icon_dashboard_Export:hover {
+        background: url('../images/sprite_icons.png') no-repeat -370px -310px;
+    }
+
+.icon_dashboard_CreateNew {
+    background: url('../images/sprite_icons.png') no-repeat -340px -490px;
+}
+
+.dashbdMoreMenu li:hover .icon_dashboard_CreateNew {
+    background: url('../images/sprite_icons.png') no-repeat -370px -490px;
+}
+
+.icon_dashboard_Database {
+    background: url('../images/sprite24.png') no-repeat -10px -317px;
+}
+
+.icon_dashboard_Delete {
+    background: url('../images/sprite_icons.png') no-repeat -191px -10px;
+}
+
+.dashbdMoreMenu li:hover .icon_dashboard_Delete {
+    background: url('../images/sprite_icons.png') no-repeat -371px -40px;
+}
+/*Dashboard icons END*/
+
+/***Alarm icon css start here***/
+
+
+.icon_bigdownarrow, .icon_settings, .icon_rules, .icon_acknowledge, .icon_clearall, .icon_acknowledged, .icon_freezealarm, .icon_downarrow, .icon_views, .icon_sort, .icon_firehigh, .icon_firemajor, .icon_firemod, .icon_firenor, .icon_videomajor, .icon_videohigh, .icon_videomod, .icon_videonor, .icon_doormajor, .icon_doorhigh, .icon_doormod, .icon_doornor, .icon_save {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.icon_settings {
+    background: url(../images/sprite_icons.png) no-repeat -128px -306px;
+}
+
+    .icon_settings:hover {
+        background: url(../images/sprite_icons.png) no-repeat -158px -306px;
+    }
+
+.icon_rules {
+    background: url(../images/sprite_icons.png) no-repeat -68px -216px;
+}
+
+.icon_save {
+    background: url(../images/sprite_icons.png) no-repeat -280px -10px;
+}
+
+#alarviewWrapper .dropdown-menu > li:hover .icon_save {
+    background: url(../images/sprite_icons.png) no-repeat -310px -10px;
+}
+
+.icon_acknowledge {
+    background: url(../images/sprite_icons.png) no-repeat -340px -10px;
+}
+
+#alarviewWrapper .dropdown-menu > li:hover .icon_acknowledge {
+    background: url(../images/sprite_icons.png) no-repeat -370px -10px;
+}
+
+.icon_acknowledged {
+    background: url(../images/sprite_icons.png) no-repeat -250px -70px;
+}
+
+.icon_clearall {
+    background: url(../images/sprite_icons.png) no-repeat -340px -40px;
+}
+
+#alarviewWrapper .dropdown-menu > li:hover .icon_clearall {
+    background: url(../images/sprite_icons.png) no-repeat -370px -40px;
+}
+
+.icon_freezealarm {
+    background: url(../images/sprite_icons.png) no-repeat -340px -70px;
+}
+
+#alarviewWrapper .dropdown-menu > li:hover .icon_freezealarm {
+    background: url(../images/sprite_icons.png) no-repeat -370px -70px;
+}
+
+.icon_downarrow {
+    background: url(../images/sprite_icons.png) no-repeat -428px -398px;
+}
+
+    .icon_downarrow:hover {
+        background: url(../images/sprite_icons.png) no-repeat -458px -398px;
+    }
+
+.icon_views {
+    /*background:url(../images/sprite_icons.png) no-repeat -338px -98px;*/
+    background: url(../images/sprite_icons.png) no-repeat -667px -9px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views {
+    background: url(../images/sprite_icons.png) no-repeat -697px -9px;
+}
+/*.icon_sort {
+background:url(../images/sprite_icons.png) no-repeat -335px -339px;
+}*/
+
+.icon_sort:hover {
+    background: url(../images/sprite_icons.png) no-repeat -365px -339px;
+}
+
+.icon_firemajor {
+    background: url(../images/sprite_icons.png) no-repeat -158px -7px;
+}
+
+/*.icon_firehigh {
+background:url(../images/sprite_icons.png) no-repeat -128px -7px;
+}
+
+.icon_firemod {
+background:url(../images/sprite_icons.png) no-repeat -128px -37px;
+}
+
+.icon_firenor {
+background:url(../images/sprite_icons.png) no-repeat -128px -67px;
+}*/
+
+.icon_videomajor {
+    background: url(../images/sprite_icons.png) no-repeat -158px -94px;
+}
+
+.icon_videohigh {
+    background: url(../images/sprite_icons.png) no-repeat -128px -94px;
+}
+
+.icon_videomod {
+    background: url(../images/sprite_icons.png) no-repeat -128px -125px;
+}
+
+.icon_videonor {
+    background: url(../images/sprite_icons.png) no-repeat -128px -155px;
+}
+
+.icon_doormajor {
+    background: url(../images/sprite_icons.png) no-repeat -158px -186px;
+}
+
+.icon_doorhigh {
+    background: url(../images/sprite_icons.png) no-repeat -128px -186px;
+}
+
+.icon_doormod {
+    background: url(../images/sprite_icons.png) no-repeat -128px -216px;
+}
+
+.icon_doornor {
+    background: url(../images/sprite_icons.png) no-repeat -128px -246px;
+}
+
+.icon_views1, .icon_views2, .icon_views3, .icon_views4, .icon_views5, .icon_export_viewer, .icon-calendar1, .icon_clip_viewer, .icon_multivideo, .icon_videonew, .icon_doornew, .icon_mapnew, .icon_viewtab1, .icon_viewtab2, .icon_viewtab3, .icon_viewtab4, .icon_viewtab5, .icon_fullscreen, .icon_export, .icon_print, .icon_locked, .icon_unlocked {
+    width: 24px !important;
+    height: 24px !important;
+    position: absolute;
+}
+
+.icon-calendar1 {
+    background: url('../images/sprite_icons.png') no-repeat -340px -187px !important;
+}
+
+    .icon-calendar1:hover {
+        background-position: -370px -187px !important;
+    }
+
+.icon_clip_viewer {
+    background: url(../images/sprite_icons.png) no-repeat -68px -337px;
+}
+
+    .icon_clip_viewer:hover {
+        background: url(../images/sprite_icons.png) no-repeat -98px -337px;
+    }
+
+.icon_multivideo {
+    background: url(../images/sprite_icons.png) no-repeat -190px -337px;
+}
+
+    .icon_multivideo:hover {
+        background: url(../images/sprite_icons.png) no-repeat -220px -337px;
+    }
+/*.icon_videonew {
+background:url(../images/sprite_icons.png) no-repeat -128px -157px;
+}
+
+.icon_videonew:hover {
+background:url(../images/sprite_icons.png) no-repeat -98px -7px;
+}*/
+
+.icon_doornew {
+    background: url(../images/sprite_icons.png) no-repeat -130px -245px;
+}
+
+    .icon_doornew:hover {
+        background: url(../images/sprite_icons.png) no-repeat -40px -395px;
+    }
+
+/*.icon_mapnew {
+background:url(../images/sprite_icons.png) no-repeat -67px -125px;
+}
+
+.icon_mapnew:hover {
+background:url(../images/sprite_icons.png) no-repeat -97px -125px;
+}*/
+
+.icon_viewtab1, .icon_views1 {
+    background: url(../images/sprite_icons.png) no-repeat -667px -9px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views1 {
+    background: url(../images/sprite_icons.png) no-repeat -697px -9px;
+}
+
+.icon_viewtab1:hover, #alarmpopFilter .nav-tabs > .active .icon_viewtab1 {
+    background: url(../images/sprite_icons.png) no-repeat -367px -99px;
+}
+
+.icon_viewtab2, .icon_views2 {
+    background: url(../images/sprite_icons.png) no-repeat -667px -129px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views2 {
+    background: url(../images/sprite_icons.png) no-repeat -697px -129px;
+}
+
+.icon_viewtab2:hover, #alarmpopFilter .nav-tabs > .active .icon_viewtab2 {
+    background: url(../images/sprite_icons.png) no-repeat -367px -399px;
+}
+
+.icon_viewtab3, .icon_views3 {
+    background: url(../images/sprite_icons.png) no-repeat -667px -39px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views3 {
+    background: url(../images/sprite_icons.png) no-repeat -697px -39px;
+}
+
+.icon_viewtab3:hover, #alarmpopFilter .nav-tabs > .active .icon_viewtab3 {
+    background: url(../images/sprite_icons.png) no-repeat -367px -129px;
+}
+
+.icon_viewtab4, .icon_views4 {
+    background: url(../images/sprite_icons.png) no-repeat -667px -69px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views4 {
+    background: url(../images/sprite_icons.png) no-repeat -697px -69px;
+}
+
+.icon_viewtab4:hover, #alarmpopFilter .nav-tabs > .active .icon_viewtab4 {
+    background: url(../images/sprite_icons.png) no-repeat -367px -159px;
+}
+
+.icon_viewtab5, .icon_views5 {
+    background: url(../images/sprite_icons.png) no-repeat -667px -99px;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:hover .icon_views5 {
+    background: url(../images/sprite_icons.png) no-repeat -697px -99px;
+}
+
+.icon_viewtab5:hover, #alarmpopFilter .nav-tabs > .active .icon_viewtab5 {
+    background: url(../images/sprite_icons.png) no-repeat -367px -189px;
+}
+
+.icon_fullscreen {
+    background: url(../images/sprite_icons.png) no-repeat;
+    background-position: -430px -127px;
+}
+
+    .icon_fullscreen:hover {
+        background-position: -460px -127px;
+    }
+
+.icon_print {
+    background: url(../images/sprite_icons.png) no-repeat -338px -426px;
+}
+
+    .icon_print:hover {
+        background-position: -368px -426px;
+    }
+
+.icon_export {
+    background: url(../images/sprite_icons.png) no-repeat;
+    background-position: -9px -457px;
+}
+
+    .icon_export:hover {
+        background: url(../images/sprite_icons.png) no-repeat;
+        background-position: -39px -457px;
+    }
+
+.icon_locked {
+    background: url(../images/sprite_icons.png) no-repeat -6px -486px;
+}
+
+.icon_unlocked {
+    background: url(../images/sprite_icons.png) no-repeat -126px -276px;
+}
+/***Alarm icon css end here***/
+
+.icon_export_viewer {
+    background: url(../images/sprite_icons.png) no-repeat -68px -340px;
+}
+
+    .icon_export_viewer:hover {
+        background-position: -98px -340px;
+    }
+
+.rules_icon_hide {
+    background: url('../Images/sprite_icons.png') no-repeat -186px -250px;
+    -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+        transform: rotate(270deg);
+}
+
+    .rules_icon_hide:hover {
+        background: url('../Images/sprite_icons.png') no-repeat -216px -250px;        
+        -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+        transform: rotate(270deg);
+
+    }
+
+.icon_bigdownarrow {
+    background: url(../images/sprite_icons.png) no-repeat -74px -460px;
+}
+
+    .icon_bigdownarrow:hover {
+        background: url(../images/sprite_icons.png) no-repeat -104px -460px;
+    }
+
+.remove-image {
+    background: url('../images/sprite_icons.png');
+    background-position: -458px -338px;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+.icon_popup_back {
+    background: url(../images/sprite_icons.png) no-repeat -285px -400px;
+}
+
+    .icon_popup_back:hover {
+        background: url(../images/sprite_icons.png) no-repeat -315px -400px;
+    }
+
+.icon_dealer_map {
+    background: url('../images/sprite_icons.png') no-repeat -250px -160px;
+}
+
+.icon_customer_map {
+    background: url('../images/sprite_icons.png') no-repeat -250px -190px;
+}
+
+.icon_group_map {
+    background: url('../images/sprite_icons.png') no-repeat -250px -221px;
+}
+
+.icon_site_map {
+    background: url('../images/sprite_icons.png') no-repeat -252px -250px;
+}
+
+.icon_site_map {
+    background: url('../images/sprite_icons.png') no-repeat -252px -250px;
+}
+
+.icon_floor_map {
+    background: url('../images/sprite_40.png') no-repeat -10px -212px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index:1;
+}
+
+
+.map-plugin .icon_floor_map {
+    background: url('../images/sprite_40.png') no-repeat -10px -212px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 80px;
+    right: 24px;
+    z-index:1;
+}
+
+
+.icon_refreshmap {
+    background: url('../images/sprite_icons.png') no-repeat -41px -431px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 26px;
+    bottom: 130px;
+    cursor: pointer;
+}
+
+/* icons for Device search*/
+
+.icon_devicegrouptemplate {
+    background: url(../images/sprite_icons.png) no-repeat -128px -246px;
+}
+
+.icon_devicecontroller {
+    background: url('../images/sprite_icons.png') no-repeat -520px -281px;
+}
+
+.icon_recorder {
+    background: url('../images/sprite_icons.png') no-repeat -10px -281px;
+}
+
+.icon_camera, .icon_camera_Hover{
+    background: url('../images/sprite_icons.png') no-repeat -490px -71px;
+}
+
+.reset_cal_icon{
+    background: url('../images/sprite_icons.png') no-repeat -434px -344px;
+}
+
+
+/*For Map Cluster Icons*/
+.icon_cluster_site {
+    background: url('../images/sprite_icons.png') no-repeat -11px -122px;
+    margin-left: 30px;
+    background-color: #707070;
+    height: 38px;
+    width:24px;
+    position: absolute;
+}
+.icon_cluster_dealer{
+    background: url('../images/sprite_icons.png') no-repeat -70px -542px;
+    margin-left: 30px;
+    background-color: #707070;
+    height: 38px;
+    width:24px;
+    position: absolute;
+}
+.icon_cluster_customer{
+    background: url('../images/sprite_icons.png') no-repeat -10px 1px;
+    margin-left: 30px;
+    background-color: #707070;
+    height: 38px;
+    width:24px;
+    position: absolute;
+}
+.cluster_text {
+    padding-right: 5px;
+    background-color: #707070;
+    margin-left: 30px;
+    margin-top: -38px;
+    position: absolute;
+}
+/*For Map Cluster Icons*/

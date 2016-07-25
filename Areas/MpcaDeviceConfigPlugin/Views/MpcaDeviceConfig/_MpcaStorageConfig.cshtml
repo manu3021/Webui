@@ -1,0 +1,115 @@
+﻿
+
+<link href="~/Content/MpcaStorageConfigStyles/MpcaStorageConfig.css" rel="stylesheet" />
+
+@*@{#if DEBUG}
+<link href="~/Content/MpcaStorageConfigStyles/MpcaStorageConfig.css" rel="stylesheet" />
+@{#else}
+@Styles.Render("~/Content/MpcaDeviceConfigPlugincss4");
+@{#endif}*@
+<form id="mpcastoragesetting" class="formcontrol" data-validationkey="storage">
+    <div class="mpcappliance mpcform" id="storageSettings">
+        <div class="row">
+            <ul class="mpcform-grid col internalStorage">
+                <li>
+                    <span class="internalStorageColHeading">@Resources.mpcastrg_int_strg</span>
+                </li>
+                <li>
+                    <progress max="100" data-bind="value: $data.InternalSpaceUsedPercent"></progress>
+                    <span class="progressText" data-bind="text: $data.InternalSpaceUsedText"></span>
+                </li>
+                <li>
+                    <button class="ternary-button" data-bind="click: $data.doInternalStorageErase">@Resources.mpcastrg_erase</button>
+                </li>
+            </ul>
+            <ul class="mpcform-grid col externalStorage">
+                <li>
+                    <span class="externalStorageColHeading">@Resources.mpcastrg_ext_strg</span>
+                </li>
+                <li class="spacebottomfix">
+                    <div>
+                        <label class="formControl-checkbox">
+                            <input id="mpcastrg_chknasstng" type="checkbox" class="checkbox" data-bind="checked: $data.IsNetworkStorage, disable: $data.IsDisableNetworkStorage">
+                            <span></span>
+                        </label>
+                        <legand>@Resources.mpcastrg_nw_strg</legand>
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="mpcastrg_NasPath" class="floatLblDn">@Resources.mpcastrg_nas_path</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcastrg_NasPath" name="mpcastrg_NasPath" data-bind="value: $data.NASPath, disable: !$data.IsNetworkStorage()">
+                    </div>
+                </li>
+                <li>
+                    <div class="field bottomSpaceButtonFix">
+                        <label for="mpcastrg_Vendor" class="floatLblDn">@Resources.mpcastrg_nas_vndr</label>
+                        <input type="text" class="floatTxt myStyle" id="mpcastrg_Vendor" name="mpcastrg_Vendor" data-bind="value: $data.Vendor, disable: !$data.IsNetworkStorage()">
+                    </div>
+                </li>
+                <li class="clear">
+                    <button class="ternary-button" data-bind="click: $data.doNetworkStorageErase ,disable: !$data.IsEnableNASErase()">@Resources.mpcastrg_erase</button>
+                </li>
+
+                <li class="spaceTopBottomFix">
+                    <div>
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" data-bind="checked: $data.IsUSBStorage">
+                            <span></span>
+                        </label>
+                        <legand>@Resources.mpcastrg_usb_strg</legand>
+                    </div>
+                </li>
+                <li>
+                    <div class="radio">
+                        <div>
+                            <label class="formControl-radio">
+                                <input type="radio" name="radiotest" value=0 data-bind="checked: $data.USBStorageMode, disable: !$data.IsUSBStorage()">
+                                <span></span>
+                            </label>
+                            <span class="radiotext">@Resources.mpcastrg_rec_mod</span>
+                        </div>
+                        <div>
+                            <label class="formControl-radio">
+                                <input type="radio" name="radiotest" value=1 data-bind="checked: $data.USBStorageMode, disable: !$data.IsUSBStorage()">
+                                <span></span>
+                            </label>
+                            <span class="radiotext">@Resources.mpcastrg_expt_mod</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacingBtwButton">
+                    <button class="ternary-button" data-bind="click: $data.doUSBStorageErase, disable: !$data.IsEnableUSBErase()">@Resources.mpcastrg_erase</button>
+                    <button role="button" class="secondary-button" data-bind="click: $data.doUSBStorageEject, disable: !$data.IsEnableUSBEject()">@Resources.mpcastrg_eject</button>
+                </li>
+                <li>
+                    <button class="primary-button" data-bind="click: $data.dosavesettings">@Resources.Save</button>
+                </li>
+                <li>
+                    <progress max="100" data-bind="value: $data.ExternalSpaceUsedPercent"></progress>
+                    <span class="progressText" data-bind="text: $data.ExternalSpaceUsedText"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</form>
+
+<input id="mpcastorageconfigurl" type="hidden" data-url='@Url.Action("", "MpcaDeviceConfig")' />
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript5")
+@*@Scripts.Render("~/Scripts/MpcaStorageConfig/mpcastorage.common.js",
+             "~/Scripts/MpcaStorageConfig/mpcastorage.datacontext.js",
+             "~/Scripts/MpcaStorageConfig/mpcastorage.model.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.validationcontext.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.uicontext.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.eventreciever.js")*@
+
+@*@{#if DEBUG}
+@Scripts.Render("~/Scripts/MpcaStorageConfig/mpcastorage.common.js",
+             "~/Scripts/MpcaStorageConfig/mpcastorage.datacontext.js",
+             "~/Scripts/MpcaStorageConfig/mpcastorage.model.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.validationcontext.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.uicontext.js",
+            "~/Scripts/MpcaStorageConfig/mpcastorage.eventreciever.js")
+@{#else}
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript5")
+@{#endif}*@

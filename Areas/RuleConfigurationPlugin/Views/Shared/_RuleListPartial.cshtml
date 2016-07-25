@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Rule List";
+}
+<script type="text/html" id="ruleitemtemplate">
+    <li data-bind="click: $data.RuleClicked, css: $data.selectedstate">
+        <div id="rulelist">
+            <div class="rulelistItem">
+                <div class="txtFields">
+                    <ul>
+                        <li class="bottomSpace grid-text1" >
+                            <b data-bind="text: $data.Name" />
+                            <span class="status failed rule-status" data-bind="css: { ruleStatusactive: $data.IsActive, ruleStatusfailed: !($data.IsActive()) }, text: $data.StatusClass" />
+                        </li>
+                        <li class="bottomSpace grid-text2" data-bind="text: $data.AccountHierarchy">
+                            <span class="report-date" data-bind="visible: IsFailed, text: $data.Date" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+<div id="ruleviewContainer" data-url="@Url.Action("GetRulesForUser", "RuleConfig")">
+    <div class="rulelistfirstheader layoutrow">
+        <p class="header">
+            <span id="rules-toggle-hide" class="hideButton cursor_Pointer" title="@Resources.Credential_HideRules">
+                <b class="rules_icon_hide"></b>
+                <span class="rule_align">@Resources.Rules</span>
+            </span>
+        </p>
+    </div>
+    <div class="rulelistsecondheader layoutrow">
+        <form onsubmit="return false" id="search-box" class="ruleSearchContainer">
+	<span class="searchHolder" id="search-box">
+            <input type="search" class="searchbox" name="q" data-bind="value:$data.searchquery,valueUpdate: 'afterkeydown'" autocomplete="off">
+ </span>
+        </form>
+    </div>
+    <div class="rulelistbody layoutrow">
+        <div id="ruleConfigRuleList" class="RulesList scroll-y" style="top:0px;bottom:0px;height:100%;">
+            <div class="leftPaneheading" style="position:absolute;min-width:338px;">
+                <ul data-bind="template: { name: 'ruleitemtemplate', foreach: $data.UpdatedSource() }" style="position:absolute;min-width:355px;"></ul>
+            </div>
+        </div>
+    </div>
+</div>

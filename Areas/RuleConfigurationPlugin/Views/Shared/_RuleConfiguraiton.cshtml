@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Rule Configuration";
+}
+
+<script src="~/Scripts/bootstrap-timepicker.min.js"></script>
+<script src="~/Scripts/bootstrap-tooltip.js"></script>
+<script src="~/Scripts/toggle.js"></script>
+<script src="~/Scripts/mpc.widget.core.js"></script>
+<script src="~/Scripts/mpc.treeview.js"></script>
+
+@Html.Partial("_RuleTemplatesPartial")
+<div id="ruleconfigContainer" class="ruleconfigContainer layoutrow formcontrol" data-url='@Url.Action("GetAllCamerawithStatusbyRecorderId", "Treeview")'>
+    <!--rule header-->
+    <div class="secondHeader ruleformcontrol rulesheader layoutrow">
+        <ul id="rulelistHeader" data-bind="with: $root">
+            <li data-bind="with: $data.RuleDetailModel, visible: $data.IsinEditMode()">
+                @if (Html.HasPermissions(MPCPermissions.ADD_RULE))
+                {
+                    <div class="rulefield field rules_right-inner-addon spaceBottomStyle">
+                        <label class="floatLblDn">@Resources.RULE_LABEL_RULENAME</label>
+                        <input type="text" id="rulename_textbox" class="floatTxt myStyle" required="required" data-bind="value: $data.Name">
+                    </div>
+                }
+            </li>
+            <li data-bind="with: $data.RuleDetailModel, visible: $data.IsinEditMode()">
+                @if (Html.HasPermissions(MPCPermissions.ADD_RULE))
+                {
+                    <div class="field right-inner-addon spaceBottomStyle">
+                        <span class="input-group-addon PositionBtn show-pop" id="togglePasswordField" data-bind="visible:  $root.RuleDetailModel().Id == null">
+
+                            <b class=" icon_list1" data-toggle="popover" data-placement="auto" data-bind="click: $root.posbtnclicked"></b>
+                        </span>
+                        <label class="floatLblDn">@Resources.RULE_LABEL_RULEPOSITION</label>
+                        <input type="text" class="floatTxt myStyle" readonly="readonly" id="position_textbox" required="required" data-bind="value: $data.SelectedPosition().Name">
+                    </div>
+                }
+            </li>
+        </ul>
+        <div class="ruleheader" data-bind="visible: !$data.IsinEditMode()">
+            <span class="subruleheader" data-bind="text: $root.RuleDetailModel().SelectedPosition().Name"></span> &gt;
+            <span class="mainruleheader" data-bind="text: $root.RuleDetailModel().Name"></span>
+        </div>
+        @if (Html.HasPermissions(MPCPermissions.ADD_RULE))
+        {
+            <ul class="" data-bind="visible: !$data.IsinEditMode()">
+                <li>
+                    <button class="primary-button rulecreatebutton" data-bind="click: $data.CreateButtonClicked">@Resources.RULE_LABEL_CREATE</button>
+                </li>
+            </ul>
+        }
+        <div class="show-rules-list" data-position="left" title data-original-title="@Resources.Credential_ExpandText">
+            <span class="cursor_Pointer" id="rules-toggle-show"><b class="icon_listRules"></b></span>
+        </div>
+    </div>
+    <div id="div_rulecntr" class="rulebody layoutrow ">
+        <div class="rulesdivider-line" style="border: 1px solid #bababb; left: 48%; top: 0; bottom: 0; position: absolute;"></div>
+        <!-- Rule Body-->
+        <section id="ruleeditbody" data-bind="visible: $data.IsinEditMode()" class="row rulesContainer ruleformcontrol scroll-x scroll-y">
+            <div class="rulesgrid">
+                <div class="row col mpcform-grid border-right rulesfirstGrid">
+                    <div class="colHeading clear">@Resources.RULE_LABEL_WHEN</div>
+                    <div id="div_devicecntr" class="spaceBottomStyle">
+                        <ul id="rulesettingList"></ul>
+                        <ul id="ul_ruleconfig" class="clear">
+                            @if (Html.HasPermissions(MPCPermissions.ADD_RULE))
+                            {
+                                <li>
+                                    <div class="field spaceBottomStyle select-field">
+                                        @*   <label id="lblFName" class="floatLblDn show">@Resources.RULE_OPTION_SELECT</label>*@
+                                        <select name="panel_Firmware" id="ifthis_dropdown">
+                                            <option value="0" selected="selected">@Resources.RULE_OPTION_SELECT</option>
+                                            <option value="1">@Resources.RULE_LABEL_DEVICE</option>
+                                            <option value="2">@Resources.RULE_LABEL_SCHEDULE</option>
+                                            <option value="3">@Resources.RULE_OPTION_TIMECONDITIONS</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="modelLeftSection">
+                    </div>
+                </div>
+                
+
+                    <div class="row col mpcform-grid rulesecondGrid">
+                        <div class="colHeading clear">@Resources.RULE_LABEL_THEN</div>
+                        <div id="div_actiondevicecntr" class="spaceBottomStyle">
+                            <ul id="rulesettingListAction"></ul>
+                            <ul id="ul_ruleconfigforaction" class="clear">
+                                @if (Html.HasPermissions(MPCPermissions.ADD_RULE))
+                                {
+                                    <li>
+                                        <div class="field spaceBottomStyle select-field">
+                                            @*   <label id="action_lblFName" class="floatLblDn show">@Resources.RULE_OPTION_ACTION</label>*@
+                                            <select name="panel_Firmware" id="actionsdropdown">
+                                                <option value="0" selected="selected">@Resources.RULE_OPTION_ACTION</option>
+                                                <option value="1">@Resources.RULE_LABEL_DEVICE</option>
+                                                <option value="2">@Resources.RULE_LABEL_ACTION</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="buttonGroup">
+                @if (Html.HasPermissions(MPCPermissions.SAVE_RULE))
+                {
+                    <button class="primary-button" data-bind="click: $data.AddNewRule">@Resources.RULE_LABEL_ACTIVATE</button>
+                }
+
+                <button class="secondary-button" data-bind="visible: $data.IsCancelVisible, click: $data.CancelRule">@Resources.RULE_LABEL_CANCEL</button>
+
+                @*<span class="note2">@Resources.RULE_LABEL_NOTE</span>*@
+
+            </div>
+            <input id="ruleconfigurl" type="hidden" data-treeurl='@Url.Action("", "treeview")' data-url='@Url.Action("", "RuleConfig")' />
+        </section>
+        <div class="row rulesContainer" data-bind="visible: $data.IsinViewMode()" id="ruleviewbody">
+            @Html.Partial("_ViewRule")
+        </div>
+
+        <div class="pull-right rule-alarm-div">
+            <label class="formControl-checkbox">
+                <input type="checkbox" class="checkbox" name="displayRuleExecution" id="displayRuleExecution" data-bind="checked: $root.RuleDetailModel().DisplayRuleExecInAlarms, enable: $data.IsinEditMode()">
+                <span class="rule-alarm-span">@Resources.Display_Rules_Execution_Alarms</span>
+            </label>
+        </div>
+        <div id="ruleLimitDialog" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <section class="row">
+                <div class="ruleLimitText">@Resources.Rule_Upgrade_Package</div>
+            </section>
+            <footer>
+                <div class="modal-footer">
+                    <button class="primary-button" data-bind="click: function() { var currentDialog = $('#ruleLimitDialog');currentDialog.modal('hide');}">Ok</button>
+                </div>
+            </footer>
+        </div>
+
+
+    </div>
+</div>
+<div style="display: none" class="universal-rules-listContainer">
+    @Html.Partial("_RuleListPartial")
+</div>
+
+<script src="~/Scripts/ruleconfig/rules.common.js"></script>
+<script src="~/Scripts/ruleconfig/rules.datacontext.js"></script>
+<script src="~/Scripts/ruleconfig/rules.eventreciever.js"></script>
+<script src="~/Scripts/ruleconfig/rules.uicontext.js"></script>
+<script src="~/Scripts/ruleconfig/rules.model.js"></script>
+<script src="~/Scripts/ruleconfig/rules.validation.js"></script>

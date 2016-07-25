@@ -1,0 +1,60 @@
+﻿/*.switch_options{
+    display: block;
+    background-color: #bababa;
+    border-radius: 4px;
+    width: 100px;
+}
+.switch_options:before,
+.switch_options:after{
+    content:'.';
+    display:block;
+    overflow:hidden;
+    visibility:hidden;
+    font-size:0;
+    line-height:0;
+    width:0;
+    height:0;
+}
+.switch_options:after{clear:both;}
+ 
+.switch_options span{
+    display: inline-block;
+    float: left;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    color: #9d9d9d;
+   text-transform: uppercase;
+    background: #fff; 
+    border: 1px solid #bababa;
+    border-radius: 2px; 
+    width:48px;
+    text-align:center;
+    height:21px;
+    padding-top:1px;
+}
+
+
+ 
+.switch_options span.selected{
+    background: #0889c4;    
+    border-color: #fff;
+    color: #fff;
+    border-color: #0889c4;
+}   
+
+
+
+.switch_options.switch_option_no_yes span.selected{
+background: #3BAD49;
+border-color: #3BAD49;
+}
+
+.switch_options.switch_option_no_yes .switch_enable.redColor.selected{
+background: #E33E38!important;
+border-color: #E33E38!important;
+}
+ 
+    
+*/

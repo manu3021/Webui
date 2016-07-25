@@ -1,0 +1,746 @@
+﻿
+.imageloader {
+    height: 40px;
+    width: 40px;
+    background: url(images/ajax-loader.gif) no-repeat center center;
+    z-index: 99;
+    position: absolute;
+}
+
+#operatorModal {
+    width: 885px !important;
+    left: 40%;
+    top: 6%;
+}
+
+.userconfigcontainer.layoutcol {
+    left: 0px;
+    right: 0px;
+}
+
+.userlistcontainer.layoutcol {
+    width: 300px;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #bababb;
+}
+
+.userdetailcontainer.layoutcol {
+    left: 300px;
+    right: 0;
+    /*position: absolute;
+    width: 100%;
+    top: 0;*/
+}
+
+
+.usetitemcontainer {
+    margin-left: 23px;
+    padding-bottom: 2px;
+    padding-top: 16px;
+    height: 56px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+    .usetitemcontainer ul li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+        height: 20px;
+        overflow: hidden;
+    }
+
+.userlistheader.layoutrow {
+    top: 0;
+    box-shadow: 0px 10px 10px -13px #bababa;
+    border-bottom: 1px solid #bababa;
+    z-index: 100;
+    height: 60px;
+}
+
+.icon_usr_add {
+    margin: 24px 24px 24px 24px;
+    cursor: pointer;
+}
+
+
+.operatorContent ul {
+    border-bottom: 1px solid #bababb;
+    padding: 0px !important;
+    margin: 0px !important;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+}
+
+    .operatorContent ul li {
+        float: left;
+        line-height: 40px;
+        list-style-type: none;
+    }
+
+.userlistinnercontainer.layoutrow {
+    top: 60px;
+    bottom: 0;
+}
+
+.userlist.layoutrow {
+    top: 34px;
+    bottom: 0;
+}
+
+.margintop {
+    margin-top: 0;
+}
+
+
+.operatorContent form {
+    margin: 0px;
+}
+
+.usercreatebuttonstyle {
+    color: #0088cc !important;
+    cursor: pointer;
+    background-image: url(images/icon_add.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10PX 10px 10px 10px !important;
+    background-color: white;
+    margin-top: 14px;
+    margin-left: 0px;
+    float: left;
+}
+
+    .usercreatebuttonstyle:hover {
+        -webkit-box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        -moz-box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        box-shadow: 33px 34px 11px -24px rgba(59,59,59,1);
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=33px, OffY=34px, Color='rgba(59,59,59,1)', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+    }
+
+.userdetailform.layoutrow {
+    top: 0;
+    bottom: 44px;
+}
+
+.userliststyle {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    .userliststyle #userItem {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+        cursor: pointer;
+        /*border-bottom: 1px solid #bababb;*/
+        -webkit-transition: all .15s ease-in-out;
+        -moz-transition: all .15s ease-in-out;
+        -o-transition: all .15s ease-in-out;
+        transition: all .15s ease-in-out;
+        color: #6a6a6c;
+    }
+
+        .userliststyle #userItem:hover, .userliststyle #userItem:active {
+            border-right: 1px solid transparent;
+            background-color: #e6f3fb;
+            -webkit-box-shadow: 0px 1px 8px 0px #e6f3fb;
+            -moz-box-shadow: 0px 1px 8px 0px #e6f3fb;
+            box-shadow: 0px 1px 8px 0px #e6f3fb;
+            filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=1px, Color='#e6f3fb', Positive='false' ); /* IE 5.5 */
+            border-collapse: separate; /* Required by IE 9 */
+        }
+
+        .userliststyle #userItem.userItemSelected {
+            border-right: 1px solid transparent;
+            background-color: #e6f3fb;
+            color: #4d4d4d;
+            font-size: 1.2em;
+        }
+
+.UserClassCreate {
+    padding-left: 36px;
+    padding-right: 30px;
+}
+
+.user-button-padding {
+    width: 184px;
+    position: absolute;
+    line-height: 41px;
+    z-index: 2;
+}
+
+    .user-button-padding > span {
+        padding-left: 0px !important;
+    }
+
+.rightUserColumn {
+    padding-left: 202px;
+}
+
+.user-partial-button {
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 16px;
+    /*padding-left: 24px;
+    margin-left: 26.2%;*/
+    /*left: 50%;
+    margin-left: 10px;*/
+}
+
+.grid-text1 {
+    font-size: 15px;
+    color: #525357;
+    border: none !important;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: left;
+}
+
+.grid-text2 {
+    font-size: 14px;
+    color: #978c72;
+    border: none !important;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: left;
+    -webkit-word-wrap: break-word;
+    -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    -o-word-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    margin-top: 4px !important;
+}
+
+.usertotal {
+    padding: 8px 0px 5px 20px;
+    color: #5e5f63;
+    border-bottom: 1px solid #efefef;
+    /*background: #f7f7f7;*/
+    /*font-weight: bold;*/
+}
+
+.online {
+    width: 10px;
+    height: 10px;
+    background-color: #18a350;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    display: inline-block;
+}
+
+.bottomSpace {
+    padding-bottom: 5px;
+}
+
+.userlistcontainer .userProfile {
+    padding-left: 0 !important;
+    background-image: url("images/img_profileSmall.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+    .userlistcontainer .userProfile #photo {
+        width: 40px !important;
+        height: 40px !important;
+        background-image: url("images/img_profileSmall.png");
+    }
+
+.imgHolder {
+}
+
+.exceptionbutton {
+    /*padding: 10px 16px !important;*/
+}
+
+.candobutton {
+    /*padding: 10px 16px !important;*/
+}
+
+
+#usercandoModal .table > tbody > tr > td {
+    border-top: 1px solid #D3D3D3;
+}
+
+#usercandoModal .table > thead > tr > th {
+    /*border-bottom: 1px solid #A7A7A8;*/
+    border-right: 1px solid #D3D3D3;
+    /*border-top: 1px solid #BABABB !important;*/
+    font-size: 14px;
+    color: #3B3B3D;
+    vertical-align: middle;
+    font-weight: normal;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#usercandoModal .candoSection {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+#usermodalform {
+    /*padding: 24px;*/
+}
+
+#usercandoModal section {
+    padding-top: 0px !important;
+}
+
+    #usercandoModal section ul li {
+        float: none;
+        padding-bottom: 0px;
+        border-bottom: 1px solid #A7A7A8;
+    }
+
+.category {
+    margin: 0 !important;
+    list-style: none;
+    color: #484848;
+    border: 1px solid #d3d3d3;
+}
+
+    .category .catitem {
+        list-style: none;
+        padding: 8px;
+        cursor: pointer;
+        border-top: 0px;
+        border-left: 0px;
+        border-bottom: 1px;
+        border-right: 0px;
+        border-color: #d3d3d3;
+        border-style: solid;
+    }
+
+.catitem:hover {
+    background-color: #e6f3fb;
+    opacity: 0.8;
+}
+
+#usercandoModal {
+    width: 885px !important;
+    height: 560px !important;
+    left: 40%;
+}
+
+    #usercandoModal + section {
+        padding-top: 0px !important;
+    }
+
+    #usercandoModal section .category li div {
+        text-align: left;
+        vertical-align: middle;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+    }
+
+.catitem.itemselected {
+    border-right: 1px solid transparent;
+    background-color: #e6f3fb;
+    color: #4d4d4d;
+    font-size: 1.2em;
+}
+
+#usercandoModal tbody > tr > td {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #6F7074;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#usercandoModal .formControl-checkbox {
+    top: 2px !important;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+}
+
+    #usercandoModal .formControl-checkbox span {
+        padding: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    #usercandoModal .formControl-checkbox input:checked + span {
+        /* background: url("../images/icons/checkBox_press.png"); */
+        background: url("../images/sprite_icons.png");
+        background-position: -250px -68px;
+        background-repeat: no-repeat;
+    }
+
+    #usercandoModal .formControl-checkbox span {
+        background: url("../images/sprite_icons.png");
+        background-position: -610px -99px;
+    }
+
+.popup-checkbox span {
+    width: 130px;
+}
+/*Sticky styles */
+#sticky-list {
+    height: 73%;
+    overflow: hidden;
+    position: absolute;
+    border-bottom: 1px solid #BABABB;
+    /* padding: 24px 24px 24px 24px; */
+    width: 96%;
+}
+
+    #sticky-list > ul {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+#usercandoModal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sticky thead {
+    position: absolute;
+    top: 0;
+    display: inherit;
+    background-color: white;
+    z-index: 2;
+}
+
+.ctablehead {
+    cursor: pointer;
+}
+
+    .ctablehead tr {
+    }
+
+.catename {
+    color: #08a2aa;
+}
+
+.catenamecount {
+    color: #0088cc;
+}
+
+.ctablehead:hover {
+    background: #e6f3fb;
+}
+
+#userExceptionsModal {
+    height: 85%;
+    width: 68%;
+    left: 38%;
+    top: 10% !important;
+}
+
+/*Exception list styles*/
+.exsection.layoutcol {
+    right: 0;
+    left: 0;
+    /*top: 60px;*/
+    top: 53px;
+}
+
+.exceptionwrapper.layoutrow {
+    bottom: 50px;
+    top: 0;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-bottom: 1px solid #bababa;
+    /*border-top: 1px solid #bababa;*/
+    margin-bottom: 24px;
+}
+
+.exceptionLeftSection.layoutcol {
+    width: 48%;
+    left: 0;
+    /*border: 1px solid #f5f5f5;*/
+    padding: 7px;
+}
+
+.exceptionwrapper ul.tree li:last-child::after {
+    margin-top: -1px;
+}
+
+.exceptionRightSection.layoutcol {
+    right: 0px;
+    left: 50%;
+    padding: 10px;
+    border-left: 1px solid #bababa;
+}
+
+.exbodywWraper.layoutrow {
+    top: 54px;
+    bottom: 0px;
+    padding: 4px;
+    overflow-y: scroll;
+}
+
+.exTreeview.layoutrow {
+    top: 0;
+    bottom: 0;
+}
+
+#userExceptionsModal .exceptionRightSection .exListItemTitle {
+    padding-left: 30px;
+}
+
+
+@-moz-document url-prefix() {
+    .expand .treecheckboxStyle .treecustomcheckbox {
+        padding-left: 28px !important;
+    }
+
+    .exTreeview.layoutrow .tree-label {
+        padding-left: 8px !important;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+}
+
+/*.exTreeview.layoutrow .tree-label {
+        padding-left: 0px !important;
+}*/
+
+.exTreeview > .expand .treecheckboxStyle .treecustomcheckbox {
+    padding-left: 10px !important;
+}
+
+.exTreeview > .tree-label {
+    padding-left: 19px !important;
+}
+
+.exlistheader.layoutrow {
+    height: 40px;
+    /*background-color: #484848;*/
+    padding: 14px 10px 0px 24px;
+    top: 0px;
+    /*color: white;*/
+    border-bottom: 1px solid #D3D3D3;
+}
+
+#exListviewwrapper #exlistview li {
+    float: none !important;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 16px !important;
+    background-color: #FFFFFF;
+}
+
+#exListviewwrapper #exlistview {
+    list-style: none;
+    margin-left: 0;
+}
+
+/*Exception list view styles*/
+.exListview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exListItemWrapper {
+    clear: both;
+    width: 100%;
+    position: relative;
+    height: 60px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.exListItemIcon, .exListItemTitle, .exListItemDesc {
+    display: inline;
+}
+
+.exListItemIcon {
+    width: 20px;
+    height: 20px;
+}
+
+#exListviewwrapper .icon-itemclose {
+    background: url("../../content/images/sprite_icons.png") -248px -100px no-repeat;
+    width: 22px;
+    height: 31px;
+    float: right;
+    margin-right: 0px !important;
+    display: none;
+}
+
+#exListviewwrapper .icon-itemclose-show {
+    background: url("../../content/images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 31px;
+    float: right;
+    background-position: -248px -100px;
+    margin-right: 0px !important;
+    display: inline-block;
+}
+
+
+#userExceptionsModal .exceptionRightSection .exListItemDesc {
+    display: block;
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+#userExceptionsModal .exceptionLeftSection .exbodywWraper.layoutrow{
+top:0px;
+}
+
+#userExceptionsModal .permissionNote {
+    position: fixed;
+    margin-left: 157px;
+    font-size: 12px;
+    color: #707070;
+    width: 600px;
+}
+
+/*End of exception style*/
+.operatorButton {
+    margin-top: 191px;
+    position: absolute;
+    width: 181px;
+    line-height: 52px;
+}
+
+.rightTextFields {
+    margin-left: 204px;
+    top: 24px !important;
+    position: absolute;
+}
+
+    .rightTextFields .spaceBottomfix {
+        margin-bottom: 45px;
+    }
+
+.userlistheader ul {
+    margin: 0px;
+    height: 12px;
+}
+
+    .userlistheader ul li {
+        list-style-type: none;
+        padding: 0px 18px 0px 0px;
+        display: block;
+    }
+
+.operatorSearch {
+    left: 48px;
+    position: absolute;
+    margin: 12px;
+}
+
+.operatorName {
+    list-style-type: none;
+    padding-top: 40px;
+}
+
+    .operatorName ul li {
+        float: none !important;
+    }
+
+.operatorDetails {
+}
+
+    .operatorDetails li {
+        float: none !important;
+    }
+
+.remove-image {
+    background: url('../images/sprite_icons.png');
+    background-position: -458px -338px;
+    /* background: red; */
+    /* display: block; */
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    position: absolute;
+    z-index: 1;
+    left: auto !important;
+    cursor: pointer;
+}
+
+#usermodalform #new_Password {
+    width: 223px !important;
+}
+
+
+    #usermodalform #new_Password.invalidError {
+        background-position-x: 208px !important;
+    }
+
+#usermodalform .passcheckbox {
+    width: 50px !important;
+    height: 50px !important;
+    float: right !important;
+    position: relative !important;
+    -khtml-opacity: 0 !important;
+    -moz-opacity: 0 !important;
+    opacity: 0 !important;
+    filter: alpha(opacity=NaN);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+}
+
+#usermodalform .rightsidecontainer {
+    height: 453px;
+    /*overflow: scroll;*/
+    top: 0;
+    position: relative;
+    /*left: 24px;*/
+    max-height: 400px;
+}
+
+#operatorModal .ImagePlaceHolder {
+    z-index: 2;
+}
+
+@-moz-document url-prefix() {
+
+    .operatorSearch .searchbox:focus {
+        margin-top: 2px !important;
+        margin-left: 2px !important;
+    }
+
+    #usermodalform .field #new_Password + .tooltip.bottom .tooltip-arrow {
+        left: 232px !important;
+    }
+}
+
+#operatorModal .newOperatorImgPosition {
+    position: absolute;
+}

@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+    <title>Socorro</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Para configurar as entradas para NetAXS-123</h3>
+        <h4 class="subtitle">Para configurar as definições de entrada:</h4>
+        <ol>
+            <li>Na área do Painel MPC, clique no separador <strong>Criar e editar</strong>. É apresentada a página <strong>CRIAR E EDITAR</strong>.</li>
+            <li>No painel esquerdo, selecione o local e, em seguida, clique no dispositivo relevante adicionado ao local.</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">Nota:</h4>
+                <p>antes de modificar as definições do dispositivo, certifique-se de que regista os dispositivos na nuvem.</p>
+            </div>
+            <li>No painel esquerdo, clique no ícone <i class="netaxs-icon"></i>correspondente ao dispositivo NetAXS-123 para expandir e ver todas as portas disponíveis.</li>
+            <li>Clique duas vezes na porta pretendida para expandir e ver todas as entradas associadas. É apresentada a página <strong>Definições</strong>.</li>
+            <li>Introduza os detalhes necessários nos seguintes campos:</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">Campo</td>
+                        <td>Descrição</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nome da entrada
+                        </td>
+                        <td>Introduza um nome exclusivo para identificar as entradas da porta.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zona horária do desvio</td>
+                        <td>Especifica o período de tempo durante o qual a entrada será ignorada.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bloquear zona horária do interbloqueio
+                        </td>
+                        <td>Permite bloquear a zona horária do interbloqueio ou a interação programada entre dois pontos. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Desativar alarmes e eventos
+                        </td>
+                        <td>Especifica o período de tempo durante o qual os alarmes e eventos não serão reportados.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tempo do desvio
+                        </td>
+                        <td>Especifica o período de tempo para o qual as entradas serão desviadas ou desativadas.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tempo de retenção
+                        </td>
+                        <td>Especifica o período de tempo que a entrada tem de permanecer num estado antes de gerar um alarme.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normalmente
+                        </td>
+                        <td>
+                            <strong>Normalmente fechado</strong> – Especifica que o estado normal da entrada é fechado (predefinição).<>
+						<strong>Normalmente aberto</strong> – Especifica que o estado normal da entrada é aberto.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Supervisionado
+                        </td>
+                        <td>Especifica que o circuito elétrico da entrada é ligado com caminhos alternativos supervisionados por resistências.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Novo bloqueio automático
+                        </td>
+                        <td>Faz com que a porta bloqueie de novo automaticamente quando o interruptor de estado da porta fechar após a entrada. O relé de saída que controlo o golpe da porta é desenergizado quando a entrada associada regressa ao estado normal em vez de permanecer energizado durante o tempo do impulso.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interbloqueio
+                        </td>
+                        <td>Permite desativar o interbloqueio ou a interação programada entre dois pontos. Quando ativado, este ponto ignora todas as ações de interbloqueio.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li>Clique em <strong>Guardar</strong>.</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>Anterior</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>Editar definições do dispositivo</a>
+        </p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,279 @@
+﻿<html>
+<head>
+    <title>Aidez-Moi</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Configurer la caméra dans HRRH8</h3>
+        <h4 class="subtitle">Pour configurer les paramètres de caméra :</h4>
+        <ol>
+            <li>dans l'espace tableau de bord MPC, cliquez sur l'onglet <strong>Créer et modifier</strong>. La page <strong>CRÉER ET MODIFIER</strong> apparaît.</li>
+			<li>Dans le volet gauche, sélectionnez le site et cliquez sur le périphérique correspondant ajouté au site.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Remarque :</h4>
+				<p>avant de modifier les paramètres de périphérique, assurez-vous d'enregistrer les périphériques dans le cloud.</p>
+			</div>
+			<li>Dans le volet gauche, cliquez sur <i class="camred-icon"></i> l'icône correspondant au périphérique HRRH8 pour afficher toutes les caméras disponibles.</li>
+			<li>Double-cliquez sur la caméra souhaitée. La page <strong>Paramètres</strong> apparaît.</li>
+			<li>Entrez les informations demandées dans les champs suivants :</li>
+				<ul>
+					<li>Dans <strong>Configurer</strong></li>
+                 </ul>
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Champ</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        État de la caméra
+                    </td>
+                    <td>
+                        Cliquez sur <strong>Activer</strong> pour activer l'état de la caméra.<>
+						Ou<>
+						Cliquez sur <strong>Désactiver</strong> pour désactiver l'état de la caméra.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Nom de la caméra
+					</td>
+                    <td>
+                        Entrez un nom de caméra.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                       Type de caméra 
+					</td>
+                    <td>
+                       Dans la liste déroulante, sélectionnez le type de caméra.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Sélectionnez Caméra IP découverte
+  					</td>
+                    <td>
+                        Dans la liste déroulante, sélectionnez la caméra IP souhaitée.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                       Modèle de caméra
+					</td>
+                    <td>
+                        Dans la liste déroulante, sélectionnez le modèle de caméra.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        URL RTSP
+					</td>
+                    <td>
+                        Entrez l'URL du protocole de diffusion multimédia en temps réel (RTSP).
+					</td>
+                </tr>
+				 <tr>
+                    <td>
+                        Nom d'utilisateur
+					</td>
+                    <td>
+                        Entrez le nom d'utilisateur pour accéder à l'URL du périphérique MPC.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Mot de passe
+					</td>
+                    <td>
+                        Entrez le mot de passe pour accéder à l'URL du périphérique MPC.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Lecture
+					</td>
+                    <td>
+                        Cliquez sur <i class="play-icon"></i> l'icône pour lire le clip disponible dans la caméra sélectionnée.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Associations
+					</td>
+                    <td>
+                       Cliquez pour associer la caméra à n'importe quelle porte. Ainsi, en cas d'événement concernant la porte, p. ex. une carte trouvée, la caméra commence l'enregistrement de la vidéo.
+					</td>
+                </tr>	
+				
+				<tr>
+                    <td colspan="2">
+                        <strong>DURÉE D'ENREGISTREMENT DU CLIP</strong>
+   					</td>
+                </tr>		
+
+				<tr>
+                    <td>
+                        Pré-événement
+   					</td>
+                    <td>
+                       Cliquez sur temps pour définir la durée d'enregistrement du clip avant la détection du mouvement par la caméra.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Post-événement sur le site
+					</td>
+                    <td>
+                       Cliquez sur temps pour définir la durée d'enregistrement du clip après la détection du mouvement par la caméra, située sur le site.
+ 
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                        Post-événement hors site
+					</td>
+                    <td>
+                       Cliquez sur temps pour définir la durée d'enregistrement du clip après la détection du mouvement par la caméra, située hors site.
+
+					</td>
+                </tr>	
+				<tr>
+                    <td colspan="2">
+                        <strong>PARAMÈTRE D'UNE VIDÉO EN DIRECT/ENREGISTRÉE</strong>
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Fréquence de trame
+					</td>
+                    <td>
+                       Dans la liste déroulante, sélectionnez la fréquence (taux) à laquelle la caméra capture des images consécutives uniques appelées trames.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Résolution de la caméra
+					</td>
+                    <td>
+                       Dans la liste déroulante, sélectionnez la résolution de la caméra. Il s'agit du nombre total de pixels dans une image numérique (appareil photo/caméra).
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                       Qualité de la caméra
+					</td>
+                    <td>
+                       Dans la liste déroulante, sélectionnez la qualité de la caméra.
+					</td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <img src="../../Content/images/progress_bar.jpg">
+					</td>
+                </tr>				
+            </tbody>
+        </table>
+            <ul>
+                <li>Dans <strong>Enregistrement d'événements</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Champ</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Enregistrer à
+                            </td>
+                            <td>
+                                Dans la liste des déclencheurs disponibles, sélectionnez le point déclencheur souhaité marquant le début d'enregistrement.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Dans <strong>Enregistrement continu</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Champ</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Programmation de l'enregistrement continu
+                            </td>
+                            <td>
+                                Dans la liste des programmations disponibles, sélectionnez la période souhaitée pendant laquelle l'enregistrement est activé.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Dans <strong>Enregistrement des mouvements</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Champ</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Activer l'enregistrement des mouvements
+                            </td>
+                            <td>
+                                Sélectionnez pour activer l'enregistrement des mouvements.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Temps de maintien
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Programmation de l'enregistrement des mouvements
+                            </td>
+                            <td>
+                                Dans la liste des programmations disponibles, sélectionnez la période souhaitée pendant laquelle l'enregistrement des mouvements est activé.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            <ul>
+                <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+                </ul>
+</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Précédent</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Modifier les paramètres du périphérique</a>
+	</p>	
+</div>		
+</body>
+</html>

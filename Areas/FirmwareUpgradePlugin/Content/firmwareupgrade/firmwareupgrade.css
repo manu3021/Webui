@@ -1,0 +1,393 @@
+﻿.firmware-upgrade-header {
+    top: 110px;
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #bababb;
+    -webkit-box-shadow: 0 2px 6px -2px #bababb;
+    -moz-box-shadow: 0 2px 6px -2px #bababb;
+    box-shadow: 0 2px 6px -2px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=6px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    font-size: 16px;
+    background-color: #fff;
+    z-index: 100;
+    padding: 0 24px;
+    color: #707070;
+}
+
+    .firmware-upgrade-header ul li {
+        list-style: none;
+        float: left;
+        width: 15%;
+        padding-right: 14px;
+    }
+
+        .firmware-upgrade-header ul li:nth-child(3) {
+            width: 280px;
+            padding-right: 0;
+        }
+
+.firware-heading-main-box {
+    margin-top: 7px;
+    /*margin-right: 54px;*/
+    margin-left: 0;
+}
+
+.heading-span-block {
+    display: block;
+    margin-left: 0 !important;
+    float: left;
+    margin-right: 0px;
+    width: 161px;
+    font-size: 13px;
+    -webkit-word-wrap: break-word;
+    -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    -o-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.firmware-heading-btn {
+    margin-top: 7px;
+}
+
+.firmware-upgrade-wrapper #header-two-rightmenu > .nav > li > a:hover {
+    background-color: none !important;
+}
+
+.firmware-upgrade-wrapper .firmware-page-body {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.firmware-upgrade-wrapper .table th, .table td {
+    border-top: none !important;
+}
+
+.firmware-upgrade-wrapper .firmware-select {
+    padding: 0 !important;
+    margin: 0;
+    min-width: 152px;
+    max-width: 190px;
+}
+
+.firmware-upgrade-wrapper .firmware-select-box {
+    /*margin-top: -4px;*/
+    /*margin-right: 20px;*/
+    padding-bottom: 4px;
+    /*width: 182px;*/
+    width: 97%;
+}
+
+.firmware-upgrade-wrapper .firmware-table {
+    display: table;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    /*margin-left: 24px;*/
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0, OffY=0, Color='black', Positive='false' ); /* IE 5.5 */
+    /*border-collapse: separate;*/ /* Required by IE 9 */
+    color: #707070;
+}
+
+    /*.firmware-upgrade-wrapper .firmwareOldVersion {
+    color: #E33E38;
+}*/
+
+    .firmware-upgrade-wrapper .firmware-table > thead tr {
+        border: 0;
+        -webkit-box-shadow: 0 4px 4px -5px #bababa;
+        -moz-box-shadow: 0 4px 4px -5px #bababa;
+        box-shadow: 0 4px 4px -5px #bababa;
+        filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=4px, OffY=4px, Color='#bababa', Positive='false' ); /* IE 5.5 */
+        border-collapse: separate; /* Required by IE 9 */
+        border-bottom: 1px solid #bababa;
+        height: 41px;
+        /*float:left;*/
+    }
+
+    .firmware-upgrade-wrapper .firmware-table > thead th {
+        border-right: 1px solid #d3d3d3;
+        font-size: 14px;
+        border-bottom: none;
+        background-color: #fff;
+        vertical-align: middle;
+        font-weight: 400;
+        padding: 10px 13px 11px 13px;
+    }
+
+.firmware-btn {
+    min-width: 90px;
+    float: left;
+}
+
+.firmware-upgrade-wrapper .firmware-table > thead th:first-child {
+    border-left: none;
+    padding-bottom: 3px;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody tr:hover, .firmware-upgrade-wrapper .selected-tr {
+    background: #e6f3fb;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody tr:first-child {
+    border-top: 0;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody tr td#box-col1 {
+    /*border-left: 5px solid transparent;*/
+}
+
+.firmware-upgrade-wrapper .firmware-table > thead th:last-child {
+    border-right: none;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody {
+    width: 100%;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 42px;
+    height: auto;
+}
+
+.firmware-upgrade-wrapper .firmware-table tbody tr {
+    *height: 35px;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody tr {
+    width: 100%;
+    padding: 13px 0 14px 0;
+    display: inline-block;
+    border-top: 1px solid #d3d3d3;
+}
+
+.firmware-upgrade-wrapper .firmware-table .read {
+    background-color: #f5f5f5;
+}
+
+.firmware-upgrade-wrapper .firmware-table .upgradeAvailabilitySpan {
+    padding-top: 5px;
+    padding-left: 9px;
+    display: inline-block;
+    width: auto;
+}
+
+.firmware-upgrade-wrapper .firmware-table > tbody tr td {
+    font-size: 14px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-word-wrap: break-word;
+    -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    -o-word-wrap: break-word;
+    word-wrap: break-word;
+    padding-bottom: 0;
+    padding-top: 1px;
+    vertical-align: middle;
+    vertical-align: top\9;
+}
+
+.firmware-upgrade-wrapper .firmware-table .formControl-checkbox {
+    width: 15px;
+    top: 1px !important;
+}
+
+.firmware-upgrade-wrapper #search {
+    margin: 3px 0 0;
+}
+
+.firmware-upgrade-wrapper .formControl-checkbox span {
+    height: 22px;
+    padding: 0;
+}
+
+.firmware-table label {
+    padding-left: 0;
+}
+
+.firmware-upgrade-wrapper .firmware-table td:nth-child(1), .firmware-upgrade-wrapper .firmware-table th:nth-child(1) {
+    width: 0.5%;
+    min-width: 16px;
+    max-width: 19px;
+}
+
+.sorted-th-text, .firmware-upgrade-wrapper .firmware-table tr th:first-child + th:hover, .firmware-upgrade-wrapper .firmware-table tr th:first-child + th + th:hover, .firmware-upgrade-wrapper .firmware-table tr th:first-child + th + th + th:hover, .firmware-upgrade-wrapper .firmware-table tr th:first-child + th + th + th + th:hover, .firmware-upgrade-wrapper .firmware-table tr th:first-child + th + th + th + th + th:hover {
+    color: #0889C4 !important;
+}
+
+.firmware-upgrade-wrapper .firmware-table td:nth-child(2), .firmware-upgrade-wrapper .firmware-table th:nth-child(2) {
+    width: 26%;
+}
+
+.firmware-upgrade-wrapper .firmware-table td:nth-child(3), .firmware-upgrade-wrapper .firmware-table th:nth-child(3) {
+    width: 8%;
+}
+
+.firmware-upgrade-wrapper .firmware-table td:nth-child(4), .firmware-upgrade-wrapper .firmware-table th:nth-child(4) {
+    width: 25%;
+}
+/*.firmware-upgrade-wrapper .firmware-table td:nth-child(5), .firmware-upgrade-wrapper .firmware-table th:nth-child(5) {
+    width: 10%;
+}
+.firmware-upgrade-wrapper .firmware-table td:nth-child(6), .firmware-upgrade-wrapper .firmware-table th:nth-child(6) {
+    width: 20%;
+}*/
+.firmware-upgrade-wrapper .firmware-table th, .firmware-upgrade-wrapper .firmware-table td {
+    padding: 11px 13px;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+.firmware-upgrade-wrapper .header-text {
+    padding-top: 11px;
+    color: #707070;
+}
+
+.firmware-upgrade-wrapper .firmware-table-container th span {
+    /*margin-left: 5px;
+    margin-top: -3px;*/
+}
+
+.firmware-upgrade-wrapper li.alarm-new-cus {
+    margin: 0 0 0 23px;
+}
+
+    .firmware-upgrade-wrapper li.alarm-new-cus .formControl-checkbox {
+        float: left;
+        margin: -3px 1px 0 0;
+    }
+
+.firmware-upgrade-wrapper .navbar .nav > li.top-view > a {
+    width: 87px;
+    padding: 10px 24px 0 0;
+}
+
+    .firmware-upgrade-wrapper .navbar .nav > li.top-view > a:focus, .firmware-upgrade-wrapper .navbar .nav > li.top-view > a:hover {
+        background: none;
+    }
+
+.firmware-upgrade-wrapper.layoutrow {
+    top: 0px;
+    bottom: 0px;
+}
+
+.firmware-upgrade-main-section.layoutrow {
+    top: 65px;
+    bottom: 0px;
+}
+
+.firmware-upgrade-coantinerleft.layoutcol {
+    left: 24px;
+    width: 26%;
+}
+
+.firmware-upgrade-coantinerright.layoutcol {
+    left: 0;
+    right: 24px;
+}
+
+.firmware-upgrade-wrapper .firmware-select-site {
+    /*margin-left: 24px;*/
+    vertical-align: middle;
+    margin-top: 20px;
+    border: none;
+}
+
+/*.firmware-upgrade-wrapper .firmware-searchHolder {
+    line-height: normal;
+}
+
+.firmware-upgrade-wrapper .firmware-searchHolder input[type=search]:focus, .firmware-upgrade-wrapper .firmware-searchHolder input[type=search]:hover {
+    background-position-y: 8px;
+    background-position-x: 6px;
+    margin-left: 0;
+}*/
+
+.firmware-upgrade-wrapper .firmware-table .firmware-progress-container {
+    position: relative;
+}
+
+/*.firmware-upgrade-wrapper progress[value] {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 135px;
+    height: 30px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(112, 112, 112, 1.0));
+    background-color: #3BAD49;
+    border-radius: 4px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border: 1px solid #707070;
+    position: relative;
+}*/
+.firmware-upgrade-wrapper .firmware-table .firmware-in-progress-txt {
+    vertical-align: top !important;
+}
+
+.firmware-upgrade-wrapper .firmware-progress-text {
+    position: absolute;
+    left: 54px;
+    z-index: 99999999;
+    color: white;
+    top: 5px;
+}
+
+.firmware-upgrade-wrapper progress {
+    /*background: linear-gradient(to right bottom, #9fa2a3 0%, #979a9b 100%) repeat scroll 0 0 transparent;*/
+    background: #707070;
+    width: 135px;
+    height: 30px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    border: 1px solid #707070;
+}
+
+    .firmware-upgrade-wrapper progress[value] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        /*width: 135px;
+    height: 30px;
+    border-radius: 4px;*/
+        -webkit-background-size: 48px 30px, 100% 100%, 100% 100%;
+        -moz-background-size: 48px 30px, 100% 100%, 100% 100%;
+        -ms-background-size: 48px 30px, 100% 100%, 100% 100%;
+        -o-background-size: 48px 30px, 100% 100%, 100% 100%;
+        background-size: 48px 30px, 100% 100%, 100% 100%;
+        /*border: 1px solid #707070;*/
+        position: relative;
+        color: #3BAD49;
+    }
+
+    .firmware-upgrade-wrapper progress::-moz-progress-bar {
+        /*background-image: -moz-linear-gradient(135deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66% ),-moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -moz-linear-gradient(left, #3BAD49, #3BAD49);*/
+        background-color: #3BAD49;
+    }
+
+    .firmware-upgrade-wrapper progress::-ms-fill {
+        border: none;
+        color: #707070;
+    }
+
+    .firmware-upgrade-wrapper progress[value]::-ms-fill {
+        color: #3BAD49;
+    }

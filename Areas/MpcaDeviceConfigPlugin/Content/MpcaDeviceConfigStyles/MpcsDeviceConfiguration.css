@@ -1,0 +1,276 @@
+﻿/*These styles are used to show and hide recorder settings page is device is registered*/
+.mpcsettinghide {
+    display: none;
+}
+
+.mpcsettingshow {
+    display: block;
+}
+/*These styles are used to show and hide recorder settings page is device is registered*/
+
+.recorder_setting .formcontrol ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .recorder_setting .formcontrol ul li {
+        list-style-type: none;
+        /*padding-bottom: 14px;*/
+        float: left;
+    }
+
+/*.recorder_setting .checkboxStyle {
+    margin: 0 0 20px 0 !important;
+
+}*/
+
+.recorder_setting .checkboxStyle .customcheckbox {
+    border-style: none;
+    color: #6F7074;
+    font-size: 13px;
+    margin: 0 !important;
+    position: absolute;
+}
+
+
+    .recorder_setting .checkboxStyle .customcheckbox span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        background: url("../MpcaDeviceConfigStyles/images/checkBox_normal.png");
+        background-repeat: no-repeat;
+    }
+
+    .recorder_setting .checkboxStyle .customcheckbox input {
+        display: none;
+    }
+
+        .recorder_setting .checkboxStyle .customcheckbox input:checked + span {
+            background: url("../MpcaDeviceConfigStyles/images/checkBox_press.png");
+            background-repeat: no-repeat;
+        }
+
+.recorder_setting .checkboxStyle .title {
+    display: inline;
+    margin: 0 0 0 24px !important;
+}
+
+.recorder_setting .primary-button {
+    margin-right: 8px;
+}
+
+.recorder_setting #editmpcaRecorder {
+    margin-bottom: 55px;
+}
+
+.recorder_setting .ntwConfigHeadingStyleFix {
+    padding-top: 18px;
+    padding-bottom: 6px;
+}
+
+.recorder_setting .recorderSettingHeadingFix {
+    margin-top: 6px;
+    padding-bottom: 7px;
+}
+
+.recorder_setting .mpcConnectSettingsHeadingFix {
+    padding-top: 18px;
+    padding-bottom: 5px;
+}
+
+.recorder_setting .advancedSettingHeaderFix {
+    padding-bottom: 8px;
+    margin-top: 6px;
+}
+
+.recorder_setting .rebootBtnStyleFix .primary-button{
+    margin-top: -4px; 
+}
+
+.sectionHeader h6 {
+    font-weight: normal;
+    color: #3b3c40;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Open Sans Semibold" !important;
+}
+
+.recorder-padding{
+padding-bottom:16px;
+}
+
+#mpcaRecorderNotReg{
+    margin:0px;
+}
+#mpcaRecorderNotReg ul {
+    margin: 0px 0px 10px 0px;
+}
+
+.recorder_setting .buttonGroup .infonote {
+  display: inline-block;
+  width: 60%;
+  vertical-align: middle;
+}
+
+
+#mpcaRecorderNotReg .loader {
+    /*margin: 60px auto;*/
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 2px solid #bababa;
+    border-right: 2px solid #bababa;
+    border-bottom: 2px solid #bababa;
+    border-left: 2px solid #e54b45;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+#mpcaRecorderNotReg .notloader .loader {
+    border-left: 2px solid #bababa !important;
+}
+
+#mpcaRecorderNotReg .loader,
+.loader:after {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#mpcaRecorderNotReg .field-loader-container {
+    height: 24px;
+}
+
+#mpcaRecorderNotReg .field-loader {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+    #mpcaRecorderNotReg .field-loader.loaded {
+        display: none;
+    }
+
+#mpcaRecorderNotReg .field-loader-text {
+    color: #707070;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-top: 2px;
+    position: absolute;
+}
+
+#mpcaRecorderNotReg .field-loader-container.complete .field-loader-text {
+    color: #009245;
+    font-size: 14px;
+}
+
+#mpcaRecorderNotReg .field-loader-container.inprogress .field-loader-text {
+    color: #e54b45;
+    font-size: 14px;
+}
+
+#mpcaRecorderNotReg .field-loader-container.incomplete .field-loader-text {
+    font-size: 14px;
+}
+
+#mpcaRecorderNotReg .field-loader-text .refresh-btn {
+    color: #0889c4;
+    font-size: 14px;
+    font-family: "Open Sans Semibold";
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#mpcaRecorderNotReg .field-loader-devider {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin: 5px 0px 5px 0px;
+}
+
+    #mpcaRecorderNotReg .field-loader-devider span {
+        width: 2px;
+        background: #bababa;
+        height: 15px;
+        position: relative;
+        display: block;
+        margin: 3px 10px 10px 11px;
+    }
+
+#mpcaRecorderNotReg .note3 {
+    color: #707070;
+    margin-bottom: 24px;
+}
+
+#mpcaRecorderNotReg .field-loader-container.complete {
+    opacity: 1;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+    #mpcaRecorderNotReg .field-loader-container.complete .complete-image {
+        background: url('../images/sprite24.png') no-repeat -112px -43px;
+        width: 24px;
+        height: 25px;
+        position: absolute;
+        transition: opacity .2s ease-out;
+        -moz-transition: opacity .2s ease-out;
+        -webkit-transition: opacity .2s ease-out;
+        -o-transition: opacity .2s ease-out;
+    }
+
+    #mpcaRecorderNotReg .field-loader-container.complete .field-loader-text {
+        padding-left: 36px;
+    }
+
+#mpcaRecorderNotReg .field-loader-container.last-item {
+    margin-bottom: 24px;
+}
+
+@-moz-document url-prefix() {
+    .recorder_setting .recorderSettingBottomFix .primary-button {
+    margin-bottom: 22px;
+}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #mpcaRecorderNotReg .inprogress.field-loader-container .field-loader-text {
+        padding-left: 9px !important;
+    }
+
+    #mpcaRecorderNotReg .incomplete.field-loader-container .field-loader-text{
+        padding-left: 9px !important;
+    }
+}

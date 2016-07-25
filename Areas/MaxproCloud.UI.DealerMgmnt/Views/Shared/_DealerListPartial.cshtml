@@ -1,0 +1,20 @@
+﻿<script id="userlistTmpl" type="text/html">
+    <li id="userItem" data-bind="css: { userItemSelected: IsSelected }">
+        <div class="usetitemcontainer" data-bind="click: $root.userselected">
+            <ul class="UserClassCreate">
+                <li class="bottomSpace grid-text1" data-bind="text: $data.Name"></li>
+                <li class="bottomSpace grid-text2" data-bind="text: $data.UserName"></li>
+            </ul>
+        </div>
+    </li>
+</script>
+
+<div id="userlistcontainer" class="userlistcontainer layoutcol">
+    <div class="usertotal layoutrow" data-bind="text: totalusers">
+    </div>
+    <div class="userlist layoutrow scroll-y">
+        <ul class="userliststyle" data-bind="template: { name: 'userlistTmpl', foreach: $data.userlistdatasource }"></ul>
+    </div>
+</div>
+
+

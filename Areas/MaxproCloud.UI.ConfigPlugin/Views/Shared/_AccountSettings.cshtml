@@ -1,0 +1,172 @@
+﻿
+
+<div data-accounttype="CUSTOMER" class="settingsform">
+
+    @if (Html.HasPermissions(MPCPermissions.Update_Customer))
+    {
+        @:<form id="customer_form" data-validationkey="customer" class="customer_form" data-bind="submit: dosavesettings">
+    }
+    else
+    {
+        @:<form id="customer_form" data-validationkey="customer" class="customer_form">
+                }
+    <div id="editCustomer" class="row formcontrol" style="display: block;">
+        <div class="col pull-left">
+            <div class="field">
+                <label for="customer_Name" class="floatLblDn">@Resources.customer_Name</label>
+                <input type="text" name="customer_Name" id="customer_Name" class="floatTxt myStyle" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' ">
+            </div>
+            <div class="field">
+                <label for="customer_Email" class="floatLblDn">@Resources.Email</label>
+                <input type="email" name="customer_Email" id="customer_Email" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.EmailAddress, valueUpdate: 'afterkeydown' ">
+            </div>
+            <div class="field">
+                <label for="customer_Address" class="floatLblDn">@Resources.Address</label>
+                <input type="text" name="customer_Address" id="customer_Address" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' ">
+            </div>
+            <div class="field">
+                <label for="customer_City" class="floatLblDn">@Resources.City</label>
+                <input type="text" name="customer_City" id="customer_City" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' ">
+            </div>
+
+            <div class="field">
+                <label for="customer_Region" class="floatLblDn">@Resources.Region</label>
+                <input type="text" name="customer_Region" id="customer_Region" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' ">
+            </div>
+
+            <div class="field">
+                <label for="customer_Country" class="floatLblDn">@Resources.Country</label>
+                <input type="text" name="customer_Country" id="customer_Country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' ">
+            </div>
+
+            <div class="field">
+                <label for="customer_ZipCode" class="floatLblDn">@Resources.Zipcode</label>
+                <input type="text" name="customer_ZipCode" id="customer_ZipCode" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.ZipCode, valueUpdate: 'afterkeydown' ">
+            </div>
+
+            <div class="field">
+                <label for="customer_Phone" class="floatLblDn">@Resources.Phone</label>
+                <input type="tel" name="customer_Phone" id="customer_Phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' ">
+            </div>
+        </div>
+        <div class="row borderTop">
+        </div>
+        <div class="buttonGroup">
+            @if (Html.HasPermissions(MPCPermissions.Update_Customer))
+            {
+                <button id="btnsavecust" class="primary-button" data-bind="enable: hasChanges ,click: dosavesettings">@Resources.Save</button>
+            }
+            <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </div>
+    </div>
+</form>
+</div>
+
+
+
+<div data-accounttype="SITE" class="settingsform">
+    @if (Html.HasPermissions(MPCPermissions.Update_Site))
+    {@:<form id="site_form" data-validationkey="site" data-bind="submit: dosavesettings">
+    }
+    else
+    {@:<form id="site_form" data-validationkey="site">
+    }
+    <div id="editSite" class="row formcontrol" style="display: block;">
+        <div class="row col siteplaceHolder">
+            <div class="spaceBottomStyle pull-left">
+                <div class="ImagePlaceHolder siteHolder row">
+                    @if (Html.HasPermissions(MPCPermissions.Update_Site))
+                    {
+                        <i class="defaultsiteHolder-image"></i>    
+                        <img id="photo" data-bind="attr: { src: floorPhoto }">
+    <input type="file" id="floorplanimgfile" name="photo" data-uploadurl="@Url.Action("FileUpload", "File")" data-bind="file: imageFile, fileObjectURL: imageObjectURL, imageBase64: image, imageType: imageType">
+
+                    }
+            </div>
+                @if (Html.HasPermissions(MPCPermissions.Update_Site))
+                    {
+                <div class="siteupload-text"> @Resources.Config_UploadFloorPlanstypes    </div>
+                  }  
+                    
+                </div>
+            </div>
+            <div class="col pull-left">
+                <div class="field">
+                    <label for="site_Name" class="floatLblDn">@Resources.Site_name</label>
+                    <input type="text" class="floatTxt myStyle" id="site_Name" name="site_Name" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' " />
+                </div>
+                <div class="field">
+                    <label for="site_Email" class="floatLblDn">@Resources.Email</label>
+                    <input type="email" class="floatTxt myStyle" id="site_Email" name="site_Email" data-bind="value: $data.ContactInfo.EmailAddress, valueUpdate: 'afterkeydown' ">
+                </div>
+                <div class="field">
+                    <label for="site_Address" class="floatLblDn">@Resources.Address</label>
+                    <input type="text" class="floatTxt myStyle" id="site_Address" name="site_Address" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' " />
+                </div>
+                <div class="field">
+                    <label for="site_City" class="floatLblDn">@Resources.City</label>
+                    <input type="text" class="floatTxt myStyle" id="site_City" name="site_City" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' ">
+                </div>
+                <div class="field">
+                    <label for="site_Region" class="floatLblDn">@Resources.Region</label>
+                    <input type="text" class="floatTxt myStyle" id="site_Region" name="site_Region" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' ">
+                </div>
+                <div class="field">
+                    <label for="site_Country" class="floatLblDn">@Resources.Country</label>
+                    <input type="text" class="floatTxt myStyle" id="site_Country" name="site_Country" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' ">
+                </div>
+                <div class="field">
+                    <label for="site_ZipCode" class="floatLblDn">@Resources.Zipcode</label>
+                    <input type="text" class="floatTxt myStyle" id="site_ZipCode" name="site_ZipCode" data-bind="value: $data.ContactInfo.ZipCode, valueUpdate: 'afterkeydown' ">
+                </div>
+                <div class="field">
+                    <label for="site_Phone" class="floatLblDn">@Resources.Phone</label>
+                    <input type="text" class="floatTxt myStyle" id="site_Phone" name="site_Phone" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' " />
+                </div>
+               
+                <div class="field select-field clear">                    
+                    <label for="user_LastName"> @Resources.Config_selectregionaltimezone</label>
+                    @Html.DropDownList("site_RegionalTimeZone", (SelectList)ViewData["SiteTimeZone"], new { id = "site_RegionalTimeZone", data_bind = "value: $data.RegionalTimeZone" })
+                </div>
+            </div>
+            <div class="row borderTop">
+            </div>
+            <div class="buttonGroup">
+                @if (Html.HasPermissions(MPCPermissions.Update_Site))
+                {
+                    <button class="primary-button" id="btnsavesite" data-bind="enable: hasChanges ,click: dosavesettings">@Resources.Save</button>
+                }
+                <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div data-accounttype="GROUP" class="settingsform">
+    @if (Html.HasPermissions(MPCPermissions.Update_Group))
+    {@:<form data-validationkey="group" id="group_form" data-bind="submit: dosavesettings">
+        }
+    else
+    {@:<form data-validationkey="group" id="group_form">
+        }
+
+    <div id="editGroup" class="row formcontrol" style="display: block;">
+        <div class="col pull-left">
+            <div class="field spaceBottomStyle">
+                <label for="group_Name" class="floatLblDn">@Resources.Group_name</label>
+                <input type="text" class="floatTxt myStyle" id="group_Name" name="group_Name" data-bind="value: $data.Name, valueUpdate: 'afterkeydown' ">
+            </div>
+        </div>
+        <div class="row borderTop">
+        </div>
+        <div class="buttonGroup">
+            @if (Html.HasPermissions(MPCPermissions.Update_Group))
+            {
+                <button class="primary-button" id="btnsavegroup" data-bind="enable: hasChanges ,click: dosavesettings">@Resources.Save</button>
+            }
+            <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </div>
+    </div>
+</form>
+
+</div>

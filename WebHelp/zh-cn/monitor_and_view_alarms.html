@@ -1,0 +1,141 @@
+<html>
+<head>
+    <title>帮助</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+ <div class="bodyCont">
+    <h3 class="titleheader">监视和查看警报</h3>
+    <p>警报通知操作员发生的无人值守操作。发生警报后，操作员必须要采取进一步操作。* *</p>
+    <p>严重性较低的警报称为“事件”。所发送的事件跟通知的作用完全一样。**</p>
+    <p><strong>警报</strong>选项卡将列出下列内容：</p>
+    <ul>
+        <li>触发的警报</li>
+        <li>事件</li>
+    </ul>
+    <img src="../../Content/images/monitor_view_alarms.png" />
+    <p><strong>警报</strong>选项卡的左上角和右上角将显示下列选项：</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-one">编号</td>
+                    <td class="col-two">字段</td>
+                    <td class="col-three">描述</td>
+            </tr>
+        </thead>
+        <tbody>
+		 <tr>
+				<td>1</td>
+                <td>全部</td>
+                <td>
+                    列出所有警报。可以按照下列选项进行筛选：<>
+a. 确认<>
+b. 未确认<>
+c. 事件                    
+                </td>
+            </tr>
+            <tr>
+				<td>2</td>
+                <td>搜索</td>
+                <td>
+                    警报通知操作员发生的事件。借助搜索选项，可以基于下述条件来搜索警报列表：<>
+a. <strong>实体</strong>：摄像头、门户和规则<>
+b. <strong>时间</strong>：今天、昨天、最近 7 天和最近 30 天、“自”和“到”。<>
+c. <strong>事件</strong>：视频和访问。                  
+                </td>
+            </tr>
+            <tr>
+				<td>3</td>
+                <td>操作</td>
+                <td>
+                   对于在“警报”窗口中显示的所有警报，都可以执行下述操作。 <>
+a. <strong>确认</strong>：确认所选警报。<>
+b. <strong>清除</strong>：在确认警报后，自动清除它们。<>
+c. <strong>冻结警报流</strong>：停止在“警报”窗口中接收新的或未确认的警报。<>
+“未确认”状态是指警报被触发后所处的状态。</td>
+            </tr>
+            <tr>
+				<td>4</td>
+                <td>视图</td>
+                <td>您可以选择希望作为列显示的选项。</td>
+            </tr>
+            <tr>
+				<td>5</td>
+                <td>确认</td>
+                <td>您可以确认警报，以表明您正在采取必要的应对措施。</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>“未确认”状态是指警报被触发后所处的状态。在<strong>警报</strong>选项卡的一个表格中，可以查看所有未确认的警报及关联操作的列表。每一个未确认的警报都会列出以下详情。</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-equal">字段</td>
+                <td>描述</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>警报标题</td>
+                <td>
+                    触发警报的事件的名称。例如摄像头检测到运动。事件属性的名称。在此列仅显示关键事件属性。<>设备（比如与事件关联的摄像头）的名称。例如，检测到运动的摄像头的名称。
+                </td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>您可以拖放视频源，比如摄像头。此外还可以双击视频源名称以选择它。</td>
+            </tr>
+            <tr>
+                <td>严重性</td>
+                <td>
+                    在相关类型下列出警报的严重性：<>
+a. 严重<>
+b. 危急
+                </td>
+            </tr>
+            <tr>
+                <td>时间</td>
+                <td>警报触发时间。</td>
+            </tr>
+            <tr>
+                <td>日期</td>
+                <td>警报触发日期。</td>
+            </tr>
+            <tr>
+                <td>位置</td>
+                <td>说明设备所在的位置。</td>
+            </tr>
+            <tr>
+                <td>操作和指令</td>
+                <td>对触发的警报执行确认和操作的选项。</td>
+            </tr>
+            <tr>
+                <td>更多</td>
+                <td>显示所有关联门户和相关的卡事件。</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="bottControl">
+            <p class="helpprev">
+                <span>上一条</span>
+                <a href="monitor_alarms.html"><i class="prev_icon"></i> 管理警报</a>
+            </p>
+            <p class="helpnext">
+                <span>下一条</span>
+                <a href="acknowledge_alarms.html">确认警报 <i class="next_icon"></i></a>
+            </p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿.title {
+    width: 100%;
+    font-size: 24px;
+    border-bottom: 1px solid #7FC1D3; 
+    color: #D8ECF2; 
+    font-family: Arial, Helvetica, sans-serif; 
+    padding: 10px 0 15px 0;
+}
+
+.sub-group {
+    width: 100%; 
+    border-bottom: 1px solid #7FC1D3; 
+    font-family: Arial, Helvetica, sans-serif; 
+    padding: 10px 0 15px 0;
+}
+
+.table-header {
+    padding: 5px;
+}
+
+.data-grid {
+    width: 100%; 
+    font-family: Arial, Helvetica, sans-serif; 
+    padding: 10px 0 15px 0;
+}
+
+.data-grid-row-header {
+    border-bottom: 1px solid #d3d3d3; 
+    padding: 5px;
+}
+
+.data-grid-row {
+    border-bottom: 1px solid #d3d3d3; 
+    padding: 5px; 
+    mso-number-format: \@;
+}

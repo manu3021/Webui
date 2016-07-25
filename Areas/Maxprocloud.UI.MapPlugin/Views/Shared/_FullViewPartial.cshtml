@@ -1,0 +1,199 @@
+﻿
+@*@Styles.Render("~/Content/mapstyle/map.core.css")*@
+<script id="flooritemlistTmpl1" type="text/html">
+    <div id="floorplanItem1" class="floormapitem" data-bind="if: $data.visibleComputed, style: { top: $data.top, left: $data.left }, click: $root.itemselected">
+        <span class="iconplaceholder">
+            <img id="icon" class="floormapicon" data-bind="css: $data.icon">
+        </span>
+        <span class="floormapiconcaption" data-bind="text: $data.Name" />
+    </div>
+</script>
+
+<script id="markerTmpl" type="text/html">
+    <div>
+        <i>@Resources.Status</i>
+        <i>@Resources.MapPlugin_Icon</i>
+        <i>@Resources.Site</i>
+    </div>
+</script>
+
+<script id="childlistTmpl" type="text/html">
+    <li data-bind="click: $data.OnSelect"><i data-bind="    css: $data.icon"></i><span class="map-menuitem" data-bind="    text: $data.Name"></span><span class="mapDivider"></span></li>
+</script>
+<script id="breadcrumlistTmpl" type="text/html">
+    <li class="dropdown-toggle dropdown" data-toggle="dropdown" data-bind="attr: { id: $data.Id }">
+        <span data-bind="text: $data.Name"></span>
+        @*<span class="bredcrum-divider" data-bind="visible: $data.EntityType.toLowerCase() != 'site'"></span>*@
+        <span class="bredcrum-divider"></span>
+    </li>
+</script>
+<script id="showmenulistTmpl" type="text/html">
+    <li data-bind="click: $data.OnSelectType">
+        <span data-bind="text: menuitem" />
+    </li>
+</script>
+<script id="devicemenulistTmpl" type="text/html">
+    <li>
+        <span class="map-icon-status"></span><span data-bind="text: menuitem, click: $data.onSelectlistitem"></span>
+        <span id="devicelist" class="dropdown">
+            <ul id="bchildrenlist" class="dropdown-menu menuCreate showmenu maplist">
+                <li class="allmenu-header">
+                    <span>@Resources.MapPlugin_DeviceName</span>
+                </li>
+                <li>
+                    @Resources.MapPlugin_VideoPlaceholder
+                </li>
+                <li>
+                    @Resources.MapPlugin_ClipsRecoder
+                </li>
+                <li>
+                    @Resources.MapPlugin_ClipsLists
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </span>
+    </li>
+</script>
+
+<script id="devicedetailTmpl" type="text/html">
+    <li><span class="map-icon-status"></span><span data-bind="text: menuitem"></span></li>
+</script>
+<script type="text/html" id="camera-small-popup">
+    <header></header>
+    <section class="contentWrap">
+        <div id="videocontainer" class="content">
+        </div>
+        @* <div class="cameraActionsButtons">
+                  <button class="primary-button alarm-action-btn" onclick="closeCamera()">Close</button>
+            </div>*@
+    </section>
+</script>
+
+<script type="text/html" id="door-popup-map">
+   
+    <section class="contentWrap" id="eventsContainer">
+        <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="myTab">
+                <li id="actionactive" class="active"><a href="#actionstab" data-toggle="tab">@Resources.MapPlugin_InfoActions</a></li>
+                <li id="alarmactive"><a href="#alarmstab" data-toggle="tab">@Resources.MapPlugin_AlarmsEvents</a></li>
+            </ul>
+        </div>
+        <div class="tab-content" id="profile">
+            <div class="tab-pane active" id="actionstab">
+                <span class="deviceAddress">
+                    <span class="deviceAddressHeading">@Resources.MapPlugin_ContactDetails</span>
+                    <span id="contactdetails-site" data-bind="text: fulladdress"></span>
+                    <span class="deviceContactHeading">@Resources.MapPlugin_ContactText</span>
+                    <span id="contactnumber-site" data-bind="text: contactnumber"></span>
+                </span>
+
+                <div class="deviceActionsButtons">
+                    <button id="btnlock" class="primary-button alarm-action-btn" data-bind="click: lockdevice">@Resources.Lock</button>
+                    <button id="btnunlock" class="primary-button alarm-action-btn" data-bind="click:unlockdevice">@Resources.Unlock</button>
+                    <button id="btnlock" class="primary-button alarm-action-btn" data-bind="click: energizeDevice">@Resources.Energize</button>
+                    <button id="btnunlock" class="primary-button alarm-action-btn" data-bind="click:deenergizeDevice">@Resources.Deenergize</button>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <div class="tab-pane " id="alarmstab">
+                <div id="alerm-menu-user">
+                    <span class="eventerror" data-bind="visible: eventSummaryList().length == 0">@Resources.NoRecentCardEvents</span>
+                    <div class="alerm-menu-userBody" data-bind="visible: eventSummaryList().length > 0">
+                       <ul id="alarmeventcontainer" data-bind="foreach: eventSummaryList ">
+                            <li>
+                                <span class="imageHolder">
+                                    <img src="Content/images/img_profileSmall.png" data-bind="visible: ImagePath.length == 0" />
+                                    <img data-bind="visible: ImagePath.length > 0, attr: { src: ImagePath }" />
+                                </span>
+                                <div class="alarm-profile">
+                                    <div id="displayname" data-bind="text: DisplayName"></div>
+                                    <div>
+                                        <span data-bind="text:EventCodeType"></span><span data-bind="text:CredentialNumber"></span>
+                                    </div>
+                                    <div data-bind="text: OriginTime"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <footer></footer>
+</script>
+<div class="map-plugin">
+    <header class="mapheader" id="mapheadr">
+        <div class="navbar">
+            <ul class="nav navbar-nav pull-left nav-list" data-dropdownid="baccountdropdown" data-bind="template: { name: 'breadcrumlistTmpl', foreach: $data.bDisplayItmes }, click: $data.onclick"></ul>
+            <div id="baccountdropdown" class="dropdown" data-bind="with: $root">
+                <ul id="bchildrenlist" class="dropdown-menu menuCreate allmenu" data-bind="with: $data.CurrentNode">
+                    <li data-bind="click: $data.onheaderclick, visible: $root.bAccounts().length > 1" class="allmenu-header">
+                        <b class="icon_popup_back"></b>
+                        <span data-bind="text: $data.Parent().Name"></span>
+                    </li>
+                    <li style="padding: 0px !important; overflow: hidden; margin-bottom: 0px !important; BACKGROUND: #323232; border-radius: 4px; }">
+                        <ul data-bind="template: { name: 'childlistTmpl', foreach: $data.Children }" class="childlist-templ"></ul>
+                    </li>
+                </ul>
+            </div>
+            
+            @*<ul class="icon-mapMoreIcon" data-dropdownid="baccountdropdown1" data-bind="click: $data.onclick"></ul>
+            <div id="baccountdropdown1" class="dropdown mapMoreOption" data-bind="with: $root">
+                <ul id="bchildrenlist" class="dropdown-menu menuCreate allmenu" data-bind="with: $data.CurrentNode">
+                    <li data-bind="click: $data.onheaderclick, visible: $root.bAccounts().length > 1" class="allmenu-header">
+                        <b class="icon_popup_back"></b>
+                        <span data-bind="text: $data.Parent().Name"></span>
+                    </li>
+                    <li style="padding: 0px !important; overflow: hidden; margin-bottom: 0px !important; BACKGROUND: #323232; border-radius: 4px; }">
+                        <ul data-bind="template: { name: 'childlistTmpl', foreach: $data.Children }" class="childlist-templ"></ul>
+                    </li>
+                </ul>
+            </div>*@
+
+        </div>
+    </header>
+    <div id="mainpanel" class="mapcontainer map-plugin-body">
+        <div id="map-canvas1" class="mapinnercontainer">
+        </div>
+        <div id="popup_canvas1"></div>
+        <div id="floormap_canvas1">
+
+            <div class="row col">
+
+                <b class="icon_refreshmap" id="btnfloormaprefresh" data-bind="click: $data.refreshfloormap"></b>
+                <b class="icon_floor_map floormaphidebutton" id="btnShowMap" data-bind="click: $data.showMap"></b>
+            </div>
+            <div class="floorPlanimagecontainer" id="fullfloorcontainercanvas" onclick="popoverclearonclick(event,this)" data-bind="template: { name: 'flooritemlistTmpl1', foreach: $data.Items }">             
+                <div class="floormapEmptyMsg" id="fullfloormapmsg">@Resources.Map_FloormapEmptyMsg</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<input id="mapImages" value='@Url.Content("~/Content/mapstyle/images")' type="hidden" />
+<input id="baccounturl" value='@Url.Action("GetAccounts", "Treeview")' type="hidden" />
+<input id="getaccountsurl" value='@Url.Action("GetAccounts", "Treeview")' type="hidden" />
+<input id="getfloorplanurl" type="hidden" data-url='@Url.Action("getfloorplan", "Map")' />
+<input id="savefloorplanurl" type="hidden" data-url='@Url.Action("savefloorplan", "Map")' />
+<input id="getfloorplanImageurl" type="hidden" data-url='@Url.Action("getdefaultfloorplanimagebyaccountid", "Config")' />
+<input id="getcontactdetailsurl" type="hidden" data-url='@Url.Action("GetAccountDetail", "Config")' />
+<input id="alarmConfigUrl" type="hidden" data-url='@Url.Action("", "Map")' />
+<input id="deviceActionsUrl" type="hidden" data-url='@Url.Action("getdevicestatusbyentitytype", "Map")' />
+<input id="getchildaccountsurl" value='@Url.Action("GetChildAccounts", "Map")' type="hidden" />
+<input id="playerImage" data-playerimage='@Url.Content("~/Content/images/Honeywell_Blank_220.png")' type="hidden" />
+@Scripts.Render("~/bundles/Mappluginscript1")
+
+@*@Scripts.Render(
+    "~/Scripts/mapscripts/mapdata.js",
+    "~/Scripts/mapscripts/mapfunctions.js",
+    "~/Scripts/mapscripts/mappage.js",
+    "~/Scripts/mapscripts/date-format.js"
+    )*@
+

@@ -1,0 +1,19 @@
+﻿<script src="~/Scripts/moment-timezone-with-data.js"></script>
+
+<div class="reports" id="reportId">
+    <div id="reportTopSectionId" class="topSection formcontrol">
+        @{
+            Html.RenderPartial("_ReportHeaderPartial");
+        }
+    </div>
+    <!-- ko stopBinding: true -->
+    <div id="reportContent" data-bind="busyIndicator: {show: IsLoading, blockAll: true}"></div>
+    <!-- /ko -->
+    <div id="reportTopSectionId" class="topSection formcontrol">
+        @{
+            Html.RenderPartial("_ReportFooterPartial");
+        }
+    </div>
+</div>
+
+<link href="~/Content/ReportMgmtPlugin/reports_card_settings.css" rel="stylesheet" media="screen" />

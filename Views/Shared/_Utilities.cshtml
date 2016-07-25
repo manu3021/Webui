@@ -1,0 +1,11 @@
+﻿@{
+}
+@Html.Partial("_PageHeaderTemplateslight")
+<div class="wrapper">
+    <div class="row" id="page-header" data-bind="template: 'header'"></div>
+    <section class="row" id="page-body">
+        <section class="view-active" id="Utilities">
+            @Html.GetPlugin("AdminUtils")
+        </section>
+    </section>
+</div>

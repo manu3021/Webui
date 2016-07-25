@@ -1,0 +1,174 @@
+﻿<div>
+    <form id="netaxs_reader_config_form">
+        <div class="row formcontrol">
+            <div class="pull-left">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Reader_Name</label>
+                    <input type="text" name="reader_Name" id="reader_Name" maxlength="25" data-bind="value: $data.model.Name" class="floatTxt myStyle">
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_Disable_Reader_Door</label>
+                    <select name="reader_DisableTimeZone" id="reader_DisableTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.DisableReaderDoor.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_Lockdown_Reader_Door</label>
+                    <select name="reader_LockDownTimeZone" id="reader_LockDownTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.LockDownReaderDoor.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_CardAndPin</label>
+                    <select name="reader_CardAndPinTimeZone" id="reader_CardAndPinTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.CardANDPinRequired.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle toggle-group">
+                    <label></label>
+                    <div class="control-box">
+                        <span class="switch-toggle switch-ios switch-3" data-bind="visible: $data.model.Address() <= 3">
+                            <input id="CardAndPinModeStandard" name="CardAndPinMode" value="0" type="radio" data-bind="checked: $data.model.CardANDPinRequired.CardType" />
+                            <label for="CardAndPinModeStandard">@Resources.CardType_Standard</label>
+                            <input id="CardAndPinModeSupervisor" name="CardAndPinMode" value="1" type="radio" data-bind="checked: $data.model.CardANDPinRequired.CardType" />
+                            <label for="CardAndPinModeSupervisor">@Resources.CardType_Supervisor</label>
+                            <input id="CardAndPinModeEscort" name="CardAndPinMode" value="2" type="radio" data-bind="checked: $data.model.CardANDPinRequired.CardType" />
+                            <label for="CardAndPinModeEscort">@Resources.CardType_Escort</label>
+                            <a></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_CardOrPin</label>
+                    <select name="reader_CardOrPinTimeZone" id="reader_CardOrPinTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.CardORPinRequired.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle toggle-group">
+                    <label></label>
+                    <div class="control-box">
+                        <span class="switch-toggle switch-ios switch-3" data-bind="visible: $data.model.Address() <= 3">
+                            <input id="CardOrPinModeStandard" name="CardOrPinMode" value="0" type="radio" data-bind="checked: $data.model.CardORPinRequired.CardType" />
+                            <label for="CardOrPinModeStandard">@Resources.CardType_Standard</label>
+                            <input id="CardOrPinModeSupervisor" name="CardOrPinMode" value="1" type="radio" data-bind="checked: $data.model.CardORPinRequired.CardType" />
+                            <label for="CardOrPinModeSupervisor">@Resources.CardType_Supervisor</label>
+                            <input id="CardOrPinModeEscort" name="CardOrPinMode" value="2" type="radio" data-bind="checked: $data.model.CardORPinRequired.CardType" />
+                            <label for="CardOrPinModeEscort">@Resources.CardType_Escort</label>
+                            <a></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_PinOnly</label>
+                    <select name="reader_PinOnlyTimeZone" id="reader_PinOnlyTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.PinOnly.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle toggle-group">
+                    <label></label>
+                    <div class="control-box">
+                        <span class="switch-toggle switch-ios switch-3" data-bind="visible: $data.model.Address() <= 3">
+                            <input id="PinOnlyModeStandard" name="PinOnlyMode" value="0" type="radio" data-bind="checked: $data.model.PinOnly.CardType" />
+                            <label for="PinOnlyModeStandard">@Resources.CardType_Standard</label>
+                            <input id="PinOnlyModeSupervisor" name="PinOnlyMode" value="1" type="radio" data-bind="checked: $data.model.PinOnly.CardType" />
+                            <label for="PinOnlyModeSupervisor">@Resources.CardType_Supervisor</label>
+                            <input id="PinOnlyModeEscort" name="PinOnlyMode" value="2" type="radio" data-bind="checked: $data.model.PinOnly.CardType" />
+                            <label for="PinOnlyModeEscort">@Resources.CardType_Escort</label>
+                            <a></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Reader_CardOnly</label>
+                    <select name="reader_CardOnlyTimeZone" id="reader_CardOnlyTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.CardOnly.TimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle toggle-group">
+                    <label></label>
+                    <div class="control-box">
+                        <span class="switch-toggle switch-ios switch-3" data-bind="visible: $data.model.Address() <= 3">
+                            <input id="CardOnlyModeStandard" name="CardOnlyMode" value="0" type="radio" data-bind="checked: $data.model.CardOnly.CardType" />
+                            <label for="CardOnlyModeStandard">@Resources.CardType_Standard</label>
+                            <input id="CardOnlyModeSupervisor" name="CardOnlyMode" value="1" type="radio" data-bind="checked: $data.model.CardOnly.CardType" />
+                            <label for="CardOnlyModeSupervisor">@Resources.CardType_Supervisor</label>
+                            <input id="CardOnlyModeEscort" name="CardOnlyMode" value="2" type="radio" data-bind="checked: $data.model.CardOnly.CardType" />
+                            <label for="CardOnlyModeEscort">@Resources.CardType_Escort</label>
+                            <a></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="spaceBottomStyle checkbxWidthFix">
+                    <label class="formControl-checkbox control-box">
+                        <input type="checkbox" class="checkbox" name="reader_IsDuress" id="reader_IsDuress" data-bind="checked: $data.model.IsDuress" />
+                        <span>@Resources.Reader_Duress</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field select-field notRequiredStyle">
+                    <label class="floatLblDn">@Resources.Reader_Duress_Output</label>
+                    <select name="reader_DuressOutput" id="reader_DuressOutput" data-bind="options: $data.outputs, optionsText: 'Name', optionsValue: 'Id', value: $data.model.DuressOutput, enable: $data.model.IsDuress"></select>
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="spaceBottomStyle checkbxWidthFix">
+                    <label class="formControl-checkbox control-box">
+                        <input type="checkbox" class="checkbox" name="reader_IsAntiPassbackEnabled" id="reader_IsAntiPassbackEnabled" data-bind="checked: $data.model.IsAntiPassbackEnabled" />
+                        <span>@Resources.AntiPassback</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle">
+                    <div class="radio horizontal-radio-list" id="antipassbackradio">
+                        <label class="formControl-radio antiPassbackNatureStyle">
+                            <input type="radio" class="radio" name="reader_AntiPassback" value="1" data-bind="checked: $data.model.AntiPassback, enable: $data.model.IsAntiPassbackEnabled" />
+                            <span>@Resources.Soft</span>
+                        </label>
+                        <label class="formControl-radio">
+                            <input type="radio" class="radio" name="reader_AntiPassback" value="2" data-bind="checked: $data.model.AntiPassback, enable: $data.model.IsAntiPassbackEnabled" />
+                            <span>@Resources.Hard</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="spaceBottomStyle">
+                    <div class="radio horizontal-radio-list control-box" id="antipassbacktyperadio">
+                        <label class="formControl-radio antiPassbackDirectionStyle ">
+                            <input type="radio" class="radio" name="reader_AntiPassbackType" value="1" data-bind="checked: $data.model.AntiPassbackType, enable: $data.model.IsAntiPassbackEnabled" />
+                            <span>@Resources.In</span>
+                        </label>
+                        <label class="formControl-radio">
+                            <input type="radio" class="radio" name="reader_AntiPassbackType" value="2" data-bind="checked: $data.model.AntiPassbackType, enable: $data.model.IsAntiPassbackEnabled" />
+                            <span>@Resources.Out</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left buttonGroup">
+                <button class="primary-button" data-bind="click: $data.saveReader">@Resources.Save</button>
+                <span class="class2 errorDetail" data-bind="visible: $data.model.IsError, text: $data.model.ErrorMessage" />
+            </div>
+        </div>
+        <input type="hidden" id="panelConfigUrl" value="@Url.Action("", "PanelConfig")" />
+    </form>
+</div>
+
+@*<link href="~/Content/PanelConfigPlugin/toggle-switch.css" rel="stylesheet" />*@
+@Scripts.Render("~/bundles/PanelConfigPluginReaderscript")
+@*<script src="~/Scripts/PanelConfigPlugin/panel-reader-model.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-reader-validation-context.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-reader-datacontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-reader-uicontext.js"></script>*@

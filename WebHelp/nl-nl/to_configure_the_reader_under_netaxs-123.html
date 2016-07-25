@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <title>Help</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Om de lezer onder NetAXS-123 te configureren</h3>
+        <h4 class="subtitle">Om de lezerinstellingen te configureren:</h4>
+        <ol>
+            <li>Klik in het MPC-dashboardgebied op het tabblad <strong>Aanmaken en Bewerken</strong>. De pagina <strong>AANMAKEN EN BEWERKEN</strong> wordt weergegeven.</li>
+			<li>Selecteer in het linkerdeelvenster de locatie en klik vervolgens op het relevante apparaat dat aan de locatie is toegevoegd.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Opmerking:</h4>
+				<p>Zorg ervoor dat u de apparaten in de cloud registreert voordat u de instellingen ervan wijzigt.</p>
+			</div>
+			<li>Klik in het linkerdeelvenster het <i class="netaxs-icon"></i> pictogram dat met het uit te vouwen NetAXS-123-apparaat overeenkomt en bekijk alle beschikbare deuren.</li>
+			<li>Dubbelklik op de gewenste deur om uit te vouwen en alle gekoppelde lezers te bekijken. De pagina <strong>Instellingen</strong> wordt weergegeven.</li>
+			<li>Voer de verplichte gegevens in de volgende velden in:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Veld</td>
+                    <td>Beschrijving</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Naam van de lezer
+                    </td>
+                    <td>
+                        Voer een unieke naam in ter identificatie van de lezer.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Lezer/deur uitschakelen
+					</td>
+                    <td>
+                        Selecteer uit de vervolgkeuzelijst de eigenschappen om de lezer/deur in de modus uitschakelen of inschakelen in te stellen.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Kaart en pin verplicht
+					</td>
+                    <td>
+                        Verleent uitsluitend toegang met een geslaagde kaartlezing en een geldige pininvoer op het toetsenblok bij de deur. Hierbij maakt de volgorde van het lezen van de kaart en invoeren van de pincode niet uit.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Kaart of pin verplicht
+					</td>
+                    <td>
+                       Verleent uitsluitend toegang met een geslaagde kaartlezing of een geldige pininvoer op het toetsenblok bij de deur.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Alleen pin
+					</td>
+                    <td>
+                       Verleent alleen toegang met een geldige pin die op het toetsenblok bij de deur wordt ingevoerd.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Alleen kaart
+					</td>
+                    <td>
+                       Verleent alleen toegang met een geslaagde kaartlezing.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Lezer/deur vergrendelen
+
+					</td>
+                    <td>
+                       Negeert alle kaartlezingen (behalve van een VIP-kaart), weigert toegang via deur maar staat buitengaan toe.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Bedreiging
+   					</td>
+                    <td>
+                       Hiermee kunt u een alarmgebeurtenis triggeren en, indien geconfigureerd, een uitvoerapparaat pulseren tijdens een bedreiging, bijvoorbeeld wanneer de gebruiker tegen zijn wil gedwongen wordt aan een onbevoegd persoon toegang te verlenen. Voor een bedreiging is een pinwaarde en kaartnummer nodig om te worden herkend.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Antidoorgave (Anti-Passback)
+					</td>
+                    <td>
+                         De gebruiker schakelt de antidoorgavefunctie op de lezer in, waarvoor een geldige kaart voor in- en uitgang nodig is. De kaarthouder moet de kaart in de juiste IN/UIT-volgorde gebruiken, d.w.z. een kaart die langs een IN-lezer gehaald wordt, moet vervolgens langs een UIT-lezer worden gehaald of vice versa: een kaart die langs een UIT-lezer wordt gehaald moet daarna langs een IN-lezer worden gehaald. Als de IN/UIT-volgorde van de gebruiker ongeldig is, dan wordt een schendinggebeurtenis van antidoorgave gegenereerd voor het gekozen type antidoorgave (Hard of Zacht) en de kaarthouder wordt toegang geweigerd (Hard) of toegang verleend (Zacht).
+						 <>
+						
+						<strong>Hard </strong>- Valideert IN/UIT-status voordat toegang wordt verleend. De kaart een tweede keer langs dezelfde soort lezer (IN/UIT) halen, veroorzaakt een ernstige schending van antidoorgave en de gebruiker wordt de toegang geweigerd.
+						</br><>
+
+						<strong>Zacht </strong>- Valideert IN/UIT-status voordat toegang wordt verleend. De kaart een tweede keer langs dezelfde soort lezer (IN/UIT) halen, veroorzaakt een niet-ernstige schending van antidoorgave maar de gebruiker mag toch binnengaan.
+						</br><>
+						
+						<strong>Uit </strong>- Van toepassing op lezers die zich binnen het gecontroleerde antidoorgavegebied bevinden. Kaarthouders gebruiken deze lezers wanneer ze het gecontroleerde antidoorgavegebied willen verlaten.
+						</br><>
+						
+						<strong>In </strong>- Van toepassing op lezers die zich buiten het gecontroleerde antidoorgavegebied bevinden. Kaarthouders gebruiken deze lezers wanneer ze het gecontroleerde antidoorgavegebied willen binnengaan.
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Vorige</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Apparaatinstellingen bewerken</a>
+	</p>	
+</div>		
+</body>
+</html>

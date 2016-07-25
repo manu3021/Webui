@@ -1,0 +1,97 @@
+﻿<div class="userdetailform layoutrow scroll-y">
+    <div id="userpanel" data-url="@Url.Action("", "UserConfig")" class="effect8">
+        <form data-validationkey="customer" id="userdetailform" data-bind="submit: $data.savedata">
+            <div id="editUser" class="row formcontrol" style="display: block;">
+                <div class="col pull-left">
+                    <div class="field">
+                        <label for="customer_Name" class="floatLblDn">@Resources.customer_Name</label>
+                        <input type="text" name="customer_Name" id="customer_Name" class="floatTxt myStyle" data-bind="value: $data.Name">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Email" class="floatLblDn">@Resources.Email</label>
+                        <input type="email" readonly="readonly" name="customer_Email" id="customer_Email" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.EmailAddress">
+                    </div>
+                    <div class="field">
+                        <label for="customer_Address" class="floatLblDn">@Resources.Address</label>
+                        <input type="text" name="customer_Address" id="customer_Address" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1">
+                    </div>
+                    <div class="field">
+                        <label for="customer_City" class="floatLblDn">@Resources.City</label>
+                        <input type="text" name="customer_City" id="customer_City" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City">
+                    </div>
+
+                    <div class="field">
+                        <label for="customer_Region" class="floatLblDn">@Resources.Region</label>
+                        <input type="text" name="customer_Region" id="customer_Region" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region">
+                    </div>
+
+                    <div class="field">
+                        <label for="customer_Country" class="floatLblDn">@Resources.Country</label>
+                        <input type="text" name="customer_Country" id="customer_Country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country">
+                    </div>
+
+                    <div class="field">
+                        <label for="customer_ZipCode" class="floatLblDn">@Resources.Zipcode</label>
+                        <input type="text" name="customer_ZipCode" id="customer_ZipCode" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.ZipCode">
+                    </div>
+
+                    <div class="field">
+                        <label for="customer_Phone" class="floatLblDn">@Resources.Phone</label>
+                        <input type="tel" name="customer_Phone" id="customer_Phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone">
+                    </div>
+                    <div class="field">
+                        <label for="bpcsnumber" class="floatLblDn">@Resources.Honeywell_ADI_Number</label>
+                        <input type="text" id="bpcsnumber" name="bpcsnumber" class="floatTxt myStyle" data-bind="value: $data.HoneywellAdiNumber">
+                    </div>
+                    <div class="authorizedDealerPgm">
+                        <b class="form-registration-heading">@Resources.FAP_Number</b>
+                        <ul>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="0" data-bind="checked:$data.IsSILVER">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_FAP</legand>
+
+                            </li>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="1" data-bind="checked:$data.IsGOLD">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_CSS</legand>
+
+                            </li>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="2" data-bind="checked:$data.IsPLATINUM">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_HIS</legand>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="row borderTop">
+                </div>
+                <div class="row col">
+                    <span class="ui-button-container dealer-partial-button">
+                        @if (Html.HasPermissions(MPCOperatorLevelHierarchy.SystemRoot))
+                        {
+                            <input class="primary-button" type="button" id="btnapprove" data-bind="click: $data.approve" value="Approve" />
+                            <input class="primary-button" type="button" id="btnsave" data-bind="click: $data.savedata" value=@Resources.Save />                            
+                            <button class="ternary-button" id="btndelete" data-bind="click: $data.deleteSelectedUser">@Resources.Delete</button>
+                        }
+                    </span>
+                </div>
+            </div>
+
+            <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </form>
+    </div>
+</div>

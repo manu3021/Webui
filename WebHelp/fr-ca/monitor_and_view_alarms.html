@@ -1,0 +1,141 @@
+﻿<html>
+<head>
+    <title>Aide</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+ <div class="bodyCont">
+    <h3 class="titleheader">Surveillance et affichage des alarmes</h3>
+    <p>Les alarmes informent les opérateurs des actions imprévues ayant lieu. Les alarmes nécessitent une action supplémentaire de la part de l’opérateur.**</p>
+    <p>Les alarmes de faible gravité sont appelées événements. Les événements sont envoyés sous la forme de notifications.**</p>
+    <p>L’onglet <strong>Alarmes</strong> présente les éléments suivants :</p>
+    <ul>
+        <li>Alarmes déclenchées</li>
+        <li>Événements</li>
+    </ul>
+    <img src="../../Content/images/monitor_view_alarms.png" />
+    <p>Les coins supérieur gauche et supérieur droit de l’onglet <strong>Alarmes</strong> affichent les options suivantes :</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-one">Numéro</td>
+                    <td class="col-two">Champ</td>
+                    <td class="col-three">Description</td>
+            </tr>
+        </thead>
+        <tbody>
+		 <tr>
+				<td>1</td>
+                <td>Tout</td>
+                <td>
+                    Affiche la liste de toutes les alarmes. Vous pouvez filtrer cette liste à l’aide des critères suivants :
+                    a. Acquittées<>
+                    b. Non acquittées<>
+                    c. Événements                    
+                </td>
+            </tr>
+            <tr>
+				<td>2</td>
+                <td>Recherche</td>
+                <td>
+                    Les alarmes informent les opérateurs des événements ayant lieu. La fonction de recherche vous permet de faire des recherches dans la liste d’alarmes à l’aide des critères suivants :<>
+                    a. <strong>Entités :</strong> Caméras, Portes et Règles<>
+                    b. <strong>Moment :</strong> Aujourd’hui, Hier, 7 derniers jours, 30 derniers jours, De et À.<>
+                    c. <strong>Événement :</strong> Vidéo et Accès.                  
+                </td>
+            </tr>
+            <tr>
+				<td>3</td>
+                <td>Actions</td>
+                <td>
+                   Ce menu vous permet de réaliser les opérations suivantes pour toutes les alarmes apparaissant dans la fenêtre Alarmes. <>
+                    a. <strong>Acquitter</strong> : acquitte l’alarme sélectionnée.<>
+    b. <strong>Effacer</strong> : efface automatiquement les alarmes lors de leur acquittement.<>
+    c. <strong>Figer le flux d’alarme</strong>: interrompt la réception d’alarmes nouvelles ou non acquittées dans la fenêtre Alarme.<>
+    Lorsqu’une alarme est déclenchée, elle est considérée comme non acquittée.</td>
+            </tr>
+            <tr>
+				<td>4</td>
+                <td>Vues</td>
+                <td>Vous permet de sélectionner les options devant apparaître dans l’affichage en colonnes.</td>
+            </tr>
+            <tr>
+				<td>5</td>
+                <td>Acquitter</td>
+                <td>Vous permet d’acquitter une alarme pour indiquer que les mesures nécessaires sont en cours d’exécution.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Lorsqu’une alarme est déclenchée, elle est considérée comme non acquittée. Vous pouvez afficher la liste de toutes les alarmes non acquittées et les actions associées dans un tableau dans l’onglet <strong>Alarmes</strong>. Les informations suivantes sont affichées pour chaque alarme non acquittée :</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-equal">Champ</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Intitulé de l’alarme</td>
+                <td>
+                    Le nom de l’événement ayant déclenché l’alarme. Mouvement détecté par la caméra, par exemple. Le nom de l’attribut de l’événement. Seul l’attribut d’événement clé est affiché dans cette colonne.<>Le nom du périphérique, comme une caméra, associé à l’événement. Il peut s’agir par exemple du nom de la caméra ayant détecté un mouvement.
+                </td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Vous pouvez faire glisser et déposer une source vidéo, comme une caméra. Vous pouvez également faire un double-clic sur le nom de la source vidéo pour la sélectionner.</td>
+            </tr>
+            <tr>
+                <td>Gravité</td>
+                <td>
+                    Indique la gravité de l’alarme sous le type correspondant :<>
+                    a. Majeure<>
+                    b. Critique
+                </td>
+            </tr>
+            <tr>
+                <td>Heure</td>
+                <td>L’heure de déclenchement de l’alarme.</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>La date de déclenchement de l’alarme.</td>
+            </tr>
+            <tr>
+                <td>Lieu</td>
+                <td>Le nom de l’emplacement du périphérique.</td>
+            </tr>
+            <tr>
+                <td>Action et instructions</td>
+                <td>Permet d’acquitter et d’interagir avec l’alarme déclenchée.</td>
+            </tr>
+            <tr>
+                <td>Plus</td>
+                <td>Affiche toutes les portes et tous les événements de carte associés.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="bottControl">
+            <p class="helpprev">
+                <span>Précédent</span>
+                <a href="monitor_alarms.html"><i class="prev_icon"></i> Gestion des alarmes</a>
+            </p>
+            <p class="helpnext">
+                <span>Suivant</span>
+                <a href="acknowledge_alarms.html">Acquitter des alarmes <i class="next_icon"></i></a>
+            </p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

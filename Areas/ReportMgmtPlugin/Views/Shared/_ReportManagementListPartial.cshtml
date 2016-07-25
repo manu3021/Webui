@@ -1,0 +1,75 @@
+﻿<div id="reportListBase">
+    <div class="header-menu-two-reports" id="page-second-header">
+        <nav id="header-menu-box">
+            <div class="nav navbar-nav pull-left"><h3 class="pull-left">@Resources.Reports_List</h3></div>
+        </nav>
+    </div>
+    <div class="header-menu-three-reports" id="page-third-header">
+
+        <div class="navbar">
+            <ul class="nav">               
+                <li><a><b class="icon_accessarrow" data-bind="click:$data.goback,title: 'Back'" data-original-title="@Resources.Report_BackText"></b></a></li>
+                <li><a><b class="icon-newReport" data-bind="click:$data.createReport,title: 'Create'" data-original-title="@Resources.Report_CreateText"></b></a></li>
+                <li>
+                    <input id="search" placeholder='' type='search' data-bind="autoFilter:{wrapperClassName : 'reportsLandingPg'},title: 'Search'" data-original-title="@Resources.Report_SearchText">
+                </li>
+            </ul>
+         </div>
+    </div>
+    <div class="reportsLandingPg" id="reportListId">
+        <div id="sticky-list">
+            <ul data-bind="foreach: $data.ReportGroups">
+                <li>
+                    <div>
+                        <table class="table bottomspace grid-text1">
+                            <thead>
+                                <tr>
+                                    <th width="33%" data-bind="text: DisplayName"></th>
+                                    <th width="15%">@Resources.Report_Schedule</th>
+                                    <th width="15%">@Resources.Report_Status </th>
+                                    <th width="18%">@Resources.Report_Delivery_Status</th>
+                                    @*<th width="15%" class="removeBorderRight">@Resources.Report_Summary</th>*@
+                                    <th width="7%"></th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: Reports">
+                                <tr class="search-item">
+                                    <td width="33%">
+                                       <a class="search-item-text" data-bind="text: Name,click: $parent.editreport"></a>
+                                    </td>
+                                    <!-- ko if: IsVisible -->
+                                     <td width="15%" data-bind="text: ReportScheduleText"></td>
+                                    <td width="15%" >
+                                        <span data-bind="text: ReportStatus,css: CssClass"></span>
+                                    </td>
+                                    <td width="15%" data-bind="click: $data.showpreviewstatus">
+                                        <div class="delivery_cur">
+                                            <span class="delivery-report-success" data-bind="text: ReportDeliverySuccessCount"></span>
+                                            <span>/</span>
+                                            <span class="delivery-report-fail" data-bind="text: ReportDeliveryFailCount"></span>
+                                        </div>
+                                    </td>
+                                    <td width="7%" data-bind="click:$parent.deletereport"></td>
+                                    <!-- /ko -->
+                                    <!-- ko ifnot: IsVisible -->
+                                    <td width="15%" style="background:none"></td>
+                                    <td width="15%" style="background:none"><span></span></td>
+                                    <td width="15%" style="background:none"><div class="delivery_cur"><span></span><span></span><span></span></div></td>
+
+                                    <td width="7%" style="background:none"></td>
+                                    <!-- /ko -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<link href="~/Content/ReportMgmtPlugin/reports_landing.css" rel="stylesheet" media="screen">
+
+@*<script type="text/javascript" src="~/Scripts/ReportMgmtPlugin/reportmgmt-header-freeze.js"></script>*@

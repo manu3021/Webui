@@ -1,0 +1,221 @@
+﻿<script src="~/Scripts/userconfig/bootstrap.submodal.js"></script>
+
+<div id="operatorModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="operatormodalLabel" aria-hidden="true">
+    <header class="row">
+        <span>@Resources.New_Operator</span>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>-->
+    </header>
+    <form data-validationkey="user_form" id="usermodalform" data-bind="submit: $data.saveuserdata" autocomplete="off" >
+        <section class="row">
+            <div class="newOperatorImgPosition pull-left">
+                <div class="imagespaceBottomStyle row">
+                    <div class="ImagePlaceHolder row">
+                        <!--<span>Choose pic...</span>-->
+                        <b class="remove-image" data-bind="visible:  $data.userPhoto().length > 0,click: $data.deletephoto"></b>
+                        <img id="photo" data-bind="attr: { src: userPhoto }">
+                        <input type="file" id="photonewfile" name="photonewfile" data-uploadurl="@Url.Action("FileUpload", "File")"  data-bind="file: imageFile, fileObjectURL: imageObjectURL, imageBase64: image, imageType: imageType">
+
+                    </div>
+                </div>
+
+                <div class="spaceBottomStyle user-button-padding">
+                    <span class="ui-button-container">
+                        <button class="secondary-button exceptionbutton" data-bind="click: $data.showexceptions">@Resources.Exceptions</button>
+                        <button class="secondary-button candobutton" style="display:none" disabled="disabled" data-bind="click: $data.showcando">
+                            @Resources.Can_do
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="rightsidecontainer">
+                <div class="col pull-left rightUserColumn">
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.First_Name</label>
+                        <input type="text" class="floatTxt myStyle" id="user_FirstName" name="user_FirstName" data-bind="value: $data.FirstName, valueUpdate: 'afterkeydown' " />
+                    </div>
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Last_Name</label>
+                        <input type="text" class="floatTxt myStyle" id="user_LastName" name="user_LastName" data-bind="value: $data.LastName, valueUpdate: 'afterkeydown' " />
+                    </div>
+
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Primary_Email_or_Login_ID</label>
+                        <input type="email" class="floatTxt myStyle" id="user_UserName" name="user_UserName" data-bind="value: $data.UserName" autocomplete="off" autocorrect="off" autocapitalize="off" />
+                    </div>
+                    <div class="field select-field">
+                        <label for="roleoptionsuser">@Resources.Role_Template</label>
+                        <select name="roleoptionsuser" id="roleoptionsuser" data-bind="options: $data.ApplicationRoles, value: $data.SelectedRole, optionsText: 'RoleName'"></select>
+                    </div>
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Address</label>
+                        <input type="text" class="floatTxt myStyle" id="user_Address" name="user_Address" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' " />
+                    </div>
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.City</label>
+                        <input type="text" class="floatTxt myStyle" id="user_City" name="user_City" data-bind="value: $data.ContactInfo.City" />
+                    </div>
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Region</label>
+                        <input type="text" class="floatTxt myStyle" id="user_State" name="user_State" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' " />
+                    </div>
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Country</label>
+                        <input type="text" class="floatTxt myStyle" id="user_Country" name="user_Country" data-bind="value: $data.ContactInfo.Country" />
+                    </div>
+                    <!--
+        <div class="select-field field">
+            <label id="lblFName1" class="floatLblDn">@Resources.City</label>
+            <select id="txtFName" type="text" class="floatTxt form-control multiselect multiselect-icon"  multiple="multiple" role="multiselect">
+                <option value="0" data-icon="glyphicon-camera text-primary">Photos</option>
+                <option value="1" data-icon="glyphicon-link">Link</option>
+                <option value="2" data-icon="glyphicon-pencil text-danger">Edit</option>
+                <option value="3" data-icon="glyphicon-shopping-cart">Cart</option>
+            </select>
+        </div>-->
+                           
+                    <div class="field">
+                        <span class="controls passfield" for="showpass"><b class="icon_eye"></b></span>
+                        @*<input type="checkbox" value="Show password" class="passcheckbox" id="showpass" tabindex="-1" data-bind="click:$data.onShowPass">*@
+                        <label class="floatLblDn">@Resources.Password</label>
+                        <input type="password" class="floatTxt myStyle" id="new_Password" name="new_Password" data-bind="value: $data.CredentialInfo.Password, valueUpdate: 'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off" />
+                    </div>
+
+                    <div class="field">
+                        <label class="floatLblDn">@Resources.Phone</label>
+                        <input type="tel" class="floatTxt myStyle" id="user_Phone" name="user_Phone" data-bind="value: $data.ContactInfo.Phone" />
+                    </div>
+                    <div class="field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Alternate_Phone_Numbers</label>
+                        <input type="tel" class="floatTxt myStyle" id="user_WorkPhone" name="user_WorkPhone" data-bind="value: $data.ContactInfo.WorkPhone" />
+                    </div>
+                    <div class="field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Alternate_Email</label>
+                        <input type="email" class="floatTxt myStyle" id="user_EmailAddress" name="user_EmailAddress" data-bind="value: $data.ContactInfo.AlternateEmail" />
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </section>
+        <label class="errorSummary hideerrorSummary">@Resources.User_ErrorSavingUserPleaseCheck</label>
+
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                @if (Html.HasPermissions(MPCPermissions.Add_User))
+{
+    <button class="primary-button pull-left" aria-hidden="true" data-bind="enable: hasChanges, click: $data.saveuserdata">@Resources.Save</button>
+                    <button class="secondary-button pull-left" data-dismiss="modal" aria-hidden="true">@Resources.Cancel</button>
+                }
+                <span class="configErrorSummary" data-bind="visible: $data.IsError">
+                    <b class=" icon_warning"></b><span class="configErrorMessage" data-bind="text: $data.ErrorMessage"></span>
+                </span>
+            </div>
+        </footer>
+    </form>
+</div>
+<script id="permtemplate" type="text/html">
+    <tr>
+        <td width="250px" data-bind="text: permissionName"></td>
+        <td width="100px">
+            <label class="formControl-checkbox popup-checkbox">
+                <input id="chkPermYes" data-type="YES" type="checkbox" class="checkbox" data-bind="checked: $data.permissionYes">
+                <span></span>
+            </label>
+        </td>
+        <td width="100px">
+            <label class="formControl-checkbox popup-checkbox">
+                <input id="chkPermNo" data-type="NO" type="checkbox" class="checkbox" data-bind="checked: $data.permissionNo">
+                <span></span>
+            </label>
+        </td>
+        <td width="20px"></td>
+    </tr>
+</script>
+<script id="usercandotable" type="text/html">
+    <li>
+        <table class="table cdtable">
+            <thead class="ctablehead">
+                <tr>
+                    <th class="candoSection" width="250px"><span class="catename" data-bind="text: $data.computedcategory()"></span></th>
+                    <th width="100px">@Resources.Yes</th>
+                    <th width="100px">@Resources.No</th>
+                    <th width="20px"><i data-state="collapse" class="expandbtncando"></i></th>
+                </tr>
+            </thead>
+            <tbody data-class="permissions" data-bind="template: { name: 'permtemplate', foreach: $data.Permissions }"></tbody>
+        </table>
+    </li>
+</script>
+<div id="usercandoModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="usercandolLabel" aria-hidden="true">
+    <header class="row">
+        <span>@Resources.USERMODAL_CANDOHEADING</span>
+    </header>
+    <section class="row">
+        <div id="sticky-list">
+            <ul data-bind="template: { name: 'usercandotable', foreach: Categories }"></ul>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            @if (Html.HasPermissions(MPCPermissions.Add_User) || Html.HasPermissions(MPCPermissions.Update_User))
+            {
+                <button class="primary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $root.savepermissions">@Resources.Save</button>
+            }
+            <button class="secondary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $root.cancelpermissions">@Resources.Cancel</button>
+        </div>
+    </footer>
+</div>
+
+
+<div id="userExceptionsModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userExceptionsModalLabel" aria-hidden="true">
+    <header class="row">
+        <span>@Resources.USERMODAL_EXCEPTIONHEADING</span>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>-->
+    </header>
+
+    <section class="exsection layoutcol">
+        <div class="exceptionwrapper layoutrow">
+            <div class="exceptionLeftSection layoutcol">
+                <div id="exbodywWraper" class="exbodywWraper layoutrow">
+                    <div id="exTreeview" class="exTreeview treecontrol layoutrow">
+                    </div>
+                </div>
+            </div>
+            <div class="exceptionRightSection layoutcol">
+                <span class="exlistheader layoutrow" data-bind="text:$data.exceptcount ">@Resources.Total_exceptions_here</span>
+                <div class="exbodywWraper layoutrow">
+                    <div id="exListviewwrapper" class="exListviewwrapper">
+                        <ul id="exlistview" class="exListview" data-bind="foreach: $data.dispAcounts">
+                            <li>
+                                <div>
+                                    <i data-bind="css:$data.icon"></i>
+                                    <span class="exListItemTitle" data-bind="text:$data.Name"></span>
+                                    <span class="exListItemDesc" data-bind="text:$data.Desc"></span>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+             <div class="permissionNote">@Resources.PermissionsNote</div>
+            @if (Html.HasPermissions(MPCPermissions.Add_User) || Html.HasPermissions(MPCPermissions.Update_User))
+            {
+                <button class="primary-button pull-left" aria-hidden="true" data-bind=" click: $data.saveExceptions">@Resources.Save</button>
+            }
+            <button class="secondary-button pull-left" aria-hidden="true" data-bind=" click: $data.cancelExceptions">@Resources.Cancel</button>
+            @if (Html.HasPermissions(MPCPermissions.Add_User) || Html.HasPermissions(MPCPermissions.Update_User))
+            {
+                <button class="secondary-button pull-right" aria-hidden="true" data-bind=" click: $data.restoreExceptions">@Resources.Restore</button>
+            }
+        </div>
+    </footer>
+
+
+</div>

@@ -1,0 +1,141 @@
+<html>
+<head>
+    <title>Hilfe</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+ <div class="bodyCont">
+    <h3 class="titleheader">Warnmeldungen überwachen und anzeigen</h3>
+    <p>Warnmeldungen zeigen den Operatoren das Auftreten von unbeabsichtigten Aktionen an. Warnmeldungen erfordern weitere Aktionen durch den Operator.**</p>
+    <p>Warnmeldungen mit niedrigem Schweregrad stellen ein Ereignis dar. Ereignisse werden als Meldungen gesendet.**</p>
+    <p>Der Reiter <strong>Warnmeldungen</strong> enthält das Folgende:</p>
+    <ul>
+        <li>Ausgelöste Warnmeldungen</li>
+        <li>Ereignisse</li>
+    </ul>
+    <img src="../../Content/images/monitor_view_alarms.png" />
+    <p>Die linke obere und rechte obere Ecke des Reiters <strong>Warnmeldungen</strong> zeigt folgende Optionen an:</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-one">Nr.</td>
+                    <td class="col-two">Feld</td>
+                    <td class="col-three">Beschreibung</td>
+            </tr>
+        </thead>
+        <tbody>
+		 <tr>
+				<td>1</td>
+                <td>Alle</td>
+                <td>
+                    Listet alle Warnmeldungen auf. Mit den folgenden Optionen können sie gefiltert werden:<>
+                    a. Bestätigen<>
+                    b. Bestätigung aufheben<>
+                    c. Ereignisse                    
+                </td>
+            </tr>
+            <tr>
+				<td>2</td>
+                <td>Suche</td>
+                <td>
+                    Warnmeldungen zeigen den Operatoren das Auftreten von Ereignissen an. Mit der Suchoption können Sie in der Liste der Warnmeldungen suchen nach:<>
+                    a. <strong>Entitäten:</strong> Kameras, Türen und Regeln<>
+                    b. <strong>Zeit:</strong> Heute, Gestern, Letzte 7 Tage und Letzte 30 Tage, Von und Bis.<>
+                    c. <strong>Ereignis:</strong> Video und Zutritt.                  
+                </td>
+            </tr>
+            <tr>
+				<td>3</td>
+                <td>Aktionen</td>
+                <td>
+                   Sie ermöglichen für alle Warnmeldungen, die im Fenster Warnmeldungen angezeigt werden, das Folgende auszuführen. <>
+                    a. <strong>Bestätigen:</strong> Die ausgewählte Warnmeldung bestätigen.<>
+    b. <strong>Löschen:</strong> Automatisches Löschen der Warnmeldungen nachdem sie bestätigt wurden.<>
+    c. <strong>Alarm-Stream fixieren:</strong> Den Empfang von nicht bestätigten Warnmeldung im Fenster Warnmeldungen stoppen.<>
+    Der Status einer erzeugten Warnmeldung ist standardmäßig „nicht bestätigt“.</td>
+            </tr>
+            <tr>
+				<td>4</td>
+                <td>Anzeigen</td>
+                <td>Ermöglicht die Auswahl von gewünschten Optionen, die in den Spalten angezeigt werden.</td>
+            </tr>
+            <tr>
+				<td>5</td>
+                <td>Bestätigen</td>
+                <td>Ermöglicht die Bestätigung einer Warnmeldung, damit die notwendige Response-Aktion eingeleitet werden kann.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Der Status einer erzeugten Warnmeldung ist standardmäßig „nicht bestätigt“. Alle nicht bestätigten Warnmeldungen und ihre zugehörigen Aktionen können in einer Tabelle im Reiter <strong>Warnmeldungen</strong> angezeigt werden. Über jede nicht bestätigte Warnmeldung werden folgende Informationen angezeigt.</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-equal">Feld</td>
+                <td>Beschreibung</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Titel Warnmeldung</td>
+                <td>
+                    Bezeichnung des Ereignisses, das die Warnmeldung ausgelöst hat. Zum Beispiel: Kamerabewegung festgestellt. Name des Ereignisattributs. In dieser Spalte wird nur das Schlüssel-Ereignisattribut angezeigt.<>Bezeichnung des Geräts wie der Kamera, das dem Ereignis zugeordnet ist. Zum Beispiel: der Name der Kamera, die die Bewegung erfasst hat.
+                </td>
+            </tr>
+            <tr>
+                <td>Typ</td>
+                <td>Sie können eine Videoquelle wie eine Kamera mit der Drag-and-Drop-Funktion umsetzen. Außerdem können Sie auf den Namen der Videoquelle doppelklicken, um sie auszuwählen.</td>
+            </tr>
+            <tr>
+                <td>Schweregrad</td>
+                <td>
+                    Listet den Schweregrad der Warnmeldung entsprechend dem Typ auf:<>
+                    a. Dringend<>
+                    b. Kritisch
+                </td>
+            </tr>
+            <tr>
+                <td>Zeit</td>
+                <td>Zeit, wenn die Warnmeldung ausgelöst wird.</td>
+            </tr>
+            <tr>
+                <td>Datum</td>
+                <td>Datum, wenn die Warnmeldung ausgelöst wird.</td>
+            </tr>
+            <tr>
+                <td>Ort</td>
+                <td>Name, wo das Gerät aufgestellt ist.</td>
+            </tr>
+            <tr>
+                <td>Aktion und Anweisungen</td>
+                <td>Option zur Bestätigung und Einleitung von Aktionen auf die ausgelöste Warnmeldung.</td>
+            </tr>
+            <tr>
+                <td>Mehr</td>
+                <td>Zeigt alle zugeordneten Türen und die entsprechenden Kartenereignisse an.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="bottControl">
+            <p class="helpprev">
+                <span>Vorherige</span>
+                <a href="monitor_alarms.html"><i class="prev_icon"></i> Warnmeldungen verwalten</a>
+            </p>
+            <p class="helpnext">
+                <span>Weiter</span>
+                <a href="acknowledge_alarms.html">Warnmeldungen bestätigen <i class="next_icon"></i></a>
+            </p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

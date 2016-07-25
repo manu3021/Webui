@@ -1,0 +1,391 @@
+﻿.CardNumberRange {
+    /*opacity:0;*/
+    /*padding-bottom: 22px;*/
+    padding-top: 12px;
+}
+
+/*.CardNumberRange .field input{
+	margin-bottom: 7px !important;
+}*/
+
+.backOption {
+    width: 85px;
+    padding-left: 24px;
+    margin-top: 23px;
+}
+
+    .backOption a {
+        text-decoration: none;
+        color: #6f7074;
+    }
+
+        .backOption a:hover {
+            color: #0067A6;
+        }
+
+.cardTopFirstSection {
+    border-left: 1px solid #BABABB;
+    position: absolute;
+    margin-left: 13px;
+}
+
+.cardTopFirstSection, .cardTopSecondSection {
+    float: left;
+}
+
+    .cardTopFirstSection .field {
+        display: block;
+    }
+
+    .cardTopFirstSection .selectize-control.single .selectize-input {
+        border-bottom-color: #BABABB !important;
+    }
+
+    .cardTopFirstSection .select-field {
+        padding-top: 1px;
+        margin-bottom: 0px;
+    }
+
+.cardSettings.bottomSection ul#eventConfigContainer {
+    position: relative;
+    /*border-bottom: 1px solid #d3d3d3;*/
+    margin-top: 0px;
+    margin-bottom: 11px;
+}
+
+.cardSettings.bottomSection ul {
+    border: none;
+    margin-left: 0;
+}
+
+.cardSettings.bottomSection .formcontrol ul li {
+    position: static;
+    border: none;
+    clear: both;
+}
+
+.cardSettings.bottomSection .formcontrol .selectColumnContainer ul li {
+    position: relative;
+    border: none;
+}
+
+.cardSettings.bottomSection .select-field {
+    /*padding-bottom: 20px;*/
+    clear: both;
+}
+
+
+/*Report Preview popup*/
+
+#cardPreview.mpcmodel section {
+    padding-top: 0;
+}
+
+#cardPreview {
+    /*width: 1100px;
+    left: 33%;
+    position: relative;   
+    margin-top: 2%;*/
+    display: none;
+    width: 885px;
+    left: 40%;
+}
+
+    #cardPreview .table > tbody > tr > td {
+        border-top: 1px solid #D3D3D3 !important;
+    }
+
+    #cardPreview .table > thead > tr > th {
+        border-bottom: 1px solid #A7A7A8;
+        border-right: 1px solid #D3D3D3;
+        font-size: 14px;
+        color: #3B3B3D;
+        vertical-align: middle;
+        font-weight: normal;
+        padding-left: 18px;
+        padding-right: 18px;
+        /*word-break: break-all;*/
+    }
+
+    #cardPreview .table > thead:first-child > tr:first-child > th:last-child {
+        border-right: none;
+    }
+
+    #cardPreview .table {
+        margin-bottom: 0px;
+    }
+
+    #cardPreview section ul li {
+        float: none;
+        padding-bottom: 0px;
+    }
+
+    #cardPreview tbody > tr > td {
+        vertical-align: middle;
+        font-size: 15px;
+        color: #6F7074;
+        padding-left: 12px;
+        padding-right: 12px;
+        word-break: break-all;
+        white-space: pre;
+    }
+
+    #cardPreview .formControl-checkbox {
+        top: 2px !important;
+        width: 20px;
+        height: 20px;
+    }
+
+        #cardPreview .formControl-checkbox span {
+            padding: 0;
+        }
+
+.popup-checkbox span {
+    width: 130px;
+}
+/*Sticky styles */
+#cardPreview #sticky-list {
+    height: 370px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #BABABB;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+    #cardPreview #sticky-list > ul {
+        height: 100%;
+        -ms-overflow-y: auto;
+        overflow-y: auto;
+        -ms-overflow-x: auto;
+        overflow-x: auto;
+    }
+
+#cardPreview ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#cardPreview .sticky thead {
+    position: absolute;
+    top: 0;
+    display: inherit;
+    background-color: white;
+    z-index: 2;
+}
+/*Sticky styles */
+
+/*Report Preview popup*/
+
+
+/*Select Coulmn Popover*/
+.reports .popover {
+    background-color: #28282a;
+    border: 1px solid #28282a;
+    max-width: 392px !important;
+}
+
+.reports .popover-title {
+    background-color: #272727;
+    border-bottom: 1px solid #212121 !important;
+    color: #d3d3d3;
+    text-transform: uppercase;
+    padding: 16px 23px 16px 23px;
+    font-size: 15px;
+}
+
+.reports .popover-content {
+    background: #323232;
+    padding: 0px;
+    margin: 0px;
+    min-height: 253px;
+}
+
+.reports .popover.bottom .arrow:after {
+    border-bottom-color: #28282a;
+}
+
+.reports .popover ::-webkit-scrollbar-thumb {
+    background-color: #454545;
+}
+
+.reports .popover.bottom {
+    margin-left: -97px;
+}
+
+    .reports .popover.bottom .arrow {
+        left: 89%;
+    }
+
+    .doneBtn {
+        padding: 18px 24px 0px 24px;
+        background: #323232;
+}
+
+.selectColumnContainer {
+    background-color: #323232;
+}
+
+    .selectColumnContainer ul {
+        height: 180px;
+        -ms-overflow-y: auto;
+        overflow-y: auto;
+        -ms-overflow-x: hidden;
+        overflow-x: hidden;
+        /* margin-top: 0px !important; */
+    
+        margin: 0px;    padding: 0px;
+}
+
+    .selectColumnContainer label {
+        /* padding-top: 17px !important; */
+    
+        position: relative;    
+        display: inline-block;    
+        height: 24px;
+        width: 24px;
+        /* float: left; */
+}
+
+    .selectColumnContainer legand {
+        /* padding-left: 43px !important; */
+        font-size: 15px;
+        position: relative;
+        color: #BABABA;
+    
+        /* margin-top: -23px; */
+        border-bottom: 1px solid #454545;
+        padding-bottom: 7px;
+        width: 88%;
+        /* padding-right: 135px; */
+        display: inline-block;
+}
+
+    .selectColumnContainer ul li {
+        list-style: none;
+        margin: 0 !important;
+        /* padding-top: 7px; */
+        /* padding-left: 6px; */
+        /* padding-right: 24px; */
+    
+        /* height: 42px; */
+        /* overflow: hidden; */
+        /* padding-bottom: 7px; */
+        padding-left: 24px !important;;
+        /* padding-bottom: 7px; */
+        /* margin-bottom: 7px; */
+}
+
+        .selectColumnContainer ul li:hover {
+            background-color: #454545;
+        }
+
+        .selectColumnContainer ul li b {
+            /* top: -7px; */
+            /* height: 0px; */
+            /* width: 0px; */
+        
+            padding: 5px;
+}
+
+    .selectColumnContainer .buttonGroup {
+        border-top-color: #454545;
+        padding: 14px 24px 24px 24px;
+    }
+
+    .selectColumnContainer .selectColumnDivider {
+        border-bottom: 1px solid #454545;
+        height: 1px;
+        /* left: 24px; */
+        /* padding-top: 10px; */
+        position: relative;
+        /* right: 0; */
+        min-width: 300px;
+    
+        /* margin-top: -10px; */
+}
+
+    .selectColumnContainer .buttonGroup .primary-button, .selectColumnContainer .buttonGroup .secondary-button {
+        margin: 0px;
+    }
+
+.cardSettings .formControl-radio span {
+    position: absolute !important;
+    display: inline-block;
+}
+
+/*.firstSection span{
+	padding-top:0;
+	width: 350px;	
+}*/
+
+.firstSection .radio .radiotext {
+    padding-left: 25px;
+    padding-right: 18px;
+}
+
+.firstSection .radio {
+    padding-bottom: 17px;
+}
+
+.reports .radio label {
+    position: relative;
+    top: 0px;
+}
+
+
+/*Select Coulmn Popover*/
+
+.cardSettings.bottomSection .formcontrol ul li.event-wrap {
+    /*  overflow: scroll;
+    height: 300px;
+    width: 300px;
+    border: 1px solid #BABABB;*/
+    padding-top: 4px;
+    padding-bottom: 20px;
+}
+
+.firstSection #auditActivationDate {
+    margin-top: 17px;
+}
+
+.firstSection #activationDate {
+    margin-top: 17px;
+}
+
+.firstSection #activationDateFrom {
+    margin-top: 17px;
+}
+
+.firstSection #expireDateFrom {
+    margin-top: 17px;
+}
+
+.cardSettings.bottomSection .formcontrol ul.sch_options ul li {
+    position: relative;
+}
+
+.cardSettings.bottomSection .formcontrol ul.sch_options li {
+    position: static;
+}
+
+.report-severity-critical {
+    color: #E33E38 !important;
+}
+
+.report-severity-major {
+    color: #E86C08 !important;
+}
+
+.report-severity-moderate {
+    color: #E8A108 !important;
+}
+
+.report-severity-normal {
+    color: #707070 !important;
+}
+
+#popoverreportUsers_click {
+    padding-top: 22px;
+}

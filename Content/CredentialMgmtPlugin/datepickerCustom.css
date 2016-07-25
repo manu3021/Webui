@@ -1,0 +1,96 @@
+﻿.bootstrap-datetimepicker-widget.top:before, .bootstrap-datetimepicker-widget.bottom:before{
+	display:none;
+}
+
+.bootstrap-datetimepicker-widget.top:after, .bootstrap-datetimepicker-widget.bottom:after{
+	display:none;
+}
+
+.bootstrap-datetimepicker-widget{
+width: 255px;
+padding-top: 16px;
+padding-left: 24px;
+padding-right: 24px;
+padding-bottom: 14px;
+margin-top:-20px;
+/*height:236px;*/}
+
+.bootstrap-datetimepicker-widget thead tr:first-child th:hover {
+background: #FFFFFF;
+}
+
+.bootstrap-datetimepicker-widget th.switch {
+  text-transform: uppercase;
+  color:#3B3B3D;
+  font-weight:bold !important;
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.bootstrap-datetimepicker-widget .dow{
+	font-weight:normal;
+}
+
+.bootstrap-datetimepicker-widget table thead {
+border-bottom: 1px solid #D3D3D3;
+}
+
+.bootstrap-datetimepicker-widget td.old, .bootstrap-datetimepicker-widget td.new{
+	color:#C5C6C7;
+}
+
+.bootstrap-datetimepicker-widget td.day:hover, .bootstrap-datetimepicker-widget td.hour:hover, .bootstrap-datetimepicker-widget td.minute:hover, .bootstrap-datetimepicker-widget td.second:hover{
+	background:#E6F3FB;
+}
+
+.bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover{
+background-color:#0889C4;
+}
+
+/*.bootstrap-datetimepicker-widget .picker-switch{
+	margin-top: 15px;
+border-top: 1px solid #D3D3D3;
+}*/
+
+/*.bootstrap-datetimepicker-widget .datepicker{
+border-bottom: 1px solid #D3D3D3;	
+padding-bottom: 15px;
+}*/
+
+.bootstrap-datetimepicker-widget .icon-time{
+	background-image: url('../Content/images/icon_calendarHover.png');
+width: 20px;
+height: 20px;
+background-position: 0px 0px;
+margin-top: 11px;
+}
+
+.bootstrap-datetimepicker-widget .icon-calendar, .bootstrap-datetimepicker-widget .icon-calendar:hover{
+	background-position:0px 0px;
+	left: 0px;
+top: -5px;
+position:relative;
+}
+
+.bootstrap-datetimepicker-widget .timepicker{
+	margin-top: 9px;
+	border-top: 1px solid #D3D3D3;
+	padding-top:9px;
+	font-size:14px;
+	color:#6F7074;
+}
+
+.bootstrap-datetimepicker-widget td span{
+	cursor:default;
+	pointer-events: none;
+}
+/*.bootstrap-datetimepicker-widget table tbody {
+position:absolute;
+margin-top:10px;
+}
+
+
+.bootstrap-datetimepicker-widget .table-condensed td{
+padding-left: 5px;
+padding-right: 2px;	
+}*/

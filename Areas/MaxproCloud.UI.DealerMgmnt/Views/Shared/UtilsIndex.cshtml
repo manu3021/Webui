@@ -1,0 +1,28 @@
+﻿@*@Scripts.Render( "~/Scripts/tab.js",
+              "~/Scripts/app/headerlight.js")*@
+@Scripts.Render("~/bundles/DealerMgmntscript2")
+<div class="header-menu-three" id="page-third-header">
+    <div class="navbar">
+
+        <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="Utils">
+                <li class="active"><a href="#approval" data-toggle="tab" data-tabindex="0" style="display: block;">@Resources.Dealer_Approval</a></li>
+                <li class=""><a href="#Billing" data-toggle="tab" data-tabindex="1" style="display: block;">@Resources.Billing</a></li>
+                <li class=""><a href="#EULAUpdate" data-toggle="tab" data-tabindex="3" style="display: block;" class="eula-update-tab">@Resources.EULA_Update</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contentarea">
+    <div class="tab-content scroll-x scroll-y">
+        <div class="tab-pane active" id="approval">
+            @Html.Partial("_DealerContainerPartial")
+        </div>
+        <div class="tab-pane" id="Billing">
+            @Html.Partial("_BillingPartial")
+        </div>
+        <div class="tab-pane" id="EULAUpdate">
+            @Html.Partial("_EULAContainerPartial")
+        </div>
+    </div>
+</div>

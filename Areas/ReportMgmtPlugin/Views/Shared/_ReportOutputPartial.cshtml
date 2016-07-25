@@ -1,0 +1,139 @@
+﻿<!-- ko if: $data.reportGroupName == "EVENT REPORTS" -->
+<span class="reportsHeading">@Resources.lbl_choose_customer</span>
+<div id="divAddSite" class="buttongroup">
+    <button class="primary-button" type="button" tabindex="13" data-original-title="@Resources.Viewer_UniversalListText" data-bind="popOver: { name: 'dashboard-popover-template', placement: 'bottom', show: $data.isPopupOpen , popovername:'@Resources.lbl_Universal_List'}">@Resources.lbl_add_customer_or_site</button>
+</div>
+<ul data-bind="foreach: $data.Entities" class="layoutrow report-entity-list scroll-y">
+    <li>
+        <span data-bind="text: $data.Name"></span>
+        <span class="dissociate-entity" data-bind="click: $parent.removeEntity"></span>
+    </li>
+</ul>
+<!-- /ko -->
+
+<span class="reportsHeading">@Resources.Report_Output_Pick_Columns</span>
+<ul>
+    <li>
+        <div class="field right-inner-addon notRequiredStyle">
+            <span class="input-group-addon selectColumnButton" tabindex="14" data-toggle="popover" title="@Resources.Report_Output_Select_Columns" data-original-title="@Resources.Report_Output_Select_Columns" data-bind="popOver: { name: 'select-report-output-template', placement: 'bottom', show: $data.isOutputPopupOpen , popovername:'@Resources.Report_Output_List'}"><b class="icon-list" title='Select Columns'></b></span>
+            <label class="floatLblDn">@Resources.Report_Output_Select_Columns</label><input type="text" readonly="readonly" placeholder="@Resources.Report_Output_Select_Columns" data-bind="value: $data.selectedOutputsText" class="floatTxt myStyle">
+        </div>
+    </li>
+</ul>
+<span class="reportsHeadingMiddle">@Resources.Report_Output_Sort</span>
+<ul>
+    <li>
+        <div class="field select-field right-inner-addon notRequiredStyle">
+            <span class="input-group-addon" tabindex="15"><b class="sortOrder1 icon-sort-ascending" data-bind="click:$data.OuputSortOrder()[0].ToggleSortOrder,css:{'icon-sort-descending' : $data.OuputSortOrder()[0].SortOrder() <1 },   attr:{title:$data.OuputSortOrder()[0].TooltipMessage()}"></b></span>
+            <label for="sortOrder1">@Resources.Report_Output_Sort_Order1</label>
+            <select id="sortOrder1" data-bind="options:$data.OuputSortOrder()[0].PossibleOutputs,optionsText:'DisplayName',optionsValue:'Id',optionsCaption: 'None',value:$data.OuputSortOrder()[0].Id"></select>
+        </div>
+    </li>
+    <li>
+        <div class="field select-field right-inner-addon notRequiredStyle">
+            <span class="input-group-addon" tabindex="16"><b class="sortOrder2 icon-sort-ascending" data-bind="click:$data.OuputSortOrder()[1].ToggleSortOrder,css:{'icon-sort-descending' : $data.OuputSortOrder()[1].SortOrder() <1 },   attr:{title:$data.OuputSortOrder()[1].TooltipMessage()}"></b></span>
+            <label for="sortOrder2">@Resources.Report_Output_Sort_Order2</label>
+            <select id="sortOrder2" data-bind="options:$data.OuputSortOrder()[1].PossibleOutputs,optionsText:'DisplayName',optionsValue:'Id',optionsCaption: 'None', value:$data.OuputSortOrder()[1].Id"></select>
+        </div>
+    </li>
+    <li>
+        <div class="field select-field right-inner-addon notRequiredStyle">
+            <span class="input-group-addon" tabindex="17"><b class="sortOrder3 icon-sort-ascending" data-bind="click:$data.OuputSortOrder()[2].ToggleSortOrder,css:{'icon-sort-descending' : $data.OuputSortOrder()[2].SortOrder() <1},   attr:{title:$data.OuputSortOrder()[2].TooltipMessage()}"></b></span>
+            <label for="sortOrder3">@Resources.Report_Output_Sort_Order3</label>
+            <select id="sortOrder3" data-bind="options: $data.OuputSortOrder()[2].PossibleOutputs(), optionsText:'DisplayName',optionsValue:'Id',optionsCaption: 'None' ,value:$data.OuputSortOrder()[2].Id"></select>
+        </div>
+    </li>
+</ul>
+
+<button class="secondary-button" tabindex="18" id="preview" type="button" value="Save" data-toggle="modal" role="button" data-bind="click:$data.showpreview">@Resources.Report_Output_Preview</button>
+
+<script type="text/html" id="select-report-output-template">
+    <div class='selectColumnContainer'>
+        <ul>
+            <li>
+                <label class='formControl-checkbox'>
+                    <input class='checkbox' type='checkbox' data-bind="checked: $data.IsAllColumnsSelected, click: $data.onSelectAllColumns">
+                    <b></b>
+                </label>
+                <legand>Select All</legand>
+                <span class="selectColumnDivider"></span>
+            </li>
+            <!-- ko foreach: $data.OutputFields -->
+            <li>
+                <label class='formControl-checkbox'>
+                    <input class='checkbox' type='checkbox' data-bind="checked: $data.IsSelected,disable:$data.IsMandatory, click: $parent.onSelectColumn">
+                    <b></b>
+                </label>
+                <legand data-bind="text:$data.DisplayName"></legand>
+                <span class="selectColumnDivider"></span>
+            </li>
+            <!-- /ko -->
+        </ul>
+        <div class='doneBtn'>
+            <button class='primary-button' id='confirmButton' data-bind="click: $data.closeOutputSelector">@Resources.Done</button>
+        </div>
+    </div>
+</script>
+
+<script id="dashboard-events-template" type="text/html">
+    <li class="dashbdSearch">
+        <label class="formControl-checkbox">
+            <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+            <span></span>
+        </label>
+        <legand data-bind="text: $data.Name" />
+        <span class="collapseIcon" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+        <!-- ko if: $data.Categories().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="template: { name: 'dashboard-events-template', foreach: $data.Categories }"></ul>
+        <!-- /ko -->
+        <!-- ko if: $data.Events().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="foreach: $data.Events">
+            <li class="dashbdSearch">
+                <label class="formControl-checkbox">
+                    <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventSelection">
+                    <span></span>
+                </label>
+                <legand data-bind="text: $data.Description" />
+            </li>
+        </ul>
+        <!-- /ko -->
+    </li>
+</script>
+
+<script type="text/html" id="dashboard-popover-template">
+    <section class="contentWrap">
+        <div class="leftTree treecontrol treeProp" data-bind="template: { name: 'dashboard-treeview-template', data: $data.treeview }"></div>
+    </section>
+    <footer>
+        <div id="positionPopoverbtngroup" class="buttonGroupTree">
+            <button id='positionconfirmbtn' data-toggle='clickover' class='primary-button' data-bind="click: $root.onPopoverConfirmClick">@Resources.RULE_LABEL_CONFIRM</button>
+            <button id='positioncancelbtn' data-toggle='clickover' class='secondary-button' data-bind="click: $root.onPopoverCancelClick">@Resources.RULE_LABEL_CANCEL</button>
+        </div>
+    </footer>
+</script>
+<script id="dashboard-treeview-template" type="text/html">
+    <div class="tree tree-cont layoutrow">
+        <ul data-bind="template: { name: 'dashboard-treenode-template' , foreach: $data.rootNode.Children }"></ul>
+    </div>
+</script>
+<script id="dashboard-treenode-template" type="text/html">
+    <li class="treenormal">
+        <div class="expand" data-bind="event: { mouseover: $root.treeview.handleHover, mouseout: $root.treeview.handleHoverOut }, click: $root.treeview.toggleExpand, clickBubble: false, css: { 'Item-State-hover': $data.IsHover, 'Item-State-selected': $data.IsSelected }">
+
+            <i class="tree-open-icon" data-bind="attr: { 'class': $data.Icon}"></i>
+            <div class="treecheckboxStyle" data-bind="click: $root.treeview.handleSelection, clickBubble: false">
+                <label class="control-box treecustomcheckbox">
+                    <input type="checkbox" class="checkbox" name="credential_IsTemporary" id="calender" data-bind="checked: $data.IsSelected, click: $root.treeview.handleSelection">
+                    <span></span>
+                </label>
+            </div>
+            <legand class="tree-label" data-bind=" text: $data.Entity.Name"></legand>
+            <span class="tree-label"></span>
+        </div>
+        <div class="expandul" data-bind="if: $data.IsExpanded">
+            <ul class="tree" data-bind="template: { name: 'dashboard-treenode-template', foreach: $data.Children }"></ul>
+        </div>
+    </li>
+</script>
+
+

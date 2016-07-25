@@ -1,0 +1,278 @@
+﻿@*<link href="~/Content/profilestyle/myprofile.css" rel="stylesheet" />*@
+@{
+    string contactmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmailSender"];
+}
+<div class="profile" data-url="@Url.Action("", "Profile")" data-userconfigurl="@Url.Action("", "userconfig")">
+    <input type="hidden" id="isFirstTime" data-firsttime="@ViewBag.IsFirstTime" data-isnewpasswordrequired="@ViewBag.IsNewPasswordRequired" />
+    <input type="hidden" id="isCreatorTime" data-iscreator="@ViewBag.IsCreator" />
+
+    <div id="proHeaderstart" class="headerSecondMenu" style="display:none">
+        <span>@Resources.Profile_GetStart</span>
+    </div>
+
+    <div class="tabcontainer">
+        <ul class="nav nav-tabs" id="myTab">
+            <li id="dealeractive" class="active"><a href="#dealer" data-toggle="tab">@Resources.Profile_tab_Dealers</a></li>
+            <li id="profileactive"><a href="#myprofile" data-toggle="tab">@Resources.Profile_Myprofile</a></li>
+            @if (!(ViewBag.IsFirstTime && ViewBag.IsCreator))
+            {
+                <li id="passactive"><a href="#changepwd" data-toggle="tab">@Resources.Profile_Changepassword</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="tab-content" id="profile">
+        <div class="tab-pane active" id="dealer">
+
+
+            <div id="dealerEdit" data-bind="with: $data">
+                <form id="savedealerProfile" data-validationkey="savedealerProfile" action="@Url.Action("savedealerprofile", "Profile")" data-bind="submit:savedealer">
+                    <div id="profiledisable"></div>
+                    <div class="mydealerleftpane scroll-y">
+                        <div class="imageHolder pro-no-img">
+                            <b class="remove-image absolutefix" style="left: 180px" data-bind="visible:  $data.dealerPhoto().length > 0 ,click: $data.deletelogo"></b>
+                            <b class="text" id="logotext">@Resources.profile_uploadlogo</b>
+                            <img id="logophoto" data-bind="attr: { src: dealerPhoto }" />
+
+                            <input type="file" name="logophoto" id="logofile" data-uploadurl="@Url.Action("FileUpload", "File")" data-bind="file: imageFile, fileObjectURL: imageObjectURL, imageBase64: image, imageType: imageType">
+                            @*   <span class="profile-upload-text">Upload Logo</span>*@
+
+                            @*<span class="profile-upload-lbl">Logo</span>*@
+                            <span class="customlogo-msg">@Resources.Profile_LogoDisplayedOnCustomerReports</span>
+                        </div>
+                        <div class="dealerleftpane">
+                            <div class="field">
+                                <label for="dealername" class="floatLblDn">@Resources.Profile_Dealer</label>
+                                <input type="text" name="dealername" id="dealername" class="floatTxt myStyle" data-bind="value: $data.Name">
+                            </div>
+                            <div class="field">
+                                <label for="inputEmail" class="floatLblDn">@Resources.Email</label>
+                                <input type="text" readonly="readonly" id="inputEmail" name="inputEmail" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.EmailAddress">
+                            </div>
+                            <div class="field">
+                                <label for="phone" class="floatLblDn">@Resources.Phone</label>
+                                <input type="text" name="phone" id="phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone">
+                            </div>
+                            <div class="field">
+                                <label for="line1" class="floatLblDn">@Resources.Address</label>
+                                <input type="text" id="line1" name="line1" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1">
+                            </div>
+                            @*<div class="field">
+                                    <label for="line2" class="floatLblDn">@Resources.Profile_AddressLine2</label>
+                                    <input type="text"  id="line2" name="line2" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1">
+                                </div>*@
+                            <div class="field">
+                                <label for="city" class="floatLblDn">@Resources.City</label>
+                                <input type="text" name="city" id="city" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City">
+                            </div>
+                            <div class="field">
+                                <label for="state" class="floatLblDn">@Resources.Region</label>
+                                <input type="text" name="state" id="state" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region">
+                            </div>
+                            <div class="field">
+                                <label for="country" class="floatLblDn">@Resources.Country</label>
+                                <input type="text" name="country" id="country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country">
+                            </div>
+                            <div class="field">
+                                <label for="Zipcode" class="floatLblDn">@Resources.Zipcode</label>
+                                <input type="text" name="Zipcode" id="Zipcode" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.ZipCode">
+                            </div>
+                            <div class="field">
+                                <label for="bpcsnumber" class="floatLblDn">@Resources.Honeywell_ADI_Number</label>
+                                <input type="text" id="bpcsnumber" name="bpcsnumber" class="floatTxt myStyle" data-bind="value: $data.HoneywellAdiNumber">
+                            </div>
+                            <div class="field authorizedDealerPgm">
+                                <b class="form-registration-heading">@Resources.FAP_Number</b>
+                                <ul>
+                                    <li>
+
+                                        <label class="formControl-checkbox">
+                                            <input class="checkbox" type="checkbox" value="0" data-bind="checked:$data.IsSILVER">
+                                            <span></span>
+                                        </label>
+                                        <legand>@Resources.Dealer_FAP</legand>
+
+                                    </li>
+                                    <li>
+
+                                        <label class="formControl-checkbox">
+                                            <input class="checkbox" type="checkbox" value="1" data-bind="checked:$data.IsGOLD">
+                                            <span></span>
+                                        </label>
+                                        <legand>@Resources.Dealer_CSS</legand>
+
+                                    </li>
+                                    <li>
+
+                                        <label class="formControl-checkbox">
+                                            <input class="checkbox" type="checkbox" value="2" data-bind="checked:$data.IsPLATINUM">
+                                            <span></span>
+                                        </label>
+                                        <legand>@Resources.Dealer_HIS</legand>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <ul class="secondUL">
+                            <div class="field textarea clear notRequiredStyle">
+                                <label id="lblFName" class="floatLblDn">@Resources.Profile_Branding</label>
+                                <textarea name="BrandingMessage" id="BrandingMessage" class="floatTxt myStyle" data-bind="value:$data.Branding" cols="10" rows="4"></textarea>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="updateButtons buttonGroup">
+                        <button id="btndealersave" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: savedealer" style="display:none">@Resources.Save</button>
+                        <button id="btndealersaveexit" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: savedealer" style="display:none">@Resources.Profile_SaveExit</button>
+                        <button id="btndealerNext" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: nextdealer" style="display:none">@Resources.Profile_Next</button>
+                        <button id="btndealerskip" class="secondary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: skipdealer " style="display:none">@Resources.Profile_Skip</button>
+
+                    </div>
+
+
+                    <input type="hidden" id="DealerFields" data-userid="@ViewBag.Profile.AccountId" data-photoid="@ViewBag.Profile.AccountId" />
+
+
+
+                </form>
+                <div class="clear contact-text">
+                    <p>@Resources.Profile_IssuesPleaseMailUs <a href=mailto:@contactmail>@contactmail </a></p>
+                    @*<p>As always the first thing you do to get it up and running is add a customer,devices and user.Then group them,arrange them and create a hierarchy.We have tried and make to make the whole process very easy and quick.</p>*@
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-pane " id="myprofile">
+
+
+            <div id="profileEdit" data-bind="with: $data">
+                <form id="saveprofile" data-validationkey="saveprofile" action="@Url.Action("saveprofile", "Profile")" data-bind="submit: saveuser">
+
+                    <div class="myprofileleftpane">
+                        <div class="imageHolder span2">
+                            <b class="remove-image absolutefix" style="left: 180px" data-bind="visible:  $data.profilePhoto().length > 0 ,click: $data.deletephoto"></b>
+                            <img id="photo" data-bind="attr: { src: profilePhoto }, valueUpdate: 'afterkeydown' " />
+                            <input type="file" name="photo" id="profilephoto" data-uploadurl="@Url.Action("FileUpload", "File")" data-bind="file: imageFile, fileObjectURL: imageObjectURL, imageBase64: image, imageType: imageType">
+                            @*<span class="profile-upload-lbl">Photo</span>*@
+                        </div>
+                        <div class="myprofileName span10">
+
+                            <div class="field">
+                                <label for="fname" class="floatLblDn">@Resources.First_Name</label>
+                                <input type="text" name="fname" id="fname" class="floatTxt myStyle" data-bind="value: $data.FirstName, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="lname" class="floatLblDn">@Resources.Last_Name</label>
+                                <input type="text" name="lname" id="lname" class="floatTxt myStyle" data-bind="value: $data.LastName, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="email" class="floatLblDn">@Resources.Email</label>
+                                <input type="text" readonly="readonly" id="email" name="email" class="floatTxt myStyle" data-bind="value: $data.UserName, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="phone" class="floatLblDn">@Resources.Phone</label>
+                                <input type="text" name="phone" id="phone" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Phone, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="line1" class="floatLblDn">@Resources.Address</label>
+                                <input type="text" id="line1" name="line1" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.AddressLine1, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="city" class="floatLblDn">@Resources.City</label>
+                                <input type="text" name="city" id="city" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.City, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="state" class="floatLblDn">@Resources.Region</label>
+                                <input type="text" name="state" id="state" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Region, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field">
+                                <label for="country" class="floatLblDn">@Resources.Country</label>
+                                <input type="text" name="country" id="country" class="floatTxt myStyle" data-bind="value: $data.ContactInfo.Country, valueUpdate: 'afterkeydown' ">
+                            </div>
+                            <div class="field select-field">
+                                <label for="user_Language" class="floatLblDn">@Resources.Language</label>                              
+                                <select id="user_Language" class="floatLblDn" data-bind="value: $data.Language">
+                                    <option value="en-us">English</option>
+                                    <option value="fr-fr">Français</option>
+                                    <option value="nl-nl">Nederlands</option>
+                                    <option value="de-de">Deutsch</option>
+                                    <option value="es-es">Españal</option>
+                                    <option value="pt-pt">Português</option>
+                                    <option value="it-it">Italianoa</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="updateButtons buttonGroup">
+                            <button id="btnprofilesave" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="enable: hasChanges, click: saveuser" style="display:none">@Resources.Save</button>
+                            <button id="btnprofilesavenext" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: nextprofile" style="display:none">@Resources.Profile_Next</button>
+                            <button id="btnprofilesaveexit" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="enable: hasChanges, click: saveuser" style="display:none">@Resources.Profile_SaveExit</button>
+                            <button id="btnprofileskip" class="secondary-button" aria-hidden="true" data-dismiss="modal" data-bind="click:skipprofile" style="display:none">
+                                @if (ViewBag.IsFirstTime && ViewBag.IsCreator)
+                                {
+                                    @Resources.Profile_Finish
+                                }
+                                else
+                                {
+                                    @Resources.Profile_Skip
+                                }
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="UserFields" data-userid="@ViewBag.Profile.Id" data-photoid="@ViewBag.Profile.PhotoId" data-photoref="@ViewBag.Profile.PhotoRef" />
+
+
+                </form>
+            </div>
+
+
+        </div>
+        <div class="tab-pane" id="changepwd">
+            <div id="profilepassword" data-bind="with: $data">
+
+                <form id="changepassword" data-validationkey="changepassword" action="@Url.Action("changepassword", "Profile")" data-bind="submit: changepassword">
+
+                    <div class="changePasswordFields">
+                        <ul>
+                            <li>
+                                <div class="field">
+                                    <label class="floatLblDn">@Resources.Profile_oldpassword</label>
+                                    <input type="password" name="oldpassword" class="floatTxt myStyle" id="oldpassword" data-bind="value: $data.oldpassword">
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="field">
+                                    <span class="controls passfield" for="showpass"><b class="icon_eye"></b></span>
+                                    @*<input type="checkbox" value="Show password" class="passcheckbox" id="showpass" tabindex="-1">*@
+                                    <label for="newpassword" class="floatLblDn">@Resources.Profile_newpassword</label>
+                                    <input type="password" class="floatTxt myStyle" id="newpassword" name="newpassword" data-bind="value: $data.newpassword, valueUpdate: 'afterkeydown'">
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="changePasswordFooterWrapper">
+                        <div class="changePasswordFooter spacingTop buttonGroup">
+                            <button id="btnpass" class="primary-button" aria-hidden="true" data-bind="click: changepassword" data-dismiss="modal" style="display:none">@Resources.Change_Password</button>
+                            @*  <button id="btnpassexit" class="primary-button" aria-hidden="true" data-bind="click: changepassword" data-dismiss="modal" style="display:none">Change Password&Exit</button>*@
+                            <button id="btnpassskip" class="secondary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: skippassword" style="display:none">@Resources.Profile_Finish</button>
+                            <span class="error-msg"></span>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/profilescripts/profile.js"></script>
+

@@ -1,0 +1,528 @@
+﻿/* Header  Start */
+#logo {
+    background-image: url(../images/logo.png);
+    height: 55px;
+    width: 84px;
+    float: left;
+    top: 0;
+    cursor: pointer;
+    border-right: 1px dotted #0088cc;
+    border-left: 0;
+    border-image: url('../images/dotDivider.png') 1 72;
+    -ms-linear-border-image: url('../images/dotDivider.png') 1 72;
+    -webkit-border-image: url('../images/dotDivider.png') 1 72;
+    -moz-border-image: url('../images/dotDivider.png') 1 72;
+    -o-border-image: url('../images/dotDivider.png') 1 72;
+    -webkit-background-position-y: -3px;
+    -ms-background-position-y: -3px;
+    -o-background-position-y: -3px;
+    background-position-y: -3px;
+}
+
+    #logo span {
+        padding: 24px;
+        position: absolute;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+#header {
+    font-size: 15px;
+    color: #d3d3d3;
+}
+
+.pagetitle {
+    color: #fff;
+    float: left;
+    font-size: 22px;
+    padding-left: 24px;
+    /* padding-top: 19px; */
+    padding-top: 20px;
+    text-align: left;
+    width: auto;
+    height: 62px;
+    cursor: pointer;
+}
+
+    .pagetitle a {
+        color: #fff;
+        background: url(../images/sprite_icons.png) no-repeat -10px -546px;
+        padding-left: 12px;
+        -khtml-opacity: 5;
+        -moz-opacity: 5;
+        opacity: 5;
+        filter: alpha(opacity=500);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=500)";
+        font-family: 'Open Sans Regular' !important;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+.pagetitleHandleBarShow {
+    background: url(../images/sprite_icons.png) no-repeat -10px -546px !important;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.pagetitleHandleBarHide {
+    background: none !important;
+    padding-left: 0px !important;
+    cursor: default;
+}
+
+#page-body {
+    position: absolute;
+    top: 62px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#page-header {
+    position: fixed;
+    height: 62px;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, #052c56, #0170ac 25%, #0199c8) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #052c56), color-stop(1, #0199c8));
+    z-index: 1000;
+    box-shadow: -2px 0px 4px 2px #bababb;
+    -o-box-shadow: -2px 0px 4px 2px #bababb;
+    -moz-box-shadow: -2px 0px 4px 2px #bababb;
+    -webkit-box-shadow: -2px 0px 4px 2px #bababb;
+}
+/* Top Menu */
+#navigation-menu nav navbar-nav {
+    margin: 0px;
+}
+
+#navigation-menu .navbar .nav > li {
+    /* padding: 0px 0px 0px 5px;*/
+    /*margin-right: -5px;*/
+}
+
+    #navigation-menu .navbar .nav > li > a {
+        padding: 0px 0px 0px 0px;
+        width: 60px;
+    }
+
+#navigation-menu .navbar .nav #profileoptions .dropdown-toggle {
+    width: 48px;
+}
+
+#navigation-menu .navbar .nav {
+    margin-right: 0px;
+}
+/* Top Menu End */
+#overlay-menu {
+    top: 59px;
+    width: 100%;
+    position: fixed;
+}
+
+.topmenucontent {
+    font-family: Open Sans Semibold !important;
+    height: 140px;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+    -ms-overflow-x: auto;
+    overflow-x: auto;
+    -ms-overflow-y: hidden;
+    overflow-y: hidden;
+    cursor: default;
+}
+
+    .topmenucontent * {
+        font-family: Open Sans Semibold !important;
+    }
+
+    .topmenucontent ul {
+        font-family: Open Sans Semibold;
+        margin: 0px;
+        position: absolute;
+        padding: 0px;
+        margin-left: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        /* background-color: red; */
+        min-width: 1240px;
+    }
+
+        .topmenucontent ul li {
+            /*font-family: Open Sans Semibold !important;
+  float: left;
+  width: 89px;
+  height: 89px;
+  padding: 15px;
+  border: 0px Solid #ffffff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-left: 100px;
+  margin: 6px;
+  list-style-type: none;
+  background-color: #ffffff;
+  display: inline-block;
+  font-size: 16px;
+  text-align: left;
+  color: #6f7278;*/
+            float: left;
+            width: 140px;
+            height: 92px;
+            border: 0px Solid #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+            margin-right: 8px;
+            list-style-type: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+            .topmenucontent ul li div {
+                text-decoration: none;
+                color: #6f7278;
+                position: relative;
+                text-align: center;
+                height: 92px;
+            }
+
+            .topmenucontent ul li a {
+                font-family: Open Sans Semibold !important;
+                text-decoration: none;
+                color: #6f7278;
+                width: 102px;
+                height: 102px;
+                position: absolute;
+            }
+
+            .topmenucontent ul li .count {
+                font-size: 22pt;
+                padding-bottom: 29px;
+                padding-top: 22px;
+            }
+
+            .topmenucontent ul li p {
+                color: #707070;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-family: "Open Sans Semibold" !important;
+                padding: 2px 12px 0px 12px;
+                word-break: break-all;
+            }
+
+            .topmenucontent ul li .count span {
+                width: 24px;
+                height: 24px;
+                left: 60px;
+                position: absolute;
+            }
+
+            .topmenucontent ul li div:hover p {
+                color: #0889C4;
+            }
+
+            .topmenucontent ul li #m1 header {
+                font-family: Open Sans Semibold !important;
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m2 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m3 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m4 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m6 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m7 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m8 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+            .topmenucontent ul li #m9 header {
+                font-size: 22pt;
+                margin-bottom: 16px;
+                color: #e33e38;
+                width: 24px;
+                height: 8px;
+            }
+
+.nav-title-icon {
+    background-image: url("../images/icon_menuNav.png");
+    -webkit-background-size: 8px;
+    -moz-background-size: 8px;
+    -ms-background-size: 8px;
+    -o-background-size: 8px;
+    background-size: 8px;
+    background-repeat: no-repeat;
+    -webkit-background-position-y: 5px;
+    -ms-background-position-y: 5px;
+    -o-background-position-y: 5px;
+    background-position-y: 5px;
+    padding-left: 12px;
+    -khtml-opacity: 5;
+    -moz-opacity: 5;
+    opacity: 5;
+    filter: alpha(opacity=500);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=500)";
+}
+
+.topmenucontent .active {
+    background-color: #0889C4 !important;
+}
+
+    .topmenucontent .active p {
+        color: #FFFFFF !important;
+    }
+
+
+/*Clip Export Download Progress*/
+.downloadProgress-icon {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -100px -370px;
+    display: inline-block;
+    padding-left: 5px;
+}
+
+
+.downloadProgressPopover .popover.bottom .arrow:after {
+    border-bottom-color: #272727;
+}
+
+.downloadProgressPopover .popover.bottom .arrow {
+    left: 94%;
+}
+
+.downloadProgressPopover .popover-title {
+    background-color: #272727;
+    border-bottom: 1px solid #212121 !important;
+    color: #d3d3d3;
+    text-transform: uppercase;
+    padding-left: 24px;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    font-size: 15px;
+}
+
+.downloadProgressPopover .popover {
+    left: -288.5px !important;
+    width: 315px !important;
+    top: 26px !important;
+    height: 328px;
+}
+
+.dwldProgressResults {
+    width: 100%;
+    top: -10px;
+    bottom: 35px;
+    height: 278px;
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+}
+
+    .dwldProgressResults ul {
+        margin-left: 20px;
+    }
+
+    .dwldProgressResults li {
+        padding: 10px 24px 10px 24px;
+        border-bottom: 1px solid #454545;
+        float: none !important;
+        margin-left: -20px;
+        width: auto !important;
+        list-style-type: none;
+    }
+
+    .dwldProgressResults .clipResultsStyle {
+        font-size: 15px;
+        color: #d3d3d3;
+        padding-bottom: 3px;
+        width: 175px;
+        display: block;
+    }
+
+    .dwldProgressResults .downloadStatusButton, .dwldProgressResults .downloadStatusButton a {
+        float: right;
+        font-size: 15px;
+        color: #d3d3d3;
+        width: 55px;
+        text-align: right;
+    }
+
+        .dwldProgressResults .downloadStatusButton:hover, .dwldProgressResults .downloadStatusButton:hover a {
+            color: #f5f5f5;
+            text-decoration: none;
+        }
+
+    .dwldProgressResults .downloadStatus {
+        position: relative;
+        left: 54px;
+        font-size: 13px;
+        color: #9d9d9d;
+        float: right;
+        top: 21px;
+    }
+
+    .dwldProgressResults .downloadStatusIcon {
+        background: url("../images/sprite_icons.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        background-position: -640px -10px;
+        left: 54px;
+    }
+
+    .dwldProgressResults .clipResultsDurationStyle {
+        display: block;
+        font-size: 13px;
+        color: #9d9d9d;
+        line-height: 1.3;
+        width: 175px;
+    }
+
+    .dwldProgressResults ul li:hover {
+        background-color: #454545;
+        cursor: pointer;
+    }
+
+    .dwldProgressResults .progressContainer {
+        position: absolute !important;
+        right: 0px;
+        top: 0px;
+    }
+
+        .dwldProgressResults .progressContainer progress {
+            display: block;
+            width: 62px !important;
+            height: 19px !important;
+            position: absolute;
+            margin-top: 12px;
+            /* margin-left: 80px; */
+            right: 0px;
+        }
+
+    .dwldProgressResults .downloadStatus .progressContainer .progressText {
+        top: 11px;
+        /* left: 13px; */
+        right: 40px;
+    }
+
+    .dwldProgressResults .downloadStatus .progressContainer progress::-webkit-progress-bar {
+        background-color: #707070;
+    }
+
+    .dwldProgressResults .downloadStatus .progressContainer progress::-webkit-progress-value {
+        background-color: #0889c4;
+    }
+
+    .dwldProgressResults .downloadStatus .progressContainer progress::-moz-progress-bar {
+        background-color: #0889c4;
+    }
+
+
+    .dwldProgressResults .downloadStatus .progressContainer progress[value] {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+            -ms-appearance: none;
+                appearance: none;
+
+        -webkit-border-radius: 4px;
+           -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+             -o-border-radius: 4px;
+                border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        border: 1px solid #707070;
+        background-color: #707070;
+    }
+
+    .dwldProgressResults .downloadStatus .progressContainer progress {
+        color: #0889c4;
+    }
+
+/*Clip Export Download Progress*/
+
+.pageheadertitle {
+    min-width: 200px;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.downloadProgressMenu + sup {
+    top: -15px;
+    z-index: 100;
+    left: -16px;
+}
+
+@media print {
+    #logo {
+        background-image: url(../images/logo.png) !important;
+    }
+
+    #page-header {
+        background: linear-gradient(to right, #052c56, #0170ac 25%, #0199c8) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #052c56), color-stop(1, #0199c8)) !important;
+        width: 100%;
+        min-width: 100%;
+        position: absolute;
+    }
+
+    .pageheadertitle {
+        color: #fff !important;
+    }
+
+    #navigation-menu .navbar .nav > li a[href]:after {
+        content: '' !important;
+    }
+}

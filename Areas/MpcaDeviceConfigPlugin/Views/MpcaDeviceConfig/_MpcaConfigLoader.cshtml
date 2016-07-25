@@ -1,0 +1,24 @@
+﻿<div>
+    <div data-accounttype="MPCADEVICECONFIG" class="settingsform">
+        @Html.Partial("_MpcaDeviceConfiguration")
+    </div>
+    <div data-accounttype="MPCACAMERACONFIG" class="settingsform">
+        @Html.GetPlugin("MpcaCameraConfig")
+    </div>
+    <div data-accounttype="MPCAOUTPUTCONFIG" class="settingsform">
+        @Html.Partial("_MpcaOutputsetting")
+    </div>
+    <div data-accounttype="MPCAINPUTCONFIG" class="settingsform">
+        @Html.Partial("_MpcaInputSetting")
+    </div>
+    <div data-accounttype="MPCASTORAGECONFIG" class="settingsform">
+        @Html.Partial("_MpcaStorageConfig")
+    </div>
+</div>
+@Scripts.Render("~/Scripts/MpcaDeviceConfigPlugin/toggle.js")
+
+@*@{#if DEBUG}
+@Scripts.Render("~/Scripts/MpcaDeviceConfigPlugin/toggle.js")
+@{#else}
+@Scripts.Render("~/bundles/MpcaDeviceConfigPluginscript1")
+@{#endif}*@

@@ -1,0 +1,110 @@
+﻿<html lang="en">
+<head>
+    <title>Aidez-Moi</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Configurer les entrées pour NetAXS-123</h3>
+        <h4 class="subtitle">Pour configurer les paramètres d'entrée :</h4>
+        <ol>
+            <li>dans l'espace tableau de bord MPC, cliquez sur l'onglet <strong>Créer et modifier</strong>. La page <strong>CRÉER ET MODIFIER</strong> apparaît.</li>
+            <li>Dans le volet gauche, sélectionnez le site et cliquez sur le périphérique correspondant ajouté au site.</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">Remarque :</h4>
+                <p>avant de modifier les paramètres de périphérique, assurez-vous d'enregistrer les périphériques dans le cloud.</p>
+            </div>
+            <li>Dans le volet gauche, cliquez sur <i class="netaxs-icon"></i>l'icône correspondant au périphérique NetAXS-123 pour afficher toutes les portes disponibles.</li>
+            <li>Double-cliquez sur la porte souhaitée pour afficher toutes les entrées associées. La page <strong>Paramètres</strong> apparaît.</li>
+            <li>Entrez les informations demandées dans les champs suivants :</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">Champ</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nom d'entrée
+                        </td>
+                        <td>Entrez un nom unique pour identifier les entrées de porte.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zone horaire de shunt</td>
+                        <td>Spécifie la période pendant laquelle l'entrée sera ignorée.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bloquer la période d'enclenchement
+                        </td>
+                        <td>Vous permet de bloquer la période d'enclenchement ou l'interaction programmée entre deux points. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Désactiver des alarmes et des événements
+                        </td>
+                        <td>Spécifie la période pendant laquelle les alarmes et les événements ne seront pas rapportés.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Période de shunt
+                        </td>
+                        <td>Spécifie la durée pendant laquelle les entrées seront shuntées ou désactivées.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Temps de réponse
+                        </td>
+                        <td>Spécifie la période pendant laquelle l'entrée doit rester dans son état avant de générer une alarme.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normalement
+                        </td>
+                        <td>
+                            <strong>Normalement fermé</strong> - Spécifie que l'état normal de l'entrée est fermé (par défaut).<>
+						<strong>Normalement ouvert</strong> - Spécifie que l'état normal de l'entrée est ouvert.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Surveillé
+                        </td>
+                        <td>Spécifie que le circuit électrique de l'entrée est raccordé à des voies alternatives surveillées par des résistances électriques.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reverrouillage automatique
+                        </td>
+                        <td>Provoque le reverrouillage automatique de la porte lorsque le commutateur d'état de celle-ci se ferme après l'entrée. Le relais de sortie, qui commande la gâche de la porte, est désactivé lorsque l'entrée associée retourne à son état normal au lieu de rester sous tension pendant la durée de l'impulsion.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interverrouillage
+                        </td>
+                        <td>Vous permet de désactiver l'interverrouillage ou l'interaction programmée entre deux points. En cas d'activation, ce point ignore toutes les actions d'interverrouillage sur lui.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>Précédent</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>Modifier les paramètres du périphérique</a>
+        </p>
+    </div>
+</body>
+</html>
+

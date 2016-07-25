@@ -1,0 +1,507 @@
+﻿/*mpca Device Output*/
+.mpcaOutput-table {
+    display: table;
+        -ms-overflow-y: scroll;
+        overflow-y: scroll;
+
+    width: 94%;
+    height: 100%;
+    position: absolute;
+    color: #707070;
+    top: 0;
+    margin: 0px 24px 0px 0px;
+    border-top: 1px solid #bababa;
+}
+
+    .mpcaOutput-table > thead tr {
+        /*-webkit-box-shadow: -2px 0 2px 2px #000;
+-moz-box-shadow: -2px 0 2px 2px #000;
+box-shadow: -2px 0 2px 0 #000;*/
+        border-bottom: 1px solid #bababa;
+        float: left;
+        width: 100%;
+    }
+
+    .mpcaOutput-table > thead th {
+        border-right: 1px solid #d3d3d3;
+        font-size: 14px;
+        border-bottom: none;
+        background-color: #fff;
+        vertical-align: middle;
+        font-weight: 400;
+    }
+
+        .mpcaOutput-table > thead th:first-child {
+            border-left: none;
+        }
+
+        .mpcaOutput-table > thead th:last-child {
+            border-right: none;
+        }
+
+    .mpcaOutput-table > tbody {
+        width: 100%;
+        position: absolute;
+        overflow: auto;
+        bottom: 12px;
+        top: 44px;
+        height: auto;
+    }
+
+@-moz-document url-prefix() {
+    .mpcaOutput-table > tbody {
+        top: 44px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .mpcaOutput-table > tbody {
+        top: 44px;
+    }
+}
+
+.mpcaOutput-table tbody tr {
+    width: 100%;
+    padding: 8px 0 12px 0;
+    display: inline-block;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.mpcaOutput-table > tbody tr td {
+    font-size: 14px;
+    border: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-word-wrap: break-word;
+   -moz-word-wrap: break-word;
+    -ms-word-wrap: break-word;
+     -o-word-wrap: break-word;
+        word-wrap: break-word;
+
+    padding-bottom: 0;
+    padding-top: 1px;
+    vertical-align: middle;
+    vertical-align: middle\9;
+}
+
+.mpcaOutput-table td:nth-child(1), .mpcaOutput-table th:nth-child(1) {
+    min-width: 230px;
+}
+
+.mpcaOutput-table td:nth-child(2), .mpcaOutput-table th:nth-child(2) {
+    min-width: 100px;
+}
+
+.mpcaOutput-table td:nth-child(3), .mpcaOutput-table th:nth-child(3) {
+    min-width: 100px;
+}
+
+.mpcaOutput-table td:nth-child(4), .mpcaOutput-table th:nth-child(4) {
+    min-width: 60px;
+}
+
+.mpcaOutput-table td:nth-child(5), .mpcaOutput-table th:nth-child(5) {
+    min-width: 60px;
+}
+
+.mpcaOutput-table td:nth-child(6), .mpcaOutput-table th:nth-child(6) {
+    min-width: 50px;
+}
+
+.mpcaOutput-table td:nth-child(7), .mpcaOutput-table th:nth-child(7) {
+    min-width: 100px;
+}
+
+.mpcaOutput-table td:nth-child(2) {
+    padding-left: 5px;
+}
+
+.mpcaOutput-table td:nth-child(3), .mpcaOutput-table td:nth-child(6) {
+    padding-left: 8px;
+}
+
+.mpcaOutput-table th, .mpcaOutput-table td {
+    padding: 11px 10px;
+}
+
+.mpcaOutput-table tbody td, .mpcaOutput-table thead th /*, .left*/ {
+    /*float: left;*/
+    display: inline-block;
+}
+
+
+.mpcaOutput-table .mpcaTableButton {
+    border: 1px solid #bababa;
+    -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
+        border-radius: 4px;
+/* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    padding-left: 14px;
+    padding-right: 14px;
+    display: inline-block;
+    text-align: center;
+    height: 22px;
+    cursor: pointer;
+    color: #707070;
+}
+
+.mpcaOutput-table .field {
+    width: 53px;
+    padding: 0;
+    border: none;
+    margin: 0;
+    border: 1px solid #bababa;
+    -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
+        border-radius: 4px;
+/* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    height: 22px;
+    min-height:21px;
+}
+
+    .mpcaOutput-table .field select {
+        width: 41px;
+        height: auto;
+        padding: 0 !important;
+        margin-left: 7px;
+        margin-top:-5px;
+        /*margin: 8px 0 0 2px;*/
+    }
+
+.mpcaOutput-table .outputNameField {
+    border: none;
+    cursor: default;
+    width: 175px;
+    padding: 0;
+    margin: 0;
+    color: #0889c4;
+}
+
+/*Trigger Popover*/
+.triggerPopoverStyle .popover {
+    width: 250px;
+    height: 299px;
+}
+
+.triggerPopoverStyle .popover-content {
+    min-height: 248px;
+}
+
+.triggerPopoverStyle .selectTriggerContainer ul {
+    height: 180px;
+    margin: 0px !important;
+        -ms-overflow-x: hidden;
+        overflow-x: hidden;
+
+}
+
+
+.triggerPopoverStyle .selectTriggerContainer label {
+    top: 17px !important;
+    height: 10px;
+}
+
+.triggerPopoverStyle .selectTriggerContainer legand {
+    padding-left: 29px !important;
+    font-size: 15px;
+    position: relative;
+    color: #BABABA;
+    display: block;
+}
+
+.triggerPopoverStyle .selectTriggerContainer ul li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 2px 0px 12px 21px;
+}
+
+    .triggerPopoverStyle .selectTriggerContainer ul li:hover {
+        background-color: #454545;
+    }
+
+    .triggerPopoverStyle .selectTriggerContainer ul li b {
+        top: -7px;
+    }
+
+.triggerPopoverStyle .selectTriggerContainer .buttonGroup {
+    border-top-color: #454545;
+    padding: 14px 24px 24px 24px;
+}
+
+    .triggerPopoverStyle .selectTriggerContainer .buttonGroup .primary-button {
+        margin: 0px;
+    }
+
+.triggerPopoverStyle .selectTriggerContainer .triggerDoneBtn {
+    padding: 14px 24px 24px 24px;
+    border-top: 1px solid #454545;
+}
+
+.triggerPopoverStyle .selectTriggerContainer .triggerDivider {
+    border-bottom: 1px solid #454545;
+  height: 1px;
+  position: relative;
+  width: 226px;
+  display: block;
+  top: 13px;
+}
+
+.triggerPopoverStyle .selectTriggerContainer ul li:last-child .triggerDivider{
+    display:none;
+}
+
+.triggerPopoverStyle .popover.bottom .arrow {
+    top: -9px !important;
+    /*margin-left: -3px !important;*/
+}
+/*Trigger Popover*/
+
+/*VMD Popover*/
+.VMDPopoverStyle .popover {
+    width: 250px;
+    height: 299px;
+}
+
+.VMDPopoverStyle .popover-content {
+    min-height: 248px;
+}
+
+.VMDPopoverStyle .selectVMDContainer ul {
+    height: 180px;
+    margin: 0px !important;
+    overflow-x: hidden;
+}
+
+
+.VMDPopoverStyle .selectVMDContainer label {
+    top: 17px !important;
+    height: 10px;
+}
+
+.VMDPopoverStyle .selectVMDContainer legand {
+    padding-left: 29px !important;
+    font-size: 15px;
+    position: relative;
+    color: #BABABA;
+    display: block;
+}
+
+.VMDPopoverStyle .selectVMDContainer ul li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 2px 0px 12px 21px;
+}
+
+    .VMDPopoverStyle .selectVMDContainer ul li:hover {
+        background-color: #454545;
+    }
+
+    .VMDPopoverStyle .selectVMDContainer ul li b {
+        top: -7px;
+    }
+
+.VMDPopoverStyle .selectVMDContainer .buttonGroup {
+    border-top-color: #454545;
+    padding: 14px 24px 24px 24px;
+}
+
+    .VMDPopoverStyle .selectVMDContainer .buttonGroup .primary-button {
+        margin: 0px;
+    }
+
+.VMDPopoverStyle .selectVMDContainer .VMDDoneBtn {
+    padding: 14px 24px 24px 24px;
+    border-top: 1px solid #454545;
+}
+
+.VMDPopoverStyle .selectVMDContainer .VMDDivider {
+  border-bottom: 1px solid #454545;
+  height: 1px;
+  position: relative;
+  width: 226px;
+  display: block;
+  top: 13px;
+}
+
+.VMDPopoverStyle .selectVMDContainer ul li:last-child .VMDDivider{
+    display:none;
+}
+
+.VMDPopoverStyle .popover.bottom .arrow {
+    top: -9px !important;
+    /*margin-left: -3px !important;*/
+}
+
+/*VMD Popover*/
+
+/*#outputevntrecwrapper .primary-button, #inputevntrecwrapper .primary-button {
+    margin-left: 22px;
+}*/
+
+/*mpca Device Output*/
+
+
+/*toggle switch*/
+.mpcaOutput-table .switch_options {
+    display: block;
+    /*margin-bottom: 10px;*/
+    background-color: #bababa;
+    /*  border: 1px solid #0889c4;*/
+    -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
+        border-radius: 4px;
+/* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    width: 100px;
+}
+
+ .mpcaOutput-table .switch_options:before,
+ .mpcaOutput-table .switch_options:after {
+        content: '.';
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
+        font-size: 0;
+        line-height: 0;
+        width: 0;
+        height: 0;
+    }
+
+.mpcaOutput-table .switch_options:after {
+        clear: both;
+    }
+
+.mpcaOutput-table .switch_options span {
+        display: inline-block;
+        float: left;
+        /*padding: 1px 13px;*/
+        margin: 0;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: normal;
+        color: #9d9d9d;
+        /*text-transform: uppercase;*/
+        background: #fff;
+        border: 1px solid #bababa;
+        -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+     -o-border-radius: 2px;
+        border-radius: 2px;
+/* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        width: 48px;
+        text-align: center;
+        height: 21px;
+        padding-top: 1px;
+    }
+
+
+        /* Active option */
+   .mpcaOutput-table .switch_options span.selected {
+            background: #0889c4;
+            border-color: #fff;
+            color: #fff;
+            /*  border-radius: 4px;*/
+            border-color: #0889c4;
+            pointer-events: none;
+        }
+
+
+    .mpcaOutput-table .switch_options.switch_option_green span.selected {
+        background: #3BAD49;
+        border-color: #3BAD49;
+    }
+
+    .mpcaOutput-table .switch_options.switch_option_green .switch_disable.redColor.selected {
+        background: #E33E38 !important;
+        border-color: #E33E38 !important;
+    }
+/*toggle switch*/
+
+/*Error*/
+
+
+ .mpcaOutput-table .icon-fieldError {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -250px -10px;
+    /* right: 0; */
+    top: -20px;
+    margin-left: 246px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mpcaOutput-table .showerror {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
+        border-radius: 4px;
+/* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    padding: 10px 16px 10px 16px;
+    position: relative;
+    width: 281px;
+    margin-top: 10px;
+    left: 13px;
+    color: #707070;
+    display: none;
+}
+
+.mpcaOutput-table .errorColor {
+    color: #E33E38 !important;
+    display: block;
+}
+
+.mpcaOutput-table .showerror:after {
+    border-bottom: 7px solid #FFFFFF;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 64px;
+    position: absolute;
+    top: -7px;
+}
+
+.mpcaOutput-table .showerror:before {
+    border-bottom: 8px solid #bababa;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 62px;
+    position: absolute;
+    top: -8px;
+}
+
+.mpcaOutput-table .mpcainputError{
+    height:0px;
+    position:absolute;
+}
+
+.mpcaOutput-table .fieldError {
+    position: absolute;
+}
+
+/*Error*/
+/*Output duration alignment for ff and ie*/
+@-moz-document url-prefix() {
+    .mpcaOutput-table .field select{
+    margin-top:0px;
+}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .mpcaOutput-table .field select {margin-top:0px;}
+}
+/*Output duration alignment for ff and ie*/

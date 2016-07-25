@@ -1,0 +1,279 @@
+﻿<html>
+<head>
+    <title>Guida</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Per configurare la telecamera in HRRH8</h3>
+        <h4 class="subtitle">Per configurare le impostazioni della telecamera:</h4>
+        <ol>
+            <li>Nell’area Dashboard MPC, fare clic sulla scheda <strong>Crea & Modifica</strong>. Viene visualizzata la pagina <strong>CREA E MODIFICA</strong>.</li>
+			<li>Nel riquadro di sinistra, selezionare il sito, quindi fare clic sul dispositivo pertinente aggiunto al sito.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>Prima di modificare le impostazioni del dispositivo, verificare di registrare i dispositivi su cloud.</p>
+			</div>
+			<li>Nel riquadro di sinistra, fare clic <i class="camred-icon"></i> sull’icona corrispondente al dispositivo HRRH8 per espandere e visualizzare tutte le telecamere disponibili.</li>
+			<li>Fare doppio clic sulla telecamera richiesta. Viene visualizzata la pagina <strong>Impostazioni</strong>.</li>
+			<li>Inserire i dettagli registrati nei seguenti campi.</li>
+				<ul>
+					<li>Sotto la voce <strong>Configura</strong></li>
+                 </ul>
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descrizione</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Stato della telecamera
+                    </td>
+                    <td>
+                        Fare clic su <strong>Attiva</strong> per attivare lo stato della telecamera.<>
+&#8232;						Or<>
+&#8232;						Fare clic su <strong>Disattiva</strong> per disattivare lo stato della telecamera.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Nome telecamera
+					</td>
+                    <td>
+                        Inserire un nome per la telecamera.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                       Tipo di telecamera 
+					</td>
+                    <td>
+                       Dall’elenco a discesa, selezionare il tipo di telecamera.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Seleziona Telecamera IP scoperta
+  					</td>
+                    <td>
+                        Dall’elenco a discesa, selezionare la telecamera IP richiesta.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                       Modello di telecamera
+					</td>
+                    <td>
+                        Dall’elenco a discesa, selezionare il modello di telecamera.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        URL RTSP
+					</td>
+                    <td>
+                        Inserire l’URL della rete RTSP (Real Time Streaming Protocol).
+					</td>
+                </tr>
+				 <tr>
+                    <td>
+                        Nome utente
+					</td>
+                    <td>
+                        Inserire il nome utente per accedere all’URL del dispositivo MPC.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Comando password
+					</td>
+                    <td>
+                        Inserire la password per accedere all’URL del dispositivo MPC.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Riproduci
+					</td>
+                    <td>
+                        Fare clic <i class="play-icon"></i> sull’icona per riprodurre il clip disponibile nella telecamera selezionata.
+   					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Associazioni
+					</td>
+                    <td>
+                       Fare clic per associare una telecamera a qualsiasi porta. Ad esempio quando si verifica qualsiasi evento sulla porta, ad esempio tessera trovata, la telecamera inizia a registrare il video.
+					</td>
+                </tr>	
+				
+				<tr>
+                    <td colspan="2">
+                        <strong>REGISTRAZIONE DELLA DURATA DEL CLIP</strong>
+   					</td>
+                </tr>		
+
+				<tr>
+                    <td>
+                        Pre-evento
+   					</td>
+                    <td>
+                       Fare clic sull’ora per impostare la lunghezza di registrazione del cip prima che il movimento venga rilevato dalla telecamera.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Post-evento interno
+					</td>
+                    <td>
+                       Fare clic sull’ora per impostare la lunghezza di registrazione del cip dopo che il movimento viene rilevato dalla telecamera che si trova sul posto.
+ 
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                        Post-evento esterno
+					</td>
+                    <td>
+                       Fare clic sull’ora per impostare la lunghezza di registrazione del cip dopo che il movimento viene rilevato dalla telecamera che si trova non sul posto.
+
+					</td>
+                </tr>	
+				<tr>
+                    <td colspan="2">
+                        <strong>IMPORTAZIONE REGISTRAZIONE / DIRETTA</strong>
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Frequenza fotogrammi
+					</td>
+                    <td>
+                       Dall’elenco a discesa, selezionare la frequenza (velocità) alla quale la telecamera produce immagini consecutive uniche chiamate frame.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Risoluzione telecamera
+					</td>
+                    <td>
+                       Dall’elenco a discesa, selezionare la risoluzione della telecamera. Si riferisce al numero totale di pixel nell’immagine di una telecamera digitale.
+					</td>
+                </tr>	
+				<tr>
+                    <td>
+                       Qualità telecamera
+					</td>
+                    <td>
+                       Dall’elenco a discesa, selezionare la qualità della telecamera.
+					</td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <img src="../../Content/images/progress_bar.jpg">
+					</td>
+                </tr>				
+            </tbody>
+        </table>
+            <ul>
+                <li>Sotto la voce <strong>Registrazione evento</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Campo</td>
+                            <td>Descrizione</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Registra su
+                            </td>
+                            <td>
+                                Dall’elenco dei dispositivi di avvio disponibili, selezionare il punto di avvio richiesto nel momento in cui dovrebbe iniziare la registrazione.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Sotto la voce <strong>Registrazione Continua</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Campo</td>
+                            <td>Descrizione</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Orario di registrazione continua
+                            </td>
+                            <td>
+                                Dall’elenco dei programmi disponibili, selezionare il periodo richiesto durante il quale viene attivata la registrazione continua.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            <ul>
+                <li>Sotto la voce <strong>Registrazione movimento</strong></li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="col-equal">Campo</td>
+                            <td>Descrizione</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Abilita registrazione movimenti
+                            </td>
+                            <td>
+                                Selezionare per avviare la registrazione del movimento.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Tempo di tenuta
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Orario registrazione movimenti
+                            </td>
+                            <td>
+                                Dall’elenco dei programmi disponibili, selezionare il periodo richiesto durante il quale viene attivata la registrazione movimento.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            <ul>
+                <li>Fare clic su <strong>Salva</strong>.</li>
+                </ul>
+</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Precedente</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Modifica Impostazioni Dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

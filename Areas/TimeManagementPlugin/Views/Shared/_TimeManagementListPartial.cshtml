@@ -1,0 +1,25 @@
+﻿<div id="timeManagement" class="row formcontrol timemanagement-root">
+    <ul class="nav nav-tabs">
+        <li data-url="/SchedulesList">
+            <a href="#" data-toggle="tab">@Resources.ScheduleList</a>
+        </li>
+        <li data-url="/HolidayList">
+            <a href="#" data-toggle="tab">@Resources.HolidayList</a>
+        </li>
+        @*<li data-url="/DayLightSavingTimeList">
+            <a href="#" data-toggle="tab">@Resources.DSTList</a>
+        </li>*@
+    </ul>
+    <div class="link-tab-content"></div>
+    <input type="hidden" id="timeManagementUrl" value="@Url.Action("", "TimeManagement")" />
+</div>
+
+@Styles.Render("~/Content/TimeManagementPlugin/TimeManagement.css")
+@Scripts.Render("~/bundles/TimeManagementPluginscript1")
+@*@Scripts.Render(
+                "~/Scripts/TimeManagementPlugin/time-management-common.js",
+               "~/Scripts/TimeManagementPlugin/time-input.js",
+               "~/Scripts/TimeManagementPlugin/time-zone.js",
+               "~/Scripts/TimeManagementPlugin/time-management-list-view.js",
+                "~/Scripts/TimeManagementPlugin/timeManagementEventManager.js"
+            )*@

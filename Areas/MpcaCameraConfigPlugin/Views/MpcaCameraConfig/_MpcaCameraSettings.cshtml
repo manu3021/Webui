@@ -1,0 +1,166 @@
+﻿    <div id="camerasettingswrapper" data-playerimage='@Url.Content("~/Content/images/Honeywell_Blank_220.png")' class="formcontrol layoutcol cameraconfigformwrapper">
+    <form id="mpcaCamerasetting" class="Camera_setting" data-validationkey="Camera">
+        <ul class="camerampcform-grid col firstgrid" data-bind="css: { border: !$root.IsDisabled() }">
+            <li>
+                <div class="mpcaToggleSwitch">
+                    <label for="mpcacameraname" class="floatLblDn">@Resources.mpcaCam_camstate</label>
+                    <div class="switch_options switch_option_no_nc">
+                        <span class="switch_enable">@Resources.mpcaCam_enable</span>
+                        <span class="switch_disable">@Resources.mpcaCam_disable</span>
+                        <input type="hidden" class="switch_val" data-bind="value: $root.enabledisableval, fireInputChange: true">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="camerampcform-grid col border firstgrid scroll-y secondSectionConfig" data-bind="visible: !$root.IsDisabled()">
+            <li>
+                <div class="field spaceBottomStyle">
+                    <label for="mpcacameraname" class="floatLblDn">@Resources.mpcaCam_Setting_CamNm</label>
+                    <input id="mpcacameraname" class="floatTxt myStyle" name="mpcacameraname" type="text" data-bind="value: $data.Name">
+                </div>
+            </li>
+            <li>
+                <div class="field spaceBottomStyle select-field">
+                    <label for="mpcacameratype" class="floatLblDn">@Resources.mpcaCam_Setting_CamTyp</label>
+                    <select id="mpcacameratype" name="mpcacameratype" tabindex="-1" data-bind="options: $data.cameratypevalues, optionsText: 'Value', value: $data.SelectedCameraType"></select>
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsIPCamera">
+                <div class="field spaceBottomStyle select-field">
+                    <label for="mpcacameracameraDiscovered" class="floatLblDn">@Resources.mpcaCam_Setting_SlDsIpCam</label>
+                    <select id="mpcacameracameraDiscovered" name="mpcacameracameraDiscovered" tabindex="-1" data-bind="options: $data.discoveredcameras, optionsText: 'DeviceName', value: $data.SelectedDiscoverCamera, optionsCaption: 'None'"></select>
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsIPCamera">
+                <div class="field spaceBottomStyle select-field">
+                    <label for="mpcacameramodel" class="floatLblDn">@Resources.mpcaCam_Setting_CamMdl</label>
+                    <select id="mpcacameramodel" name="mpcacameramodel" tabindex="-1" data-bind="options: $data.streamentities, optionsText: 'model',value: $data.SelectedModel"></select>
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsIPCamera">
+                <div class="field spaceBottomStyle">
+                    <label for="mpcacamerartsp" class="floatLblDn">@Resources.mpcaCam_Setting_RtspUrl</label>
+                    <input id="mpcacamerartsp" class="floatTxt myStyle" name="mpcacamerartsp" type="text" data-bind="value: $data.RTSPUrl">
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsIPCamera">
+                <div class="field spaceBottomStyle">
+                    <label for="mpcacamerausername" class="floatLblDn">@Resources.mpcaCam_Setting_UsrNm</label>
+                    <input id="mpcacamerausername" class="floatTxt myStyle" name="mpcacamerausername" type="text" data-bind="value: $data.Username">
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsIPCamera">
+                <div class="field spaceBottomStyle">
+                    <label for="mpcacamerapassword" class="floatLblDn">@Resources.mpcaCam_Setting_pwd</label>
+                    <input id="mpcacamerapassword" class="floatTxt myStyle" name="mpcacamerapassword" type="password" data-bind="value: $data.PasswordField">
+                </div>
+            </li>
+            <li data-bind="visible: $data.IsAnalog">
+                <div class="field spaceBottomStyle select-field">
+                    <label for="mpcacameraAlgInp" class="floatLblDn">@Resources.mpcaCam_Setting_AnlgInp</label>
+                    <select id="mpcacameraAlgInp" name="mpcacameraAlgInp" tabindex="-1" data-bind="options: $data.analogslots, optionsText: 'Value', value: $data.SelectedAnalogSlot"></select>
+                </div>
+            </li>
+        </ul>
+        <div class="rightcontainer scroll-y" data-bind="visible: !$root.IsDisabled()">
+            <ul class="col secondgrid livepreview">
+                <li>
+                    <div class="stitched">
+                        <div class="playHolder" id="PlayerId">
+                            <b class="icon_player" data-bind="click: $root.PanelModel().getPlayClickdetails"></b>
+                            <span class="playText">@Resources.Mpca_Play</span>
+                            <div class="playercontainer" data-bind="visible:$root.PanelModel().issuccess"></div>
+                            <div id="panelRequestLive" data-bind="visible:$root.PanelModel().iscustomimage() && $root.PanelModel().isshow()">
+                                <i class="loading-icon"></i>
+                                <i class="close-icon" data-bind="click:$root.PanelModel().closepanel"></i>
+                                <span class="videoError" data-bind="text:$root.PanelModel().erromessage"> </span>
+                            </div>
+                            <div class="videoErrorTextStyle" data-bind="visible:$root.PanelModel().isError()">
+                                <i class="close-icon" data-bind="click:$root.PanelModel().closepanel"></i>
+                                <span class="videoErrorImage"></span>
+                                <span class="videoErrorText" data-bind="text:$root.PanelModel().erromessage"></span>
+                                <span class="tryAgainStyle" data-bind="click:$root.PanelModel().Retryvideostream"><i class="icon_tryagain"></i>@Resources.Try_Again</span>
+                            </div>
+                            <div data-bind="visible:$root.PanelModel().issuccess() && $root.PanelModel().isshow()">
+                                <i class="close-icon" data-bind="click:$root.PanelModel().closepanel,visible:$root.PanelModel().isclosevisible() && $root.PanelModel().isshow()"></i>
+                                <span class="textOnVideoLeft" data-bind="text:$root.PanelModel().sessionmodel.cameraname"> </span>
+                            </div>
+                        </div>
+                        <button role="button" class="secondary-button assobtn" data-toggle="modal" data-bind="click: $data.showassociate, text: $data.associationtext"></button>
+                    </div>
+                </li>
+            </ul>
+            <ul class="col thirdgrid">
+                <li>
+                    <ul>
+                        <li><span class="colHeading">@Resources.mpcaCam_Setting_RecClpDur</span></li>
+                        <li>
+                            <div class="field spaceBottomStyle spinner-control">
+                                <label for="mpcacameraRCDPreEvnt" class="floatLblDn">@Resources.mpcaCam_Setting_PreEvnt</label>
+                                <input id="mpcacameraRCDPreEvnt" class="floatTxt myStyle valid" size="4" name="mpcacameraRCDPreEvnt" type="number" data-bind="spinnerValue: $data.SelectedPreEvent, spinnerOptions: {min: $data.MinPreEvent, max: $data.MaxPreEvent}, event: { change: $data.IsPreEventInRange, keypress: $data.IsNumber }">
+                                <div class="secLabel">@Resources.mpcaCam_Setting_Secs</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="field spaceBottomStyle spinner-control">
+                                <label for="mpcacameraRCDOnsPstEvnt" class="floatLblDn">@Resources.mpcaCam_Setting_OnstPstEvnt</label>
+                                <input id="mpcacameraRCDOnsPstEvnt" class="floatTxt myStyle valid" size="4" name="mpcacameraRCDOnsPstEvnt" type="number" data-bind="spinnerValue: $data.SelectedOnsitePostEvent, spinnerOptions: {min: $data.MinOnsitePostEvent, max: $data.MaxOnsitePostEvent}, event: { change: $data.IsOnsitePostEventInRange, keypress: $data.IsNumber }">
+                                <div class="secLabel">@Resources.mpcaCam_Setting_Secs</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="field spaceBottomStyle spinner-control">
+                                <label for="mpcacameraRCDOffPstEvnt " class="floatLblDn">@Resources.mpcaCam_Setting_OfstPstEvnt</label>
+                                <input id="mpcacameraRCDOffPstEvnt" class="floatTxt myStyle valid" size="4" name="mpcacameraRCDOffPstEvnt" type="number" data-bind="spinnerValue: $data.SelectedOffsitePostEvent, spinnerOptions: {min: $data.MinOffsitePostEvent, max: $data.MaxOffsitePostEvent}, event: { change: $data.IsOffsitePostEventInRange, keypress: $data.IsNumber }">
+                                <div class="secLabel">@Resources.mpcaCam_Setting_Secs</div>
+                            </div>
+                        </li>
+                    </ul>
+                    </
+                </li>
+                <li data-bind="visible: $data.IsAnalog">
+                    <ul class="downlist-item">
+                        <li><span class="colHeading">@Resources.mpcaCam_Setting_RecSetg</span></li>
+                        <li>
+                            <div class="field spaceBottomStyle select-field">
+                                <label for="mpcacameraRecFPS" class="floatLblDn">@Resources.mpcaCam_Setting_Fps</label>
+                                <select id="mpcacameraRecFPS" name="mpcacameraRecFPS" tabindex="-1" data-bind="options: $data.recfpsvalues, optionsText: 'Value',value: $data.SelectedRecFPS"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="field spaceBottomStyle select-field">
+                                <label for="mpcacameraRecQuality" class="floatLblDn">@Resources.mpcaCam_Setting_CamQlty</label>
+                                <select id="mpcacameraRecQuality" name="mpcacameraRecQuality" tabindex="-1" data-bind="options: $data.recqualityvalues, optionsText: 'Value',value: $data.SelectedRecQuality"></select>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="downlist-item">
+                        <li><span class="colHeading" data-bind="visible: $data.IsAnalog">@Resources.LIVE_SETTING</span></li>
+                        <li><span class="colHeading" data-bind="visible: $data.IsIPCamera">@Resources.LIVE_or_RECORD_SETTING</span></li>
+                        <li>
+                            <div class="field spaceBottomStyle select-field">
+                                <label for="mpcacameraFPS" class="floatLblDn">@Resources.mpcaCam_Setting_Fps</label>
+                                <select id="mpcacameraFPS" name="mpcacameraFPS" tabindex="-1" data-bind="options: $data.fpsvalues, optionsText: 'Value',value: $data.SelectedFPS"></select>
+                            </div>
+                        </li>
+                        <li data-bind="visible: $data.IsIPCamera">
+                            <div class="field spaceBottomStyle select-field">
+                                <label for="mpcacameraResolution" class="floatLblDn">@Resources.mpcaCam_Setting_CamRes</label>
+                                <select id="mpcacameraResolution" name="mpcacameraResolution" tabindex="-1" data-bind="options: $data.resolutionvalues, optionsText: 'Value',value: $data.SelectedResolution"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="field spaceBottomStyle select-field">
+                                <label for="mpcacameraQuality" class="floatLblDn">@Resources.mpcaCam_Setting_CamQlty</label>
+                                <select id="mpcacameraQuality" name="mpcacameraQuality" tabindex="-1" data-bind="options: $data.qualityvalues, optionsText: 'Value',value: $data.SelectedQuality, disable: $data.IsDisableQuality"></select>
+                            </div>
+                        </li>                       
+                    </ul>
+                </li>
+            </ul>
+        </div>
+       
+    </form>
+</div>

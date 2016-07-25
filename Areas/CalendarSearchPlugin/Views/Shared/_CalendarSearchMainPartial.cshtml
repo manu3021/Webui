@@ -1,0 +1,29 @@
+﻿<div class="calendar-root">
+    @{
+        Html.RenderAction("CalendarSearchView");
+    }
+
+    @{
+        Html.RenderAction("ClipExport");
+    }
+</div>
+
+<input type="hidden" id="calendarSearchUrl" value="@Url.Action("", "CalendarSearch")" />
+@*@Styles.Render("~/Content/CalendarSearchPlugin/css1")*@
+
+@*<link href="~/Content/CalendarSearchPlugin/calendar-search-layout.css" rel="stylesheet" />
+<link href="~/Content/TreeviewPlugin/treesprite.css" rel="stylesheet" />
+<link href="~/Content/CalendarSearchPlugin/toggle.css" rel="stylesheet" />
+<link href="~/Content/Styles/appicons.css" rel="stylesheet" />
+<link href="~/Content/CalendarSearchPlugin/fullcalendar.css" rel="stylesheet" />*@
+
+@*@Scripts.Render("~/bundles/CalendarSearchPluginscript1")*@
+<script src="~/Scripts/CalendarSearchPlugin/mpc.fullcalendar.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/ko.fullcalendar.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch-common.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch-model.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch-validationcontext.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch-datacontext.js"></script>
+<script src="~/Scripts/CalendarSearchPlugin/calendarsearch-uicontext.js"></script>
+

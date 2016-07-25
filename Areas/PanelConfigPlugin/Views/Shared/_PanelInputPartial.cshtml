@@ -1,0 +1,145 @@
+﻿<form id="netaxs_input_config_form">
+    <div class="row">
+        <div class="content-panel inputBodyScrollFix">
+            <div class="pull-left">
+                <div class="field">
+                    <label class="floatLblDn">@Resources.Input_Name</label>
+                    <input type="text" name="input_Name" id="input_Name" maxlength="25" data-bind="value: $data.model.Name" class="floatTxt myStyle">
+                </div>
+            </div>
+            <div class="pull-left clear-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Input_ShuntTimezone</label>
+                    <select name="input_ShuntTimeZone" id="input_ShuntTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.ShuntTimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Input_Block_Interlock_Timezone</label>
+                    <select name="input_InterlockDisableTimeZone" id="input_InterlockDisableTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.InterlockDisableTimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field select-field">
+                    <label class="floatLblDn">@Resources.Input_Disable_AlarmsAndEvents</label>
+                    <select name="input_SilenceTimeZone" id="input_SilenceTimeZone" data-bind="options: $data.schedules, optionsText: 'Name', optionsValue: 'Id', value: $data.model.SilenceTimeZone"></select>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="bootstrap-timepicker field">
+                    <label class="floatLblDn">@Resources.Input_ShuntTime</label>
+                    <input type="text" name="input_ShuntTime" id="input_ShuntTime" data-bind="value: $data.model.ShuntTime" class="floatTxt myStyle">
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="field spinner-control">
+                    <label class="floatLblDn">@Resources.Input_DebounceTime</label>
+                    <input type="number" name="input_DebounceTime" id="input_DebounceTime" min="0" max="6553.5" step="0.1" size="4" class="floatTxt myStyle"
+                           data-bind="spinnerValue: $data.model.DebounceNormalTime" />
+                </div>
+
+            </div>
+            <div class="pull-left clear-left">
+                <div class="spaceBottomStyle toggle-group tgglBottomFix">
+                    <label class="floatLblDn">@Resources.Input_State</label>
+                    <div>
+                        <span class="switch-toggle switch-ios">
+                            <input id="NormallyOpen" name="DefaultState" value="1" type="radio" data-bind="checked: $data.model.IsNormallyOpen, click: $data.model.IsNormallyOpenClicked">
+                            <label for="NormallyOpen">@Resources.Input_State_Open</label>
+                            <input id="NormallyClose" name="DefaultState" value="0" type="radio" data-bind="checked: $data.model.IsNormallyOpen, click: $data.model.IsNormallyOpenClicked">
+                            <label for="NormallyClose">@Resources.Input_State_Close</label>
+                            <a></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left checkboxWidthFix">
+                <div class="spaceBottomStyle">
+                    <label class="formControl-checkbox">
+                        <input type="checkbox" class="checkbox" name="input_IsSupervised" id="input_IsSupervised" data-bind="checked: $data.model.IsSupervised" />
+                        <span>@Resources.Input_Supervised</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pull-left content-panel-select-box">
+                <div class="spaceBottomStyle field select-field notRequiredStyle">
+                    <label class="floatLblDn">@Resources.Input_Resistor_Value</label>
+                    <select data-bind="value: $data.model.ResistorValue, enable: $data.model.IsSupervised">
+                        <option value="1000">1K</option>
+                        <option value="2200">2.2K</option>
+                        <option value="4700">4.7K</option>
+                        <option value="10000">10K</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pull-left clear-left checkboxWidthFix">
+                <div class="spaceBottomStyle">
+                    <label class="formControl-checkbox">
+                        <input type="checkbox" class="checkbox" name="input_AutoRelock" id="input_AutoRelock" data-bind="checked: $data.model.AutoRelock" />
+                        <span>@Resources.Input_IsAutoRelock</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pull-left content-panel-select-box">
+                <div class="spaceBottomStyle field select-field notRequiredStyle">
+                    <label class="floatLblDn">@Resources.Input_AutoRelock_Output</label>
+                    <select name="input_RelockOutput" id="input_RelockOutput" data-bind="options: $data.autoRelockOutputs, optionsText: 'Name', optionsValue: 'Id', value: $data.model.RelockOutput, enable: $data.model.AutoRelock"></select>
+                </div>
+            </div>
+            <div class="pull-left clear-left checkboxWidthFix">
+                <div class="spaceBottomStyle">
+                    <label class="formControl-checkbox">
+                        <input type="checkbox" class="checkbox" name="input_InterlockingEnabled" id="input_InterlockingEnabled" data-bind="checked: $data.model.InterlockEnabled" />
+                        <span>@Resources.Interlocking</span>
+                    </label>
+                </div>
+            </div>
+            <div data-bind="visible: $data.model.InterlockEnabled() == true">
+                <div class="pull-left clear-left field">
+                    <div class="spaceBottomStyle">
+                        <div class="radio horizontal-radio-list control-box">
+                            <div class="pull-left radioMarginFix"><label class="formControl-radio">
+                                    <input type="radio" class="radio" name="input_ReactingEntityType" value="0" data-bind="checked: $data.model.Interlock.ReactingEntityType, click: $data.handleInterlockModeSwitch" />
+                                    <span>@Resources.Interlock_Input</span>
+                            </label></div>
+                            <div><label class="formControl-radio">
+                                    <input type="radio" class="radio" name="input_ReactingEntityType" value="1" data-bind="checked: $data.model.Interlock.ReactingEntityType, click: $data.handleInterlockModeSwitch" />
+                                    <span>@Resources.Interlock_Output</span>
+                            </label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_Point</label>
+                        <select name="input_InterlockPoint" id="input_InterlockPoint" data-bind="options: $data.interlockPoints, optionsText: 'Name', optionsValue: 'Id', value: $data.model.Interlock.ReactingEntityId"></select>
+                    </div>
+                </div>
+                <div class="pull-left clear-left inputScrollFix">
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_OnAction</label>
+                        <select name="input_InterlockOnAction" id="input_InterlockOnAction" data-bind="options: $data.interlockaction, optionsValue: 'Value', optionsText: 'Name', value: $data.model.Interlock.AlarmAction"></select>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="field select-field notRequiredStyle">
+                        <label class="floatLblDn">@Resources.Interlock_OffAction</label>
+                        <select name="input_InterlockOffAction" id="input_InterlockOffAction" data-bind="options: $data.interlockaction, optionsValue: 'Value', optionsText: 'Name', value: $data.model.Interlock.NormalAction"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left clear-left buttonGroup">
+                <button class="primary-button" data-bind="click: $data.saveInput">@Resources.Save</button>@*enable: $data.model.hasChanges,*@ 
+                <span class="class2 errorDetail" data-bind="visible: $data.model.IsError, text: $data.model.ErrorMessage" />
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="panelConfigUrl" value="@Url.Action("", "PanelConfig")" />
+</form>
+
+@*<link href="~/Content/PanelConfigPlugin/toggle-switch.css" rel="stylesheet" />*@
+@Scripts.Render("~/bundles/PanelConfigPluginInputscript")
+@*<script src="~/Scripts/PanelConfigPlugin/panel-input-model.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-input-validation-context.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-input-datacontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/panel-input-uicontext.js"></script>*@

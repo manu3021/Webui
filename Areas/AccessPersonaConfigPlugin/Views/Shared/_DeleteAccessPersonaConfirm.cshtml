@@ -1,0 +1,25 @@
+﻿<div class="modal fade modal-confirm" id="deleteAccessPersonaConfirm" role="dialog">
+    <div id="deleteAccessPersonaConfirmContent" class="modal-dialog">
+        <div class="modal-content">
+            <div class="erroricon">
+            </div>
+            <div class="modal-header">
+                <h4 class="modal-title">@Resources.Access_Persona_Confirm_Delete</h4>
+            </div>
+            <div class="modal-body">
+                @Resources.Access_Persona_Warning_Message1 <br />@Resources.Access_Persona_Warning_Message2
+                <div class="field select-field spaceBottomStyle">
+                <label for="OperatorCando1">@Resources.Access_Persona_Replacement</label>
+                <select class="accesspersona-delete-combo" id="OperatorCando1" data-bind="options: $data.personas, optionsText: 'Name', optionsValue: 'Id',optionsCaption: 'None',value: $data.newAccessPersonaId"></select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @if (@Html.HasPermissions(MPCPermissions.DELETE_ACCESSPERSONA) || @Html.HasPermissions(MPCPermissions.DISSOCIATE_ACCESSPERSONA_FROM_CREDENTIALHOLDER) || @Html.HasPermissions(MPCPermissions.ASSOCIATE_ACCESSPERSONA_TO_CREDENTIALHOLDER ))
+                {
+                    <button type="button" class="primary-button" data-bind="click: $data.deleteAccessPersona">@Resources.Delete</button>
+                }
+                <button type="button" class="secondary-button" data-bind="click: $data.cancelConfirmation">@Resources.Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

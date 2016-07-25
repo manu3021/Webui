@@ -1,0 +1,62 @@
+﻿<div id="exportClipModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <header class="row">
+        <span>@Resources.Viewer_ExportClipText</span>
+    </header>
+    <section data-bind="style: { height: $data.Local() ? '136px' : '0px' }">
+        <div class="clickexportPath">
+            @*<div class="radio" data-bind="visible: $data.Local">
+                    <div>
+                        <label class="formControl-radio">
+                            <input id="onpcexprt" type="radio" name="radiotest" value="onpc" data-bind="checked : $data.exportlocation">
+                            <span></span>
+                        </label>
+                        <span class="radiotext">@Resources.on_pc</span>
+                    </div>
+                    <div>
+                        <label class="formControl-radio">
+                            <input id="ondevusbexprt" type="radio" name="radiotest" value="ondeviceusb" data-bind="checked : $data.exportlocation">
+                            <span></span>
+                        </label>
+                        <span class="radiotext">@Resources.On_Device_USB</span>
+                    </div>
+                </div>*@
+            <div class="field saveasErrorStyle" data-bind="visible: $data.OnPC">
+                <label class="floatLblDn">@Resources.Save_as</label>
+                <input type="text" data-bind="value:$data.SavePath" class="floatTxt myStyle">
+                <div data-bind="visible:$data.iserror">
+                    <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror} ,visible:$data.iserror"></b></span>
+                    <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Viewer_WarningText</span><span data-bind="text:$data.Error"></span></div>
+                </div>
+            </div>
+
+            <div id="clipExportfrmtimepicker" class="field right-inner-addon" data-bind=" visible: $data.Local">
+                <span class=" input-group-addon add-on">
+                    <b class="icon-time"></b>
+                </span>
+                <label class="floatLblDn">@Resources.Viewer_FromText</label>
+                <input data-format="@Resources.date_picker_format" type="text" data-bind="value:$data.FromExportDate" readonly="" class="floatTxt myStyle">
+                <div data-bind="visible:$data.isFrmdateerror">
+                    <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                    <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.FromErrormessage"></span></div>
+                </div>
+            </div>
+            <div id="clipExporttotimepicker" class=" field right-inner-addon" data-bind=" visible: $data.Local">
+                <span class=" input-group-addon add-on">
+                    <b class="icon-time"></b>
+                </span>
+                <label class="floatLblDn">@Resources.Viewer_ToText</label>
+                <input data-format="@Resources.date_picker_format" type="text" data-bind="value:$data.ToExportDate" readonly="" class="floatTxt myStyle">
+                <div data-bind="visible:$data.isTodateerror">
+                    <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                    <div class="showerror dropdown-menu" style="display: block;"><span class="errorColor">@Resources.Warning!</span><span data-bind="text:$data.ToErrormessage"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            <button id="Exportbtn" class="primary-button" aria-hidden="true" data-bind="click: $data.ClickBtn">@Resources.Export</button>
+            <button id="Cancelbtn" class="secondary-button" aria-hidden="true" data-modal="dismiss" data-bind="click: $data.CancelExportclick">@Resources.Cancel</button>
+        </div>
+    </footer>
+</div>

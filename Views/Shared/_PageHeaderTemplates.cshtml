@@ -1,0 +1,131 @@
+﻿@{
+}
+
+<script type="text/html" id="topMessageTmpl">
+    <a href="" class="dropdown-toggle" data-toggle="dropdown" data-bind="click:$data.showMessages">
+        <img src='@Url.Content("~/Content/images/icon_comments.png")' /><sup data-bind="text: $data.notificationCountTxt,visible:$data.notificationsCount() > 0"></sup>
+    </a>
+    <ul class="dropdown-menu" id="dash-message">
+        <li class="msg-header">
+            <span class="header" id="header">
+                @Resources.TodaysNotifications
+            </span>
+        </li>
+        <!-- ko foreach: $data.messages -->
+        <li data-bind="click:$root.navigateAlarm" class="message">
+            <a href="">
+                <span class="header" id="messagebox">
+                    <span class="msgContent">
+                        <span class="messagetitle" data-bind="text: $data.title"></span>
+                        <span class="msgtime" data-bind="text: $data.time"></span>
+                        <span class="message">
+                            <span data-bind="text:$data.EventCodeType"></span>
+                            <span data-bind="text:$data.CredentialNumber"></span>
+                            <span data-bind="visible:$data.MasterSourceEntityName != null && $data.MasterSourceEntityName != ''">@Resources.From</span>
+                            <span data-bind="text:$data.MasterSourceEntityName"></span>
+                        </span>
+                    </span>
+                    <span class="msgicon alerticon">
+                        <b data-bind="css:$data.icon"></b>
+                    </span>
+                </span>
+            </a>
+        </li>
+        <!-- /ko -->
+        <li class="msg" data-bind="click:$root.navigateAlarm,visible:$data.messages().length > 0" >
+            <span class="dropdown-menu-sub-footer" href="">@Resources.ShowAllNotifications </span>
+        </li>
+        <li class="msg" data-bind="visible:$data.messages().length == 0">
+            <span class="dropdown-menu-sub-footer" data-bind="text:$data.msgTitle"></span>
+        </li>
+    </ul>
+</script>
+<script type="text/html" id="topMyProfileTmpl">
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src='@Url.Content("~/Content/images/icon_user.png")' />
+            </a>
+            <ul class="dropdown-menu" id="dash-profile" data-bind="foreach: $data.userProfileMenu">
+                <li>
+                    <span class="profile-icon">
+                        <span data-bind="attr: { 'class': icon }"></span>
+                    </span>
+                    <span class="profile-item-content">
+                        <a href="#" data-bind="click: itemclick, text: title"></a>
+                        <span class="menu-divider"></span>
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</script>
+
+<script id="clipdownloadListTmpl" type="text/html">
+    <div class="dwldProgressResults">
+        <ul id="clipdownload_list" data-bind="foreach:$data.clipResults">
+            <li id="cp" data-bind="with:$data, attr: { 'id': $data.SessionId}">
+                <span class='downloadStatusButton' data-bind="visible:$data.IsSave"><a data-bind="attr: { 'href':$data.downloadurl}">Show</a></span>
+                <span class='downloadStatusButton' data-bind="click:$data.CancelExportclick,visible:$data.isshowhide">Cancel</span>
+                <span class='downloadStatusButton' data-bind="click:$data.RetryClipExport,visible:$data.isretry">Retry</span>
+                <span class='downloadStatus'>
+                    <div class="progressContainer">
+                        <progress id="progressBar" max="100" data-bind="id:$data.ProgressId,value:$data.progressvalue,visible:$data.isprogress"></progress>
+                        <span class="progressText" data-bind="text: $data.progressvalue,visible:$data.isprogress" style="width:100%;" data-original-title="@Resources.Shell_SuccessfulText"></span>
+                    </div>
+                </span>
+                <span class="clipResultsStyle" data-bind="text:$data.ClipNameDisplay()"></span>
+                @*<span class="clipExportIcon" data-toggle="modal" role="button" data-bind="click:$data.getclipExport"></span>*@
+                <span class="clipResultsDurationStyle" data-bind="text:$data.EventNameDisplay()"></span>
+                <span class="clipResultsDurationStyle" data-bind="text:$data.DurationDisplay()"></span>
+                <span class="clipResultsDurationStyle" data-bind="text:$data.StartTimeDisplay()"></span>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="ClipdownloadTmpl" type="text/html">
+    <a class="downloadProgressMenu" data-toggle="popover" data-bind="click:$data.showdownloadclips, visible: $data.IsRequestCount()">
+        <b class="downloadProgress-icon"></b><sup class="downloadProgressMenusub" data-bind="text: $data.clipexportrequestcount()"></sup>
+    </a>
+</script>
+
+
+<script type="text/html" id="topLeftTmpl">
+    <div id="navigation-menu">
+        <div class="navbar">
+            <ul class="nav navbar-nav">
+                <li id="downloadclips" class="downloadProgressPopover" data-bind="template: 'ClipdownloadTmpl'"></li>
+                <li id="notifications" class="dropdown" data-bind="template: 'topMessageTmpl'"></li>
+                <li id="profileoptions" class="dropdown" data-bind="template: 'topMyProfileTmpl'"></li>
+            </ul>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="header">
+    <div class="logo" id="logo" data-bind="click: $root.navigatetohome">
+        <span></span>
+    </div>
+    <div class="dropdown pagetitle">
+        <a class="dropdown-toggle overlayBgOpacity" data-toggle="dropdown" data-bind="css:$data.ComputeHandBarVisible,attr:{'data-toggle':$data.IsExapndable()}">
+            <span class="pageheadertitle" data-bind="text: $data.pageTitle"></span>
+        </a>
+
+        <div class="dropdown-menu" id="overlay-menu">
+            <div class="topmenucontent" role="menu" aria-labelledby="dLabel">
+                <ul data-bind="foreach: $data.pages">
+                    <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                        <div>
+                            <header class="count">
+                                <span data-bind="css: PageIcon"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right" id="notification-menu" data-bind="template: 'topLeftTmpl'">
+    </div>
+</script>

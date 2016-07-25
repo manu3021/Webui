@@ -1,0 +1,141 @@
+﻿<html>
+<head>
+    <title>Socorro</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+ <div class="bodyCont">
+    <h3 class="titleheader">Monitorizar e ver alarmes</h3>
+    <p>Os alarmes notificam a ocorrência de ações não intencionais aos operadores. Os alarmes exigem uma ação posterior do operador.**</p>
+    <p>Os alarmes com um grau de gravidade reduzido são eventos. Os eventos são enviados apenas como notificações.**</p>
+    <p>O separador <strong>Alarmes</strong> apresenta o seguinte:</p>
+    <ul>
+        <li>Alarmes acionados</li>
+        <li>Eventos</li>
+    </ul>
+    <img src="../../Content/images/monitor_view_alarms.png" />
+    <p>Os cantos superiores direito e esquerdo do separador <strong>Alarmes</strong> apresentam as seguintes opções:</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-one">N.º</td>
+                    <td class="col-two">Campo</td>
+                    <td class="col-three">Descrição</td>
+            </tr>
+        </thead>
+        <tbody>
+		 <tr>
+				<td>1</td>
+                <td>Todos</td>
+                <td>
+                    Apresenta todos os alarmes. Pode filtrar com base nas seguintes opções:<>
+                    a. Confirmar<>
+                    b. Não confirmar<>
+                    c. Eventos                    
+                </td>
+            </tr>
+            <tr>
+				<td>2</td>
+                <td>Pesquisar</td>
+                <td>
+                    Os alarmes notificam a ocorrência de eventos aos operadores. A opção de pesquisa permite pesquisar a lista de alarmes com base em:<>
+                    a. <strong>Entidades:</strong> Câmaras, Portas e Regras<>
+                    b. <strong>Data:</strong> Hoje, Ontem, Últimos 7 dias e Últimos 30 dias, De e Até.<>
+                    c. <strong>Evento:</strong> Vídeo e Acesso.                  
+                </td>
+            </tr>
+            <tr>
+				<td>3</td>
+                <td>Ações</td>
+                <td>
+                   Permite realizar o seguinte para todos os alarmes apresentados na janela Alarme. <>
+                    a. <strong>Confirmar:</strong> Confirma o alarme selecionado.<>
+    b. <strong>Limpar:</strong> Limpa automaticamente os alarmes quando são confirmados.<>
+    c. <strong>Parar fluxo de alarmes:</strong> Interrompe a receção de alarmes novos ou não confirmados na janela Alarmes.<>
+    O estado do alarme depois de ser acionado é referido como não confirmado.</td>
+            </tr>
+            <tr>
+				<td>4</td>
+                <td>Vistas</td>
+                <td>Permite selecionar as opções necessárias para apresentar como coluna.</td>
+            </tr>
+            <tr>
+				<td>5</td>
+                <td>Confirmar</td>
+                <td>Permite confirmar um alarme para aceitar que a ação de resposta necessária está a ser realizada.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>O estado do alarme depois de ser acionado é referido como não confirmado. Pode ver a lista de todos os alarmes não confirmados e ações associadas numa tabela no separador <strong>Alarmes</strong>. Para cada alarme não confirmado, são indicados os seguintes detalhes.</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-equal">Campo</td>
+                <td>Descrição</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Título do alarme</td>
+                <td>
+                    Nome do evento que acionou o alarme. Por exemplo, movimento detetado pela câmara. Nome do atributo do evento. Apenas o atributo do evento chave é apresentado nesta coluna.<>Nome do dispositivo, tal como uma câmara associada ao evento. Por exemplo, o nome da câmara que detetou o evento.
+                </td>
+            </tr>
+            <tr>
+                <td>Tipo</td>
+                <td>Pode arrastar e largar uma fonte de vídeo, como uma câmara. Também pode clicar duas vezes no nome da fonte de vídeo para a selecionar.</td>
+            </tr>
+            <tr>
+                <td>Gravidade</td>
+                <td>
+                    Indica a gravidade do alarme sob o tipo relevante:<>
+                    a. Importante<>
+                    b. Crítico
+                </td>
+            </tr>
+            <tr>
+                <td>Hora</td>
+                <td>Hora em que o alarme foi acionado.</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data em que o alarme foi acionado.</td>
+            </tr>
+            <tr>
+                <td>Local</td>
+                <td>Nome do local onde o dispositivo se encontra.</td>
+            </tr>
+            <tr>
+                <td>Ação e instruções</td>
+                <td>Opção para confirmar e realizar ações relacionadas com o alarme acionado.</td>
+            </tr>
+            <tr>
+                <td>Mais</td>
+                <td>Mostra todas as portas associadas e eventos de cartão relacionados.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="bottControl">
+            <p class="helpprev">
+                <span>Anterior</span>
+                <a href="monitor_alarms.html"><i class="prev_icon"></i> Gerir alarmes</a>
+            </p>
+            <p class="helpnext">
+                <span>Seguinte</span>
+                <a href="acknowledge_alarms.html">Confirmar alarmes <i class="next_icon"></i></a>
+            </p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

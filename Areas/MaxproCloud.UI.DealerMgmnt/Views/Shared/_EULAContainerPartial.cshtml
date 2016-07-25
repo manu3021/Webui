@@ -1,0 +1,74 @@
+﻿@*@Styles.Render("~/Content/Dealerstyles/dealerstyle.css")*@
+  <script id="EulaListTmpl" type="text/html">
+                  <tr>
+                            <td data-bind="text:$data.version"></td>
+                            <td data-bind="text:$data.StartDate"></td>
+                            <td data-bind="text:$data.applicationtype"></td>
+                            <td data-bind="text:$data.roletype"></td>
+                            <td data-bind="text:$data.SubType"></td>
+                        </tr>
+        </script>
+<div class="EULAcontainer" data-url="@Url.Action("", "Approval")">
+    <section id="EulaSubContainer" style="margin-top: 47px;">
+
+        <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="myTab">
+                <li id="neweulaactive" class="active"><a href="#Eulatab" data-toggle="tab">@Resources.Eula_Tab_New</a></li>
+                <li id="eulalistctive"><a href="#Eulalisttab" data-toggle="tab" class="eula-list-tab">@Resources.Eula_Tab_List</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="Eulaprofile">
+            <div class="tab-pane active" id="Eulatab">
+                <div class="col pull-left rightUserColumn">
+                    <div class="eulaHeading">@Resources.Eula_Text</div>
+                    <textarea class="eulaTxtArea" style="resize:none" data-bind="value:$data.Text"></textarea>
+                </div>
+                <div class="col pull-left eulaSecondColumn">
+                    <div class="field select-field spaceBottomStyle">
+                        <label for="applicationtype">@Resources.Eula_ApplicationType</label>
+                        <select name="applicationtype" id="applicationtype" data-bind="options: applicationtypelist,value: $data.ProductName">
+                       
+                        </select>
+                    </div>
+                    <div class="field select-field spaceBottomStyle">
+                        <label for="roleoptions">@Resources.Eula_RoleType</label>
+                        <select name="roleoptions" id="roleoptions" data-bind="options: roletypelist,value: $data.roleType">                         
+                        </select>
+                    </div>
+                    <div class="input-append date field right-inner-addon" id="eulaStartDate" >
+                        <span class="add-on"><b class="icon-calendar"></b></span>
+                        <label class="floatLblDn">@Resources.Select_Start_Date</label>
+                        <input id="eulastartdate" type="text" readonly="readonly" class="floatTxt myStyle" data-format="@Resources.date_picker_format" >  
+                    </div>                    
+                </div>
+                <div class="buttonGroup">
+                    <button class="primary-button" id="btneulasave" data-bind="click:$data.saveeula">@Resources.Save</button>
+                    <label class="errorSummary hideerrorSummary">@Resources.Eula_Error </label>
+                </div>
+             
+
+            </div>
+            <div class="tab-pane " id="Eulalisttab">
+               <table class="table eulaListTable">
+                    <thead>
+                        <tr>
+                            <th>@Resources.lbl_version</th>
+                            <th>@Resources.Select_Start_Date @Resources.UTC</th>
+                            <th>@Resources.Eula_ApplicationType</th>
+                            <th>@Resources.Eula_RoleType</th>
+                            <th>@Resources.Eula_Sub_Type</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="template:{name:'EulaListTmpl',foreach:$data.eulalistdatasource}">
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>      
+    </section>
+
+</div>
+
+
+

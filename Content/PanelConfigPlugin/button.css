@@ -1,0 +1,52 @@
+	
+
+
+/*this entire style is repeated and already present in shell - and this style is affecting entrie application
+     Please Contact Mahesh - whoever needs this style*/
+
+/*.primary-button {
+	background: linear-gradient(to top, #0780be,#0889c4) repeat scroll 0 0 hsla(0, 0%, 0%, 0);
+	border-bottom: 0px solid hsl(190, 92%, 30%);
+	border-radius: 4px;
+	box-shadow: 0 0px 0px 0px hsl(0, 0%, 82%);
+	color: hsl(0, 0%, 100%);
+	font-size: 14px;
+	padding: 5px 14px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	margin-right: 4px;
+
+}
+.ternary-button {
+	background: linear-gradient(to top, #e13732, #e54b45) repeat scroll 0% 0% transparent;
+	border-radius: 4px;
+	border-bottom: 0px solid #b82d29;
+	color: #ffffff;
+	padding: 5px 14px;
+	font-size: 14px;
+	box-shadow: 0px 0px 0px 0px #d2d2d2;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	margin-right: 4px;
+}
+.secondary-button {
+	background: linear-gradient(to top, #9fa2a3, #979a9b) repeat scroll 0% 0% transparent;
+	border-radius: 4px;
+	border-bottom: 0px solid #838383;
+	color: #ffffff;
+	padding: 5px 14px;
+	font-size: 14px;
+	box-shadow: 0px 0px 0px 0px #d2d2d2;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	margin-right: 4px;
+}
+
+.buttonGroup{
+	border-top: 1px solid #d3d3d3;
+	clear: both;
+	padding-top: 14px;
+}*/

@@ -1,0 +1,141 @@
+﻿<html>
+<head>
+    <title>Guida</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+ <div class="bodyCont">
+    <h3 class="titleheader">Monitora e Visualizza Allarmi</h3>
+    <p>Gli allarmi notificano il verificarsi di azioni non previste agli operatori. Gli allarmi richiedono un’ulteriore azione da parte dell’operatore.**</p>
+    <p>Gli allarmi con gravità bassa sono un evento. Gli eventi vengono inviati come notifiche.**</p>
+    <p>L’elenco <strong>Allarmi</strong> elenca i seguenti punti:</p>
+    <ul>
+        <li>Allarmi scattati</li>
+        <li>Eventi</li>
+    </ul>
+    <img src="../../Content/images/monitor_view_alarms.png" />
+    <p>L’angolo superiore sinistro e destro della scheda <strong>Allarmi</strong> visualizza le seguenti opzioni:</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-one">Numero</td>
+                    <td class="col-two">Campo</td>
+                    <td class="col-three">Descrizione</td>
+            </tr>
+        </thead>
+        <tbody>
+		 <tr>
+				<td>1</td>
+                <td>Tutto</td>
+                <td>
+                    Elenca tutti gli allarmi. Sarà possibile filtrare sulla base delle seguenti opzioni:<>
+&#8232;                    a. Riconosci<>
+&#8232;                    b. Non riconosci<>
+&#8232;                    c. Eventi                    
+                </td>
+            </tr>
+            <tr>
+				<td>2</td>
+                <td>Ricerca</td>
+                <td>
+                    Gli allarmi notificano il verificarsi degli eventi agli operatori. L’opzione di ricerca consente di cercare nell’elenco degli allarmi sulla base di:<>
+&#8232;                    a. <strong>Entità:</strong> Telecamere, Porte e Regole<>
+&#8232;                    b. <strong>Tempo:</strong> Oggi, Ieri, Ultimi 7 giorni, e Ultimi 30 giorni, Da e A.<>
+&#8232;                    c. <strong>Evento:</strong> Video e Accesso.                  
+                </td>
+            </tr>
+            <tr>
+				<td>3</td>
+                <td>Azioni</td>
+                <td>
+                   Consente di eseguire quanto segue per tutti gli allarmi che compaiono nella finestra Allarmi. <>
+&#8232;                    a. <strong>Riconosci:</strong> Riconosce l’allarme selezionato.<>
+&#8232;    b. <strong>Cancella:</strong> Cancella automaticamente gli allarmi quando vengono riconosciuti.<>
+&#8232;    c. <strong>Blocca flusso allarme:</strong> Interrompe la ricezione di allarmi nuovi o non riconosciuti nella finestra Allarme.<>
+&#8232;    Lo stato di un allarme dopo che è stato attivato viene considerato un allarme non riconosciuto.</td>
+            </tr>
+            <tr>
+				<td>4</td>
+                <td>Viste</td>
+                <td>Consente di selezionare le opzioni richieste per comparire come visualizzazione colonna.</td>
+            </tr>
+            <tr>
+				<td>5</td>
+                <td>Riconosci</td>
+                <td>Consente di riconoscere un allarme per accettare che venga presa l’azione di risposta necessaria.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Lo stato dell’allarme dopo che è stato avvito viene considerato non riconosciuto. Sarà possibile visualizzare l’evento di tutti gli allarmi non riconosciuti e le azioni associate in una tabella nella scheda <strong>Allarmi</strong>. Per ogni allarme non riconosciuto vengono elencati i seguenti dettagli.</p>
+    <table>
+        <thead>
+            <tr>
+                <td class="col-equal">Campo</td>
+                <td>Descrizione</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Titolo allarme</td>
+                <td>
+                    Nome dell’evento che ha avviato l’allarme. Ad esempio, movimento telecamera rilevato. Nome dell’attributo evento. Solo l’attributo evento chiave viene visualizzato in questa colonna.<>Nome del dispositivo quale ad esempio telecamera associata all’evento. Ad esempio il nome della telecamera che ha rilevato il movimento.
+                </td>
+            </tr>
+            <tr>
+                <td>Tipo</td>
+                <td>Sarà possibile eseguire il drag-and-drop di una sorgente video quale ad esempio una telecamera. Sarà inoltre possibile fare doppio clic sul nome della sorgente video per selezionarla.</td>
+            </tr>
+            <tr>
+                <td>Livello severità</td>
+                <td>
+                    Elencare la gravità dell’allarme sotto il tipo pertinente:<>
+&#8232;                    a. Grave<>
+&#8232;                    b. Critico
+                </td>
+            </tr>
+            <tr>
+                <td>Tempo</td>
+                <td>Momento in cui scatta l’allarme.</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data in cui scatta l’allarme.</td>
+            </tr>
+            <tr>
+                <td>Posizione</td>
+                <td>Nome della posizione in cui si trova il dispositivo.</td>
+            </tr>
+            <tr>
+                <td>Azione e istruzioni</td>
+                <td>Opzione per riconoscere ed eseguire azioni sull’allarme scattato.</td>
+            </tr>
+            <tr>
+                <td>Altro</td>
+                <td>Visualizza tutte le porte associate e gli eventi tessera collegati.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="bottControl">
+            <p class="helpprev">
+                <span>Precedente</span>
+                <a href="monitor_alarms.html"><i class="prev_icon"></i> Gestione degli allarmi</a>
+            </p>
+            <p class="helpnext">
+                <span>Avanti</span>
+                <a href="acknowledge_alarms.html">Riconosci allarmi <i class="next_icon"></i></a>
+            </p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

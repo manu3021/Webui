@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <title>Socorro</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Para configurar o Leitor sob NetAXS-123</h3>
+        <h4 class="subtitle">Para configurar as definições do leitor:</h4>
+        <ol>
+            <li>Na área do Painel MPC, clique no separador <strong>Criar e editar</strong>. É apresentada a página <strong>CRIAR E EDITAR</strong>.</li>
+			<li>No painel esquerdo, selecione o local e, em seguida, clique no dispositivo relevante adicionado ao local.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Nota:</h4>
+				<p>antes de modificar as definições do dispositivo, certifique-se de que regista os dispositivos na nuvem.</p>
+			</div>
+			<li>No painel esquerdo, clique no ícone <i class="netaxs-icon"></i> correspondente ao dispositivo NetAXS-123 para expandir e ver todas as portas disponíveis.</li>
+			<li>Clique duas vezes na porta pretendida para expandir e ver todos os leitores associados. É apresentada a página <strong>Definições</strong>.</li>
+			<li>Introduza os detalhes necessários nos seguintes campos:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Campo</td>
+                    <td>Descrição</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Nome do leitor
+                    </td>
+                    <td>
+                        Introduza um nome exclusivo para identificar o leitor.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Desativar leitor/porta
+					</td>
+                    <td>
+                        A partir da lista pendente, selecione as propriedades para definir o leitor/porta para o modo de desativação ou ativação.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Cartão e PIN necessários
+					</td>
+                    <td>
+                        Concede o acesso apenas com um leitor do cartão com êxito e um PIN válido introduzido no teclado da porta. Pode executar a leitura do cartão e a introdução do PIN em qualquer sequência.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Cartão ou PIN necessários
+					</td>
+                    <td>
+                       Concede o acesso com um leitor do cartão com êxito ou com um PIN válido introduzido no teclado da porta
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Apenas PIN
+					</td>
+                    <td>
+                       Concede o acesso apenas com a introdução de um PIN válido no teclado da porta.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Apenas cartão
+					</td>
+                    <td>
+                       Concede o acesso apenas com uma leitura do cartão com êxito.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Bloqueio do leitor/porta
+
+					</td>
+                    <td>
+                       Ignora todas as leituras do cartão (exceto de um cartão VIP), recusa a entrada na porta, mas permite a saída.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Pânico
+   					</td>
+                    <td>
+                       Permite acionar um evento de alarme e, se configurado, ativar um dispositivo de saída em momentos específicos, tal como quando um operador é forçado a conceder acesso contra a sua vontade a uma pessoa não autorizada. O modo Pânico requer o valor de um PIN e um número de cartão para ser reconhecido.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Anti-Passback
+					</td>
+                    <td>
+                         O utilizador ativa a função "Anti-passback" no leitor, que requer um cartão válido para a entrada e saída. O titular do cartão tem de utilizar o cartão na sequência de ENTRADA/SAÍDA adequada, ou seja, um cartão lido num leitor de ENTRADA, tem de ser, em seguida, lido num leitor de SAÍDA ou vice versa: um cartão lido num leitor de SAÍDA tem de ser, em seguida, lido num leitor de ENTRADA. Se a sequência de ENTRADA/SAÍDA do utilizador for inválida, é gerado um evento de violação de "Anti-passback" para o tipo de "Anti-passback" escolhido (Total ou Parcial) e o titular do cartão vê recusado o acesso (Total) ou permitido o acesso (Parcial).
+						 <>
+						
+						<strong>Total</strong>- Valida o estado de ENTRADA/SAÍDA antes de permitir a entrada. Uma segunda passagem do cartão no mesmo tipo de leitor (ENTRADA/SAÍDA) provoca uma violação de "Anti-passback" total e é recusada a entrada ao utilizador.
+						</br><>
+
+						<strong>Parcial</strong>- Valida o estado de ENTRADA/SAÍDA antes de permitir a entrada. Uma segunda passagem de um cartão no mesmo tipo de leitor (ENTRADA/SAÍDA) provoca uma violação de "Anti-passback" parcial, mas é permitida a entrada ao utilizador.
+						</br><>
+						
+						<strong>Saída</strong>- Aplica-se aos leitores situados no interior de uma área controlada pela função "Anti-passback". Os titulares de cartões utilizam estes leitores ao tentarem sair da área controlada pela função "Anti-passback".
+						</br><>
+						
+						<strong>Entrada</strong>- Aplica-se aos leitores situados fora de uma área controlada pela função "Anti-passback". Os titulares de cartões utilizam estes leitores ao tentarem entrar na área controlada pela função "Anti-passback".
+						</br><>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Anterior</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Editar definições do dispositivo</a>
+	</p>	
+</div>		
+</body>
+</html>

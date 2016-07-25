@@ -1,0 +1,37 @@
+﻿<div class="page row">
+    <div class="pageheader row">
+        <strong class="ui-text-big">What & Where ?</strong><span class="ui-text-normal" style="padding-left: 10px;">Configure everything from this page</span>
+    </div>
+    <div class="pagecontent row">
+        <div class="sidebar col">
+            @Html.GetPlugin("TreeView")
+        </div>
+        <div class="configcontent col">
+            <div class="ui-tab-container row">
+                <div class="ui-tab-content row">
+                    <div class="ui-tab-page row" data-tabid="1">
+                        @Html.GetPlugin("Maps")
+                    </div>
+                    <div class="ui-tab-page row" data-tabid="2">
+                        @Html.GetPlugin("Config")
+                    </div>
+                    <div class="ui-tab-page row" data-tabid="3">
+                        @Html.GetPlugin("Userconfig")
+                    </div>
+                </div>
+                <div class="ui-tab-menu row">
+                    <ul class="ui-tab-list">
+                        <li class="ui-tab-listitem" data-tabid="1" data-tab-status="active"><span>Maps</span></li>
+                        <li class="ui-tab-listitem" data-tabid="2"><span>Settings</span></li>
+                        <li class="ui-tab-listitem" data-tabid="3"><span>Users</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".ui-tab-container").customtabs();
+    });
+</script>

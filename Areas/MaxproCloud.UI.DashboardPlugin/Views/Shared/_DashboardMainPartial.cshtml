@@ -1,0 +1,41 @@
+﻿@model dynamic
+
+<div class="dashboard-root">
+    @{
+        Html.RenderAction("DashboardHome");
+    }
+    <div id="dashboardCreateEdit" style="display:none">
+        @{
+            Html.RenderAction("DashboardConfiguration");
+        }
+
+        @{
+            Html.RenderAction("DashboardPreview");
+        }
+    </div>
+    <input id="eventServiceWebSocketUrl" type="hidden" value='@Model.EventServiceWebSocketUrl' />
+    <input id="alarmMonitorPollInterval" type="hidden" value='@Model.AlarmMonitorPollInterval' />
+    <input type="hidden" id="dashboardconfigurl" value='@Url.Action("", "Dashboard")' />
+    
+    @*@Styles.Render("~/Content/DashboardPlugincss1")*@
+    @*<link href="~/Content/DashboardPlugin/carousel/style.css" rel="stylesheet" />
+    <link href="~/Content/DashboardPlugin/toggle-switch.css" rel="stylesheet" />
+    <link href="~/Content/DashboardPlugin/dashboard.css" rel="stylesheet" />
+    <link href="~/Content/TreeviewPlugin/treeviewcontrol.css" rel="stylesheet" />*@
+    
+
+    @Scripts.Render("~/bundles/DashboardPluginscript1")
+    @*<script src="~/Scripts/DashboardPlugin/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/DashboardPlugin/jquery.contentcarousel.js"></script>
+    <script src="~/Scripts/DashboardPlugin/highcharts.js"></script>
+    <script src="~/Scripts/DashboardPlugin/exporting.js"></script>
+    <script src="~/Scripts/DashboardPlugin/humanized_time_span.js"></script>
+    <script src="~/Scripts/DashboardPlugin/date-format.js"></script>
+    <script src="~/Scripts/DashboardPlugin/ko.bindingHandlers.js"></script>
+    <script src="~/Scripts/DashboardPlugin/dashboard-common.js"></script>
+    <script src="~/Scripts/DashboardPlugin/dashboard-model.js"></script>
+    <script src="~/Scripts/DashboardPlugin/dashboard-validation-context.js"></script>
+    <script src="~/Scripts/DashboardPlugin/dashboard-datacontext.js"></script>
+    <script src="~/Scripts/DashboardPlugin/dashboard-uicontext.js"></script>*@
+   
+</div>

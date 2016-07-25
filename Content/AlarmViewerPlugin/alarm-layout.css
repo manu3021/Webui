@@ -1,0 +1,1470 @@
+#alarviewWrapper .alarm-header-menu-two {
+    top: 62px;
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #bababb;
+    -webkit-box-shadow: -2px 0 4px 2px #bababb;
+    -moz-box-shadow: -2px 0 4px 2px #bababb;
+    box-shadow: -2px 0 6px 0 #bababb;
+    font-size: 16px;
+    background-color: #fff;
+    z-index: 100;
+}
+
+#alarviewWrapper .navbar .nav > li > a:hover {
+    background: transparent !important;
+}
+
+#alarviewWrapper .header-menu-box {
+    margin-left: 10px;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+    #alarviewWrapper .header-menu-box > .pull-left {
+        padding-top: 7px;
+    }
+
+    #alarviewWrapper .header-menu-box h3 {
+        font-size: 22px;
+        color: #6f7074;
+        padding-left: 14px;
+        padding-top: 1%;
+        margin: 0;
+    }
+
+#alarviewWrapper .alarm-header-ul {
+    margin-bottom: 0;
+}
+
+#alarviewWrapper .header-menu-box h5 {
+    font-size: 12px;
+    color: #6f7074;
+    padding-left: 24px;
+}
+
+#alarviewWrapper .header-two-rightmenu > .nav > li > a:hover {
+    background-color: none !important;
+}
+
+.action-all-new-menu, .action-new-menu {
+    background-color: #323232;
+    cursor: pointer;
+    z-index: 1999;
+    border: 2px solid #323232;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px !important;
+    /*top:53px;*/
+    min-width: 250px !important;
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/*.dropdown-menu li a {
+        background-color: #282820;
+        color: #b1b1b3;
+    }*/
+
+#alarviewWrapper .alarm-page-body {
+    position: absolute;
+    top: 52px;
+    bottom: 0;
+    width: 100%;
+}
+
+#alarviewWrapper #table-alarm {
+    display: table;
+    overflow-y: scroll;
+    width: 97.5%;
+    height: 100%;
+    position: absolute;
+    margin-left: 17px;
+    color: #707070;
+    top: 11px;
+}
+
+    #alarviewWrapper #table-alarm > thead tr {
+        /*-webkit-box-shadow: -2px 0 2px 2px #000;
+        -moz-box-shadow: -2px 0 2px 2px #000;
+        box-shadow: -2px 0 2px 0 #000;*/
+        border-bottom: 1px solid #bababa;
+        float: left;
+        width: 100%;
+    }
+
+    #alarviewWrapper #table-alarm > thead th {
+        border-right: 1px solid #d3d3d3;
+        font-size: 14px;
+        border-bottom: none;
+       /* background-color: #fff; */
+        vertical-align: middle;
+        font-weight: 400;
+    }
+
+#alarviewWrapper #filterText {
+    float: left;
+    padding-right: 5px;
+}
+
+#alarviewWrapper #table-alarm > thead th:first-child {
+    border-left: none;
+    padding-bottom: 4px;
+}
+
+#alarviewWrapper #table-alarm > tbody tr td.box-col1 {
+    border-left: 5px solid transparent;
+}
+
+#alarviewWrapper #table-alarm > thead th:last-child {
+    border-right: none;
+}
+
+#alarviewWrapper #table-alarm > tbody {
+    width: 100%;
+    position: absolute;
+    overflow: auto;
+    bottom: 12px;
+    top: 44px;
+    height: auto;
+}
+
+@-moz-document url-prefix() {
+    #alarviewWrapper #table-alarm > tbody {
+        top: 44px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #alarviewWrapper #table-alarm > tbody {
+        top: 44px;
+    }
+}
+
+#alarviewWrapper #table-alarm tbody tr {
+    width: 100%;
+    padding: 8px 0 12px 0;
+    display: inline-block;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#alarviewWrapper #table-alarm > tbody tr:hover {
+    background: #E6F3FC;
+}
+
+#alarviewWrapper #table-alarm tbody tr:first-child {
+    /*border-top:none;*/
+    /*margin-top:1px;*/
+}
+/*#alarviewWrapper #table-alarm .read {
+background-color:#f5f5f5;
+}*/
+#alarviewWrapper #table-alarm > tbody tr td {
+    font-size: 14px;
+    border: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    padding-bottom: 0;
+    padding-top: 1px;
+    vertical-align: middle;
+    vertical-align: middle\9;
+}
+
+#alarviewWrapper #table-alarm .formControl-checkbox {
+    width: 15px;
+    top: 1px !important;
+}
+
+#alarviewWrapper #search {
+    margin: 7px 0 0 14px;
+    padding-right: 0;
+}
+
+#alarviewWrapper .formControl-checkbox span {
+    height: 22px;
+    padding: 0;
+    margin-left: 2px;
+}
+
+#alarviewWrapper .dropdown-menu > li > a {
+    font-size: 15px;
+    color: #9d9d9d;
+    background: #323232;
+    padding: 11px 20px 11px 24px;
+}
+
+    #alarviewWrapper .dropdown-menu > li > a:hover {
+        color: #d3d3d3;
+        background: #454545;
+        background-image: none;
+    }
+
+#alarviewWrapper .action-new-menu > li {
+    font-size: 15px;
+    /*color: #9d9d9d;*/
+    color: #BABABA;
+    background-color: #323232;
+    /*border-bottom:1px solid #454545;*/
+    padding: 13px 23px 33px 23px !important;
+}
+
+    /*#alarviewWrapper .action-new-menu > li:first-child {
+        margin-top: 10px;
+    }*/
+
+    /*#alarviewWrapper .action-new-menu > li:last-child {
+        margin-bottom: 10px;
+    }*/
+
+    #alarviewWrapper .action-new-menu > li:last-child .alarm-allNew-divider {
+        display: none;
+    }
+
+#alarviewWrapper .alarm-action-divider {
+    border-bottom: 1px solid #454545;
+    margin-left: 32px;
+    margin-top: 32px;
+    position: absolute;
+    width: 196px;
+}
+
+#alarviewWrapper .alarm-allNew-divider {
+    width: 92%;
+    left: 22px;
+    border-bottom: 1px solid #454545;
+    position: absolute;
+    bottom: 0;
+}
+
+#alarviewWrapper .alarm-allNew-txt {
+    clear: both;
+    float: none;
+    position: relative;
+    display: inline-block;
+    width: 94%;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+    overflow: hidden;
+}
+
+#alarviewWrapper .action-new-menu > li > a {
+    background-color: transparent;
+}
+
+    #alarviewWrapper .action-new-menu > li > a:hover {
+        background-color: transparent !important;
+    }
+
+#alarviewWrapper .action-new-menu > li:hover {
+    color: #D3D3D3;
+    background-color: #454545;
+}
+
+#alarviewWrapper .action-new-menu > li.unselected {
+    color: #BABABA;
+    background-color: transparent;
+}
+
+#alarviewWrapper .action-all-new-menu > li {
+    /*padding: 10px 23px 13px 23px !important;*/
+    /*border-bottom: 1px solid #454545;
+    margin-left: 23px;*/
+    padding: 8px 23px 8px 23px !important;
+    position: relative;
+}
+
+#alarviewWrapper .newdroparrow {
+    /*left:52px;*/
+    /*top: 56px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*min-height: 172px;*/
+    max-height: 480px;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#alarviewWrapper .newdroparrowfix {
+    top: 56px;
+}
+
+    #alarviewWrapper .newdroparrowfix:before {
+        border-bottom-color: #323232;
+        top: -7px;
+        left: 25px;
+    }
+
+    #alarviewWrapper .newdroparrowfix ul {
+        margin: 0;
+    }
+
+#alarviewWrapper .navbar .nav > li > .cusdroparrow {
+    left: 89px;
+}
+
+#alarviewWrapper .actdroparr {
+    /*right: -10px !important;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    #alarviewWrapper .actdroparr:before {
+        right: 23px;
+        left: auto;
+        top: -9px;
+        border-bottom-color: #323232;
+    }
+
+#alarviewWrapper .navbar .nav > li > .cusdroparrow:before {
+    border-bottom-color: #323232;
+    right: 268px !important;
+    left: 28px;
+    top: -9px !important;
+}
+
+#alarviewWrapper .navbar .nav > li > .viewdroparrow:before {
+    top: -7px;
+    right: 19px !important;
+}
+
+#alarviewWrapper .alarm-view-divider {
+    border-bottom: 1px solid #454545;
+    margin-top: 10px;
+    position: absolute;
+    width: 222px;
+}
+
+#alarviewWrapper .navbar .nav > li {
+    padding: 10px 6px 0 0;
+    background-color: transparent !important;
+}
+
+    #alarviewWrapper .navbar .nav > li > a {
+        padding: 10px 21px 10px;
+        color: #707070 !important;
+        font-weight: normal !important;
+    }
+
+#alarviewWrapper .clipSearchNav > li > a {
+    padding: 20px 1px 8px !important;
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+#alarviewWrapper .navbar .nav > li.alarm-new-cus > a {
+    padding: 10px 0 0;
+    /*width: 110px;*/
+    width: auto;
+}
+
+#alarviewWrapper .setting-icon {
+    display: block;
+    padding: 10px 16px 10px 24px !important;
+    position: relative !important;
+}
+
+#alarviewWrapper .navbar .nav.pull-right {
+    margin-right: 25px;
+}
+
+#alarviewWrapper .navbar .nav > li > a:hover {
+    color: #0889c4 !important;
+}
+/*.bootstrap-datetimepicker-widget {
+top: 0 !important;
+}*/
+#alarviewWrapper .menu-item-divider {
+    border-bottom: 1px solid #454545;
+    width: 100%;
+    position: absolute;
+    padding-top: 11px;
+    margin: 0;
+}
+
+#alarviewWrapper .act-width {
+    width: 118px;
+    padding-right: 2px !important;
+}
+
+#alarviewWrapper .box-col9 .more-iconHolder{
+    min-width:64px;
+}
+
+#alarviewWrapper .box-col9 span {
+    /*float:left;*/
+    margin: 0 6px 0 0;
+}
+
+#alarviewWrapper .alarm-title {
+    font-size: 15px;
+    display: block;
+    color: #454545;
+}
+
+#alarviewWrapper .alarm-description {
+    font-size: 12px;
+    line-height: normal;
+    margin-top: 2px;
+    display: block;
+}
+
+#alarviewWrapper .grd-title {
+    font-size: 15px;
+}
+
+#alarviewWrapper .grd-title-location {
+    font-size: 12px;
+}
+
+#table-alarm label {
+    padding-left: 0;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(1), #alarviewWrapper #table-alarm th:nth-child(1), #alarviewWrapper #table-alarm td:first-child td {
+    width: 24px;
+}
+/*.sorted-th-text, #alarviewWrapper #table-alarm tr th:first-child + th:hover, #alarviewWrapper #table-alarm tr th:first-child + th + th:hover, #alarviewWrapper #table-alarm tr th:first-child + th + th + th:hover, #alarviewWrapper #table-alarm tr th:first-child + th + th + th + th:hover, #alarviewWrapper #table-alarm tr th:first-child + th + th + th + th + th:hover{
+color:#0889C4 !important;
+}*/
+#alarviewWrapper #table-alarm td:nth-child(2), #alarviewWrapper #table-alarm th:nth-child(2) {
+    width: 18%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(3), #alarviewWrapper #table-alarm th:nth-child(3) {
+    width: 7%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(4), #alarviewWrapper #table-alarm th:nth-child(4) {
+    width: 6%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(5), #alarviewWrapper #table-alarm th:nth-child(5) {
+    width: 6%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(6), #alarviewWrapper #table-alarm th:nth-child(6) {
+    width: 6%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(7), #alarviewWrapper #table-alarm th:nth-child(7) {
+    width: 15%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(8), #alarviewWrapper #table-alarm th:nth-child(8) {
+    width: 14%;
+}
+
+#alarviewWrapper #table-alarm td:nth-child(9), #alarviewWrapper #table-alarm th:nth-child(9) {
+    /*width:12%;*/
+    vertical-align: top;
+    position: absolute;
+}
+
+#alarviewWrapper #table-alarm th, #alarviewWrapper #table-alarm td {
+    padding: 11px 10px;
+}
+
+#alarviewWrapper .acknowledge-span {
+    margin-left: 0;
+    clear: both;
+    float: none;
+    padding: 5px 14px;
+    border: 1px solid #3BAD49;
+    color: #3BAD49;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#alarviewWrapper .header-text {
+    padding-top: 11px;
+    color: #707070;
+}
+
+    #alarviewWrapper .header-text li {
+        list-style: none;
+        float: left;
+        padding: 0 24% 0 0;
+    }
+
+    #alarviewWrapper .header-text u {
+        padding-top: 11px;
+        display: inline-block;
+    }
+
+#alarviewWrapper .setting-icon,
+#alarviewWrapper .menuspan {
+    padding-left: 12px;
+    clear: both;
+    float: none;
+    position: absolute;
+    padding-top: 1px;
+}
+
+#alarm-setting-section, #alarmsplitView {
+    display: none;
+}
+
+#alarviewWrapper .alarm-icon-holder {
+    float: none !important;
+    /*padding-right: 24px !important;*/
+    display: inline-block;
+    position: relative;
+    /*top: -15px !important;*/
+    /*margin-top: -15px !important;*/
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+#alarviewWrapper .alarmSec .alarm-icon-holder {
+    display: inline-block;
+    position: relative;
+    top: -15px !important;
+}
+
+    #alarviewWrapper .alarmSec .alarm-icon-holder .icon_print {
+        margin-top: 5px;
+    }
+
+#alarviewWrapper .alarm-door-lock-title {
+    padding: 0;
+    float: none !important;
+    margin-bottom: -15px !important;
+    display: inline-block;
+}
+
+.alarmSec .icon_fullscreen {
+    margin-left: 10px;
+}
+
+#alarviewWrapper .downarr_pos {
+    position: absolute;
+    /*right: -19px;*/
+    top: 20px;
+}
+
+#alarviewWrapper .navbar .nav > li.UlclipSearch > a {
+    color: #707070;
+    padding-top: 7px;
+}
+
+#alarviewWrapper .alarmpopFilter {
+    right: -12px;
+    left: auto;
+    top: 54px;
+    background-color: #323232;
+    color: #9d9d9d;
+    width: 247px;
+    padding: 10px 0 0;
+}
+
+#alarviewWrapper .search-popover {
+    right: auto !important;
+    min-width: 400px !important;
+}
+
+    #alarviewWrapper .search-popover .entitytxt {
+        font-size: 14px;
+        color: #707070;
+    }
+
+    #alarviewWrapper .search-popover::before {
+        left: 23px !important;
+        right: auto !important;
+    }
+
+#alarviewWrapper .alarm-action-btn {
+    margin-bottom: 15px;
+    margin-right: 8px;
+    cursor: pointer;
+    float: left;
+}
+
+    #alarviewWrapper .alarm-action-btn:last-child {
+        /*margin-right:0 !important;*/
+        /*margin-bottom: 20px;*/
+    }
+
+#alarviewWrapper ul.search-popover {
+    width: 288px !important;
+    margin-left: 23px;
+}
+
+#alarviewWrapper .alarmpopFilter .clipSearchNav {
+    margin: 0;
+    padding: 0;
+    float: none; /*added*/
+}
+
+#alarviewWrapper .ulClipSearchIconHolder a:hover {
+    background: none;
+}
+
+#alarviewWrapper .ulClipSearchIcon .icon_downarrow {
+    right: 3px;
+    top: 21px;
+}
+
+#alarviewWrapper .alarmpopFilter .tab-content {
+    overflow: hidden;
+    padding-top: 14px; /*22px*/
+    clear: both;
+}
+
+.alarm-search-content {
+    padding-top: 8px !important;
+}
+
+.alarm-search-btn-selected, .alarm-search-btn {
+    font-size: 12px !important;
+    padding: 0 7px !important;
+    border: 1px solid #0889c4;
+    color: #bababa;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: inline-block;
+    margin-bottom: 6px;
+    /*margin-right: 5px;*/
+    /*float: left;*/
+    margin-top: 5px;
+    height: 20px;
+    white-space: normal;
+}
+
+.searchSpantagholder span.alarm-search-btn-selected {
+    color: #fff;
+}
+
+.alarm-search-btn-selected:hover {
+    color: #d3d3d3;
+    border: 1px solid #0889c4;
+}
+
+.alarm-search-btn {
+    background: transparent !important;
+    border: 1px solid #707070;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+    .alarm-search-btn:hover {
+        background: #0889c4 !important;
+        border: 1px solid #0889c4;
+        color: #d3d3d3;
+    }
+
+#alarviewWrapper .alarmpopFilter ul {
+    margin: 0;
+}
+
+#alarviewWrapper .alarmpopFilter .tab-pane li {
+    list-style-type: none;
+    /*border-bottom:1px solid #454545;*/
+    padding: 1px 0 11px 24px !important;
+}
+
+    #alarviewWrapper .alarmpopFilter .tab-pane li:hover {
+        /*color: #d3d3d3;*/
+        /*background:#454545;*/
+        /*cursor:pointer;*/
+    }
+
+#alarviewWrapper .navbar .nav > li > .alarmpopFilter.dropdown-menu:before {
+    right: 15px;
+    left: auto;
+    border-bottom-color: #323232;
+}
+
+#alarviewWrapper .alarmpopFilter .tabbable .nav li {
+    float: left !important;
+    border-bottom: none;
+    margin: 0;
+    padding: 0 !important;
+}
+
+#alarviewWrapper .header-menu-box ul.alarmpopFilter li {
+    padding: 0;
+    background-color: transparent !important;
+}
+
+#alarviewWrapper .header-menu-box .tab-pane ul li:last-child {
+    margin-bottom: 1px;
+    border-bottom: none;
+}
+
+#alarviewWrapper .alarmpopFilter .tabbable {
+    margin-top: -10px;
+}
+
+.alarmpopFilter .nav-tabs > li > a {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font-size: 14px;
+    border: none;
+    float: left;
+    padding: 10px 23px 10px;
+}
+
+a.alarm-search-tab-title {
+    padding: 10px 15px 10px !important;
+}
+
+#alarviewWrapper #footer ul li .alarmpopFilter .nav-tabs li a:hover {
+    color: #9d9d9d !important;
+}
+
+#alarviewWrapper .alarmpopFilter header {
+    margin-left: 24px;
+}
+
+#alarviewWrapper .alarmpopFilter .nav-tabs {
+    border-bottom: 1px solid #454545;
+}
+
+#alarviewWrapper .nav-tabs > li:first-child {
+    margin-left: 23px !important;
+}
+
+#alarviewWrapper .alarmpopFilter .formControl-checkbox {
+    height: 10px;
+    position: relative;
+    top: 12px !important;
+    padding-left: 0;
+}
+
+#alarviewWrapper .viewdroparrow li li span.viewlabel, #alarviewWrapper span.legendtext {
+    font-size: 15px;
+    padding: 2px 0;
+    border: none;
+    line-height: 18px;
+    margin-bottom: 0;
+    /*color: #D3D3D3;*/
+    /*color: #6F7074;*/
+    color: #BABABA;
+    width: auto;
+    margin-left: 26px;
+    display: block;
+    height: 20px;
+}
+
+#alarviewWrapper .firstColumn legend:hover, #alarviewWrapper .alarm-search-uni-tree:hover {
+    color: #08c;
+    text-decoration: underline;
+}
+
+#alarviewWrapper .secondColumn legend {
+    padding: 0 0 0 28px;
+}
+
+#alarviewWrapper .alarmpopFilter legend {
+    padding-left: 30px;
+    top: -2px;
+    position: relative;
+}
+
+#alarviewWrapper .alarm-search-addon > span {
+    top: 2px !important;
+}
+
+#alarviewWrapper .alarm-search-uni-tree {
+    display: block;
+    margin-top: 18px;
+}
+
+#alarviewWrapper .alarmpopFilter input#timepicker1 {
+    margin-bottom: 9px !important;
+}
+
+#alarviewWrapper .alarm-door-lock-title .icon_locked, #alarviewWrapper .alarm-door-lock-title .icon_unlocked {
+    right: 12px;
+    top: 16px;
+}
+
+#alarviewWrapper .alarmpopFilter .clipSearchButton {
+    border-top: 1px solid #454545;
+    margin-top: 22px;
+}
+
+    #alarviewWrapper .alarmpopFilter .clipSearchButton .primary-button {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+.cri-sev {
+    color: #E33E38;
+    text-transform: uppercase;
+}
+
+.maj-sev {
+    color: #e86c08;
+    text-transform: uppercase;
+}
+
+.mod-sev {
+    color: #E8A108;
+    text-transform: uppercase;
+}
+
+.norm-sev {
+    color: #707070;
+    text-transform: uppercase;
+}
+
+#alarviewWrapper .movespan {
+    float: right;
+    margin-right: 24px;
+    width: 50px;
+    margin-top: -3px;
+}
+
+#alarviewWrapper .move-menu {
+    right: 0;
+    left: auto !important;
+    width: 200px;
+}
+
+    #alarviewWrapper .move-menu:before {
+        position: absolute;
+        display: inline-block;
+        right: 76px;
+        left: 109px;
+        top: -7px;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #ccc;
+        border-left: 7px solid transparent;
+        border-bottom-color: #323232;
+        content: '';
+    }
+
+#alarviewWrapper .severity-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Open Sans Semibold" !important;
+    padding: 0 0 0 8px;
+    margin-top: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#alarviewWrapper .move-menu > li {
+    font-size: 15px;
+    color: #9d9d9d;
+    background-color: #323232;
+    position: relative;
+    padding: 16px 24px !important;
+}
+
+.alarmSettingBody .secondColumn .right-inner-addon > span.critical {
+    background-color: #E33E38 !important;
+    position: relative;
+    left: 0;
+}
+
+.move-menu .critical_li span.critical {
+    background-color: #E33E38 !important;
+}
+
+.alarmSettingBody .secondColumn .right-inner-addon > span.major {
+    background-color: #e86c08 !important;
+    position: relative;
+    left: 0;
+}
+
+.move-menu .major_li span.major {
+    background-color: #e86c08 !important;
+}
+
+.alarmSettingBody .secondColumn .right-inner-addon > span.moderate {
+    background-color: #E8A108 !important;
+    position: relative;
+    left: 0;
+}
+
+.move-menu .moderate_li span.moderate {
+    background-color: #E8A108 !important;
+}
+
+.alarmSettingBody .secondColumn .right-inner-addon > span.normal {
+    background-color: #707070 !important;
+    position: relative;
+    left: 0;
+}
+
+.move-menu .normal_li span.normal {
+    background-color: #707070 !important;
+}
+
+#alarviewWrapper .field {
+    position: relative;
+    height: 50px;
+    width: 99% !important;
+    font-family: "Open Sans Regular";
+    border-bottom: 1px solid #D3D3D3;
+    border-top: 1px solid #D3D3D3;
+    border-right: 0;
+    display: inline-block;
+}
+
+#alarviewWrapper .field2 {
+    position: relative;
+    padding: 7px 0;
+    margin-top: 5px;
+    border-right: 0;
+}
+
+#alarviewWrapper .moveable-block {
+    margin-top: -16px;
+}
+
+#alarviewWrapper .right-inner-addon, .alarm-search-addon {
+    position: relative;
+}
+
+#alarviewWrapper .field > input {
+    padding-bottom: 0 !important;
+}
+
+#alarviewWrapper li.alarm-new-cus {
+    /*width:135px;*/
+    margin: 0 0 0 23px;
+}
+
+    #alarviewWrapper li.alarm-new-cus .formControl-checkbox {
+        float: left;
+        margin: -3px 1px 0 0;
+    }
+
+#alarviewWrapper .navbar .nav > li.top-view > a {
+    width: 87px;
+    padding: 10px 14px 24px 0;
+}
+
+#alarviewWrapper .tab-pane span {
+    margin: 0 12px 12px 0;
+    height: 22px;
+    display: inline-block;
+}
+
+#alarviewWrapper .viewdroparrow .tab-pane span {
+    height: 12px;
+}
+
+#alarviewWrapper .search-popover li:hover {
+    background: none !important;
+}
+
+#alarviewWrapper .dropdown-menu li:last-child, .alarmpopFilter .tab-pane li:last-child {
+    border-bottom: none;
+}
+
+#alarviewWrapper .view-width, .ulClipSearchIcon {
+    width: auto;
+    /*min-width: 300px;*/
+    /*top: 5px;*/
+}
+
+#alarviewWrapper tbody td, #alarviewWrapper thead th /*, .left*/ {
+    /*float: left;*/
+    display: inline-block;
+}
+
+#alarviewWrapper .ulClipSearchIcon:hover, #alarviewWrapper .ulClipSearchIconHolder a:focus {
+    outline: none;
+}
+
+#alarviewWrapper .navbar .nav > li.UlclipSearch > a:hover, #alarviewWrapper .alarmpopFilter .navbar .nav > li > a:hover {
+    color: #0067A6;
+}
+
+#alarviewWrapper .alarmpopFilter .nav > li > a:hover, #alarviewWrapper .alarmpopFilter .nav > li > a:focus, #alarviewWrapper .move-menu > li:hover {
+    background-color: #454545;
+}
+
+#alarviewWrapper .alarmpopFilter .nav-tabs > .active > a, #alarviewWrapper .alarmpopFilter .nav-tabs > .active > a:hover,
+#alarviewWrapper .alarmpopFilter .nav-tabs > .active > a:focus {
+    background-color: transparent;
+    color: #9d9d9d !important;
+    border-bottom: 2px solid #BABABA;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
+#alarviewWrapper .alarmpopFilter .nav-tabs > li > a:hover, #alarviewWrapper .alarmpopFilter .nav-tabs > li > a:focus {
+    border-bottom: 2px solid transparent;
+    color: #9d9d9d !important;
+}
+
+#alarviewWrapper .alarmpopFilter .formControl-checkbox b {
+    padding: 0 200px 10px 0;
+    cursor: pointer;
+}
+
+#alarviewWrapper .icon_Alarmsettings:hover, #alarviewWrapper .dragEvent {
+    cursor: pointer;
+}
+
+#alarviewWrapper .read {
+    background-color: #f5f5f5;
+}
+
+#alarviewWrapper .unread {
+    font-weight: normal;
+    background-color: transparent;
+}
+
+#alarviewWrapper .navbar .nav > li.top-view > a:focus, #alarviewWrapper .navbar .nav > li.top-view > a:hover {
+    background: none;
+}
+
+#alarviewWrapper .alarmpopFilter input[type="text"] {
+    background-color: transparent !important;
+    border-bottom: 1px solid #454545;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    color: #f5f5f5;
+    padding-left: 0;
+    width: 283px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    margin-top: 16px;
+}
+
+#alarviewWrapper .hideControls {
+    display: none;
+}
+
+#alarviewWrapper .showControls {
+    display: inline-block;
+}
+/***Search Calendar style start here***/
+.alarm-time-picker-addon {
+    padding: 14px 24px;
+    position: absolute;
+    height: 17px;
+    background: #3b3b3b;
+    border-color: #454545;
+    border-right: 1px solid #454545;
+    border-bottom: 1px solid #454545;
+}
+
+    .alarm-time-picker-addon:hover {
+        background: #5a5a5a;
+    }
+
+.alarm-time-tab {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #9d9d9d;
+    cursor: pointer;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    padding: 0 7px;
+}
+
+.alarm-time-tab:hover {
+    background: #0889c4 !important;
+    border: 1px solid #0889c4;
+    color: #d3d3d3;
+}
+
+.alarm-search-btn-selected {
+    border: 1px solid #0889c4 !important;
+}
+
+    .alarm-time-tab:hover, .selected-time-tab {
+        color: #d3d3d3;
+    }
+
+#alarviewWrapper .icon-calendar1 {
+    right: 9px;
+    top: 9px;
+}
+
+.alarm-datetimepicker-div {
+    clear: both;
+    float: none;
+    margin-top: 10px;
+}
+
+.alarm-search-addon > span {
+    right: 24px;
+    left: inherit;
+    top: 9px;
+}
+
+.alarm-time-picker {
+    position: absolute;
+    font-size: 12px;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+#alarviewWrapper .selectedTr {
+    background-color: #E6F3FC !important;
+}
+/***Search Calendar style end here***/
+
+/*#type-icon + .tooltip{
+   right:50px;
+   left:auto !important;
+   width:auto;
+   top:25px !important;
+   opacity:1;
+   font-size:12px !important;
+    min-width:78px;
+}*/
+#alarviewWrapper .alarm-frozen-tr, #alarviewWrapper .alarm-wss-error {
+    vertical-align: middle;
+    display: none;
+    padding: 10px 0 9px 0 !important;
+    margin: 0;
+}
+
+#alarviewWrapper .alarm-wss-error {
+    background: yellow;
+    padding: 18px 0 18px 0 !important;
+}
+
+    #alarviewWrapper .alarm-frozen-tr th, #alarviewWrapper .alarm-wss-error th {
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0;
+    }
+
+#alarviewWrapper .alarm-frozen-tr .alarm-frozen-msg {
+    border: none !important;
+    width: 63% !important;
+    padding-left: 60px !important;
+    color: #E33E38;
+}
+
+#alarviewWrapper .alarm-wss-error .alarm-wss-msg {
+    border: none !important;
+    width: auto !important;
+    padding-left: 60px !important;
+    background: transparent !important;
+    margin-right: 24px;
+}
+
+#alarviewWrapper .alarm-frozen-tr .alarm-frozen-btn {
+    border: none !important;
+    width: 20% !important;
+}
+
+#alarviewWrapper .alarm-wss-error .alarm-wss-btn {
+    border: none !important;
+    width: 30% !important;
+    background: transparent !important;
+}
+
+#alarviewWrapper .alarm-frozen-tr .alarm-frozen-count {
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+}
+
+#alarviewWrapper .alarm-frozen-tbody {
+    top: 103px !important;
+}
+
+#alarviewWrapper .alarm-frozen-tbody-with-wss-error {
+    top: 161px !important;
+}
+
+#alarviewWrapper .alarm-wss-refresh {
+    color: #0889C5;
+    cursor: pointer;
+}
+/*.popover .arrow {
+    left: auto;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 16px solid #272727;
+    border-top-width: 0;
+}*/
+
+#alarviewWrapper .searchSpan {
+    color: transparent;
+    cursor: pointer;
+    background: url(../images/icon_search.png) no-repeat right;
+    background-position-y: 11px;
+    height: 32px;
+    display: inline-block;
+    margin-left: 24px;
+    position: absolute;
+    overflow: hidden;
+    line-height: 18px;
+    width: 24px;
+}
+
+    #alarviewWrapper .searchSpan:hover {
+        background: url(../images/icon_searchHover.png) no-repeat right;
+        display: inline-block;
+        background-position-y: 11px;
+    }
+
+    #alarviewWrapper .searchSpan.selected-span-filter {
+        width: 380px;
+        margin-top: 5px;
+        background: url(../images/icon_searchHover.png) no-repeat right !important;
+        background-size: 15px !important;
+        border: 1px solid lightgray !important;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        /*padding-left: 4px;*/
+        padding-right: 20px;
+        white-space: nowrap;
+    }
+
+#alarviewWrapper .searchSpantagholder {
+    width: 256px;
+    /*display: inline-block;*/
+    padding-left: 5px;
+    position: relative;
+    overflow: auto;
+    overflow-y: hidden;
+    height: 54px;
+}
+
+#alarviewWrapper .searchSpantagholder .remove{
+    outline: none;
+}
+
+#alarviewWrapper .alarm-search-textbox {
+    border: none;
+    width: 90%;
+    height: 22px;
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    position: absolute;
+    right: 0;
+    display: none;
+    padding-left: 5px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    min-width: 112px;
+}
+
+.hidespan {
+    display: none;
+}
+
+.showspan {
+    display: block !important;
+}
+
+span.ui-helper-hidden-accessible {
+    display: none;
+}
+
+#ui-id-1 {
+    border: 1px solid #323232;
+    overflow-y: auto;
+    padding-top: 0;
+    border-bottom: 1px solid #454545;
+    z-index: 9999;
+    left: 0 !important;
+    width: 398px !important;
+    height: 100px;
+    overflow-y: auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #323232;
+    top: -5px !important;
+}
+
+    #ui-id-1 li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #ui-id-1 li {
+        padding: 3px 13px 7px 20px !important;
+        position: relative;
+        cursor: pointer;
+    }
+
+        #ui-id-1 li:first-child {
+            padding-top: 10px;
+        }
+
+        #ui-id-1 li:hover .autocom_txt {
+            color: #BABABA;
+        }
+
+    #ui-id-1 .autocom_txt {
+        display: inline-block;
+        padding-left: 32px;
+        padding-top: 3px;
+        font-size: 14px;
+        color: #707070;
+    }
+
+    #ui-id-1 .autocom_icon.icon_videonor {
+        background-position-y: -158px;
+    }
+
+.action-all-new-menu .icon_close {
+    right: 16px;
+    background-color: #323232;
+    z-index: 999;
+}
+
+.action-all-new-menu li:hover .icon_close {
+    background-position: -458px -338px;
+    background-color: #454545;
+}
+
+.action-all-new-menu .alarm-filter-save {
+    padding-left: 31px;
+}
+
+.popover-content .popoverCloseIcon {
+    right: 12px;
+    cursor: pointer;
+}
+
+.saveFiltersModel .icon-fieldError {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -250px -10px;
+    /* right: 0; */
+    top: 19px;
+    margin-left: 274px;
+    position: relative;
+    cursor: pointer;
+}
+
+.saveFiltersModel .showerror {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 16px 10px 16px;
+    position: relative;
+    width: 270px;
+    margin-top: 26px;
+    left: 0;
+    color: #707070;
+    display: none;
+}
+
+.saveFiltersModel .errorColor {
+    color: #E33E38 !important;
+    display: block;
+}
+
+.saveFiltersModel .showerror:before {
+    border-bottom: 8px solid #bababa;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 12px;
+    position: absolute;
+    top: -8px;
+}
+
+.saveFiltersModel .saveFilterInputErr {
+    height: 0;
+    position: absolute;
+}
+
+#alarviewWrapper #table-alarm .showtype .alarm-icon-holder{
+    cursor: default;
+}
+
+@-moz-document url-prefix() {
+    #alarviewWrapper .searchSpan {
+    margin-top:6px;
+}
+}
+#alarviewWrapper #timetab .icon-fieldError {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -250px -10px;
+    top: 19px;
+    margin-left: 274px;
+    position: relative;
+    cursor: pointer;
+}
+
+#alarviewWrapper #timetab .showerror {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 16px 10px 16px;
+    position: relative;
+    width: 270px;
+    margin-top: 26px;
+    left: 0;
+    color: #707070;
+    display: none;
+    top:-145px;
+}
+
+#alarviewWrapper #timetab .errorColor {
+    color: #E33E38 !important;
+    display: block;
+}
+
+#alarviewWrapper #timetab .showerror:before {
+    border-top: 8px solid #FFFFFF;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 10px;
+    position: absolute;
+    top: 94px;
+}
+
+#alarviewWrapper #timetab .dateInputErr {
+    height: 0;
+    position: absolute;
+    top: -3px;
+    right: 85px;
+}
+
+.center-align-icon{
+    padding-top:10px;
+}
+
+.alarm-searchIcon {
+    height: 30px;
+    width: 20px;
+    left: 378px;
+    z-index: 1000;
+    position: absolute;
+}

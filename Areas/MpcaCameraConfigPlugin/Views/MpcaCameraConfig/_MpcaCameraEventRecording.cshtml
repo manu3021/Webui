@@ -1,0 +1,23 @@
+﻿<script id="mpceventrectemplate" type="text/html">
+    <li class="mpceventrecitem">
+        <div class="checkboxStyle">
+            <label class="customcheckbox">
+                <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                <span></span>
+            </label>
+            <label class="title" data-bind="text: Name">
+            </label>
+        </div>
+    </li>
+</script>
+
+<div id="cameraevntrecwrapper" class="layoutcol cameraconfigformwrapper">
+    <form id="mpcacameraevntrecsetting" data-validationkey="Camera">
+        <div class="row">
+            <div class="recordDetails">
+                <div class="settingshead">@Resources.mpcaCam_EvtRec_RecOn:</div>
+                <ul class="checkbox-list" id="eventrecordingul" data-bind="template:{name:'mpceventrectemplate',foreach: $data.CameraEventRecordings}"></ul>
+            </div>
+        </div>                
+    </form>
+</div>

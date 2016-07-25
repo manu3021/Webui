@@ -1,0 +1,603 @@
+.timemanagement-root .time-chart {
+    position: relative;
+    min-height: 306px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding-right: 10px;
+}
+
+    .timemanagement-root .time-chart [data-y-index] text, [data-axis="x"] text {
+        fill: #707070;
+        stroke: none;
+    }
+
+    .timemanagement-root .time-chart [data-handle] {
+        cursor: e-resize;
+    }
+
+    .timemanagement-root .time-chart [data-axis="x"] rect {
+        fill: #fff;
+        cursor: pointer;
+    }
+
+    .timemanagement-root .time-chart .tz-flag rect, .tz-flag line {
+        fill: #888888;
+        /*stroke: #000000;*/
+        stroke-width: 2;
+    }
+
+    .timemanagement-root .time-chart .tz-flag text {
+        font-size: 10px;
+        fill: #fff;
+        cursor: default;
+    }
+
+    .timemanagement-root .time-chart .tz-default {
+        fill: #fff;
+        stroke: #555555;
+    }
+
+    .timemanagement-root .time-chart .tz-flag .tz-flag-strip {
+        stroke: none;
+    }
+
+    .timemanagement-root .time-chart rect[data-slider='-1'] {
+        stroke: none;
+    }
+
+    .timemanagement-root .time-chart line[data-slider='-1'] {
+        stroke: #66CCFF;
+    }
+
+    .timemanagement-root .time-chart .tz-handle {
+        fill: #000000;
+    }
+
+    .timemanagement-root .time-chart .tz-frame {
+        fill: #3BAD49;
+    }
+
+    .timemanagement-root .time-chart [data-selected] .tz-frame {
+        fill: #3BAD49;
+    }
+
+.timemanagement-root .time-input {
+    background: #888;
+    position: relative;
+    display: none;
+}
+
+    .timemanagement-root .time-input input, .time-input label {
+        font-size: 10px;
+        vertical-align: top;
+        background: none;
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .timemanagement-root .time-input input {
+        width: 28%;
+        border: 0 none;
+        outline: none;
+        line-height: 0.8px;
+    }
+
+    .timemanagement-root .time-input label {
+        position: static;
+        width: 2%;
+    }
+
+    .timemanagement-root .time-input input.meridiem-field {
+        width: 32%;
+    }
+
+.timemanagement-root .callout {
+    background: #333;
+    min-height: 50px;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    display: none;
+}
+
+.timemanagement-root .callout-arrow {
+    border: solid 10px transparent;
+    border-top-color: #333;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 100%;
+    left: 46%;
+}
+
+.timemanagement-root .callout label {
+    border-bottom: solid 1px #888;
+    padding-bottom: 2px;
+    position: static;
+    color: #fff;
+}
+
+.timemanagement-root .callout ul {
+    margin-left: 0;
+}
+
+.timemanagement-root .callout ul li {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: -moz-inline-box;
+    font-size: 0.7em;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.timemanagement-root .callout ul li.selected {
+        color: #888;
+    }
+
+.timemanagement-root input.error {
+    position: static;
+}
+
+.timemanagement-root .holiday-config label {
+    position: relative;
+}
+
+.timemanagement-root .holiday-mode > label {
+    display: inline-block;
+}
+
+.timemanagement-root .holiday-config span {
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.timemanagement-root input[type="date"] {
+    margin-top: 31px;
+}
+/*.timemanagement-root .nav-tabs li {
+    margin-bottom:0
+}
+
+.timemanagement-root .nav-tabs .active {
+    border-bottom: 2px solid #08a0bc;
+}
+
+.timemanagement-root .nav-tabs .active a {
+    border: none;
+    color:#428bca;
+    padding-top:8px
+}
+*/
+
+/*Tab Style*/
+.timemanagement-root .nav-tabs {
+    height: 43px;
+    border-bottom: 1px solid #d6d6d6;
+    font-family: "Open Sans Regular";
+    margin-left: 23px;
+    padding-top: 11px;
+    margin-bottom: 22px;
+}
+
+    .timemanagement-root .nav-tabs .active {
+        border-bottom: 2px solid #0889C4;
+        padding-bottom: 5px;
+    }
+
+    .timemanagement-root .nav-tabs > li {
+        margin-right: 26px;
+    }
+
+        .timemanagement-root .nav-tabs > li a {
+            padding-left: 0;
+            padding-right: 0;
+            color: #707070;
+            background-color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: medium none;
+        }
+
+            .timemanagement-root .nav-tabs > li a:hover {
+                background: none;
+                border: none;
+                padding-top: 9px;
+                padding-left: 1px;
+                padding-right: 1px;
+                color: #0889C4;
+            }
+
+    .timemanagement-root .nav-tabs .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        /* padding-top: 7px; */
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+        .timemanagement-root .nav-tabs .active a:hover {
+            padding-bottom: 9px;
+        }
+
+/*Tab Style*/
+.timemanagement-root .link-tab-content .button-row {
+    margin-top: 15px;
+}
+
+.timemanagement-root .link-tab-content .table-hover .formControl-checkbox span {
+    position: relative;
+    padding-top: 0;
+    top: -13px;
+    height: 20px;
+}
+/***Add styles from here***/
+.timemanagement-root .table-hover tbody tr:hover > td {
+    background: #E6F3FC;
+}
+
+.timemanagement-root input[type="date"] {
+    width: 217px;
+}
+
+.timemanagement-root input[type="password"], .timemanagement-root input[type="text"], .timemanagement-root input[type="number"], .timemanagement-root input[type="email"], .timemanagement-root input[type="date"] {
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+    font-size: 15px;
+    color: #707070;
+}
+
+    .timemanagement-root input[type="password"]:focus, .timemanagement-root input[type="text"]:focus, .timemanagement-root input[type="number"]:focus, .timemanagement-root input[type="email"]:focus, .timemanagement-root input[type="date"]:focus {
+        color: #0067A6;
+    }
+
+.timemanagement-root .formControl-radio span {
+    vertical-align: middle;
+    padding-right: 20px;
+    min-width: 80px;
+    width: auto;
+    padding-left: 26px;
+}
+
+.timemanagement-root .formControl-radio {
+    display: inline-block;
+    padding-bottom: 24px;
+}
+/*.timemanagement-root .nav-tabs > li > a, .timemanagement-root .nav-pills > li > a, .timemanagement-root .link-tab-content a {
+padding: 7px 12px 8px 12px;
+text-decoration: none;
+outline: medium none;
+}
+.timemanagement-root .nav-tabs > li > a:hover {
+color: #428bca;
+text-decoration: none;
+background:none !important;
+border:none;
+border-color: transparent transparent #08a0bc transparent;
+border-bottom: 0px solid #08a0bc !important; 
+height:20px;
+}*/
+
+
+.timemanagement-root .table-hover {
+    margin-top: 7px;
+}
+
+    .timemanagement-root .table-hover td, .timemanagement-root .table-hover th {
+        word-wrap: break-word;
+    }
+
+        .timemanagement-root .table-hover td:nth-child(1), .timemanagement-root .table-hover th:nth-child(1) {
+            width: 25px;
+        }
+
+        .timemanagement-root .table-hover td:nth-child(2), .timemanagement-root .table-hover th:nth-child(2) {
+            width: 30%;
+        }
+
+        .timemanagement-root .table-hover td:nth-child(3), .timemanagement-root .table-hover th:nth-child(3) {
+            width: 40%;
+        }
+
+        .timemanagement-root .table-hover td:nth-child(4), .timemanagement-root .table-hover th:nth-child(4) {
+            /*width:5%;*/
+        }
+
+/***Add styles end here***/
+#timeManagement .table > thead > tr > th {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    border-top: 1px solid #BABABB !important;
+    font-size: 14px;
+    color: #707070;
+    vertical-align: middle;
+    font-weight: normal;
+    padding-left: 14px;
+    padding-right: 8px;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    height: 42px;
+}
+
+    #timeManagement .table > thead > tr > th:first-child {
+        padding-left: 8px;
+        padding-top: 4px;
+    }
+
+    #timeManagement .table > thead > tr > th:last-child {
+        border-right: none;
+    }
+
+#timeManagement .table > tbody > tr > td {
+    border-bottom: 1px solid #BABABB !important;
+    padding-top: 11px;
+    padding-bottom: 6px;
+    vertical-align: middle;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+    #timeManagement .table > tbody > tr > td + span {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+#timeManagement {
+    padding: 0px;
+}
+
+.timemanagement-root .field input.error {
+    position: absolute;
+}
+
+#holidaymodal_form .field {
+    margin-bottom: 0;
+    float: none;
+}
+
+#holidaymodal .spacingEveryDay {
+    padding-top: 13px;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#holidaymodal .holiday-mode {
+    padding-top: 10px;
+    padding-bottom: 12px;
+    /*border-bottom: 1px solid #d3d3d3;*/
+    width: 107%;
+    margin-bottom: 5px;
+}
+
+#holidaymodal_form .createHolidayHeading {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    padding-top: 7px;
+    padding-bottom: 13px;
+}
+
+#holidaymodal_form .formControl-radio {
+    top: 0px;
+    padding-bottom: 0;
+}
+
+#holidaymodal.mpcmodel {
+    width: 390px;
+    left: 55%;
+}
+
+#holidaymodal_form .formControl-radio span {
+    padding-right: 0;
+}
+
+
+
+.daylightsaving {
+}
+
+    .daylightsaving .recordList {
+        float: left;
+        width: 35%;
+            -ms-overflow-y: hidden;
+        overflow-y: hidden;
+
+        bottom: 0;
+        position: absolute;
+        top: 122px;
+        border-right: 1px solid #d3d3d3;
+    }
+
+        .daylightsaving .recordList:hover {
+                -ms-overflow-y: hidden;
+        overflow-y: hidden;
+
+        }
+
+    .daylightsaving .recordListHead {
+        font-size: 15px;
+        border-bottom: 1px solid #d3d3d3;
+        margin-left: 24px;
+        top: 72px;
+        padding: 5px 0px 0px 25px;
+        border-bottom: 1px solid #d6d6d6;
+        height: 44px;
+    }
+
+    .daylightsaving .recordList .checkbox-list {
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+        .daylightsaving .recordList .checkbox-list li {
+            float: none;
+            margin: 0;
+            border-right: none;
+            list-style-type: none;
+        }
+
+            .daylightsaving .recordList .checkbox-list li .checkboxStyle {
+                margin: 0 !important;
+                padding: 12px 0 12px 0 !important;
+                border-bottom: 1px solid #d6d6d6;
+            }
+
+                .daylightsaving .recordList .checkbox-list li .checkboxStyle .customcheckbox {
+                    border-style: none;
+                    color: #6F7074;
+                    font-size: 13px;
+                    margin: 0 !important;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                }
+
+                .daylightsaving .recordList .checkbox-list li .checkboxStyle > .title {
+                    margin: 3px 0px 0px 27px !important;
+                }
+
+    .daylightsaving .recordList .checkboxStyle .customcheckbox input {
+        /*display: none;*/
+    }
+
+        .daylightsaving .recordList .checkboxStyle .customcheckbox input:checked + span {
+            /*background: url("../images/checkBox_press.png");*/
+            background: url('../../Content/sprite_icons.png') no-repeat -612px -72px;
+            /*background-repeat: no-repeat;*/
+            width: 16px;
+            height: 17px;
+        }
+
+    .daylightsaving .recordList .checkboxStyle .customcheckbox span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        /*margin-top: -20px;*/
+        /*background: url("../images/checkBox_normal.png");*/
+        background: url('../../Content/sprite_icons.png') no-repeat -612px -12px;
+        background-repeat: no-repeat;
+    }
+
+    .daylightsaving .rightFields {
+        margin-left: 39%;
+        margin-top: 57px;
+    }
+
+    .daylightsaving .add-on {
+        width: 39px !important;
+        height: 39px !important;
+        z-index: 100;
+        right: 0;
+        border-right: none;
+        border-top: none;
+        position: absolute;
+    }
+
+    .daylightsaving .icon-calendar {
+        background-image: url('../../Content/sprite_icons.png');
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 32px;
+        left: 15px;
+        background-position: -190px -120px;
+        margin-top: -10px;
+    }
+
+
+#holidaymodal_form .add-on {
+    width: 25px !important;
+    height: 39px !important;
+    z-index: 100;
+    right: 0;
+    border-right: none;
+    border-top: none;
+}
+
+    #holidaymodal_form .add-on .icon-calendar {
+        background: url("../images/sprite_icons.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        background-position: -190px -130px;
+        position: absolute;
+        left: 14px;
+        top: 13px;
+        cursor: pointer;
+    }
+
+        #holidaymodal_form .add-on .icon-calendar:hover {
+            background-position: -220px -130px;
+        }
+
+/*#scheduleListForm .ternary-button, #holidayListForm .ternary-button {
+    margin-left: 24px;
+}*/
+
+#scheduleListForm .row, #holidayListForm .row {
+    margin-bottom: 15px;
+}
+
+#scheduleListForm .scheduleListTableWrapper {
+    margin-right: 22px;
+    padding-left: 22px;
+}
+
+#holidayListForm .holidayListTableWrapper {
+    margin-right: 22px;
+    padding-left: 22px;
+}
+
+
+#holidaymodal_form .singleHolidayContent {
+    margin-top: 16px;
+}
+
+.timemanagement-root .mpcmodel footer {
+    position: static;
+    padding: 0px 24px 11px 24px;
+}
+
+.timemanagement-root .mpcmodel section {
+    padding: 24px 24px 5px 24px;
+}
+
+#manageTimeSchedule {
+    left: 43%;
+}
+.timemanagement-root .callout ul li label {
+    border-bottom: solid 0px #888;
+    padding-bottom: 2px;
+    position: static;
+    color: #fff;
+    font-size: 9px;
+}
+
+.timemanagement-root .callout .formControl-checkbox span {
+  background: url('../images/sprite_icons.png') no-repeat -612px -132px !important;
+
+  padding: 0 0 10px 0;
+  cursor: pointer;
+  height: 11px !important;  
+}
+.timemanagement-root .callout .formControl-checkbox input:checked + span
+{
+  background: url('../images/sprite_icons.png') no-repeat -612px -192px !important;
+
+}
+
+.timemanagement-root .icon_del{
+    cursor:pointer;
+}

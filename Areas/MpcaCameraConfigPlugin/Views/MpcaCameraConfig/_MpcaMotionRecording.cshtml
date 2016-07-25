@@ -1,0 +1,154 @@
+﻿<script id="mpcmotionrectemplate" type="text/html">
+    <li class="mpcmotionrecitem">
+        <div class="checkboxStyle">
+            <label class="customcheckbox">
+                <input type="checkbox" class="checkbox" data-bind="checked: IsChecked">
+                <span></span>
+            </label>
+            <span data-bind="click: ShowSettings" class="cursor">
+                <label class="title" data-bind="text: Name"></label>
+            </span>
+        </div>
+    </li>
+</script>
+
+<div id="motionRecording" class="cameraconfigformwrapper">
+    <form id="mpcacameramotionrecsetting" data-validationkey="Camera">
+        <div>
+            <div class="motioRecordingFirstCol">
+                <ul class="col enableMotionRecording">
+                    <li class="enableMotionRecordingCheckbox">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" class="checkbox" data-bind="checked: $data.IsMotionEnabled">
+                            <span></span>
+                        </label>
+                        <label class="title enableRecording">@Resources.mpcaCam_MtnRec_EbMtRec</label>
+                    </li>
+                    <li>
+                        <div class="field spinner-control">
+                            <label for="motionrectime">@Resources.mpcaCam_MtnRec_HldTm</label>
+                            <input id="motionrectime" class="floatTxt myStyle valid" name="motionrectime" size="3" step="1" type="number" data-bind="spinnerValue: $data.SelectedHoldTime, spinnerOptions: {min: $data.MinHoldTime, max: $data.MaxHoldTime}, disable: !$data.IsMotionEnabled(), event: { change: $data.IsInRange, keypress: $data.IsNumber }">
+                        </div>
+                    </li>
+                    @*<li data-bind="visible: $root.SettingsModel().IsAnalog">
+                            <div class="field spaceBottomStyle">
+                                <label for="motionsensitiviy">@Resources.mpcaCam_MtnRec_Sntvy:</label>
+                                <input id="motionsensitiviy" name="motionsensitiviy" type="number" style="width: 200px;" class="floatTxt myStyle valid" data-bind="attr: {min: $data.MinSensitivity, max: $data.MaxSensitivity}, value: $data.SelectedSensitivity, disable: !$data.IsMotionEnabled()">
+                            </div>
+                        </li>*@
+                    <li data-bind="visible: $data.IsVMDRegionApplicable">
+                        <ul class="motionRegion">
+                            <li>
+                                <div class="motionRecordingIndication">
+                                    <span>@Html.Raw(String.Format(@Resources.mpcaCam_MtnRec_Rgn, "1"))</span>
+                                    <span class="motionRecordingFieldIconRed"></span>
+                                </div>
+                                <div class="motionRegionCheckbox">
+                                    @*<label class="formControl-checkbox">
+                                        <input type="checkbox" class="checkbox" data-bind="checked: $data.redRegion().IsEnabled">
+                                        <span></span>
+                                    </label>*@
+                                    <div class="switch_options-mini">
+                                        <span class="switch_enable">@Resources.On</span>
+                                        <span class="switch_disable">@Resources.Off</span>
+                                        <input type="hidden" class="switch_val" data-bind="value: $data.redRegion().onofftoggle, fireInputChange: true">
+                                    </div>
+                                </div>
+                                <div class="motionRegionEditContainer">
+                                    <b id="regionicon0" class="icon_edit" data-regionid="0" data-bind="click: $data.redRegion().onselectregion"></b>
+                                </div>
+                                <div class="field motionRegionsensitivity spinner-control">
+                                    <label for="redmotionsensitiviy">@Resources.mpcaCam_MtnRec_Sntvy:</label>
+                                    <input id="redmotionsensitiviy" name="redmotionsensitiviy" type="number" class="floatTxt myStyle valid" data-bind="spinnerValue: $data.redRegion().SelectedSensitivity, spinnerOptions: {min: $data.MinSensitivity, max: $data.MaxSensitivity}, disable:!$data.redRegion().IsEnabled()" min="1" max="100" data-original-title="" title="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="motionRecordingIndication">
+                                    <span>@Html.Raw(String.Format(@Resources.mpcaCam_MtnRec_Rgn,"2"))</span>
+                                    <span class="motionRecordingFieldIconGreen"></span>
+                                </div>
+                                <div class="motionRegionCheckbox">
+                                    @*<label class="formControl-checkbox">
+                                        <input type="checkbox" class="checkbox" data-bind="checked: $data.greenRegion().IsEnabled">
+                                        <span></span>
+                                    </label>*@
+                                    <div class="switch_options-mini">
+                                        <span class="switch_enable">@Resources.On</span>
+                                        <span class="switch_disable">@Resources.Off</span>
+                                        <input type="hidden" class="switch_val" data-bind="value: $data.greenRegion().onofftoggle, fireInputChange: true">
+                                    </div>
+                                </div>
+                                <div class="motionRegionEditContainer">
+                                    <b id="regionicon1" class="icon_edit" data-regionid="1" data-bind="click: $data.greenRegion().onselectregion"></b>
+                                </div>
+                                <div class="field motionRegionsensitivity spinner-control">
+                                    <label for="greenmotionsensitiviy">@Resources.mpcaCam_MtnRec_Sntvy:</label>
+                                    <input id="greenmotionsensitiviy" name="greenmotionsensitiviy" type="number" class="floatTxt myStyle valid" data-bind="spinnerValue: $data.greenRegion().SelectedSensitivity, spinnerOptions: {min: $data.MinSensitivity, max: $data.MaxSensitivity}, disable:!$data.greenRegion().IsEnabled()" min="1" max="100" data-original-title="" title="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="motionRecordingIndication">
+                                    <span>@Html.Raw(String.Format(@Resources.mpcaCam_MtnRec_Rgn, "3"))</span>
+                                    <span class="motionRecordingFieldIconBlue"></span>
+                                </div>
+                                <div class="motionRegionCheckbox">
+                                    @*<label class="formControl-checkbox">
+                                        <input type="checkbox" class="checkbox" data-bind="checked:  $data.blueRegion().IsEnabled">
+                                        <span></span>
+                                    </label>*@
+                                    <div class="switch_options-mini">
+                                        <span class="switch_enable">@Resources.On</span>
+                                        <span class="switch_disable">@Resources.Off</span>
+                                        <input type="hidden" class="switch_val" data-bind="value: $data.blueRegion().onofftoggle, fireInputChange: true">
+                                    </div>
+                                </div>
+                                <div class="motionRegionEditContainer">
+                                    <b id="regionicon2" class="icon_edit" data-regionid="2" data-bind="click: $data.blueRegion().onselectregion"></b>
+                                </div>
+                                <div class="field motionRegionsensitivity spinner-control">
+                                    <label for="bluemotionsensitiviy">@Resources.mpcaCam_MtnRec_Sntvy:</label>
+                                    <input id="bluemotionsensitiviy" name="bluemotionsensitiviy" type="number" class="floatTxt myStyle valid" data-bind="spinnerValue: $data.blueRegion().SelectedSensitivity, spinnerOptions: {min: $data.MinSensitivity, max: $data.MaxSensitivity}, disable:!$data.blueRegion().IsEnabled()" min="1" max="100" data-original-title="" title="">
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="motioRecordingSecondCol" data-bind="visible: $data.IsVMDRegionApplicable">
+
+                <div id="container">
+                    <div class="playHolder" id="vmdPlayerId">
+                        <b class="icon_player" data-bind="click: $data.VMDPanelModel().getPlayClickdetails"></b>
+                        <span class="playText" data-bind="click:$data.VMDPanelModel().getPlayClickdetails">@Resources.mpcaCam_mtn_strttun</span>
+                        <div class="playercontainer" data-bind="visible:$data.VMDPanelModel().issuccess"></div>
+                        <div id="panelRequestLive" data-bind="visible:$data.VMDPanelModel().iscustomimage() && $data.VMDPanelModel().isshow()">
+                            <i class="loading-icon"></i>
+                            <i class="close-icon" data-bind="click: function(){$data.VMDPanelModel().closepanel(),$data.removeDrawable()}"></i>
+                            <span class="videoError" data-bind="text:$data.VMDPanelModel().erromessage"> </span>
+                        </div>
+                        <div class="videoErrorTextStyle" data-bind="visible:$data.VMDPanelModel().isError()">
+                            <i class="close-icon" data-bind="click:$data.VMDPanelModel().closepanel"></i>
+                            <span class="videoErrorImage"></span>
+                            <span class="videoErrorText" data-bind="text:$data.VMDPanelModel().erromessage"></span>
+                            <span class="tryAgainStyle" data-bind="click:$data.VMDPanelModel().Retryvideostream"><i class="icon_tryagain"></i>@Resources.Try_Again</span>
+                        </div>
+                        @*<div data-bind="visible:$data.VMDPanelModel().issuccess() && $data.VMDPanelModel().isshow()">
+                                <i class="close-icon" data-bind="click:$data.VMDPanelModel().closepanel,visible:$data.VMDPanelModel().isclosevisible() && $data.VMDPanelModel().isshow()"></i>
+                                <span class="textOnVideoLeft" data-bind="text:$data.VMDPanelModel().sessionmodel.cameraname"> </span>
+                            </div>*@
+                    </div>
+                    <canvas id="motionregioncanvas" class="regioncanvas" width="320" height="240"></canvas>
+                    <canvas id="vmdregioncanvas_draw" width="320" height="240" class="regioncanvas"></canvas>
+                </div>
+                <div class="doneControl" data-bind="click: function(){$data.VMDPanelModel().closepanel(),$data.hideallcanvas()}">@Resources.mpcaCam_mtn_done</div>
+
+
+            </div>
+            <div class="motionRecordingSchedule motioRecordingThirdCol">
+                <span class="motionRecordingScheduleColHeading ">@Resources.mpcaCam_MtnRec_MtRecSch</span>
+                <ul class="col" id="motionrecordingul" data-bind="template:{name:'mpcmotionrectemplate',foreach:$data.MotionRecordingSchedules}"></ul>
+            </div>
+        </div>
+
+    </form>
+</div>

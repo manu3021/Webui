@@ -1,0 +1,356 @@
+﻿
+
+<div>
+    @*<link href="~/Content/PanelConfigPlugin/button.css" rel="stylesheet" />*@
+    @*<link href="~/Content/PanelConfigPlugin/PanelConfiguration.css" rel="stylesheet" />*@
+    <script id="asreaderOuputtemplate" type="text/html">
+        <li>
+            <span data-bind="text:$data.Name"></span>
+        </li>
+    </script>
+
+    <form id="doorForm" class="" data-validationkey="door">
+        <div class="field">
+            <label class="floatLblDn">@Resources.DoorName</label>
+            <input type="text" class="floatTxt myStyle valid" id="door_Name" name="door_Name" maxlength="25" data-bind="value: $data.Name">
+        </div>
+
+        <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+            <li class="doorBehaviour">
+                <div class="doorBehaviourButton secondary-button" data-bind="enable: $data.ReaderA().IsActive(), click: $data.oneditaclick">
+                    <span class="doorSettingsButtonTxt">@Resources.DoorBehavior</span>
+                    <span>@Resources.Output_PulseTime: </span><span data-bind="text:PulseTime()"></span><br />
+                    <span>@Resources.Input_ShuntTime: </span><span data-bind="text:ShuntTime()"></span><br />
+                </div>
+            </li>
+
+            <li class="doorReaderRight" id="doorReaderRightId">
+                <div class="doorReaderRightButton" data-toggle='modal' role='button' data-bind="enable: $data.ReaderB().IsActive(), click: $data.showantipassbback, css: $data.ReaderB().IsActive() ? 'secondary-button' : 'disabled-button'">
+                    <span class="doorSettingsButtonTxt" data-bind="text: $data.ReaderB().Name()"> </span>
+                    <span class="doorSettingsButtonTxt" data-bind="text: $data.ReaderB().UsedOrNot()"></span>
+                    <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderB().AntiPassback() > 0">@Resources.AntiPassback</span>
+                    <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderB().AntiPassback() > 0, text: $data.ReaderB().SoftOrHard()"></span>
+                    <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderB().AntiPassbackType() > 0,text: $data.ReaderB().InOrOut()"> </span>
+                </div>
+            </li>
+
+            <li class="egressSwitch" id="doorEgressId">
+                <div class="egressSwitchButton secondary-button" data-bind="enable: !$data.ReaderB().IsActive(), click: $data.showantipassbback, css: !$data.ReaderB().IsActive() ? 'secondary-button' : 'disabled-button'">
+                    <span class="doorSettingsButtonTxt">@Resources.EgressSwitch</span>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="doorSettingsWrapperTop">
+            <li>
+                <div class="associationButton secondary-button">
+                    <span class="doorSettingsAssociationButtonTxt" data-bind="click: showassociate">@Resources.Associations: </span>
+                    <span class="doorSettingsAssociationButtonTxt" data-bind="text: $data.AssociatedDevicesCount"></span>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+            <li>
+                <div class="stripe leftNoBorder"></div>
+                <!--<div class="doorLeftLine"></div>-->
+            </li>
+            <li class="connecterLeft"></li>
+            <li>
+                <div data-bind="css:!$data.ReaderA().IsActive() ? 'arrowUpDisabled' : 'arrowUpEnabled'">
+                    <div class="arrow_head_up" data-bind="visible: $data.ReaderA().IsIn()"></div>
+                    <div class="arrow_body_up">
+                        <ul>
+                            <li class="arrowText" data-bind="visible: $data.ReaderA().IsIn()">@Resources.In</li>
+                            <li class="arrowText" data-bind="visible: !$data.ReaderA().IsIn()">@Resources.Out</li>
+                        </ul>
+                    </div>
+                    <div class="arrow_head_down" data-bind="visible: !$data.ReaderA().IsIn()"></div>
+                </div>
+            </li>
+            <li class="connecterMiddle"></li>
+            <li>
+                <div data-bind="css:!$data.ReaderB().IsActive() ? 'arrowDownDisabled' : 'arrowDownEnabled'">
+                    <div class="arrow_head_up" data-bind="visible: $data.ReaderB().IsIn()"></div>
+                    <div class="arrow_body_down">
+                        <ul>
+                            <li class="arrowText" data-bind="visible: $data.ReaderB().IsIn()">@Resources.In</li>
+                            <li class="arrowText" data-bind="visible: !$data.ReaderB().IsIn()">@Resources.Out</li>
+                        </ul>
+                    </div>
+                    <div class="arrow_head_down" data-bind="visible: !$data.ReaderB().IsIn()"></div>
+                </div>
+            </li>
+            <li class="connecterRight"></li>
+            <li>
+                <div data-bind="css:$data.ReaderB().IsActive() ? 'egressSwitchTopDisable' : 'egressSwitchTopEnable'"></div>
+                <div class="stripe rightNoBorder"></div>
+                <!--<div class="doorRightLine"></div>-->
+                <div class="egressSwitchBottom"></div>
+            </li>
+        </ul>
+
+        <div class="doorReaderLeft" id="doorReaderLeftId">
+            <div class="doorReaderLeftButton secondary-button" data-toggle='modal' role='button' data-bind="enable: $data.ReaderA().IsActive(), click: $data.showantipassaback, css: $data.ReaderA().IsActive() ? 'secondary-button' : 'disabled-button'">
+                <span class="doorSettingsButtonTxt" data-bind="text: $data.ReaderA().Name()"> </span>
+                <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderA().AntiPassback() > 0">@Resources.AntiPassback</span>
+                <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderA().AntiPassback() > 0, text: $data.ReaderA().SoftOrHard()"></span>
+                <span class="doorSettingsButtonTxt" data-bind="visible: $data.ReaderA().AntiPassbackType() > 0,text: $data.ReaderA().InOrOut()"> </span>
+            </div>
+        </div>
+
+        <div class="buttonGroup antipassback">
+            <button class="primary-button" data-bind="click:$data.saveDoor">@Resources.Save</button>
+            <button class="secondary-button" data-bind="click:$data.resetDoor">@Resources.Reset</button>
+            <span class="class2 errorDetail" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </div>
+
+        <div id="readerSettingsPopupa" class="mpcmodel modal hide fade in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <header class="row">
+                <span>@Resources.ReaderSettings</span>
+            </header>
+            <section class="row">
+                <ul>
+                    <li>
+                        <div class="field pull-left">
+                            <label class="floatLblDn">@Resources.Output_PulseTime</label>
+                            <input type="text" required="required" id="door_pulsetime_a" name="door_pulsetime_a" class="valid floatTxt myStyle" placeholder="Pulse Time" data-bind="value:$data.PulseTime, event: { keyup: time_changed }">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field pull-left">
+                            <label class="floatLblDn">@Resources.Input_ShuntTime</label>
+                            <input type="text" required="required" id="door_shunttime_a" name="door_shunttime_a" class="valid floatTxt myStyle" placeholder="Shunt Time" data-bind="value:$data.ShuntTime, event: { keyup: time_changed }">
+                        </div>
+                    </li>
+                    @*<li>
+                            <div class="field pull-left clear-left">
+                                <label class="floatLblDn">@Resources.DevicePointIn</label>
+                                <select id="interlockdevicepointsA" data-bind="options:$data.DevicePointsIn, optionsText: 'Name', value: $data.DevicePointIn, event: { change: value_changed }"></select>
+                            </div>
+                        </li>
+                        <li class="errorDevicePointInOut">
+                            <div class="interlockMsgStyle" data-bind="visible: $data.DevicePointMessage().length > 0 && $data.ReaderB().IsActive()">
+                                <span class="errorDevicePointInOutColor">Error! </span><span data-bind="text: $data.DevicePointMessage()"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="field pull-left clear-left" data-bind="visible:$data.ReaderB().IsActive()">
+                                <label class="floatLblDn">@Resources.DevicePointOut</label>
+                                <select id="interlockdevicepointsB" data-bind="options:$data.DevicePointsOut, optionsText: 'Name', value: $data.DevicePointOut,optionsCaption: '-- Select --', event: { change: value_changed }"></select>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="field pull-left select-field clear-left ">
+                                <label class="floatLblDn">@Resources.InterlockInputs</label>
+                                <select id="interlockinputs" data-bind="options:$data.ReaderA().obInputs(), optionsText: 'Name',value:$data.ReaderA().InterlockingInput(), event: { change: value_changed }"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pull-left interlockMsgStyle" data-bind="visible: $data.InputMessage().length > 0">
+                                <span class="interlockwarningstyle">Warning! </span><span data-bind="text: $data.InputMessage()"></span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="field pull-left select-field clear-left">
+                                <label class="floatLblDn">@Resources.InterlockOutputs</label>
+                                <select id="interlockoutputs" data-bind="options:$data.ReaderA().obOutputs(),  optionsText: 'Name', value: $data.ReaderA().InterlockingOutput(), event: { change: value_changed }"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pull-left interlockMsgStyle" data-bind="visible: $data.OutputMessage().length > 0">
+                                <span class="interlockwarningstyle">Warning! </span><span data-bind="text: $data.OutputMessage()"></span>
+                            </div>
+                        </li>*@
+                </ul>
+            </section>
+
+            <footer>
+                <div class="modal-footer">
+                    <button id="doorbehaviordonebtn" class="primary-button" aria-hidden="true" data-dismiss="modal" data-bind="click: $data.validateReader">@Resources.Done</button>
+                    <button class="secondary-button" data-dismiss="modal" aria-hidden="true" data-bind="click:$data.resetReaderData">@Resources.Cancel</button>
+                </div>
+            </footer>
+        </div>
+
+        <div id="readerPopupA" class="mpcmodel modal hide fade in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <section class="row">
+                <ul>
+                    <li class="readerPopupAStatus">
+                        <div class="readerPopupAtxt" data-bind="text: $data.ReaderA().Name()"></div>
+                    </li>
+                    <li class="readerSwitchStatus">
+                        <div class="switch_options switch_option_in_out">
+                            <span class="switch_enable" data-bind="css: {selected:$data.ReaderA().IsIn()}, click: $data.inoutchanged">@Resources.In</span>
+                            <span class="switch_disable" data-bind="css: {selected:!$data.ReaderA().IsIn()}, click: $data.inoutchanged">@Resources.Out</span>
+                            <input type="hidden" class="switch_val" data-bind="value: $data.ReaderA().IsIn()" />
+                        </div>
+                    </li>
+                    <li class="readerPopupAAnipassbkStatus" data-bind="visible: $data.globalantipassbackenabled  && $data.ReaderA().IsActive()">
+                        <div class="readerPopupAAnitpssbktxt">
+                            <div>@Resources.AntiPassback</div>
+                            <div class="switch_options switch_option_readerPopupAAnipassbkStatus">
+                                <span class="switch_enable" data-bind="css: {selected:$data.ReaderA().IsAntiPassback()}, click: $data.AntipassbackAchanged">@Resources.Enable</span>
+                                <span class="switch_disable" data-bind="css: {selected:!$data.ReaderA().IsAntiPassback()}, click: $data.AntipassbackAchanged">@Resources.Disable</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.ReaderA().IsAntiPassback()">
+                            </div>
+                        </div>
+                        <div id="antipassbackAdirectionsettings" data-bind="css: $data.ReaderA().IsAntiPassback() ? 'enablecontrol' : 'disablecontrol'">
+                            <div class=" radio">
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbackA" data-bind="enable: $data.ReaderA().IsAntiPassback, checked: $data.ReaderA().AntiPassbackType" value="1">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.In</span>
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbackA" data-bind="enable: $data.ReaderA().IsAntiPassback, checked: $data.ReaderA().AntiPassbackType" value="2">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Out</span>
+                            </div>
+                        </div>
+                        <div id="antipassbackAnaturesettings" data-bind="css: $data.ReaderA().IsAntiPassback ? 'enablecontrol' : 'disablecontrol'">
+                            <div class="radio">
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbacktypeA" data-bind="enable: $data.ReaderA().IsAntiPassback, checked: $data.ReaderA().AntiPassback" value="2">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Hard</span>
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbacktypeA" data-bind="enable: $data.ReaderA().IsAntiPassback, checked: $data.ReaderA().AntiPassback" value="1">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Soft</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </section>
+
+            <footer>
+                <div class="modal-footer">
+                    <span class="primary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $data.readerAinfo">@Resources.Done</span>
+                    <span class="secondary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $data.resetAAntipassbackData">@Resources.Cancel</span>
+                </div>
+            </footer>
+        </div>
+
+        <div id="readerPopupBa" class="mpcmodel modal hide fade in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <section class="row">
+                <ul>
+                    <li class="readerPopupAStatus">
+                        <div class="readerPopupAtxt" data-bind="text: $data.ReaderB().Name()"></div>
+                    </li>
+                    <li class="readerSwitchStatus">
+                        <div class="switch_options switch_option_readerSwitchStatus">
+                            <span class="switch_enable" data-bind="css: { selected : $data.ReaderB().IsActive()}, click: $data.onreaderbenabled">@Resources.Enable</span>
+                            <span class="switch_disable" data-bind="css: { selected : !$data.ReaderB().IsActive()}, click: $data.onreaderbenabled">@Resources.Disable</span>
+                            <input type="hidden" class="switch_val" data-bind="value: $data.ReaderB().IsActive()">
+                        </div>
+                    </li>
+                    <li class="readerPopupAAnipassbkStatus" data-bind="visible: $data.globalantipassbackenabled && $data.ReaderB().IsActive()">
+                        <div class="readerPopupAAnitpssbktxt">
+                            <div>@Resources.AntiPassback</div>
+                            <div class="switch_options switch_option_readerPopupAAnipassbkStatus">
+                                <span class="switch_enable" data-bind="css: { selected : $data.ReaderB().IsAntiPassback()}, click: $data.AntipassbackBchanged">@Resources.Enable</span>
+                                <span class="switch_disable" data-bind="css: { selected : !$data.ReaderB().IsAntiPassback()}, click: $data.AntipassbackBchanged">@Resources.Disable</span>
+                                <input type="hidden" class="switch_val" data-bind="value: $data.ReaderB().IsAntiPassback()">
+                            </div>
+                        </div>
+                        <div id="antipassbackBdirectionsettings" data-bind="css: $data.ReaderB().IsAntiPassback ? 'enablecontrol' : 'disablecontrol'">
+                            <div class=" radio">
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbackB" data-bind="enable: $data.ReaderB().IsAntiPassback, checked: $data.ReaderB().AntiPassbackType" value="1">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.In</span>
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbackB" data-bind="enable: $data.ReaderB().IsAntiPassback, checked: $data.ReaderB().AntiPassbackType" value="2">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Out</span>
+                            </div>
+                        </div>
+                        <div id="antipassbackBnaturesettings" data-bind="css: $data.ReaderB().IsAntiPassback ? 'enablecontrol' : 'disablecontrol'">
+                            <div class="radio">
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbacktypeB" data-bind="enable: $data.ReaderB().IsAntiPassback, checked: $data.ReaderB().AntiPassback" value="2">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Hard</span>
+                                <label class="formControl-radio">
+                                    <input class="radio" type="radio" name="rdoAntipassbacktypeB" data-bind="enable: $data.ReaderB().IsAntiPassback, checked: $data.ReaderB().AntiPassback" value="1">
+                                    <span></span>
+                                </label>
+                                <span class="radiotext">@Resources.Soft</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </section>
+
+            <footer>
+                <div class="modal-footer">
+                    <span class="primary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $data.readerBinfo">@Resources.Done</span>
+                    <span class="secondary-button" data-dismiss="modal" aria-hidden="true" data-bind="click: $data.resetBAntipassbackData">@Resources.Cancel</span>
+                </div>
+            </footer>
+        </div>
+    </form>
+
+    <script id="ascatedevrtpane" type="text/html">
+        <li data-bind="event: {mouseover: enableclose, mouseout: disableclose}">
+            <span data-bind="text: $data.Name"></span>
+            <i data-bind="attr: {'class': closeicon}, click:$root.removedeviceitem"></i>
+        </li>
+    </script>
+
+    <div id="doorcameraassociate" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <header class="row">
+            <span>@Resources.Associations</span>
+        </header>
+
+        <section class="row">
+            <div class="row">
+                <div class="ulheading">@Resources.UniversalList</div>
+                <div class="associationsheading">@Resources.Associations</div>
+            </div>
+            <div class="modelLeftSection">
+                <div class="leftTree" id="create-tree">
+                    <div id="doorcameratreeview" class="layoutrow treecontrol">
+                    </div>
+                </div>
+            </div>
+            <div class="modelRightSection">
+                <ul class="mpcmodel_section_ul" data-bind="template:{ name:'ascatedevrtpane', foreach: $data.deviceentities }" />
+                <span class="associationTxtMsg">@Resources.Association_text</span>
+            </div>
+        </section>
+
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                <button class="primary-button" data-bind="click:doorcameraassociationsave" aria-hidden="true">@Resources.Done</button>
+                <button class="secondary-button" data-bind="click:doorcameraassociationcancel" aria-hidden="true">@Resources.Cancel</button>
+            </div>
+        </footer>
+    </div>
+
+    <input type="hidden" id="doorConfigUrl" data-url="@Url.Action("", "PanelConfig")" />
+
+</div>
+@Scripts.Render("~/bundles/PanelConfigPluginDoorscript")
+@*<script src="~/Scripts/PanelConfigPlugin/door-common.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/door-validation-context.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/toggle.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/door-datacontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/door-uicontext.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/door-eventreciever.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/door-model.js"></script>
+<script src="~/Scripts/mpc.widget.core.js"></script>
+<script src="~/Scripts/mpc.treeview.js"></script>
+<script src="~/Scripts/PanelConfigPlugin/doorcamera.treeviewloader.js"></script>*@

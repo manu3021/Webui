@@ -1,0 +1,59 @@
+﻿<span class="reportsHeading">@Resources.Report_Filters</span>
+<ul>
+       <span class="reportsHeadingMiddle">@Resources.Report_Date_heading</span>
+        <li>
+            <div class="input-append date field right-inner-addon event-date notRequiredStyle" id="activationDate" data-date="" data-date-format="" data-bind="datepicker:$data.get_value_by_filterId('[EventTime]').StartDate, datepickerOptions: {format:'@Resources.datetime_picker_format'}">
+                <a class="reset_cal_icon"></a>
+                <span class="add-on" tabindex="2"><b class="icon-calendar"></b></span>
+                <label class="floatLblDn">@Resources.Select_Start_Date</label><input type="text" required="" placeholder="@Resources.Select_Date" readonly="readonly" class="floatTxt myStyle">
+            </div>
+
+        </li>
+
+        <li>
+            <div class="input-append date field right-inner-addon event-date notRequiredStyle" id="expireDate" data-date="" data-date-format="" data-bind="datepicker:$data.get_value_by_filterId('[EventTime]').EndDate, datepickerOptions: {format: '@Resources.datetime_picker_format'}">
+                <span class=" add-on" tabindex="3">
+                    <b class="icon-calendar"></b>
+                </span>
+                <a class="reset_cal_icon"></a>
+                <label class="floatLblDn">@Resources.Select_End_Date</label><input type="text" required="" placeholder="@Resources.Select_Date" readonly="readonly" class="floatTxt myStyle">
+            </div>
+        </li>
+        <li data-bind="if: $data.get_value_by_filterId('[Timezone]').IsLoaded">
+            <div class="field select-field">
+                <label for="selectTimezone" class="floatLblDn">@Resources.Report_Filter_Timezone</label>
+                <select id="selectTimezone" tabindex="4" data-bind="options:$data.get_value_by_filterId('[Timezone]').PossibleValues ,optionsText:'Value',optionsValue:'Value', optionsCaption: 'None', value:$data.timezone"></select>
+            </div>
+        </li>
+    <li>
+        <div>
+            <span class="reportsHeadingMiddle">@Resources.Report_Filter_Events_Alarms</span>
+            <ul id="eventConfigContainer" class="" data-bind="template: { name: 'dashboard-events-template', foreach: $data.dashboardEvents }"></ul>
+        </div>
+    </li>
+    </ul>
+
+<script id="dashboard-events-template" type="text/html">
+    <li class="dashbdSearch" data-bind="visible: $data.IsVisible">
+        <label class="formControl-checkbox">
+            <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+            <span></span>
+        </label>
+        <legand data-bind="text: $data.Name" />
+        <span class="collapseIcon" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+        <!-- ko if: $data.Categories().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="template: { name: 'dashboard-events-template', foreach: $data.Categories }"></ul>
+        <!-- /ko -->
+        <!-- ko if: $data.Events().length > 0 && $data.IsExpanded() -->
+        <ul class="dashbdEventList" data-bind="foreach: $data.Events">
+            <li class="dashbdSearch">
+                <label class="formControl-checkbox">
+                    <input class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventSelection">
+                    <span></span>
+                </label>
+                <legand data-bind="text: $data.Description" />
+            </li>
+        </ul>
+        <!-- /ko -->
+    </li>
+</script>

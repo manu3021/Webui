@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Help</title>
+    <link href="../../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../../Content/Styles/Site.css" rel="stylesheet" />
+<script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+<script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">Om de uitvoer voor NetAXS-123 te configureren</h3>
+        <h4 class="subtitle">Om de uitvoerinstellingen te configureren:</h4>
+        <ol>
+            <li>Klik in het MPC-dashboardgebied op het tabblad <strong>Aanmaken en Bewerken</strong>. De pagina <strong>AANMAKEN EN BEWERKEN</strong> wordt weergegeven.</li>
+			<li>Selecteer in het linkerdeelvenster de locatie en klik vervolgens op het relevante apparaat dat aan de locatie is toegevoegd.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Opmerking:</h4>
+				<p>Zorg ervoor dat u de apparaten in de cloud registreert voordat u de instellingen ervan wijzigt.</p>
+			</div>
+			<li>Klik in het linkerdeelvenster het <i class="netaxs-icon"></i> pictogram dat met het uit te vouwen NetAXS-123-apparaat overeenkomt en bekijk alle beschikbare deuren.</li>
+			<li>Dubbelklik op de gewenste deur om uit te vouwen en alle gekoppelde uitvoer te bekijken. De pagina <strong>Instellingen</strong> wordt weergegeven.</li>
+			<li>Voer de verplichte gegevens in de volgende velden in:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Veld</td>
+                    <td>Beschrijving</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Uitvoernaam
+                    </td>
+                    <td>
+                        Voer een unieke naam in ter identificatie van de deuruitvoer.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Tijdzone activeren</td>
+                    <td>
+                        Specificeert twee schema's:
+							<ul>
+								<li><strong>Onder stroom </strong>– stelt de periode in waarin de uitvoer automatisch van stroom wordt voorzien.</li>
+								<li><strong>Vergrendeling uitschakelen </strong>– stelt de periode in waarin de vergrendeling, een geprogrammeerde interactie tussen geselecteerde invoer, uitvoer en groepen worden uitgeschakeld. Tijdens de geselecteerde tijdzone negeert dit punt alle vergrendelingen die hiermee zijn verbonden, zodat het effectief geen reagerend onderdeel meer is tijdens de tijdzone.</li>
+							</ul>
+						
+						Buiten de tijdzone zal het punt naar verwachting op de vergrendelingen reageren.
+                    </td>
+                </tr>
+			
+				<tr>
+                    <td>
+                        Vergrendelen/wisselen buiten de tijdzone schakelt de pulstijd uit
+					</td>
+                    <td>
+                        Wisselt bij elke activering de status van de uitvoer tussen onder stroom en losgekoppeld van de stroom (codegebruik, vergrendeling of handmatige puls).
+                </tr>
+				<tr>
+                    <td>
+                        Tijdzone voor vergrendeling blokkeren
+
+					</td>
+                    <td>
+                        Hiermee kunt u de tijdzone voor vergrendeling of geprogrammeerde actie tussen twee punten blokkeren.
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Pulstijd
+					</td>
+                    <td>
+                        Specificeert hoe lang het apparaat de abnormale status zal aanvaarden. Het specificeert bijvoorbeeld hoe lang een geluidsignaal zal klinken of een deurslag open zal blijven.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Vergrendelen
+					</td>
+                    <td>
+                        Hiermee kunt u de vergrendeling of geprogrammeerde actie tussen twee punten uitschakelen.
+					</td>
+                </tr>
+				               
+            </tbody>
+        </table>
+		
+			<li>Klik op <strong>Opslaan</strong>.</li>
+        </ol>
+        
+       
+        </div>
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Vorige</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Apparaatinstellingen bewerken</a>
+	</p>	
+</div>		
+</body>
+</html>

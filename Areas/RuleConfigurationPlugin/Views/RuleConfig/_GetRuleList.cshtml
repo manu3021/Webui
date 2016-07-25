@@ -1,0 +1,48 @@
+﻿<div>
+    <p class="header">
+        <a href="#" onclick="HideRuleList();" class="hideButton"><b class="icon-hide"></b>Rules</a>
+    </p>
+    <form id="search-box">
+        <input type="search">
+        <span class="editButton">@Resources.Rule_EditText</span>
+    </form>
+    <div class="RulesList">
+        <div class="leftPaneheading">
+
+            <ul>
+                @foreach (RuleConfigurationPlugin.Controllers.RuleModel item in Model)
+                {
+                    <li>
+                        <a href="#">
+                            <div class="RuleListitem">
+                                <div class="pull-left imgHolder">
+
+                                    <span class="userProfile"></span>
+
+                                </div>
+
+                                <div class="txtFields">
+                                    <ul>
+                                        <li class="bottomSpace grid-text1">@item.Name<span class="status failed">@item.Status</span></li>
+                                        <li class="bottomSpace grid-text2">
+                                            @*@item.Path*@
+                                            @*<span class="report-date">@item.Date</span>*@
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function HideRuleList()
+    {
+        $('.rulesContainer').css('width', '100%');
+        $('.universal-rules-listContainer').css('display', 'none');
+    }
+</script>

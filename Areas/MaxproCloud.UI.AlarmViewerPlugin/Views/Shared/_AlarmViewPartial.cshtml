@@ -1,0 +1,686 @@
+﻿@functions{
+
+    public string EventServiceWebSocketUrl()
+    {
+        return System.Configuration.ConfigurationManager.AppSettings["EventServiceWebSocketUrl"];
+    }
+}
+@*@Styles.Render("~/Content/AlarmViewerPlugin/alarm-layout.css",
+    "~/Content/AlarmViewerPlugin/alarm-popups.css",
+    "~/Content/AlarmViewerPlugin/alarm-settings.css",
+    "~/Content/AlarmViewerPlugin/alarm-spectasks.css")*@
+@*@Styles.Render("~/Content/AlarmViewerPlugin/css1")*@
+<div id="alarviewWrapper">
+    <form id="alarmForm" data-validationkey="alarm" data-eventservicewebsocketurl='@EventServiceWebSocketUrl()'>
+        <div id="alarm-main-section">
+            <div class="alarm-header-menu-two">
+                <nav class="header-menu-box navbar navbar-default" role="navigation">
+                    <ul class="nav navbar-nav alarm-header-ul">
+                        <li class="alarm-new-cus">
+                            <a href="" class="dropdown-toggle " data-toggle="dropdown" data-delay="100" data-close-others="false"><span id="filterText">@Resources.AllAlarms</span> <span class="alarmCount"></span><b id="alarmnewarrow" class="icon_downarrow downarr_pos"></b> </a>
+                            <div class="dropdown-menu newdroparrowfix">
+                                <ul class="action-new-menu action-all-new-menu newdroparrow" id="alerm-menu">
+                                    <li id="SaveSearch" data-bind="click:ShowPopUpForFilterName"><b class="icon_save"></b><span class="alarm-allNew-txt alarm-filter-save">@Resources.Save</span><span class="alarm-allNew-divider"></span></li>
+                                    <li id="AllAlarms"><span class="alarm-allNew-txt">@Resources.AllAlarms</span><span class="alarm-allNew-divider"></span></li>
+                                    <li id="UnAckFilter"><span class="alarm-allNew-txt">@Resources.UnAcknowledged</span><span class="alarm-allNew-divider"></span></li>
+                                    <li id="AckFilter"><span class="alarm-allNew-txt">@Resources.Acknowledged</span><span class="alarm-allNew-divider"></span></li>
+                                    <li id="EvtFilter"><span class="alarm-allNew-txt">@Resources.Events</span><span class="alarm-allNew-divider"></span></li>
+                                    <!-- ko foreach: $data.alarmFilterDatasource -->
+                                    <li><b class="icon_close" data-bind="click:$data.DeleteFilter"></b><span class="alarm-allNew-txt" data-bind="text:$data.entityName,click:$data.getAlarmFilterDetails"></span><span class="alarm-allNew-divider"></span></li>
+                                    <!-- /ko -->
+                                </ul>
+                            </div>
+                        </li>
+                        <li><span id="alarm-popup-search"></span></li>
+                        <li class="ulClipSearchIconHolder alarm-srh-dis">
+                            <span id="searchSpan" class="searchSpan" data-toggle="dropdown" data-delay="100" data-close-others="false">
+                                <b class="alarm-searchIcon" data-bind="click:searchAlram"></b>
+                                <span class="dropdown-toggle searchSpantagholder">
+                                </span>
+                                <input type="text" class="alarm-search-textbox" autofocus />
+                            </span>
+                            <form id="searchform" class="searchBtn2">
+                                <ul class="dropdown-menu dropdown-menu-form search-popover alarmpopFilter" id="alarmSearchpopFilter">
+                                    <li>
+                                        <div id="auto-comp-list">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tabbable">
+                                            <ul class="nav nav-tabs clipSearchNav">
+                                                <li class="active"><a data-target="#entitiestab" id="Entities" class="alarm-search-tab-title" data-toggle="tab">@Resources.Entities</a></li>
+                                                <li><a data-target="#timetab" data-toggle="tab" id="Time" class="alarm-search-tab-title">@Resources.Time</a></li>
+                                                <li><a data-target="#eventtab" data-toggle="tab" id="Event" class="alarm-search-tab-title">@Resources.Event</a></li>
+                                            </ul>
+                                            <div class="tab-content alarm-search-content">
+                                                <div class="tab-pane active" id="entitiestab">
+                                                    <ul>
+                                                        <li>
+                                                            <span id="Cameras" class="secondary-button alarm-search-btn search-filter-text">@Resources.Cameras</span>
+                                                            <span id="Doors" class="secondary-button alarm-search-btn search-filter-text">@Resources.Doors</span>
+                                                            <span id="Rules" class="secondary-button alarm-search-btn search-filter-text">@Resources.Rule</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane" id="timetab">
+                                                    <ul>
+                                                        <li>
+                                                            <span id="Today" class="alarm-time-tab search-filter-text">@Resources.Today</span>
+                                                            <span id="Yesterday" class="alarm-time-tab search-filter-text">@Resources.Yesterday</span>
+                                                            <span id="Last7Days" class="alarm-time-tab search-filter-text">@Resources.Last7Days</span>
+                                                            <span id="Last30Days" class="alarm-time-tab search-filter-text">@Resources.Last30Days</span>
+                                                            <!--date time picker-->
+                                                            <div id="alarmfrmdatetimepicker" class="alarm-search-addon alarm-datetimepicker-div">
+                                                                <label class="alarm-time-picker">@Resources.From :</label>
+                                                                <span class="input-group-addon add-on alarm-time-picker-addon">
+                                                                    <b class="icon-calendar1 frmdateclick"></b>
+                                                                </span>
+                                                                <input placeholder="" readonly type="text" data-format="@Resources.datetime_picker_format">
+                                                            </div>
+                                                            <div id="alarmtodatetimepicker" class="alarm-search-addon alarm-datetimepicker-div">
+                                                                <label class="alarm-time-picker">@Resources.To :</label>
+                                                                <span class="input-group-addon add-on alarm-time-picker-addon">
+                                                                    <b class="icon-calendar1"></b>
+                                                                </span>
+                                                                <input type="text" readonly placeholder="" data-format="@Resources.datetime_picker_format">
+                                                                <div class="dateInputErr" data-bind="visible:showDateErr">
+                                                                    <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                                                                    <div class="showerror dropdown-menu"><span class="errorColor">Error! </span><span>@Resources.StartandEndDateValidationMsg</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane" id="eventtab">
+                                                    <ul>
+                                                        <li data-bind="visible:$data.searchFilterEventTypeVideoDatasource().length>0"><div class="entitytxt">@Resources.Video</div></li>
+                                                        <li>
+                                                            <!-- ko foreach: $data.searchFilterEventTypeVideoDatasource -->
+                                                            <span class="secondary-button alarm-search-btn search-filter-text" data-bind="text:$data.Name,attr:{id:$data.ID},click:$data.filterClick"></span>
+                                                            <!-- /ko -->
+                                                        </li>
+                                                        <li data-bind="visible:$data.searchFilterEventTypeAccessDatasource().length>0"><div class="entitytxt">@Resources.Access</div></li>
+                                                        <li>
+                                                            <!-- ko foreach: $data.searchFilterEventTypeAccessDatasource -->
+                                                            <span class="secondary-button alarm-search-btn search-filter-text" data-bind="text:$data.Name,attr:{id:$data.ID},click:$data.filterClick"></span>
+                                                            <!-- /ko -->
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right alarm-header-ul header-two-rightmenu">
+                        <li class=" dropdown act-width" id="view-list ">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" name="actionsdd" data-delay="100" data-close-others="false"> @Resources.Actions <b class="icon_downarrow"> </b> </a>
+                            <ul class="dropdown-menu action-new-menu actdroparr" id="alerm-action-menu">
+                                <li data-bind="click:AcknowledgeAll,css:'eventAck'"><b class="icon_acknowledge"></b><span class="menuspan">@Resources.Acknowledge_All</span><div class="alarm-action-divider"></div></li>
+                                <li data-bind="click:ClearAll,css:'eventClr'"><b class="icon_clearall"></b><span class="menuspan">@Resources.Clear_All</span><div class="alarm-action-divider" data-bind="click:freezeAlarm,visible:showFreezeBtn"></div></li>
+                                <li data-bind="click:freezeAlarm,visible:showFreezeBtn" data-value="freeze"><b class="icon_freezealarm"></b><span class="menuspan">@Resources.Freeze_Alarm_stream</span></li>
+                            </ul>
+                        </li>
+                        <li class="ulClipSearchIconHolder dropdown top-view">
+                            <a href="" class="ulClipSearchIcon dropdown-toggle" data-toggle="dropdown" data-delay="100" data-close-others="false"> <b class="icon_views"> </b> <span class="menuspan"> @Resources.Views</span> <span class="icon_downarrow"> </span> </a>
+                            <ul class="dropdown-menu dropdown-menu-form viewdroparrow alarmpopFilter" id="alarmviewpopFilter">
+                                <li>
+                                    <div class="tabbable">
+                                        @*<ul class="nav nav-tabs clipSearchNav">
+                                            <li class="active"><a data-target="#ultab1" data-toggle="tab" id="alarmsplitViewlink"><span class="alarm-icon-holder"><b class="icon_viewtab1"></b></span></a></li>
+
+                                        </ul>*@
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="ultab1">
+                                                <header>@Resources.Choose_Columns</header>
+                                                <ul>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" id="chkType" type="checkbox" checked data-bind="checked:showTypeCol">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Alarm_TypeText</span>
+                                                        <span class="alarm-view-divider">
+                                                    </li>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" id="chkSeverity" type="checkbox" checked data-bind="checked:showSeverityCol">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Severity</span>
+                                                        <span class="alarm-view-divider">
+                                                    </li>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" id="chkTimeandDate" type="checkbox" checked data-bind="checked:showTimeandDateCol">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.TimeandDate</span>
+                                                        <span class="alarm-view-divider">
+                                                    </li>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" id="chkLocation" type="checkbox" checked data-bind="checked:showLocationCol">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Location</span>
+                                                        <span class="alarm-view-divider">
+                                                    </li>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" id="chkActionandInstructions" type="checkbox" checked data-bind="checked:showAICol">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Action_and_Instructions</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane" id="ultab2">
+                                                <header>@Resources.Choose_Columns</header>
+                                                <ul>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" type="checkbox">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Motion_Event</span>
+                                                        <span class="alarm-view-divider">
+                                                    </li>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" type="checkbox">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Schedule</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane" id="ultab3">
+                                                <header>@Resources.Choose_Columns</header>
+                                                <ul>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" type="checkbox">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Motion_Event</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane" id="ultab4">
+                                                <header>@Resources.Choose_Columns</header>
+                                                <ul>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" type="checkbox">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Motion_Event</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane" id="ultab5">
+                                                <header>@Resources.Choose_Columns</header>
+                                                <ul>
+                                                    <li>
+                                                        <label class="formControl-checkbox">
+                                                            <input class="checkbox" type="checkbox">
+                                                            <b></b>
+                                                        </label>
+                                                        <span class="viewlabel">@Resources.Motion_Event</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row alarm-page-body">
+                <!--Alarm grid view-->
+                <div id="mainalarmWrap">
+                    <div class="table-alarm-container">
+                        <div class="innerWrapper">
+                        </div>
+                        <table class="table" id="table-alarm">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="formControl-checkbox">
+                                            <input type="checkbox" name="chkAll">
+                                            <span></span>
+                                        </label>
+                                    </th>
+                                    <th>@Resources.Alarm_Title </th>@*<b class="icon_sort"> </b>*@
+                                    <th data-bind="visible:showTypeCol()">@Resources.Alarm_TypeText</th>
+                                    <th data-bind="visible:showSeverityCol()">@Resources.Severity</th>@*sorted-th-text*@
+                                    <th data-bind="visible:showTimeandDateCol()">@Resources.Time</th>
+                                    <th data-bind="visible:showTimeandDateCol()">@Resources.Date</th>
+                                    <th data-bind="visible:showLocationCol()">@Resources.Location </th>
+                                    <th data-bind="visible:showAICol()">@Resources.Action_and_Instructions</th>
+                                    <th class="box-col9">@Resources.More </th>
+                                </tr>
+                                <tr class="alarm-wss-error" data-bind="css:{'showspan': showAlarmDCM() }">
+                                    <th class="alarm-wss-msg">@Resources.Connectivity_with_Alarm_Service_lost</th>
+                                    <th class="alarm-wss-btn"><a href="" class="alarm-wss-refresh" data-bind="click:tryWssConnection">@Resources.Refresh</a></th>
+                                </tr>
+                                <tr class="alarm-frozen-tr" data-bind="css:{'showspan': showFreezeRow() }">
+                                    <th class="alarm-frozen-msg">
+                                        <span data-bind="visible:checkFreezeCombination()==0">@Resources.Alarm_Stream_Frozen</span>
+                                        <span data-bind="visible:checkFreezeCombination()==1">@Resources.Alarms_Filtered</span>
+                                        <span data-bind="visible:checkFreezeCombination()==2">@Resources.Alarms_Frozen_Filtered</span>
+                                        <span class="alarm-frozen-count">
+                                            <b data-bind="text:freezeCount"></b>
+                                            <span data-bind="visible:checkFreezeCombination()==0 || checkFreezeCombination()==2">@Resources.New_Alarms</span>
+                                            <span data-bind="visible:checkFreezeCombination()==1">@Resources.Other_Alarms</span>
+                                        </span>
+                                    </th>
+                                    <th class="alarm-frozen-btn"><span class="ternary-button" data-bind="visible:showUnFreezeBtn,click:freezeAlarm" data-value="unfreeze">@Resources.Unfreeze_Alarm_Stream</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="scroll-x scroll-y" data-bind="foreach:$data.pagedRows(),css:{'alarm-frozen-tbody-with-wss-error': (showAlarmDCM() && showFreezeRow()),'alarm-frozen-tbody': (showAlarmDCM() || showFreezeRow())}">
+                                <tr data-bind="css: IsSelectedTr(), visible:!IsClear()">
+                                    <td class="box-col1"><label class="formControl-checkbox"><input type="checkbox" class="eventid" name="test" data-bind="checked:IsSelected,attr:{IsClear:$data.IsClear()}"><span></span></label></td>
+                                    <td>
+                                        <span>
+                                            <span class="alarm-title">
+                                                <div class="grd-title">
+                                                    <span data-bind="visible:$data.DoorId != '',text:$data.DoorName"></span>
+                                                    <span data-bind="visible:$data.SourceEntityName!= '' && $data.SourceEntityName != null && $data.DoorName != null && $data.DoorName!= ''">/</span><span data-bind="text:$data.SourceEntityName"></span>@*<span data-bind="visible:$data.SourceEntityName != null && $data.SourceEntityName != ''">: </span>*@
+                                                </div>
+                                            </span>
+                                            <span class="alarm-description">
+                                                <div>
+                                                    <span data-bind="text:$data.EventCodeType"></span>
+                                                    <span data-bind="text:$data.CredentialNumber"></span>
+                                                    <span data-bind="visible:$data.MasterSourceEntityName != null && $data.MasterSourceEntityName != '' && $data.IsSourceMasterareSame()">@Resources.From</span>
+                                                    <span data-bind="text:$data.MasterSourceEntityName,visible: $data.IsSourceMasterareSame()"></span>
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td data-bind="visible:showTypeCol()"><span class="alarm-icon-holder" @*data-position="left" data-original-title="Major"*@><b data-bind="css:$data.Type"></b></span></td>
+                                    <td class="box-col4" data-bind="visible:showSeverityCol()"><span data-bind="text:$data.SeverityName,style:{color: $data.SeverityColor,textTransform: 'uppercase'}"></span></td>
+                                    <td data-bind="visible:showTimeandDateCol()"><span data-bind="text:$data.AlarmTime"></span></td>
+                                    <td data-bind="visible:showTimeandDateCol()"><span data-bind="text:$data.AlarmDate"></span></td>
+                                    <td data-bind="visible:showLocationCol()"><div class="grd-details grd-title"><span data-bind="text:$data.Location"></span></div><div class="grd-title-location"></div></td>
+                                    <td class="action-popup" data-bind="visible:showAICol()">
+                                        <span class="secondary-button acknowledge-button" data-bind="value: $data.Id, visible: $data.ShowAcknowledge(), click: $data.AckButton">@Resources.Acknowledge</span>
+                                        <span class="grd-details acknowledge-span" data-bind="attr: { id:$data.Id}, visible:$data.IsAcknowledge()">@Resources.Acknowledged</span>
+                                        <span class="dropdown"><a class="actionBtn" data-toggle="popover" rel="popover" data-close-others="false" data-bind="visible:$data.IsActionsLinkToShow(),click: $data.threeActioncontentClick">@Resources.Actions</a></span>
+                                    </td>
+                                    <td class="box-col9 for-popup">
+                                        <div class="more-iconHolder">
+                                            @*<span class="dropdown door-popup alarm-icon-holder" data-bind="visible:$data.DoorId != ''"><a data-toggle="popover" rel="popover" data-close-others="false" data-bind="click:DoorPopOverClick,value:{id:$data.DoorId,doorname:$data.DoorName}"><b class="icon_doornew"> </b></a></span>*@
+                                            <span class="dropdown door-popup alarm-icon-holder" data-bind="visible:$data.DoorId != ''"><a data-toggle="popover" rel="popover" data-close-others="false" data-bind="click:DoorPopOverClick,value:{id:$data.DoorId,doorname:$data.DoorName}"><b class="icon_doornew"> </b></a></span>
+                                            <span class="dropdown video-popup alarm-icon-holder center-align-icon"  data-bind="visible:$data.CameraId != '' && $data.MultipleClips().length==0"><a data-toggle="popover" rel="popover" data-close-others="false" data-bind="click:CameraPopOverClick,value:{id:$data.CameraId,cameraname:$data.CameraName}"><b class="icon_videonew"></b></a></span>
+                                            <span class="dropdown video-popup multi-video-popup alarm-icon-holder" data-bind="visible:$data.MultipleClips().length>0"><a data-toggle="popover" rel="popover" data-close-others="false" data-bind="click:MultipleCameraPopOverClick"><b class="icon_multivideo"></b></a></span>
+                                            @*<span class="dropdown map-popup alarm-icon-holder" data-bind="visible:$data.MapId != ''"><a data-toggle="popover" rel="popover" data-close-others="false"><b class="icon_mapnew"></b></a></span>*@
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="severityForm">
+        <div id="alarm-setting-section">
+            <div class="header-menu-two">
+
+                <nav class="header-menu-box">
+                    <div class="nav navbar-nav pull-left widthset">
+                        <h3 class="pull-left">@Resources.Alarm_DefineAlarmsband</h3>
+                        <ul class="nav navbar-nav pull-right header-two-rightmenu">
+                            <li class="ulClipSearchIconHolder dropdown top-view uni-list">
+                                <span class="dropdown-toggle alarm-search-uni-tree" data-toggle="dropdown" data-delay="100" data-close-others="false">@Resources.Alarm_SelectLocation</span>
+                                <div class="dropdown-menu dropdown-menu-form pull-right popover-content viewdroparrow" id="alarm-unilistCont">
+                                    <div class="arrow"></div>
+                                    <!--Universal list-->
+                                    <h3 class="popover-title">@Resources.Alarm_UniversalList</h3>
+                                    <form class="searchBtn2"><input type="search"></form>
+                                    <div>
+                                        <input type="hidden" id="getchildaccounturl" data-url='@Url.Action("getchildaccounts", "treeview")' />
+                                        <input type="hidden" id="getAllCamerawithStatusurl" data-url='@Url.Action("GetAllCamerawithStatusbyRecorderId", "treeview")' />
+                                        <input type="hidden" id="getpanelstatusurl" data-url='@Url.Action("GetPanelStatus", "treeview")' />
+                                        <div id="acttreeview" class="treecontrol" data-url='@Url.Action("GetAccounts", "Treeview")'></div>
+                                    </div>
+                                    <div class="buttonGroup popoverbutton buttonGroupTree">
+                                        <span id="confirmButton" data-toggle="clickover" class="primary-button">@Resources.Alarm_ConfirmText</span>
+                                        <span id="cancelButton" data-toggle="clickover" class="secondary-button">@Resources.Alarm_CancelText</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="alarm-page-body">
+                <div class="alarmSettingBody" id="alarmsettingbody">
+                    <!--First Column-->
+                    <div class="firstColumn" id="eventseverity" data-bind="with:$data.AlarmEventModel">
+                        <header>@Resources.Alarm_EventsText</header>
+                        <span class="alarmSubHeading">@Resources.Alarm_DragDropEvents</span>
+                        <ul id="sortableevents" class="fbox">
+                            <li class="alarmSeveritySearch">
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                </label>
+                                <span id="defalarmsearch">
+                                    <form class="searchBtn2">
+                                        <input type="search" />
+                                    </form>
+                                </span>
+                            </li>
+                            <li>
+                                <ul data-bind="drop:{value:$root.AlarmConfigModel().EventDropped}">
+                                    <li data-bind="with:$data">
+                                        <ul data-bind="template:{name:'eventTemplate',foreach:$data.Events}"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- First Column-->
+                    <!-- Second Column-->
+                    <div class="secondColumn" id="alconfigSection" data-bind="with:$data.AlarmConfigModel">
+                        <header>@Resources.Alarm_AlarmsText</header>
+                        <span class="alarmSubHeading">@Resources.Alarm_Rearrangeeventsdragging</span>
+                        <ul id="sortable0" class="ui-sortable fbox">
+                            <li class="alarmSeveritySearch sortdisabled">
+                                <span id="defalarmsearch">
+                                    <form class="searchBtn2">
+                                        <input type="search">
+                                    </form>
+                                </span>
+                            </li>
+                            <li data-bind="drop:{value:$data.CriticalDropped}">
+                                <div class="field2 right-inner-addon alarm-right-block-text">
+                                    <span class="input-group-addon critical left">
+                                    </span>
+                                    <label class="severity-label">@Resources.Alarm_CriticalText</label>
+                                </div>
+                            </li>
+                            <li>
+                                <ul data-bind="with:$root.AlarmEventModel,drop:{value:$data.CriticalDropped}">
+                                    <li data-bind="with:$data">
+                                        <ul id="sortable1" class="ui-sortable fbox critical_ul" data-bind="template:{name:'configTemplate',foreach:$data.CriticalEvents}"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-bind="drop:{value:$data.MajorDropped}">
+                                <div class="field2 right-inner-addon alarm-right-block-text">
+                                    <span class="input-group-addon major left">
+                                    </span>
+                                    <label class="severity-label">@Resources.Alarm_MajorText</label>
+                                </div>
+                            </li>
+                            <li>
+                                <ul data-bind="with:$root.AlarmEventModel,drop:{value:$data.MajorDropped}">
+                                    <li data-bind="with:$data">
+                                        <ul id="sortable1" class="ui-sortable fbox major_ul" data-bind="template:{name:'configTemplate',foreach:$data.MajorEvents}"></ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li data-bind="drop:{value:$data.ModerateDropped}">
+                                <div class="field2 right-inner-addon alarm-right-block-text">
+                                    <span class="input-group-addon moderate left">
+                                    </span>
+                                    <label class="severity-label">@Resources.Alarm_Moderate</label>
+                                </div>
+                            </li>
+                            <li>
+                                <ul data-bind="with:$root.AlarmEventModel,drop:{value:$data.ModerateDropped}">
+                                    <li data-bind="with:$data">
+                                        <ul id="sortable1" class="ui-sortable fbox moderate_ul" data-bind="template:{name:'configTemplate',foreach:$data.ModerateEvents}"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="field2 right-inner-addon alarm-right-block-text" data-bind="drop:{value:$data.NormalDropped}">
+                                    <span class="input-group-addon normal left">
+                                    </span>
+                                    <label class="severity-label">@Resources.Alarm_Normal</label>
+                                </div>
+                            </li>
+                            <li>
+                                <ul data-bind="with:$root.AlarmEventModel,drop:{value:$data.NormalDropped}">
+                                    <li data-bind="with:$data">
+                                        <ul id="sortable1" class="ui-sortable fbox normal_ul" data-bind="template:{name:'configTemplate',foreach:$data.NormalEvents}"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Second Column-->
+                    <!-- Third Column-->
+                    <div class="thirdColumn">
+                    </div>
+                    <!-- Third Column-->
+                    <div class="operatorDetailButtons">
+                        <span class="primary-button" data-bind="click:$data.AlarmEventModel().Save">@Resources.Save</span>
+                        <span class="secondary-button" data-bind="click:$data.AlarmEventModel().Cancel">@Resources.Cancel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sopActionPop" class="alarmmpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="sopActionPopmodalLabel" aria-hidden="true">
+    <header class="row">
+        <span data-bind="text: $data.Name"></span>
+    </header>
+    <section class="row">
+        <div id="sticky-list-reportHistory">
+            <ul>
+                <h5 data-bind="text: $data.DefaultActions"></h5>
+                <li>
+                    <table class="table">
+
+                        <tbody id='TextBoxesGroup' data-bind="foreach:$data.Actions">
+
+                            <tr>
+                                <td class="motion-popup-text">@Resources.Actions</td>
+                                <td>
+                                    <div class="select-field">
+                                        <select id="txtFName" type="text" class="floatTxt form-control multiselect multiselect-icon" role="multiselect">
+                                            <option value="0" data-icon="glyphicon-camera text-primary">@Resources.Call</option>
+                                            <option value="1" data-icon="glyphicon-link">@Resources.Email</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Instructions" data-bind="text: $data.ActionText">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="primary-button" aria-hidden="true" id="addButton" style="margin-bottom:20px" data-bind="click: $data.onaddaction">@Resources.Add_Action</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            <span class="primary-button" aria-hidden="true" data-bind="click:$data.savesop">@Resources.Save</span>
+            <span class="secondary-button" data-bind="click:$data.cancel">@Resources.Cancel</span>
+        </div>
+    </footer>
+</div>
+
+<script id="eventTemplate" type="text/html">
+    <li data-bind="drag:{value:$data}" class="dragEvent">
+        <label class="formControl-checkbox">
+            <input class="checkbox" type="checkbox" data-bind="value:$data.Id">
+            <span></span>
+        </label>
+        <legend id="show-motion-popup" class="legendtext" data-bind="drag:{value:$data},attr:{ value:$data.Id }, text:$data.Name, click:$data.sopclick"></legend>
+    </li>
+</script>
+<script id="configTemplate" type="text/html">
+    <li class="field2 sortableli draggable dragEvent" data-bind="drag:{value:$data}">
+        <legend data-bind="drag:{value:$data},attr:{ value:$data.Id }, text:$data.Name"></legend>
+        <div class="moveable-block">
+            <div class="sortableIcon"></div>
+        </div>
+    </li>
+
+</script>
+<script type="text/html" id="threeActionContent">
+    @*<header><b class="icon_close popoverCloseIcon"></b></header>*@
+    <div id="threeActionsInfo" class="contentWrap">
+        <h5 data-bind="visible: $data.siteInfo.length == 0" class="threeActionLoading">@Resources.Loading</h5>
+        <div id="ActionSiteInfo" class="content">
+            <h5 class="hideControls">@Resources.Site_Info</h5>
+            <ul>
+                <li>
+                    <span data-bind="text:$data.siteInfo.Name"></span>
+                </li>
+                <li>
+                    <span data-bind="text:$data.siteInfo.AddressLine1"></span>
+                </li>
+                <li>
+                    <span data-bind="text:$data.siteInfo.City"></span>
+                    <span data-bind="visible:$data.siteInfo.Region.length>0, text:', '+$data.siteInfo.Region"></span>
+                </li>
+                <li>
+                    <span data-bind="visible:$data.siteInfo.Country.length>0, text:$data.siteInfo.Country"></span>
+                    <span data-bind="visible:$data.siteInfo.ZipCode.length>0, text:'- '+$data.siteInfo.ZipCode"></span>
+                </li>
+                <li>
+                    <span class="hideControls">@Resources.Site_Contact</span><span data-bind="text:$data.siteInfo.Phone"></span>
+                </li>
+            </ul>
+        </div>
+        <div data-bind="css: $data.Actions.length == 0 ? 'withoutContentWrap' : '' ">
+            <div id="threeActionPop" class="content">                
+                <h5 data-bind="visible: $data.Actions.length > 0" class="hideControls">@Resources.DefaultActions</h5>
+                <h5 data-bind="visible: $data.Actions.length == 0" class="hideControls center-align">@Resources.NoActionsApplicable</h5>
+                <div id="actions" data-bind="visible:$data.Actions.length > 0,foreach:$data.Actions" class="hideControls">
+                    <span>
+                        <span type="button" class="secondary-button alarm-action-btn" data-bind='text: $data.action.displayName, value: $data.id, click: $root.performaction'></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="door-popup">
+    <section class="contentWrap">
+        <div id="alerm-menu-user">
+            <span class="eventerror" data-bind="visible:$data.length == 0">@Resources.NoRecentCardEvents</span>
+            <div class="alerm-menu-userBody" data-bind="visible:$data.length > 0">
+                <ul data-bind="template:{name:'door-popup-tmpl',foreach:$data}"></ul>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</script>
+<script type="text/html" id="door-popup-tmpl">
+    <li>
+        <span class="imageHolder">
+            <img src="Content/images/img_profile.png" data-bind="visible:$data.ImagePath.length == 0" />
+            <img data-bind="visible:$data.ImagePath.length > 0,attr: { src: $data.ImagePath }" />
+        </span>
+        <span class="userProfile">
+            <div> <span id="displayname" data-bind="visible:$data.DisplayName.length > 0,text:$data.DisplayName"></span> </div>
+            <div>
+                <span data-bind="text:$data.EventCodeType"></span>
+                <span data-bind="text:$data.CredentialNumber"></span>
+            </div>
+            <div> <span data-bind="text:$data.OriginTime"></span></div>
+        </span>
+    </li>
+</script>
+<script type="text/html" id="camera-small-popup">
+    <header>
+        <span id="cameraName"></span>
+        @*<span data-bind="text:$data.playingDateTime"></span>*@
+    </header>
+    <section class="contentWrap">
+        <div id="videocontainer" class="content">
+        </div>
+    </section>
+</script>
+
+<div id="save-filters" class="mpcmodel modal hide fade saveFiltersModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <section>
+        <div class="field">
+            <label class="floatLblDn sflabel">@Resources.Alarm_SaveFilters</label>
+            <input type="text" class="saveFilterText floattxt mystyle" data-bind="value:FilterName,event:{keyup:SaveAlarmSearch}" id="save_filter_text" name="save_filter_text">
+            <div data-bind="visible:$data.IsError" class="saveFilterInputErr" @*style="display:block;"*@>
+                <span class="fieldError"><b class="icon-fieldError" data-bind="event:{mouseover:showerror,mouseout:hideerror}"></b></span>
+                <div class="showerror dropdown-menu"><span class="errorColor">Error! </span><span data-bind="text:$data.Errormessage"></span></div>
+            </div>
+        </div>
+        <footer>
+            <div class="sfbuttonGroup">
+                <span class="primary-button sfbtnok" data-bind="click:SaveAlarmSearch">@Resources.Alarm_okText</span>
+                <span class="secondary-button sfbtncancel" data-bind="click:closeAlarmSearch">@Resources.Alarm_CancelText</span>
+            </div>
+        </footer>
+    </section>
+</div>
+<!---->
+<!-- Multiple Video modal Starts Here-->
+<div id="multiple-videos" class="alarmmpcmodel full-video modal">
+    <header>
+        <span data-bind="visible:showClipRecordedTitle()">@Resources.Alarm_Clips_Recorded</span>
+        <span data-bind="visible:!showClipRecordedTitle()">@Resources.Associated_Cameras</span>
+    </header>
+    <section>
+        <div class="alarm-full-video-Container">
+            <div class="alarm-full-video-body">
+                <ul data-bind="foreach:$data">
+                    <li data-bind="click:$data.SingleClipClick">
+                        <span class="alarm-event-clip-name" data-bind="text:$data.CameraName"></span>
+                        <span class="alarm-event-clip-details" data-bind="text:$data.EventCodeType"></span>
+                        <span class="alarm-event-clip-details" data-bind="text:$data.OriginTime"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="video-clip-play-section">
+            <div class="alarmsVideoError" data-bind="visible:showAlarmsVideoError()">
+                <span data-bind="text: videoErrorMessage()"></span>
+            </div>
+            <div id="MultiClipWrapper"></div>            
+        </div>
+    </section>
+    <div class="videobuttonGroup">
+        <button class="secondary-button closeBtn videoclosebutton">@Resources.Alarm_CloseText</button>
+    </div>
+</div>
+<!-- Multiple Video modal Ends Here-->
+
+<input id="alarmPageCount" value="15" type="hidden" />
+<input id="playerImage" data-playerimage='@Url.Content("~/Content/images/Honeywell_Blank_220.png")' type="hidden" />
+<input id="EventServiceWebSocketUrl" type="hidden" value="<%=ConfigurationManager.AppSettings['EventServiceWebSocketUrl'].tostring() %>" />
+
+<input id="alarmConfigUrl" type="hidden" data-url='@Url.Action("", "AlarmView")' />
+<input id="configUrl" type="hidden" data-url='@Url.Action("", "Config")' />
+<input id="alarmFilter" type="hidden" value="AllAlarms" />
+<input id="alarmsTotalCount" type="hidden" value="0" />
+<input id="alarmsUnAckCount" type="hidden" value="0" />
+<input id="alarmsSearchFilter" type="hidden" value="false" />
+<input type="hidden" id="filterCount" value='@System.Configuration.ConfigurationManager.AppSettings["alarmFilterCount"]' />
+@*@Scripts.Render("~/Scripts/AlarmViewerPlugin/alarm-common.js",
+               "~/Scripts/AlarmViewerPlugin/alarm-validation-context.js",
+               "~/Scripts/AlarmViewerPlugin/alarm-datacontext.js",
+               "~/Scripts/AlarmViewerPlugin/alarm-model.js",
+               "~/Scripts/AlarmViewerPlugin/alarm-uicontext.js",
+               "~/Scripts/AlarmViewerPlugin/alarm-eventreciever.js",
+               "~/Scripts/AlarmViewerPlugin/alram-websocket.js",
+               "~/Scripts/AlarmViewerPlugin/alarmview.js")*@
+@Scripts.Render("~/bundles/AlarmViewerPluginscript1")

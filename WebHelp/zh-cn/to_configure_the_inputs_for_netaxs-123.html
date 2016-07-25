@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>帮助</title>
+    <link href="../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../Content/Styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/lib/jquery-1.11.0.js"></script>
+    <script src="../Scripts/help.modal.js"></script>
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">配置 NetAXS-123 输入</h3>
+        <h4 class="subtitle">要配置输入设置：</h4>
+        <ol>
+            <li>在“MPC 仪表板”区中，单击<strong>创建和编辑</strong>选项卡。随即显示<strong>创建和编辑</strong>页面。</li>
+            <li>在左窗格中选择地点，然后单击添加到此地点的相关设备。</li>
+            <div class="note nomargintop">
+                <h4 class="subtitle">注：</h4>
+                <p>修改设备设置之前，务必在云端注册相关设备。</p>
+            </div>
+            <li>在左窗格中，单击 <i class="netaxs-icon"></i>图标（此图标对应于 NetAXS-123 设备），以展开并查看所有可用门户。</li>
+            <li>双击所要求的门户，以展开并查看所有相关联的输入。随即显示<strong>设置</strong>页面。</li>
+            <li>在以下字段中输入所要求的详情：</li>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="col-equal">字段</td>
+                        <td>描述</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>输入名称
+                        </td>
+                        <td>输入一个用于标识门户输入的唯一名称。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>忽略时段</td>
+                        <td>指定忽略输入的时间段。
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>阻止联锁时段
+                        </td>
+                        <td>您可以阻止联锁时段，即，阻止以编程方式在两个地点之间实现的相互作用。 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>禁用警报和事件
+                        </td>
+                        <td>指定不报告警报和事件的时间段。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>忽略时间
+                        </td>
+                        <td>指定将忽略或停用输入的时间量。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>去抖动时间
+                        </td>
+                        <td>指定输入在生成警报之前必须在多长时间内保持在新状态。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>常态
+                        </td>
+                        <td>
+                            <strong>常闭</strong>- 指定输入的常态为闭合（默认值）。<>
+						<strong>常开</strong>- 指定输入的常态为断开。
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>监测
+                        </td>
+                        <td>指定输入的电路是否连接了由电阻器进行监测的替代路径。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>自动重新上锁
+                        </td>
+                        <td>当门户状态开关在人员进入后闭合时，立即将门户重新上锁。当相关联的输入在脉冲时间持续期内恢复为常态而不是保持通电状态时，控制门户锁舌的输出继电器将断电。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联锁
+                        </td>
+                        <td>您可以禁用联锁机制，即，阻止以编程方式在两个地点之间实现的相互作用。在启用后，此地点将忽略所有针对它的联锁操作。
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <li>单击<strong>保存</strong>。</li>
+        </ol>
+    </div>
+    <div class="bottControl">
+        <p class="helpprev">
+            <span>上一条</span>
+            <a href="edit_device_settings.html"><i class="prev_icon"></i>编辑设备设置</a>
+        </p>
+    </div>
+</body>
+</html>
+

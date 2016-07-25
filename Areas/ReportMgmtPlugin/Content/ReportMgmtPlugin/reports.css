@@ -1,0 +1,698 @@
+﻿.topSection {
+    padding: 3px 24px 0px 24px !important;
+    width: 97%;
+    height: 10%;
+    position: relative;
+    z-index: 3;
+    top: 0;
+    left: -20px;
+}
+
+.dividerline {
+    border-bottom: 1px solid #BABABB;
+    clear: both;
+    -webkit-box-shadow: 0 3px 3px -3px #bababb;
+    -moz-box-shadow: 0 3px 3px -3px #bababb;
+    box-shadow: 0 3px 3px -3px #bababb;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=3px, OffY=3px, Color='#bababb', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    position: absolute;
+    top: 51px;
+    width: 100%;
+    height: 10px;
+}
+
+.bottomSection {
+    position: fixed;
+    width: 100%;
+    top: 123px;
+    bottom: 0px;
+    padding: 0 24px 0 24px;
+    color: #707070;
+    /*z-index:-1;*/
+}
+
+    .bottomSection .formcontrol {
+        padding: 0;
+    }
+
+.firstSection:hover, .secondSection:hover, .thirdSection:hover {
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 0px;
+}
+
+.firstSection, .secondSection, .thirdSection {
+    overflow: hidden;
+}
+
+.firstSection {
+    float: left;
+    width: 25%;
+    border-right: 1px solid #BABABB;
+    height: 100%;
+}
+
+.secondSection {
+    float: left;
+    width: 25%;
+    border-right: 1px solid #BABABB;
+    padding-left: 24px !important;
+    height: 100%;
+    /* top: 0px; */
+    /* bottom: 9px; */
+    /* position: fixed; */
+}
+
+.thirdSection {
+    float: left;
+    width: 25%;
+    padding-left: 24px !important;
+    border-right: 1px solid #BABABB;
+    height: 100%;
+}
+
+#footer {
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+}
+/*layout*/
+
+
+/*top section */
+/*.topSection input, .topSection.formcontrol input[type="text"]:focus, .topSection.formcontrol input:focus{
+	border-bottom:1px solid #FFFFFF !important;
+}
+
+.topSection.formcontrol ul li{
+	padding-bottom:0;
+}*/
+/*top section*/
+
+/*body bottom section*/
+
+.secondSection .right-inner-addon {
+    padding-bottom: 3px;
+}
+
+.bottomSection span.reportsHeading {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    padding-top: 19px;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    clear: both;
+}
+
+.bottomSection span.reportsHeadingMiddle {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    padding-top: 6px;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    clear: both;
+}
+
+.bottomSection span.reportSubHeading {
+    font-size: 12px;
+    padding-right: 24px;
+}
+
+.bottomSection .formcontrol ul li {
+    float: none;
+    border-bottom: 1px solid #D3D3D3;
+    padding-bottom: 11px;
+}
+
+.bottomSection ul {
+    border-top: 1px solid #D3D3D3;
+    margin-top: 18px;
+    margin-bottom: 0px;
+}
+
+.bottomSection .buttonTopSpacing {
+    padding-bottom: 0 !important;
+}
+
+.bottomSection .formcontrol label.formControl-checkbox {
+    height: 9px;
+}
+
+.bottomSection .formcontrol legand {
+    padding-left: 25px;
+    font-size: 14px;
+    display: block;
+}
+
+.firstSection .formControl-checkbox {
+    top: 10px !important;
+}
+
+.bottomSection .sortableIcon {
+    background: url("../images/icons/icon_dragger.png");
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-top: 11px;
+    margin-right: 24px;
+}
+
+.bottomSection .radio div {
+    float: left;
+}
+
+.bottomSection .ui-state-default {
+    background-color: #FFFFFF;
+}
+
+.bottomSection .secondary-button {
+    margin-top: -9px;
+    clear: both;
+    float: left;
+}
+
+.bottomSection .primary-button {
+    margin-top: -9px;
+    clear: both;
+    float: left;
+    margin-bottom: 22px;
+}
+
+.bottomSection #preview {
+    margin-bottom: 22px;
+}
+
+.bottomSection #divAddSite .primary-button {
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.thirdSection ul, .thirdSection ul li {
+    border: none !important;
+}
+
+.fixbottomspace {
+    padding-bottom: 3px !important;
+}
+/*body bottom section*/
+
+
+/*float label for combo*/
+.reports .selectize-input input {
+    width: 256px !important;
+}
+
+.reports .selectize-input > * {
+    padding-top: 22px;
+    padding-left: 12px;
+    position: absolute;
+}
+
+.reports label.show {
+    top: 8px !important;
+    left: 13px;
+}
+/*float label for combo*/
+
+/*fix for bootstrap*/
+
+
+.reports .right-inner-addon span {
+    width: 24px;
+    z-index: 3;
+    outline: none; 
+}
+
+
+.reports .add-on {
+    width: 39px !important;
+    height: 39px !important;
+    z-index: 100;
+    right: 0;
+    border-right: none;
+    border-top: none;
+    outline: none; 
+
+}
+
+.reports .icon-calendar {
+    background-position: 0px 0px;
+}
+
+
+.reports .ui-datepicker-inline {
+    display: none !important;
+}
+
+
+/*fix for bootstrap*/
+
+
+/*form fields.css*/
+/*.formcontrol ul li {
+    list-style-type: none;
+    padding-bottom: 14px;
+    float:left;
+}*/
+
+.reports .formcontrol label {
+    font-weight: normal;
+}
+/*form fields.css*/
+
+/*.reports .event-date {
+	position:relative;
+}
+
+.reports label{
+	position:absolute;
+}*/
+
+.reports .event-wrap label {
+    position: relative;
+}
+
+.reports .popover {
+    width: 250px;
+    height: 303px;
+}
+
+    .reports .popover .doneBtn {
+        padding: 18px 24px 24px 24px;
+    }
+
+.reports .operatorDetailButtons {
+    border-top: 1px solid #d3d3d3;
+    clear: both;
+    padding-top: 5px;
+    padding-bottom: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding-top: 15px;
+    padding-left: 24px;
+}
+
+.reports .icon-sort-ascending, .reports .icon-sort-ascending:hover {
+    left: 16px;
+}
+
+.reports .icon-sort-descending, .reports .icon-sort-descending:hover {
+    left: 16px;
+}
+
+.reports .icon-list, .reports .icon-list:hover {
+    left: 15px;
+}
+
+.reports .icon-calendar, .reports .icon-calendar:hover {
+    left: 15px;
+    top: 14px;
+    cursor:pointer;
+}
+
+.reports select {
+    height: 47px;
+}
+
+.reports #selectTimezone{
+    width: 303px!important;
+    padding-right: 30px;
+}
+/*Reports Start
+#reports, #reportManagementBaseId, #reportBaseContentId{
+    height:100%;
+}
+#reportBaseContentId{
+    background-color:#f5f5f5;
+}
+Reports End*/
+
+/* Reports Conent - Start */
+.reportsContent {
+    border: 1px solid #cacaca;
+    margin: 24px;
+    background-color: #ffffff;
+    height: auto;
+    position: absolute;
+    border-radius: 4px;
+}
+
+    .reportsContent h3 {
+        font-size: 22px;
+        color: #6f7074;
+        margin: 0px;
+        font-weight: normal;
+        line-height: inherit;
+    }
+
+    .reportsContent p {
+        padding-top: 15px;
+    }
+
+        .reportsContent p button {
+            margin-top: 11px;
+            display: block;
+            margin-bottom: 32px;
+        }
+/* Reports Conent - End */
+
+
+/* Report List Section - Start */
+.reportsListSection {
+    width: 45%;
+    float: left;
+    border-right: 1px solid #cacaca;
+    padding: 32px;
+}
+
+.icon_accessarrow {
+    background: url('../images/sprite_icons.png') no-repeat -280px -340px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    float: left;
+    margin-top: 2px;
+}
+
+    .icon_accessarrow:hover {
+        background: url('../images/sprite_icons.png') no-repeat -220px -190px;
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+        /*padding-left: 30px;*/
+        cursor: pointer;
+    }
+/* Report List Section - End */
+
+
+/* New Reports section - Start */
+.newReportsSection {
+    width: 44%;
+    float: left;
+    padding: 32px;
+}
+/* New Reports section - End */
+
+.highcharts-container .null div {
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    border-radius: 16px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    padding: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 17px;
+    text-align: center;
+}
+
+.highcharts-container {
+    overflow: inherit !important;
+}
+
+.reset_cal_icon {
+    font-size: 22px;
+    float: right;
+    position: relative;
+    right: 52px;
+    z-index: 999;
+    top: 18px;
+    color: #707070;
+    cursor: pointer;
+    height: 33px;
+    width: 18px;
+}
+
+    .reset_cal_icon:hover {
+        text-decoration: none;
+        color: #0889C5;
+    }
+
+.report-delivered-field {
+    color: #3BAD49 !important;
+    /*margin:0 0 0 10px*/
+}
+
+.report-undelivered-field {
+    color: #E33E38 !important;
+}
+
+#eventConfigContainer ul {
+    margin-top: 0;
+}
+
+.dashbdSearch .formControl-checkbox {
+    display: inline-block;
+    top: 14px !important;
+}
+
+.bottomSection .formcontrol .dashbdSearch legand {
+    display: block;
+    margin-left: 29px;
+    margin-top: -35px;
+    line-height: 1.5;
+    margin-bottom: 13px;
+    padding-left: 0;
+}
+
+.bottomSection .formcontrol ul li.dashbdSearch {
+    border-bottom: 1px solid #D3D3D3 !important;
+    line-height: 45px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .bottomSection .formcontrol ul li.dashbdSearch {
+        border-bottom: 1px solid #D3D3D3 !important;
+        line-height: 45px;
+    }
+}
+
+.bottomSection .formcontrol ul li.dashbdSearch:last-child {
+    border-bottom: none !important;
+}
+
+#eventConfigContainer .dashbdSearch .dashbdEventList {
+    margin-left: 30px;
+    border-top: 1px solid #D3D3D3;
+}
+
+#deliveryMailStatus #sticky-list {
+    overflow: hidden;
+    position: relative;
+    width: 96%;
+    border-bottom: none;
+    height: 73%;
+}
+
+#deliveryMailStatus .table-wrap {
+    height: 332px;
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+    /*border-bottom: 1px solid #d3d3d3;*/
+}
+
+    #deliveryMailStatus .table-wrap thead {
+        position: absolute;
+        top: 0;
+        display: inherit;
+        background-color: #fff;
+        z-index: 2;
+        width: 100%;
+    }
+
+        #deliveryMailStatus .table-wrap thead th {
+            border-bottom: 1px solid #a7a7a8;
+            border-right: 1px solid #fff;
+            font-size: 14px;
+            color: #3b3b3d;
+            vertical-align: middle;
+            padding: 8px 0;
+            line-height: 21px;
+        }
+/*#deliveryMailStatus .table-wrap tbody:before {
+    line-height: 37px;
+    content: "_";
+    color: transparent;
+    display: block;
+}*/
+#deliveryMailStatus.mpcmodel section {
+    padding-top: 0;
+    padding-bottom: 72px;
+}
+
+#deliveryMailStatus.mpcmodel footer {
+    padding: 14px 24px 27px 24px;
+}
+
+#deliveryMailStatus {
+    width: 390px;
+    left: 55%;
+}
+
+    #deliveryMailStatus .table {
+        margin-bottom: 0;
+    }
+
+#reportContent .firstSection .buttongroup {
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+#reportContent .rep_sitelist {
+    margin: 0 0 15px;
+    float: left;
+    position: static;
+    clear: both;
+    width: 100%;
+}
+
+.rep_sitelist .dissociate-entity {
+    background: url(../images/sprite_icons.png) no-repeat -430px -338px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+#reportContent .rep_sitelist li {
+    border-bottom: 1px solid #D3D3D3;
+    margin: 10px 0px 10px 0px;
+}
+
+#deliveryMailStatus .rep_del_heading {
+    margin: 0 10px 0 0;
+}
+
+#deliveryMailStatus .status_legand {
+    float: right;
+    margin: 0;
+}
+
+#deliveryMailStatus .succ-legand, #deliveryMailStatus .fail-legand {
+    display: inline-grid;
+    list-style: square;
+    font-size: 13px;
+    float: left;
+}
+
+#deliveryMailStatus .fail-legand {
+    margin: 0 0 0 20px;
+}
+
+#cardPreview .modal-footer .footer-notes {
+    float: right;
+    /*margin-right: 10px;
+    font-size: 16px;
+    font-style: italic;*/
+}
+
+.reportsListSection .highcharts-button {
+    display: none;
+}
+
+[data-popovername="report-pop"] .popover-content .leftTree {
+    min-height: 300px !important;
+}
+
+div.popover.right[data-popovername="report-pop"] {
+    top: 65px !important;
+    margin-left: 18px !important;
+}
+
+    div.popover.right[data-popovername="report-pop"] .arrow {
+        border-right-color: #28282a;
+        top: 130px !important;
+    }
+
+#reports .reportsListSection .summarytext {
+    margin-top: 362px;
+    text-align: center;
+}
+
+.reportsListSection #container {
+    min-width: 310px;
+    height: 400px;
+    max-width: 600px;
+    margin: -75px 0 0 120px;
+}
+
+.reportsListSection .chart-notes {
+    text-align: center;
+    font-style: italic;
+}
+
+#reportBaseContentId ul.report-entity-list {
+    position: relative;
+    clear: both;
+}
+
+    #reportBaseContentId ul.report-entity-list li {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 10px 0px 10px 0px;
+        list-style: none;
+    }
+
+        #reportBaseContentId ul.report-entity-list li .dissociate-entity {
+            background: url(../images/sprite_icons.png) no-repeat -430px -338px;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            margin-left: -5px;
+            cursor: pointer;
+        }
+
+#reports .thirdSection .errorSummary{
+    padding: 0px 0px 26px 0px;
+}
+
+/* Calender 14" temporary fixes which will display all the rows of calender only for reports page*/
+/*@media screen and (max-device-width:1366px) and (max-device-width:1024px){*/
+.bootstrap-datetimepicker-widget table {
+    width: 90% !important;
+}
+
+.bootstrap-datetimepicker-widget tbody tr:first-child td {
+    padding-top: 6px !important;
+}
+
+.table-condensed th, .table-condensed td {
+    padding: 0px 5px !important;
+}
+
+.bootstrap-datetimepicker-widget .datepicker {
+    padding-bottom: 5px !important;
+}
+
+.bootstrap-datetimepicker-widget li.picker-switch.accordion-toggle {
+    height: 40px !important;
+}
+
+.bootstrap-datetimepicker-widget td span {
+    width: 54px !important;
+}
+/*}*/
+ #reports input::-webkit-input-placeholder {
+        color: #bababa !important;
+    }
+@-moz-document url-prefix() {
+    #reports input::-moz-placeholder {
+        color: #707070 !important;
+    }
+.firstSection, .secondSection, .thirdSection {
+    overflow: auto;
+}
+}
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {
+    #reports input:-ms-input-placeholder  {
+        color: #bababa !important;
+    }
+}

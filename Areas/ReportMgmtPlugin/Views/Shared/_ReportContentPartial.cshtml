@@ -1,0 +1,18 @@
+﻿<div id="reportBottomSectionId" class="cardSettings bottomSection">
+    <div id="reportFilterSectionId" class="firstSection formcontrol">        
+        @* Based on the report type, filter partial will be loaded from server *@
+        @{
+            Html.RenderAction("GetReportFilterPage", new { reportGroupName = ViewBag.ReportGroupName });
+        }
+    </div>
+    <div id="reportOutputSectionId" class="secondSection formcontrol">
+        @{
+            Html.RenderPartial("_ReportOutputPartial");
+        }
+    </div>
+    <div id="reportOptionSectionId" class="thirdSection formcontrol">
+        @{
+            Html.RenderPartial("_ReportOptionPartial");
+        }
+    </div>
+</div>

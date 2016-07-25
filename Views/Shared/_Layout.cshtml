@@ -1,0 +1,76 @@
+﻿@using System.Configuration;
+@using System.Web;
+@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    string cache = string.Empty;
+    //if (MaxproCloud.UI.Common.Global.ConfigProvider.AppSecurity.ValidateRequest()){
+    //    cache = @Url.Action("Manifest1", "Shell");
+    //}
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render(
+            "~/Content/Styles/css",
+            "~/Content/Styles/timeoutcss",
+                    "~/Content/Styles/othercss", "~/Content/Styles/othercss1")
+    @Styles.Render("~/Content/AccessPersonaConfig/css1")@* Access Persona Config*@
+    @Styles.Render("~/Content/CalendarSearchPlugin/css1") @* Calender Search Plugin*@
+    @Styles.Render("~/Content/CredentialMgmtPlugin/css1") @*CredentialMgmtPlugin*@
+    @Styles.Render("~/Content/firmwareupgrade/css1")@*firmwareupgrade*@
+    @Styles.Render("~/Content/AlarmViewerPlugin/css1")@*AlarmViewerPlugin*@
+    @Styles.Render("~/Content/config/css")@*config plugin*@
+    @Styles.Render("~/Content/DashboardPlugin/css1")@*config plugin*@
+
+    @Styles.Render("~/Content/treeview/css1")@*config plugin*@
+    @Styles.Render("~/Content/Dealerstyles/css1")@*dealer plugin*@
+    @*@Styles.Render("~/Content/Deviceconfigstyles/DeviceConfiguaration.css")@*Deviceconfigstyles plugin*@
+    @Styles.Render("~/Content/LoginPlugin/css1")@*login plugin*@
+    @Styles.Render("~/Content/mapstyle/css1")@*map plugin*@
+    @Styles.Render("~/Content/profilestyle/css1")@*profile plugin*@
+    @Styles.Render("~/Content/Search/css1")@*search plugin*@
+    @Styles.Render("~/Content/treeview/css1") @*  tree plugin*@
+    @Styles.Render("~/Content/userconfigstyles/css1") @* user config style plugin*@
+    @Styles.Render("~/Content/Viewerstyles/css1") @* viewer layout plugin*@
+    @Styles.Render("~/Content/MpcaCameraConfigStyles/css1") @* mpc camera configuration plugin*@
+    @Styles.Render("~/Content/MpcaDeviceConfigStyles/css1")@* mpc camera device plugin*@
+    @Styles.Render("~/Content/MpcaInputConfigStyles/css1")@* mpc camera input plugin*@
+    @Styles.Render("~/Content/MpcaOutputConfigStyles/css1")@* mpc camera output plugin*@
+    @Styles.Render("~/Content/MpcaStorageConfigStyles/css1")@* mpc camera storage plugin*@
+    @Styles.Render("~/Content/PanelConfigPlugin/css2")@* panel config  plugin*@
+    @Styles.Render("~/Content/RuleConfigurationPlugin/css1") @* rules  plugin*@
+    @Styles.Render("~/Content/TimeManagementPlugin/css1")
+    @Styles.Render("~/Content/ReportMgmtPlugin/css1")
+
+    @Scripts.Render(@Url.Action("i18nResources", "Resource"))
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <script src="~/Scripts/lib/autobahn.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=RenderCaptcha&render=explicit&hl=@culture" async defer></script>
+
+</head>
+<body>
+    <input type="hidden" name="geocoderurl" id="geocoderurl" value="@Url.Action("ResolveUrl", "Geocoder")" />
+    @Scripts.Render(
+   "~/bundles/jquery",
+   "~/bundles/otherjs0",
+   "~/bundles/otherjs",
+   "~/bundles/jsextlibs0",
+   "~/bundles/jsextlibs",
+   "~/bundles/knockout",
+   "~/bundles/otherjs2",
+   "~/bundles/otherjs22",
+   "~/bundles/jsapplibs",
+   "~/bundles/otherjs3",
+   "~/bundles/Mapplugincommonscript1")
+    <div id="busyindicator"></div>
+    @RenderBody()
+</body>
+</html>

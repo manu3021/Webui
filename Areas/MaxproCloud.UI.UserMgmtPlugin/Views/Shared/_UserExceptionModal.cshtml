@@ -1,0 +1,339 @@
+﻿@*@{
+    ViewBag.Title = "_UserExceptionModal";
+}
+
+<h2>_UserExceptionModal</h2>*@
+<div id="userExceptionsModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userExceptionsModalLabel" aria-hidden="true">
+
+    <header class="row">
+        <span>User Exceptions</span>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    </header>
+
+    <section class="row">
+        <div class="sectionwrapper">
+            <div class="modelLeftSection">
+                <form id="search-box">
+                    <input type="search" placeholder="Search">
+                </form>
+                <div class="leftTree" id="create-tree">
+                    <div class="tree">
+                        <ul>
+                            <li>
+                                <span id="parent-cust"><i class="icon-customer"></i>
+                                    <label class="formControl-checkbox deleteBox">
+                                        <input type="checkbox" class="checkbox" name="test" />
+                                        <span></span>
+                                    </label>
+                                    <span class="tree-label">McDonalds<li>
+                                    </span></span>
+                                <ul>
+
+                                    <li>
+                                        <span><i class="icon-group"></i>
+                                            <label class="formControl-checkbox deleteBox">
+                                                <input type="checkbox" class="checkbox" name="test" />
+                                                <span></span>
+                                            </label>
+                                            <span class="tree-label">Milwaukee</span></span>
+                                    </li>
+                                    <li>
+                                        <span id="parent-group"><i class="icon-group"></i>
+                                            <label class="formControl-checkbox deleteBox">
+                                                <input type="checkbox" class="checkbox" name="test" />
+                                                <span></span>
+                                            </label>
+                                            <span class="tree-label">Philadelphia</span></span>
+                                        <ul>
+                                            <li>
+                                                <span id="parent-site"><i class="icon-site"></i>
+                                                    <label class="formControl-checkbox deleteBox">
+                                                        <input type="checkbox" class="checkbox" name="test" />
+                                                        <span></span>
+                                                    </label>
+
+                                                    <span class="tree-label">Site1</span></span>
+                                                <ul>
+                                                    <li>
+                                                        <span><i class="icon-group"></i>
+                                                            <label class="formControl-checkbox deleteBox">
+                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                <span></span>
+                                                            </label>
+
+                                                            <span class="tree-label">Coorporate Building</span></span>
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="icon-group"></i>
+                                                                    <label class="formControl-checkbox deleteBox">
+                                                                        <input type="checkbox" class="checkbox" name="test" />
+                                                                        <span></span>
+                                                                    </label>
+
+                                                                    <span class="tree-label">Floor 1</span></span>
+                                                                <ul>
+                                                                    <li>
+                                                                        <span id="parent-appliance"><i class="icon-group"></i>
+                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                <span></span>
+                                                                            </label>
+
+                                                                            <span class="tree-label">MPC Appliance</span></span>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <span><i class="icon-door"></i>
+                                                                                    <label class="formControl-checkbox deleteBox">
+                                                                                        <input type="checkbox" class="checkbox" name="test" />
+                                                                                        <span></span>
+                                                                                    </label>
+
+                                                                                    <span class="tree-label">Door 1</span></span>
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <span><i class="tree-open-icon"></i>
+                                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                                <span></span>
+                                                                                            </label>
+
+                                                                                            <span class="tree-label">Reader A</span></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span><i class="tree-open-icon"></i>
+                                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                                <span></span>
+                                                                                            </label>
+
+                                                                                            <span class="tree-label">Reader B</span></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span><i class="tree-open-icon"></i>
+                                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                                <span></span>
+                                                                                            </label>
+
+                                                                                            <span class="tree-label">Door Position Switch</span></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span><i class="tree-open-icon"></i>
+                                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                                <span></span>
+                                                                                            </label>
+
+                                                                                            <span class="tree-label">Request to Exit</span></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span><i class="tree-open-icon"></i>
+                                                                                            <label class="formControl-checkbox deleteBox">
+                                                                                                <input type="checkbox" class="checkbox" name="test" />
+                                                                                                <span></span>
+                                                                                            </label>
+
+                                                                                            <span class="tree-label">Door Lock</span></span>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span><i class="tree-open-icon"></i>
+                                                                                    <label class="formControl-checkbox deleteBox">
+                                                                                        <input type="checkbox" class="checkbox" name="test" />
+                                                                                        <span></span>
+                                                                                    </label>
+
+                                                                                    <span class="tree-label">Door 2</span></span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span><i class="tree-open-icon"></i>
+                                                                                    <label class="formControl-checkbox deleteBox">
+                                                                                        <input type="checkbox" class="checkbox" name="test" />
+                                                                                        <span></span>
+                                                                                    </label>
+
+                                                                                    <span class="tree-label">Door 3</span></span>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+
+                                                                </ul>
+                                                            </li>
+
+                                                        </ul>
+
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Site2</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Site3</span></span>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <span><i class="tree-open-icon"></i><span class="tree-label">Coorporate Building1</span></span>
+                                        <ul>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 1</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 2</span></span>
+
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 3</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 4</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 5</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Lobby Floor</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Basement</span></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span><i class="tree-open-icon"></i><span class="tree-label">Subway</span></span>
+                                <ul>
+                                    <li>
+                                        <span><i class="tree-schedule-icon"></i>
+                                            <label class="formControl-checkbox deleteBox">
+                                                <input type="checkbox" class="checkbox" name="test">
+                                                <span></span>
+                                            </label>
+                                            <span class="tree-label">Schedule</span></span>
+                                    </li>
+                                    <li>
+                                        <span><i class="tree-people-icon"></i>
+                                            <label class="formControl-checkbox deleteBox">
+                                                <input type="checkbox" class="checkbox" name="test">
+                                                <span></span>
+                                            </label>
+                                            <span class="tree-label">People</span></span>
+                                    </li>
+                                   @* <li>
+                                        <span><i class="tree-open-icon"></i><span class="tree-label">Philadelphia</span></span>
+                                        <ul>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Site1</span></span>
+                                                <ul>
+                                                    <li>
+                                                        <span><i class="tree-open-icon"></i><span class="tree-label">Coorporate Building</span></span>
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 1</span></span>
+                                                                <ul>
+                                                                    <li>
+                                                                        <span><i class="tree-open-icon"></i><span class="tree-label">Net AXS123 Panel</span></span>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <span><i class="tree-open-icon"></i><span class="tree-label">Door 1</span></span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span><i class="tree-open-icon"></i><span class="tree-label">Door 2</span></span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span><i class="tree-open-icon"></i><span class="tree-label">Door 3</span></span>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+
+                                                                </ul>
+                                                            </li>
+
+                                                        </ul>
+
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Site2</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Site3</span></span>
+                                            </li>
+
+                                        </ul>
+                                    </li>*@
+                                    <li>
+                                        <span><i class="tree-open-icon"></i><span class="tree-label">Customer 2</span></span>
+                                    </li>
+                                    <li>
+                                        <span><i class="tree-open-icon"></i><span class="tree-label">Coorporate Building1</span></span>
+                                        <ul>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 1</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 2</span></span>
+
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 3</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 4</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Floor 5</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Lobby Floor</span></span>
+                                            </li>
+                                            <li>
+                                                <span><i class="tree-open-icon"></i><span class="tree-label">Basement</span></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <style>
+
+
+</style>
+            </div>
+            <div class="modelRightSection">
+                <div class="exceptionsDisplayWrapper">
+                    <div class="exceptionDisplay">
+
+                        <div class="exceptionNo">13</div>
+                    </div>
+                    <div class="exceptionicon"></div>
+                    <div class="exceptionText"><span>Exceptions Added</span></div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            <button class="primary-button" data-dismiss="modal" aria-hidden="true">Save</button>
+            <button class="secondary-button" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+    </footer>
+
+
+</div>

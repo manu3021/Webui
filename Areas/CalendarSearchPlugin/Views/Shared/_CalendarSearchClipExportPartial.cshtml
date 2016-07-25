@@ -1,0 +1,21 @@
+﻿<div id="calExportClipModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form id="calendar_export_clip_form">
+        <header class="row">
+            <span>@Resources.Calendar_ExportClip</span>
+        </header>
+        <section>
+            <div class="clickexportPath">
+                <div class="field saveasErrorStyle">
+                    <label class="floatLblDn">@Resources.Calendar_ExportClip_Name</label>
+                    <input type="text" name="clipExport_Name" data-bind="value:$data.model.SavePath" class="floatTxt myStyle">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="modal-footer">
+                <button id="Exportbtn" class="primary-button" data-bind="click: $data.exportClip">@Resources.Export</button>
+                <button id="Cancelbtn" class="secondary-button" data-bind="click: $data.cancelClipExport">@Resources.Cancel</button>
+            </div>
+        </footer>
+    </form>
+</div>

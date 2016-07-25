@@ -1,0 +1,259 @@
+.icon_people, .icon_peopleHover,
+.icon_profileNav, .icon_profileNavHover, .icon_schedule, .icon_scheduleHover
+/*.icon_Inputs, .icon_InputsHover,.icon_outputs, .icon_outputsHover, .icon_door,.icon_panel_input_node, .icon_panel_output_node, .icon_input_node, .icon_output_node, .icon_reader, .icon_inputpoint,.icon_outputpoint*/ {
+    background: url(images/treesprites.png) no-repeat;
+    position: absolute;
+}
+
+/*.icon_general {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_general:hover, .icon_general:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_customer {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_customer:hover, .icon_customer:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_site {
+    background-position: -40px -140px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_site:hover, .icon_site:active {
+        background-position: -39px -189px;
+        width: 20px;
+        height: 20px;
+    }
+
+
+.icon_group {
+    background-position: -41px -239px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_group:hover, .icon_group:active {
+        background-position: -40px -287px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_recorder {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_recorder:hover, .icon_recorder:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_panel {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_panel:hover, .icon_panel:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }*/
+/*
+.icon_door {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_door:hover, .icon_door:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_panel_input_node {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_panel_input_node:hover, .icon_panel_input_node:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_panel_output_node {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_panel_output_node:hover, .icon_panel_output_node:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_output_node {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_output_node:hover, .icon_output_node:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_reader {
+    background-position: -40px -136px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_reader:hover, .icon_reader:active {
+        background-position: -40px -188px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_inputpoint {
+    background-position: -38px -440px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_inputpoint:hover, .icon_inputpoint:active {
+        background-position: -88px -38px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_outputpoint {
+    background-position: -40px -340px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_outputpoint:hover, .icon_outputpoint:active {
+        background-position: -38px -388px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_input_node {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_input_node:hover, .icon_input_node:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+    
+.icon_camera {
+    background-position: -40px -37px;
+    width: 20px;
+    height: 20px;
+}
+
+    .icon_camera:hover, .icon_camera:active {
+        background-position: -40px -91px;
+        width: 20px;
+        height: 20px;
+    }
+
+.icon_Inputs {
+    background-position: -38px -439px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_InputsHover {
+    background-position: -87px -39px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_outputs {
+    background-position: -40px -340px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_outputsHover {
+    background-position: -39px -388px;
+    width: 20px;
+    height: 20px;
+}
+*/
+.icon_people {
+    background-position: -89px -188px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_peopleHover {
+    background-position: -89px -239px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_profileNav {
+    background-position: -86px -385px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon_profileNavHover {
+    background-position: -88px -433px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon_schedule {
+    background-position: -89px -288px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_scheduleHover {
+    background-position: -90px -340px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_search {
+    background-position: -91px -92px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon_searchHover {
+    background-position: -92px -141px;
+    width: 20px;
+    height: 20px;
+}

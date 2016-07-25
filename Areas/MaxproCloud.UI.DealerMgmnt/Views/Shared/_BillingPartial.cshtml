@@ -1,0 +1,8 @@
+﻿@*@Styles.Render("~/Content/Dealerstyles/dealerstyle.css")*@
+<div id="billingcontainer" class="billingcontainer" data-url="@Url.Action("", "Approval")">
+    <div class="billingText">
+    <label>@Resources.EULA_Bill</label>
+    <label>@Resources.EULA_download</label> <button class="secondary-button" data-bind="click: $data.downloadBillingSummary">@Resources.Click_Here</button>
+        </div>
+    </div>
+

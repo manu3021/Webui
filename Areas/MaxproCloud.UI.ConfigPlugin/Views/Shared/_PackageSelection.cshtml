@@ -1,0 +1,291 @@
+﻿@{
+    string helpline = System.Configuration.ConfigurationManager.AppSettings["HelpLine"];
+}
+<div data-accounttype="GROUP" class="settingsform">
+    <div id="GroupPackageSummary" style="display: block;">
+        <div class="packageSummary ">
+            <table class="table packageSelectionTable">
+                <thead>
+                    <tr>
+                        <th>@Resources.Config_SiteNametext</th>
+                        <th>@Resources.Config_PackageText  <b class="icon_sort"></b></th>                        
+                        <th>@Resources.Config_RetentionPeriod  <b class="icon_sort"></b></th>
+                        <th>@Resources.Config_DollorMonth</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="template: {name: 'PACKAGE_SUMMARY', foreach: $data.PackageDetails}"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div data-accounttype="DEALER" class="settingsform">
+    <div id="CustomerPackageSummary" style="display: block;">
+        <div class="packageSummary ">
+            <table class="table packageSelectionTable">
+                <thead>
+                    <tr>
+                        <th>@Resources.CustomerName</th>
+                        <th>@Resources.Config_PackageText  <b class="icon_sort"></b></th>
+                        <th>Site Count</th>
+                        <th>Door Count</th>
+                        <th>Camera Count</th>
+                        <th>@Resources.Config_RetentionPeriod  <b class="icon_sort"></b></th>
+                        <th>@Resources.Config_DollorMonth</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="template: {name: 'PACKAGE_SUMMARY',foreach: $data.PackageDetails}"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div data-accounttype="CUSTOMER" class="settingsform">
+    <div id="packageDetail">
+        <span class="pkgSelectionHeading">@Resources.lbl_Select_a_Plan</span>
+        <span class="pkgSelectionSubHeading">@Resources.Config_ForText <span class="boldFontStyle" data-bind="text: $data.DoorCount"></span> @Resources.Doors, <span class="boldFontStyle" data-bind="text: $data.CameraCount"></span> @Resources.Cameras</span>
+        <form id="packageSelection" action="@Url.Action("ChangePackage", "Config")" @*data-bind="submit:postpackageselection"*@>
+            <div class="retentionPeriod">
+                <span class="pkgSelectionHeading">@Resources.Config_RetentionPeriod</span>
+                <span class="switch-toggle switch-ios switch-7">
+                    <input id="sevenDaysRetention" name="TimeInterval" value="7" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="sevenDaysRetention">@Resources.Config_7</label>
+                    <input id="fifteenDaysRetention" name="TimeInterval" value="15" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="fifteenDaysRetention">@Resources.Config_15</label>
+                    <input id="thirtyDaysRetention" name="TimeInterval" value="30" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="thirtyDaysRetention">@Resources.Config_30</label>
+                    <input id="fourtyfiveDaysRetention" name="TimeInterval" value="45" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="fourtyfiveDaysRetention">@Resources.Config_45</label>
+                    <input id="sixtyDaysRetention" name="TimeInterval" value="60" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="sixtyDaysRetention">@Resources.Config_60</label>
+                    <input id="ninetyRetention" name="TimeInterval" value="90" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="ninetyRetention">@Resources.Config_90</label>
+                    <input id="onetwentyDaysRetention" name="TimeInterval" value="120" type="radio" data-bind="checked: $data.RetentionDays, click:$data.upgradeRetentionDays">
+                    <label for="onetwentyDaysRetention">@Resources.Config_120</label>
+                    <a></a>
+                </span>
+            </div>
+            <ul class="planSelection">
+                <li class="basicPlan" data-bind="with: $data.Packages()[0]">
+                    <ul>
+                        <li class="PlanHeading">
+                            <b class="pkgSelectedIcon" data-bind="visible: ($data.IsSelected()==true && $data.IsActive()==false)"></b>
+                            <span class="PlanTopHeading" data-bind="text:Name"></span>
+                            <span class="PlanSecondHeading"><span class="dollarStyle">@Resources.Config_dollor</span><span class="dollarStyle" data-bind="text:Cost"></span>/@Resources.lnl_month</span>
+                            <span class="doorCameraCost">
+                                <span data-bind="text: DoorCameraCost"> </span>
+                            </span>
+                        </li>
+
+                        <li class="planContent">
+                            <b class="tickIcon"></b>
+                            <span class="planTxt StdFeatureLink" data-bind="click: $data.onStdFeaturesclick"><span class="boldFontstyle">21<span> @Resources.Standard_Features</span></span></span>
+                            <span class="planDivider"></span>
+                        </li>
+
+                        <li id="plancontentTemplateBasic" data-bind=" template: {name:  'PLANCONTENT_TEMPLATE' , foreach:  $data.perpackagefeatures} "> </li>
+                    </ul>
+                    @if (ViewBag.IsDealer == false)
+                    {
+                        <button class="primary-button" data-packageid="8E43E825-E83E-4E8C-A825-2DC983D49ED9" data-bind="click: $parent.selectbasic, text: $data.ActivateBtntextCustomer , css: {'secondary-button disabledStyle': ($data.IsActive()==true || $data.UpgradePending()==true || $data.IsSelected()==true)}"></button>
+                    }
+                    else
+                    {
+                        <button class="primary-button" data-bind="click: $parent.selectbasic, text: $data.ActivateBtntextDealer, css: {'secondary-button disabledStyle': ($data.IsActive()==true || $data.UpgradePending()==true || $data.IsSelected()==true) }"></button>
+                    }
+                    <span data-bind="visible:$data.IsActive">
+                        <span class="activatedDateStyle"> @Resources.Config_OnTxt <span data-bind="text: $data.StartDate"> </span></span>
+                    </span>
+                    <div class="pendingDataStyle" data-bind="visible: $data.UpgradePending()==true">
+                        <span data-bind="click: $parent.cancelPackage, text: $data.IsDowngrade() ? 'Cancel Downgrade' : 'Cancel Upgrade'"></span>
+                        <div class="dropdown packageMoreOption" data-bind="visible: $parent.UpgradeRequestDeleted()==false">
+                            <span class="dropdown-toggle " data-toggle="dropdown"><span class="pendingQusetionMark">( ? )</span></span>
+                            <ul class="dropdown-menu packageMoreDropdown">
+                                <li class="pkgContent">
+                                    @Resources.Config_YourPackageRequest <span class="proTxtStyle" data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageName"></span> ($<span data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageCost"></span> per month) will be active from @Resources.Next_Billing_Cycle.@Resources.Config_CallHelpline
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="premiumPlan" data-bind="with: $data.Packages()[1]">
+                    <ul>
+                        <li class="PlanHeading">
+                            <b class="pkgSelectedIcon" data-bind="visible: ($data.IsSelected()==true && $data.IsActive()==false)"></b>
+                            <span class="PlanTopHeading" data-bind="text:Name"></span>
+                            <span class="PlanSecondHeading"><span class="dollarStyle">@Resources.Config_dollor</span><span class="dollarStyle" data-bind="text:Cost"></span>/@Resources.lnl_month</span>
+                            <span class="doorCameraCost">
+                                <span data-bind="text: DoorCameraCost"> </span>
+                            </span>
+                        </li>
+
+                        <li class="planContent">
+                            <b class="tickIcon"></b>
+                            <span class="planTxt StdFeatureLink" data-bind="click: $data.onStdFeaturesclick"><span class="boldFontStyle">21<span> @Resources.Standard_Features</span></span></span>
+                            <span class="planDivider"></span>
+                        </li>
+
+                        <li id="plancontentTemplatePro" data-bind=" template: {name:  'PLANCONTENT_TEMPLATE' , foreach:  $data.perpackagefeatures} "> </li>
+
+                    </ul>
+                    @if (ViewBag.IsDealer == false)
+                    {
+                        <button class="primary-button" data-packageid="98C94D3D-FD7E-472F-9F0A-EC353FCB1ED2" data-bind="click: $parent.selectpremium, text: $data.ActivateBtntextCustomer,  css: {'secondary-button disabledStyle': ($data.IsActive()==true|| $data.UpgradePending()==true || $data.IsSelected()==true) }"></button>
+                    }
+                    else
+                    {
+                        <button class="primary-button" data-packageid="98C94D3D-FD7E-472F-9F0A-EC353FCB1ED2" data-bind="click: $parent.selectpremium, text: $data.ActivateBtntextDealer,  css: {'secondary-button disabledStyle': ($data.IsActive()==true || $data.UpgradePending()==true || $data.IsSelected()==true) }"></button>
+                    }
+                    <span data-bind="visible:$data.IsActive">
+                        <span class="activatedDateStyle"> @Resources.Config_OnTxt <span data-bind="text: $data.StartDate"> </span></span>
+                    </span>
+                    <div class="pendingDataStyle" data-bind="visible: $data.UpgradePending()==true">
+                        <span data-bind="click: $parent.cancelPackage, text: $data.IsDowngrade() ? 'Cancel Downgrade' : 'Cancel Upgrade'"></span>
+                        <div class="dropdown packageMoreOption" data-bind="visible: $parent.UpgradeRequestDeleted()==false">
+                            <span class="dropdown-toggle " data-toggle="dropdown"><span class="pendingQusetionMark">( ? )</span></span>
+                            <ul class="dropdown-menu packageMoreDropdown">
+                                <li class="pkgContent">
+                                    @Resources.Config_YourPackageRequest <span class="proTxtStyle" data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageName"></span> ($<span data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageCost"></span> per month) will be active from @Resources.Next_Billing_Cycle.@Resources.Config_CallHelpline
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="proPlan" data-bind="with: $data.Packages()[2]">
+                    <ul>
+                        <li class=" PlanHeading">
+                            <b class="pkgSelectedIcon" data-bind="visible: ($data.IsSelected()==true && $data.IsActive()==false)"></b>
+                            <span class="PlanTopHeading" data-bind="text:Name"></span>
+                            <span class="PlanSecondHeading"><span class="dollarStyle">@Resources.Config_dollor</span><span class="dollarStyle" data-bind="text:Cost"></span>/@Resources.lnl_month</span>
+                            <span class="doorCameraCost">
+                                @Resources.CommingSoon
+                                @*<span data-bind="text: DoorCameraCost"> </span>*@
+                            </span>
+                        </li>
+
+                        <li class="planContent">
+                            <b class="tickIcon"></b>
+                            <span class="planTxt StdFeatureLink" data-bind="click: $data.onStdFeaturesclick"><span class="boldFontStyle">@Resources.Config_21<span> @Resources.Standard_Features</span></span></span>
+                            <span class="planDivider"></span>
+                        </li>
+
+                        <li id="plancontentTemplatePremium" data-bind=" template: {name:  'PLANCONTENT_TEMPLATE' , foreach:  $data.perpackagefeatures} "> </li>
+
+                    </ul>
+
+                    @if (ViewBag.IsDealer == false)
+                    {
+                        <button class="primary-button" data-packageid="98C94D3D-FD7E-472F-9F0A-EC353FCB1ED2" data-bind="click: $parent.selectpro, text: $data.ActivateBtntextCustomer,  css: {'secondary-button disabledStyle': ($data.IsActive()==true|| $data.UpgradePending()==true || $data.IsSelected()==true) }"></button>
+                    }
+                    else
+                    {
+                        <button class="primary-button" data-packageid="98C94D3D-FD7E-472F-9F0A-EC353FCB1ED2" data-bind="click: $parent.selectpro, text: $data.ActivateBtntextDealer,  css: {'secondary-button disabledStyle': ($data.IsActive()==true || $data.UpgradePending()==true || $data.IsSelected()==true) }"></button>
+                    }
+                    <span data-bind="visible:$data.IsActive">
+                        <span class="activatedDateStyle"> @Resources.Config_OnTxt <span data-bind="text: $data.StartDate"> </span></span>
+                    </span>
+                    <div class="pendingDataStyle" data-bind="visible: $data.UpgradePending()==true">
+                        <span data-bind="click: $parent.cancelPackage">Cancel Upgrade</span>
+                        <div class="dropdown packageMoreOption" data-bind="visible: $parent.UpgradeRequestDeleted()==false">
+                            <span class="dropdown-toggle " data-toggle="dropdown"><span class="pendingQusetionMark">( ? )</span></span>
+                            <ul class="dropdown-menu packageMoreDropdown">
+                                <li class="pkgContent">
+                                    @Resources.Config_YourPackageRequest <span class="proTxtStyle" data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageName"></span> ($<span data-bind="text: $parent.UpgradeRequestData.UpgradeRequestPackageCost"></span> per month) will be active from @Resources.Next_Billing_Cycle. @Resources.Config_CallHelpline
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <input type="hidden" id="accountId" name="accountId" value="0" />
+            <input type="hidden" id="packageid" name="packageid" value="0" />
+        </form>
+        <div id="upgradePackageDialog" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <section class="row">
+                <div class="upgradePackageText"><span>@Resources.Upgrade_To </span><span data-bind="text: $data.CurrentpackageName"></span> <span> plan:</span></div>
+                <div class="upgradePackageButton">
+                    <span class="primary-button" data-bind="click: $data.onImmediate">@Resources.Immediately</span>
+                    <span class="primary-button" data-bind="click: $data.onNextBillingCycle">@Resources.Next_Billing_Cycle</span>
+                </div>
+            </section>
+            <footer>
+                <div class="modal-footer">
+                    <button class="secondary-button" data-dismiss=" modal" aria-hidden="true" data-bind="click: $data.onCancelUpgradePackage">@Resources.Cancel</button>
+                </div>
+            </footer>
+        </div>
+
+        <div id="downgradePackageDialog" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <section class="row">
+                <div class="downgradePackageText">@Resources.Downgrade_To <span data-bind="text: $data.CurrentpackageName"></span><span> plan:</span></div>
+                <div class="downgradeStaticText">@Resources.Downgrade_Effective_Next_Billing_Cycle</div>
+            </section>
+            <footer>
+                <div class="modal-footer">
+                    <button class="primary-button" data-bind="click: $data.onDowngradePackageDialog">@Resources.Downgrade</button>
+                    <button class="secondary-button" data-dismiss=" modal" aria-hidden="true" data-bind="click: $data.onCancelUpgradePackage">@Resources.Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="standardfeatures" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span class="planTxt"><span class="boldFontStyle">@Resources.Config_21 @Resources.Standard_Features</span></span>
+        </header>
+        <section class="row">
+            <ul class="StdFeatures" data-bind="template: {name : 'STDFEATURE_TEMPLATE', foreach: $data.standardfeatures}"></ul>
+        </section>
+        <span class="planDivider"></span>
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                <button class="secondary-button" class="close" data-dismiss=" modal" aria-hidden="true" data-bind="click: $data.onCancelStdFeatures">@Resources.Close</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script type="text/html" id="PACKAGE_SUMMARY">
+    <tr data-bind="with: $data">
+        <td>
+            <span data-bind="text: AccountName"> </span>
+            <span class="breadcrumbStyle" data-bind="text: AccountHierarchy"> </span>
+        </td>
+        <td><span class="basicTxtStyle" data-bind="text: Packages()[0].Name,css: { basicTxtStyle: Packages()[0].Name()=='Basic',proTxtStyle: Packages()[0].Name()=='Pro',premiumTxtStyle: Packages()[0].Name()=='Premium' }"></span></td>
+        <td><span data-bind="text: SiteCount"></span></td>
+        <td><span data-bind="text: DoorCount"></span></td>
+        <td><span data-bind="text: CameraCount"></span></td>
+        <td><span data-bind="text: RetentionDays"></span></td>
+        <td><span data-bind="text: Packages()[0].Cost"></span></td>
+    </tr>
+</script>
+<script type="text/html" id="PLANHEADING_TEMPLATE">
+    <li class="PlanHeading">
+        <span class="PlanTopHeading" data-bind="text:Name"></span>
+        <span class="PlanSecondHeading"><span class="dollarStyle">@Resources.Config_dollor</span><span class="dollarStyle" data-bind="text:Cost"></span>/@Resources.lnl_month</span>
+        <span class="doorCameraCost">@Resources.Config_perDoorCamera</span>
+    </li>
+
+</script>
+<script type="text/html" id="PLANCONTENT_TEMPLATE">
+    <li class="planContent">
+        <b class="tickIcon" data-bind="css: {crossIcon: $data.IsAvailable==false}"></b>
+        <span class="planTxt">
+            <span data-bind="if: FeatureValue !='0'">
+                <span class="boldFontStyle" data-bind="text: FeatureValue"></span>
+            </span>
+            <span data-bind="text: DisplayName"></span>
+        </span>
+        <span class="planDivider"></span>
+    </li>
+</script>
+<script type="text/html" id="STDFEATURE_TEMPLATE">
+    <li class="StdFeatureContent">
+        <b class="tickIcon"></b>
+        <span class="StdFeatureTxt" data-bind="text: DisplayName"></span>
+        <span class="StdFeatureDivider"></span>
+    </li>
+</script>
+
+

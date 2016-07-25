@@ -1,0 +1,159 @@
+﻿<form id="signupForm" autocomplete="off" class="form-registration scroll-y" data-validationkey="register" action="@Url.Action("JsonRegister", "Login")" data-bind="submit:DoRegister">
+    <h2>
+        <img src="~/content/images/maxproLogo.png" width="324" height="67">
+    </h2>
+    <div id="signin">
+
+        <div class="regContainer scroll-x scroll-y">
+            <b class="form-registration-heading">@Resources.Organization_Info</b>
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="Organizationname" class="floatLblDn">@Resources.Organization_Name</label>
+                        <input type="text" class="floatTxt myStyle" data-help="this is help test" id="Organizationname" name="Organizationname" data-bind="value: OrganizationName">
+                    </div>
+                </li>
+            </ul>
+            <b class="form-registration-heading">@Resources.Dealer_Info</b>
+            <ul>
+                <li>
+                    <div class="field">
+                        <label for="inputFirstname" class="floatLblDn">@Resources.First_Name</label>
+                        <input type="text" class="floatTxt myStyle" data-help="this is help test" id="inputFirstname" name="inputFirstname" data-bind="value: FirstName">
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="inputLastname" class="floatLblDn">@Resources.Last_Name</label>
+                        <input type="text" class="floatTxt myStyle" data-help="this is help test" id="inputLastname" name="inputLastname" data-bind="value: Lastname">
+                    </div>
+                </li>
+                <li class="clear-left">
+                    <div class="field">
+                        <label for="inputEmail" class="floatLblDn">@Resources.Email</label>
+                        <input type="text" class="floatTxt myStyle" data-help="this is help test" id="inputEmail" name="inputEmail" data-bind="value: Email">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="field">
+                        <span class="controls passfield" for="showpass"><b class="icon_eye"></b></span>
+                        @*<input type="checkbox" value="Show password" class="passcheckbox" id="showpass" tabindex="-1" data-bind="click:onShowPass">*@
+                        <label for="inputEmail" class="floatLblDn">@Resources.Password</label>
+                        <input type="password" class="floatTxt myStyle" id="inputPassword" name="inputPassword" data-bind="value: Password, valueUpdate: 'afterkeydown'">
+                    </div>
+                </li>
+            </ul>
+            <b class="form-registration-heading">@Resources.Dealer_address</b>
+            <ul>
+
+                <li>
+                    <div class="field">
+                        <label for="inputCompanyaddr" class="floatLblDn">@Resources.Address</label>
+                        <input type="text" class="floatTxt myStyle" name="inputCompanyaddr" id="inputCompanyaddr" data-bind="value: Address">
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="inputMobile" class="floatLblDn">@Resources.Phone</label>
+                        <input type="text" class="floatTxt myStyle" id="inputMobile" name="inputMobile" data-bind="value: Phone">
+                    </div>
+                </li>
+                <li class="clear-left">
+                    <div class="field">
+                        <label for="inputCity" class="floatLblDn">@Resources.City</label>
+                        <input type="text" class="floatTxt myStyle" id="inputCity" name="inputCity" data-bind="value: City">
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="inputRegion" class="floatLblDn">@Resources.Region</label>
+                        <input type="text" class="floatTxt myStyle" id="inputRegion" name="inputRegion" data-bind="value: Region">
+                    </div>
+                </li>
+                <li class="clear-left">
+                    <div class="field">
+                        <label for="inputCountry" class="floatLblDn">@Resources.Country</label>
+                        <input type="text" class="floatTxt myStyle" id="inputCountry" name="inputCountry" data-bind="value: Country">
+                    </div>
+                </li>
+                <li>
+                    <div class="field">
+                        <label for="inputZipCode" class="floatLblDn">@Resources.Zipcode</label>
+                        <input type="text" class="floatTxt myStyle" id="inputZipCode" name="inputZipCode" data-bind="value: Zipcode">
+                    </div>
+                </li>
+                <li class="clear-left">
+                    <div class="field">
+                        <label for="inputADI" class="floatLblDn">@Resources.Honeywell_ADI_Number </label>
+                        <input type="text" class="floatTxt myStyle" id="inputADI" name="inputADI" data-bind="value: ADI_Number">
+                    </div>
+                </li>
+                <li>
+                    <div class="field notRequiredStyle">
+                        <span class="authorizedPgmStyle">@Resources.FAP_Number</span>
+                        <ul>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="0" data-bind="checked:$data.IsSILVER">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_FAP</legand>
+
+                            </li>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="1" data-bind="checked:$data.IsGOLD">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_CSS</legand>
+
+                            </li>
+                            <li>
+
+                                <label class="formControl-checkbox">
+                                    <input class="checkbox" type="checkbox" value="2" data-bind="checked:$data.IsPLATINUM">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_HIS</legand>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                @*<li>
+                        <div class="field">
+                            <label for="inputFAP" class="floatLblDn">@Resources.FAP_Number</label>
+                            <input class="checkbox" type="checkbox" data-bind="checked:$data.IsSelected">
+                            <input type="text" class="floatTxt myStyle" id="inputFAP" data-bind="value: FAB_Number">
+                        </div>
+                    </li>*@
+
+
+                <li class="clear-left">
+                    <p class="subheading">(@Resources.Only_for_existing_cust)</p>
+                </li>
+            </ul>
+        </div>
+        <div class="signinButton">
+            <button type="submit" class="primary-button" id="btnregister" data-bind="click: DoRegister">@Resources.Sign_Up </button>
+            <button type="button" class="secondary-button" data-bind="click: showLogin">@Resources.Cancel</button>
+            <span class="error-msg">
+                <span id="errormsg">@Resources.Error_in_registration</span>
+            </span>
+        </div>
+    </div>
+    <div id="signin-complete" class="signin-complete" style="display: none">
+        <header>@Resources.Thank_you</header>
+        <p class="signin-complete-content">@Resources.Registration_Success_mail_sent</p>
+        <div>
+            <button class="primary-button" data-bind="click:showLogin">@Resources.Go_to_Login</button>
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,32 @@
+﻿
+<form class="form-agree" id="agreementform" action="@Url.Action("saveAgreement", "Login")" method="post" data-bind="submit: DoAgree">
+    <div class="termsPage">
+        <div class="headerSecondMenu">
+            <span>@Resources.Login_TermsConditions</span>
+        </div>
+
+        <div class="myWelcome">
+
+            <div class="content">
+             
+                @Html.Action("GetEULA", "Login")
+
+            </div>
+
+        </div>
+        <div class='buttonGroup fixButton'>
+
+            <button type="submit" class="primary-button" id="btndoagree" data-bind="click:DoAgree">@Resources.Login_AcceptTermsandConditions</button>
+        </div>
+    </div>
+
+
+</form>
+@*<script src="~/Scripts/app/headerlight.js"></script>
+<script src="~/Scripts/Login.Agreement.js"></script>
+<script src="~/Scripts/app/datacontext.js"></script>*@
+
+@Scripts.Render("~/bundles/LoginPluginscript1")
+@*@Styles.Render("~/Content/LoginPlugin/css1")*@
+@*<link href="~/Content/LoginPlugin/loginstyle.css" rel="stylesheet" />*@
+

@@ -1,0 +1,131 @@
+﻿<html lang="en">
+<head>
+    <title>Help</title>
+    <link href="../Content/Styles/webhelp.css" rel="stylesheet" />
+    <link href="../Content/Styles/Site.css" rel="stylesheet" />
+</head>
+<body id="onlineHelp">
+    <div class="bodyCont">
+        <h3 class="titleheader">To Configure the Reader under NetAXS-123</h3>
+        <h4 class="subtitle">To configure the reader settings:</h4>
+        <ol>
+            <li>In the MPC Dashboard area, click the <strong>Create & Edit</strong> tab. The <strong>CREATE AND EDIT</strong> page appears.</li>
+			<li>In the left pane, select the site and then click the relevant device added to the site.</li>
+            <div class="note nomargintop">
+				<h4 class="subtitle">Note:</h4>
+				<p>Before you modify the device settings, ensure to register the devices on cloud.</p>
+			</div>
+			<li>In the left pane, click the <i class="netaxs-icon"></i> icon corresponding to the NetAXS-123 device to expand and view all the available doors.</li>
+			<li>Double-click the required door to expand and view all the associated readers. The <strong>Settings </strong>page appears.</li>
+			<li>Enter the required details in the following fields:</li>
+			
+			<table>
+            <thead>
+                <tr>
+                    <td class="col-equal">Field</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td>
+                        Name of the Reader
+                    </td>
+                    <td>
+                        Enter a unique name to identify the reader.
+                    </td>
+                </tr>
+				
+			
+				<tr>
+                    <td>
+                        Disable Reader/Door
+					</td>
+                    <td>
+                        From the drop-down list, select the properties to set the reader/door to disable or enable mode.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Card and PIN required
+					</td>
+                    <td>
+                        Grants access only with both a successful card read and a valid PIN entry at the door’s keypad. You can perform the card read and PIN entry in either sequence.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Card or PIN required
+					</td>
+                    <td>
+                       Grants access with either a successful card read or a valid PIN entry at the door’s keypad
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        PIN only
+					</td>
+                    <td>
+                       Grants access with only a valid PIN entered at the door’s keypad.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Card only
+					</td>
+                    <td>
+                       Grants access with only a successful card read.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Lock down Reader/Door
+
+					</td>
+                    <td>
+                       Ignores all card reads (except from a VIP card), denies door entry but allows egress.
+
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                        Duress 
+					</td>
+                    <td>
+                       Enables you to trigger an alarm event and, if configured, pulse an output device in times of duress, such as when the operator is forced to grant access against his will to an unauthorized person. Duress requires both a PIN value and Card number to be recognized.
+					</td>
+                </tr>
+				<tr>
+                    <td>
+                       Anti-Passback
+					</td>
+                    <td>
+                         The user enables the anti-passback feature on the reader, which requires a valid card for entry and exit. The card holder must use the card in the proper IN/OUT sequence--that is, a card swiped at an IN reader must then be swiped at an OUT reader, or vice versa--a card swiped at an OUT reader must then be swiped at an IN reader. If the user's IN/OUT sequence is invalid, then an anti-passback violation event is generated for the type of anti-passback chosen (Hard or Soft) and the card holder is either denied access (Hard) or allowed access (Soft).
+						 </br></br>
+						
+						<strong>Hard </strong>- Validates IN/OUT status before allowing entry. A second swipe of the card at the same type of reader (IN/OUT) causes a Hard anti-passback violation and the user is denied entry.
+						</br></br>
+
+						<strong>Soft </strong>- Validates IN/OUT status before allowing entry. A second swipe of a card at the same type of reader (IN/OUT) causes a Soft anti-passback violation but the user is allowed entry.
+						</br></br>
+						
+						<strong>Out </strong>- Applies to readers located inside the anti-passback-controlled area. Card holders use these readers when attempting to exit the anti-passback-controlled area.
+						</br></br>
+						
+						<strong>In </strong>- Applies to readers located outside the anti-passback-controlled area. Card holders use these readers when attempting to enter the anti-passback-controlled area.
+						</br></br>
+                    </td>
+                </tr>
+				               
+            </tbody>
+        </table>		
+		</ol>              
+        </div> 
+<div class="bottControl">
+	<p class="helpprev">
+		<span>Previous</span>
+		<a href="edit_device_settings.html"><i class="prev_icon"></i> Edit Device Settings</a>
+	</p>	
+</div>		
+</body>
+</html>

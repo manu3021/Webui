@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Resources.Device_MaxproCloudTest</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap/bootstrap.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet/less" type="text/css" href="~/Content/Stylesheet/custom.css" />
+    <link rel="stylesheet/css" type="text/css" href="~/Content/Stylesheet/CSS/modal.css" media="screen" />
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false,// whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+            rootpath: ":/a.com/"// a path to add on to the start of every url
+            //resource
+        };
+    </script>   
+    <script src="~/Scripts/less.js" type="text/javascript"></script>
+    
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header-menu-three" id="page-third-header">
+            <div class="navbar">
+                <section class="row">
+                    <div class="tabcontainer">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#maps" data-toggle="tab">@Resources.Device_Maps</a></li>
+                            <li><a href="#settings" data-toggle="tab">@Resources.Settings</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="createBodyContainer">
+
+            <div class="createPageContent" id="body">
+                <div class="tab-content" id="map-content">
+                    <div class="tab-pane active" id="maps">
+                        <div id="mainpanel" class="mapcontainer">
+                            <div id="map-canvas" class="mapinnercontainer">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Settings Tab-->
+                    <div class="tab-pane" id="settings">
+                        <div id="editDevice" class="netrow formcontrol">
+                            <section class="row">
+                                <ul class="nav nav-tabs" id="tabAppliance">
+                                    <li><a href="#system" data-toggle="tab">@Resources.Device_System</a></li>
+                                    <li><a href="#schedules" data-toggle="tab">@Resources.Device_Schedules</a></li>
+                                    <li><a href="#camera" data-toggle="tab">@Resources.Device_CameraSettings</a></li>
+                                    <li><a href="#record" data-toggle="tab">@Resources.Device_RecordSettings</a></li>
+                                    <li><a href="#input" data-toggle="tab">@Resources.Device_InputText</a></li>
+                                    <li><a href="#output" data-toggle="tab">@Resources.Device_OutputText</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="system">
+                                        <!-- system tab -->
+                                        <div class="row">
+                                            <div class="col pull-left">
+                                                <b>@Resources.Device_NetworkConfiguration</b>
+                                                <hr />
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="chkTest">@Resources.Device_ObtainIPAddressAutomatically
+                                                    </label>
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_IPAddress </legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_SubnetMask</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_Gateway</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_DNSServer</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_UPnP</legend>
+                                                    <input type="checkbox" class="viewerCheckbox" name="test" />@Resources.Device_EnableDisable
+                                                </div>
+                                            </div>
+
+                                            <div class="col pull-left">
+                                                <b>@Resources.Device_MAXPROConnectSettings</b>
+                                                <hr />
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test" />@Resources.Device_EnableDisable
+                                                    </label>
+                                                    <button type="button" class="primary-button pull-right"
+                                                        data-toggle="modal" href="#advancedSettModal">
+                                                        @Resources.Device_AdvancedSettings
+                                                    </button>
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_ServerURL</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_UniqueKey</legend>
+                                                    <input type="time"><input type="date">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_UpdateInterval</legend>
+                                                    <input type="time"><input type="date">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col pull-left">
+                                                    <b>@Resources.Device_DateandTimeSettings</b>
+                                                    <hr />
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_RecordTimeZone </legend>
+                                                        <input type="text">
+                                                        <legend>@Resources.Device_RecordDateTime</legend>
+                                                        <input type="time">
+                                                    </div>
+                                                </div>
+                                                <div class="col pull-left">
+                                                    <b>@Resources.Device_RecorderSettings</b>
+                                                    <hr />
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_RecorderName</legend>
+                                                        <input type="text">
+                                                        <legend>@Resources.Device_Password</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_MACAddress</legend>
+                                                        <input type="text">
+                                                        <legend>@Resources.Device_HardwareVersion</legend>
+                                                        <input type="text">
+                                                    </div>
+
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_FirmwareVersion</legend>
+                                                        <input type="text">
+                                                        <legend>@Resources.Device_VideoFormat<legend>
+                                                            <select>
+                                                                <option>@Resources.Device_IITSC</option>
+                                                            </select>
+                                                    </div>
+                                                    <div class="col pull-right">
+                                                        <button type="button" class="primary-button">@Resources.Device_Reboot</button>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col pull-left">
+                                                    <b>@Resources.Device_RecorderStorageSettings</b>
+                                                    <hr />
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_InternalStorageLimit</legend>
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_ExternalStorageNotConfigured</legend>
+                                                    </div>
+                                                    <hr />
+
+                                                    <b>@Resources.Device_NetworkStorage</b>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_USB</legend>
+                                                        <input type="radio">Recording Mode
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <input type="radio">@Resources.Device_ExportMode
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- advanced Settings Starts -->
+
+                                    <div class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="advancedSettModal">
+                                        <header class="row">
+                                            <span>@Resources.Device_MAXPROAdvancedSettings</span>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                        </header>
+                                        <section class="row">
+                                            <div class="col pull-left">
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test">@Resources.Device_EnableEventNotification
+                                                    </label>
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test">@Resources.Device_EnableEditingUniqueKey
+                                                    </label>
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test">@Resources.Device_EnableEditingServerUrl
+                                                    </label>
+                                                </div>
+
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test">@Resources.Device_EnableUserDefinedIP
+
+                                                    </label>
+                                                </div>
+
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_UserDefinedIP</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <label class="viewerCheckbox spaceBottomStyle">
+                                                        <input type="checkbox" name="test">@Resources.Device_EnableTimeSyncWithServer
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </section>
+                                        <footer>
+                                            <div class="modal-footer">
+                                                <span class="footerBorder"></span>
+                                                <button class="primary-button" data-dismiss="modal" aria-hidden="true">@Resources.Device_SaveText</button>
+                                            </div>
+                                        </footer>
+
+                                    </div>
+                                    <!-- advanced Settings Ends	-->
+                                    <!-- system tab ends -->
+
+
+                                    <div class="tab-pane" id="schedules">...</div>
+                                    <div class="tab-pane" id="camera">
+                                        <div class="row table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>@Resources.Device_ChannelNo</th>
+                                                        <th>@Resources.Device_CameraNameText</th>
+                                                        <th>@Resources.Device_CameraTypeText</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>@Resources.Device_EmptyCamera1</td>
+                                                        <td>@Resources.Device_IPCameraText</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col pull-left">
+                                                <form action="" method="POST" class="form-horizontal" role="form">
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_CameraNameText</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_CameraTypeText</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_AnalogInput</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_IPCamera</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_IPAddress</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_RTSPUrl</legend>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="spaceBottomStyle">
+                                                        <legend>@Resources.Device_ModelNo</legend>
+                                                        <input type="text">
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                            <div class="col pull-left">
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_UserNameText</legend>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="spaceBottomStyle">
+                                                    <legend>@Resources.Device_Password</legend>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane" id="record">...</div>
+                                    <div class="tab-pane" id="input">...</div>
+                                    <div class="tab-pane" id="output">...</div>
+                                    <div class="tab-pane" id="spot">...</div>
+                                </div>
+
+
+                            </section>
+
+                            <div class="row borderTop">
+                            </div>
+                            <div class="row col">
+                                <button class="primary-button" data-dismiss="modal" aria-hidden="true">@Resources.Device_SaveSettings</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Settings Tab-->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="deviceModal" class="mpcmodel modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <header class="row">
+            <span>@Resources.Device_NewDevice</span>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        </header>
+
+        <section class="row">
+            <legend>@Resources.Device_UniqueKey_MACAddress</legend>
+            <input type="text">
+        </section>
+        <footer>
+            <div class="modal-footer">
+                <span class="footerBorder"></span>
+                <button class="primary-button" data-dismiss="modal" aria-hidden="true">@Resources.Device_SaveText</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script type='text/javascript' src='~/Scripts/knockout.js'></script>
+    <!--<script src="js/notifications.js" type="text/javascript" charset="utf-8" async defer></script>-->
+    <script src="~/Scripts/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript">
+        $(".UserListitem").click(function () {
+            $('#rightPaneEdit').show();
+            $("#rightPaneCreate").hide();
+        });
+
+        $("#operatorEdit").click(function () {
+            $('#rightPaneEdit').show();
+            $("#rightPaneCreate").hide();
+        });
+
+        $(".overlay").click(function () {
+            $('.exceptionContainer').hide();
+            $('.overlay').hide();
+            $('.exceptionContainerSecond').show();
+        });
+
+        $(".overlayhide").click(function () {
+            $('.exceptionContainer').show();
+            $('.overlay').show();
+            $('.exceptionContainerSecond').hide();
+        });
+
+
+    </script>
+    <script type="text/javascript">
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            e.target // activated tab
+            e.relatedTarget // previous tab
+        })
+    </script>
+
+    <script>
+        var treeItemSelectedEvent = "treeviewitemselected";
+        var DeviceUpdateFailed = "deviceupdatefailed";
+        var DeviceUpdatesucces = "Deviceupdatesuccess";
+        var configMenuclicked = "configmenuclicked";
+
+        window.configuration = window.configuration || {};
+        window.configuration.datacontext = (function ($) {
+            var configdataContext = {
+                getconfioptions: getconfioptions,
+                ondeviceselected: ondeviceselected,
+                getdevicedetail: getdevicedetail,
+                savedevicesettings: savedevicesettings,
+                getdeleteoptions: getdeleteoptions,
+                getnewdeviceentity: getnewdeviceentity,
+                deletedevicesettings: deletedevicesettings
+            };
+            var currentSelecteddevice = null;
+            var accoundetail = null;
+            var data = null;
+
+            function getnewdeviceentity(type) {
+                var newentity = configdataContext.devicedetailentity({ Name: "", deviceType: type });
+                newentity.Isnew(true);
+                return newentity;
+            }
+
+            function ondeviceselected(data) {
+                currentSelecteddevice = data;
+            }
+
+            function savedevicesettings(data) {
+                return new ajaxRequest("post", savedeviceurl(), data).done(function (jsonresult) {
+                    if (jsonresult.success) {
+                        $.publish("deviceupdatesuccess", data);
+                        // update tree object
+                        currentSelecteddevice.callback($.parseJSON(data.toJson()));
+                    }
+                    else {
+                        $.publish("deviceupdatefailed", data);
+                    }
+                }).error(function () {
+                });;
+            }
+
+
+
+            function savedeviceSetting(data) {
+                return new ajaxRequest("post", "", data);
+            }
+            function getdevicedetail() {
+                return ajaxRequest("post", getDevicedetailurl(currentSelectedDevice.nodedata.Id));
+            }
+            function getconfioptions(configoptionsObservable, errorObserable) {
+                data = ({ accountType: 1 });
+                ajaxRequest("POST", getmenuitemurl(),data)
+                  .done(getsucceeded)
+                  .fail(getfailed);
+
+                function getsucceeded(data) {
+                    var configOptionslist = $.map(data, function (item) {
+                        return new createoptionitem(item);
+                    });
+                    configoptionsObservable(configOptionslist);
+                }
+
+                function createoptionitem(data) {
+                    return new configdataContext.optionmenuitem(data);
+                }
+
+                function getfailed() {
+                    errorObservable("Error on fetching menu items");
+                }
+            }
+            function init() {
+
+            }
+            init();
+            return configdataContext;
+            function getdeviceconfigdetailurl(deviceid) {
+                return $("#getdetailurl").attr("data-url") + "?macid=" + macid;// "/Config/getdevicedetail?deviceid=" + deviceid;
+            }
+
+
+        })($);
+
+        window.configuration.uicontext = (function ($, datacontext) {
+            var currentdevice = null;
+            var devicetypes = [];
+            var configuicontext = {
+                deviceselectionchanged: deviceselectionchanged,
+                configoptionsselected: configoptionsselected
+            };
+            function setsettingstabactive() { }
+            function deviceselectionchanged(deviceSelected) {
+                datacontext.ondeviceselected(deviceSelected);
+                currentdevice = deviceSelected;
+                setactivedeviceform();
+                binddatatoactiveform();
+            };
+            function Taboptionsselected(data) {
+
+                switch (data.Id) {
+                    case "1001":
+                        datacontext.deletedevicesettings(data);
+                        break;
+                    case "1002":
+                        datacontext.deletedevicesettings(data);
+                        break;
+                    case "1003":
+                        datacontext.deletedevicesettings(data);
+                        break;
+                    case "2001":
+                        if (currentdevice == undefined || currentdevice == null) {
+                            alertify.alert(Resources.Device_Message);
+                            return;
+                        }
+                        // get empty entity
+
+                    default:
+                }
+            }
+            function setactivedeviceform() {
+                //Reset all form display to none
+                $("[data-devicetype]").removeClass("settingsform_active");
+                $("[data-devicetype]").addClass("settingsform");
+
+                //find and set active form
+                if (currentdevice != null || currentdevice != undefined) {
+                    if (currentdevice.nodedata.deviceType == "Device") {
+                        $("[data-devicetype='Device']").addClass("settingsform_active");
+                    }
+                }
+            }
+            function binddatatoactiveform() {
+                datacontext.getdevicedetail().done(function (jsondata) {
+
+                    ko.cleanNode(document.getElementById("editdevice"));
+                    ko.applyBindings(new datacontext.devicedetailentity(jsondata), document.getElementById("editdevice"));
+                });
+            }
+            return configuicontext;
+        })($, window.configuration.datacontext);
+
+
+        (function (ko, datacontext) {
+            var optionmenuitem = function (data) {
+                var self = this;
+                data = data || {};
+                self.Id = data.Id;
+                self.title = data.Name;
+                self.menuclicked = function (event, data) {
+                    $.publish(configMenuclicked, self);
+                }
+            }
+            var Deviceentity = function (data) {
+                var self = this;
+                data = data || {};
+                self.Name = ko.observable(data.Name);
+                self.Id = data.Id;
+                self.Isnew = ko.observable(false);
+                self.ParentId = data.ParentId;
+                self.deviceType = data.deviceType;
+
+
+                //chk
+                self.IOSettingEntity = {
+                    LevelName: ko.observable(data.IOSettingEntity.LevelName),
+                    SensorID: ko.observable(data.IOSettingEntity.SensorID),
+                    SensorTrigger: ko.observable(data.IOSettingEntity.SensorTrigger),
+                    bEnable: ko.observable(data.IOSettingEntity.bEnable),
+                    bStatus: ko.observable(data.IOSettingEntity.bStatus),
+                    Trigger: ko.observable(data.IOSettingEntity.Trigger),
+                };
+
+                self.Schedule = {
+                    ScheduleType: ko.observable(data.Schedule.ScheduleType),
+                    Daysofweek: ko.observable(data.Schedule.Daysofweek),
+                    FromTimeRange: ko.observable(data.Schedule.FromTimeRange),
+                    ToTimeRange: ko.observable(data.Schedule.ToTimeRange),
+
+                };
+
+
+
+                self.CameraSettingEntity = {
+                    CameraName: ko.observable(data.CameraSettingEntity.CameraName),
+                    CameraType: ko.observable(data.CameraSettingEntity.CameraType),
+                    AnalogInput: ko.observable(data.CameraSettingEntity.AnalogInput),
+                    IPCamera: ko.observable(data.CameraSettingEntity.IPCamera),
+                    bStatus: ko.observable(data.CameraSettingEntity.bStatus),
+                    RTSPURL: ko.observable(data.CameraSettingEntity.RTSPURL),
+                    IPCamera: ko.observable(data.CameraSettingEntity.IPCamera),
+                    bStatus: ko.observable(data.CameraSettingEntity.bStatus),
+                    ModelNo: ko.observable(data.CameraSettingEntity.ModelNo),
+                    CameraID: ko.observable(data.CameraSettingEntity.CameraID),
+                    IPAddress: ko.observable(data.CameraSettingEntity.IPAddress)
+
+                };
+
+
+                self.CameraSettingEntity = {
+                    CameraName: ko.observable(data.CameraSettingEntity.CameraName),
+                    CameraType: ko.observable(data.CameraSettingEntity.CameraType),
+                    AnalogInput: ko.observable(data.CameraSettingEntity.AnalogInput),
+                    IPCamera: ko.observable(data.CameraSettingEntity.IPCamera),
+                    bStatus: ko.observable(data.CameraSettingEntity.bStatus),
+                    RTSPURL: ko.observable(data.CameraSettingEntity.RTSPURL),
+                    IPCamera: ko.observable(data.CameraSettingEntity.IPCamera),
+                    bStatus: ko.observable(data.CameraSettingEntity.bStatus),
+                    ModelNo: ko.observable(data.CameraSettingEntity.ModelNo),
+                    CameraID: ko.observable(data.CameraSettingEntity.CameraID),
+                    IPAddress: ko.observable(data.CameraSettingEntity.IPAddress)
+                };
+                //chk
+
+                self.dosavedevicesettings = function (event, data) {
+                    if (self.Isnew()) {
+                    }
+                    else {
+                        datacontext.savedevicesettings(self);
+                    }
+                }
+                self.toJson = function () {
+                    return ko.toJSON(self);
+                }
+            }
+
+            datacontext.optionmenuitem = optionmenuitem;
+            datacontext.devicedetailentity = devicedetailentity;
+
+        })(ko, window.configuration.datacontext);
+
+        window.configuration.configviewmodel = (function (ko, datacontext) {
+            var configOptions = ko.observableArray(),
+              erorr = ko.observable(),
+              Updateoptions = ko.observableArray(),
+              currentSelectedDevice = ko.observable(),
+              Devicedetailentity = ko.observable();
+
+            datacontext.getconfioptions(configOptions, erorr);
+            datacontext.getdeleteoptions(deleteoptions);
+            return {
+                configOptions: configOptions,
+                deleteoptions: deleteoptions,
+                currentSelecteddevice: currentSelecteddevice,
+                error: erorr
+            };
+        })(ko, window.configuration.datacontext);
+        window.configuration.devicesettingviewmodel = (function (datacontext) {
+
+            //datacontext.getdevicedetail()
+
+        })(window.configuration.datacontext);
+        window.configuration.eventreceiver = (function (ko, uicontext) {
+            $.subscribe(treeItemSelectedEvent, treeviewitemselected);
+            $.subscribe(configMenuclicked, onconfigmenuselected);
+            function onconfigmenuselected(event, data) {
+                uicontext.configoptionsselected(data);
+            }
+            function treeviewitemselected(event, data) {
+                //If selected node type is not a special node like People and Schedules
+                if (data.nodetype != "SPECIAL")
+                    uicontext.deviceselectionchanged(data);
+            }
+
+            return {};
+        })(ko, window.configuration.uicontext);
+        ko.cleanNode(document.getElementById("page-third-header"));
+        ko.applyBindings(window.configuration.configviceviewmodel, document.getElementById("page-third-header"));
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
